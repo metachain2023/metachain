@@ -1,0 +1,297 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+package message;
+
+option go_package ="../message";
+/* 
+  接口GetBalance的请求，包含一个地址
+  */
+message req_balance { 
+  string address = 1; // 地址
+}
+/* 
+  接口GetBalance的请求，值为请求地址的余额
+*/
+message res_balance { 
+  string balance = 1; // 余额，18位精度
+}
+
+
+/**
+ * 发送交易接口的请求数据
+ */
+message SendTransactionRequest {
+  string from = 1; // 交易的发送者
+  string to = 2;  // 交易的接收者
+  string amount = 3; // 交易数量，18位精度
+  uint64 nonce = 4; // 递增的无符号整数，由From地址维护。调用GetAddressNonceAt接口获取当前发送交易所需的nonce。
+  string signature = 5; // 签名数据
+  string gasLimit =6; // gas费数量限制
+  string gasFeeCap =7; // gas费上限
+  string gasPrice = 8; // gas费单价
+}
+
+/* 
+ * 发送交易接口的返回值
+ */
+message SendTransactionResponse { 
+  string hash = 1; // 交易哈希
+}
+
+/* 
+ * 通过块高获取块数据的请求
+ */
+message req_block_by_number { 
+  uint64 height = 1; // 块高
+}
+
+/* 
+ * 通过块hash获取块数据的请求
+ */
+message req_block_by_hash { 
+  string hash = 1; // 块哈希
+}
+
+/* 
+ * 块数据
+ */
+message resp_block {
+  int32 code = 1; // 状态码，0为正常
+  string message = 2; // 错误信息
+  bytes data = 3; // 块数据
+}
+
+/* 
+ * 交易数据
+ */
+message Tx {
+  uint64 Version = 1; // 版本号
+  uint64 Type = 2; // 交易类型
+  string Amount = 3; // 交易数额
+  string From = 4; // 交易发送者
+  string To = 5; // 交易接收者
+  string GasPrice = 6; // gas费单价
+  string GasFeeCap = 7; // gas费容量
+  string GasLimit = 8; // gas数量限制
+  bytes Input = 9; // 附加数据
+  uint64 Nonce = 10; // 随机数
+}
+
+/* 
+ * 获取块数据的响应
+ */
+message resp_block_data{
+  int32 code = 1; // 状态码，0为正常
+  bytes data = 2; // 块数据
+  string message = 3; // 错误信息
+}
+
+/* 
+ * 查询交易的请求
+ */
+message req_tx_by_hash { 
+  string hash = 1; // 交易哈希
+}
+
+/*
+ * 查询交易的返回值 
+ */
+message resp_tx_by_hash {
+  int32 code = 1; // 状态码，0为正常
+  bytes data = 2; // 交易数据
+  string message = 3; // 接口返回的错误信息
+}
+
+/*
+ * 获取nonce接口的请求 
+ */
+message req_nonce { 
+  string address = 1; // 地址
+}
+/* 
+ * 获取nonce的响应
+ */
+message respose_nonce { 
+  uint64 nonce = 1; // 随机数
+}
+
+
+
+message req_max_blockHeight{}
+/* 
+ * 查询当前块高的返回值
+ */
+message res_max_blockHeight{
+  uint64 max_height = 1; // 当前最大的块高度
+}
+
+
+service Greeter {
+ // 获取地址对应的余额
+  rpc GetBalance (req_balance) returns (res_balance) {
+    option (google.api.http) = {
+      post: "/balance"
+      body: "*"
+    };
+  }
+
+  // 发送已经签名的交易
+  rpc SendTransaction(SendTransactionRequest) returns(SendTransactionResponse) {
+    option (google.api.http) = {
+      post: "/transaction"
+      body: "*"
+    };
+  }
+  // 通过块的高度获取到块数据
+  rpc GetBlockByNum(req_block_by_number) returns(resp_block) {
+    option (google.api.http) = {
+      get: "/block/height/{height}"
+    };
+  }
+
+  // 通过交易哈希获取交易数据
+  rpc GetTxByHash(req_tx_by_hash) returns(resp_tx_by_hash) {
+    option (google.api.http) = {
+      get: "/transaction/{hash}"
+    };
+  }
+  // 获取该地址发送交易所需要的noce
+  rpc GetAddressNonceAt(req_nonce) returns(respose_nonce) {
+    option (google.api.http) = {
+      get: "/transaction/nonce/{address}"
+    };
+  }
+  // 通过块哈希获取到块数据
+  rpc GetBlockByHash(req_block_by_hash) returns(resp_block_data) {
+    option (google.api.http) = {
+      get: "/block/hash/{hash}"
+    };
+  }
+  // 获取当前最大的块高
+  rpc GetMaxBlockHeight(req_max_blockHeight)returns(res_max_blockHeight){
+    option (google.api.http) = {
+      get: "/height"
+    };
+  }
+
+  // 通过块高获取该块的细节
+  rpc GetBlockDetails(GetBlockDetailsRequest) returns(GetBlockDetailsResponse){
+    option (google.api.http) = {
+      get:"/block/details/{height}"
+    };
+  }
+
+  // 通过交易哈希获取交易细节
+  rpc GetTransactionDetails(GetTransactionDetailsRequest) returns(GetTransactionDetailsResponse){
+    option (google.api.http) = {
+      get:"/transaction/details/{hash}"
+    };
+  }
+
+  rpc Sign(SginRequest)returns(SginResponse){
+    option (google.api.http) = {
+      post: "/transaction/sign"
+      body: "*"
+    };
+  }
+
+}
+
+message GetBlockDetailsRequest {
+  uint64 height = 1;
+}
+
+message GetBlockDetailsResponse {
+  uint64 epoch = 1;
+  uint64 slot = 2;
+  string status = 3;
+  google.protobuf.Timestamp time =4;
+  int64 proposer =5;
+  string blockRoot = 6;
+  string parentRoot = 7;
+  string stateRoot = 8;
+  string signature =9;
+  string randaoReceal=10;
+  string graffiti=11;
+  repeated FinalTransaction ftxs =12;
+}
+
+
+/* 
+* 获取交易细节接口的请求
+*/
+message GetTransactionDetailsRequest{
+  string hash =1; // 交易哈希
+}
+
+
+
+/* 
+* 交易细节接口的响应
+*/
+message GetTransactionDetailsResponse{
+  int64 version = 1;  // 交易版本号
+	int32 type =2; // 交易类型
+	string from=3; // 交易的发起者
+  string to =4;  // 交易的接收者    
+	uint64 nonce =5; //  递增的无符号整数，由From地址维护。调用GetAddressNonceAt接口获取当前发送交易所需的nonce。
+
+	string amount =6;  // 交易金额
+	string gasLimit =7; // gas费单价
+  string gasFeeCap =8; // gas容量
+	string gasPrice  =9; // gas单价
+
+  //input 是附加数据
+	bytes input =10; 
+  bytes signature =11; // 交易签名
+  string gasUsed  =12; // 实际使用的gas
+	uint64 blockNum =13; // 块号
+}
+
+/* 
+ * 未签名的交易数据
+*/
+message UnsignedTransaction{
+  string from = 1; // 交易发送者
+  string to = 2; // 交易接收者
+  string amount = 3; // 交易数额
+  string gasPrice = 4; // gas费单价
+  string gasFeeCap = 5; // gas费容量
+  string gasLimit = 6; // gas数量限制
+  uint64 nonce = 7; //  递增的无符号整数，由From地址维护。调用GetAddressNonceAt接口获取当前发送交易所需的nonce。
+  bytes input = 8; // 附加数据
+}
+
+/*
+* 已签名的交易数据
+*/
+message SignedTransaction{
+    UnsignedTransaction utx =1; // 未签名交易
+    string signature =2; // 签名数据 hex编码
+}
+/* 
+* 最终上链后的交易数据
+*/
+message FinalTransaction{
+  SignedTransaction stx =1; // 已签名的交易数据
+  string gasUsed =2; // 使用的gas
+  uint64 blockNum=3; // 块号
+}
+
+/* 
+* 签名接口请求数据
+*/
+message SginRequest{
+  UnsignedTransaction utx =1; // 未签名的交易
+  string priv =2; //hex编码的私钥数据
+}
+
+/* 
+* 签名接口返回的数据
+*/
+message SginResponse{
+  string signature=1; // 签名数据
+}

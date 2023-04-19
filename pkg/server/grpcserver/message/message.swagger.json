@@ -1,0 +1,555 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "message.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/balance": {
+      "post": {
+        "summary": "获取地址对应的余额",
+        "operationId": "Greeter_GetBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageres_balance"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/messagereq_balance"
+            }
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/block/details/{height}": {
+      "get": {
+        "summary": "通过块高获取该块的细节",
+        "operationId": "Greeter_GetBlockDetails",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageGetBlockDetailsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "height",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/block/hash/{hash}": {
+      "get": {
+        "summary": "通过块哈希获取到块数据",
+        "operationId": "Greeter_GetBlockByHash",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageresp_block_data"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/block/height/{height}": {
+      "get": {
+        "summary": "通过块的高度获取到块数据",
+        "operationId": "Greeter_GetBlockByNum",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageresp_block"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "height",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uint64"
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/height": {
+      "get": {
+        "summary": "获取当前最大的块高",
+        "operationId": "Greeter_GetMaxBlockHeight",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageres_max_blockHeight"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/transaction": {
+      "post": {
+        "summary": "发送已经签名的交易",
+        "operationId": "Greeter_SendTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageres_transaction"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/messagereq_transaction"
+            }
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/transaction/details/{hash}": {
+      "get": {
+        "summary": "通过交易哈希获取交易细节",
+        "operationId": "Greeter_GetTransactionDetails",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageGetTransactionDetailsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/transaction/nonce/{address}": {
+      "get": {
+        "summary": "获取该地址发送交易所需要的noce",
+        "operationId": "Greeter_GetAddressNonceAt",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messagerespose_nonce"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
+    "/transaction/{hash}": {
+      "get": {
+        "summary": "通过交易哈希获取交易数据",
+        "operationId": "Greeter_GetTxByHash",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/messageresp_tx_by_hash"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "messageGetBlockDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "Epoch": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "slot": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "proposer": {
+          "type": "string",
+          "format": "int64"
+        },
+        "blockRoot": {
+          "type": "string"
+        },
+        "ParentRoot": {
+          "type": "string"
+        },
+        "StateRoot": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        },
+        "randaoReceal": {
+          "type": "string"
+        },
+        "graffiti": {
+          "type": "string"
+        }
+      }
+    },
+    "messageGetTransactionDetailsResponse": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "format": "int64"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "nonce": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "gasLimit": {
+          "type": "string"
+        },
+        "gasFeeCap": {
+          "type": "string"
+        },
+        "gasPrice": {
+          "type": "string"
+        },
+        "input": {
+          "type": "string",
+          "format": "byte",
+          "title": "input 是附加数据"
+        },
+        "signature": {
+          "type": "string",
+          "format": "byte"
+        },
+        "gasUsed": {
+          "type": "string"
+        },
+        "blockNum": {
+          "type": "string",
+          "format": "uint64"
+        }
+      },
+      "title": "交易细节接口的响应"
+    },
+    "messagereq_balance": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        }
+      },
+      "title": "接口GetBalance的请求，包含一个地址"
+    },
+    "messagereq_transaction": {
+      "type": "object",
+      "properties": {
+        "From": {
+          "type": "string"
+        },
+        "To": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "Nonce": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "Sign": {
+          "type": "string",
+          "format": "byte"
+        },
+        "GasLimit": {
+          "type": "string"
+        },
+        "GasFeeCap": {
+          "type": "string"
+        },
+        "GasPrice": {
+          "type": "string"
+        },
+        "Input": {
+          "type": "string",
+          "format": "byte"
+        }
+      },
+      "title": "*\n发送交易接口的请求数据"
+    },
+    "messageres_balance": {
+      "type": "object",
+      "properties": {
+        "balance": {
+          "type": "string"
+        }
+      },
+      "title": "接口GetBalance的请求，值为请求地址的余额"
+    },
+    "messageres_max_blockHeight": {
+      "type": "object",
+      "properties": {
+        "max_height": {
+          "type": "string",
+          "format": "uint64"
+        }
+      },
+      "title": "查询当前块高的返回值"
+    },
+    "messageres_transaction": {
+      "type": "object",
+      "properties": {
+        "Hash": {
+          "type": "string"
+        }
+      },
+      "title": "发送交易接口的返回值"
+    },
+    "messageresp_block": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        }
+      },
+      "title": "块数据"
+    },
+    "messageresp_block_data": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "获取块数据的响应"
+    },
+    "messageresp_tx_by_hash": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "查询交易的返回值"
+    },
+    "messagerespose_nonce": {
+      "type": "object",
+      "properties": {
+        "nonce": {
+          "type": "string",
+          "format": "uint64"
+        }
+      },
+      "title": "获取nonce的响应"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
