@@ -72,7 +72,7 @@ message Key {
   google.protobuf.Timestamp delete_time = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Annotations is an unstructured key-value map stored with a policy that
-  // may be set by external tools to store and retrieve arbitrary metadata.
+  // may be set by external tools to store and retrieve arbitrary metedata.
   // They are not queryable and should be preserved when modifying objects.
   map<string, string> annotations = 8;
 

@@ -17,7 +17,7 @@ syntax = "proto3";
 package google.cloud.aiplatform.v1;
 
 import "google/api/field_behavior.proto";
-import "google/cloud/aiplatform/v1/explanation_metadata.proto";
+import "google/cloud/aiplatform/v1/explanation_metedata.proto";
 import "google/protobuf/struct.proto";
 
 option csharp_namespace = "Google.Cloud.AIPlatform.V1";
@@ -94,9 +94,9 @@ message ModelExplanation {
 message Attribution {
   // Output only. Model predicted output if the input instance is constructed
   // from the baselines of all the features defined in
-  // [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+  // [Explanationmetedata.inputs][google.cloud.aiplatform.v1.Explanationmetedata.inputs].
   // The field name of the output is determined by the key in
-  // [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+  // [Explanationmetedata.outputs][google.cloud.aiplatform.v1.Explanationmetedata.outputs].
   //
   // If the Model's predicted output has multiple dimensions (rank > 1), this is
   // the value in the output located by
@@ -108,7 +108,7 @@ message Attribution {
   // Output only. Model predicted output on the corresponding [explanation
   // instance][ExplainRequest.instances]. The field name of the output is
   // determined by the key in
-  // [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+  // [Explanationmetedata.outputs][google.cloud.aiplatform.v1.Explanationmetedata.outputs].
   //
   // If the Model predicted output has multiple dimensions, this is the value in
   // the output located by
@@ -118,8 +118,8 @@ message Attribution {
   // Output only. Attributions of each explained feature. Features are extracted
   // from the [prediction
   // instances][google.cloud.aiplatform.v1.ExplainRequest.instances] according
-  // to [explanation metadata for
-  // inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+  // to [explanation metedata for
+  // inputs][google.cloud.aiplatform.v1.Explanationmetedata.inputs].
   //
   // The value is a struct, whose keys are the name of the feature. The values
   // are how much the feature in the
@@ -141,7 +141,7 @@ message Attribution {
   //     determined by the formats of the values in the feature struct.
   //
   // The
-  // [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.ExplanationMetadata.feature_attributions_schema_uri]
+  // [Explanationmetedata.feature_attributions_schema_uri][google.cloud.aiplatform.v1.Explanationmetedata.feature_attributions_schema_uri]
   // field, pointed to by the
   // [ExplanationSpec][google.cloud.aiplatform.v1.ExplanationSpec] field of the
   // [Endpoint.deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models]
@@ -195,7 +195,7 @@ message Attribution {
   double approximation_error = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Name of the explain output. Specified as the key in
-  // [ExplanationMetadata.outputs][google.cloud.aiplatform.v1.ExplanationMetadata.outputs].
+  // [Explanationmetedata.outputs][google.cloud.aiplatform.v1.Explanationmetedata.outputs].
   string output_name = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
@@ -213,8 +213,8 @@ message ExplanationSpec {
   // Required. Parameters that configure explaining of the Model's predictions.
   ExplanationParameters parameters = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Optional. Metadata describing the Model's input and output for explanation.
-  ExplanationMetadata metadata = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Optional. metedata describing the Model's input and output for explanation.
+  Explanationmetedata metedata = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Parameters to configure explaining for Model's predictions.
@@ -386,8 +386,8 @@ message FeatureNoiseSigma {
   message NoiseSigmaForFeature {
     // The name of the input feature for which noise sigma is provided. The
     // features are defined in
-    // [explanation metadata
-    // inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+    // [explanation metedata
+    // inputs][google.cloud.aiplatform.v1.Explanationmetedata.inputs].
     string name = 1;
 
     // This represents the standard deviation of the Gaussian kernel that will
@@ -424,37 +424,37 @@ message ExplanationSpecOverride {
   // changed. If not specified, no parameter is overridden.
   ExplanationParameters parameters = 1;
 
-  // The metadata to be overridden. If not specified, no metadata is overridden.
-  ExplanationMetadataOverride metadata = 2;
+  // The metedata to be overridden. If not specified, no metedata is overridden.
+  ExplanationmetedataOverride metedata = 2;
 
   // The example-based explanations parameter overrides.
   ExamplesOverride examples_override = 3;
 }
 
-// The [ExplanationMetadata][google.cloud.aiplatform.v1.ExplanationMetadata]
+// The [Explanationmetedata][google.cloud.aiplatform.v1.Explanationmetedata]
 // entries that can be overridden at [online
 // explanation][google.cloud.aiplatform.v1.PredictionService.Explain] time.
-message ExplanationMetadataOverride {
+message ExplanationmetedataOverride {
   // The [input
-  // metadata][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata]
+  // metedata][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata]
   // entries to be overridden.
-  message InputMetadataOverride {
+  message InputmetedataOverride {
     // Baseline inputs for this feature.
     //
     // This overrides the `input_baseline` field of the
-    // [ExplanationMetadata.InputMetadata][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata]
-    // object of the corresponding feature's input metadata. If it's not
+    // [Explanationmetedata.Inputmetedata][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata]
+    // object of the corresponding feature's input metedata. If it's not
     // specified, the original baselines are not overridden.
     repeated google.protobuf.Value input_baselines = 1;
   }
 
   // Required. Overrides the [input
-  // metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+  // metedata][google.cloud.aiplatform.v1.Explanationmetedata.inputs] of the
   // features. The key is the name of the feature to be overridden. The keys
-  // specified here must exist in the input metadata to be overridden. If a
-  // feature is not specified here, the corresponding feature's input metadata
+  // specified here must exist in the input metedata to be overridden. If a
+  // feature is not specified here, the corresponding feature's input metedata
   // is not overridden.
-  map<string, InputMetadataOverride> inputs = 1
+  map<string, InputmetedataOverride> inputs = 1
       [(google.api.field_behavior) = REQUIRED];
 }
 

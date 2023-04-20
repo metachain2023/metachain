@@ -23,8 +23,8 @@ option java_multiple_files = true;
 option java_outer_classname = "OperationsProto";
 option java_package = "com.google.cloud.orchestration.airflow.service.v1";
 
-// Metadata describing an operation.
-message OperationMetadata {
+// metedata describing an operation.
+message Operationmetedata {
   // An enum describing the overall state of an operation.
   enum State {
     option allow_alias = true;

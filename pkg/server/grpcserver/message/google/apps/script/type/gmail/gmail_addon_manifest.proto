@@ -93,10 +93,10 @@ message ComposeTrigger {
     // when a compose addon is triggered.
     NONE = 1;
 
-    // METADATA gives compose trigger the permission to access the metadata of
+    // meteDATA gives compose trigger the permission to access the metedata of
     // the draft when a compose addon is triggered. This includes the audience
     // list (To/cc list) of a draft message.
-    METADATA = 2;
+    meteDATA = 2;
   }
 
   // Defines the set of actions for compose time add-on. These are actions

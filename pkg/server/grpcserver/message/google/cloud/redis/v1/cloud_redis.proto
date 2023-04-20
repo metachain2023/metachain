@@ -105,11 +105,11 @@ service CloudRedis {
     option (google.api.method_signature) = "parent,instance_id,instance";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.redis.v1.Instance"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 
-  // Updates the metadata and configuration of a specific Redis instance.
+  // Updates the metedata and configuration of a specific Redis instance.
   //
   // Completed longrunning.Operation will contain the new instance object
   // in the response field. The returned operation is automatically deleted
@@ -122,7 +122,7 @@ service CloudRedis {
     option (google.api.method_signature) = "update_mask,instance";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.redis.v1.Instance"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 
@@ -136,7 +136,7 @@ service CloudRedis {
     option (google.api.method_signature) = "name,redis_version";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.redis.v1.Instance"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 
@@ -156,7 +156,7 @@ service CloudRedis {
     option (google.api.method_signature) = "name,input_config";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.redis.v1.Instance"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 
@@ -174,7 +174,7 @@ service CloudRedis {
     option (google.api.method_signature) = "name,output_config";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.redis.v1.Instance"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 
@@ -188,7 +188,7 @@ service CloudRedis {
     option (google.api.method_signature) = "name,data_protection_mode";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.redis.v1.Instance"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 
@@ -201,7 +201,7 @@ service CloudRedis {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 
@@ -215,7 +215,7 @@ service CloudRedis {
     option (google.api.method_signature) = "name, reschedule_type, schedule_time";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.redis.v1.Instance"
-      metadata_type: "google.cloud.redis.v1.OperationMetadata"
+      metedata_type: "google.cloud.redis.v1.Operationmetedata"
     };
   }
 }
@@ -335,7 +335,7 @@ message Instance {
   // An arbitrary and optional user-provided name for the instance.
   string display_name = 2;
 
-  // Resource labels to represent user provided metadata
+  // Resource labels to represent user provided metedata
   map<string, string> labels = 3;
 
   // Optional. The zone where the instance will be provisioned. If not provided,
@@ -821,8 +821,8 @@ message FailoverInstanceRequest {
   DataProtectionMode data_protection_mode = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents the v1 metadata of the long-running operation.
-message OperationMetadata {
+// Represents the v1 metedata of the long-running operation.
+message Operationmetedata {
   // Creation timestamp.
   google.protobuf.Timestamp create_time = 1;
 
@@ -845,21 +845,21 @@ message OperationMetadata {
   string api_version = 7;
 }
 
-// This location metadata represents additional configuration options for a
+// This location metedata represents additional configuration options for a
 // given location where a Redis instance may be created. All fields are output
 // only. It is returned as content of the
-// `google.cloud.location.Location.metadata` field.
-message LocationMetadata {
+// `google.cloud.location.Location.metedata` field.
+message Locationmetedata {
   // Output only. The set of available zones in the location. The map is keyed
   // by the lowercase ID of each zone, as defined by GCE. These keys can be
   // specified in `location_id` or `alternative_location_id` fields when
   // creating a Redis instance.
-  map<string, ZoneMetadata> available_zones = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  map<string, Zonemetedata> available_zones = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Defines specific information for a particular zone. Currently empty and
 // reserved for future use only.
-message ZoneMetadata {
+message Zonemetedata {
 
 }
 

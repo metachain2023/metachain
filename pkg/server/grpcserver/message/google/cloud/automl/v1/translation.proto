@@ -27,8 +27,8 @@ option java_package = "com.google.cloud.automl.v1";
 option php_namespace = "Google\\Cloud\\AutoMl\\V1";
 option ruby_package = "Google::Cloud::AutoML::V1";
 
-// Dataset metadata that is specific to translation.
-message TranslationDatasetMetadata {
+// Dataset metedata that is specific to translation.
+message TranslationDatasetmetedata {
   // Required. The BCP-47 language code of the source language.
   string source_language_code = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -45,8 +45,8 @@ message TranslationEvaluationMetrics {
   double base_bleu_score = 2;
 }
 
-// Model metadata that is specific to translation.
-message TranslationModelMetadata {
+// Model metedata that is specific to translation.
+message TranslationModelmetedata {
   // The resource name of the model to use as a baseline to train the custom
   // model. If unset, we use the default base model provided by Google
   // Translate. Format:

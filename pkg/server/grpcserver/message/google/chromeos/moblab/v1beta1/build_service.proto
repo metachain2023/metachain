@@ -74,7 +74,7 @@ service BuildService {
   // to a partner Google Cloud Storage bucket. If any of objects has already
   // been copied, it will overwrite the previous objects. Operation <response:
   // [StageBuildResponse][google.chromeos.moblab.v1beta1.StageBuildResponse],
-  //            metadata: [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]>
+  //            metedata: [StageBuildmetedata][google.chromeos.moblab.v1beta1.StageBuildmetedata]>
   rpc StageBuild(StageBuildRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v1beta1/{name=buildTargets/*/models/*/builds/*/artifacts/*}:stage"
@@ -83,7 +83,7 @@ service BuildService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "StageBuildResponse"
-      metadata_type: "StageBuildMetadata"
+      metedata_type: "StageBuildmetedata"
     };
   }
 
@@ -286,8 +286,8 @@ message StageBuildResponse {
   BuildArtifact staged_build_artifact = 1;
 }
 
-// Metadata message for staging a build artifact.
-message StageBuildMetadata {
+// metedata message for staging a build artifact.
+message StageBuildmetedata {
   // Approximate percentage of progress, e.g. "50" means 50%.
   float progress_percent = 1;
 

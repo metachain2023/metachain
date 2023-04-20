@@ -9,8 +9,8 @@ apis:
     - name: google.iam.v1.IAMPolicy
 
 types:
-  - name: google.spanner.admin.instance.v1.CreateInstanceMetadata
-  - name: google.spanner.admin.instance.v1.UpdateInstanceMetadata
+  - name: google.spanner.admin.instance.v1.CreateInstancemetedata
+  - name: google.spanner.admin.instance.v1.UpdateInstancemetedata
 
 authentication:
   rules:

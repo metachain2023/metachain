@@ -16,7 +16,7 @@ types:
 - name: google.cloud.vmmigration.v1.FetchInventoryResponse
 - name: google.cloud.vmmigration.v1.FinalizeMigrationResponse
 - name: google.cloud.vmmigration.v1.MigrationError
-- name: google.cloud.vmmigration.v1.OperationMetadata
+- name: google.cloud.vmmigration.v1.Operationmetedata
 - name: google.cloud.vmmigration.v1.PauseMigrationResponse
 - name: google.cloud.vmmigration.v1.RemoveGroupMigrationResponse
 - name: google.cloud.vmmigration.v1.ResumeMigrationResponse

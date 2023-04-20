@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"metachain/pkg/block"
-	"metachain/pkg/storage/store"
+	"metechain/pkg/block"
+	"metechain/pkg/storage/store"
 
 	"golang.org/x/crypto/sha3"
 )

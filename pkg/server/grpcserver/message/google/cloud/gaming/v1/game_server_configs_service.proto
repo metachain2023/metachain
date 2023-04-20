@@ -58,7 +58,7 @@ service GameServerConfigsService {
     option (google.api.method_signature) = "parent,game_server_config";
     option (google.longrunning.operation_info) = {
       response_type: "GameServerConfig"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -71,7 +71,7 @@ service GameServerConfigsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }

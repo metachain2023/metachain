@@ -31,7 +31,7 @@ option java_outer_classname = "Trips";
 option java_package = "google.maps.fleetengine.v1";
 option objc_class_prefix = "CFE";
 
-// Trip metadata.
+// Trip metedata.
 message Trip {
   option (google.api.resource) = {
     type: "fleetengine.googleapis.com/Trip"

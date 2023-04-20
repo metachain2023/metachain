@@ -80,7 +80,7 @@ service BigtableTableAdmin {
     option (google.api.method_signature) = "parent,table_id,source_snapshot";
     option (google.longrunning.operation_info) = {
       response_type: "Table"
-      metadata_type: "CreateTableFromSnapshotMetadata"
+      metedata_type: "CreateTableFromSnapshotmetedata"
     };
   }
 
@@ -92,7 +92,7 @@ service BigtableTableAdmin {
     option (google.api.method_signature) = "parent";
   }
 
-  // Gets metadata information about the specified table.
+  // Gets metedata information about the specified table.
   rpc GetTable(GetTableRequest) returns (Table) {
     option (google.api.http) = {
       get: "/v2/{name=projects/*/instances/*/tables/*}"
@@ -109,7 +109,7 @@ service BigtableTableAdmin {
     option (google.api.method_signature) = "table,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Table"
-      metadata_type: "UpdateTableMetadata"
+      metedata_type: "UpdateTablemetedata"
     };
   }
 
@@ -130,7 +130,7 @@ service BigtableTableAdmin {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Table"
-      metadata_type: "UndeleteTableMetadata"
+      metedata_type: "UndeleteTablemetedata"
     };
   }
 
@@ -195,11 +195,11 @@ service BigtableTableAdmin {
     option (google.api.method_signature) = "name,cluster,snapshot_id,description";
     option (google.longrunning.operation_info) = {
       response_type: "Snapshot"
-      metadata_type: "SnapshotTableMetadata"
+      metedata_type: "SnapshotTablemetedata"
     };
   }
 
-  // Gets metadata information about the specified snapshot.
+  // Gets metedata information about the specified snapshot.
   //
   // Note: This is a private alpha release of Cloud Bigtable snapshots. This
   // feature is not currently available to most Cloud Bigtable customers. This
@@ -244,8 +244,8 @@ service BigtableTableAdmin {
   // Starts creating a new Cloud Bigtable Backup.  The returned backup
   // [long-running operation][google.longrunning.Operation] can be used to
   // track creation of the backup. The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [CreateBackupmetedata][google.bigtable.admin.v2.CreateBackupmetedata]. The
   // [response][google.longrunning.Operation.response] field type is
   // [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the returned operation will stop the
   // creation and delete the backup.
@@ -257,11 +257,11 @@ service BigtableTableAdmin {
     option (google.api.method_signature) = "parent,backup_id,backup";
     option (google.longrunning.operation_info) = {
       response_type: "Backup"
-      metadata_type: "CreateBackupMetadata"
+      metedata_type: "CreateBackupmetedata"
     };
   }
 
-  // Gets metadata on a pending or completed Cloud Bigtable Backup.
+  // Gets metedata on a pending or completed Cloud Bigtable Backup.
   rpc GetBackup(GetBackupRequest) returns (Backup) {
     option (google.api.http) = {
       get: "/v2/{name=projects/*/instances/*/clusters/*/backups/*}"
@@ -299,8 +299,8 @@ service BigtableTableAdmin {
   // must be in the same project as the instance containing the backup.  The
   // returned table [long-running operation][google.longrunning.Operation] can
   // be used to track the progress of the operation, and to cancel it.  The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [RestoreTableMetadata][google.bigtable.admin.RestoreTableMetadata].  The
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [RestoreTablemetedata][google.bigtable.admin.RestoreTablemetedata].  The
   // [response][google.longrunning.Operation.response] type is
   // [Table][google.bigtable.admin.v2.Table], if successful.
   rpc RestoreTable(RestoreTableRequest) returns (google.longrunning.Operation) {
@@ -310,7 +310,7 @@ service BigtableTableAdmin {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Table"
-      metadata_type: "RestoreTableMetadata"
+      metedata_type: "RestoreTablemetedata"
     };
   }
 
@@ -386,9 +386,9 @@ message RestoreTableRequest {
   }
 }
 
-// Metadata type for the long-running operation returned by
+// metedata type for the long-running operation returned by
 // [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable].
-message RestoreTableMetadata {
+message RestoreTablemetedata {
   // Name of the table being created and restored to.
   string name = 1;
 
@@ -403,8 +403,8 @@ message RestoreTableMetadata {
 
   // If exists, the name of the long-running operation that will be used to
   // track the post-restore optimization process to optimize the performance of
-  // the restored table. The metadata type of the long-running operation is
-  // [OptimizeRestoreTableMetadata][]. The response type is
+  // the restored table. The metedata type of the long-running operation is
+  // [OptimizeRestoreTablemetedata][]. The response type is
   // [Empty][google.protobuf.Empty]. This long-running operation may be
   // automatically created by the system if applicable after the
   // RestoreTable long-running operation completes successfully. This operation
@@ -417,11 +417,11 @@ message RestoreTableMetadata {
   OperationProgress progress = 5;
 }
 
-// Metadata type for the long-running operation used to track the progress
+// metedata type for the long-running operation used to track the progress
 // of optimizations performed on a newly restored table. This long-running
 // operation is automatically created by the system after the successful
 // completion of a table restore, and cannot be cancelled.
-message OptimizeRestoredTableMetadata {
+message OptimizeRestoredTablemetedata {
   // Name of the restored table being optimized.
   string name = 1;
 
@@ -611,9 +611,9 @@ message UpdateTableRequest {
       [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [UpdateTable][google.bigtable.admin.v2.BigtableTableAdmin.UpdateTable].
-message UpdateTableMetadata {
+message UpdateTablemetedata {
   // The name of the table being updated.
   string name = 1;
 
@@ -652,9 +652,9 @@ message UndeleteTableRequest {
   ];
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [google.bigtable.admin.v2.BigtableTableAdmin.UndeleteTable][google.bigtable.admin.v2.BigtableTableAdmin.UndeleteTable].
-message UndeleteTableMetadata {
+message UndeleteTablemetedata {
   // The name of the table being restored.
   string name = 1;
 
@@ -879,13 +879,13 @@ message DeleteSnapshotRequest {
   ];
 }
 
-// The metadata for the Operation returned by SnapshotTable.
+// The metedata for the Operation returned by SnapshotTable.
 //
 // Note: This is a private alpha release of Cloud Bigtable snapshots. This
 // feature is not currently available to most Cloud Bigtable customers. This
 // feature might be changed in backward-incompatible ways and is not recommended
 // for production use. It is not subject to any SLA or deprecation policy.
-message SnapshotTableMetadata {
+message SnapshotTablemetedata {
   // The request that prompted the initiation of this SnapshotTable operation.
   SnapshotTableRequest original_request = 1;
 
@@ -896,13 +896,13 @@ message SnapshotTableMetadata {
   google.protobuf.Timestamp finish_time = 3;
 }
 
-// The metadata for the Operation returned by CreateTableFromSnapshot.
+// The metedata for the Operation returned by CreateTableFromSnapshot.
 //
 // Note: This is a private alpha release of Cloud Bigtable snapshots. This
 // feature is not currently available to most Cloud Bigtable customers. This
 // feature might be changed in backward-incompatible ways and is not recommended
 // for production use. It is not subject to any SLA or deprecation policy.
-message CreateTableFromSnapshotMetadata {
+message CreateTableFromSnapshotmetedata {
   // The request that prompted the initiation of this CreateTableFromSnapshot
   // operation.
   CreateTableFromSnapshotRequest original_request = 1;
@@ -938,9 +938,9 @@ message CreateBackupRequest {
   Backup backup = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup].
-message CreateBackupMetadata {
+message CreateBackupmetedata {
   // The name of the backup being created.
   string name = 1;
 

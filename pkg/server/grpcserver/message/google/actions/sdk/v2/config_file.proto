@@ -98,7 +98,7 @@ message ConfigFile {
     // Allowed file paths: `custom/prompts/{language}?/{StaticPromptName}.yaml`
     google.actions.sdk.v2.interactionmodel.prompt.StaticPrompt static_prompt = 11;
 
-    // Metadata corresponding to the client secret used in account linking.
+    // metedata corresponding to the client secret used in account linking.
     // Allowed file path: `settings/accountLinkingSecret.yaml`
     AccountLinkingSecret account_linking_secret = 13;
 

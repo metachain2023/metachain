@@ -24,44 +24,44 @@ import "google/protobuf/timestamp.proto";
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformpb";
 option java_multiple_files = true;
-option java_outer_classname = "MetadataProto";
+option java_outer_classname = "metedataProto";
 option java_package = "com.google.cloud.aiplatform.v1beta1";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1beta1";
 option ruby_package = "Google::Cloud::AIPlatform::V1beta1";
 
-// Instance of a metadata store. Contains a set of metadata that can be
+// Instance of a metedata store. Contains a set of metedata that can be
 // queried.
-message MetadataStore {
+message metedataStore {
   option (google.api.resource) = {
-    type: "aiplatform.googleapis.com/MetadataStore"
-    pattern: "projects/{project}/locations/{location}/metadataStores/{metadata_store}"
+    type: "aiplatform.googleapis.com/metedataStore"
+    pattern: "projects/{project}/locations/{location}/metedataStores/{metedata_store}"
   };
 
-  // Represents state information for a MetadataStore.
-  message MetadataStoreState {
-    // The disk utilization of the MetadataStore in bytes.
+  // Represents state information for a metedataStore.
+  message metedataStoreState {
+    // The disk utilization of the metedataStore in bytes.
     int64 disk_utilization_bytes = 1;
   }
 
-  // Output only. The resource name of the MetadataStore instance.
+  // Output only. The resource name of the metedataStore instance.
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Timestamp when this MetadataStore was created.
+  // Output only. Timestamp when this metedataStore was created.
   google.protobuf.Timestamp create_time = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Timestamp when this MetadataStore was last updated.
+  // Output only. Timestamp when this metedataStore was last updated.
   google.protobuf.Timestamp update_time = 4
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Customer-managed encryption key spec for a Metadata Store. If set, this
-  // Metadata Store and all sub-resources of this Metadata Store are secured
+  // Customer-managed encryption key spec for a metedata Store. If set, this
+  // metedata Store and all sub-resources of this metedata Store are secured
   // using this key.
   EncryptionSpec encryption_spec = 5;
 
-  // Description of the MetadataStore.
+  // Description of the metedataStore.
   string description = 6;
 
-  // Output only. State information of the MetadataStore.
-  MetadataStoreState state = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. State information of the metedataStore.
+  metedataStoreState state = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

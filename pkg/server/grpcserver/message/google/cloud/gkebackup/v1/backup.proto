@@ -41,7 +41,7 @@ message Backup {
   };
 
   // Information about the GKE cluster from which this Backup was created.
-  message ClusterMetadata {
+  message Clustermetedata {
     // The source cluster from which this Backup was created.
     // Valid formats:
     //
@@ -177,7 +177,7 @@ message Backup {
   bool contains_secrets = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Information about the GKE cluster from which this Backup was created.
-  ClusterMetadata cluster_metadata = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
+  Clustermetedata cluster_metedata = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Current state of the Backup
   State state = 18 [(google.api.field_behavior) = OUTPUT_ONLY];

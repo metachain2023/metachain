@@ -26,8 +26,8 @@ option java_package = "com.google.appengine.v1beta";
 option php_namespace = "Google\\Cloud\\AppEngine\\V1beta";
 option ruby_package = "Google::Cloud::AppEngine::V1beta";
 
-// Metadata for the given [google.cloud.location.Location][google.cloud.location.Location].
-message LocationMetadata {
+// metedata for the given [google.cloud.location.Location][google.cloud.location.Location].
+message Locationmetedata {
   // App Engine standard environment is available in the given location.
   //
   // @OutputOnly

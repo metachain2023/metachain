@@ -140,7 +140,7 @@ service ArtifactRegistry {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.devtools.artifactregistry.v1.ImportAptArtifactsResponse"
-      metadata_type: "google.devtools.artifactregistry.v1.ImportAptArtifactsMetadata"
+      metedata_type: "google.devtools.artifactregistry.v1.ImportAptArtifactsmetedata"
     };
   }
 
@@ -156,7 +156,7 @@ service ArtifactRegistry {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.devtools.artifactregistry.v1.ImportYumArtifactsResponse"
-      metadata_type: "google.devtools.artifactregistry.v1.ImportYumArtifactsMetadata"
+      metedata_type: "google.devtools.artifactregistry.v1.ImportYumArtifactsmetedata"
     };
   }
 
@@ -188,7 +188,7 @@ service ArtifactRegistry {
     option (google.api.method_signature) = "parent,repository,repository_id";
     option (google.longrunning.operation_info) = {
       response_type: "google.devtools.artifactregistry.v1.Repository"
-      metadata_type: "google.devtools.artifactregistry.v1.OperationMetadata"
+      metedata_type: "google.devtools.artifactregistry.v1.Operationmetedata"
     };
   }
 
@@ -203,7 +203,7 @@ service ArtifactRegistry {
 
   // Deletes a repository and all of its contents. The returned Operation will
   // finish once the repository has been deleted. It will not have any Operation
-  // metadata and will return a google.protobuf.Empty response.
+  // metedata and will return a google.protobuf.Empty response.
   rpc DeleteRepository(DeleteRepositoryRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -212,7 +212,7 @@ service ArtifactRegistry {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.devtools.artifactregistry.v1.OperationMetadata"
+      metedata_type: "google.devtools.artifactregistry.v1.Operationmetedata"
     };
   }
 
@@ -242,7 +242,7 @@ service ArtifactRegistry {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.devtools.artifactregistry.v1.OperationMetadata"
+      metedata_type: "google.devtools.artifactregistry.v1.Operationmetedata"
     };
   }
 
@@ -272,7 +272,7 @@ service ArtifactRegistry {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.devtools.artifactregistry.v1.OperationMetadata"
+      metedata_type: "google.devtools.artifactregistry.v1.Operationmetedata"
     };
   }
 
@@ -396,5 +396,5 @@ service ArtifactRegistry {
   }
 }
 
-// Metadata type for longrunning-operations, currently empty.
-message OperationMetadata {}
+// metedata type for longrunning-operations, currently empty.
+message Operationmetedata {}

@@ -53,7 +53,7 @@ service DocumentUnderstandingService {
     option (google.api.method_signature) = "requests";
     option (google.longrunning.operation_info) = {
       response_type: "BatchProcessDocumentsResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -245,7 +245,7 @@ message AutoMlParams {
   string model = 1;
 }
 
-// The desired input location and metadata.
+// The desired input location and metedata.
 message InputConfig {
   // Required.
   oneof source {
@@ -269,7 +269,7 @@ message InputConfig {
   string mime_type = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// The desired output location and metadata.
+// The desired output location and metedata.
 message OutputConfig {
   // Required.
   oneof destination {
@@ -307,8 +307,8 @@ message GcsDestination {
   string uri = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Contains metadata for the BatchProcessDocuments operation.
-message OperationMetadata {
+// Contains metedata for the BatchProcessDocuments operation.
+message Operationmetedata {
   enum State {
     // The default value. This value is used if the state is omitted.
     STATE_UNSPECIFIED = 0;

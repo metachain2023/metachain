@@ -82,12 +82,12 @@ message SparkHistoryServerConfig {
 
 // Auxiliary services configuration for a workload.
 message PeripheralsConfig {
-  // Optional. Resource name of an existing Dataproc Metastore service.
+  // Optional. Resource name of an existing Dataproc metestore service.
   //
   // Example:
   //
   // * `projects/[project_id]/locations/[region]/services/[service_id]`
-  string metastore_service = 1 [
+  string metestore_service = 1 [
     (google.api.field_behavior) = OPTIONAL
   ];
 

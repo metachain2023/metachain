@@ -72,7 +72,7 @@ service UserEventService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.PurgeUserEventsResponse"
-      metadata_type: "google.cloud.retail.v2alpha.PurgeMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.Purgemetedata"
     };
   }
 
@@ -82,7 +82,7 @@ service UserEventService {
   //
   // `Operation.response` is of type `ImportResponse`. Note that it is
   // possible for a subset of the items to be successfully inserted.
-  // `Operation.metadata` is of type `ImportMetadata`.
+  // `Operation.metedata` is of type `Importmetedata`.
   rpc ImportUserEvents(ImportUserEventsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -91,7 +91,7 @@ service UserEventService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.ImportUserEventsResponse"
-      metadata_type: "google.cloud.retail.v2alpha.ImportMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.Importmetedata"
     };
   }
 
@@ -111,7 +111,7 @@ service UserEventService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "RejoinUserEventsResponse"
-      metadata_type: "RejoinUserEventsMetadata"
+      metedata_type: "RejoinUserEventsmetedata"
     };
   }
 }
@@ -206,5 +206,5 @@ message RejoinUserEventsResponse {
   int64 rejoined_user_events_count = 1;
 }
 
-// Metadata for `RejoinUserEvents` method.
-message RejoinUserEventsMetadata {}
+// metedata for `RejoinUserEvents` method.
+message RejoinUserEventsmetedata {}

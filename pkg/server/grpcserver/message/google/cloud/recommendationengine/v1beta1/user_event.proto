@@ -29,7 +29,7 @@ option objc_class_prefix = "RECAI";
 option php_namespace = "Google\\Cloud\\RecommendationEngine\\V1beta1";
 option ruby_package = "Google::Cloud::RecommendationEngine::V1beta1";
 
-// UserEvent captures all metadata information recommendation engine needs to
+// UserEvent captures all metedata information recommendation engine needs to
 // know about how end users interact with customers' website.
 message UserEvent {
   // User event source.
@@ -76,7 +76,7 @@ message UserEvent {
   // recommendation types.
   EventDetail event_detail = 3 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Retail product specific user event metadata.
+  // Optional. Retail product specific user event metedata.
   //
   // This field is required for the following event types:
   //

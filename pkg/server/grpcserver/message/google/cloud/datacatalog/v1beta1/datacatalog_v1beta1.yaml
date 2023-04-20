@@ -10,7 +10,7 @@ apis:
 
 documentation:
   summary: |-
-    A fully managed and highly scalable data discovery and metadata management
+    A fully managed and highly scalable data discovery and metedata management
     service.
   overview: |-
     DataCatalog is a centralized and unified data catalog service for all your

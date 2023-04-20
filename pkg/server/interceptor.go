@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"metachain/pkg/logger"
+	"metechain/pkg/logger"
 
 	"go.uber.org/zap"
 	"google.golang.org/grpc"

@@ -52,9 +52,9 @@ message Annotation {
   // bounding box values are stored here.
   AnnotationValue annotation_value = 3;
 
-  // Output only. Annotation metadata, including information like votes
+  // Output only. Annotation metedata, including information like votes
   // for labels.
-  AnnotationMetadata annotation_metadata = 4;
+  Annotationmetedata annotation_metedata = 4;
 
   // Output only. Sentiment for this annotation.
   AnnotationSentiment annotation_sentiment = 6;
@@ -322,13 +322,13 @@ message VideoEventAnnotation {
 }
 
 // Additional information associated with the annotation.
-message AnnotationMetadata {
-  // Metadata related to human labeling.
-  OperatorMetadata operator_metadata = 2;
+message Annotationmetedata {
+  // metedata related to human labeling.
+  Operatormetedata operator_metedata = 2;
 }
 
 // General information useful for labels coming from contributors.
-message OperatorMetadata {
+message Operatormetedata {
   // Confidence score corresponding to a label. For examle, if 3 contributors
   // have answered the question and 2 of them agree on the final label, the
   // confidence score will be 0.67 (2/3).

@@ -112,7 +112,7 @@ message Settings {
   map<string, DetectorGroupSettings> detector_group_settings = 8;
 
   // A fingerprint used for optimistic concurrency. If none is provided
-  // on updates then the existing metadata will be blindly overwritten.
+  // on updates then the existing metedata will be blindly overwritten.
   string etag = 9;
 
   // Output only. The time these settings were last updated.

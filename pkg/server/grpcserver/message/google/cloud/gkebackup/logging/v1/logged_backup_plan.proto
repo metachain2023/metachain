@@ -82,7 +82,7 @@ message LoggedBackupPlan {
     bool include_secrets = 5;
 
     // Custom encryption key. For preview, support GCP KMS only.
-    // This only contains the key metadata, and no key material.
+    // This only contains the key metedata, and no key material.
     EncryptionKey encryption_key = 6;
   }
 

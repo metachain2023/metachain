@@ -44,8 +44,8 @@ service ConversationModels {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [CreateConversationModelOperationMetadata][google.cloud.dialogflow.v2.CreateConversationModelOperationMetadata]
+  // - `metedata`:
+  // [CreateConversationModelOperationmetedata][google.cloud.dialogflow.v2.CreateConversationModelOperationmetedata]
   // - `response`:
   // [ConversationModel][google.cloud.dialogflow.v2.ConversationModel]
   rpc CreateConversationModel(CreateConversationModelRequest)
@@ -61,7 +61,7 @@ service ConversationModels {
     option (google.api.method_signature) = "parent,conversation_model";
     option (google.longrunning.operation_info) = {
       response_type: "ConversationModel"
-      metadata_type: "CreateConversationModelOperationMetadata"
+      metedata_type: "CreateConversationModelOperationmetedata"
     };
   }
 
@@ -95,8 +95,8 @@ service ConversationModels {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [DeleteConversationModelOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationModelOperationMetadata]
+  // - `metedata`:
+  // [DeleteConversationModelOperationmetedata][google.cloud.dialogflow.v2.DeleteConversationModelOperationmetedata]
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
   rpc DeleteConversationModel(DeleteConversationModelRequest)
@@ -110,7 +110,7 @@ service ConversationModels {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteConversationModelOperationMetadata"
+      metedata_type: "DeleteConversationModelOperationmetedata"
     };
   }
 
@@ -123,8 +123,8 @@ service ConversationModels {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [DeployConversationModelOperationMetadata][google.cloud.dialogflow.v2.DeployConversationModelOperationMetadata]
+  // - `metedata`:
+  // [DeployConversationModelOperationmetedata][google.cloud.dialogflow.v2.DeployConversationModelOperationmetedata]
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
   rpc DeployConversationModel(DeployConversationModelRequest)
@@ -139,7 +139,7 @@ service ConversationModels {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeployConversationModelOperationMetadata"
+      metedata_type: "DeployConversationModelOperationmetedata"
     };
   }
 
@@ -152,8 +152,8 @@ service ConversationModels {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [UndeployConversationModelOperationMetadata][google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata]
+  // - `metedata`:
+  // [UndeployConversationModelOperationmetedata][google.cloud.dialogflow.v2.UndeployConversationModelOperationmetedata]
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
   rpc UndeployConversationModel(UndeployConversationModelRequest)
@@ -168,7 +168,7 @@ service ConversationModels {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "UndeployConversationModelOperationMetadata"
+      metedata_type: "UndeployConversationModelOperationmetedata"
     };
   }
 
@@ -208,7 +208,7 @@ service ConversationModels {
         "parent,conversation_model_evaluation";
     option (google.longrunning.operation_info) = {
       response_type: "ConversationModelEvaluation"
-      metadata_type: "CreateConversationModelEvaluationOperationMetadata"
+      metedata_type: "CreateConversationModelEvaluationOperationmetedata"
     };
   }
 }
@@ -291,14 +291,14 @@ message ConversationModel {
   string language_code = 19;
 
   // Required.
-  // The model metadata that is specific to the problem type.
-  // Must match the metadata type of the dataset used to train the model.
-  oneof model_metadata {
-    // Metadata for article suggestion models.
-    ArticleSuggestionModelMetadata article_suggestion_model_metadata = 8;
+  // The model metedata that is specific to the problem type.
+  // Must match the metedata type of the dataset used to train the model.
+  oneof model_metedata {
+    // metedata for article suggestion models.
+    ArticleSuggestionModelmetedata article_suggestion_model_metedata = 8;
 
-    // Metadata for smart reply models.
-    SmartReplyModelMetadata smart_reply_model_metadata = 9;
+    // metedata for smart reply models.
+    SmartReplyModelmetedata smart_reply_model_metedata = 9;
   }
 }
 
@@ -413,16 +413,16 @@ message InputDataset {
   ];
 }
 
-// Metadata for article suggestion models.
-message ArticleSuggestionModelMetadata {
+// metedata for article suggestion models.
+message ArticleSuggestionModelmetedata {
   // Optional. Type of the article suggestion model. If not provided, model_type
   // is used.
   ConversationModel.ModelType training_model_type = 3
       [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Metadata for smart reply models.
-message SmartReplyModelMetadata {
+// metedata for smart reply models.
+message SmartReplyModelmetedata {
   // Optional. Type of the smart reply model. If not provided, model_type is
   // used.
   ConversationModel.ModelType training_model_type = 6
@@ -580,10 +580,10 @@ message CreateConversationModelEvaluationRequest {
       [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for a
+// metedata for a
 // [ConversationModels.CreateConversationModel][google.cloud.dialogflow.v2.ConversationModels.CreateConversationModel]
 // operation.
-message CreateConversationModelOperationMetadata {
+message CreateConversationModelOperationmetedata {
   // State of CreateConversationModel operation.
   enum State {
     // Invalid.
@@ -622,10 +622,10 @@ message CreateConversationModelOperationMetadata {
   google.protobuf.Timestamp create_time = 3;
 }
 
-// Metadata for a
+// metedata for a
 // [ConversationModels.DeployConversationModel][google.cloud.dialogflow.v2.ConversationModels.DeployConversationModel]
 // operation.
-message DeployConversationModelOperationMetadata {
+message DeployConversationModelOperationmetedata {
   // The resource name of the conversation model. Format:
   // `projects/<Project ID>/conversationModels/<Conversation Model Id>`
   string conversation_model = 1;
@@ -635,10 +635,10 @@ message DeployConversationModelOperationMetadata {
   google.protobuf.Timestamp create_time = 3;
 }
 
-// Metadata for a
+// metedata for a
 // [ConversationModels.UndeployConversationModel][google.cloud.dialogflow.v2.ConversationModels.UndeployConversationModel]
 // operation.
-message UndeployConversationModelOperationMetadata {
+message UndeployConversationModelOperationmetedata {
   // The resource name of the conversation model. Format:
   // `projects/<Project ID>/conversationModels/<Conversation Model Id>`
   string conversation_model = 1;
@@ -648,10 +648,10 @@ message UndeployConversationModelOperationMetadata {
   google.protobuf.Timestamp create_time = 3;
 }
 
-// Metadata for a
+// metedata for a
 // [ConversationModels.DeleteConversationModel][google.cloud.dialogflow.v2.ConversationModels.DeleteConversationModel]
 // operation.
-message DeleteConversationModelOperationMetadata {
+message DeleteConversationModelOperationmetedata {
   // The resource name of the conversation model. Format:
   // `projects/<Project ID>/conversationModels/<Conversation Model Id>`
   string conversation_model = 1;
@@ -661,10 +661,10 @@ message DeleteConversationModelOperationMetadata {
   google.protobuf.Timestamp create_time = 3;
 }
 
-// Metadata for a
+// metedata for a
 // [ConversationModels.CreateConversationModelEvaluation][google.cloud.dialogflow.v2.ConversationModels.CreateConversationModelEvaluation]
 // operation.
-message CreateConversationModelEvaluationOperationMetadata {
+message CreateConversationModelEvaluationOperationmetedata {
   // State of CreateConversationModel operation.
   enum State {
     // Operation status not specified.

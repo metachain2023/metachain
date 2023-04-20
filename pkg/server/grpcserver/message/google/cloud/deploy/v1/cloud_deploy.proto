@@ -82,7 +82,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "parent,delivery_pipeline,delivery_pipeline_id";
     option (google.longrunning.operation_info) = {
       response_type: "DeliveryPipeline"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -95,7 +95,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "delivery_pipeline,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "DeliveryPipeline"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -107,7 +107,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -136,7 +136,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "parent,target,target_id";
     option (google.longrunning.operation_info) = {
       response_type: "Target"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -149,7 +149,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "target,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Target"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -161,7 +161,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -190,7 +190,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "parent,release,release_id";
     option (google.longrunning.operation_info) = {
       response_type: "Release"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -237,7 +237,7 @@ service CloudDeploy {
     option (google.api.method_signature) = "parent,rollout,rollout_id";
     option (google.longrunning.operation_info) = {
       response_type: "Rollout"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -1420,25 +1420,25 @@ message Rollout {
   // Output only. The phases that represent the workflows of this `Rollout`.
   repeated Phase phases = 23 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Metadata contains information about the rollout.
-  Metadata metadata = 24 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. metedata contains information about the rollout.
+  metedata metedata = 24 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Metadata includes information associated with a `Rollout`.
-message Metadata {
+// metedata includes information associated with a `Rollout`.
+message metedata {
   // Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-  CloudRunMetadata cloud_run = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  CloudRunmetedata cloud_run = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// DeployJobRunMetadata surfaces information associated with a `DeployJobRun` to
+// DeployJobRunmetedata surfaces information associated with a `DeployJobRun` to
 // the user.
-message DeployJobRunMetadata {
+message DeployJobRunmetedata {
   // Output only. The name of the Cloud Run Service that is associated with a `DeployJobRun`.
-  CloudRunMetadata cloud_run = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  CloudRunmetedata cloud_run = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// CloudRunMetadata contains information from a Cloud Run deployment.
-message CloudRunMetadata {
+// CloudRunmetedata contains information from a Cloud Run deployment.
+message CloudRunmetedata {
   // Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
   // Format is projects/{project}/locations/{location}/services/{service}.
   string service = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -1650,8 +1650,8 @@ message CreateRolloutRequest {
   bool validate_only = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -1841,8 +1841,8 @@ message DeployJobRun {
   // Output only. Additional information about the deploy failure, if available.
   string failure_message = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Metadata containing information about the deploy job run.
-  DeployJobRunMetadata metadata = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. metedata containing information about the deploy job run.
+  DeployJobRunmetedata metedata = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // VerifyJobRun contains information specific to a verify `JobRun`.

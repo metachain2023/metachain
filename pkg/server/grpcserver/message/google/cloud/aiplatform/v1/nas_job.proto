@@ -79,7 +79,7 @@ message NasJob {
   // JOB_STATE_CANCELLED.
   google.rpc.Status error = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The labels with user-defined metadata to organize NasJobs.
+  // The labels with user-defined metedata to organize NasJobs.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

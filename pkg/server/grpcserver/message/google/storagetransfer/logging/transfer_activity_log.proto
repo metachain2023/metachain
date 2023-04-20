@@ -27,8 +27,8 @@ option csharp_namespace = "Google.StorageTransfer.Logging";
 option php_namespace = "Google\\StorageTransfer\\Logging";
 option ruby_package = "Google::StorageTransfer::Logging";
 
-// AWS S3 object metadata.
-message AwsS3ObjectMetadata {
+// AWS S3 object metedata.
+message AwsS3Objectmetedata {
   // Required. Name of the S3 bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -45,8 +45,8 @@ message AwsS3ObjectMetadata {
   int64 size = 5 [(google.api.field_behavior) = REQUIRED];
 }
 
-// AWS S3 bucket metadata.
-message AwsS3BucketMetadata {
+// AWS S3 bucket metedata.
+message AwsS3Bucketmetedata {
   // Required. Name of the S3 bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -54,8 +54,8 @@ message AwsS3BucketMetadata {
   string path = 2;
 }
 
-// Google Cloud Storage object metadata.
-message GcsObjectMetadata {
+// Google Cloud Storage object metedata.
+message GcsObjectmetedata {
   // Required. Name of the Cloud Storage bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -75,8 +75,8 @@ message GcsObjectMetadata {
   int64 size = 6 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Google Cloud Storage bucket metadata.
-message GcsBucketMetadata {
+// Google Cloud Storage bucket metedata.
+message GcsBucketmetedata {
   // Required. Name of the Cloud Storage bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -84,8 +84,8 @@ message GcsBucketMetadata {
   string path = 2;
 }
 
-// Azure Blob Storage blob metadata.
-message AzureBlobMetadata {
+// Azure Blob Storage blob metedata.
+message AzureBlobmetedata {
   // Required. Name of the Azure Blob storage account.
   string account = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -105,8 +105,8 @@ message AzureBlobMetadata {
   int64 size = 6 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Azure Blob Storage container metadata.
-message AzureBlobContainerMetadata {
+// Azure Blob Storage container metedata.
+message AzureBlobContainermetedata {
   // Required. Name of the Azure Blob storage account.
   string account = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -117,8 +117,8 @@ message AzureBlobContainerMetadata {
   string path = 3;
 }
 
-// POSIX file metadata.
-message PosixFileMetadata {
+// POSIX file metedata.
+message PosixFilemetedata {
   // Required. Path of a file.
   string path = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -132,8 +132,8 @@ message PosixFileMetadata {
   int64 size = 4 [(google.api.field_behavior) = REQUIRED];
 }
 
-// HTTP file metadata.
-message HttpFileMetadata {
+// HTTP file metedata.
+message HttpFilemetedata {
   // Required. Url of the HTTP file.
   string url = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -144,56 +144,56 @@ message HttpFileMetadata {
   int64 size = 3;
 }
 
-// HTTP manifest file metadata.
-message HttpManifestMetadata {
+// HTTP manifest file metedata.
+message HttpManifestmetedata {
   // Required. Url of the HTTP manifest which contains the list of HTTP files to
   // transfer.
   string url = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata of a blob/file/object.
-message ObjectMetadata {
+// metedata of a blob/file/object.
+message Objectmetedata {
   // Required. Storage system type of the object.
   StorageSystemType type = 1 [(google.api.field_behavior) = REQUIRED];
 
-  oneof metadata {
-    // Object metadata of AWS S3.
-    AwsS3ObjectMetadata aws_s3_object = 3;
+  oneof metedata {
+    // Object metedata of AWS S3.
+    AwsS3Objectmetedata aws_s3_object = 3;
 
-    // Blob metadata of Azure Blob Storage.
-    AzureBlobMetadata azure_blob = 4;
+    // Blob metedata of Azure Blob Storage.
+    AzureBlobmetedata azure_blob = 4;
 
-    // Object metadata of Google Cloud Storage.
-    GcsObjectMetadata gcs_object = 5;
+    // Object metedata of Google Cloud Storage.
+    GcsObjectmetedata gcs_object = 5;
 
-    // File/directory metadata of POSIX file system.
-    PosixFileMetadata posix_file = 6;
+    // File/directory metedata of POSIX file system.
+    PosixFilemetedata posix_file = 6;
 
-    // Metadata of a file on a HTTP server.
-    HttpFileMetadata http_file = 7;
+    // metedata of a file on a HTTP server.
+    HttpFilemetedata http_file = 7;
   }
 }
 
-// Metadata of a bucket/container/directory
-message ContainerMetadata {
+// metedata of a bucket/container/directory
+message Containermetedata {
   // Required. Storage system type of the object.
   StorageSystemType type = 1 [(google.api.field_behavior) = REQUIRED];
 
-  oneof metadata {
-    // Bucket metadata of AWS S3.
-    AwsS3BucketMetadata aws_s3_bucket = 3;
+  oneof metedata {
+    // Bucket metedata of AWS S3.
+    AwsS3Bucketmetedata aws_s3_bucket = 3;
 
-    // Container metadata of Azure Blob Storage.
-    AzureBlobContainerMetadata azure_blob_container = 4;
+    // Container metedata of Azure Blob Storage.
+    AzureBlobContainermetedata azure_blob_container = 4;
 
-    // Bucket metadata of Google Cloud Storage.
-    GcsBucketMetadata gcs_bucket = 5;
+    // Bucket metedata of Google Cloud Storage.
+    GcsBucketmetedata gcs_bucket = 5;
 
-    // Directory metadata of POSIX file system.
-    PosixFileMetadata posix_directory = 6;
+    // Directory metedata of POSIX file system.
+    PosixFilemetedata posix_directory = 6;
 
-    // Metadata of a manifest file on a HTTP server.
-    HttpManifestMetadata http_manifest = 7;
+    // metedata of a manifest file on a HTTP server.
+    HttpManifestmetedata http_manifest = 7;
   }
 }
 
@@ -239,21 +239,21 @@ message TransferActivityLog {
   // Required. Status of the action.
   Status status = 3 [(google.api.field_behavior) = REQUIRED];
 
-  // Metadata of source bucket/container/directory. Only set if the action is
+  // metedata of source bucket/container/directory. Only set if the action is
   // FIND.
-  ContainerMetadata source_container = 4;
+  Containermetedata source_container = 4;
 
-  // Metadata of destination bucket/container/directory. Only set if the action
+  // metedata of destination bucket/container/directory. Only set if the action
   // is FIND.
-  ContainerMetadata destination_container = 5;
+  Containermetedata destination_container = 5;
 
-  // Metadata of the source blob/file/object. Only set if the action is COPY or
+  // metedata of the source blob/file/object. Only set if the action is COPY or
   // DELETE when deletion is applied to source.
-  ObjectMetadata source_object = 6;
+  Objectmetedata source_object = 6;
 
-  // Metadata of the destination blob/file/object. Only set if the action is
+  // metedata of the destination blob/file/object. Only set if the action is
   // or DELETE when deletion is applied to destination.
-  ObjectMetadata destination_object = 7;
+  Objectmetedata destination_object = 7;
 
   // Required. Completion time of the action.
   google.protobuf.Timestamp complete_time = 8

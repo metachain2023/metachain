@@ -69,7 +69,7 @@ service MetricsScopes {
     option (google.api.method_signature) = "parent,monitored_project";
     option (google.longrunning.operation_info) = {
       response_type: "MonitoredProject"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -81,7 +81,7 @@ service MetricsScopes {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -151,9 +151,9 @@ message DeleteMonitoredProjectRequest {
   ];
 }
 
-// Contains metadata for longrunning operation for the edit Metrics Scope
+// Contains metedata for longrunning operation for the edit Metrics Scope
 // endpoints.
-message OperationMetadata {
+message Operationmetedata {
   // Batch operation states.
   enum State {
     // Invalid.

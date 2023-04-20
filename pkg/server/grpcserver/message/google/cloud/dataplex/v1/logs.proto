@@ -35,13 +35,13 @@ message DiscoveryEvent {
     // An event representing discovery configuration in effect.
     CONFIG = 1;
 
-    // An event representing a metadata entity being created.
+    // An event representing a metedata entity being created.
     ENTITY_CREATED = 2;
 
-    // An event representing a metadata entity being updated.
+    // An event representing a metedata entity being updated.
     ENTITY_UPDATED = 3;
 
-    // An event representing a metadata entity being deleted.
+    // An event representing a metedata entity being deleted.
     ENTITY_DELETED = 4;
 
     // An event representing a partition being created.
@@ -99,7 +99,7 @@ message DiscoveryEvent {
     EntityType type = 3;
 
     // The locations of the data items (e.g., a Cloud Storage objects) sampled
-    // for metadata inference.
+    // for metedata inference.
     repeated string sampled_data_locations = 4;
   }
 
@@ -282,7 +282,7 @@ message SessionEvent {
   // The type of the event.
   EventType type = 4;
 
-  // Additional information about the Query metadata.
+  // Additional information about the Query metedata.
   oneof detail {
     // The execution details of the query.
     QueryDetail query = 5;

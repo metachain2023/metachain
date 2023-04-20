@@ -1,8 +1,8 @@
-module metachain
+module metechain
 
 go 1.18
 
-replace metachain => ./
+replace metechain => ./
 
 require (
 	github.com/beevik/ntp v0.3.0
@@ -36,7 +36,7 @@ require (
 
 require (
 	cloud.google.com/go/compute v1.19.0 // indirect
-	cloud.google.com/go/compute/metadata v0.2.3 // indirect
+	cloud.google.com/go/compute/metedata v0.2.3 // indirect
 	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
 	github.com/BurntSushi/toml v0.4.0 // indirect
 	github.com/DataDog/zstd v1.4.5 // indirect

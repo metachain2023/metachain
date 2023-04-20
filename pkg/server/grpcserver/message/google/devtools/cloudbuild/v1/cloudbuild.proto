@@ -93,7 +93,7 @@ service CloudBuild {
     option (google.api.method_signature) = "project_id,build";
     option (google.longrunning.operation_info) = {
       response_type: "Build"
-      metadata_type: "BuildOperationMetadata"
+      metedata_type: "BuildOperationmetedata"
     };
   }
 
@@ -173,7 +173,7 @@ service CloudBuild {
     option (google.api.method_signature) = "project_id,id";
     option (google.longrunning.operation_info) = {
       response_type: "Build"
-      metadata_type: "BuildOperationMetadata"
+      metedata_type: "BuildOperationmetedata"
     };
   }
 
@@ -195,7 +195,7 @@ service CloudBuild {
     option (google.api.method_signature) = "name,approval_result";
     option (google.longrunning.operation_info) = {
       response_type: "Build"
-      metadata_type: "BuildOperationMetadata"
+      metedata_type: "BuildOperationmetedata"
     };
   }
 
@@ -284,7 +284,7 @@ service CloudBuild {
     option (google.api.method_signature) = "project_id,trigger_id,source";
     option (google.longrunning.operation_info) = {
       response_type: "Build"
-      metadata_type: "BuildOperationMetadata"
+      metedata_type: "BuildOperationmetedata"
     };
   }
 
@@ -312,7 +312,7 @@ service CloudBuild {
     option (google.api.method_signature) = "parent,worker_pool,worker_pool_id";
     option (google.longrunning.operation_info) = {
       response_type: "WorkerPool"
-      metadata_type: "CreateWorkerPoolOperationMetadata"
+      metedata_type: "CreateWorkerPoolOperationmetedata"
     };
   }
 
@@ -333,7 +333,7 @@ service CloudBuild {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteWorkerPoolOperationMetadata"
+      metedata_type: "DeleteWorkerPoolOperationmetedata"
     };
   }
 
@@ -347,7 +347,7 @@ service CloudBuild {
     option (google.api.method_signature) = "worker_pool,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "WorkerPool"
-      metadata_type: "UpdateWorkerPoolOperationMetadata"
+      metedata_type: "UpdateWorkerPoolOperationmetedata"
     };
   }
 
@@ -1084,8 +1084,8 @@ message TimeSpan {
   google.protobuf.Timestamp end_time = 2;
 }
 
-// Metadata for build operations.
-message BuildOperationMetadata {
+// metedata for build operations.
+message BuildOperationmetedata {
   // The build that the operation is tracking.
   Build build = 1;
 }
@@ -1298,7 +1298,7 @@ message ApproveBuildRequest {
   // For example: "projects/{$project_id}/builds/{$build_id}"
   string name = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Approval decision and metadata.
+  // Approval decision and metedata.
   ApprovalResult approval_result = 2;
 }
 
@@ -1341,7 +1341,7 @@ message ApprovalConfig {
   bool approval_required = 1;
 }
 
-// ApprovalResult describes the decision and associated metadata of a manual
+// ApprovalResult describes the decision and associated metedata of a manual
 // approval of a build.
 message ApprovalResult {
   // Specifies whether or not this manual approval result is to approve
@@ -2205,8 +2205,8 @@ message ListWorkerPoolsResponse {
   string next_page_token = 2;
 }
 
-// Metadata for the `CreateWorkerPool` operation.
-message CreateWorkerPoolOperationMetadata {
+// metedata for the `CreateWorkerPool` operation.
+message CreateWorkerPoolOperationmetedata {
   // The resource name of the `WorkerPool` to create.
   // Format:
   // `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
@@ -2221,8 +2221,8 @@ message CreateWorkerPoolOperationMetadata {
   google.protobuf.Timestamp complete_time = 3;
 }
 
-// Metadata for the `UpdateWorkerPool` operation.
-message UpdateWorkerPoolOperationMetadata {
+// metedata for the `UpdateWorkerPool` operation.
+message UpdateWorkerPoolOperationmetedata {
   // The resource name of the `WorkerPool` being updated.
   // Format:
   // `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
@@ -2237,8 +2237,8 @@ message UpdateWorkerPoolOperationMetadata {
   google.protobuf.Timestamp complete_time = 3;
 }
 
-// Metadata for the `DeleteWorkerPool` operation.
-message DeleteWorkerPoolOperationMetadata {
+// metedata for the `DeleteWorkerPool` operation.
+message DeleteWorkerPoolOperationmetedata {
   // The resource name of the `WorkerPool` being deleted.
   // Format:
   // `projects/{project}/locations/{location}/workerPools/{worker_pool}`.

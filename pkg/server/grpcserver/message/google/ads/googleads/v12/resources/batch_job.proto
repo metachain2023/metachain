@@ -41,8 +41,8 @@ message BatchJob {
   };
 
   // Additional information about the batch job. This message is also used as
-  // metadata returned in batch job Long Running Operations.
-  message BatchJobMetadata {
+  // metedata returned in batch job Long Running Operations.
+  message BatchJobmetedata {
     // Output only. The time when this batch job was created.
     // Formatted as yyyy-mm-dd hh:mm:ss. Example: "2018-03-05 09:15:00"
     optional string creation_date_time = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -86,7 +86,7 @@ message BatchJob {
   optional string next_add_sequence_token = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Contains additional information about this batch job.
-  BatchJobMetadata metadata = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  BatchJobmetedata metedata = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Status of this batch job.
   google.ads.googleads.v12.enums.BatchJobStatusEnum.BatchJobStatus status = 5 [(google.api.field_behavior) = OUTPUT_ONLY];

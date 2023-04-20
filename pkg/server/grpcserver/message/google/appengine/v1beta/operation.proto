@@ -26,8 +26,8 @@ option java_package = "com.google.appengine.v1beta";
 option php_namespace = "Google\\Cloud\\AppEngine\\V1beta";
 option ruby_package = "Google::Cloud::AppEngine::V1beta";
 
-// Metadata for the given [google.longrunning.Operation][google.longrunning.Operation].
-message OperationMetadataV1Beta {
+// metedata for the given [google.longrunning.Operation][google.longrunning.Operation].
+message OperationmetedataV1Beta {
   // API method that initiated this operation. Example:
   // `google.appengine.v1beta.Versions.CreateVersion`.
   //
@@ -63,16 +63,16 @@ message OperationMetadataV1Beta {
   // @OutputOnly
   repeated string warning = 7;
 
-  // Metadata specific to the type of operation in progress.
+  // metedata specific to the type of operation in progress.
   // @OutputOnly
-  oneof method_metadata {
-    CreateVersionMetadataV1Beta create_version_metadata = 8;
+  oneof method_metedata {
+    CreateVersionmetedataV1Beta create_version_metedata = 8;
   }
 }
 
-// Metadata for the given [google.longrunning.Operation][google.longrunning.Operation] during a
+// metedata for the given [google.longrunning.Operation][google.longrunning.Operation] during a
 // [google.appengine.v1beta.CreateVersionRequest][google.appengine.v1beta.CreateVersionRequest].
-message CreateVersionMetadataV1Beta {
+message CreateVersionmetedataV1Beta {
   // The Cloud Build ID if one was created as part of the version create.
   // @OutputOnly
   string cloud_build_id = 1;

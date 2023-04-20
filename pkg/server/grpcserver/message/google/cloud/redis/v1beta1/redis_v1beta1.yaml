@@ -7,8 +7,8 @@ apis:
 - name: google.cloud.redis.v1beta1.CloudRedis
 
 types:
-- name: google.cloud.redis.v1beta1.LocationMetadata
-- name: google.cloud.redis.v1beta1.ZoneMetadata
+- name: google.cloud.redis.v1beta1.Locationmetedata
+- name: google.cloud.redis.v1beta1.Zonemetedata
 
 documentation:
   summary: Creates and manages Redis instances on the Google Cloud Platform.

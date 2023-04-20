@@ -25,8 +25,8 @@ import "google/cloud/aiplatform/v1beta1/context.proto";
 import "google/cloud/aiplatform/v1beta1/event.proto";
 import "google/cloud/aiplatform/v1beta1/execution.proto";
 import "google/cloud/aiplatform/v1beta1/lineage_subgraph.proto";
-import "google/cloud/aiplatform/v1beta1/metadata_schema.proto";
-import "google/cloud/aiplatform/v1beta1/metadata_store.proto";
+import "google/cloud/aiplatform/v1beta1/metedata_schema.proto";
+import "google/cloud/aiplatform/v1beta1/metedata_store.proto";
 import "google/cloud/aiplatform/v1beta1/operation.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/field_mask.proto";
@@ -34,67 +34,67 @@ import "google/protobuf/field_mask.proto";
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformpb";
 option java_multiple_files = true;
-option java_outer_classname = "MetadataServiceProto";
+option java_outer_classname = "metedataServiceProto";
 option java_package = "com.google.cloud.aiplatform.v1beta1";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1beta1";
 option ruby_package = "Google::Cloud::AIPlatform::V1beta1";
 
-// Service for reading and writing metadata entries.
-service MetadataService {
+// Service for reading and writing metedata entries.
+service metedataService {
   option (google.api.default_host) = "aiplatform.googleapis.com";
   option (google.api.oauth_scopes) =
       "https://www.googleapis.com/auth/cloud-platform";
 
-  // Initializes a MetadataStore, including allocation of resources.
-  rpc CreateMetadataStore(CreateMetadataStoreRequest)
+  // Initializes a metedataStore, including allocation of resources.
+  rpc CreatemetedataStore(CreatemetedataStoreRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*}/metadataStores"
-      body: "metadata_store"
+      post: "/v1beta1/{parent=projects/*/locations/*}/metedataStores"
+      body: "metedata_store"
     };
     option (google.api.method_signature) =
-        "parent,metadata_store,metadata_store_id";
+        "parent,metedata_store,metedata_store_id";
     option (google.longrunning.operation_info) = {
-      response_type: "MetadataStore"
-      metadata_type: "CreateMetadataStoreOperationMetadata"
+      response_type: "metedataStore"
+      metedata_type: "CreatemetedataStoreOperationmetedata"
     };
   }
 
-  // Retrieves a specific MetadataStore.
-  rpc GetMetadataStore(GetMetadataStoreRequest) returns (MetadataStore) {
+  // Retrieves a specific metedataStore.
+  rpc GetmetedataStore(GetmetedataStoreRequest) returns (metedataStore) {
     option (google.api.http) = {
-      get: "/v1beta1/{name=projects/*/locations/*/metadataStores/*}"
+      get: "/v1beta1/{name=projects/*/locations/*/metedataStores/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Lists MetadataStores for a Location.
-  rpc ListMetadataStores(ListMetadataStoresRequest)
-      returns (ListMetadataStoresResponse) {
+  // Lists metedataStores for a Location.
+  rpc ListmetedataStores(ListmetedataStoresRequest)
+      returns (ListmetedataStoresResponse) {
     option (google.api.http) = {
-      get: "/v1beta1/{parent=projects/*/locations/*}/metadataStores"
+      get: "/v1beta1/{parent=projects/*/locations/*}/metedataStores"
     };
     option (google.api.method_signature) = "parent";
   }
 
-  // Deletes a single MetadataStore and all its child resources (Artifacts,
+  // Deletes a single metedataStore and all its child resources (Artifacts,
   // Executions, and Contexts).
-  rpc DeleteMetadataStore(DeleteMetadataStoreRequest)
+  rpc DeletemetedataStore(DeletemetedataStoreRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      delete: "/v1beta1/{name=projects/*/locations/*/metadataStores/*}"
+      delete: "/v1beta1/{name=projects/*/locations/*/metedataStores/*}"
     };
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteMetadataStoreOperationMetadata"
+      metedata_type: "DeletemetedataStoreOperationmetedata"
     };
   }
 
-  // Creates an Artifact associated with a MetadataStore.
+  // Creates an Artifact associated with a metedataStore.
   rpc CreateArtifact(CreateArtifactRequest) returns (Artifact) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/artifacts"
+      post: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/artifacts"
       body: "artifact"
     };
     option (google.api.method_signature) = "parent,artifact,artifact_id";
@@ -103,15 +103,15 @@ service MetadataService {
   // Retrieves a specific Artifact.
   rpc GetArtifact(GetArtifactRequest) returns (Artifact) {
     option (google.api.http) = {
-      get: "/v1beta1/{name=projects/*/locations/*/metadataStores/*/artifacts/*}"
+      get: "/v1beta1/{name=projects/*/locations/*/metedataStores/*/artifacts/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Lists Artifacts in the MetadataStore.
+  // Lists Artifacts in the metedataStore.
   rpc ListArtifacts(ListArtifactsRequest) returns (ListArtifactsResponse) {
     option (google.api.http) = {
-      get: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/artifacts"
+      get: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/artifacts"
     };
     option (google.api.method_signature) = "parent";
   }
@@ -119,7 +119,7 @@ service MetadataService {
   // Updates a stored Artifact.
   rpc UpdateArtifact(UpdateArtifactRequest) returns (Artifact) {
     option (google.api.http) = {
-      patch: "/v1beta1/{artifact.name=projects/*/locations/*/metadataStores/*/artifacts/*}"
+      patch: "/v1beta1/{artifact.name=projects/*/locations/*/metedataStores/*/artifacts/*}"
       body: "artifact"
     };
     option (google.api.method_signature) = "artifact,update_mask";
@@ -129,12 +129,12 @@ service MetadataService {
   rpc DeleteArtifact(DeleteArtifactRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      delete: "/v1beta1/{name=projects/*/locations/*/metadataStores/*/artifacts/*}"
+      delete: "/v1beta1/{name=projects/*/locations/*/metedataStores/*/artifacts/*}"
     };
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -142,20 +142,20 @@ service MetadataService {
   rpc PurgeArtifacts(PurgeArtifactsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/artifacts:purge"
+      post: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/artifacts:purge"
       body: "*"
     };
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "PurgeArtifactsResponse"
-      metadata_type: "PurgeArtifactsMetadata"
+      metedata_type: "PurgeArtifactsmetedata"
     };
   }
 
-  // Creates a Context associated with a MetadataStore.
+  // Creates a Context associated with a metedataStore.
   rpc CreateContext(CreateContextRequest) returns (Context) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/contexts"
+      post: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/contexts"
       body: "context"
     };
     option (google.api.method_signature) = "parent,context,context_id";
@@ -164,15 +164,15 @@ service MetadataService {
   // Retrieves a specific Context.
   rpc GetContext(GetContextRequest) returns (Context) {
     option (google.api.http) = {
-      get: "/v1beta1/{name=projects/*/locations/*/metadataStores/*/contexts/*}"
+      get: "/v1beta1/{name=projects/*/locations/*/metedataStores/*/contexts/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Lists Contexts on the MetadataStore.
+  // Lists Contexts on the metedataStore.
   rpc ListContexts(ListContextsRequest) returns (ListContextsResponse) {
     option (google.api.http) = {
-      get: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/contexts"
+      get: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/contexts"
     };
     option (google.api.method_signature) = "parent";
   }
@@ -180,7 +180,7 @@ service MetadataService {
   // Updates a stored Context.
   rpc UpdateContext(UpdateContextRequest) returns (Context) {
     option (google.api.http) = {
-      patch: "/v1beta1/{context.name=projects/*/locations/*/metadataStores/*/contexts/*}"
+      patch: "/v1beta1/{context.name=projects/*/locations/*/metedataStores/*/contexts/*}"
       body: "context"
     };
     option (google.api.method_signature) = "context,update_mask";
@@ -190,12 +190,12 @@ service MetadataService {
   rpc DeleteContext(DeleteContextRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      delete: "/v1beta1/{name=projects/*/locations/*/metadataStores/*/contexts/*}"
+      delete: "/v1beta1/{name=projects/*/locations/*/metedataStores/*/contexts/*}"
     };
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -203,13 +203,13 @@ service MetadataService {
   rpc PurgeContexts(PurgeContextsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/contexts:purge"
+      post: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/contexts:purge"
       body: "*"
     };
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "PurgeContextsResponse"
-      metadata_type: "PurgeContextsMetadata"
+      metedata_type: "PurgeContextsmetedata"
     };
   }
 
@@ -219,7 +219,7 @@ service MetadataService {
   rpc AddContextArtifactsAndExecutions(AddContextArtifactsAndExecutionsRequest)
       returns (AddContextArtifactsAndExecutionsResponse) {
     option (google.api.http) = {
-      post: "/v1beta1/{context=projects/*/locations/*/metadataStores/*/contexts/*}:addContextArtifactsAndExecutions"
+      post: "/v1beta1/{context=projects/*/locations/*/metedataStores/*/contexts/*}:addContextArtifactsAndExecutions"
       body: "*"
     };
     option (google.api.method_signature) = "context,artifacts,executions";
@@ -233,7 +233,7 @@ service MetadataService {
   rpc AddContextChildren(AddContextChildrenRequest)
       returns (AddContextChildrenResponse) {
     option (google.api.http) = {
-      post: "/v1beta1/{context=projects/*/locations/*/metadataStores/*/contexts/*}:addContextChildren"
+      post: "/v1beta1/{context=projects/*/locations/*/metedataStores/*/contexts/*}:addContextChildren"
       body: "*"
     };
     option (google.api.method_signature) = "context,child_contexts";
@@ -245,7 +245,7 @@ service MetadataService {
   rpc RemoveContextChildren(RemoveContextChildrenRequest)
       returns (RemoveContextChildrenResponse) {
     option (google.api.http) = {
-      post: "/v1beta1/{context=projects/*/locations/*/metadataStores/*/contexts/*}:removeContextChildren"
+      post: "/v1beta1/{context=projects/*/locations/*/metedataStores/*/contexts/*}:removeContextChildren"
       body: "*"
     };
     option (google.api.method_signature) = "context,child_contexts";
@@ -256,15 +256,15 @@ service MetadataService {
   rpc QueryContextLineageSubgraph(QueryContextLineageSubgraphRequest)
       returns (LineageSubgraph) {
     option (google.api.http) = {
-      get: "/v1beta1/{context=projects/*/locations/*/metadataStores/*/contexts/*}:queryContextLineageSubgraph"
+      get: "/v1beta1/{context=projects/*/locations/*/metedataStores/*/contexts/*}:queryContextLineageSubgraph"
     };
     option (google.api.method_signature) = "context";
   }
 
-  // Creates an Execution associated with a MetadataStore.
+  // Creates an Execution associated with a metedataStore.
   rpc CreateExecution(CreateExecutionRequest) returns (Execution) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/executions"
+      post: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/executions"
       body: "execution"
     };
     option (google.api.method_signature) = "parent,execution,execution_id";
@@ -273,15 +273,15 @@ service MetadataService {
   // Retrieves a specific Execution.
   rpc GetExecution(GetExecutionRequest) returns (Execution) {
     option (google.api.http) = {
-      get: "/v1beta1/{name=projects/*/locations/*/metadataStores/*/executions/*}"
+      get: "/v1beta1/{name=projects/*/locations/*/metedataStores/*/executions/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Lists Executions in the MetadataStore.
+  // Lists Executions in the metedataStore.
   rpc ListExecutions(ListExecutionsRequest) returns (ListExecutionsResponse) {
     option (google.api.http) = {
-      get: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/executions"
+      get: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/executions"
     };
     option (google.api.method_signature) = "parent";
   }
@@ -289,7 +289,7 @@ service MetadataService {
   // Updates a stored Execution.
   rpc UpdateExecution(UpdateExecutionRequest) returns (Execution) {
     option (google.api.http) = {
-      patch: "/v1beta1/{execution.name=projects/*/locations/*/metadataStores/*/executions/*}"
+      patch: "/v1beta1/{execution.name=projects/*/locations/*/metedataStores/*/executions/*}"
       body: "execution"
     };
     option (google.api.method_signature) = "execution,update_mask";
@@ -299,12 +299,12 @@ service MetadataService {
   rpc DeleteExecution(DeleteExecutionRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      delete: "/v1beta1/{name=projects/*/locations/*/metadataStores/*/executions/*}"
+      delete: "/v1beta1/{name=projects/*/locations/*/metedataStores/*/executions/*}"
     };
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -312,13 +312,13 @@ service MetadataService {
   rpc PurgeExecutions(PurgeExecutionsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/executions:purge"
+      post: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/executions:purge"
       body: "*"
     };
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "PurgeExecutionsResponse"
-      metadata_type: "PurgeExecutionsMetadata"
+      metedata_type: "PurgeExecutionsmetedata"
     };
   }
 
@@ -329,7 +329,7 @@ service MetadataService {
   rpc AddExecutionEvents(AddExecutionEventsRequest)
       returns (AddExecutionEventsResponse) {
     option (google.api.http) = {
-      post: "/v1beta1/{execution=projects/*/locations/*/metadataStores/*/executions/*}:addExecutionEvents"
+      post: "/v1beta1/{execution=projects/*/locations/*/metedataStores/*/executions/*}:addExecutionEvents"
       body: "*"
     };
     option (google.api.method_signature) = "execution,events";
@@ -341,35 +341,35 @@ service MetadataService {
   rpc QueryExecutionInputsAndOutputs(QueryExecutionInputsAndOutputsRequest)
       returns (LineageSubgraph) {
     option (google.api.http) = {
-      get: "/v1beta1/{execution=projects/*/locations/*/metadataStores/*/executions/*}:queryExecutionInputsAndOutputs"
+      get: "/v1beta1/{execution=projects/*/locations/*/metedataStores/*/executions/*}:queryExecutionInputsAndOutputs"
     };
     option (google.api.method_signature) = "execution";
   }
 
-  // Creates a MetadataSchema.
-  rpc CreateMetadataSchema(CreateMetadataSchemaRequest)
-      returns (MetadataSchema) {
+  // Creates a metedataSchema.
+  rpc CreatemetedataSchema(CreatemetedataSchemaRequest)
+      returns (metedataSchema) {
     option (google.api.http) = {
-      post: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/metadataSchemas"
-      body: "metadata_schema"
+      post: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/metedataSchemas"
+      body: "metedata_schema"
     };
     option (google.api.method_signature) =
-        "parent,metadata_schema,metadata_schema_id";
+        "parent,metedata_schema,metedata_schema_id";
   }
 
-  // Retrieves a specific MetadataSchema.
-  rpc GetMetadataSchema(GetMetadataSchemaRequest) returns (MetadataSchema) {
+  // Retrieves a specific metedataSchema.
+  rpc GetmetedataSchema(GetmetedataSchemaRequest) returns (metedataSchema) {
     option (google.api.http) = {
-      get: "/v1beta1/{name=projects/*/locations/*/metadataStores/*/metadataSchemas/*}"
+      get: "/v1beta1/{name=projects/*/locations/*/metedataStores/*/metedataSchemas/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Lists MetadataSchemas.
-  rpc ListMetadataSchemas(ListMetadataSchemasRequest)
-      returns (ListMetadataSchemasResponse) {
+  // Lists metedataSchemas.
+  rpc ListmetedataSchemas(ListmetedataSchemasRequest)
+      returns (ListmetedataSchemasResponse) {
     option (google.api.http) = {
-      get: "/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/metadataSchemas"
+      get: "/v1beta1/{parent=projects/*/locations/*/metedataStores/*}/metedataSchemas"
     };
     option (google.api.method_signature) = "parent";
   }
@@ -379,16 +379,16 @@ service MetadataService {
   rpc QueryArtifactLineageSubgraph(QueryArtifactLineageSubgraphRequest)
       returns (LineageSubgraph) {
     option (google.api.http) = {
-      get: "/v1beta1/{artifact=projects/*/locations/*/metadataStores/*/artifacts/*}:queryArtifactLineageSubgraph"
+      get: "/v1beta1/{artifact=projects/*/locations/*/metedataStores/*/artifacts/*}:queryArtifactLineageSubgraph"
     };
     option (google.api.method_signature) = "artifact";
   }
 }
 
 // Request message for
-// [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataStore].
-message CreateMetadataStoreRequest {
-  // Required. The resource name of the Location where the MetadataStore should
+// [metedataService.CreatemetedataStore][google.cloud.aiplatform.v1beta1.metedataService.CreatemetedataStore].
+message CreatemetedataStoreRequest {
+  // Required. The resource name of the Location where the metedataStore should
   // be created.
   // Format: `projects/{project}/locations/{location}/`
   string parent = 1 [
@@ -398,45 +398,45 @@ message CreateMetadataStoreRequest {
     }
   ];
 
-  // Required. The MetadataStore to create.
-  MetadataStore metadata_store = 2 [(google.api.field_behavior) = REQUIRED];
+  // Required. The metedataStore to create.
+  metedataStore metedata_store = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The {metadatastore} portion of the resource name with the format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
-  // If not provided, the MetadataStore's ID will be a UUID generated by the
+  // The {metedatastore} portion of the resource name with the format:
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
+  // If not provided, the metedataStore's ID will be a UUID generated by the
   // service.
   // Must be 4-128 characters in length. Valid characters are `/[a-z][0-9]-/`.
-  // Must be unique across all MetadataStores in the parent Location.
+  // Must be unique across all metedataStores in the parent Location.
   // (Otherwise the request will fail with ALREADY_EXISTS, or PERMISSION_DENIED
-  // if the caller can't view the preexisting MetadataStore.)
-  string metadata_store_id = 3;
+  // if the caller can't view the preexisting metedataStore.)
+  string metedata_store_id = 3;
 }
 
 // Details of operations that perform
-// [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataStore].
-message CreateMetadataStoreOperationMetadata {
-  // Operation metadata for creating a MetadataStore.
-  GenericOperationMetadata generic_metadata = 1;
+// [metedataService.CreatemetedataStore][google.cloud.aiplatform.v1beta1.metedataService.CreatemetedataStore].
+message CreatemetedataStoreOperationmetedata {
+  // Operation metedata for creating a metedataStore.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
-// [MetadataService.GetMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.GetMetadataStore].
-message GetMetadataStoreRequest {
-  // Required. The resource name of the MetadataStore to retrieve.
+// [metedataService.GetmetedataStore][google.cloud.aiplatform.v1beta1.metedataService.GetmetedataStore].
+message GetmetedataStoreRequest {
+  // Required. The resource name of the metedataStore to retrieve.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/MetadataStore"
+      type: "aiplatform.googleapis.com/metedataStore"
     }
   ];
 }
 
 // Request message for
-// [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores].
-message ListMetadataStoresRequest {
-  // Required. The Location whose MetadataStores should be listed.
+// [metedataService.ListmetedataStores][google.cloud.aiplatform.v1beta1.metedataService.ListmetedataStores].
+message ListmetedataStoresRequest {
+  // Required. The Location whose metedataStores should be listed.
   // Format:
   // `projects/{project}/locations/{location}`
   string parent = 1 [
@@ -446,13 +446,13 @@ message ListMetadataStoresRequest {
     }
   ];
 
-  // The maximum number of Metadata Stores to return. The service may return
+  // The maximum number of metedata Stores to return. The service may return
   // fewer.
   // Must be in range 1-1000, inclusive. Defaults to 100.
   int32 page_size = 2;
 
   // A page token, received from a previous
-  // [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores]
+  // [metedataService.ListmetedataStores][google.cloud.aiplatform.v1beta1.metedataService.ListmetedataStores]
   // call. Provide this to retrieve the subsequent page.
   //
   // When paginating, all other provided parameters must match the call that
@@ -462,28 +462,28 @@ message ListMetadataStoresRequest {
 }
 
 // Response message for
-// [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores].
-message ListMetadataStoresResponse {
-  // The MetadataStores found for the Location.
-  repeated MetadataStore metadata_stores = 1;
+// [metedataService.ListmetedataStores][google.cloud.aiplatform.v1beta1.metedataService.ListmetedataStores].
+message ListmetedataStoresResponse {
+  // The metedataStores found for the Location.
+  repeated metedataStore metedata_stores = 1;
 
   // A token, which can be sent as
-  // [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest.page_token]
+  // [ListmetedataStoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListmetedataStoresRequest.page_token]
   // to retrieve the next page. If this field is not populated, there are no
   // subsequent pages.
   string next_page_token = 2;
 }
 
 // Request message for
-// [MetadataService.DeleteMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.DeleteMetadataStore].
-message DeleteMetadataStoreRequest {
-  // Required. The resource name of the MetadataStore to delete.
+// [metedataService.DeletemetedataStore][google.cloud.aiplatform.v1beta1.metedataService.DeletemetedataStore].
+message DeletemetedataStoreRequest {
+  // Required. The resource name of the metedataStore to delete.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/MetadataStore"
+      type: "aiplatform.googleapis.com/metedataStore"
     }
   ];
 
@@ -492,23 +492,23 @@ message DeleteMetadataStoreRequest {
 }
 
 // Details of operations that perform
-// [MetadataService.DeleteMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.DeleteMetadataStore].
-message DeleteMetadataStoreOperationMetadata {
-  // Operation metadata for deleting a MetadataStore.
-  GenericOperationMetadata generic_metadata = 1;
+// [metedataService.DeletemetedataStore][google.cloud.aiplatform.v1beta1.metedataService.DeletemetedataStore].
+message DeletemetedataStoreOperationmetedata {
+  // Operation metedata for deleting a metedataStore.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
-// [MetadataService.CreateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.CreateArtifact].
+// [metedataService.CreateArtifact][google.cloud.aiplatform.v1beta1.metedataService.CreateArtifact].
 message CreateArtifactRequest {
-  // Required. The resource name of the MetadataStore where the Artifact should
+  // Required. The resource name of the metedataStore where the Artifact should
   // be created.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/MetadataStore"
+      type: "aiplatform.googleapis.com/metedataStore"
     }
   ];
 
@@ -516,21 +516,21 @@ message CreateArtifactRequest {
   Artifact artifact = 2 [(google.api.field_behavior) = REQUIRED];
 
   // The {artifact} portion of the resource name with the format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/artifacts/{artifact}`
   // If not provided, the Artifact's ID will be a UUID generated by the service.
   // Must be 4-128 characters in length. Valid characters are `/[a-z][0-9]-/`.
-  // Must be unique across all Artifacts in the parent MetadataStore. (Otherwise
+  // Must be unique across all Artifacts in the parent metedataStore. (Otherwise
   // the request will fail with ALREADY_EXISTS, or PERMISSION_DENIED if the
   // caller can't view the preexisting Artifact.)
   string artifact_id = 3;
 }
 
 // Request message for
-// [MetadataService.GetArtifact][google.cloud.aiplatform.v1beta1.MetadataService.GetArtifact].
+// [metedataService.GetArtifact][google.cloud.aiplatform.v1beta1.metedataService.GetArtifact].
 message GetArtifactRequest {
   // Required. The resource name of the Artifact to retrieve.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/artifacts/{artifact}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -540,11 +540,11 @@ message GetArtifactRequest {
 }
 
 // Request message for
-// [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts].
+// [metedataService.ListArtifacts][google.cloud.aiplatform.v1beta1.metedataService.ListArtifacts].
 message ListArtifactsRequest {
-  // Required. The MetadataStore whose Artifacts should be listed.
+  // Required. The metedataStore whose Artifacts should be listed.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -557,7 +557,7 @@ message ListArtifactsRequest {
   int32 page_size = 2;
 
   // A page token, received from a previous
-  // [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts]
+  // [metedataService.ListArtifacts][google.cloud.aiplatform.v1beta1.metedataService.ListArtifacts]
   // call. Provide this to retrieve the subsequent page.
   //
   // When paginating, all other provided parameters must match the call that
@@ -577,22 +577,22 @@ message ListArtifactsRequest {
   //     Time fields, such as `create_time` and `update_time`, require values
   //     specified in RFC-3339 format.
   //     For example: `create_time = "2020-11-19T11:30:00-04:00"`
-  // *   **Metadata field**:
-  //     To filter on metadata fields use traversal operation as follows:
-  //     `metadata.<field_name>.<type_value>`.
-  //     For example: `metadata.field_1.number_value = 10.0`
+  // *   **metedata field**:
+  //     To filter on metedata fields use traversal operation as follows:
+  //     `metedata.<field_name>.<type_value>`.
+  //     For example: `metedata.field_1.number_value = 10.0`
   // *   **Context based filtering**:
   //     To filter Artifacts based on the contexts to which they belong, use the
   //     function operator with the full resource name
   //     `in_context(<context-name>)`.
   //     For example:
-  //     `in_context("projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context-id>")`
+  //     `in_context("projects/<project_number>/locations/<location>/metedataStores/<metedatastore_name>/contexts/<context-id>")`
   //
   // Each of the above supported filter types can be combined together using
   // logical operators (`AND` & `OR`). Maximum nested expression depth allowed
   // is 5.
   //
-  // For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+  // For example: `display_name = "test" AND metedata.field1.bool_value = true`.
   string filter = 4;
 
   // How the list of messages is ordered. Specify the values to order by and an
@@ -605,9 +605,9 @@ message ListArtifactsRequest {
 }
 
 // Response message for
-// [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts].
+// [metedataService.ListArtifacts][google.cloud.aiplatform.v1beta1.metedataService.ListArtifacts].
 message ListArtifactsResponse {
-  // The Artifacts retrieved from the MetadataStore.
+  // The Artifacts retrieved from the metedataStore.
   repeated Artifact artifacts = 1;
 
   // A token, which can be sent as
@@ -618,13 +618,13 @@ message ListArtifactsResponse {
 }
 
 // Request message for
-// [MetadataService.UpdateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.UpdateArtifact].
+// [metedataService.UpdateArtifact][google.cloud.aiplatform.v1beta1.metedataService.UpdateArtifact].
 message UpdateArtifactRequest {
   // Required. The Artifact containing updates.
   // The Artifact's
   // [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is
   // used to identify the Artifact to be updated. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/artifacts/{artifact}`
   Artifact artifact = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Optional. A FieldMask indicating which fields should be updated.
@@ -639,11 +639,11 @@ message UpdateArtifactRequest {
 }
 
 // Request message for
-// [MetadataService.DeleteArtifact][google.cloud.aiplatform.v1beta1.MetadataService.DeleteArtifact].
+// [metedataService.DeleteArtifact][google.cloud.aiplatform.v1beta1.metedataService.DeleteArtifact].
 message DeleteArtifactRequest {
   // Required. The resource name of the Artifact to delete.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/artifacts/{artifact}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -658,11 +658,11 @@ message DeleteArtifactRequest {
 }
 
 // Request message for
-// [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
+// [metedataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.metedataService.PurgeArtifacts].
 message PurgeArtifactsRequest {
-  // Required. The metadata store to purge Artifacts from.
+  // Required. The metedata store to purge Artifacts from.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -681,7 +681,7 @@ message PurgeArtifactsRequest {
 }
 
 // Response message for
-// [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
+// [metedataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.metedataService.PurgeArtifacts].
 message PurgeArtifactsResponse {
   // The number of Artifacts that this request deleted (or, if `force` is false,
   // the number of Artifacts that will be deleted). This can be an estimate.
@@ -696,22 +696,22 @@ message PurgeArtifactsResponse {
 }
 
 // Details of operations that perform
-// [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
-message PurgeArtifactsMetadata {
-  // Operation metadata for purging Artifacts.
-  GenericOperationMetadata generic_metadata = 1;
+// [metedataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.metedataService.PurgeArtifacts].
+message PurgeArtifactsmetedata {
+  // Operation metedata for purging Artifacts.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
-// [MetadataService.CreateContext][google.cloud.aiplatform.v1beta1.MetadataService.CreateContext].
+// [metedataService.CreateContext][google.cloud.aiplatform.v1beta1.metedataService.CreateContext].
 message CreateContextRequest {
-  // Required. The resource name of the MetadataStore where the Context should
+  // Required. The resource name of the metedataStore where the Context should
   // be created. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/MetadataStore"
+      type: "aiplatform.googleapis.com/metedataStore"
     }
   ];
 
@@ -719,21 +719,21 @@ message CreateContextRequest {
   Context context = 2 [(google.api.field_behavior) = REQUIRED];
 
   // The {context} portion of the resource name with the format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`.
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`.
   // If not provided, the Context's ID will be a UUID generated by the service.
   // Must be 4-128 characters in length. Valid characters are `/[a-z][0-9]-/`.
-  // Must be unique across all Contexts in the parent MetadataStore. (Otherwise
+  // Must be unique across all Contexts in the parent metedataStore. (Otherwise
   // the request will fail with ALREADY_EXISTS, or PERMISSION_DENIED if the
   // caller can't view the preexisting Context.)
   string context_id = 3;
 }
 
 // Request message for
-// [MetadataService.GetContext][google.cloud.aiplatform.v1beta1.MetadataService.GetContext].
+// [metedataService.GetContext][google.cloud.aiplatform.v1beta1.metedataService.GetContext].
 message GetContextRequest {
   // Required. The resource name of the Context to retrieve.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -743,11 +743,11 @@ message GetContextRequest {
 }
 
 // Request message for
-// [MetadataService.ListContexts][google.cloud.aiplatform.v1beta1.MetadataService.ListContexts]
+// [metedataService.ListContexts][google.cloud.aiplatform.v1beta1.metedataService.ListContexts]
 message ListContextsRequest {
-  // Required. The MetadataStore whose Contexts should be listed.
+  // Required. The metedataStore whose Contexts should be listed.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -760,7 +760,7 @@ message ListContextsRequest {
   int32 page_size = 2;
 
   // A page token, received from a previous
-  // [MetadataService.ListContexts][google.cloud.aiplatform.v1beta1.MetadataService.ListContexts]
+  // [metedataService.ListContexts][google.cloud.aiplatform.v1beta1.metedataService.ListContexts]
   // call. Provide this to retrieve the subsequent page.
   //
   // When paginating, all other provided parameters must match the call that
@@ -780,26 +780,26 @@ message ListContextsRequest {
   //    Time fields, such as `create_time` and `update_time`, require values
   //    specified in RFC-3339 format.
   //    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
-  // *  **Metadata field**:
-  //    To filter on metadata fields use traversal operation as follows:
-  //    `metadata.<field_name>.<type_value>`.
-  //    For example: `metadata.field_1.number_value = 10.0`.
+  // *  **metedata field**:
+  //    To filter on metedata fields use traversal operation as follows:
+  //    `metedata.<field_name>.<type_value>`.
+  //    For example: `metedata.field_1.number_value = 10.0`.
   // *  **Parent Child filtering**:
   //    To filter Contexts based on parent-child relationship use the HAS
   //    operator as follows:
   //
   //    ```
   //    parent_contexts:
-  //    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+  //    "projects/<project_number>/locations/<location>/metedataStores/<metedatastore_name>/contexts/<context_id>"
   //    child_contexts:
-  //    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+  //    "projects/<project_number>/locations/<location>/metedataStores/<metedatastore_name>/contexts/<context_id>"
   //    ```
   //
   // Each of the above supported filters can be combined together using
   // logical operators (`AND` & `OR`). Maximum nested expression depth allowed
   // is 5.
   //
-  // For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+  // For example: `display_name = "test" AND metedata.field1.bool_value = true`.
   string filter = 4;
 
   // How the list of messages is ordered. Specify the values to order by and an
@@ -812,9 +812,9 @@ message ListContextsRequest {
 }
 
 // Response message for
-// [MetadataService.ListContexts][google.cloud.aiplatform.v1beta1.MetadataService.ListContexts].
+// [metedataService.ListContexts][google.cloud.aiplatform.v1beta1.metedataService.ListContexts].
 message ListContextsResponse {
-  // The Contexts retrieved from the MetadataStore.
+  // The Contexts retrieved from the metedataStore.
   repeated Context contexts = 1;
 
   // A token, which can be sent as
@@ -825,12 +825,12 @@ message ListContextsResponse {
 }
 
 // Request message for
-// [MetadataService.UpdateContext][google.cloud.aiplatform.v1beta1.MetadataService.UpdateContext].
+// [metedataService.UpdateContext][google.cloud.aiplatform.v1beta1.metedataService.UpdateContext].
 message UpdateContextRequest {
   // Required. The Context containing updates.
   // The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name]
   // field is used to identify the Context to be updated. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`
   Context context = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Optional. A FieldMask indicating which fields should be updated.
@@ -845,11 +845,11 @@ message UpdateContextRequest {
 }
 
 // Request message for
-// [MetadataService.DeleteContext][google.cloud.aiplatform.v1beta1.MetadataService.DeleteContext].
+// [metedataService.DeleteContext][google.cloud.aiplatform.v1beta1.metedataService.DeleteContext].
 message DeleteContextRequest {
   // Required. The resource name of the Context to delete.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -868,11 +868,11 @@ message DeleteContextRequest {
 }
 
 // Request message for
-// [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
+// [metedataService.PurgeContexts][google.cloud.aiplatform.v1beta1.metedataService.PurgeContexts].
 message PurgeContextsRequest {
-  // Required. The metadata store to purge Contexts from.
+  // Required. The metedata store to purge Contexts from.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -891,7 +891,7 @@ message PurgeContextsRequest {
 }
 
 // Response message for
-// [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
+// [metedataService.PurgeContexts][google.cloud.aiplatform.v1beta1.metedataService.PurgeContexts].
 message PurgeContextsResponse {
   // The number of Contexts that this request deleted (or, if `force` is false,
   // the number of Contexts that will be deleted). This can be an estimate.
@@ -906,18 +906,18 @@ message PurgeContextsResponse {
 }
 
 // Details of operations that perform
-// [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
-message PurgeContextsMetadata {
-  // Operation metadata for purging Contexts.
-  GenericOperationMetadata generic_metadata = 1;
+// [metedataService.PurgeContexts][google.cloud.aiplatform.v1beta1.metedataService.PurgeContexts].
+message PurgeContextsmetedata {
+  // Operation metedata for purging Contexts.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
-// [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.MetadataService.AddContextArtifactsAndExecutions].
+// [metedataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.metedataService.AddContextArtifactsAndExecutions].
 message AddContextArtifactsAndExecutionsRequest {
   // Required. The resource name of the Context that the Artifacts and
   // Executions belong to. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`
   string context = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -928,7 +928,7 @@ message AddContextArtifactsAndExecutionsRequest {
   // The resource names of the Artifacts to attribute to the Context.
   //
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/artifacts/{artifact}`
   repeated string artifacts = 2 [(google.api.resource_reference) = {
     type: "aiplatform.googleapis.com/Artifact"
   }];
@@ -937,23 +937,23 @@ message AddContextArtifactsAndExecutionsRequest {
   // Context.
   //
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/executions/{execution}`
   repeated string executions = 3 [(google.api.resource_reference) = {
     type: "aiplatform.googleapis.com/Execution"
   }];
 }
 
 // Response message for
-// [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.MetadataService.AddContextArtifactsAndExecutions].
+// [metedataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.metedataService.AddContextArtifactsAndExecutions].
 message AddContextArtifactsAndExecutionsResponse {}
 
 // Request message for
-// [MetadataService.AddContextChildren][google.cloud.aiplatform.v1beta1.MetadataService.AddContextChildren].
+// [metedataService.AddContextChildren][google.cloud.aiplatform.v1beta1.metedataService.AddContextChildren].
 message AddContextChildrenRequest {
   // Required. The resource name of the parent Context.
   //
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`
   string context = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -968,16 +968,16 @@ message AddContextChildrenRequest {
 }
 
 // Response message for
-// [MetadataService.AddContextChildren][google.cloud.aiplatform.v1beta1.MetadataService.AddContextChildren].
+// [metedataService.AddContextChildren][google.cloud.aiplatform.v1beta1.metedataService.AddContextChildren].
 message AddContextChildrenResponse {}
 
 // Request message for
-// [MetadataService.DeleteContextChildrenRequest][].
+// [metedataService.DeleteContextChildrenRequest][].
 message RemoveContextChildrenRequest {
   // Required. The resource name of the parent Context.
   //
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`
   string context = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -992,16 +992,16 @@ message RemoveContextChildrenRequest {
 }
 
 // Response message for
-// [MetadataService.RemoveContextChildren][google.cloud.aiplatform.v1beta1.MetadataService.RemoveContextChildren].
+// [metedataService.RemoveContextChildren][google.cloud.aiplatform.v1beta1.metedataService.RemoveContextChildren].
 message RemoveContextChildrenResponse {}
 
 // Request message for
-// [MetadataService.QueryContextLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryContextLineageSubgraph].
+// [metedataService.QueryContextLineageSubgraph][google.cloud.aiplatform.v1beta1.metedataService.QueryContextLineageSubgraph].
 message QueryContextLineageSubgraphRequest {
   // Required. The resource name of the Context whose Artifacts and Executions
   // should be retrieved as a LineageSubgraph.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/contexts/{context}`
   //
   // The request may error with FAILED_PRECONDITION if the number of Artifacts,
   // the number of Executions, or the number of Events that would be returned
@@ -1015,16 +1015,16 @@ message QueryContextLineageSubgraphRequest {
 }
 
 // Request message for
-// [MetadataService.CreateExecution][google.cloud.aiplatform.v1beta1.MetadataService.CreateExecution].
+// [metedataService.CreateExecution][google.cloud.aiplatform.v1beta1.metedataService.CreateExecution].
 message CreateExecutionRequest {
-  // Required. The resource name of the MetadataStore where the Execution should
+  // Required. The resource name of the metedataStore where the Execution should
   // be created.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/MetadataStore"
+      type: "aiplatform.googleapis.com/metedataStore"
     }
   ];
 
@@ -1032,22 +1032,22 @@ message CreateExecutionRequest {
   Execution execution = 2 [(google.api.field_behavior) = REQUIRED];
 
   // The {execution} portion of the resource name with the format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/executions/{execution}`
   // If not provided, the Execution's ID will be a UUID generated by the
   // service.
   // Must be 4-128 characters in length. Valid characters are `/[a-z][0-9]-/`.
-  // Must be unique across all Executions in the parent MetadataStore.
+  // Must be unique across all Executions in the parent metedataStore.
   // (Otherwise the request will fail with ALREADY_EXISTS, or PERMISSION_DENIED
   // if the caller can't view the preexisting Execution.)
   string execution_id = 3;
 }
 
 // Request message for
-// [MetadataService.GetExecution][google.cloud.aiplatform.v1beta1.MetadataService.GetExecution].
+// [metedataService.GetExecution][google.cloud.aiplatform.v1beta1.metedataService.GetExecution].
 message GetExecutionRequest {
   // Required. The resource name of the Execution to retrieve.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/executions/{execution}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1057,11 +1057,11 @@ message GetExecutionRequest {
 }
 
 // Request message for
-// [MetadataService.ListExecutions][google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions].
+// [metedataService.ListExecutions][google.cloud.aiplatform.v1beta1.metedataService.ListExecutions].
 message ListExecutionsRequest {
-  // Required. The MetadataStore whose Executions should be listed.
+  // Required. The metedataStore whose Executions should be listed.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1074,7 +1074,7 @@ message ListExecutionsRequest {
   int32 page_size = 2;
 
   // A page token, received from a previous
-  // [MetadataService.ListExecutions][google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions]
+  // [metedataService.ListExecutions][google.cloud.aiplatform.v1beta1.metedataService.ListExecutions]
   // call. Provide this to retrieve the subsequent page.
   //
   // When paginating, all other provided parameters must match the call that
@@ -1094,22 +1094,22 @@ message ListExecutionsRequest {
   //    Time fields, such as `create_time` and `update_time`, require values
   //    specified in RFC-3339 format.
   //    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
-  // *  **Metadata field**:
-  //    To filter on metadata fields use traversal operation as follows:
-  //    `metadata.<field_name>.<type_value>`
-  //    For example: `metadata.field_1.number_value = 10.0`
+  // *  **metedata field**:
+  //    To filter on metedata fields use traversal operation as follows:
+  //    `metedata.<field_name>.<type_value>`
+  //    For example: `metedata.field_1.number_value = 10.0`
   // *  **Context based filtering**:
   //    To filter Executions based on the contexts to which they belong use
   //    the function operator with the full resource name:
   //    `in_context(<context-name>)`.
   //    For example:
-  //    `in_context("projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context-id>")`
+  //    `in_context("projects/<project_number>/locations/<location>/metedataStores/<metedatastore_name>/contexts/<context-id>")`
   //
   // Each of the above supported filters can be combined together using
   // logical operators (`AND` & `OR`). Maximum nested expression depth allowed
   // is 5.
   //
-  // For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+  // For example: `display_name = "test" AND metedata.field1.bool_value = true`.
   string filter = 4;
 
   // How the list of messages is ordered. Specify the values to order by and an
@@ -1122,9 +1122,9 @@ message ListExecutionsRequest {
 }
 
 // Response message for
-// [MetadataService.ListExecutions][google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions].
+// [metedataService.ListExecutions][google.cloud.aiplatform.v1beta1.metedataService.ListExecutions].
 message ListExecutionsResponse {
-  // The Executions retrieved from the MetadataStore.
+  // The Executions retrieved from the metedataStore.
   repeated Execution executions = 1;
 
   // A token, which can be sent as
@@ -1135,13 +1135,13 @@ message ListExecutionsResponse {
 }
 
 // Request message for
-// [MetadataService.UpdateExecution][google.cloud.aiplatform.v1beta1.MetadataService.UpdateExecution].
+// [metedataService.UpdateExecution][google.cloud.aiplatform.v1beta1.metedataService.UpdateExecution].
 message UpdateExecutionRequest {
   // Required. The Execution containing updates.
   // The Execution's
   // [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is
   // used to identify the Execution to be updated. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/executions/{execution}`
   Execution execution = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Optional. A FieldMask indicating which fields should be updated.
@@ -1156,11 +1156,11 @@ message UpdateExecutionRequest {
 }
 
 // Request message for
-// [MetadataService.DeleteExecution][google.cloud.aiplatform.v1beta1.MetadataService.DeleteExecution].
+// [metedataService.DeleteExecution][google.cloud.aiplatform.v1beta1.metedataService.DeleteExecution].
 message DeleteExecutionRequest {
   // Required. The resource name of the Execution to delete.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/executions/{execution}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1175,11 +1175,11 @@ message DeleteExecutionRequest {
 }
 
 // Request message for
-// [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
+// [metedataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.metedataService.PurgeExecutions].
 message PurgeExecutionsRequest {
-  // Required. The metadata store to purge Executions from.
+  // Required. The metedata store to purge Executions from.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1198,7 +1198,7 @@ message PurgeExecutionsRequest {
 }
 
 // Response message for
-// [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
+// [metedataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.metedataService.PurgeExecutions].
 message PurgeExecutionsResponse {
   // The number of Executions that this request deleted (or, if `force` is
   // false, the number of Executions that will be deleted). This can be an
@@ -1214,19 +1214,19 @@ message PurgeExecutionsResponse {
 }
 
 // Details of operations that perform
-// [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
-message PurgeExecutionsMetadata {
-  // Operation metadata for purging Executions.
-  GenericOperationMetadata generic_metadata = 1;
+// [metedataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.metedataService.PurgeExecutions].
+message PurgeExecutionsmetedata {
+  // Operation metedata for purging Executions.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
-// [MetadataService.AddExecutionEvents][google.cloud.aiplatform.v1beta1.MetadataService.AddExecutionEvents].
+// [metedataService.AddExecutionEvents][google.cloud.aiplatform.v1beta1.metedataService.AddExecutionEvents].
 message AddExecutionEventsRequest {
   // Required. The resource name of the Execution that the Events connect
   // Artifacts with.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/executions/{execution}`
   string execution = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1239,15 +1239,15 @@ message AddExecutionEventsRequest {
 }
 
 // Response message for
-// [MetadataService.AddExecutionEvents][google.cloud.aiplatform.v1beta1.MetadataService.AddExecutionEvents].
+// [metedataService.AddExecutionEvents][google.cloud.aiplatform.v1beta1.metedataService.AddExecutionEvents].
 message AddExecutionEventsResponse {}
 
 // Request message for
-// [MetadataService.QueryExecutionInputsAndOutputs][google.cloud.aiplatform.v1beta1.MetadataService.QueryExecutionInputsAndOutputs].
+// [metedataService.QueryExecutionInputsAndOutputs][google.cloud.aiplatform.v1beta1.metedataService.QueryExecutionInputsAndOutputs].
 message QueryExecutionInputsAndOutputsRequest {
   // Required. The resource name of the Execution whose input and output
   // Artifacts should be retrieved as a LineageSubgraph. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/executions/{execution}`
   string execution = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -1257,66 +1257,66 @@ message QueryExecutionInputsAndOutputsRequest {
 }
 
 // Request message for
-// [MetadataService.CreateMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataSchema].
-message CreateMetadataSchemaRequest {
-  // Required. The resource name of the MetadataStore where the MetadataSchema
+// [metedataService.CreatemetedataSchema][google.cloud.aiplatform.v1beta1.metedataService.CreatemetedataSchema].
+message CreatemetedataSchemaRequest {
+  // Required. The resource name of the metedataStore where the metedataSchema
   // should be created. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/MetadataStore"
+      type: "aiplatform.googleapis.com/metedataStore"
     }
   ];
 
-  // Required. The MetadataSchema to create.
-  MetadataSchema metadata_schema = 2 [(google.api.field_behavior) = REQUIRED];
+  // Required. The metedataSchema to create.
+  metedataSchema metedata_schema = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The {metadata_schema} portion of the resource name with the format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
-  // If not provided, the MetadataStore's ID will be a UUID generated by the
+  // The {metedata_schema} portion of the resource name with the format:
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/metedataSchemas/{metedataschema}`
+  // If not provided, the metedataStore's ID will be a UUID generated by the
   // service.
   // Must be 4-128 characters in length. Valid characters are `/[a-z][0-9]-/`.
-  // Must be unique across all MetadataSchemas in the parent Location.
+  // Must be unique across all metedataSchemas in the parent Location.
   // (Otherwise the request will fail with ALREADY_EXISTS, or PERMISSION_DENIED
-  // if the caller can't view the preexisting MetadataSchema.)
-  string metadata_schema_id = 3;
+  // if the caller can't view the preexisting metedataSchema.)
+  string metedata_schema_id = 3;
 }
 
 // Request message for
-// [MetadataService.GetMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.GetMetadataSchema].
-message GetMetadataSchemaRequest {
-  // Required. The resource name of the MetadataSchema to retrieve.
+// [metedataService.GetmetedataSchema][google.cloud.aiplatform.v1beta1.metedataService.GetmetedataSchema].
+message GetmetedataSchemaRequest {
+  // Required. The resource name of the metedataSchema to retrieve.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/metedataSchemas/{metedataschema}`
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "aiplatform.googleapis.com/MetadataSchema"
+      type: "aiplatform.googleapis.com/metedataSchema"
     }
   ];
 }
 
 // Request message for
-// [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas].
-message ListMetadataSchemasRequest {
-  // Required. The MetadataStore whose MetadataSchemas should be listed.
+// [metedataService.ListmetedataSchemas][google.cloud.aiplatform.v1beta1.metedataService.ListmetedataSchemas].
+message ListmetedataSchemasRequest {
+  // Required. The metedataStore whose metedataSchemas should be listed.
   // Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}`
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "aiplatform.googleapis.com/MetadataSchema"
+      child_type: "aiplatform.googleapis.com/metedataSchema"
     }
   ];
 
-  // The maximum number of MetadataSchemas to return. The service may return
+  // The maximum number of metedataSchemas to return. The service may return
   // fewer.
   // Must be in range 1-1000, inclusive. Defaults to 100.
   int32 page_size = 2;
 
   // A page token, received from a previous
-  // [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas]
+  // [metedataService.ListmetedataSchemas][google.cloud.aiplatform.v1beta1.metedataService.ListmetedataSchemas]
   // call. Provide this to retrieve the next page.
   //
   // When paginating, all other provided parameters must match the call that
@@ -1324,29 +1324,29 @@ message ListMetadataSchemasRequest {
   // INVALID_ARGUMENT error.)
   string page_token = 3;
 
-  // A query to filter available MetadataSchemas for matching results.
+  // A query to filter available metedataSchemas for matching results.
   string filter = 4;
 }
 
 // Response message for
-// [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas].
-message ListMetadataSchemasResponse {
-  // The MetadataSchemas found for the MetadataStore.
-  repeated MetadataSchema metadata_schemas = 1;
+// [metedataService.ListmetedataSchemas][google.cloud.aiplatform.v1beta1.metedataService.ListmetedataSchemas].
+message ListmetedataSchemasResponse {
+  // The metedataSchemas found for the metedataStore.
+  repeated metedataSchema metedata_schemas = 1;
 
   // A token, which can be sent as
-  // [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+  // [ListmetedataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListmetedataSchemasRequest.page_token]
   // to retrieve the next page. If this field is not populated, there are no
   // subsequent pages.
   string next_page_token = 2;
 }
 
 // Request message for
-// [MetadataService.QueryArtifactLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryArtifactLineageSubgraph].
+// [metedataService.QueryArtifactLineageSubgraph][google.cloud.aiplatform.v1beta1.metedataService.QueryArtifactLineageSubgraph].
 message QueryArtifactLineageSubgraphRequest {
   // Required. The resource name of the Artifact whose Lineage needs to be
   // retrieved as a LineageSubgraph. Format:
-  // `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+  // `projects/{project}/locations/{location}/metedataStores/{metedatastore}/artifacts/{artifact}`
   //
   // The request may error with FAILED_PRECONDITION if the number of Artifacts,
   // the number of Executions, or the number of Events that would be returned
@@ -1377,15 +1377,15 @@ message QueryArtifactLineageSubgraphRequest {
   //    Time fields, such as `create_time` and `update_time`, require values
   //    specified in RFC-3339 format.
   //    For example: `create_time = "2020-11-19T11:30:00-04:00"`
-  // *  **Metadata field**:
-  //    To filter on metadata fields use traversal operation as follows:
-  //    `metadata.<field_name>.<type_value>`.
-  //    For example: `metadata.field_1.number_value = 10.0`
+  // *  **metedata field**:
+  //    To filter on metedata fields use traversal operation as follows:
+  //    `metedata.<field_name>.<type_value>`.
+  //    For example: `metedata.field_1.number_value = 10.0`
   //
   // Each of the above supported filter types can be combined together using
   // logical operators (`AND` & `OR`). Maximum nested expression depth allowed
   // is 5.
   //
-  // For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+  // For example: `display_name = "test" AND metedata.field1.bool_value = true`.
   string filter = 3;
 }

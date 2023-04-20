@@ -45,8 +45,8 @@ service MapsPlatformDatasetsV1Alpha {
     option (google.api.method_signature) = "parent,dataset";
   }
 
-  // Update the metadata for the dataset. To update the data use: UploadDataset.
-  rpc UpdateDatasetMetadata(UpdateDatasetMetadataRequest) returns (Dataset) {
+  // Update the metedata for the dataset. To update the data use: UploadDataset.
+  rpc UpdateDatasetmetedata(UpdateDatasetmetedataRequest) returns (Dataset) {
     option (google.api.http) = {
       patch: "/v1alpha/{dataset.name=projects/*/datasets/*}"
       body: "dataset"

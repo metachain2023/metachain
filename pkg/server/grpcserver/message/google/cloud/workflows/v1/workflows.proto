@@ -64,7 +64,7 @@ service Workflows {
     option (google.api.method_signature) = "parent,workflow,workflow_id";
     option (google.longrunning.operation_info) = {
       response_type: "Workflow"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -78,7 +78,7 @@ service Workflows {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -95,7 +95,7 @@ service Workflows {
     option (google.api.method_signature) = "workflow,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Workflow"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -297,8 +297,8 @@ message UpdateWorkflowRequest {
   google.protobuf.FieldMask update_mask = 2;
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

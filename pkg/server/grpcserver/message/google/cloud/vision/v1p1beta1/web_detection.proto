@@ -38,7 +38,7 @@ message WebDetection {
     string description = 3;
   }
 
-  // Metadata for online images.
+  // metedata for online images.
   message WebImage {
     // The result image URL.
     string url = 1;
@@ -47,7 +47,7 @@ message WebDetection {
     float score = 2;
   }
 
-  // Metadata for web pages.
+  // metedata for web pages.
   message WebPage {
     // The result web page URL.
     string url = 1;
@@ -69,9 +69,9 @@ message WebDetection {
     repeated WebImage partial_matching_images = 5;
   }
 
-  // Label to provide extra metadata for the web detection.
+  // Label to provide extra metedata for the web detection.
   message WebLabel {
-    // Label for extra metadata.
+    // Label for extra metedata.
     string label = 1;
 
     // The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".

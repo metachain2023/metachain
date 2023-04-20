@@ -125,7 +125,7 @@ service ExperimentService {
   // This method returns a long running operation that tracks the forking of the
   // in design campaign. If the forking fails, a list of errors can be retrieved
   // using the ListExperimentAsyncErrors method. The operation's
-  // metadata will be a string containing the resource name of the created
+  // metedata will be a string containing the resource name of the created
   // experiment.
   //
   // List of thrown errors:
@@ -149,7 +149,7 @@ service ExperimentService {
     option (google.api.method_signature) = "resource_name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.ads.googleads.v11.services.ScheduleExperimentMetadata"
+      metedata_type: "google.ads.googleads.v11.services.ScheduleExperimentmetedata"
     };
   }
 
@@ -158,7 +158,7 @@ service ExperimentService {
   // This method returns a long running operation that tracks the promotion of
   // the experiment campaign. If it fails, a list of errors can be retrieved
   // using the ListExperimentAsyncErrors method. The operation's
-  // metadata will be a string containing the resource name of the created
+  // metedata will be a string containing the resource name of the created
   // experiment.
   //
   // List of thrown errors:
@@ -177,7 +177,7 @@ service ExperimentService {
     option (google.api.method_signature) = "resource_name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.ads.googleads.v11.services.PromoteExperimentMetadata"
+      metedata_type: "google.ads.googleads.v11.services.PromoteExperimentmetedata"
     };
   }
 }
@@ -352,8 +352,8 @@ message ScheduleExperimentRequest {
   bool validate_only = 2;
 }
 
-// The metadata of the scheduled experiment.
-message ScheduleExperimentMetadata {
+// The metedata of the scheduled experiment.
+message ScheduleExperimentmetedata {
   // Required. The scheduled experiment.
   string experiment = 1 [
     (google.api.field_behavior) = REQUIRED,
@@ -378,8 +378,8 @@ message PromoteExperimentRequest {
   bool validate_only = 2;
 }
 
-// The metadata of the promoted experiment.
-message PromoteExperimentMetadata {
+// The metedata of the promoted experiment.
+message PromoteExperimentmetedata {
   // Required. The promoted experiment.
   string experiment = 1 [
     (google.api.field_behavior) = REQUIRED,

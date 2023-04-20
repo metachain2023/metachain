@@ -33,33 +33,33 @@ option java_package = "com.google.cloud.dataplex.v1";
 // managed resources can be structured or unstructured. A lake provides data
 // admins with tools to organize, secure and manage their data at scale, and
 // provides data scientists and data engineers an integrated experience to
-// easily search, discover, analyze and transform data and associated metadata.
+// easily search, discover, analyze and transform data and associated metedata.
 message Lake {
   option (google.api.resource) = {
     type: "dataplex.googleapis.com/Lake"
     pattern: "projects/{project}/locations/{location}/lakes/{lake}"
   };
 
-  // Settings to manage association of Dataproc Metastore with a lake.
-  message Metastore {
-    // Optional. A relative reference to the Dataproc Metastore
-    // (https://cloud.google.com/dataproc-metastore/docs) service associated
+  // Settings to manage association of Dataproc metestore with a lake.
+  message metestore {
+    // Optional. A relative reference to the Dataproc metestore
+    // (https://cloud.google.com/dataproc-metestore/docs) service associated
     // with the lake:
     // `projects/{project_id}/locations/{location_id}/services/{service_id}`
     string service = 1 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // Status of Lake and Dataproc Metastore service instance association.
-  message MetastoreStatus {
+  // Status of Lake and Dataproc metestore service instance association.
+  message metestoreStatus {
     // Current state of association.
     enum State {
       // Unspecified.
       STATE_UNSPECIFIED = 0;
 
-      // A Metastore service instance is not associated with the lake.
+      // A metestore service instance is not associated with the lake.
       NONE = 1;
 
-      // A Metastore service instance is attached to the lake.
+      // A metestore service instance is attached to the lake.
       READY = 2;
 
       // Attach/detach is in progress.
@@ -75,10 +75,10 @@ message Lake {
     // Additional information about the current status.
     string message = 2;
 
-    // Last update time of the metastore status of the lake.
+    // Last update time of the metestore status of the lake.
     google.protobuf.Timestamp update_time = 3;
 
-    // The URI of the endpoint used to access the Metastore service.
+    // The URI of the endpoint used to access the metestore service.
     string endpoint = 4;
   }
 
@@ -118,15 +118,15 @@ message Lake {
   // lake.
   string service_account = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. Settings to manage lake and Dataproc Metastore service instance
+  // Optional. Settings to manage lake and Dataproc metestore service instance
   // association.
-  Metastore metastore = 102 [(google.api.field_behavior) = OPTIONAL];
+  metestore metestore = 102 [(google.api.field_behavior) = OPTIONAL];
 
   // Output only. Aggregated status of the underlying assets of the lake.
   AssetStatus asset_status = 103 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Metastore status of the lake.
-  MetastoreStatus metastore_status = 104
+  // Output only. metestore status of the lake.
+  metestoreStatus metestore_status = 104
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
@@ -191,7 +191,7 @@ message Zone {
     ];
   }
 
-  // Settings to manage the metadata discovery and publishing in a zone.
+  // Settings to manage the metedata discovery and publishing in a zone.
   message DiscoverySpec {
     // Describe CSV and similar semi-structured data formats.
     message CsvOptions {
@@ -538,7 +538,7 @@ message Asset {
     google.protobuf.Timestamp update_time = 3;
   }
 
-  // Settings to manage the metadata discovery and publishing for an asset.
+  // Settings to manage the metedata discovery and publishing for an asset.
   message DiscoverySpec {
     // Describe CSV and similar semi-structured data formats.
     message CsvOptions {

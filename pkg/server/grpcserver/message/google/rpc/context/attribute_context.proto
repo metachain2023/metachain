@@ -29,7 +29,7 @@ option java_package = "com.google.rpc.context";
 
 // This message defines the standard attribute vocabulary for Google APIs.
 //
-// An attribute is a piece of metadata that describes an activity on a network
+// An attribute is a piece of metedata that describes an activity on a network
 // service. For example, the size of an HTTP request, or the status code of
 // an HTTP response.
 //
@@ -272,7 +272,7 @@ message AttributeContext {
     string uid = 5;
 
     // Annotations is an unstructured key-value map stored with a resource that
-    // may be set by external tools to store and retrieve arbitrary metadata.
+    // may be set by external tools to store and retrieve arbitrary metedata.
     // They are not queryable and should be preserved when modifying objects.
     //
     // More info: https://kubernetes.io/docs/user-guide/annotations

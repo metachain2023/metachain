@@ -32,8 +32,8 @@ option java_package = "com.google.cloud.automl.v1beta1";
 option php_namespace = "Google\\Cloud\\AutoMl\\V1beta1";
 option ruby_package = "Google::Cloud::AutoML::V1beta1";
 
-// Metadata for a dataset used for AutoML Tables.
-message TablesDatasetMetadata {
+// metedata for a dataset used for AutoML Tables.
+message TablesDatasetmetedata {
   // Output only. The table_spec_id of the primary table of this dataset.
   string primary_table_spec_id = 1;
 
@@ -81,10 +81,10 @@ message TablesDatasetMetadata {
 
   // Output only. Correlations between
   //
-  // [TablesDatasetMetadata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetMetadata.target_column_spec_id],
+  // [TablesDatasetmetedata.target_column_spec_id][google.cloud.automl.v1beta1.TablesDatasetmetedata.target_column_spec_id],
   // and other columns of the
   //
-  // [TablesDatasetMetadataprimary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id].
+  // [TablesDatasetmetedataprimary_table][google.cloud.automl.v1beta1.TablesDatasetmetedata.primary_table_spec_id].
   // Only set if the target column is set. Mapping from other column spec id to
   // its CorrelationStats with the target column.
   // This field may be stale, see the stats_update_time field for
@@ -100,8 +100,8 @@ message TablesDatasetMetadata {
   google.protobuf.Timestamp stats_update_time = 7;
 }
 
-// Model metadata specific to AutoML Tables.
-message TablesModelMetadata {
+// Model metedata specific to AutoML Tables.
+message TablesModelmetedata {
   // Additional optimization objective configuration. Required for
   // `MAXIMIZE_PRECISION_AT_RECALL` and `MAXIMIZE_RECALL_AT_PRECISION`,
   // otherwise unused.
@@ -130,13 +130,13 @@ message TablesModelMetadata {
   // the model is trained and which are used as the input for predictions.
   // The
   //
-  // [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+  // [target_column][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec]
   // as well as, according to dataset's state upon model creation,
   //
-  // [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
+  // [weight_column][google.cloud.automl.v1beta1.TablesDatasetmetedata.weight_column_spec_id],
   // and
   //
-  // [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
+  // [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetmetedata.ml_use_column_spec_id]
   // must never be included here.
   //
   // Only 3 fields are used:
@@ -214,20 +214,20 @@ message TablesAnnotation {
   // value means greater confidence in the returned value.
   // For
   //
-  // [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+  // [target_column_spec][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec]
   // of FLOAT64 data type the score is not populated.
   float score = 1;
 
   // Output only. Only populated when
   //
-  // [target_column_spec][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+  // [target_column_spec][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec]
   // has FLOAT64 data type. An interval in which the exactly correct target
   // value has 95% chance to be in.
   DoubleRange prediction_interval = 4;
 
   // The predicted value of the row's
   //
-  // [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec].
+  // [target_column][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec].
   // The value depends on the column's DataType:
   //
   // * CATEGORY - the predicted (with the above confidence `score`) CATEGORY
@@ -238,7 +238,7 @@ message TablesAnnotation {
 
   // Output only. Auxiliary information for each of the model's
   //
-  // [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+  // [input_feature_column_specs][google.cloud.automl.v1beta1.TablesModelmetedata.input_feature_column_specs]
   // with respect to this particular prediction.
   // If no other fields than
   //

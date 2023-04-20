@@ -122,7 +122,7 @@ service EntityTypes {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`:
   // [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse]
@@ -142,7 +142,7 @@ service EntityTypes {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -152,7 +152,7 @@ service EntityTypes {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -173,7 +173,7 @@ service EntityTypes {
     option (google.api.method_signature) = "parent,entity_type_names";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -183,7 +183,7 @@ service EntityTypes {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -205,7 +205,7 @@ service EntityTypes {
     option (google.api.method_signature) = "parent,entities,language_code";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -217,7 +217,7 @@ service EntityTypes {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -240,7 +240,7 @@ service EntityTypes {
     option (google.api.method_signature) = "parent,entities,language_code";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -250,7 +250,7 @@ service EntityTypes {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -272,7 +272,7 @@ service EntityTypes {
     option (google.api.method_signature) = "parent,entity_values,language_code";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 }

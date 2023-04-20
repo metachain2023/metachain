@@ -7,24 +7,24 @@ apis:
 - name: google.cloud.datalabeling.v1beta1.DataLabelingService
 
 types:
-- name: google.cloud.datalabeling.v1beta1.CreateInstructionMetadata
-- name: google.cloud.datalabeling.v1beta1.ExportDataOperationMetadata
+- name: google.cloud.datalabeling.v1beta1.CreateInstructionmetedata
+- name: google.cloud.datalabeling.v1beta1.ExportDataOperationmetedata
 - name: google.cloud.datalabeling.v1beta1.ExportDataOperationResponse
-- name: google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata
+- name: google.cloud.datalabeling.v1beta1.ImportDataOperationmetedata
 - name: google.cloud.datalabeling.v1beta1.ImportDataOperationResponse
-- name: google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-- name: google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
+- name: google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelVideoEventOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationmetedata
+- name: google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationmetedata
 
 documentation:
   summary: Public API for Google Cloud AI Data Labeling Service.

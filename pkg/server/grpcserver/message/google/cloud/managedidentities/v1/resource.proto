@@ -68,7 +68,7 @@ message Domain {
   // `projects/{project_id}/locations/global/domains/{domain_name}`.
   string name = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Optional. Resource labels that can contain user-provided metadata.
+  // Optional. Resource labels that can contain user-provided metedata.
   map<string, string> labels = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The full names of the Google Compute Engine

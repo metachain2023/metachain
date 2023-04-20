@@ -46,7 +46,7 @@ message SavedQuery {
   string display_name = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Some additional information about the SavedQuery.
-  google.protobuf.Value metadata = 12;
+  google.protobuf.Value metedata = 12;
 
   // Output only. Timestamp when this SavedQuery was created.
   google.protobuf.Timestamp create_time = 3

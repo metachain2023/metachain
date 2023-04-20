@@ -9,8 +9,8 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.memcache.v1beta2.LocationMetadata
-- name: google.cloud.memcache.v1beta2.OperationMetadata
+- name: google.cloud.memcache.v1beta2.Locationmetedata
+- name: google.cloud.memcache.v1beta2.Operationmetedata
 
 documentation:
   summary: |-

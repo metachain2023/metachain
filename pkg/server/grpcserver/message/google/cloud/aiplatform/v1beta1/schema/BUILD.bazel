@@ -14,7 +14,7 @@ proto_library(
         "annotation_payload.proto",
         "annotation_spec_color.proto",
         "data_item_payload.proto",
-        "dataset_metadata.proto",
+        "dataset_metedata.proto",
         "geometry.proto",
     ],
     deps = [

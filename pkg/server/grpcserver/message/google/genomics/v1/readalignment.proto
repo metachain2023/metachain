@@ -46,7 +46,7 @@ message LinearAlignment {
 }
 
 // A read alignment describes a linear alignment of a string of DNA to a
-// [reference sequence][google.genomics.v1.Reference], in addition to metadata
+// [reference sequence][google.genomics.v1.Reference], in addition to metedata
 // about the fragment (the molecule of DNA sequenced) and the read (the bases
 // which were read by the sequencer). A read is equivalent to a line in a SAM
 // file. A read belongs to exactly one read group and exactly one

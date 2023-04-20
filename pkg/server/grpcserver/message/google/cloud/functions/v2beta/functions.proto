@@ -100,7 +100,7 @@ service FunctionService {
     option (google.api.method_signature) = "parent,function,function_id";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.functions.v2beta.Function"
-      metadata_type: "google.cloud.functions.v2beta.OperationMetadata"
+      metedata_type: "google.cloud.functions.v2beta.Operationmetedata"
     };
   }
 
@@ -113,7 +113,7 @@ service FunctionService {
     option (google.api.method_signature) = "function,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.functions.v2beta.Function"
-      metadata_type: "google.cloud.functions.v2beta.OperationMetadata"
+      metedata_type: "google.cloud.functions.v2beta.Operationmetedata"
     };
   }
 
@@ -127,7 +127,7 @@ service FunctionService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.functions.v2beta.OperationMetadata"
+      metedata_type: "google.cloud.functions.v2beta.Operationmetedata"
     };
   }
 
@@ -939,8 +939,8 @@ message ListRuntimesResponse {
   repeated Runtime runtimes = 1;
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

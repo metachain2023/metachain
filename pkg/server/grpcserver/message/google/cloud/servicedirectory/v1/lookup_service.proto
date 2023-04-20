@@ -69,19 +69,19 @@ message ResolveServiceRequest {
   //
   // General filter string syntax:
   // <field> <operator> <value> (<logical connector>)
-  // <field> can be "name" or "metadata.<key>" for map field.
+  // <field> can be "name" or "metedata.<key>" for map field.
   // <operator> can be "<, >, <=, >=, !=, =, :". Of which ":" means HAS and is
   // roughly the same as "=".
   // <value> must be the same data type as the field.
   // <logical connector> can be "AND, OR, NOT".
   //
   // Examples of valid filters:
-  // * "metadata.owner" returns Endpoints that have a label with the
-  //   key "owner", this is the same as "metadata:owner"
-  // * "metadata.protocol=gRPC" returns Endpoints that have key/value
+  // * "metedata.owner" returns Endpoints that have a label with the
+  //   key "owner", this is the same as "metedata:owner"
+  // * "metedata.protocol=gRPC" returns Endpoints that have key/value
   //   "protocol=gRPC"
-  // * "metadata.owner!=sd AND metadata.foo=bar" returns
-  //   Endpoints that have "owner" field in metadata with a value that is not
+  // * "metedata.owner!=sd AND metedata.foo=bar" returns
+  //   Endpoints that have "owner" field in metedata with a value that is not
   //   "sd" AND have the key/value foo=bar.
   string endpoint_filter = 3 [(google.api.field_behavior) = OPTIONAL];
 }

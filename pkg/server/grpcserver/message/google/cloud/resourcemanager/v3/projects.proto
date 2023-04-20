@@ -96,7 +96,7 @@ service Projects {
     option (google.api.method_signature) = "project";
     option (google.longrunning.operation_info) = {
       response_type: "Project"
-      metadata_type: "CreateProjectMetadata"
+      metedata_type: "CreateProjectmetedata"
     };
   }
 
@@ -114,7 +114,7 @@ service Projects {
     option (google.api.method_signature) = "project,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Project"
-      metadata_type: "UpdateProjectMetadata"
+      metedata_type: "UpdateProjectmetedata"
     };
   }
 
@@ -139,7 +139,7 @@ service Projects {
     option (google.api.method_signature) = "name, destination_parent";
     option (google.longrunning.operation_info) = {
       response_type: "Project"
-      metadata_type: "MoveProjectMetadata"
+      metedata_type: "MoveProjectmetedata"
     };
   }
 
@@ -182,7 +182,7 @@ service Projects {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Project"
-      metadata_type: "DeleteProjectMetadata"
+      metedata_type: "DeleteProjectmetedata"
     };
   }
 
@@ -203,7 +203,7 @@ service Projects {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Project"
-      metadata_type: "UndeleteProjectMetadata"
+      metedata_type: "UndeleteProjectmetedata"
     };
   }
 
@@ -536,10 +536,10 @@ message CreateProjectRequest {
   Project project = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// A status object which is used as the `metadata` field for the Operation
+// A status object which is used as the `metedata` field for the Operation
 // returned by CreateProject. It provides insight for when significant phases of
 // Project creation have completed.
-message CreateProjectMetadata {
+message CreateProjectmetedata {
   // Creation time of the project creation workflow.
   google.protobuf.Timestamp create_time = 1;
 
@@ -567,9 +567,9 @@ message UpdateProjectRequest {
   google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// A status object which is used as the `metadata` field for the Operation
+// A status object which is used as the `metedata` field for the Operation
 // returned by UpdateProject.
-message UpdateProjectMetadata {
+message UpdateProjectmetedata {
 
 }
 
@@ -594,9 +594,9 @@ message MoveProjectRequest {
   ];
 }
 
-// A status object which is used as the `metadata` field for the Operation
+// A status object which is used as the `metedata` field for the Operation
 // returned by MoveProject.
-message MoveProjectMetadata {
+message MoveProjectmetedata {
 
 }
 
@@ -612,9 +612,9 @@ message DeleteProjectRequest {
   ];
 }
 
-// A status object which is used as the `metadata` field for the Operation
+// A status object which is used as the `metedata` field for the Operation
 // returned by `DeleteProject`.
-message DeleteProjectMetadata {
+message DeleteProjectmetedata {
 
 }
 
@@ -633,8 +633,8 @@ message UndeleteProjectRequest {
   ];
 }
 
-// A status object which is used as the `metadata` field for the Operation
+// A status object which is used as the `metedata` field for the Operation
 // returned by `UndeleteProject`.
-message UndeleteProjectMetadata {
+message UndeleteProjectmetedata {
 
 }

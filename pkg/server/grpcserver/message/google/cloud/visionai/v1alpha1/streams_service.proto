@@ -67,7 +67,7 @@ service StreamsService {
     option (google.api.method_signature) = "parent,cluster,cluster_id";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -80,7 +80,7 @@ service StreamsService {
     option (google.api.method_signature) = "cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -92,7 +92,7 @@ service StreamsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -121,7 +121,7 @@ service StreamsService {
     option (google.api.method_signature) = "parent,stream,stream_id";
     option (google.longrunning.operation_info) = {
       response_type: "Stream"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -134,7 +134,7 @@ service StreamsService {
     option (google.api.method_signature) = "stream,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Stream"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -146,7 +146,7 @@ service StreamsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -184,7 +184,7 @@ service StreamsService {
     option (google.api.method_signature) = "parent,event,event_id";
     option (google.longrunning.operation_info) = {
       response_type: "Event"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -197,7 +197,7 @@ service StreamsService {
     option (google.api.method_signature) = "event,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Event"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -209,7 +209,7 @@ service StreamsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -238,7 +238,7 @@ service StreamsService {
     option (google.api.method_signature) = "parent,series,series_id";
     option (google.longrunning.operation_info) = {
       response_type: "Series"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -251,7 +251,7 @@ service StreamsService {
     option (google.api.method_signature) = "series,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Series"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -263,7 +263,7 @@ service StreamsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -276,7 +276,7 @@ service StreamsService {
     option (google.api.method_signature) = "parent,channel,channel_id";
     option (google.longrunning.operation_info) = {
       response_type: "Channel"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }

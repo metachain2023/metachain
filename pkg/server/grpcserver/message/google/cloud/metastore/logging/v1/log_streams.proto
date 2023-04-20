@@ -14,21 +14,21 @@
 
 syntax = "proto3";
 
-package google.cloud.metastore.logging.v1;
+package google.cloud.metestore.logging.v1;
 
-option go_package = "cloud.google.com/go/metastore/logging/apiv1/loggingpb;loggingpb";
+option go_package = "cloud.google.com/go/metestore/logging/apiv1/loggingpb;loggingpb";
 option java_multiple_files = true;
 option java_outer_classname = "LogStreamsProto";
-option java_package = "google.cloud.metastore.logging.v1";
+option java_package = "google.cloud.metestore.logging.v1";
 
-// Stackdriver structured-payload for events generated from Hive Metastore
+// Stackdriver structured-payload for events generated from Hive metestore
 // API requests.
 message RequestsLogEntry {
   // A free-text string describing the request.
   string message = 1;
 }
 
-// Stackdriver structured-payload for events generated from Hive Metastore
+// Stackdriver structured-payload for events generated from Hive metestore
 // system activity.
 message SystemActivityLogEntry {
   // A free-text string describing the system activity.

@@ -72,12 +72,12 @@ message Index {
   // Note: The URI given on output will be immutable and probably different,
   // including the URI scheme, than the one given on input. The output URI will
   // point to a location where the user only has a read access.
-  string metadata_schema_uri = 4 [(google.api.field_behavior) = IMMUTABLE];
+  string metedata_schema_uri = 4 [(google.api.field_behavior) = IMMUTABLE];
 
-  // An additional information about the Index; the schema of the metadata can
+  // An additional information about the Index; the schema of the metedata can
   // be found in
-  // [metadata_schema][google.cloud.aiplatform.v1beta1.Index.metadata_schema_uri].
-  google.protobuf.Value metadata = 6;
+  // [metedata_schema][google.cloud.aiplatform.v1beta1.Index.metedata_schema_uri].
+  google.protobuf.Value metedata = 6;
 
   // Output only. The pointers to DeployedIndexes created from this Index.
   // An Index can be only deleted if all its DeployedIndexes had been undeployed
@@ -89,7 +89,7 @@ message Index {
   // "overwrite" update happens.
   string etag = 8;
 
-  // The labels with user-defined metadata to organize your Indexes.
+  // The labels with user-defined metedata to organize your Indexes.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -105,8 +105,8 @@ message Index {
   // Output only. Timestamp when this Index was most recently updated.
   // This also includes any update to the contents of the Index.
   // Note that Operations working on this Index may have their
-  // [Operations.metadata.generic_metadata.update_time]
-  // [google.cloud.aiplatform.v1beta1.GenericOperationMetadata.update_time] a
+  // [Operations.metedata.generic_metedata.update_time]
+  // [google.cloud.aiplatform.v1beta1.GenericOperationmetedata.update_time] a
   // little after the value of this timestamp, yet that does not mean their
   // results are not already reflected in the Index. Result of any successfully
   // completed Operation on the Index is reflected in it.

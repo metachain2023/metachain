@@ -11,7 +11,7 @@ apis:
 - name: google.cloud.aiplatform.v1.IndexEndpointService
 - name: google.cloud.aiplatform.v1.IndexService
 - name: google.cloud.aiplatform.v1.JobService
-- name: google.cloud.aiplatform.v1.MetadataService
+- name: google.cloud.aiplatform.v1.metedataService
 - name: google.cloud.aiplatform.v1.MigrationService
 - name: google.cloud.aiplatform.v1.ModelService
 - name: google.cloud.aiplatform.v1.PipelineService
@@ -24,63 +24,63 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.aiplatform.v1.BatchCreateFeaturesOperationMetadata
+- name: google.cloud.aiplatform.v1.BatchCreateFeaturesOperationmetedata
 - name: google.cloud.aiplatform.v1.BatchCreateFeaturesResponse
-- name: google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata
+- name: google.cloud.aiplatform.v1.BatchMigrateResourcesOperationmetedata
 - name: google.cloud.aiplatform.v1.BatchMigrateResourcesResponse
-- name: google.cloud.aiplatform.v1.BatchReadFeatureValuesOperationMetadata
+- name: google.cloud.aiplatform.v1.BatchReadFeatureValuesOperationmetedata
 - name: google.cloud.aiplatform.v1.BatchReadFeatureValuesResponse
-- name: google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateMetatdata
+- name: google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStatemetetdata
 - name: google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateResponse
-- name: google.cloud.aiplatform.v1.CopyModelOperationMetadata
+- name: google.cloud.aiplatform.v1.CopyModelOperationmetedata
 - name: google.cloud.aiplatform.v1.CopyModelResponse
-- name: google.cloud.aiplatform.v1.CreateDatasetOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateEndpointOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateEntityTypeOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateFeatureOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateFeaturestoreOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateIndexEndpointOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateIndexOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateMetadataStoreOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateSpecialistPoolOperationMetadata
-- name: google.cloud.aiplatform.v1.CreateTensorboardOperationMetadata
-- name: google.cloud.aiplatform.v1.DeleteMetadataStoreOperationMetadata
-- name: google.cloud.aiplatform.v1.DeleteOperationMetadata
-- name: google.cloud.aiplatform.v1.DeployIndexOperationMetadata
+- name: google.cloud.aiplatform.v1.CreateDatasetOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateEndpointOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateEntityTypeOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateFeatureOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateFeaturestoreOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateIndexEndpointOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateIndexOperationmetedata
+- name: google.cloud.aiplatform.v1.CreatemetedataStoreOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateSpecialistPoolOperationmetedata
+- name: google.cloud.aiplatform.v1.CreateTensorboardOperationmetedata
+- name: google.cloud.aiplatform.v1.DeletemetedataStoreOperationmetedata
+- name: google.cloud.aiplatform.v1.DeleteOperationmetedata
+- name: google.cloud.aiplatform.v1.DeployIndexOperationmetedata
 - name: google.cloud.aiplatform.v1.DeployIndexResponse
-- name: google.cloud.aiplatform.v1.DeployModelOperationMetadata
+- name: google.cloud.aiplatform.v1.DeployModelOperationmetedata
 - name: google.cloud.aiplatform.v1.DeployModelResponse
-- name: google.cloud.aiplatform.v1.ExportDataOperationMetadata
+- name: google.cloud.aiplatform.v1.ExportDataOperationmetedata
 - name: google.cloud.aiplatform.v1.ExportDataResponse
-- name: google.cloud.aiplatform.v1.ExportFeatureValuesOperationMetadata
+- name: google.cloud.aiplatform.v1.ExportFeatureValuesOperationmetedata
 - name: google.cloud.aiplatform.v1.ExportFeatureValuesResponse
-- name: google.cloud.aiplatform.v1.ExportModelOperationMetadata
+- name: google.cloud.aiplatform.v1.ExportModelOperationmetedata
 - name: google.cloud.aiplatform.v1.ExportModelResponse
-- name: google.cloud.aiplatform.v1.ImportDataOperationMetadata
+- name: google.cloud.aiplatform.v1.ImportDataOperationmetedata
 - name: google.cloud.aiplatform.v1.ImportDataResponse
-- name: google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata
+- name: google.cloud.aiplatform.v1.ImportFeatureValuesOperationmetedata
 - name: google.cloud.aiplatform.v1.ImportFeatureValuesResponse
-- name: google.cloud.aiplatform.v1.MutateDeployedIndexOperationMetadata
+- name: google.cloud.aiplatform.v1.MutateDeployedIndexOperationmetedata
 - name: google.cloud.aiplatform.v1.MutateDeployedIndexResponse
-- name: google.cloud.aiplatform.v1.PurgeArtifactsMetadata
+- name: google.cloud.aiplatform.v1.PurgeArtifactsmetedata
 - name: google.cloud.aiplatform.v1.PurgeArtifactsResponse
-- name: google.cloud.aiplatform.v1.PurgeContextsMetadata
+- name: google.cloud.aiplatform.v1.PurgeContextsmetedata
 - name: google.cloud.aiplatform.v1.PurgeContextsResponse
-- name: google.cloud.aiplatform.v1.PurgeExecutionsMetadata
+- name: google.cloud.aiplatform.v1.PurgeExecutionsmetedata
 - name: google.cloud.aiplatform.v1.PurgeExecutionsResponse
 - name: google.cloud.aiplatform.v1.SpecialistPool
-- name: google.cloud.aiplatform.v1.SuggestTrialsMetadata
+- name: google.cloud.aiplatform.v1.SuggestTrialsmetedata
 - name: google.cloud.aiplatform.v1.SuggestTrialsResponse
-- name: google.cloud.aiplatform.v1.UndeployIndexOperationMetadata
+- name: google.cloud.aiplatform.v1.UndeployIndexOperationmetedata
 - name: google.cloud.aiplatform.v1.UndeployIndexResponse
-- name: google.cloud.aiplatform.v1.UndeployModelOperationMetadata
+- name: google.cloud.aiplatform.v1.UndeployModelOperationmetedata
 - name: google.cloud.aiplatform.v1.UndeployModelResponse
-- name: google.cloud.aiplatform.v1.UpdateFeaturestoreOperationMetadata
-- name: google.cloud.aiplatform.v1.UpdateIndexOperationMetadata
-- name: google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobOperationMetadata
-- name: google.cloud.aiplatform.v1.UpdateSpecialistPoolOperationMetadata
-- name: google.cloud.aiplatform.v1.UpdateTensorboardOperationMetadata
-- name: google.cloud.aiplatform.v1.UploadModelOperationMetadata
+- name: google.cloud.aiplatform.v1.UpdateFeaturestoreOperationmetedata
+- name: google.cloud.aiplatform.v1.UpdateIndexOperationmetedata
+- name: google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobOperationmetedata
+- name: google.cloud.aiplatform.v1.UpdateSpecialistPoolOperationmetedata
+- name: google.cloud.aiplatform.v1.UpdateTensorboardOperationmetedata
+- name: google.cloud.aiplatform.v1.UploadModelOperationmetedata
 - name: google.cloud.aiplatform.v1.UploadModelResponse
 - name: google.cloud.aiplatform.v1.schema.ImageBoundingBoxAnnotation
 - name: google.cloud.aiplatform.v1.schema.ImageClassificationAnnotation
@@ -145,7 +145,7 @@ backend:
     deadline: 60.0
   - selector: 'google.cloud.aiplatform.v1.JobService.*'
     deadline: 60.0
-  - selector: 'google.cloud.aiplatform.v1.MetadataService.*'
+  - selector: 'google.cloud.aiplatform.v1.metedataService.*'
     deadline: 60.0
   - selector: google.cloud.aiplatform.v1.MigrationService.BatchMigrateResources
     deadline: 60.0
@@ -546,7 +546,7 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/cloud-platform.read-only
-  - selector: 'google.cloud.aiplatform.v1.MetadataService.*'
+  - selector: 'google.cloud.aiplatform.v1.metedataService.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform

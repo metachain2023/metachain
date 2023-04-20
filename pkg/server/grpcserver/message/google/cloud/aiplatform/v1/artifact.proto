@@ -33,7 +33,7 @@ option ruby_package = "Google::Cloud::AIPlatform::V1";
 message Artifact {
   option (google.api.resource) = {
     type: "aiplatform.googleapis.com/Artifact"
-    pattern: "projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}"
+    pattern: "projects/{project}/locations/{location}/metedataStores/{metedata_store}/artifacts/{artifact}"
   };
 
   // Describes the state of the Artifact.
@@ -65,7 +65,7 @@ message Artifact {
   // blind "overwrite" update happens.
   string etag = 9;
 
-  // The labels with user-defined metadata to organize your Artifacts.
+  // The labels with user-defined metedata to organize your Artifacts.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -88,24 +88,24 @@ message Artifact {
   // or check the validity of state transitions.
   State state = 13;
 
-  // The title of the schema describing the metadata.
+  // The title of the schema describing the metedata.
   //
   // Schema title and version is expected to be registered in earlier Create
   // Schema calls. And both are used together as unique identifiers to identify
-  // schemas within the local metadata store.
+  // schemas within the local metedata store.
   string schema_title = 14;
 
   // The version of the schema in schema_name to use.
   //
   // Schema title and version is expected to be registered in earlier Create
   // Schema calls. And both are used together as unique identifiers to identify
-  // schemas within the local metadata store.
+  // schemas within the local metedata store.
   string schema_version = 15;
 
   // Properties of the Artifact.
-  // Top level metadata keys' heading and trailing spaces will be trimmed.
+  // Top level metedata keys' heading and trailing spaces will be trimmed.
   // The size of this field should not exceed 200KB.
-  google.protobuf.Struct metadata = 16;
+  google.protobuf.Struct metedata = 16;
 
   // Description of the Artifact
   string description = 17;

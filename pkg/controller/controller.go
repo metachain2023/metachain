@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"net"
 
-	"metachain/pkg/block"
-	"metachain/pkg/blockchain"
-	"metachain/pkg/logger"
-	"metachain/pkg/miner"
-	"metachain/pkg/storage/miscellaneous"
-	"metachain/pkg/transaction"
-	"metachain/pkg/txpool"
+	"metechain/pkg/block"
+	"metechain/pkg/blockchain"
+	"metechain/pkg/logger"
+	"metechain/pkg/miner"
+	"metechain/pkg/storage/miscellaneous"
+	"metechain/pkg/transaction"
+	"metechain/pkg/txpool"
 
 	"go.uber.org/zap"
 )

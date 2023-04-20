@@ -35,8 +35,8 @@ message TensorboardTimeSeries {
     pattern: "projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}"
   };
 
-  // Describes metadata for a TensorboardTimeSeries.
-  message Metadata {
+  // Describes metedata for a TensorboardTimeSeries.
+  message metedata {
     // Output only. Max step index of all data points within a
     // TensorboardTimeSeries.
     int64 max_step = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -106,7 +106,7 @@ message TensorboardTimeSeries {
   // Data of the current plugin, with the size limited to 65KB.
   bytes plugin_data = 9;
 
-  // Output only. Scalar, Tensor, or Blob metadata for this
+  // Output only. Scalar, Tensor, or Blob metedata for this
   // TensorboardTimeSeries.
-  Metadata metadata = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+  metedata metedata = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

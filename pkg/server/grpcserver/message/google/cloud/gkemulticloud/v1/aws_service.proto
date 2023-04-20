@@ -55,7 +55,7 @@ service AwsClusters {
     option (google.api.method_signature) = "parent,aws_cluster,aws_cluster_id";
     option (google.longrunning.operation_info) = {
       response_type: "AwsCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -69,7 +69,7 @@ service AwsClusters {
     option (google.api.method_signature) = "aws_cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AwsCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -109,7 +109,7 @@ service AwsClusters {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -138,7 +138,7 @@ service AwsClusters {
         "parent,aws_node_pool,aws_node_pool_id";
     option (google.longrunning.operation_info) = {
       response_type: "AwsNodePool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -152,7 +152,7 @@ service AwsClusters {
     option (google.api.method_signature) = "aws_node_pool,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AwsNodePool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -190,7 +190,7 @@ service AwsClusters {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

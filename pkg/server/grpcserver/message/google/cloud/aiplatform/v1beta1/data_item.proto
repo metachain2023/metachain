@@ -48,7 +48,7 @@ message DataItem {
   google.protobuf.Timestamp update_time = 6
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. The labels with user-defined metadata to organize your DataItems.
+  // Optional. The labels with user-defined metedata to organize your DataItems.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -63,8 +63,8 @@ message DataItem {
 
   // Required. The data that the DataItem represents (for example, an image or a
   // text snippet). The schema of the payload is stored in the parent Dataset's
-  // [metadata
-  // schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri]
+  // [metedata
+  // schema's][google.cloud.aiplatform.v1beta1.Dataset.metedata_schema_uri]
   // dataItemSchemaUri field.
   google.protobuf.Value payload = 4 [(google.api.field_behavior) = REQUIRED];
 

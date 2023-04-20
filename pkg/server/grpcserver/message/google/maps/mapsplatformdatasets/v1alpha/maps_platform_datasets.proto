@@ -43,8 +43,8 @@ message CreateDatasetRequest {
   Dataset dataset = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Request to update the metadata fields of the dataset.
-message UpdateDatasetMetadataRequest {
+// Request to update the metedata fields of the dataset.
+message UpdateDatasetmetedataRequest {
   // Required. The dataset to update. The dataset's name is used to identify the dataset
   // to be updated. The name has the format:
   // projects/{project}/datasets/{dataset_id}

@@ -9,19 +9,19 @@ apis:
 types:
 - name: google.api.serviceusage.v1beta1.BatchCreateAdminOverridesResponse
 - name: google.api.serviceusage.v1beta1.BatchCreateConsumerOverridesResponse
-- name: google.api.serviceusage.v1beta1.CreateAdminQuotaPolicyMetadata
-- name: google.api.serviceusage.v1beta1.DeleteAdminQuotaPolicyMetadata
-- name: google.api.serviceusage.v1beta1.GetServiceIdentityMetadata
+- name: google.api.serviceusage.v1beta1.CreateAdminQuotaPolicymetedata
+- name: google.api.serviceusage.v1beta1.DeleteAdminQuotaPolicymetedata
+- name: google.api.serviceusage.v1beta1.GetServiceIdentitymetedata
 - name: google.api.serviceusage.v1beta1.GetServiceIdentityResponse
-- name: google.api.serviceusage.v1beta1.ImportAdminOverridesMetadata
+- name: google.api.serviceusage.v1beta1.ImportAdminOverridesmetedata
 - name: google.api.serviceusage.v1beta1.ImportAdminOverridesResponse
-- name: google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesMetadata
+- name: google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesmetedata
 - name: google.api.serviceusage.v1beta1.ImportAdminQuotaPoliciesResponse
-- name: google.api.serviceusage.v1beta1.ImportConsumerOverridesMetadata
+- name: google.api.serviceusage.v1beta1.ImportConsumerOverridesmetedata
 - name: google.api.serviceusage.v1beta1.ImportConsumerOverridesResponse
-- name: google.api.serviceusage.v1beta1.OperationMetadata
+- name: google.api.serviceusage.v1beta1.Operationmetedata
 - name: google.api.serviceusage.v1beta1.ServiceIdentity
-- name: google.api.serviceusage.v1beta1.UpdateAdminQuotaPolicyMetadata
+- name: google.api.serviceusage.v1beta1.UpdateAdminQuotaPolicymetedata
 
 documentation:
   summary: |-

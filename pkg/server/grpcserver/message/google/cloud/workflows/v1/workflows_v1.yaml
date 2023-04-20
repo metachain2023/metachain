@@ -7,7 +7,7 @@ apis:
 - name: google.cloud.workflows.v1.Workflows
 
 types:
-- name: google.cloud.workflows.v1.OperationMetadata
+- name: google.cloud.workflows.v1.Operationmetedata
 
 documentation:
   summary: |-

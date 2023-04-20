@@ -55,7 +55,7 @@ service Speech {
     option (google.api.method_signature) = "parent,recognizer,recognizer_id";
     option (google.longrunning.operation_info) = {
       response_type: "Recognizer"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -89,7 +89,7 @@ service Speech {
     option (google.api.method_signature) = "recognizer,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Recognizer"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -102,7 +102,7 @@ service Speech {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Recognizer"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -116,7 +116,7 @@ service Speech {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Recognizer"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -150,7 +150,7 @@ service Speech {
         "recognizer,config,config_mask,files";
     option (google.longrunning.operation_info) = {
       response_type: "BatchRecognizeResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -182,7 +182,7 @@ service Speech {
         "parent,custom_class,custom_class_id";
     option (google.longrunning.operation_info) = {
       response_type: "CustomClass"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -214,7 +214,7 @@ service Speech {
     option (google.api.method_signature) = "custom_class,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "CustomClass"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -227,7 +227,7 @@ service Speech {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CustomClass"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -241,7 +241,7 @@ service Speech {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CustomClass"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -255,7 +255,7 @@ service Speech {
     option (google.api.method_signature) = "parent,phrase_set,phrase_set_id";
     option (google.longrunning.operation_info) = {
       response_type: "PhraseSet"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -286,7 +286,7 @@ service Speech {
     option (google.api.method_signature) = "phrase_set,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "PhraseSet"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -299,7 +299,7 @@ service Speech {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "PhraseSet"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -313,7 +313,7 @@ service Speech {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "PhraseSet"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -345,8 +345,8 @@ message CreateRecognizerRequest {
   ];
 }
 
-// Represents the metadata of a long-running operation.
-message OperationMetadata {
+// Represents the metedata of a long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 
@@ -424,10 +424,10 @@ message OperationMetadata {
   // value is 100, then the operation is finished.
   int32 progress_percent = 22;
 
-  // Specific metadata per RPC
-  oneof metadata {
-    // Metadata specific to the BatchRecognize method.
-    BatchRecognizeMetadata batch_recognize_metadata = 23;
+  // Specific metedata per RPC
+  oneof metedata {
+    // metedata specific to the BatchRecognize method.
+    BatchRecognizemetedata batch_recognize_metedata = 23;
   }
 }
 
@@ -554,7 +554,7 @@ message UndeleteRecognizerRequest {
   string etag = 4;
 }
 
-// A Recognizer message. Stores recognition configuration and metadata.
+// A Recognizer message. Stores recognition configuration and metedata.
 message Recognizer {
   option (google.api.resource) = {
     type: "speech.googleapis.com/Recognizer"
@@ -695,7 +695,7 @@ message Recognizer {
 // * RFC4867_5_AMR: AMR frames with an rfc4867.5 header.
 // * RFC4867_5_AMRWB: AMR-WB frames with an rfc4867.5 header.
 // * FLAC: FLAC frames in the "native FLAC" container format.
-// * MP3: MPEG audio frames with optional (ignored) ID3 metadata.
+// * MP3: MPEG audio frames with optional (ignored) ID3 metedata.
 // * OGG_OPUS: Opus audio frames in an Ogg container.
 // * WEBM_OPUS: Opus audio frames in a WebM container.
 message AutoDetectDecodingConfig {}
@@ -889,7 +889,7 @@ message RecognizeRequest {
     }
   ];
 
-  // Features and audio metadata to use for the Automatic Speech Recognition.
+  // Features and audio metedata to use for the Automatic Speech Recognition.
   // This field in combination with the
   // [config_mask][google.cloud.speech.v2.RecognizeRequest.config_mask] field
   // can be used to override parts of the
@@ -933,8 +933,8 @@ message RecognizeRequest {
   }
 }
 
-// Metadata about the recognition request and response.
-message RecognitionResponseMetadata {
+// metedata about the recognition request and response.
+message RecognitionResponsemetedata {
   // When available, billed audio seconds for the corresponding request.
   google.protobuf.Duration total_billed_duration = 6;
 }
@@ -1030,8 +1030,8 @@ message RecognizeResponse {
   // portions of audio.
   repeated SpeechRecognitionResult results = 3;
 
-  // Metadata about the recognition.
-  RecognitionResponseMetadata metadata = 2;
+  // metedata about the recognition.
+  RecognitionResponsemetedata metedata = 2;
 }
 
 // Available recognition features specific to streaming recognition requests.
@@ -1066,7 +1066,7 @@ message StreamingRecognitionFeatures {
 
 // Provides configuration information for the StreamingRecognize request.
 message StreamingRecognitionConfig {
-  // Required. Features and audio metadata to use for the Automatic Speech
+  // Required. Features and audio metedata to use for the Automatic Speech
   // Recognition. This field in combination with the
   // [config_mask][google.cloud.speech.v2.StreamingRecognitionConfig.config_mask]
   // field can be used to override parts of the
@@ -1146,7 +1146,7 @@ message BatchRecognizeRequest {
     }
   ];
 
-  // Features and audio metadata to use for the Automatic Speech Recognition.
+  // Features and audio metedata to use for the Automatic Speech Recognition.
   // This field in combination with the
   // [config_mask][google.cloud.speech.v2.BatchRecognizeRequest.config_mask]
   // field can be used to override parts of the
@@ -1169,8 +1169,8 @@ message BatchRecognizeRequest {
   // request.
   google.protobuf.FieldMask config_mask = 5;
 
-  // Audio files with file metadata for ASR.
-  repeated BatchRecognizeFileMetadata files = 3;
+  // Audio files with file metedata for ASR.
+  repeated BatchRecognizeFilemetedata files = 3;
 }
 
 // Response message for
@@ -1190,9 +1190,9 @@ message BatchRecognizeFileResult {
   google.rpc.Status error = 2;
 }
 
-// Metadata about transcription for a single file (for example, progress
+// metedata about transcription for a single file (for example, progress
 // percent).
-message BatchRecognizeTranscriptionMetadata {
+message BatchRecognizeTranscriptionmetedata {
   // How much of the file has been transcribed so far.
   int32 progress_percent = 1;
 
@@ -1203,24 +1203,24 @@ message BatchRecognizeTranscriptionMetadata {
   string uri = 3;
 }
 
-// Operation metadata for
+// Operation metedata for
 // [BatchRecognize][google.cloud.speech.v2.Speech.BatchRecognize].
-message BatchRecognizeMetadata {
-  // Map from provided filename to the transcription metadata for that file.
-  map<string, BatchRecognizeTranscriptionMetadata> transcription_metadata = 1;
+message BatchRecognizemetedata {
+  // Map from provided filename to the transcription metedata for that file.
+  map<string, BatchRecognizeTranscriptionmetedata> transcription_metedata = 1;
 }
 
-// Metadata about a single file in a batch for BatchRecognize.
-message BatchRecognizeFileMetadata {
+// metedata about a single file in a batch for BatchRecognize.
+message BatchRecognizeFilemetedata {
   // The audio source, which is a Google Cloud Storage URI.
   oneof audio_source {
     // Cloud Storage URI for the audio file.
     string uri = 1;
   }
 
-  // Features and audio metadata to use for the Automatic Speech Recognition.
+  // Features and audio metedata to use for the Automatic Speech Recognition.
   // This field in combination with the
-  // [config_mask][google.cloud.speech.v2.BatchRecognizeFileMetadata.config_mask]
+  // [config_mask][google.cloud.speech.v2.BatchRecognizeFilemetedata.config_mask]
   // field can be used to override parts of the
   // [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config]
   // of the Recognizer resource as well as the
@@ -1229,16 +1229,16 @@ message BatchRecognizeFileMetadata {
   RecognitionConfig config = 4;
 
   // The list of fields in
-  // [config][google.cloud.speech.v2.BatchRecognizeFileMetadata.config] that
+  // [config][google.cloud.speech.v2.BatchRecognizeFilemetedata.config] that
   // override the values in the
   // [default_recognition_config][google.cloud.speech.v2.Recognizer.default_recognition_config]
   // of the recognizer during this recognition request. If no mask is provided,
   // all non-default valued fields in
-  // [config][google.cloud.speech.v2.BatchRecognizeFileMetadata.config] override
+  // [config][google.cloud.speech.v2.BatchRecognizeFilemetedata.config] override
   // the values in the recognizer for this recognition request. If a mask is
   // provided, only the fields listed in the mask override the config in the
   // recognizer for this recognition request. If a wildcard (`*`) is provided,
-  // [config][google.cloud.speech.v2.BatchRecognizeFileMetadata.config]
+  // [config][google.cloud.speech.v2.BatchRecognizeFilemetedata.config]
   // completely overrides and replaces the config in the recognizer for this
   // recognition request.
   google.protobuf.FieldMask config_mask = 5;
@@ -1374,8 +1374,8 @@ message StreamingRecognizeResponse {
   // Time offset between the beginning of the audio and event emission.
   google.protobuf.Duration speech_event_offset = 7;
 
-  // Metadata about the recognition.
-  RecognitionResponseMetadata metadata = 5;
+  // metedata about the recognition.
+  RecognitionResponsemetedata metedata = 5;
 }
 
 // Message representing the config for the Speech-to-Text API. This includes an

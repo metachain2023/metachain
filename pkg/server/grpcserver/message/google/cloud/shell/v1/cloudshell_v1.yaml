@@ -8,15 +8,15 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.shell.v1.AddPublicKeyMetadata
+- name: google.cloud.shell.v1.AddPublicKeymetedata
 - name: google.cloud.shell.v1.AddPublicKeyResponse
-- name: google.cloud.shell.v1.AuthorizeEnvironmentMetadata
+- name: google.cloud.shell.v1.AuthorizeEnvironmentmetedata
 - name: google.cloud.shell.v1.AuthorizeEnvironmentResponse
-- name: google.cloud.shell.v1.CreateEnvironmentMetadata
-- name: google.cloud.shell.v1.DeleteEnvironmentMetadata
-- name: google.cloud.shell.v1.RemovePublicKeyMetadata
+- name: google.cloud.shell.v1.CreateEnvironmentmetedata
+- name: google.cloud.shell.v1.DeleteEnvironmentmetedata
+- name: google.cloud.shell.v1.RemovePublicKeymetedata
 - name: google.cloud.shell.v1.RemovePublicKeyResponse
-- name: google.cloud.shell.v1.StartEnvironmentMetadata
+- name: google.cloud.shell.v1.StartEnvironmentmetedata
 - name: google.cloud.shell.v1.StartEnvironmentResponse
 
 documentation:

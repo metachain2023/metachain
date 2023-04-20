@@ -25,7 +25,7 @@ option java_package = "com.google.apps.drive.labels.v2";
 // internal clients to identify the exact server exception that caused the
 // error for debugging and logging purposes.
 // Add new ExceptionTypes to EXCEPTION_TYPE_TO_ERROR_CODE_MAP in
-// j/c/g/apps/boq/metadata/model/service/exceptions/CategoryExceptionHelper
+// j/c/g/apps/boq/metedata/model/service/exceptions/CategoryExceptionHelper
 enum ExceptionType {
   // Unknown ExceptionType.
   EXCEPTION_TYPE_UNSPECIFIED = 0;
@@ -33,31 +33,31 @@ enum ExceptionType {
   // The required field is missing.
   FIELD_REQUIRED = 1;
 
-  // Unable to create a metamodel with the given ID because it already exists.
-  METAMODEL_ALREADY_EXISTS = 2;
+  // Unable to create a metemodel with the given ID because it already exists.
+  meteMODEL_ALREADY_EXISTS = 2;
 
-  // Metamodel was not found
-  METAMODEL_NOT_FOUND = 3;
+  // metemodel was not found
+  meteMODEL_NOT_FOUND = 3;
 
-  // Metamodel state transition isn't allowed.
-  ILLEGAL_METAMODEL_STATE_TRANSITION = 4;
+  // metemodel state transition isn't allowed.
+  ILLEGAL_meteMODEL_STATE_TRANSITION = 4;
 
-  // Metamodel deprecation policy is invalid.
-  INVALID_METAMODEL_DEPRECATION_POLICY = 5;
+  // metemodel deprecation policy is invalid.
+  INVALID_meteMODEL_DEPRECATION_POLICY = 5;
 
-  // Cannot delete a metamodel due to the pending deprecation policy.
-  METAMODEL_DELETION_DENIED_UNTIL = 6;
+  // Cannot delete a metemodel due to the pending deprecation policy.
+  meteMODEL_DELETION_DENIED_UNTIL = 6;
 
   // A Field value is invalid.
   INVALID_FIELD = 7;
 
-  // Precondition failed when updating a metamodel
-  METAMODEL_PRECONDITION_FAILED = 8;
+  // Precondition failed when updating a metemodel
+  meteMODEL_PRECONDITION_FAILED = 8;
 
   // Multiple fields had the same key.
   DUPLICATE_FIELD_KEY = 9;
 
-  // Removing a field from a Metamodel (e.g. a published Metamodel) is not
+  // Removing a field from a metemodel (e.g. a published metemodel) is not
   // permitted.
   ILLEGAL_FIELD_REMOVAL = 10;
 
@@ -65,10 +65,10 @@ enum ExceptionType {
   ILLEGAL_FIELD_OPTIONS_FOR_FIELD = 11;
 
   // Some changes are not supported
-  UNSUPPORTED_CHANGE_TO_PUBLISHED_METAMODEL = 12;
+  UNSUPPORTED_CHANGE_TO_PUBLISHED_meteMODEL = 12;
 
-  // Cannot change the metamodel state in an update
-  ILLEGAL_METAMODEL_STATE_TRANSITION_IN_UPDATE = 13;
+  // Cannot change the metemodel state in an update
+  ILLEGAL_meteMODEL_STATE_TRANSITION_IN_UPDATE = 13;
 
   // The page token is expired
   PAGE_TOKEN_EXPIRED = 14;

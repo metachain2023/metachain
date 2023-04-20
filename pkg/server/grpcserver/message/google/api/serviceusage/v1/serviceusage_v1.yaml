@@ -11,7 +11,7 @@ types:
 - name: google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure
 - name: google.api.serviceusage.v1.DisableServiceResponse
 - name: google.api.serviceusage.v1.EnableServiceResponse
-- name: google.api.serviceusage.v1.OperationMetadata
+- name: google.api.serviceusage.v1.Operationmetedata
 
 documentation:
   summary: |-

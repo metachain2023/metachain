@@ -745,7 +745,7 @@ message ExecuteBatchDmlResponse {
   // the number of rows modified by the statement.
   //
   // Only the first [ResultSet][google.spanner.v1.ResultSet] in the response contains valid
-  // [ResultSetMetadata][google.spanner.v1.ResultSetMetadata].
+  // [ResultSetmetedata][google.spanner.v1.ResultSetmetedata].
   repeated ResultSet result_sets = 1;
 
   // If all DML statements are executed successfully, the status is `OK`.

@@ -57,7 +57,7 @@ service AttachedClusters {
         "parent,attached_cluster,attached_cluster_id";
     option (google.longrunning.operation_info) = {
       response_type: "AttachedCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -72,7 +72,7 @@ service AttachedClusters {
     option (google.api.method_signature) = "attached_cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AttachedCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -95,7 +95,7 @@ service AttachedClusters {
     option (google.api.method_signature) = "parent,fleet_membership";
     option (google.longrunning.operation_info) = {
       response_type: "AttachedCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -132,7 +132,7 @@ service AttachedClusters {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

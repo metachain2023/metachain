@@ -7,7 +7,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/crypto"
 
-	_ "metachain/pkg/crypto/sigs/ed25519"
+	_ "metechain/pkg/crypto/sigs/ed25519"
 
 	"github.com/stretchr/testify/assert"
 )

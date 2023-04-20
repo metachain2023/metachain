@@ -82,7 +82,7 @@ service JobService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -143,7 +143,7 @@ service JobService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -194,7 +194,7 @@ service JobService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -254,7 +254,7 @@ service JobService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -335,7 +335,7 @@ service JobService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -416,7 +416,7 @@ service JobService {
         "model_deployment_monitoring_job,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "ModelDeploymentMonitoringJob"
-      metadata_type: "UpdateModelDeploymentMonitoringJobOperationMetadata"
+      metedata_type: "UpdateModelDeploymentMonitoringJobOperationmetedata"
     };
   }
 
@@ -430,7 +430,7 @@ service JobService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -1366,7 +1366,7 @@ message ResumeModelDeploymentMonitoringJobRequest {
 
 // Runtime operation information for
 // [JobService.UpdateModelDeploymentMonitoringJob][google.cloud.aiplatform.v1beta1.JobService.UpdateModelDeploymentMonitoringJob].
-message UpdateModelDeploymentMonitoringJobOperationMetadata {
+message UpdateModelDeploymentMonitoringJobOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }

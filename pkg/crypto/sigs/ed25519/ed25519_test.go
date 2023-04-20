@@ -3,8 +3,8 @@ package ed25519
 import (
 	"testing"
 
-	"metachain/pkg/crypto"
-	"metachain/pkg/crypto/sigs"
+	"metechain/pkg/crypto"
+	"metechain/pkg/crypto/sigs"
 
 	"github.com/stretchr/testify/require"
 )

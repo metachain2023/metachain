@@ -89,7 +89,7 @@ service DataLabelingService {
     option (google.api.method_signature) = "name,input_config";
     option (google.longrunning.operation_info) = {
       response_type: "ImportDataOperationResponse"
-      metadata_type: "ImportDataOperationMetadata"
+      metedata_type: "ImportDataOperationmetedata"
     };
   }
 
@@ -102,7 +102,7 @@ service DataLabelingService {
     option (google.api.method_signature) = "name,annotated_dataset,filter,output_config";
     option (google.longrunning.operation_info) = {
       response_type: "ExportDataOperationResponse"
-      metadata_type: "ExportDataOperationMetadata"
+      metedata_type: "ExportDataOperationmetedata"
     };
   }
 
@@ -157,7 +157,7 @@ service DataLabelingService {
     option (google.api.method_signature) = "parent,basic_config,feature";
     option (google.longrunning.operation_info) = {
       response_type: "AnnotatedDataset"
-      metadata_type: "LabelOperationMetadata"
+      metedata_type: "LabelOperationmetedata"
     };
   }
 
@@ -171,7 +171,7 @@ service DataLabelingService {
     option (google.api.method_signature) = "parent,basic_config,feature";
     option (google.longrunning.operation_info) = {
       response_type: "AnnotatedDataset"
-      metadata_type: "LabelOperationMetadata"
+      metedata_type: "LabelOperationmetedata"
     };
   }
 
@@ -185,7 +185,7 @@ service DataLabelingService {
     option (google.api.method_signature) = "parent,basic_config,feature";
     option (google.longrunning.operation_info) = {
       response_type: "AnnotatedDataset"
-      metadata_type: "LabelOperationMetadata"
+      metedata_type: "LabelOperationmetedata"
     };
   }
 
@@ -247,7 +247,7 @@ service DataLabelingService {
     option (google.api.method_signature) = "parent,instruction";
     option (google.longrunning.operation_info) = {
       response_type: "Instruction"
-      metadata_type: "CreateInstructionMetadata"
+      metedata_type: "CreateInstructionmetedata"
     };
   }
 

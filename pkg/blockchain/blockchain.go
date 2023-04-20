@@ -11,20 +11,20 @@ import (
 	"strings"
 	"time"
 
-	"metachain/pkg/contract/evm"
-	"metachain/pkg/txpool"
+	"metechain/pkg/contract/evm"
+	"metechain/pkg/txpool"
 
 	"github.com/cockroachdb/pebble"
 
-	"metachain/pkg/block"
-	"metachain/pkg/logger"
-	"metachain/pkg/storage/merkle"
-	"metachain/pkg/storage/miscellaneous"
-	"metachain/pkg/storage/store"
-	"metachain/pkg/storage/store/bg/bgdb"
-	"metachain/pkg/transaction"
-	"metachain/pkg/util/difficulty"
-	diffhash "metachain/pkg/util/difficulty/hash"
+	"metechain/pkg/block"
+	"metechain/pkg/logger"
+	"metechain/pkg/storage/merkle"
+	"metechain/pkg/storage/miscellaneous"
+	"metechain/pkg/storage/store"
+	"metechain/pkg/storage/store/bg/bgdb"
+	"metechain/pkg/transaction"
+	"metechain/pkg/util/difficulty"
+	diffhash "metechain/pkg/util/difficulty/hash"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/state"
@@ -662,6 +662,7 @@ func (bc *Blockchain) AddBlock(block *block.Block) error {
 		return err
 	}
 
+	{
 		SnapRoothash, err := DBTransaction.Get(SnapRootKey)
 		if err != nil {
 			REVERT = err
@@ -680,7 +681,7 @@ func (bc *Blockchain) AddBlock(block *block.Block) error {
 			REVERT = fmt.Errorf("snaproot not equal,old root hash:%v,current root hash:%v", hex.EncodeToString(SnapRoothash), startHash)
 			return REVERT
 		}
-	} */
+	}
 
 	if prevHeight != 0 || block.Height != 0 {
 		height = prevHeight + 1
@@ -761,7 +762,6 @@ func (bc *Blockchain) AddBlock(block *block.Block) error {
 				REVERT = fmt.Errorf("error: hash[%v],evm gaslimit[%v] < gasLeft[%v]", transaction.HashToString(txHash), evmcfg.GasLimit, gasLeft)
 				return REVERT
 			}
-
 
 			tx.GasUsed = new(big.Int).Sub(big.NewInt(int64(evmcfg.GasLimit)), gasLeft)
 
@@ -1185,7 +1185,6 @@ func deleteTxbyaddrKV(DBTransaction store.Transaction, addr []byte, tx transacti
 	return err
 }
 
-
 func (bc *Blockchain) DifficultDetection(b *block.Block) error {
 	bc.mu.RLock()
 	defer bc.mu.RUnlock()
@@ -1194,13 +1193,11 @@ func (bc *Blockchain) DifficultDetection(b *block.Block) error {
 	return difficultDetection(b, bc.db, tx)
 }
 
-
 func difficultDetection(b *block.Block, db store.DB, tx store.Transaction) error {
 	gd, err := updateDifficulty(b.Height-1, b.Miner, tx)
 	if err != nil {
 		return err
 	}
-
 
 	if BigToCompact(gd) != BigToCompact(b.GlobalDifficulty) {
 

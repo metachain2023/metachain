@@ -83,7 +83,7 @@ service Revisions {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Revision"
-      metadata_type: "Revision"
+      metedata_type: "Revision"
     };
   }
 }

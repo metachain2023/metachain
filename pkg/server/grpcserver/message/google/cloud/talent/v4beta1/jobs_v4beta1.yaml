@@ -12,7 +12,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.talent.v4beta1.BatchOperationMetadata
+- name: google.cloud.talent.v4beta1.BatchOperationmetedata
 - name: google.cloud.talent.v4beta1.JobOperationResult
 
 documentation:

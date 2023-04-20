@@ -104,7 +104,7 @@ message SearchAllResourcesRequest {
 // Search all resources response.
 message SearchAllResourcesResponse {
   // A list of resource that match the search query.
-  repeated StandardResourceMetadata results = 1;
+  repeated StandardResourcemetedata results = 1;
 
   // If there are more results than those appearing in this response, then
   // `next_page_token` is included.  To get the next set of results, call this

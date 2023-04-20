@@ -53,7 +53,7 @@ service LivestreamService {
     option (google.api.method_signature) = "parent,channel,channel_id";
     option (google.longrunning.operation_info) = {
       response_type: "Channel"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -81,7 +81,7 @@ service LivestreamService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -94,7 +94,7 @@ service LivestreamService {
     option (google.api.method_signature) = "channel,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Channel"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -108,7 +108,7 @@ service LivestreamService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "ChannelOperationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -122,7 +122,7 @@ service LivestreamService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "ChannelOperationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -135,7 +135,7 @@ service LivestreamService {
     option (google.api.method_signature) = "parent,input,input_id";
     option (google.longrunning.operation_info) = {
       response_type: "Input"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -163,7 +163,7 @@ service LivestreamService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -176,7 +176,7 @@ service LivestreamService {
     option (google.api.method_signature) = "input,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Input"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -693,8 +693,8 @@ message ChannelOperationResponse {
 
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

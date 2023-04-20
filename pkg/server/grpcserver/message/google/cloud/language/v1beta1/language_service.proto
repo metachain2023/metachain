@@ -158,11 +158,11 @@ message Entity {
   // The entity type.
   Type type = 2;
 
-  // Metadata associated with the entity.
+  // metedata associated with the entity.
   //
   // Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
   // available. The associated keys are "wikipedia_url" and "mid", respectively.
-  map<string, string> metadata = 3;
+  map<string, string> metedata = 3;
 
   // The salience score associated with the entity in the [0, 1.0] range.
   //

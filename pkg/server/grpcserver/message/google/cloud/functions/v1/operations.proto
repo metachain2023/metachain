@@ -39,8 +39,8 @@ enum OperationType {
   DELETE_FUNCTION = 3;
 }
 
-// Metadata describing an [Operation][google.longrunning.Operation]
-message OperationMetadataV1 {
+// metedata describing an [Operation][google.longrunning.Operation]
+message OperationmetedataV1 {
   // Target of the operation - for example
   // `projects/project-1/locations/region-1/functions/function-1`
   string target = 1;

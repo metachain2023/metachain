@@ -67,7 +67,7 @@ message Endpoint {
   //    for system annotations managed by Service Directory. If the user tries
   //    to write to these keyspaces, those entries will be silently ignored by
   //    the system.
-  // Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+  // Note: This field is equivalent to the 'metedata' field in the v1beta1 API.
   // They have the same syntax and read/write to the same location in Service
   // Directory.
   map<string, string> annotations = 5 [(google.api.field_behavior) = OPTIONAL];

@@ -7,7 +7,7 @@ apis:
 - name: google.cloud.gkehub.v1alpha.GkeHub
 
 types:
-- name: google.cloud.gkehub.v1alpha.OperationMetadata
+- name: google.cloud.gkehub.v1alpha.Operationmetedata
 
 documentation:
   rules:

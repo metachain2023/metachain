@@ -543,8 +543,8 @@ message Workload {
   repeated string compliant_but_disallowed_services = 24 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Operation metadata to give request details of CreateWorkload.
-message CreateWorkloadOperationMetadata {
+// Operation metedata to give request details of CreateWorkload.
+message CreateWorkloadOperationmetedata {
   // Optional. Time when the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OPTIONAL];
 

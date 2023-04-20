@@ -59,7 +59,7 @@ message Version {
   // escaped.
   string name = 1;
 
-  // Optional. Description of the version, as specified in its metadata.
+  // Optional. Description of the version, as specified in its metedata.
   string description = 3;
 
   // The time when the version was created.
@@ -72,12 +72,12 @@ message Version {
   // reference this version.
   repeated Tag related_tags = 7;
 
-  // Output only. Repository-specific Metadata stored against this version.
+  // Output only. Repository-specific metedata stored against this version.
   // The fields returned are defined by the underlying repository-specific
   // resource. Currently, the resources could be:
   // [DockerImage][google.devtools.artifactregistry.v1.DockerImage]
   // [MavenArtifact][google.devtools.artifactregistry.v1.MavenArtifact]
-  google.protobuf.Struct metadata = 8
+  google.protobuf.Struct metedata = 8
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
@@ -128,8 +128,8 @@ message DeleteVersionRequest {
   bool force = 2;
 }
 
-// The metadata of an LRO from deleting multiple versions.
-message BatchDeleteVersionsMetadata {
+// The metedata of an LRO from deleting multiple versions.
+message BatchDeleteVersionsmetedata {
   // The versions the operation failed to delete.
   repeated string failed_versions = 2;
 }

@@ -49,7 +49,7 @@ service IndexEndpointService {
     option (google.api.method_signature) = "parent,index_endpoint";
     option (google.longrunning.operation_info) = {
       response_type: "IndexEndpoint"
-      metadata_type: "CreateIndexEndpointOperationMetadata"
+      metedata_type: "CreateIndexEndpointOperationmetedata"
     };
   }
 
@@ -88,7 +88,7 @@ service IndexEndpointService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -103,7 +103,7 @@ service IndexEndpointService {
     option (google.api.method_signature) = "index_endpoint,deployed_index";
     option (google.longrunning.operation_info) = {
       response_type: "DeployIndexResponse"
-      metadata_type: "DeployIndexOperationMetadata"
+      metedata_type: "DeployIndexOperationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service IndexEndpointService {
     option (google.api.method_signature) = "index_endpoint,deployed_index_id";
     option (google.longrunning.operation_info) = {
       response_type: "UndeployIndexResponse"
-      metadata_type: "UndeployIndexOperationMetadata"
+      metedata_type: "UndeployIndexOperationmetedata"
     };
   }
 
@@ -132,7 +132,7 @@ service IndexEndpointService {
     option (google.api.method_signature) = "index_endpoint,deployed_index";
     option (google.longrunning.operation_info) = {
       response_type: "MutateDeployedIndexResponse"
-      metadata_type: "MutateDeployedIndexOperationMetadata"
+      metedata_type: "MutateDeployedIndexOperationmetedata"
     };
   }
 }
@@ -155,9 +155,9 @@ message CreateIndexEndpointRequest {
 
 // Runtime operation information for
 // [IndexEndpointService.CreateIndexEndpoint][google.cloud.aiplatform.v1beta1.IndexEndpointService.CreateIndexEndpoint].
-message CreateIndexEndpointOperationMetadata {
+message CreateIndexEndpointOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
@@ -287,9 +287,9 @@ message DeployIndexResponse {
 
 // Runtime operation information for
 // [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeployIndex].
-message DeployIndexOperationMetadata {
+message DeployIndexOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 
   // The unique index id specified by user
   string deployed_index_id = 2;
@@ -319,9 +319,9 @@ message UndeployIndexResponse {}
 
 // Runtime operation information for
 // [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.UndeployIndex].
-message UndeployIndexOperationMetadata {
+message UndeployIndexOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
@@ -352,9 +352,9 @@ message MutateDeployedIndexResponse {
 
 // Runtime operation information for
 // [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.MutateDeployedIndex].
-message MutateDeployedIndexOperationMetadata {
+message MutateDeployedIndexOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 
   // The unique index id specified by user
   string deployed_index_id = 2;

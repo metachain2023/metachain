@@ -35,7 +35,7 @@ option (google.api.resource_definition) = {
   pattern: "projects/{project}/locations/{location}/clusters/{cluster}"
 };
 option (google.api.resource_definition) = {
-  type: "metastore.googleapis.com/Service"
+  type: "metestore.googleapis.com/Service"
   pattern: "projects/{project}/locations/{location}/services/{service}"
 };
 
@@ -47,8 +47,8 @@ service ClusterController {
       "https://www.googleapis.com/auth/cloud-platform";
 
   // Creates a cluster in a project. The returned
-  // [Operation.metadata][google.longrunning.Operation.metadata] will be
-  // [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+  // [Operation.metedata][google.longrunning.Operation.metedata] will be
+  // [ClusterOperationmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetedata).
   rpc CreateCluster(CreateClusterRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -58,13 +58,13 @@ service ClusterController {
     option (google.api.method_signature) = "project_id,region,cluster";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "google.cloud.dataproc.v1.ClusterOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.ClusterOperationmetedata"
     };
   }
 
   // Updates a cluster in a project. The returned
-  // [Operation.metadata][google.longrunning.Operation.metadata] will be
-  // [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+  // [Operation.metedata][google.longrunning.Operation.metedata] will be
+  // [ClusterOperationmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetedata).
   // The cluster must be in a
   // [`RUNNING`][google.cloud.dataproc.v1.ClusterStatus.State] state or an error
   // is returned.
@@ -78,7 +78,7 @@ service ClusterController {
         "project_id,region,cluster_name,cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "google.cloud.dataproc.v1.ClusterOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.ClusterOperationmetedata"
     };
   }
 
@@ -90,7 +90,7 @@ service ClusterController {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "google.cloud.dataproc.v1.ClusterOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.ClusterOperationmetedata"
     };
   }
 
@@ -102,13 +102,13 @@ service ClusterController {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "google.cloud.dataproc.v1.ClusterOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.ClusterOperationmetedata"
     };
   }
 
   // Deletes a cluster in a project. The returned
-  // [Operation.metadata][google.longrunning.Operation.metadata] will be
-  // [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+  // [Operation.metedata][google.longrunning.Operation.metedata] will be
+  // [ClusterOperationmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetedata).
   rpc DeleteCluster(DeleteClusterRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -117,7 +117,7 @@ service ClusterController {
     option (google.api.method_signature) = "project_id,region,cluster_name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.dataproc.v1.ClusterOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.ClusterOperationmetedata"
     };
   }
 
@@ -139,8 +139,8 @@ service ClusterController {
   }
 
   // Gets cluster diagnostic information. The returned
-  // [Operation.metadata][google.longrunning.Operation.metadata] will be
-  // [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+  // [Operation.metedata][google.longrunning.Operation.metedata] will be
+  // [ClusterOperationmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetedata).
   // After the operation completes,
   // [Operation.response][google.longrunning.Operation.response]
   // contains
@@ -154,7 +154,7 @@ service ClusterController {
     option (google.api.method_signature) = "project_id,region,cluster_name";
     option (google.longrunning.operation_info) = {
       response_type: "DiagnoseClusterResults"
-      metadata_type: "google.cloud.dataproc.v1.ClusterOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.ClusterOperationmetedata"
     };
   }
 }
@@ -268,12 +268,12 @@ message ClusterConfig {
 
   // Optional. Commands to execute on each node after config is
   // completed. By default, executables are run on master and all worker nodes.
-  // You can test a node's `role` metadata to run an executable on
+  // You can test a node's `role` metedata to run an executable on
   // a master or worker node, as shown below using `curl` (you can also use
   // `wget`):
   //
-  //     ROLE=$(curl -H Metadata-Flavor:Google
-  //     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+  //     ROLE=$(curl -H metedata-Flavor:Google
+  //     http://metedata/computemetedata/v1/instance/attributes/dataproc-role)
   //     if [[ "${ROLE}" == 'Master' ]]; then
   //       ... master specific actions ...
   //     else
@@ -301,8 +301,8 @@ message ClusterConfig {
   // Optional. Port/endpoint configuration for this cluster
   EndpointConfig endpoint_config = 19 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Metastore configuration.
-  MetastoreConfig metastore_config = 20
+  // Optional. metestore configuration.
+  metestoreConfig metestore_config = 20
       [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The config for Dataproc metrics.
@@ -345,8 +345,8 @@ message VirtualClusterConfig {
 
 // Auxiliary services configuration for a Cluster.
 message AuxiliaryServicesConfig {
-  // Optional. The Hive Metastore configuration for this workload.
-  MetastoreConfig metastore_config = 1 [(google.api.field_behavior) = OPTIONAL];
+  // Optional. The Hive metestore configuration for this workload.
+  metestoreConfig metestore_config = 1 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The Spark History Server configuration for the workload.
   SparkHistoryServerConfig spark_history_server_config = 2
@@ -497,10 +497,10 @@ message GceClusterConfig {
   // instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
   repeated string tags = 4;
 
-  // The Compute Engine metadata entries to add to all instances (see
+  // The Compute Engine metedata entries to add to all instances (see
   // [Project and instance
-  // metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
-  map<string, string> metadata = 5;
+  // metedata](https://cloud.google.com/compute/docs/storing-retrieving-metedata#project_and_instance_metedata)).
+  map<string, string> metedata = 5;
 
   // Optional. Reservation Affinity for consuming Zonal reservation.
   ReservationAffinity reservation_affinity = 11
@@ -1050,17 +1050,17 @@ message LifecycleConfig {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Specifies a Metastore configuration.
-message MetastoreConfig {
-  // Required. Resource name of an existing Dataproc Metastore service.
+// Specifies a metestore configuration.
+message metestoreConfig {
+  // Required. Resource name of an existing Dataproc metestore service.
   //
   // Example:
   //
   // * `projects/[project_id]/locations/[dataproc_region]/services/[service-name]`
-  string dataproc_metastore_service = 1 [
+  string dataproc_metestore_service = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 }

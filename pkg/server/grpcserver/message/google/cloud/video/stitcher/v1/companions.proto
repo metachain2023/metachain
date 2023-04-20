@@ -23,7 +23,7 @@ option java_multiple_files = true;
 option java_outer_classname = "CompanionsProto";
 option java_package = "com.google.cloud.video.stitcher.v1";
 
-// Metadata for companion ads.
+// metedata for companion ads.
 message CompanionAds {
   // Indicates how many of the companions should be displayed with the ad.
   enum DisplayRequirement {
@@ -47,7 +47,7 @@ message CompanionAds {
   repeated Companion companions = 2;
 }
 
-// Metadata for a companion.
+// metedata for a companion.
 message Companion {
   // Ad resource associated with the companion ad.
   oneof ad_resource {
@@ -91,19 +91,19 @@ message Companion {
   repeated Event events = 9;
 }
 
-// Metadata for an HTML ad resource.
+// metedata for an HTML ad resource.
 message HtmlAdResource {
   // The HTML to display for the ad resource.
   string html_source = 1;
 }
 
-// Metadata for an IFrame ad resource.
+// metedata for an IFrame ad resource.
 message IframeAdResource {
   // URI source for an IFrame to display for the ad resource.
   string uri = 1;
 }
 
-// Metadata for a static ad resource.
+// metedata for a static ad resource.
 message StaticAdResource {
   // URI to the static file for the ad resource.
   string uri = 1;

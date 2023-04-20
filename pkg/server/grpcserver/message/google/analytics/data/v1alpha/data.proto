@@ -480,8 +480,8 @@ message FunnelSubReport {
   // Rows of dimension value combinations and metric values in the report.
   repeated Row rows = 3;
 
-  // Metadata for the funnel report.
-  FunnelResponseMetadata metadata = 4;
+  // metedata for the funnel report.
+  FunnelResponsemetedata metedata = 4;
 }
 
 // User segments are subsets of users who engaged with your site or app. For
@@ -1154,27 +1154,27 @@ message FunnelParameterFilter {
   }
 }
 
-// The funnel report's response metadata carries additional information about
+// The funnel report's response metedata carries additional information about
 // the funnel report.
-message FunnelResponseMetadata {
+message FunnelResponsemetedata {
   // If funnel report results are
   // [sampled](https://support.google.com/analytics/answer/2637192), this
   // describes what percentage of events were used in this funnel report. One
-  // `samplingMetadatas` is populated for each date range. Each
-  // `samplingMetadatas` corresponds to a date range in order that date ranges
+  // `samplingmetedatas` is populated for each date range. Each
+  // `samplingmetedatas` corresponds to a date range in order that date ranges
   // were specified in the request.
   //
   // However if the results are not sampled, this field will not be defined.
-  repeated SamplingMetadata sampling_metadatas = 1;
+  repeated Samplingmetedata sampling_metedatas = 1;
 }
 
 // If funnel report results are
 // [sampled](https://support.google.com/analytics/answer/2637192), this
-// metadata describes what percentage of events were used in this funnel
+// metedata describes what percentage of events were used in this funnel
 // report for a date range. Sampling is the practice of analyzing a subset of
 // all data in order to uncover the meaningful information in the larger data
 // set.
-message SamplingMetadata {
+message Samplingmetedata {
   // The total number of events read in this sampled report for a date range.
   // This is the size of the subset this property's data that was analyzed in
   // this funnel report.

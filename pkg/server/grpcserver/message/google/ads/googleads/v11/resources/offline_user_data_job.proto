@@ -71,21 +71,21 @@ message OfflineUserDataJob {
   // Output only. Reason for the processing failure, if status is FAILED.
   google.ads.googleads.v11.enums.OfflineUserDataJobFailureReasonEnum.OfflineUserDataJobFailureReason failure_reason = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Metadata of offline user data job depicting match rate range.
-  OfflineUserDataJobMetadata operation_metadata = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. metedata of offline user data job depicting match rate range.
+  OfflineUserDataJobmetedata operation_metedata = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Metadata of the job.
-  oneof metadata {
-    // Immutable. Metadata for data updates to a CRM-based user list.
-    google.ads.googleads.v11.common.CustomerMatchUserListMetadata customer_match_user_list_metadata = 7 [(google.api.field_behavior) = IMMUTABLE];
+  // metedata of the job.
+  oneof metedata {
+    // Immutable. metedata for data updates to a CRM-based user list.
+    google.ads.googleads.v11.common.CustomerMatchUserListmetedata customer_match_user_list_metedata = 7 [(google.api.field_behavior) = IMMUTABLE];
 
-    // Immutable. Metadata for store sales data update.
-    google.ads.googleads.v11.common.StoreSalesMetadata store_sales_metadata = 8 [(google.api.field_behavior) = IMMUTABLE];
+    // Immutable. metedata for store sales data update.
+    google.ads.googleads.v11.common.StoreSalesmetedata store_sales_metedata = 8 [(google.api.field_behavior) = IMMUTABLE];
   }
 }
 
-// Metadata of offline user data job.
-message OfflineUserDataJobMetadata {
+// metedata of offline user data job.
+message OfflineUserDataJobmetedata {
   // Output only. Match rate of the Customer Match user list upload. Describes the estimated
   // match rate when the status of the job is "RUNNING" and final match rate
   // when the final match rate is available after the status of the job is

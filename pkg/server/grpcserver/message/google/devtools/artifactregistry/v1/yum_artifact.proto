@@ -102,5 +102,5 @@ message ImportYumArtifactsResponse {
   repeated ImportYumArtifactsErrorInfo errors = 2;
 }
 
-// The operation metadata for importing artifacts.
-message ImportYumArtifactsMetadata {}
+// The operation metedata for importing artifacts.
+message ImportYumArtifactsmetedata {}

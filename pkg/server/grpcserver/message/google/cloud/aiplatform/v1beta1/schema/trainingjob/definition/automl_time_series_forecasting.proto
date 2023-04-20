@@ -31,8 +31,8 @@ message AutoMlForecasting {
   // The input parameters of this TrainingJob.
   AutoMlForecastingInputs inputs = 1;
 
-  // The metadata information.
-  AutoMlForecastingMetadata metadata = 2;
+  // The metedata information.
+  AutoMlForecastingmetedata metedata = 2;
 }
 
 message AutoMlForecastingInputs {
@@ -277,8 +277,8 @@ message AutoMlForecastingInputs {
   repeated string additional_experiments = 25;
 }
 
-// Model metadata specific to AutoML Forecasting.
-message AutoMlForecastingMetadata {
+// Model metedata specific to AutoML Forecasting.
+message AutoMlForecastingmetedata {
   // Output only. The actual training cost of the model, expressed in milli
   // node hours, i.e. 1,000 value in this field means 1 node hour. Guaranteed
   // to not exceed the train budget.

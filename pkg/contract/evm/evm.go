@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"time"
 
-	"metachain/pkg/logger"
+	"metechain/pkg/logger"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/state"
@@ -23,7 +23,6 @@ type Evm struct {
 func NewEvm(sdb *state.StateDB, chainId int64, gasLimit uint64, gasPrice *big.Int) *Evm {
 	e := &Evm{cfg: setDefaults(chainId, gasLimit, gasPrice)}
 	e.cfg.State = sdb
-	//GetSnapRoot(sdb, "NewEvm")
 	return e
 }
 
@@ -32,7 +31,6 @@ func (e *Evm) RawDump() state.Dump {
 	if e.cfg.State != nil {
 		return e.cfg.State.RawDump(nil)
 	}
-	//GetSnapRoot(e.cfg.State, "RawDump")
 	return state.Dump{}
 }
 

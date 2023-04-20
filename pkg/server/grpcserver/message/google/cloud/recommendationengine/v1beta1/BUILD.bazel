@@ -150,7 +150,7 @@ go_gapic_library(
     srcs = [":recommendationengine_proto_with_info"],
     grpc_service_config = "recommendationengine_grpc_service_config.json",
     importpath = "cloud.google.com/go/recommendationengine/apiv1beta1;recommendationengine",
-    metadata = True,
+    metedata = True,
     release_level = "beta",
     rest_numeric_enums = True,
     service_yaml = "recommendationengine_v1beta1.yaml",
@@ -247,7 +247,7 @@ php_gapic_assembly_pkg(
 nodejs_gapic_library(
     name = "recommendationengine_nodejs_gapic",
     src = ":recommendationengine_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = "recommendationengine_grpc_service_config.json",
     package = "google.cloud.recommendationengine.v1beta1",
     rest_numeric_enums = True,

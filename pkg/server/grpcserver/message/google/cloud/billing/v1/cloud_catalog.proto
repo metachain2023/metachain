@@ -31,7 +31,7 @@ option java_package = "com.google.cloud.billing.v1";
 option objc_class_prefix = "CLDCTLG";
 
 // A catalog of Google Cloud Platform services and SKUs.
-// Provides pricing information and metadata on Google Cloud Platform services
+// Provides pricing information and metedata on Google Cloud Platform services
 // and SKUs.
 service CloudCatalog {
   option (google.api.default_host) = "cloudbilling.googleapis.com";

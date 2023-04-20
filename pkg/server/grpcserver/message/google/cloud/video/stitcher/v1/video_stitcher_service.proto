@@ -86,7 +86,7 @@ service VideoStitcherService {
   }
 
   // Creates a client side playback VOD session and returns the full
-  // tracking and playback metadata of the session.
+  // tracking and playback metedata of the session.
   rpc CreateVodSession(CreateVodSessionRequest) returns (VodSession) {
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*}/vodSessions"
@@ -95,7 +95,7 @@ service VideoStitcherService {
     option (google.api.method_signature) = "parent,vod_session";
   }
 
-  // Returns the full tracking, playback metadata, and relevant ad-ops
+  // Returns the full tracking, playback metedata, and relevant ad-ops
   // logs for the specified VOD session.
   rpc GetVodSession(GetVodSessionRequest) returns (VodSession) {
     option (google.api.http) = {

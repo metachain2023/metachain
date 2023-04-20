@@ -108,7 +108,7 @@ service PredictionService {
     option (google.api.method_signature) = "name,input_config,output_config,params";
     option (google.longrunning.operation_info) = {
       response_type: "BatchPredictResult"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -177,7 +177,7 @@ message PredictResponse {
   // property.
   ExamplePayload preprocessed_input = 3;
 
-  // Additional domain-specific prediction response metadata.
+  // Additional domain-specific prediction response metedata.
   //
   // AutoML Vision Object Detection
   //
@@ -195,7 +195,7 @@ message PredictResponse {
   //   the least).
   //   `sentiment_score` is not the same as "score" and "magnitude"
   //   from Sentiment Analysis in the Natural Language API.
-  map<string, string> metadata = 2;
+  map<string, string> metedata = 2;
 }
 
 // Request message for [PredictionService.BatchPredict][google.cloud.automl.v1.PredictionService.BatchPredict].
@@ -306,7 +306,7 @@ message BatchPredictRequest {
 // [response][google.longrunning.Operation.response] of the operation returned
 // by the [PredictionService.BatchPredict][google.cloud.automl.v1.PredictionService.BatchPredict].
 message BatchPredictResult {
-  // Additional domain-specific prediction response metadata.
+  // Additional domain-specific prediction response metedata.
   //
   // AutoML Vision Object Detection
   //
@@ -317,5 +317,5 @@ message BatchPredictResult {
   //
   // `max_bounding_box_count`
   // : (int64) The maximum number of bounding boxes returned per frame.
-  map<string, string> metadata = 1;
+  map<string, string> metedata = 1;
 }

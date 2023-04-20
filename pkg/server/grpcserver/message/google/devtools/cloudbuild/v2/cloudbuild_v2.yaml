@@ -11,8 +11,8 @@ apis:
 
 types:
 - name: google.devtools.cloudbuild.v2.BatchCreateRepositoriesResponse
-- name: google.devtools.cloudbuild.v2.OperationMetadata
-- name: google.devtools.cloudbuild.v2.RunWorkflowCustomOperationMetadata
+- name: google.devtools.cloudbuild.v2.Operationmetedata
+- name: google.devtools.cloudbuild.v2.RunWorkflowCustomOperationmetedata
 
 documentation:
   summary: Creates and manages builds on Google Cloud Platform.

@@ -12,12 +12,12 @@ apis:
 - name: google.cloud.dataproc.v1.WorkflowTemplateService
 
 types:
-- name: google.cloud.dataproc.v1.BatchOperationMetadata
-- name: google.cloud.dataproc.v1.ClusterOperationMetadata
+- name: google.cloud.dataproc.v1.BatchOperationmetedata
+- name: google.cloud.dataproc.v1.ClusterOperationmetedata
 - name: google.cloud.dataproc.v1.DiagnoseClusterResults
-- name: google.cloud.dataproc.v1.JobMetadata
-- name: google.cloud.dataproc.v1.NodeGroupOperationMetadata
-- name: google.cloud.dataproc.v1.WorkflowMetadata
+- name: google.cloud.dataproc.v1.Jobmetedata
+- name: google.cloud.dataproc.v1.NodeGroupOperationmetedata
+- name: google.cloud.dataproc.v1.Workflowmetedata
 
 documentation:
   summary: 'Manages Hadoop-based clusters and jobs on Google Cloud Platform.'

@@ -63,7 +63,7 @@ service GameServerClustersService {
         "parent,game_server_cluster,game_server_cluster_id";
     option (google.longrunning.operation_info) = {
       response_type: "GameServerCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -86,7 +86,7 @@ service GameServerClustersService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -108,7 +108,7 @@ service GameServerClustersService {
     option (google.api.method_signature) = "game_server_cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "GameServerCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

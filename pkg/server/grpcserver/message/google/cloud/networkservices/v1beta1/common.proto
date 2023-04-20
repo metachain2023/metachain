@@ -27,8 +27,8 @@ option java_package = "com.google.cloud.networkservices.v1beta1";
 option php_namespace = "Google\\Cloud\\NetworkServices\\V1beta1";
 option ruby_package = "Google::Cloud::NetworkServices::V1beta1";
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -66,28 +66,28 @@ message TrafficPortSelector {
 // A definition of a matcher that selects endpoints to which the policies
 // should be applied.
 message EndpointMatcher {
-  // The matcher that is based on node metadata presented by xDS clients.
-  message MetadataLabelMatcher {
+  // The matcher that is based on node metedata presented by xDS clients.
+  message metedataLabelMatcher {
     // Defines a name-pair value for a single label.
-    message MetadataLabels {
-      // Required. Label name presented as key in xDS Node Metadata.
+    message metedataLabels {
+      // Required. Label name presented as key in xDS Node metedata.
       string label_name = 1 [(google.api.field_behavior) = REQUIRED];
 
       // Required. Label value presented as value corresponding to the above
-      // key, in xDS Node Metadata.
+      // key, in xDS Node metedata.
       string label_value = 2 [(google.api.field_behavior) = REQUIRED];
     }
 
     // Possible criteria values that define logic of how matching is made.
-    enum MetadataLabelMatchCriteria {
+    enum metedataLabelMatchCriteria {
       // Default value. Should not be used.
-      METADATA_LABEL_MATCH_CRITERIA_UNSPECIFIED = 0;
+      meteDATA_LABEL_MATCH_CRITERIA_UNSPECIFIED = 0;
 
       // At least one of the Labels specified in the matcher should match the
-      // metadata presented by xDS client.
+      // metedata presented by xDS client.
       MATCH_ANY = 1;
 
-      // The metadata presented by the xDS client should contain all of the
+      // The metedata presented by the xDS client should contain all of the
       // labels specified here.
       MATCH_ALL = 2;
     }
@@ -96,8 +96,8 @@ message EndpointMatcher {
     //
     // Supported values are:
     // MATCH_ANY: At least one of the Labels specified in the
-    //   matcher should match the metadata presented by xDS client.
-    // MATCH_ALL: The metadata presented by the xDS client should
+    //   matcher should match the metedata presented by xDS client.
+    // MATCH_ALL: The metedata presented by the xDS client should
     //   contain all of the labels specified here.
     //
     // The selection is determined based on the best match. For
@@ -118,19 +118,19 @@ message EndpointMatcher {
     // If there is more than one best match, (for example, if a
     // config P4 with selector <A:1,D:1> exists and if a client with
     // label <A:1,B:1,D:1> connects), an error will be thrown.
-    MetadataLabelMatchCriteria metadata_label_match_criteria = 1;
+    metedataLabelMatchCriteria metedata_label_match_criteria = 1;
 
     // The list of label value pairs that must match labels in the
-    // provided metadata based on filterMatchCriteria This list can
+    // provided metedata based on filterMatchCriteria This list can
     // have at most 64 entries. The list can be empty if the match
     // criteria is MATCH_ANY, to specify a wildcard match (i.e this
     // matches any client).
-    repeated MetadataLabels metadata_labels = 2;
+    repeated metedataLabels metedata_labels = 2;
   }
 
   // Specifies type of the matcher used for this endpoint matcher.
   oneof matcher_type {
-    // The matcher is based on node metadata presented by xDS clients.
-    MetadataLabelMatcher metadata_label_matcher = 1;
+    // The matcher is based on node metedata presented by xDS clients.
+    metedataLabelMatcher metedata_label_matcher = 1;
   }
 }

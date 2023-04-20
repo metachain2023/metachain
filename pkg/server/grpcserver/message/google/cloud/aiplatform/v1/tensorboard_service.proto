@@ -54,7 +54,7 @@ service TensorboardService {
     option (google.api.method_signature) = "parent,tensorboard";
     option (google.longrunning.operation_info) = {
       response_type: "Tensorboard"
-      metadata_type: "CreateTensorboardOperationMetadata"
+      metedata_type: "CreateTensorboardOperationmetedata"
     };
   }
 
@@ -85,7 +85,7 @@ service TensorboardService {
     option (google.api.method_signature) = "tensorboard,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Tensorboard"
-      metadata_type: "UpdateTensorboardOperationMetadata"
+      metedata_type: "UpdateTensorboardOperationmetedata"
     };
   }
 
@@ -107,7 +107,7 @@ service TensorboardService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -159,7 +159,7 @@ service TensorboardService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -220,7 +220,7 @@ service TensorboardService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -282,7 +282,7 @@ service TensorboardService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -1118,13 +1118,13 @@ message ExportTensorboardTimeSeriesDataResponse {
 }
 
 // Details of operations that perform create Tensorboard.
-message CreateTensorboardOperationMetadata {
-  // Operation metadata for Tensorboard.
-  GenericOperationMetadata generic_metadata = 1;
+message CreateTensorboardOperationmetedata {
+  // Operation metedata for Tensorboard.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that perform update Tensorboard.
-message UpdateTensorboardOperationMetadata {
-  // Operation metadata for Tensorboard.
-  GenericOperationMetadata generic_metadata = 1;
+message UpdateTensorboardOperationmetedata {
+  // Operation metedata for Tensorboard.
+  GenericOperationmetedata generic_metedata = 1;
 }

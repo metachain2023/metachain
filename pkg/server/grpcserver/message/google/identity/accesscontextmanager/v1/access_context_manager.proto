@@ -74,7 +74,7 @@ service AccessContextManager {
   // Creates an access policy. This method fails if the organization already has
   // an access policy. The long-running operation has a successful status
   // after the access policy propagates to long-lasting storage.
-  // Syntactic and basic semantic errors are returned in `metadata` as a
+  // Syntactic and basic semantic errors are returned in `metedata` as a
   // BadRequest proto.
   rpc CreateAccessPolicy(AccessPolicy) returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -83,7 +83,7 @@ service AccessContextManager {
     };
     option (google.longrunning.operation_info) = {
       response_type: "AccessPolicy"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -101,7 +101,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "policy,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AccessPolicy"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -117,7 +117,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -156,7 +156,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "parent,access_level";
     option (google.longrunning.operation_info) = {
       response_type: "AccessLevel"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -176,7 +176,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "access_level,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AccessLevel"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -193,7 +193,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -221,7 +221,7 @@ service AccessContextManager {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ReplaceAccessLevelsResponse"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -261,7 +261,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "parent,service_perimeter";
     option (google.longrunning.operation_info) = {
       response_type: "ServicePerimeter"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -281,7 +281,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "service_perimeter,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "ServicePerimeter"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -298,7 +298,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -322,7 +322,7 @@ service AccessContextManager {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ReplaceServicePerimetersResponse"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -348,7 +348,7 @@ service AccessContextManager {
     };
     option (google.longrunning.operation_info) = {
       response_type: "CommitServicePerimetersResponse"
-      metadata_type: "AccessContextManagerOperationMetadata"
+      metedata_type: "AccessContextManagerOperationmetedata"
     };
   }
 
@@ -390,7 +390,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "parent,gcp_user_access_binding";
     option (google.longrunning.operation_info) = {
       response_type: "GcpUserAccessBinding"
-      metadata_type: "GcpUserAccessBindingOperationMetadata"
+      metedata_type: "GcpUserAccessBindingOperationmetedata"
     };
   }
 
@@ -407,7 +407,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "gcp_user_access_binding,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "GcpUserAccessBinding"
-      metadata_type: "GcpUserAccessBindingOperationMetadata"
+      metedata_type: "GcpUserAccessBindingOperationmetedata"
     };
   }
 
@@ -423,7 +423,7 @@ service AccessContextManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "GcpUserAccessBindingOperationMetadata"
+      metedata_type: "GcpUserAccessBindingOperationmetedata"
     };
   }
 
@@ -973,14 +973,14 @@ message DeleteGcpUserAccessBindingRequest {
   ];
 }
 
-// Currently, a completed operation means nothing. In the future, this metadata
+// Currently, a completed operation means nothing. In the future, this metedata
 // and a completed operation may indicate that the binding has taken effect and
 // is affecting access decisions for all users.
-message GcpUserAccessBindingOperationMetadata {
+message GcpUserAccessBindingOperationmetedata {
 
 }
 
-// Metadata of Access Context Manager's Long Running Operations.
-message AccessContextManagerOperationMetadata {
+// metedata of Access Context Manager's Long Running Operations.
+message AccessContextManagerOperationmetedata {
 
 }

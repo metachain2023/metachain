@@ -244,8 +244,8 @@ message Product {
   // * `google.cloudprivatecatalog.Terraform`
   string asset_type = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Required. Output only. The display metadata to describe the product. The JSON schema of the
-  // metadata differs by [Product.asset_type][google.cloud.privatecatalog.v1beta1.Product.asset_type].
+  // Required. Output only. The display metedata to describe the product. The JSON schema of the
+  // metedata differs by [Product.asset_type][google.cloud.privatecatalog.v1beta1.Product.asset_type].
   // When the type is `google.deploymentmanager.Template`, the schema is as
   // follows:
   //
@@ -401,7 +401,7 @@ message Product {
   // - name
   // - description
   // additionalProperties: true
-  google.protobuf.Struct display_metadata = 3 [
+  google.protobuf.Struct display_metedata = 3 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.field_behavior) = OUTPUT_ONLY
   ];
@@ -450,7 +450,7 @@ message AssetReference {
   // Output only. The current state of the asset reference.
   AssetValidationState validation_status = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The validation process metadata.
+  // Output only. The validation process metedata.
   google.longrunning.Operation validation_operation = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The destination of the asset.
@@ -496,7 +496,7 @@ message GcsSource {
   // being written.
   int64 generation = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The time when the object metadata was last changed.
+  // Output only. The time when the object metedata was last changed.
   google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 

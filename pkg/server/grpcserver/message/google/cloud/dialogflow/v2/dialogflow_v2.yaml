@@ -27,24 +27,24 @@ apis:
 types:
 - name: google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse
 - name: google.cloud.dialogflow.v2.BatchUpdateIntentsResponse
-- name: google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata
+- name: google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationmetedata
 - name: google.cloud.dialogflow.v2.ConversationEvent
 - name: google.cloud.dialogflow.v2.ConversationModel
-- name: google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata
-- name: google.cloud.dialogflow.v2.CreateConversationModelEvaluationOperationMetadata
-- name: google.cloud.dialogflow.v2.CreateConversationModelOperationMetadata
-- name: google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata
-- name: google.cloud.dialogflow.v2.DeleteConversationModelOperationMetadata
-- name: google.cloud.dialogflow.v2.DeployConversationModelOperationMetadata
+- name: google.cloud.dialogflow.v2.CreateConversationDatasetOperationmetedata
+- name: google.cloud.dialogflow.v2.CreateConversationModelEvaluationOperationmetedata
+- name: google.cloud.dialogflow.v2.CreateConversationModelOperationmetedata
+- name: google.cloud.dialogflow.v2.DeleteConversationDatasetOperationmetedata
+- name: google.cloud.dialogflow.v2.DeleteConversationModelOperationmetedata
+- name: google.cloud.dialogflow.v2.DeployConversationModelOperationmetedata
 - name: google.cloud.dialogflow.v2.ExportAgentResponse
 - name: google.cloud.dialogflow.v2.HumanAgentAssistantEvent
-- name: google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata
+- name: google.cloud.dialogflow.v2.ImportConversationDataOperationmetedata
 - name: google.cloud.dialogflow.v2.ImportConversationDataOperationResponse
 - name: google.cloud.dialogflow.v2.ImportDocumentsResponse
-- name: google.cloud.dialogflow.v2.KnowledgeOperationMetadata
+- name: google.cloud.dialogflow.v2.KnowledgeOperationmetedata
 - name: google.cloud.dialogflow.v2.OriginalDetectIntentRequest
-- name: google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata
-- name: google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata
+- name: google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationmetedata
+- name: google.cloud.dialogflow.v2.UndeployConversationModelOperationmetedata
 - name: google.cloud.dialogflow.v2.WebhookRequest
 - name: google.cloud.dialogflow.v2.WebhookResponse
 

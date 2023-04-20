@@ -101,7 +101,7 @@ service VizierService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "SuggestTrialsResponse"
-      metadata_type: "SuggestTrialsMetadata"
+      metedata_type: "SuggestTrialsmetedata"
     };
   }
 
@@ -167,7 +167,7 @@ service VizierService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "CheckTrialEarlyStoppingStateResponse"
-      metadata_type: "CheckTrialEarlyStoppingStateMetatdata"
+      metedata_type: "CheckTrialEarlyStoppingStatemetetdata"
     };
   }
 
@@ -324,9 +324,9 @@ message SuggestTrialsResponse {
 }
 
 // Details of operations that perform Trials suggestion.
-message SuggestTrialsMetadata {
-  // Operation metadata for suggesting Trials.
-  GenericOperationMetadata generic_metadata = 1;
+message SuggestTrialsmetedata {
+  // Operation metedata for suggesting Trials.
+  GenericOperationmetedata generic_metedata = 1;
 
   // The identifier of the client that is requesting the suggestion.
   //
@@ -478,12 +478,12 @@ message CheckTrialEarlyStoppingStateResponse {
   bool should_stop = 1;
 }
 
-// This message will be placed in the metadata field of a
+// This message will be placed in the metedata field of a
 // google.longrunning.Operation associated with a CheckTrialEarlyStoppingState
 // request.
-message CheckTrialEarlyStoppingStateMetatdata {
-  // Operation metadata for suggesting Trials.
-  GenericOperationMetadata generic_metadata = 1;
+message CheckTrialEarlyStoppingStatemetetdata {
+  // Operation metedata for suggesting Trials.
+  GenericOperationmetedata generic_metedata = 1;
 
   // The name of the Study that the Trial belongs to.
   string study = 2;

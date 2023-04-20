@@ -237,7 +237,7 @@ message DeleteReportConfigRequest {
   string request_id = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Message describing ReportDetail object. ReportDetail represents metadata of
+// Message describing ReportDetail object. ReportDetail represents metedata of
 // generated reports for a ReportConfig.
 // Next ID: 8
 message ReportDetail {
@@ -325,8 +325,8 @@ message GetReportDetailRequest {
   ];
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -413,11 +413,11 @@ message CloudStorageDestinationOptions {
   string destination_path = 2;
 }
 
-// Report specification for exporting object metadata.
+// Report specification for exporting object metedata.
 // Next ID: 4
-message ObjectMetadataReportOptions {
-  // Metadata fields to be included in the report.
-  repeated string metadata_fields = 1;
+message ObjectmetedataReportOptions {
+  // metedata fields to be included in the report.
+  repeated string metedata_fields = 1;
 
   // Filter options for storage systems.
   oneof filter {
@@ -464,8 +464,8 @@ message ReportConfig {
 
   // Configuration options for report contents.
   oneof report_kind {
-    // Report for exporting object metadata.
-    ObjectMetadataReportOptions object_metadata_report_options = 8;
+    // Report for exporting object metedata.
+    ObjectmetedataReportOptions object_metedata_report_options = 8;
   }
 
   // Labels as key value pairs

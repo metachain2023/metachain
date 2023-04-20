@@ -53,9 +53,9 @@ message CreateDocumentRequest {
   // Required. The document to create.
   Document document = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The meta information collected about the end user, used to enforce access
+  // The mete information collected about the end user, used to enforce access
   // control for the service.
-  RequestMetadata request_metadata = 3;
+  Requestmetedata request_metedata = 3;
 
   // Default document policy during creation. Conditions defined in the policy
   // will be ignored.
@@ -85,9 +85,9 @@ message GetDocumentRequest {
     }
   ];
 
-  // The meta information collected about the end user, used to enforce access
+  // The mete information collected about the end user, used to enforce access
   // control for the service.
-  RequestMetadata request_metadata = 2;
+  Requestmetedata request_metedata = 2;
 }
 
 // Request message for DocumentService.UpdateDocument.
@@ -107,9 +107,9 @@ message UpdateDocumentRequest {
   // Required. The document to update.
   Document document = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The meta information collected about the end user, used to enforce access
+  // The mete information collected about the end user, used to enforce access
   // control for the service.
-  RequestMetadata request_metadata = 3;
+  Requestmetedata request_metedata = 3;
 
   // Request Option for processing Cloud AI Document in CW Document.
   CloudAIDocumentOption cloud_ai_document_option = 5;
@@ -132,9 +132,9 @@ message DeleteDocumentRequest {
     }
   ];
 
-  // The meta information collected about the end user, used to enforce access
+  // The mete information collected about the end user, used to enforce access
   // control for the service.
-  RequestMetadata request_metadata = 2;
+  Requestmetedata request_metedata = 2;
 }
 
 // Request message for DocumentService.SearchDocuments.
@@ -148,9 +148,9 @@ message SearchDocumentsRequest {
     }
   ];
 
-  // The meta information collected about the end user, used to enforce access
+  // The mete information collected about the end user, used to enforce access
   // control and improve the search quality of the service.
-  RequestMetadata request_metadata = 3;
+  Requestmetedata request_metedata = 3;
 
   // Query used to search against documents (keyword, filters, etc.).
   DocumentQuery document_query = 4;
@@ -248,9 +248,9 @@ message FetchAclRequest {
   // Format for project: projects/{project_number}.
   string resource = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // The meta information collected about the end user, used to enforce access
+  // The mete information collected about the end user, used to enforce access
   // control for the service.
-  RequestMetadata request_metadata = 2;
+  Requestmetedata request_metedata = 2;
 
   // For Get Project ACL only. Authorization check for end user will be ignored
   // when project_owner=true.
@@ -269,9 +269,9 @@ message SetAclRequest {
   // the policy is limited to a few 10s of KB.
   google.iam.v1.Policy policy = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The meta information collected about the end user, used to enforce access
+  // The mete information collected about the end user, used to enforce access
   // control for the service.
-  RequestMetadata request_metadata = 3;
+  Requestmetedata request_metedata = 3;
 
   // For Set Project ACL only. Authorization check for end user will be ignored
   // when project_owner=true.

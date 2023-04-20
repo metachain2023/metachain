@@ -138,7 +138,7 @@ message CloudSqlConnectionProfile {
   // Output only. The Cloud SQL instance ID that this connection profile is associated with.
   string cloud_sql_id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Immutable. Metadata used to create the destination Cloud SQL database.
+  // Immutable. metedata used to create the destination Cloud SQL database.
   CloudSqlSettings settings = 2 [(google.api.field_behavior) = IMMUTABLE];
 
   // Output only. The Cloud SQL database instance's private IP.

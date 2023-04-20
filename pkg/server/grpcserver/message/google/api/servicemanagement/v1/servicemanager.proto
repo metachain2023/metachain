@@ -84,7 +84,7 @@ service ServiceManager {
     option (google.api.method_signature) = "service";
     option (google.longrunning.operation_info) = {
       response_type: "google.api.servicemanagement.v1.ManagedService"
-      metadata_type: "google.api.servicemanagement.v1.OperationMetadata"
+      metedata_type: "google.api.servicemanagement.v1.Operationmetedata"
     };
   }
 
@@ -104,7 +104,7 @@ service ServiceManager {
     option (google.api.method_signature) = "service_name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.api.servicemanagement.v1.OperationMetadata"
+      metedata_type: "google.api.servicemanagement.v1.Operationmetedata"
     };
   }
 
@@ -122,7 +122,7 @@ service ServiceManager {
     option (google.api.method_signature) = "service_name";
     option (google.longrunning.operation_info) = {
       response_type: "google.api.servicemanagement.v1.UndeleteServiceResponse"
-      metadata_type: "google.api.servicemanagement.v1.OperationMetadata"
+      metedata_type: "google.api.servicemanagement.v1.Operationmetedata"
     };
   }
 
@@ -186,7 +186,7 @@ service ServiceManager {
         "service_name,config_source,validate_only";
     option (google.longrunning.operation_info) = {
       response_type: "google.api.servicemanagement.v1.SubmitConfigSourceResponse"
-      metadata_type: "google.api.servicemanagement.v1.OperationMetadata"
+      metedata_type: "google.api.servicemanagement.v1.Operationmetedata"
     };
   }
 
@@ -232,7 +232,7 @@ service ServiceManager {
     option (google.api.method_signature) = "service_name,rollout";
     option (google.longrunning.operation_info) = {
       response_type: "google.api.servicemanagement.v1.Rollout"
-      metadata_type: "google.api.servicemanagement.v1.OperationMetadata"
+      metedata_type: "google.api.servicemanagement.v1.Operationmetedata"
     };
   }
 

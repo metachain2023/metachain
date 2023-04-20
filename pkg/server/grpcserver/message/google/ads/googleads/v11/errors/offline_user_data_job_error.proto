@@ -66,7 +66,7 @@ message OfflineUserDataJobErrorEnum {
     // Customer is not on the allow-list for unified store sales data.
     NOT_ON_ALLOWLIST_FOR_UNIFIED_STORE_SALES = 32;
 
-    // The partner ID in store sales direct metadata is invalid.
+    // The partner ID in store sales direct metedata is invalid.
     INVALID_PARTNER_ID = 11;
 
     // The data in user identifier should not be encoded.

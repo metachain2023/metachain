@@ -122,10 +122,10 @@ message ComputeEngine {
   repeated string disk_names = 4;
 }
 
-// Runtime metadata that will be populated in the
-// [runtimeMetadata][google.genomics.v1.OperationMetadata.runtime_metadata]
+// Runtime metedata that will be populated in the
+// [runtimemetedata][google.genomics.v1.Operationmetedata.runtime_metedata]
 // field of the Operation associated with a RunPipeline execution.
-message RuntimeMetadata {
+message Runtimemetedata {
   // Execution information specific to Google Compute Engine.
   ComputeEngine compute_engine = 1;
 }

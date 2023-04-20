@@ -17,24 +17,24 @@ apis:
 
 types:
 - name: google.cloud.retail.logging.ErrorLog
-- name: google.cloud.retail.v2.AddFulfillmentPlacesMetadata
+- name: google.cloud.retail.v2.AddFulfillmentPlacesmetedata
 - name: google.cloud.retail.v2.AddFulfillmentPlacesResponse
-- name: google.cloud.retail.v2.AddLocalInventoriesMetadata
+- name: google.cloud.retail.v2.AddLocalInventoriesmetedata
 - name: google.cloud.retail.v2.AddLocalInventoriesResponse
 - name: google.cloud.retail.v2.ImportCompletionDataResponse
 - name: google.cloud.retail.v2.ImportErrorsConfig
-- name: google.cloud.retail.v2.ImportMetadata
+- name: google.cloud.retail.v2.Importmetedata
 - name: google.cloud.retail.v2.ImportProductsResponse
 - name: google.cloud.retail.v2.ImportUserEventsResponse
-- name: google.cloud.retail.v2.PurgeMetadata
+- name: google.cloud.retail.v2.Purgemetedata
 - name: google.cloud.retail.v2.PurgeUserEventsResponse
-- name: google.cloud.retail.v2.RejoinUserEventsMetadata
+- name: google.cloud.retail.v2.RejoinUserEventsmetedata
 - name: google.cloud.retail.v2.RejoinUserEventsResponse
-- name: google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata
+- name: google.cloud.retail.v2.RemoveFulfillmentPlacesmetedata
 - name: google.cloud.retail.v2.RemoveFulfillmentPlacesResponse
-- name: google.cloud.retail.v2.RemoveLocalInventoriesMetadata
+- name: google.cloud.retail.v2.RemoveLocalInventoriesmetedata
 - name: google.cloud.retail.v2.RemoveLocalInventoriesResponse
-- name: google.cloud.retail.v2.SetInventoryMetadata
+- name: google.cloud.retail.v2.SetInventorymetedata
 - name: google.cloud.retail.v2.SetInventoryResponse
 
 documentation:

@@ -76,7 +76,7 @@ service DataFusion {
     option (google.api.method_signature) = "parent,instance,instance_id";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -88,7 +88,7 @@ service DataFusion {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -101,7 +101,7 @@ service DataFusion {
     option (google.api.method_signature) = "instance,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -114,7 +114,7 @@ service DataFusion {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -127,7 +127,7 @@ service DataFusion {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -596,8 +596,8 @@ message UpgradeInstanceRequest {
   ];
 }
 
-// Represents the metadata of a long-running operation.
-message OperationMetadata {
+// Represents the metedata of a long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 
@@ -736,10 +736,10 @@ enum NamespaceView {
   // Default/unset value, which will use BASIC view.
   NAMESPACE_VIEW_UNSPECIFIED = 0;
 
-  // Show the most basic metadata of a namespace
+  // Show the most basic metedata of a namespace
   NAMESPACE_VIEW_BASIC = 1;
 
-  // Returns all metadata of a namespace
+  // Returns all metedata of a namespace
   NAMESPACE_VIEW_FULL = 2;
 }
 

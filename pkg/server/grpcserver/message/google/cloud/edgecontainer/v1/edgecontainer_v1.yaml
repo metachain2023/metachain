@@ -9,8 +9,8 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.edgecontainer.v1.LocationMetadata
-- name: google.cloud.edgecontainer.v1.OperationMetadata
+- name: google.cloud.edgecontainer.v1.Locationmetedata
+- name: google.cloud.edgecontainer.v1.Operationmetedata
 
 documentation:
   rules:

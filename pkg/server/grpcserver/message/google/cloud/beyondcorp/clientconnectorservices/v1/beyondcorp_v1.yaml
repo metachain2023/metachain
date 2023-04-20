@@ -10,7 +10,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOperationMetadata
+- name: google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOperationmetedata
 
 documentation:
   summary: |-

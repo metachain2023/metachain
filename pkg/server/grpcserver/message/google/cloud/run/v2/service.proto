@@ -58,7 +58,7 @@ service Services {
     option (google.api.method_signature) = "parent,service,service_id";
     option (google.longrunning.operation_info) = {
       response_type: "Service"
-      metadata_type: "Service"
+      metedata_type: "Service"
     };
   }
 
@@ -106,7 +106,7 @@ service Services {
     option (google.api.method_signature) = "service";
     option (google.longrunning.operation_info) = {
       response_type: "Service"
-      metadata_type: "Service"
+      metedata_type: "Service"
     };
   }
 
@@ -127,7 +127,7 @@ service Services {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Service"
-      metadata_type: "Service"
+      metedata_type: "Service"
     };
   }
 
@@ -316,7 +316,7 @@ message Service {
   map<string, string> labels = 5;
 
   // Unstructured key value map that may be set by external tools to store and
-  // arbitrary metadata. They are not queryable and should be preserved
+  // arbitrary metedata. They are not queryable and should be preserved
   // when modifying objects.
   //
   // <p>Cloud Run API v2 does not support annotations with `run.googleapis.com`,

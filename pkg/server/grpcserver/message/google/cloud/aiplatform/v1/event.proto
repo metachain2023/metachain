@@ -66,7 +66,7 @@ message Event {
   // Required. The type of the Event.
   Type type = 4 [(google.api.field_behavior) = REQUIRED];
 
-  // The labels with user-defined metadata to annotate Events.
+  // The labels with user-defined metedata to annotate Events.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

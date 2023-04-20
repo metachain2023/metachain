@@ -8,9 +8,9 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata
+- name: google.identity.accesscontextmanager.v1.AccessContextManagerOperationmetedata
 - name: google.identity.accesscontextmanager.v1.CommitServicePerimetersResponse
-- name: google.identity.accesscontextmanager.v1.GcpUserAccessBindingOperationMetadata
+- name: google.identity.accesscontextmanager.v1.GcpUserAccessBindingOperationmetedata
 - name: google.identity.accesscontextmanager.v1.ReplaceAccessLevelsResponse
 - name: google.identity.accesscontextmanager.v1.ReplaceServicePerimetersResponse
 

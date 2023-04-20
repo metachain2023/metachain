@@ -11,7 +11,7 @@ apis:
 
 types:
 - name: google.cloud.gaming.v1.LabelSelector
-- name: google.cloud.gaming.v1.OperationMetadata
+- name: google.cloud.gaming.v1.Operationmetedata
 - name: google.cloud.gaming.v1.Schedule
 
 documentation:

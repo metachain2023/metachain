@@ -118,7 +118,7 @@ service Folders {
     option (google.api.method_signature) = "parent,folder";
     option (google.longrunning.operation_info) = {
       response_type: "Folder"
-      metadata_type: "FolderOperation"
+      metedata_type: "FolderOperation"
     };
   }
 
@@ -155,7 +155,7 @@ service Folders {
   // FolderOperationError will be returned via the Status.details field
   // and if it occurs asynchronously then the FolderOperation will be returned
   // via the Operation.error field.
-  // In addition, the Operation.metadata field will be populated with a
+  // In addition, the Operation.metedata field will be populated with a
   // FolderOperation message as an aid to stateless clients.
   // Folder moves will be rejected if they violate either the naming, height
   // or fanout constraints described in the
@@ -170,7 +170,7 @@ service Folders {
     option (google.api.method_signature) = "name,destination_parent";
     option (google.longrunning.operation_info) = {
       response_type: "Folder"
-      metadata_type: "FolderOperation"
+      metedata_type: "FolderOperation"
     };
   }
 
@@ -474,7 +474,7 @@ message UndeleteFolderRequest {
   ];
 }
 
-// Metadata describing a long running folder operation
+// metedata describing a long running folder operation
 message FolderOperation {
   // The type of operation that failed.
   enum OperationType {

@@ -498,12 +498,12 @@ message Location {
   double radius_miles = 4;
 }
 
-// Meta information related to the job searcher or entity
+// mete information related to the job searcher or entity
 // conducting the job search. This information is used to improve the
 // performance of the service.
-message RequestMetadata {
+message Requestmetedata {
   // Required if
-  // [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+  // [allow_missing_ids][google.cloud.talent.v4.Requestmetedata.allow_missing_ids]
   // is unset or `false`.
   //
   // The client-defined scope or source of the service call, which typically
@@ -522,7 +522,7 @@ message RequestMetadata {
   string domain = 1;
 
   // Required if
-  // [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+  // [allow_missing_ids][google.cloud.talent.v4.Requestmetedata.allow_missing_ids]
   // is unset or `false`.
   //
   // A unique session identification string. A session is defined as the
@@ -538,7 +538,7 @@ message RequestMetadata {
   string session_id = 2;
 
   // Required if
-  // [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+  // [allow_missing_ids][google.cloud.talent.v4.Requestmetedata.allow_missing_ids]
   // is unset or `false`.
   //
   // A unique user identification string, as determined by the client.
@@ -554,13 +554,13 @@ message RequestMetadata {
   string user_id = 3;
 
   // Only set when any of
-  // [domain][google.cloud.talent.v4.RequestMetadata.domain],
-  // [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
-  // [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't available
+  // [domain][google.cloud.talent.v4.Requestmetedata.domain],
+  // [session_id][google.cloud.talent.v4.Requestmetedata.session_id] and
+  // [user_id][google.cloud.talent.v4.Requestmetedata.user_id] isn't available
   // for some reason. It is highly recommended not to set this field and provide
-  // accurate [domain][google.cloud.talent.v4.RequestMetadata.domain],
-  // [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
-  // [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the best
+  // accurate [domain][google.cloud.talent.v4.Requestmetedata.domain],
+  // [session_id][google.cloud.talent.v4.Requestmetedata.session_id] and
+  // [user_id][google.cloud.talent.v4.Requestmetedata.user_id] for the best
   // service experience.
   bool allow_missing_ids = 4;
 
@@ -570,7 +570,7 @@ message RequestMetadata {
 }
 
 // Additional information returned to client, such as debugging information.
-message ResponseMetadata {
+message Responsemetedata {
   // A unique id associated with this call.
   // This id is logged for tracking purposes.
   string request_id = 1;
@@ -869,10 +869,10 @@ message CompensationInfo {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Metadata used for long running operations returned by CTS batch APIs.
+// metedata used for long running operations returned by CTS batch APIs.
 // It's used to replace
-// [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata].
-message BatchOperationMetadata {
+// [google.longrunning.Operation.metedata][google.longrunning.Operation.metedata].
+message BatchOperationmetedata {
   enum State {
     // Default value.
     STATE_UNSPECIFIED = 0;
@@ -920,8 +920,8 @@ message BatchOperationMetadata {
   // The time when the batch operation is created.
   google.protobuf.Timestamp create_time = 6;
 
-  // The time when the batch operation status is updated. The metadata and the
-  // [update_time][google.cloud.talent.v4.BatchOperationMetadata.update_time] is
+  // The time when the batch operation status is updated. The metedata and the
+  // [update_time][google.cloud.talent.v4.BatchOperationmetedata.update_time] is
   // refreshed every minute otherwise cached data is returned.
   google.protobuf.Timestamp update_time = 7;
 

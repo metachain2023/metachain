@@ -23,7 +23,7 @@ option java_package = "com.google.cloud.channel.v1";
 
 // Provides contextual information about a
 // [google.longrunning.Operation][google.longrunning.Operation].
-message OperationMetadata {
+message Operationmetedata {
   // RPCs that return a Long Running Operation.
   enum OperationType {
     // Not used.

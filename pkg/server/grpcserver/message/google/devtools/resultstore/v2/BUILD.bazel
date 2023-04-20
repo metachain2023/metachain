@@ -17,7 +17,7 @@ proto_library(
         "configured_target.proto",
         "coverage.proto",
         "coverage_summary.proto",
-        "download_metadata.proto",
+        "download_metedata.proto",
         "file.proto",
         "file_processing_error.proto",
         "file_set.proto",
@@ -27,7 +27,7 @@ proto_library(
         "resultstore_upload.proto",
         "target.proto",
         "test_suite.proto",
-        "upload_metadata.proto",
+        "upload_metedata.proto",
     ],
     deps = [
         "//google/api:annotations_proto",

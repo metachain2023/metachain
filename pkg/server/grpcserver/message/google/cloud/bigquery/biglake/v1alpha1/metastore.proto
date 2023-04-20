@@ -26,20 +26,20 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "cloud.google.com/go/bigquery/biglake/apiv1alpha1/biglakepb;biglakepb";
 option java_multiple_files = true;
-option java_outer_classname = "MetastoreProto";
+option java_outer_classname = "metestoreProto";
 option java_package = "com.google.cloud.bigquery.biglake.v1alpha1";
 
-// BigLake Metastore is a serverless, highly available, multi-tenant runtime
-// metastore for Google Cloud Data Analytics products.
+// BigLake metestore is a serverless, highly available, multi-tenant runtime
+// metestore for Google Cloud Data Analytics products.
 //
-// The BigLake Metastore API defines the following resource model:
+// The BigLake metestore API defines the following resource model:
 //
 // * A collection of Google Cloud projects: `/projects/*`
 // * Each project has a collection of available locations: `/locations/*`
 // * Each location has a collection of catalogs: `/catalogs/*`
 // * Each catalog has a collection of databases: `/databases/*`
 // * Each database has a collection of tables: `/tables/*`
-service MetastoreService {
+service metestoreService {
   option (google.api.default_host) = "biglake.googleapis.com";
   option (google.api.oauth_scopes) =
       "https://www.googleapis.com/auth/bigquery,"
@@ -243,7 +243,7 @@ message Database {
     // The type is not specified.
     TYPE_UNSPECIFIED = 0;
 
-    // Represents a database storing tables compatible with Hive Metastore
+    // Represents a database storing tables compatible with Hive metestore
     // tables.
     HIVE = 1;
   }
@@ -298,7 +298,7 @@ message Table {
     // The type is not specified.
     TYPE_UNSPECIFIED = 0;
 
-    // Represents a table compatible with Hive Metastore tables.
+    // Represents a table compatible with Hive metestore tables.
     HIVE = 1;
   }
 

@@ -141,12 +141,12 @@ message DeleteBucketRequest {
   // Required. Name of a bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // If set, only deletes the bucket if its metageneration matches this value.
-  google.protobuf.Int64Value if_metageneration_match = 2;
+  // If set, only deletes the bucket if its metegeneration matches this value.
+  google.protobuf.Int64Value if_metegeneration_match = 2;
 
-  // If set, only deletes the bucket if its metageneration does not match this
+  // If set, only deletes the bucket if its metegeneration does not match this
   // value.
-  google.protobuf.Int64Value if_metageneration_not_match = 3;
+  google.protobuf.Int64Value if_metegeneration_not_match = 3;
 
   // A set of parameters common to all Storage API requests.
   CommonRequestParams common_request_params = 5;
@@ -157,13 +157,13 @@ message GetBucketRequest {
   // Required. Name of a bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Makes the return of the bucket metadata conditional on whether the bucket's
-  // current metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 2;
+  // Makes the return of the bucket metedata conditional on whether the bucket's
+  // current metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 2;
 
-  // Makes the return of the bucket metadata conditional on whether the bucket's
-  // current metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 3;
+  // Makes the return of the bucket metedata conditional on whether the bucket's
+  // current metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 3;
 
   // Set of properties to return. Defaults to `NO_ACL`.
   CommonEnums.Projection projection = 4;
@@ -232,9 +232,9 @@ message LockRetentionPolicyRequest {
   // Required. Name of a bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Makes the operation conditional on whether bucket's current metageneration
+  // Makes the operation conditional on whether bucket's current metegeneration
   // matches the given value. Must be positive.
-  int64 if_metageneration_match = 2;
+  int64 if_metegeneration_match = 2;
 
   // A set of parameters common to all Storage API requests.
   CommonRequestParams common_request_params = 4;
@@ -245,13 +245,13 @@ message PatchBucketRequest {
   // Required. Name of a bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Makes the return of the bucket metadata conditional on whether the bucket's
-  // current metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 2;
+  // Makes the return of the bucket metedata conditional on whether the bucket's
+  // current metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 2;
 
-  // Makes the return of the bucket metadata conditional on whether the bucket's
-  // current metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 3;
+  // Makes the return of the bucket metedata conditional on whether the bucket's
+  // current metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 3;
 
   // Apply a predefined set of access controls to this bucket.
   CommonEnums.PredefinedBucketAcl predefined_acl = 4;
@@ -262,8 +262,8 @@ message PatchBucketRequest {
   // Set of properties to return. Defaults to `FULL`.
   CommonEnums.Projection projection = 6;
 
-  // The Bucket metadata for updating.
-  Bucket metadata = 8;
+  // The Bucket metedata for updating.
+  Bucket metedata = 8;
 
   // List of fields to be updated.
   //
@@ -286,13 +286,13 @@ message UpdateBucketRequest {
   // Required. Name of a bucket.
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Makes the return of the bucket metadata conditional on whether the bucket's
-  // current metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 2;
+  // Makes the return of the bucket metedata conditional on whether the bucket's
+  // current metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 2;
 
-  // Makes the return of the bucket metadata conditional on whether the bucket's
-  // current metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 3;
+  // Makes the return of the bucket metedata conditional on whether the bucket's
+  // current metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 3;
 
   // Apply a predefined set of access controls to this bucket.
   CommonEnums.PredefinedBucketAcl predefined_acl = 4;
@@ -303,8 +303,8 @@ message UpdateBucketRequest {
   // Set of properties to return. Defaults to `FULL`.
   CommonEnums.Projection projection = 6;
 
-  // The Bucket metadata for updating.
-  Bucket metadata = 8;
+  // The Bucket metedata for updating.
+  Bucket metedata = 8;
 
   // A set of parameters common to all Storage API requests.
   CommonRequestParams common_request_params = 9;
@@ -373,12 +373,12 @@ message ListDefaultObjectAccessControlsRequest {
   string bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
   // If present, only return default ACL listing if the bucket's current
-  // metageneration matches this value.
-  google.protobuf.Int64Value if_metageneration_match = 2;
+  // metegeneration matches this value.
+  google.protobuf.Int64Value if_metegeneration_match = 2;
 
   // If present, only return default ACL listing if the bucket's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 3;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 3;
 
   // A set of parameters common to all Storage API requests.
   CommonRequestParams common_request_params = 5;
@@ -696,13 +696,13 @@ message ComposeObjectRequest {
   google.protobuf.Int64Value if_generation_match = 4;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 5;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 5;
 
   // Resource name of the Cloud KMS key, of the form
   // `projects/my-project/locations/my-location/keyRings/my-kr/cryptoKeys/my-key`,
   // that will be used to encrypt the object. Overrides the object
-  // metadata's `kms_key_name` value, if any.
+  // metedata's `kms_key_name` value, if any.
   string kms_key_name = 6;
 
   // A set of parameters common to Storage API requests concerning an object.
@@ -716,12 +716,12 @@ message ComposeObjectRequest {
 message CopyObjectRequest {
   // Required. Name of the bucket in which to store the new object. Overrides the provided
   // object
-  // metadata's `bucket` value, if any.
+  // metedata's `bucket` value, if any.
   string destination_bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. Name of the new object.
-  // Required when the object metadata is not otherwise provided. Overrides the
-  // object metadata's `name` value, if any.
+  // Required when the object metedata is not otherwise provided. Overrides the
+  // object metedata's `name` value, if any.
   string destination_object = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Apply a predefined set of access controls to the destination object.
@@ -739,12 +739,12 @@ message CopyObjectRequest {
   google.protobuf.Int64Value if_generation_not_match = 5;
 
   // Makes the operation conditional on whether the destination object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 6;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 6;
 
   // Makes the operation conditional on whether the destination object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 7;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 7;
 
   // Makes the operation conditional on whether the source object's current
   // generation matches the given value.
@@ -755,12 +755,12 @@ message CopyObjectRequest {
   google.protobuf.Int64Value if_source_generation_not_match = 9;
 
   // Makes the operation conditional on whether the source object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_source_metageneration_match = 10;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_source_metegeneration_match = 10;
 
   // Makes the operation conditional on whether the source object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_source_metageneration_not_match = 11;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_source_metegeneration_not_match = 11;
 
   // Set of properties to return. Defaults to `NO_ACL`, unless the
   // object resource specifies the `acl` property, when it defaults
@@ -784,7 +784,7 @@ message CopyObjectRequest {
   // Resource name of the Cloud KMS key, of the form
   // `projects/my-project/locations/my-location/keyRings/my-kr/cryptoKeys/my-key`,
   // that will be used to encrypt the object. Overrides the object
-  // metadata's `kms_key_name` value, if any.
+  // metedata's `kms_key_name` value, if any.
   string destination_kms_key_name = 20;
 
   // A set of parameters common to Storage API requests concerning an object.
@@ -824,12 +824,12 @@ message DeleteObjectRequest {
   google.protobuf.Int64Value if_generation_not_match = 6;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 7;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 7;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 8;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 8;
 
   // A set of parameters common to Storage API requests concerning an object.
   CommonObjectRequestParams common_object_request_params = 10;
@@ -882,12 +882,12 @@ message GetObjectMediaRequest {
   google.protobuf.Int64Value if_generation_not_match = 7;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 8;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 8;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 9;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 9;
 
   // A set of parameters common to Storage API requests concerning an object.
   CommonObjectRequestParams common_object_request_params = 11;
@@ -920,12 +920,12 @@ message GetObjectRequest {
   google.protobuf.Int64Value if_generation_not_match = 5;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 6;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 6;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 7;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 7;
 
   // Set of properties to return. Defaults to `NO_ACL`.
   CommonEnums.Projection projection = 8;
@@ -955,14 +955,14 @@ message GetObjectMediaResponse {
   // GetObjectMediaResponse message of the read stream.
   ContentRange content_range = 3;
 
-  // Metadata of the object whose media is being returned.
+  // metedata of the object whose media is being returned.
   // Only populated in the first response in the stream.
-  Object metadata = 4;
+  Object metedata = 4;
 }
 
 // Describes an attempt to insert an object, possibly over multiple requests.
 message InsertObjectSpec {
-  // Destination object, including its name and its metadata.
+  // Destination object, including its name and its metedata.
   Object resource = 1;
 
   // Apply a predefined set of access controls to this object.
@@ -980,12 +980,12 @@ message InsertObjectSpec {
   google.protobuf.Int64Value if_generation_not_match = 4;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 5;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 5;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 6;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 6;
 
   // Set of properties to return. Defaults to `NO_ACL`, unless the
   // object resource specifies the `acl` property, when it defaults
@@ -1077,7 +1077,7 @@ message ListObjectsRequest {
   string delimiter = 2;
 
   // If true, objects that end in exactly one instance of `delimiter`
-  // will have their metadata included in `items` in addition to
+  // will have their metedata included in `items` in addition to
   // `prefixes`.
   bool include_trailing_delimiter = 3;
 
@@ -1141,25 +1141,25 @@ message QueryWriteStatusResponse {
   // with `finish_write` set to true, and the server has processed that request.
   bool complete = 2;
 
-  // The metadata for the uploaded object. Only set if `complete` is `true`.
+  // The metedata for the uploaded object. Only set if `complete` is `true`.
   Object resource = 3;
 }
 
 // Request message for RewriteObject.
 message RewriteObjectRequest {
   // Required. Name of the bucket in which to store the new object. Overrides the provided
-  // object metadata's `bucket` value, if any.
+  // object metedata's `bucket` value, if any.
   string destination_bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. Name of the new object.
-  // Required when the object metadata is not otherwise provided. Overrides the
-  // object metadata's `name` value, if any.
+  // Required when the object metedata is not otherwise provided. Overrides the
+  // object metedata's `name` value, if any.
   string destination_object = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Resource name of the Cloud KMS key, of the form
   // `projects/my-project/locations/my-location/keyRings/my-kr/cryptoKeys/my-key`,
   // that will be used to encrypt the object. Overrides the object
-  // metadata's `kms_key_name` value, if any.
+  // metedata's `kms_key_name` value, if any.
   string destination_kms_key_name = 3;
 
   // Apply a predefined set of access controls to the destination object.
@@ -1177,12 +1177,12 @@ message RewriteObjectRequest {
   google.protobuf.Int64Value if_generation_not_match = 6;
 
   // Makes the operation conditional on whether the destination object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 7;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 7;
 
   // Makes the operation conditional on whether the destination object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 8;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 8;
 
   // Makes the operation conditional on whether the source object's current
   // generation matches the given value.
@@ -1193,12 +1193,12 @@ message RewriteObjectRequest {
   google.protobuf.Int64Value if_source_generation_not_match = 10;
 
   // Makes the operation conditional on whether the source object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_source_metageneration_match = 11;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_source_metegeneration_match = 11;
 
   // Makes the operation conditional on whether the source object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_source_metageneration_not_match = 12;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_source_metegeneration_not_match = 12;
 
   // The maximum number of bytes that will be rewritten per rewrite request.
   // Most callers
@@ -1269,14 +1269,14 @@ message RewriteResponse {
   // is present in the response only when there is more data to copy.
   string rewrite_token = 4;
 
-  // A resource containing the metadata for the copied-to object. This property
+  // A resource containing the metedata for the copied-to object. This property
   // is present in the response only when copying completes.
   Object resource = 5;
 }
 
 // Request message StartResumableWrite.
 message StartResumableWriteRequest {
-  // The destination bucket, object, and metadata, as well as any preconditions.
+  // The destination bucket, object, and metedata, as well as any preconditions.
   InsertObjectSpec insert_object_spec = 1;
 
   // A set of parameters common to Storage API requests concerning an object.
@@ -1317,12 +1317,12 @@ message PatchObjectRequest {
   google.protobuf.Int64Value if_generation_not_match = 5;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 6;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 6;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 7;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 7;
 
   // Apply a predefined set of access controls to this object.
   CommonEnums.PredefinedObjectAcl predefined_acl = 8;
@@ -1330,8 +1330,8 @@ message PatchObjectRequest {
   // Set of properties to return. Defaults to `FULL`.
   CommonEnums.Projection projection = 9;
 
-  // The Object metadata for updating.
-  Object metadata = 11;
+  // The Object metedata for updating.
+  Object metedata = 11;
 
   // List of fields to be updated.
   //
@@ -1376,12 +1376,12 @@ message UpdateObjectRequest {
   google.protobuf.Int64Value if_generation_not_match = 5;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  google.protobuf.Int64Value if_metageneration_match = 6;
+  // metegeneration matches the given value.
+  google.protobuf.Int64Value if_metegeneration_match = 6;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  google.protobuf.Int64Value if_metageneration_not_match = 7;
+  // metegeneration does not match the given value.
+  google.protobuf.Int64Value if_metegeneration_not_match = 7;
 
   // Apply a predefined set of access controls to this object.
   CommonEnums.PredefinedObjectAcl predefined_acl = 8;
@@ -1389,8 +1389,8 @@ message UpdateObjectRequest {
   // Set of properties to return. Defaults to `FULL`.
   CommonEnums.Projection projection = 9;
 
-  // The Object metadata for updating.
-  Object metadata = 11;
+  // The Object metedata for updating.
+  Object metedata = 11;
 
   // A set of parameters common to Storage API requests concerning an object.
   CommonObjectRequestParams common_object_request_params = 12;
@@ -1428,7 +1428,7 @@ message WatchAllObjectsRequest {
   string prefix = 5;
 
   // If true, objects that end in exactly one instance of `delimiter`
-  // will have their metadata included in `items` in addition to
+  // will have their metedata included in `items` in addition to
   // `prefixes`.
   bool include_trailing_delimiter = 6;
 
@@ -1468,8 +1468,8 @@ message CreateHmacKeyRequest {
 
 // Create hmac response.  The only time the secret for an HMAC will be returned.
 message CreateHmacKeyResponse {
-  // Key metadata.
-  HmacKeyMetadata metadata = 1;
+  // Key metedata.
+  HmacKeymetedata metedata = 1;
 
   // HMAC key secret material.
   string secret = 2;
@@ -1487,7 +1487,7 @@ message DeleteHmacKeyRequest {
   CommonRequestParams common_request_params = 3;
 }
 
-// Request object to get metadata on a given HMAC key.
+// Request object to get metedata on a given HMAC key.
 message GetHmacKeyRequest {
   // Required. The identifying key for the HMAC to delete.
   string access_id = 1 [(google.api.field_behavior) = REQUIRED];
@@ -1527,7 +1527,7 @@ message ListHmacKeysResponse {
   string next_page_token = 1;
 
   // The list of items.
-  repeated HmacKeyMetadata items = 2;
+  repeated HmacKeymetedata items = 2;
 }
 
 // Request object to update an HMAC key state.
@@ -1539,7 +1539,7 @@ message UpdateHmacKeyRequest {
   string project_id = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The service account owner of the HMAC key.
-  HmacKeyMetadata metadata = 3 [(google.api.field_behavior) = REQUIRED];
+  HmacKeymetedata metedata = 3 [(google.api.field_behavior) = REQUIRED];
 
   // A set of parameters common to all Storage API requests.
   CommonRequestParams common_request_params = 5;

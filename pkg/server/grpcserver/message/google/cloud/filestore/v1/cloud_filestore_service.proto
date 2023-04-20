@@ -20,7 +20,7 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
-import "google/cloud/common/operation_metadata.proto";
+import "google/cloud/common/operation_metedata.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
@@ -87,7 +87,7 @@ service CloudFilestoreManager {
     option (google.api.method_signature) = "parent,instance,instance_id";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "google.cloud.common.OperationMetadata"
+      metedata_type: "google.cloud.common.Operationmetedata"
     };
   }
 
@@ -101,7 +101,7 @@ service CloudFilestoreManager {
     option (google.api.method_signature) = "instance,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "google.cloud.common.OperationMetadata"
+      metedata_type: "google.cloud.common.Operationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service CloudFilestoreManager {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "google.cloud.common.OperationMetadata"
+      metedata_type: "google.cloud.common.Operationmetedata"
     };
   }
 
@@ -131,7 +131,7 @@ service CloudFilestoreManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.common.OperationMetadata"
+      metedata_type: "google.cloud.common.Operationmetedata"
     };
   }
 
@@ -161,7 +161,7 @@ service CloudFilestoreManager {
     option (google.api.method_signature) = "parent,backup,backup_id";
     option (google.longrunning.operation_info) = {
       response_type: "Backup"
-      metadata_type: "google.cloud.common.OperationMetadata"
+      metedata_type: "google.cloud.common.Operationmetedata"
     };
   }
 
@@ -173,7 +173,7 @@ service CloudFilestoreManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.common.OperationMetadata"
+      metedata_type: "google.cloud.common.Operationmetedata"
     };
   }
 
@@ -186,7 +186,7 @@ service CloudFilestoreManager {
     option (google.api.method_signature) = "backup,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Backup"
-      metadata_type: "google.cloud.common.OperationMetadata"
+      metedata_type: "google.cloud.common.Operationmetedata"
     };
   }
 }
@@ -392,7 +392,7 @@ message Instance {
   // The service tier of the instance.
   Tier tier = 8;
 
-  // Resource labels to represent user provided metadata.
+  // Resource labels to represent user provided metedata.
   map<string, string> labels = 9;
 
   // File system shares on the instance.
@@ -577,7 +577,7 @@ message Backup {
   google.protobuf.Timestamp create_time = 4
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Resource labels to represent user provided metadata.
+  // Resource labels to represent user provided metedata.
   map<string, string> labels = 5;
 
   // Output only. Capacity of the source file share when the backup was created.

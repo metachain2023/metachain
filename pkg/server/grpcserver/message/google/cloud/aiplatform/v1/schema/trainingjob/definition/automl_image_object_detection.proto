@@ -30,8 +30,8 @@ message AutoMlImageObjectDetection {
   // The input parameters of this TrainingJob.
   AutoMlImageObjectDetectionInputs inputs = 1;
 
-  // The metadata information
-  AutoMlImageObjectDetectionMetadata metadata = 2;
+  // The metedata information
+  AutoMlImageObjectDetectionmetedata metedata = 2;
 }
 
 message AutoMlImageObjectDetectionInputs {
@@ -73,9 +73,9 @@ message AutoMlImageObjectDetectionInputs {
 
   // The training budget of creating this model, expressed in milli node
   // hours i.e. 1,000 value in this field means 1 node hour. The actual
-  // metadata.costMilliNodeHours will be equal or less than this value.
+  // metedata.costMilliNodeHours will be equal or less than this value.
   // If further model training ceases to provide any improvements, it will
-  // stop without using the full budget and the metadata.successfulStopReason
+  // stop without using the full budget and the metedata.successfulStopReason
   // will be `model-converged`.
   // Note, node_hour  = actual_hour * number_of_nodes_involved.
   // For modelType `cloud`(default), the budget must be between 20,000
@@ -95,7 +95,7 @@ message AutoMlImageObjectDetectionInputs {
   bool disable_early_stopping = 3;
 }
 
-message AutoMlImageObjectDetectionMetadata {
+message AutoMlImageObjectDetectionmetedata {
   enum SuccessfulStopReason {
     // Should not be set.
     SUCCESSFUL_STOP_REASON_UNSPECIFIED = 0;

@@ -35,7 +35,7 @@
         },
         {
           "service": "google.analytics.data.v1beta.BetaAnalyticsData",
-          "method": "GetMetadata"
+          "method": "Getmetedata"
         },
         {
           "service": "google.analytics.data.v1beta.BetaAnalyticsData",

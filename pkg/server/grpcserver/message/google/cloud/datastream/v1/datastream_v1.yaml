@@ -11,7 +11,7 @@ apis:
 
 types:
 - name: google.cloud.datastream.v1.Error
-- name: google.cloud.datastream.v1.OperationMetadata
+- name: google.cloud.datastream.v1.Operationmetedata
 - name: google.cloud.datastream.v1.ValidationResult
 
 documentation:

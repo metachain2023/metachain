@@ -1,7 +1,7 @@
 type: google.api.Service
 config_version: 3
-name: iam-meta-api.googleapis.com
-title: IAM Meta API
+name: iam-mete-api.googleapis.com
+title: IAM mete API
 
 apis:
 - name: google.iam.v1.IAMPolicy

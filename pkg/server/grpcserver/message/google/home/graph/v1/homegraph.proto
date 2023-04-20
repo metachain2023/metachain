@@ -47,7 +47,7 @@ service HomeGraphApiService {
 
   // Requests Google to send an `action.devices.SYNC`
   // [intent](https://developers.home.google.com/cloud-to-cloud/intents/sync)
-  // to your smart home Action to update device metadata for the given user.
+  // to your smart home Action to update device metedata for the given user.
   //
   //
   // The third-party user's identity is passed via the `agent_user_id`
@@ -201,7 +201,7 @@ message ReportStateAndNotificationRequest {
   // Deprecated.
   string follow_up_token = 5 [deprecated = true];
 
-  // Required. State of devices to update and notification metadata for devices.
+  // Required. State of devices to update and notification metedata for devices.
   StateAndNotificationPayload payload = 3
       [(google.api.field_behavior) = REQUIRED];
 }
@@ -228,7 +228,7 @@ message ReportStateAndNotificationDevice {
   // guides](https://developers.home.google.com/cloud-to-cloud/traits).
   google.protobuf.Struct states = 1;
 
-  // Notifications metadata for devices. See the **Device NOTIFICATIONS**
+  // Notifications metedata for devices. See the **Device NOTIFICATIONS**
   // section of the individual trait [reference
   // guides](https://developers.home.google.com/cloud-to-cloud/traits).
   google.protobuf.Struct notifications = 2;

@@ -109,8 +109,8 @@ service DatastoreAdmin {
   }
 }
 
-// Metadata common to all Datastore Admin operations.
-message CommonMetadata {
+// metedata common to all Datastore Admin operations.
+message Commonmetedata {
   // The various possible states for an ongoing Operation.
   enum State {
     // Unspecified.
@@ -181,7 +181,7 @@ message ExportEntitiesRequest {
   // Description of what data from the project is included in the export.
   EntityFilter entity_filter = 3;
 
-  // Location for the export metadata and data files.
+  // Location for the export metedata and data files.
   //
   // The full resource URL of the external storage location. Currently, only
   // Google Cloud Storage is supported. So output_url_prefix should be of the
@@ -213,10 +213,10 @@ message ImportEntitiesRequest {
 
   // The full resource URL of the external storage location. Currently, only
   // Google Cloud Storage is supported. So input_url should be of the form:
-  // `gs://BUCKET_NAME[/NAMESPACE_PATH]/OVERALL_EXPORT_METADATA_FILE`, where
+  // `gs://BUCKET_NAME[/NAMESPACE_PATH]/OVERALL_EXPORT_meteDATA_FILE`, where
   // `BUCKET_NAME` is the name of the Cloud Storage bucket, `NAMESPACE_PATH` is
   // an optional Cloud Storage namespace path (this is not a Cloud Datastore
-  // namespace), and `OVERALL_EXPORT_METADATA_FILE` is the metadata file written
+  // namespace), and `OVERALL_EXPORT_meteDATA_FILE` is the metedata file written
   // by the ExportEntities operation. For more information about Cloud Storage
   // namespace paths, see
   // [Object name
@@ -236,17 +236,17 @@ message ImportEntitiesRequest {
 // The response for
 // [google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities][google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities].
 message ExportEntitiesResponse {
-  // Location of the output metadata file. This can be used to begin an import
+  // Location of the output metedata file. This can be used to begin an import
   // into Cloud Datastore (this project or another project). See
   // [google.datastore.admin.v1beta1.ImportEntitiesRequest.input_url][google.datastore.admin.v1beta1.ImportEntitiesRequest.input_url].
   // Only present if the operation completed successfully.
   string output_url = 1;
 }
 
-// Metadata for ExportEntities operations.
-message ExportEntitiesMetadata {
-  // Metadata common to all Datastore Admin operations.
-  CommonMetadata common = 1;
+// metedata for ExportEntities operations.
+message ExportEntitiesmetedata {
+  // metedata common to all Datastore Admin operations.
+  Commonmetedata common = 1;
 
   // An estimate of the number of entities processed.
   Progress progress_entities = 2;
@@ -257,7 +257,7 @@ message ExportEntitiesMetadata {
   // Description of which entities are being exported.
   EntityFilter entity_filter = 4;
 
-  // Location for the export metadata and data files. This will be the same
+  // Location for the export metedata and data files. This will be the same
   // value as the
   // [google.datastore.admin.v1beta1.ExportEntitiesRequest.output_url_prefix][google.datastore.admin.v1beta1.ExportEntitiesRequest.output_url_prefix]
   // field. The final output location is provided in
@@ -265,10 +265,10 @@ message ExportEntitiesMetadata {
   string output_url_prefix = 5;
 }
 
-// Metadata for ImportEntities operations.
-message ImportEntitiesMetadata {
-  // Metadata common to all Datastore Admin operations.
-  CommonMetadata common = 1;
+// metedata for ImportEntities operations.
+message ImportEntitiesmetedata {
+  // metedata common to all Datastore Admin operations.
+  Commonmetedata common = 1;
 
   // An estimate of the number of entities processed.
   Progress progress_entities = 2;
@@ -279,7 +279,7 @@ message ImportEntitiesMetadata {
   // Description of which entities are being imported.
   EntityFilter entity_filter = 4;
 
-  // The location of the import metadata file. This will be the same value as
+  // The location of the import metedata file. This will be the same value as
   // the
   // [google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url][google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url]
   // field.

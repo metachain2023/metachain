@@ -60,7 +60,7 @@ service OsConfigZonalService {
         "parent,os_policy_assignment,os_policy_assignment_id";
     option (google.longrunning.operation_info) = {
       response_type: "OSPolicyAssignment"
-      metadata_type: "OSPolicyAssignmentOperationMetadata"
+      metedata_type: "OSPolicyAssignmentOperationmetedata"
     };
   }
 
@@ -82,7 +82,7 @@ service OsConfigZonalService {
     option (google.api.method_signature) = "os_policy_assignment,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "OSPolicyAssignment"
-      metadata_type: "OSPolicyAssignmentOperationMetadata"
+      metedata_type: "OSPolicyAssignmentOperationmetedata"
     };
   }
 
@@ -139,7 +139,7 @@ service OsConfigZonalService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OSPolicyAssignmentOperationMetadata"
+      metedata_type: "OSPolicyAssignmentOperationmetedata"
     };
   }
 

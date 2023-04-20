@@ -34,8 +34,8 @@ message ActionLog {
   // Required. State change that was made by the actor. Eg, SUCCEEDED.
   google.cloud.recommender.v1.RecommendationStateInfo.State state = 2;
 
-  // Optional. Metadata that was included with the action that was taken.
-  map<string, string> state_metadata = 3;
+  // Optional. metedata that was included with the action that was taken.
+  map<string, string> state_metedata = 3;
 
   // Required. Name of the recommendation which was acted on. Eg, :
   // 'projects/123/locations/global/recommenders/roleReco/recommendations/r1'
@@ -50,8 +50,8 @@ message InsightActionLog {
   // Required. State change that was made by the actor. Eg, ACCEPTED.
   google.cloud.recommender.v1.InsightStateInfo.State state = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Optional. Metadata that was included with the action that was taken.
-  map<string, string> state_metadata = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Optional. metedata that was included with the action that was taken.
+  map<string, string> state_metedata = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Required. Name of the insight which was acted on. Eg, :
   // 'projects/123/locations/global/insightTypes/roleInsight/insights/i1'

@@ -52,7 +52,7 @@ service AssuredWorkloadsService {
     option (google.api.method_signature) = "parent,workload";
     option (google.longrunning.operation_info) = {
       response_type: "Workload"
-      metadata_type: "CreateWorkloadOperationMetadata"
+      metedata_type: "CreateWorkloadOperationmetedata"
     };
   }
 
@@ -514,8 +514,8 @@ message Workload {
   Partner partner = 25 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Operation metadata to give request details of CreateWorkload.
-message CreateWorkloadOperationMetadata {
+// Operation metedata to give request details of CreateWorkload.
+message CreateWorkloadOperationmetedata {
   // Optional. Time when the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OPTIONAL];
 

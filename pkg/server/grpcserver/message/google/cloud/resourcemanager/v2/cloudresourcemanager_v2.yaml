@@ -11,7 +11,7 @@ types:
 
 documentation:
   summary: |-
-    Creates, reads, and updates metadata for Google Cloud Platform resource
+    Creates, reads, and updates metedata for Google Cloud Platform resource
     containers.
 
 backend:

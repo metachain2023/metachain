@@ -140,7 +140,7 @@ message CreateDocumentResponse {
 
   // Additional information for the API invocation, such as the request tracking
   // id.
-  ResponseMetadata metadata = 3;
+  Responsemetedata metedata = 3;
 }
 
 // Response message for DocumentService.UpdateDocument.
@@ -156,7 +156,7 @@ message UpdateDocumentResponse {
 
   // Additional information for the API invocation, such as the request tracking
   // id.
-  ResponseMetadata metadata = 3;
+  Responsemetedata metedata = 3;
 }
 
 // Additional result info for the question-answering feature.
@@ -182,10 +182,10 @@ message QAResult {
 
 // Response message for DocumentService.SearchDocuments.
 message SearchDocumentsResponse {
-  // Document entry with metadata inside [SearchDocumentsResponse][google.cloud.contentwarehouse.v1.SearchDocumentsResponse]
+  // Document entry with metedata inside [SearchDocumentsResponse][google.cloud.contentwarehouse.v1.SearchDocumentsResponse]
   message MatchingDocument {
     // Document that matches the specified [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
-    // This document only contains indexed metadata information.
+    // This document only contains indexed metedata information.
     Document document = 1;
 
     // Contains snippets of text from the document full raw text that most
@@ -221,7 +221,7 @@ message SearchDocumentsResponse {
 
   // Additional information for the API invocation, such as the request tracking
   // id.
-  ResponseMetadata metadata = 4;
+  Responsemetedata metedata = 4;
 
   // The histogram results that match with the specified
   // [SearchDocumentsRequest.histogram_queries][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.histogram_queries].
@@ -235,7 +235,7 @@ message FetchAclResponse {
 
   // Additional information for the API invocation, such as the request tracking
   // id.
-  ResponseMetadata metadata = 2;
+  Responsemetedata metedata = 2;
 }
 
 // Response message for DocumentService.SetAcl.
@@ -245,5 +245,5 @@ message SetAclResponse {
 
   // Additional information for the API invocation, such as the request tracking
   // id.
-  ResponseMetadata metadata = 2;
+  Responsemetedata metedata = 2;
 }

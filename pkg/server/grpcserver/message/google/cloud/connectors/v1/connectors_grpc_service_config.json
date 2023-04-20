@@ -43,7 +43,7 @@
       },
       {
         "service": "google.cloud.connectors.v1.Connectors",
-        "method": "GetConnectionSchemaMetadata"
+        "method": "GetConnectionSchemametedata"
       },
       {
         "service": "google.cloud.connectors.v1.Connectors",

@@ -60,7 +60,7 @@ service AzureClusters {
         "parent,azure_client,azure_client_id";
     option (google.longrunning.operation_info) = {
       response_type: "AzureClient"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -100,7 +100,7 @@ service AzureClusters {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -120,7 +120,7 @@ service AzureClusters {
         "parent,azure_cluster,azure_cluster_id";
     option (google.longrunning.operation_info) = {
       response_type: "AzureCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -134,7 +134,7 @@ service AzureClusters {
     option (google.api.method_signature) = "azure_cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AzureCluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -174,7 +174,7 @@ service AzureClusters {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -204,7 +204,7 @@ service AzureClusters {
         "parent,azure_node_pool,azure_node_pool_id";
     option (google.longrunning.operation_info) = {
       response_type: "AzureNodePool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -218,7 +218,7 @@ service AzureClusters {
     option (google.api.method_signature) = "azure_node_pool,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AzureNodePool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -256,7 +256,7 @@ service AzureClusters {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

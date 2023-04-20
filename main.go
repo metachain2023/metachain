@@ -12,15 +12,15 @@ import (
 	"os"
 	"runtime"
 
-	"metachain/pkg/blockchain"
-	"metachain/pkg/config"
-	"metachain/pkg/consensus"
-	"metachain/pkg/controller"
-	"metachain/pkg/logger"
-	"metachain/pkg/p2p"
-	"metachain/pkg/storage/store/pb"
-	"metachain/pkg/txpool"
-	"metachain/pkg/util/ntp"
+	"metechain/pkg/blockchain"
+	"metechain/pkg/config"
+	"metechain/pkg/consensus"
+	"metechain/pkg/controller"
+	"metechain/pkg/logger"
+	"metechain/pkg/p2p"
+	"metechain/pkg/storage/store/pb"
+	"metechain/pkg/txpool"
+	"metechain/pkg/util/ntp"
 
 	"github.com/cockroachdb/pebble"
 	"github.com/ethereum/go-ethereum/common"
@@ -29,9 +29,9 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 
-	"metachain/pkg/miner"
-	"metachain/pkg/server/grpcserver"
-	"metachain/pkg/server/rpcserver"
+	"metechain/pkg/miner"
+	"metechain/pkg/server/grpcserver"
+	"metechain/pkg/server/rpcserver"
 
 	"go.uber.org/zap"
 )
@@ -110,8 +110,8 @@ func main() {
 	pool, err := txpool.NewPool(txpool.Config{b, logger.Logger})
 
 	//contract server
-	/* 	logger.Info("metamashk", zap.Int64("chain ID", cfg.ChainCfg.ChainId))
-	   	go contractServer.RunMetamaskServer(b, pool, cfg) */
+	/* 	logger.Info("metemashk", zap.Int64("chain ID", cfg.ChainCfg.ChainId))
+	   	go contractServer.RunmetemaskServer(b, pool, cfg) */
 	//chain server
 	// csv := chainserver.NewServer(b, cfg.SververCfg.ChainServerPort, cfg.SververCfg.GRpcAddress)
 	// go csv.RunServer()

@@ -579,7 +579,7 @@ message Warning {
   // Check the Code enum for the list of possible values.
   optional string code = 3059181;
 
-  // [Output Only] Metadata about this warning in key: value format. For example:
+  // [Output Only] metedata about this warning in key: value format. For example:
   // "data": [ { "key": "scope", "value": "zones/us-east1-d" }
   repeated Data data = 3076010;
 
@@ -647,7 +647,7 @@ message Warnings {
   // Check the Code enum for the list of possible values.
   optional string code = 3059181;
 
-  // [Output Only] Metadata about this warning in key: value format. For example:
+  // [Output Only] metedata about this warning in key: value format. For example:
   // "data": [ { "key": "scope", "value": "zones/us-east1-d" }
   repeated Data data = 3076010;
 

@@ -86,7 +86,7 @@ message Input {
   // Output only. The update time.
   google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // User-defined key/value metadata.
+  // User-defined key/value metedata.
   map<string, string> labels = 4;
 
   // Source type.
@@ -175,7 +175,7 @@ message Channel {
   // Output only. The update time.
   google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // User-defined key/value metadata.
+  // User-defined key/value metedata.
   map<string, string> labels = 4;
 
   // A list of input attachments that this channel uses.
@@ -380,7 +380,7 @@ message Event {
   // Output only. The update time.
   google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // User-defined key/value metadata.
+  // User-defined key/value metedata.
   map<string, string> labels = 4;
 
   // Required. Operation to be executed by this event.

@@ -244,7 +244,7 @@ message ImageSegmentationPredictionResult {
   // A PNG image where each pixel in the mask represents the category in which
   // the pixel in the original image was predicted to belong to. The size of
   // this image will be the same as the original image. The mapping between the
-  // AnntoationSpec and the color can be found in model's metadata. The model
+  // AnntoationSpec and the color can be found in model's metedata. The model
   // will choose the most likely category and if none of the categories reach
   // the confidence threshold, the pixel will be marked as background.
   string category_mask = 1;
@@ -576,10 +576,10 @@ message NormalizedVertex {
   float y = 2;
 }
 
-// Message of essential metadata of App Platform.
+// Message of essential metedata of App Platform.
 // This message is usually attached to a certain processor output annotation for
 // customer to identify the source of the data.
-message AppPlatformMetadata {
+message AppPlatformmetedata {
   // The application resource name.
   string application = 1;
 
@@ -609,9 +609,9 @@ message AppPlatformCloudFunctionRequest {
     google.protobuf.Struct annotation = 2;
   }
 
-  // The metadata of the AppPlatform for customer to identify the source of the
+  // The metedata of the AppPlatform for customer to identify the source of the
   // payload.
-  AppPlatformMetadata app_platform_metadata = 1;
+  AppPlatformmetedata app_platform_metedata = 1;
 
   // The actual annotations to be processed by the customized Cloud Function.
   repeated StructedInputAnnotation annotations = 2;

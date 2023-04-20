@@ -113,8 +113,8 @@ message ServiceConfig {
   google.api.Monitoring monitoring = 28;
 }
 
-// The operation metadata returned for the batchend services operation.
-message OperationMetadata {
+// The operation metedata returned for the batchend services operation.
+message Operationmetedata {
   // The full name of the resources that this operation is directly
   // associated with.
   repeated string resource_names = 2;

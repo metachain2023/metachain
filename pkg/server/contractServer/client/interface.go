@@ -3,11 +3,11 @@ package client
 import (
 	"math/big"
 
-	"metachain/pkg/transaction"
+	"metechain/pkg/transaction"
 
 	"github.com/ethereum/go-ethereum/core/types"
 
-	"metachain/pkg/block"
+	"metechain/pkg/block"
 )
 
 type Clients interface {

@@ -3,7 +3,7 @@ package bgdb
 import (
 	"time"
 
-	"metachain/pkg/storage/store"
+	"metechain/pkg/storage/store"
 
 	"github.com/ethereum/go-ethereum/ethdb"
 	"github.com/syndtr/goleveldb/leveldb/errors"

@@ -218,7 +218,7 @@ message Intent {
   // fallback intents act as negative examples that triggers no-match event.
   bool is_fallback = 6;
 
-  // The key/value metadata to label an intent. Labels can contain
+  // The key/value metedata to label an intent. Labels can contain
   // lowercase letters, digits and the symbols '-' and '_'. International
   // characters are allowed, including letters from unicase alphabets. Keys must
   // start with a letter. Keys and values can be no longer than 63 characters

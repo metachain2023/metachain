@@ -24,14 +24,14 @@ import "google/rpc/status.proto";
 option csharp_namespace = "Google.Cloud.Audit";
 option go_package = "google.golang.org/genproto/googleapis/cloud/audit;audit";
 option java_multiple_files = true;
-option java_outer_classname = "BigQueryAuditMetadataProto";
+option java_outer_classname = "BigQueryAuditmetedataProto";
 option java_package = "com.google.cloud.audit";
 option objc_class_prefix = "GCA";
 option php_namespace = "Google\\Cloud\\Audit";
 
-// Audit log format for BigQuery cloud audit logs metadata.
+// Audit log format for BigQuery cloud audit logs metedata.
 //
-message BigQueryAuditMetadata {
+message BigQueryAuditmetedata {
   // Job insertion event.
   message JobInsertion {
     // Describes how the job was inserted.
@@ -46,7 +46,7 @@ message BigQueryAuditMetadata {
       QUERY_REQUEST = 2;
     }
 
-    // Job metadata.
+    // Job metedata.
     Job job = 1;
 
     // Describes how the job was inserted.
@@ -61,7 +61,7 @@ message BigQueryAuditMetadata {
     // Job state after the job state change.
     JobState after = 2;
 
-    // Job metadata.
+    // Job metedata.
     Job job = 3;
   }
 
@@ -99,7 +99,7 @@ message BigQueryAuditMetadata {
       QUERY = 2;
     }
 
-    // Dataset metadata.
+    // Dataset metedata.
     Dataset dataset = 1;
 
     // Describes how the dataset was created.
@@ -129,7 +129,7 @@ message BigQueryAuditMetadata {
       QUERY = 3;
     }
 
-    // Dataset metadata after the change.
+    // Dataset metedata after the change.
     Dataset dataset = 1;
 
     // Describes how the dataset was changed.
@@ -184,7 +184,7 @@ message BigQueryAuditMetadata {
       TABLE_INSERT_REQUEST = 3;
     }
 
-    // Table metadata.
+    // Table metedata.
     Table table = 1;
 
     // Describes how the table was created.
@@ -208,7 +208,7 @@ message BigQueryAuditMetadata {
       QUERY = 2;
     }
 
-    // Model metadata.
+    // Model metedata.
     Model model = 1;
 
     // Describes how the model was created.
@@ -306,30 +306,30 @@ message BigQueryAuditMetadata {
     string session_name = 5;
   }
 
-  // Table metadata change event.
+  // Table metedata change event.
   message TableChange {
-    // Describes how the table metadata was changed.
+    // Describes how the table metedata was changed.
     enum Reason {
       // Unknown.
       REASON_UNSPECIFIED = 0;
 
-      // Table metadata was updated using the tables.update or tables.patch API.
+      // Table metedata was updated using the tables.update or tables.patch API.
       TABLE_UPDATE_REQUEST = 1;
 
       // Table was used as a job destination table.
       JOB = 2;
 
-      // Table metadata was updated using a DML or DDL query.
+      // Table metedata was updated using a DML or DDL query.
       QUERY = 3;
     }
 
-    // Updated table metadata.
+    // Updated table metedata.
     Table table = 1;
 
     // True if the table was truncated.
     bool truncated = 4;
 
-    // Describes how the table metadata was changed.
+    // Describes how the table metedata was changed.
     Reason reason = 5;
 
     // The URI of the job that changed a table.
@@ -339,27 +339,27 @@ message BigQueryAuditMetadata {
     string job_name = 6;
   }
 
-  // Model metadata change event.
-  message ModelMetadataChange {
-    // Describes how the model metadata was changed.
+  // Model metedata change event.
+  message ModelmetedataChange {
+    // Describes how the model metedata was changed.
     enum Reason {
       // Unknown.
       REASON_UNSPECIFIED = 0;
 
-      // Model metadata was updated using the models.patch API.
+      // Model metedata was updated using the models.patch API.
       MODEL_PATCH_REQUEST = 1;
 
-      // Model metadata was updated using a DDL query.
+      // Model metedata was updated using a DDL query.
       QUERY = 2;
     }
 
     // Updated model.
     Model model = 1;
 
-    // Describes how the model metadata was changed.
+    // Describes how the model metedata was changed.
     Reason reason = 2;
 
-    // The URI of the job that changed the model metadata.
+    // The URI of the job that changed the model metedata.
     // Present if and only if the reason is QUERY.
     //
     // Format: `projects/<project_id>/jobs/<job_id>`.
@@ -1090,7 +1090,7 @@ message BigQueryAuditMetadata {
     // Format: `projects/<project_id>/datasets/<dataset_id>/tables/<table_id>`.
     string table_name = 1;
 
-    // User-provided metadata for the table.
+    // User-provided metedata for the table.
     EntityInfo table_info = 10;
 
     // A JSON representation of the table's schema. Entire field is truncated
@@ -1100,7 +1100,7 @@ message BigQueryAuditMetadata {
     // True if the schema_json field was truncated.
     bool schema_json_truncated = 11;
 
-    // View metadata. Only present for views.
+    // View metedata. Only present for views.
     TableViewDefinition view = 4;
 
     // Table expiration time.
@@ -1109,7 +1109,7 @@ message BigQueryAuditMetadata {
     // The table creation time.
     google.protobuf.Timestamp create_time = 6;
 
-    // The last time metadata update time.
+    // The last time metedata update time.
     google.protobuf.Timestamp update_time = 7;
 
     // The last table truncation time.
@@ -1126,7 +1126,7 @@ message BigQueryAuditMetadata {
     // Format: `projects/<project_id>/datasets/<dataset_id>/models/<model_id>`.
     string model_name = 1;
 
-    // User-provided metadata for the model.
+    // User-provided metedata for the model.
     EntityInfo model_info = 2;
 
     // Model expiration time.
@@ -1157,7 +1157,7 @@ message BigQueryAuditMetadata {
     google.protobuf.Timestamp update_time = 6;
   }
 
-  // User-provided metadata for an entity, for e.g. dataset, table or model.
+  // User-provided metedata for an entity, for e.g. dataset, table or model.
   message EntityInfo {
     // A short name for the entity.
     string friendly_name = 1;
@@ -1185,13 +1185,13 @@ message BigQueryAuditMetadata {
     // Format: `projects/<project_id>/datasets/<dataset_id>`.
     string dataset_name = 1;
 
-    // User-provided metadata for the dataset.
+    // User-provided metedata for the dataset.
     EntityInfo dataset_info = 7;
 
     // Dataset creation time.
     google.protobuf.Timestamp create_time = 3;
 
-    // Dataset metadata last update time.
+    // Dataset metedata last update time.
     google.protobuf.Timestamp update_time = 4;
 
     // The access control list for the dataset.
@@ -1236,16 +1236,16 @@ message BigQueryAuditMetadata {
     string row_access_policy_name = 1;
   }
 
-  // First party (Google) application specific request metadata.
-  message FirstPartyAppMetadata {
-    oneof metadata {
-      // Google Sheets metadata.
-      SheetsMetadata sheets_metadata = 1;
+  // First party (Google) application specific request metedata.
+  message FirstPartyAppmetedata {
+    oneof metedata {
+      // Google Sheets metedata.
+      Sheetsmetedata sheets_metedata = 1;
     }
   }
 
-  // Google Sheets specific request metadata.
-  message SheetsMetadata {
+  // Google Sheets specific request metedata.
+  message Sheetsmetedata {
     // The ID of the spreadsheet from which the request is sent.
     string doc_id = 1;
   }
@@ -1273,7 +1273,7 @@ message BigQueryAuditMetadata {
     // Table creation event.
     TableCreation table_creation = 6;
 
-    // Table metadata change event.
+    // Table metedata change event.
     TableChange table_change = 8;
 
     // Table deletion event.
@@ -1291,8 +1291,8 @@ message BigQueryAuditMetadata {
     // Model creation event.
     ModelCreation model_creation = 13;
 
-    // Model metadata change event.
-    ModelMetadataChange model_metadata_change = 14;
+    // Model metedata change event.
+    ModelmetedataChange model_metedata_change = 14;
 
     // Model data change event.
     ModelDataChange model_data_change = 15;
@@ -1322,6 +1322,6 @@ message BigQueryAuditMetadata {
     UnlinkDataset unlink_dataset = 25;
   }
 
-  // First party (Google) application specific metadata.
-  FirstPartyAppMetadata first_party_app_metadata = 24;
+  // First party (Google) application specific metedata.
+  FirstPartyAppmetedata first_party_app_metedata = 24;
 }

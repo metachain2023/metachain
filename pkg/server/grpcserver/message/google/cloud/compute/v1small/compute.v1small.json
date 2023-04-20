@@ -280,7 +280,7 @@
               },
               "data": {
                 "type": "array",
-                "description": "[Output Only] Metadata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
+                "description": "[Output Only] metedata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
                 "items": {
                   "type": "object",
                   "properties": {
@@ -534,7 +534,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
+              "description": "[Output Only] metedata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
               "items": {
                 "type": "object",
                 "properties": {
@@ -646,7 +646,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
+              "description": "[Output Only] metedata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
               "items": {
                 "type": "object",
                 "properties": {
@@ -740,7 +740,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
+              "description": "[Output Only] metedata about this warning in key: value format. For example:\n\"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" }",
               "items": {
                 "type": "object",
                 "properties": {

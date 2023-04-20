@@ -47,7 +47,7 @@ message Connection {
   // Output only. Updated time.
   google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. Resource labels to represent user-provided metadata.
+  // Optional. Resource labels to represent user-provided metedata.
   // Refer to cloud documentation on labels for more details.
   // https://cloud.google.com/compute/docs/labeling-resources
   map<string, string> labels = 4 [(google.api.field_behavior) = OPTIONAL];
@@ -116,8 +116,8 @@ message NodeConfig {
   int32 max_node_count = 2;
 }
 
-// Metadata of connection schema.
-message ConnectionSchemaMetadata {
+// metedata of connection schema.
+message ConnectionSchemametedata {
   // Output only. List of entity names.
   repeated string entities = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -127,7 +127,7 @@ message ConnectionSchemaMetadata {
 
 // Schema of a runtime entity.
 message RuntimeEntitySchema {
-  // Metadata of an entity field.
+  // metedata of an entity field.
   message Field {
     // Name of the Field.
     string field = 1;
@@ -153,7 +153,7 @@ message RuntimeEntitySchema {
     google.protobuf.Value default_value = 7;
 
     // The following map contains fields that are not explicitly mentioned
-    // above,this give connectors the flexibility to add new metadata
+    // above,this give connectors the flexibility to add new metedata
     // fields.
     google.protobuf.Struct additional_details = 8;
   }
@@ -167,7 +167,7 @@ message RuntimeEntitySchema {
 
 // Schema of a runtime action.
 message RuntimeActionSchema {
-  // Metadata of an input parameter.
+  // metedata of an input parameter.
   message InputParameter {
     // Name of the Parameter.
     string parameter = 1;
@@ -186,8 +186,8 @@ message RuntimeActionSchema {
     google.protobuf.Value default_value = 5;
   }
 
-  // Metadata of result field.
-  message ResultMetadata {
+  // metedata of result field.
+  message Resultmetedata {
     // Name of the result field.
     string field = 1;
 
@@ -201,11 +201,11 @@ message RuntimeActionSchema {
   // Output only. Name of the action.
   string action = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. List of input parameter metadata for the action.
+  // Output only. List of input parameter metedata for the action.
   repeated InputParameter input_parameters = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. List of result field metadata.
-  repeated ResultMetadata result_metadata = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. List of result field metedata.
+  repeated Resultmetedata result_metedata = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Determines whether or no a connection is locked. If locked, a reason must be
@@ -318,11 +318,11 @@ message DeleteConnectionRequest {
   ];
 }
 
-// Request message for ConnectorsService.GetConnectionSchemaMetadata.
-message GetConnectionSchemaMetadataRequest {
+// Request message for ConnectorsService.GetConnectionSchemametedata.
+message GetConnectionSchemametedataRequest {
   // Required. Connection name
   // Format:
-  // projects/{project}/locations/{location}/connections/{connection}/connectionSchemaMetadata
+  // projects/{project}/locations/{location}/connections/{connection}/connectionSchemametedata
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {

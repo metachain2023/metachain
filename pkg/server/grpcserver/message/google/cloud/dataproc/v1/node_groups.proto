@@ -41,8 +41,8 @@ service NodeGroupController {
       "https://www.googleapis.com/auth/cloud-platform";
 
   // Creates a node group in a cluster. The returned
-  // [Operation.metadata][google.longrunning.Operation.metadata] is
-  // [NodeGroupOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).
+  // [Operation.metedata][google.longrunning.Operation.metedata] is
+  // [NodeGroupOperationmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetedata).
   rpc CreateNodeGroup(CreateNodeGroupRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -52,13 +52,13 @@ service NodeGroupController {
     option (google.api.method_signature) = "parent,node_group,node_group_id";
     option (google.longrunning.operation_info) = {
       response_type: "NodeGroup"
-      metadata_type: "google.cloud.dataproc.v1.NodeGroupOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.NodeGroupOperationmetedata"
     };
   }
 
   // Resizes a node group in a cluster. The returned
-  // [Operation.metadata][google.longrunning.Operation.metadata] is
-  // [NodeGroupOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).
+  // [Operation.metedata][google.longrunning.Operation.metedata] is
+  // [NodeGroupOperationmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetedata).
   rpc ResizeNodeGroup(ResizeNodeGroupRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -68,7 +68,7 @@ service NodeGroupController {
     option (google.api.method_signature) = "name,size";
     option (google.longrunning.operation_info) = {
       response_type: "NodeGroup"
-      metadata_type: "google.cloud.dataproc.v1.NodeGroupOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.NodeGroupOperationmetedata"
     };
   }
 

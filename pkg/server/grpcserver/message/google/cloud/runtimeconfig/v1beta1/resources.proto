@@ -28,7 +28,7 @@ option java_package = "com.google.cloud.runtimeconfig.v1beta1";
 option php_namespace = "Google\\Cloud\\RuntimeConfig\\V1beta1";
 
 // A RuntimeConfig resource is the primary resource in the Cloud RuntimeConfig
-// service. A RuntimeConfig resource consists of metadata and a hierarchy of
+// service. A RuntimeConfig resource consists of metedata and a hierarchy of
 // variables.
 message RuntimeConfig {
   // The resource name of a runtime config. The name must have the format:

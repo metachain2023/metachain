@@ -51,7 +51,7 @@ service DeploymentResourcePoolService {
         "parent,deployment_resource_pool,deployment_resource_pool_id";
     option (google.longrunning.operation_info) = {
       response_type: "DeploymentResourcePool"
-      metadata_type: "CreateDeploymentResourcePoolOperationMetadata"
+      metedata_type: "CreateDeploymentResourcePoolOperationmetedata"
     };
   }
 
@@ -82,7 +82,7 @@ service DeploymentResourcePoolService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -122,9 +122,9 @@ message CreateDeploymentResourcePoolRequest {
 }
 
 // Runtime operation information for CreateDeploymentResourcePool method.
-message CreateDeploymentResourcePoolOperationMetadata {
+message CreateDeploymentResourcePoolOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for GetDeploymentResourcePool method.
@@ -175,9 +175,9 @@ message ListDeploymentResourcePoolsResponse {
 }
 
 // Runtime operation information for UpdateDeploymentResourcePool method.
-message UpdateDeploymentResourcePoolOperationMetadata {
+message UpdateDeploymentResourcePoolOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for DeleteDeploymentResourcePool method.

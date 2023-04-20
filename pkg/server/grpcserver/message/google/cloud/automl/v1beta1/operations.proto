@@ -28,37 +28,37 @@ option java_package = "com.google.cloud.automl.v1beta1";
 option php_namespace = "Google\\Cloud\\AutoMl\\V1beta1";
 option ruby_package = "Google::Cloud::AutoML::V1beta1";
 
-// Metadata used across all long running operations returned by AutoML API.
-message OperationMetadata {
+// metedata used across all long running operations returned by AutoML API.
+message Operationmetedata {
   // Ouptut only. Details of specific operation. Even if this field is empty,
   // the presence allows to distinguish different types of operations.
   oneof details {
     // Details of a Delete operation.
-    DeleteOperationMetadata delete_details = 8;
+    DeleteOperationmetedata delete_details = 8;
 
     // Details of a DeployModel operation.
-    DeployModelOperationMetadata deploy_model_details = 24;
+    DeployModelOperationmetedata deploy_model_details = 24;
 
     // Details of an UndeployModel operation.
-    UndeployModelOperationMetadata undeploy_model_details = 25;
+    UndeployModelOperationmetedata undeploy_model_details = 25;
 
     // Details of CreateModel operation.
-    CreateModelOperationMetadata create_model_details = 10;
+    CreateModelOperationmetedata create_model_details = 10;
 
     // Details of ImportData operation.
-    ImportDataOperationMetadata import_data_details = 15;
+    ImportDataOperationmetedata import_data_details = 15;
 
     // Details of BatchPredict operation.
-    BatchPredictOperationMetadata batch_predict_details = 16;
+    BatchPredictOperationmetedata batch_predict_details = 16;
 
     // Details of ExportData operation.
-    ExportDataOperationMetadata export_data_details = 21;
+    ExportDataOperationmetedata export_data_details = 21;
 
     // Details of ExportModel operation.
-    ExportModelOperationMetadata export_model_details = 22;
+    ExportModelOperationmetedata export_model_details = 22;
 
     // Details of ExportEvaluatedExamples operation.
-    ExportEvaluatedExamplesOperationMetadata export_evaluated_examples_details = 26;
+    ExportEvaluatedExamplesOperationmetedata export_evaluated_examples_details = 26;
   }
 
   // Output only. Progress of operation. Range: [0, 100].
@@ -79,32 +79,32 @@ message OperationMetadata {
 }
 
 // Details of operations that perform deletes of any entities.
-message DeleteOperationMetadata {
+message DeleteOperationmetedata {
 
 }
 
 // Details of DeployModel operation.
-message DeployModelOperationMetadata {
+message DeployModelOperationmetedata {
 
 }
 
 // Details of UndeployModel operation.
-message UndeployModelOperationMetadata {
+message UndeployModelOperationmetedata {
 
 }
 
 // Details of CreateModel operation.
-message CreateModelOperationMetadata {
+message CreateModelOperationmetedata {
 
 }
 
 // Details of ImportData operation.
-message ImportDataOperationMetadata {
+message ImportDataOperationmetedata {
 
 }
 
 // Details of ExportData operation.
-message ExportDataOperationMetadata {
+message ExportDataOperationmetedata {
   // Further describes this export data's output.
   // Supplements
   // [OutputConfig][google.cloud.automl.v1beta1.OutputConfig].
@@ -126,7 +126,7 @@ message ExportDataOperationMetadata {
 }
 
 // Details of BatchPredict operation.
-message BatchPredictOperationMetadata {
+message BatchPredictOperationmetedata {
   // Further describes this batch predict's output.
   // Supplements
   //
@@ -153,7 +153,7 @@ message BatchPredictOperationMetadata {
 }
 
 // Details of ExportModel operation.
-message ExportModelOperationMetadata {
+message ExportModelOperationmetedata {
   // Further describes the output of model export.
   // Supplements
   //
@@ -170,7 +170,7 @@ message ExportModelOperationMetadata {
 }
 
 // Details of EvaluatedExamples operation.
-message ExportEvaluatedExamplesOperationMetadata {
+message ExportEvaluatedExamplesOperationmetedata {
   // Further describes the output of the evaluated examples export.
   // Supplements
   //

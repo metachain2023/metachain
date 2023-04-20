@@ -10,13 +10,13 @@ apis:
 documentation:
   summary: |-
     The Street View Publish API allows your application to publish 360 photos to
-    Google Maps, along with image metadata that specifies the position,
+    Google Maps, along with image metedata that specifies the position,
     orientation, and connectivity of each photo. With this API, any app can
     offer an interface for positioning, connecting, and uploading user-generated
     Street View images.
   overview: |-
     An API to contribute 360 photos to Google Street View. The API also allows
-    the users to connect photos, update metadata of the photos, generate photo
+    the users to connect photos, update metedata of the photos, generate photo
     collections, and delete photos.
 
 authentication:

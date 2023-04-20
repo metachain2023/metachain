@@ -109,7 +109,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateAuthority"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -126,7 +126,7 @@ service CertificateAuthorityService {
         "parent,certificate_authority,certificate_authority_id";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateAuthority"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -141,7 +141,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateAuthority"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -156,7 +156,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateAuthority"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -211,7 +211,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateAuthority"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -225,7 +225,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateAuthority"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -240,7 +240,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "certificate_authority,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateAuthority"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -253,7 +253,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "parent,ca_pool,ca_pool_id";
     option (google.longrunning.operation_info) = {
       response_type: "CaPool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -266,7 +266,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "ca_pool,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "CaPool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -294,7 +294,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -343,7 +343,7 @@ service CertificateAuthorityService {
         "certificate_revocation_list,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateRevocationList"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -360,7 +360,7 @@ service CertificateAuthorityService {
         "parent,certificate_template,certificate_template_id";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateTemplate"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -374,7 +374,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.security.privateca.v1.OperationMetadata"
+      metedata_type: "google.cloud.security.privateca.v1.Operationmetedata"
     };
   }
 
@@ -409,7 +409,7 @@ service CertificateAuthorityService {
     option (google.api.method_signature) = "certificate_template,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "CertificateTemplate"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -1389,8 +1389,8 @@ message UpdateCertificateTemplateRequest {
   string request_id = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

@@ -34,7 +34,7 @@ option (google.api.resource_definition) = {
 
 // A label defines a taxonomy that can be applied to Drive items in order to
 // organize and search across items. Labels can be simple strings, or can
-// contain fields that describe additional metadata that can be further used to
+// contain fields that describe additional metedata that can be further used to
 // organize and search Drive items.
 message Label {
   option (google.api.resource) = {
@@ -68,9 +68,9 @@ message Label {
     int64 priority = 4;
   }
 
-  // The capabilities a user has on this label's applied metadata.
+  // The capabilities a user has on this label's applied metedata.
   message AppliedCapabilities {
-    // Whether the user can read applied metadata related to this label.
+    // Whether the user can read applied metedata related to this label.
     bool can_read = 1;
 
     // Whether the user can apply this label to items.
@@ -200,7 +200,7 @@ message Label {
   // Output only. UI display hints for rendering the label.
   DisplayHints display_hints = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The capabilities related to this label on applied metadata.
+  // Output only. The capabilities related to this label on applied metedata.
   AppliedCapabilities applied_capabilities = 17
       [(google.api.field_behavior) = OUTPUT_ONLY];
 

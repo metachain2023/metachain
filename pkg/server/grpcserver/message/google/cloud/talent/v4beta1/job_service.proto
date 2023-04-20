@@ -73,7 +73,7 @@ service JobService {
     option (google.api.method_signature) = "parent,jobs";
     option (google.longrunning.operation_info) = {
       response_type: "JobOperationResult"
-      metadata_type: "BatchOperationMetadata"
+      metedata_type: "BatchOperationmetedata"
     };
   }
 
@@ -117,7 +117,7 @@ service JobService {
     option (google.api.method_signature) = "parent,jobs";
     option (google.longrunning.operation_info) = {
       response_type: "JobOperationResult"
-      metadata_type: "BatchOperationMetadata"
+      metedata_type: "BatchOperationmetedata"
     };
   }
 
@@ -396,7 +396,7 @@ message ListJobsResponse {
 
   // Additional information for the API invocation, such as the request
   // tracking id.
-  ResponseMetadata metadata = 3;
+  Responsemetedata metedata = 3;
 }
 
 // The Request body of the `SearchJobs` call.
@@ -576,10 +576,10 @@ message SearchJobsRequest {
   // [SearchMode.JOB_SEARCH][google.cloud.talent.v4beta1.SearchJobsRequest.SearchMode.JOB_SEARCH].
   SearchMode search_mode = 2;
 
-  // Required. The meta information collected about the job searcher, used to
+  // Required. The mete information collected about the job searcher, used to
   // improve the search quality of the service. The identifiers (such as
   // `user_id`) are provided by users, and must be unique and consistent.
-  RequestMetadata request_metadata = 3 [(google.api.field_behavior) = REQUIRED];
+  Requestmetedata request_metedata = 3 [(google.api.field_behavior) = REQUIRED];
 
   // Query used to search against jobs, such as keyword, location filters, etc.
   JobQuery job_query = 4;
@@ -860,7 +860,7 @@ message SearchJobsRequest {
 
 // Response for SearchJob method.
 message SearchJobsResponse {
-  // Job entry with metadata inside
+  // Job entry with metedata inside
   // [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
   message MatchingJob {
     // Job resource that matches the specified
@@ -933,7 +933,7 @@ message SearchJobsResponse {
 
   // Additional information for the API invocation, such as the request
   // tracking id.
-  ResponseMetadata metadata = 7;
+  Responsemetedata metedata = 7;
 
   // If query broadening is enabled, we may append additional results from the
   // broadened query. This number indicates how many of the jobs returned in the

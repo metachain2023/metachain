@@ -116,7 +116,7 @@ service StorageTransferService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "TransferOperation"
+      metedata_type: "TransferOperation"
     };
   }
 

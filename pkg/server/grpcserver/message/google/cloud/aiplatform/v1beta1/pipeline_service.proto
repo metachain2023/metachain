@@ -80,7 +80,7 @@ service PipelineService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -143,7 +143,7 @@ service PipelineService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -358,7 +358,7 @@ message ListPipelineJobsRequest {
   //   Values must be in RFC 3339 format.
   // * `labels`: Supports key-value equality and key presence.
   // * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
-  // * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
+  // * `template_metedata.version`: Supports `=`, `!=` comparisons, and `:`
   //   wildcard.
   //
   // Filter expressions can be combined together using logical operators

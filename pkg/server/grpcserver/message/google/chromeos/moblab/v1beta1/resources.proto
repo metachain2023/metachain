@@ -142,7 +142,7 @@ message BuildArtifact {
   // buildTargets/octopus/models/bobba/builds/1234.0.0/artifacts/chromeos-moblab-peng-staging
   string name = 1;
 
-  // The build metadata of the build artifact.
+  // The build metedata of the build artifact.
   string build = 2 [(google.api.resource_reference) = {
     type: "chromeosmoblab.googleapis.com/Build"
   }];

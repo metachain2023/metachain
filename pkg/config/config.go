@@ -1,9 +1,9 @@
 package config
 
 import (
-	"metachain/pkg/blockchain"
-	_ "metachain/pkg/crypto/sigs/secp"
-	"metachain/pkg/miner"
+	"metechain/pkg/blockchain"
+	_ "metechain/pkg/crypto/sigs/secp"
+	"metechain/pkg/miner"
 
 	"github.com/spf13/viper"
 )
@@ -11,7 +11,7 @@ import (
 type CfgInfo struct {
 	ChainCfg    *blockchain.ChainConfig `yaml:"chainCfg"`
 	SververCfg  *ServerConfig           `yaml:"sververCfg"`
-	MetamaskCfg *MetamaskConfig         `yaml:"metamaskCfg"`
+	metemaskCfg *metemaskConfig         `yaml:"metemaskCfg"`
 	P2PConfig   *P2PConfig              `yaml:"p2pconfig"`
 	MinerConfig *miner.Config           `yaml:minerconfig`
 	NetWorkType string                  `yaml:"networktype"`
@@ -25,7 +25,7 @@ type ServerConfig struct {
 	ChainServerPort  string `yaml:"chainserverport"`
 }
 
-type MetamaskConfig struct {
+type metemaskConfig struct {
 	ChainId       string `yaml:"chainid"`
 	NetworkId     string `yaml:"networkId"`
 	ClinetVersion string `yaml:"clinetVersion"`
@@ -41,7 +41,7 @@ type P2PConfig struct {
 // LoadConfig load configuration information
 func LoadConfig() (*CfgInfo, error) {
 	viper := viper.New()
-	viper.SetConfigName("metachain")
+	viper.SetConfigName("metechain")
 	viper.SetConfigType("yaml")
 	viper.AddConfigPath("./config/")
 	if err := viper.ReadInConfig(); err != nil {

@@ -506,8 +506,8 @@ message Instance {
   // These can be later modified by the setLabels method.
   map<string, string> labels = 21;
 
-  // Custom metadata to apply to this instance.
-  map<string, string> metadata = 22;
+  // Custom metedata to apply to this instance.
+  map<string, string> metedata = 22;
 
   // Optional. The Compute Engine tags to add to runtime (see [Tagging
   // instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).

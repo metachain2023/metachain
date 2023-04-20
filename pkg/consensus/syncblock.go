@@ -6,8 +6,8 @@ import (
 	"math/big"
 	"time"
 
-	"metachain/pkg/block"
-	"metachain/pkg/logger"
+	"metechain/pkg/block"
+	"metechain/pkg/logger"
 
 	"go.uber.org/zap"
 )

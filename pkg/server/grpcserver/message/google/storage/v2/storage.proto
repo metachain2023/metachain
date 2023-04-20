@@ -75,7 +75,7 @@ service Storage {
     option (google.api.method_signature) = "name";
   }
 
-  // Returns metadata for the specified bucket.
+  // Returns metedata for the specified bucket.
   rpc GetBucket(GetBucketRequest) returns (Bucket) {
     option (google.api.routing) = {
       routing_parameters { field: "name" path_template: "{bucket=**}" }
@@ -225,7 +225,7 @@ service Storage {
     };
   }
 
-  // Deletes an object and its metadata. Deletions are permanent if versioning
+  // Deletes an object and its metedata. Deletions are permanent if versioning
   // is not enabled for the bucket, or if the `generation` parameter is used.
   rpc DeleteObject(DeleteObjectRequest) returns (google.protobuf.Empty) {
     option (google.api.routing) = {
@@ -247,7 +247,7 @@ service Storage {
     option (google.api.method_signature) = "upload_id";
   }
 
-  // Retrieves an object's metadata.
+  // Retrieves an object's metedata.
   rpc GetObject(GetObjectRequest) returns (Object) {
     option (google.api.routing) = {
       routing_parameters { field: "bucket" path_template: "{bucket=**}" }
@@ -265,7 +265,7 @@ service Storage {
     option (google.api.method_signature) = "bucket,object,generation";
   }
 
-  // Updates an object's metadata.
+  // Updates an object's metedata.
   // Equivalent to JSON API's storage.objects.patch.
   rpc UpdateObject(UpdateObjectRequest) returns (Object) {
     option (google.api.routing) = {
@@ -274,7 +274,7 @@ service Storage {
     option (google.api.method_signature) = "object,update_mask";
   }
 
-  // Stores a new object and metadata.
+  // Stores a new object and metedata.
   //
   // An object can be written either in a single message stream or in a
   // resumable sequence of message streams. To write using a single stream,
@@ -326,7 +326,7 @@ service Storage {
   //
   // Attempting to resume an already finalized object will result in an OK
   // status, with a WriteObjectResponse containing the finalized object's
-  // metadata.
+  // metedata.
   rpc WriteObject(stream WriteObjectRequest) returns (WriteObjectResponse) {}
 
   // Retrieves a list of objects matching the criteria.
@@ -338,7 +338,7 @@ service Storage {
   }
 
   // Rewrites a source object to a destination object. Optionally overrides
-  // metadata.
+  // metedata.
   rpc RewriteObject(RewriteObjectRequest) returns (RewriteResponse) {
     option (google.api.routing) = {
       routing_parameters { field: "source_bucket" }
@@ -410,8 +410,8 @@ service Storage {
     option (google.api.method_signature) = "access_id,project";
   }
 
-  // Gets an existing HMAC key metadata for the given id.
-  rpc GetHmacKey(GetHmacKeyRequest) returns (HmacKeyMetadata) {
+  // Gets an existing HMAC key metedata for the given id.
+  rpc GetHmacKey(GetHmacKeyRequest) returns (HmacKeymetedata) {
     option (google.api.routing) = {
       routing_parameters { field: "project" }
     };
@@ -427,7 +427,7 @@ service Storage {
   }
 
   // Updates a given HMAC key state between ACTIVE and INACTIVE.
-  rpc UpdateHmacKey(UpdateHmacKeyRequest) returns (HmacKeyMetadata) {
+  rpc UpdateHmacKey(UpdateHmacKeyRequest) returns (HmacKeymetedata) {
     option (google.api.routing) = {
       routing_parameters {
         field: "hmac_key.project"
@@ -446,12 +446,12 @@ message DeleteBucketRequest {
     (google.api.resource_reference) = { type: "storage.googleapis.com/Bucket" }
   ];
 
-  // If set, only deletes the bucket if its metageneration matches this value.
-  optional int64 if_metageneration_match = 2;
+  // If set, only deletes the bucket if its metegeneration matches this value.
+  optional int64 if_metegeneration_match = 2;
 
-  // If set, only deletes the bucket if its metageneration does not match this
+  // If set, only deletes the bucket if its metegeneration does not match this
   // value.
-  optional int64 if_metageneration_not_match = 3;
+  optional int64 if_metegeneration_not_match = 3;
 }
 
 // Request message for GetBucket.
@@ -462,13 +462,13 @@ message GetBucketRequest {
     (google.api.resource_reference) = { type: "storage.googleapis.com/Bucket" }
   ];
 
-  // If set, and if the bucket's current metageneration does not match the
+  // If set, and if the bucket's current metegeneration does not match the
   // specified value, the request will return an error.
-  optional int64 if_metageneration_match = 2;
+  optional int64 if_metegeneration_match = 2;
 
-  // If set, and if the bucket's current metageneration matches the specified
+  // If set, and if the bucket's current metegeneration matches the specified
   // value, the request will return an error.
-  optional int64 if_metageneration_not_match = 3;
+  optional int64 if_metegeneration_not_match = 3;
 
   // Mask specifying which fields to read.
   // A "*" field may be used to indicate all fields.
@@ -557,8 +557,8 @@ message LockBucketRetentionPolicyRequest {
   ];
 
   // Required. Makes the operation conditional on whether bucket's current
-  // metageneration matches the given value. Must be positive.
-  int64 if_metageneration_match = 2 [(google.api.field_behavior) = REQUIRED];
+  // metegeneration matches the given value. Must be positive.
+  int64 if_metegeneration_match = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Request for UpdateBucket method.
@@ -567,13 +567,13 @@ message UpdateBucketRequest {
   // The bucket's `name` field will be used to identify the bucket.
   Bucket bucket = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // If set, will only modify the bucket if its metageneration matches this
+  // If set, will only modify the bucket if its metegeneration matches this
   // value.
-  optional int64 if_metageneration_match = 2;
+  optional int64 if_metegeneration_match = 2;
 
-  // If set, will only modify the bucket if its metageneration does not match
+  // If set, will only modify the bucket if its metegeneration does not match
   // this value.
-  optional int64 if_metageneration_not_match = 3;
+  optional int64 if_metegeneration_not_match = 3;
 
   // Apply a predefined set of access controls to this bucket.
   // Valid values are "authenticatedRead", "private", "projectPrivate",
@@ -709,13 +709,13 @@ message ComposeObjectRequest {
   optional int64 if_generation_match = 4;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  optional int64 if_metageneration_match = 5;
+  // metegeneration matches the given value.
+  optional int64 if_metegeneration_match = 5;
 
   // Resource name of the Cloud KMS key, of the form
   // `projects/my-project/locations/my-location/keyRings/my-kr/cryptoKeys/my-key`,
   // that will be used to encrypt the object. Overrides the object
-  // metadata's `kms_key_name` value, if any.
+  // metedata's `kms_key_name` value, if any.
   string kms_key = 6 [(google.api.resource_reference) = {
     type: "cloudkms.googleapis.com/CryptoKey"
   }];
@@ -755,12 +755,12 @@ message DeleteObjectRequest {
   optional int64 if_generation_not_match = 6;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  optional int64 if_metageneration_match = 7;
+  // metegeneration matches the given value.
+  optional int64 if_metegeneration_match = 7;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  optional int64 if_metageneration_not_match = 8;
+  // metegeneration does not match the given value.
+  optional int64 if_metegeneration_not_match = 8;
 
   // A set of parameters common to Storage API requests concerning an object.
   CommonObjectRequestParams common_object_request_params = 10;
@@ -822,20 +822,20 @@ message ReadObjectRequest {
   optional int64 if_generation_not_match = 7;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  optional int64 if_metageneration_match = 8;
+  // metegeneration matches the given value.
+  optional int64 if_metegeneration_match = 8;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  optional int64 if_metageneration_not_match = 9;
+  // metegeneration does not match the given value.
+  optional int64 if_metegeneration_not_match = 9;
 
   // A set of parameters common to Storage API requests concerning an object.
   CommonObjectRequestParams common_object_request_params = 10;
 
   // Mask specifying which fields to read.
   // The checksummed_data field and its children will always be present.
-  // If no mask is specified, will default to all fields except metadata.owner
-  // and metadata.acl.
+  // If no mask is specified, will default to all fields except metedata.owner
+  // and metedata.acl.
   // * may be used to mean "all fields".
   optional google.protobuf.FieldMask read_mask = 12;
 }
@@ -864,19 +864,19 @@ message GetObjectRequest {
   optional int64 if_generation_not_match = 5;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  optional int64 if_metageneration_match = 6;
+  // metegeneration matches the given value.
+  optional int64 if_metegeneration_match = 6;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  optional int64 if_metageneration_not_match = 7;
+  // metegeneration does not match the given value.
+  optional int64 if_metegeneration_not_match = 7;
 
   // A set of parameters common to Storage API requests concerning an object.
   CommonObjectRequestParams common_object_request_params = 8;
 
   // Mask specifying which fields to read.
-  // If no mask is specified, will default to all fields except metadata.acl and
-  // metadata.owner.
+  // If no mask is specified, will default to all fields except metedata.acl and
+  // metedata.owner.
   // * may be used to mean "all fields".
   optional google.protobuf.FieldMask read_mask = 10;
 }
@@ -899,14 +899,14 @@ message ReadObjectResponse {
   // ReadObjectResponse message of the read stream.
   ContentRange content_range = 3;
 
-  // Metadata of the object whose media is being returned.
+  // metedata of the object whose media is being returned.
   // Only populated in the first response in the stream.
-  Object metadata = 4;
+  Object metedata = 4;
 }
 
 // Describes an attempt to insert an object, possibly over multiple requests.
 message WriteObjectSpec {
-  // Required. Destination object, including its name and its metadata.
+  // Required. Destination object, including its name and its metedata.
   Object resource = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Apply a predefined set of access controls to this object.
@@ -926,12 +926,12 @@ message WriteObjectSpec {
   optional int64 if_generation_not_match = 4;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  optional int64 if_metageneration_match = 5;
+  // metegeneration matches the given value.
+  optional int64 if_metegeneration_match = 5;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  optional int64 if_metageneration_not_match = 6;
+  // metegeneration does not match the given value.
+  optional int64 if_metegeneration_not_match = 6;
 
   // The expected final object size being uploaded.
   // If this value is set, closing the stream after writing fewer or more than
@@ -1006,7 +1006,7 @@ message WriteObjectResponse {
     // from all `WriteObject` calls. Only set if the upload has not finalized.
     int64 persisted_size = 1;
 
-    // A resource containing the metadata for the uploaded object. Only set if
+    // A resource containing the metedata for the uploaded object. Only set if
     // the upload has finalized.
     Object resource = 2;
   }
@@ -1041,7 +1041,7 @@ message ListObjectsRequest {
   string delimiter = 4;
 
   // If true, objects that end in exactly one instance of `delimiter`
-  // will have their metadata included in `items` in addition to
+  // will have their metedata included in `items` in addition to
   // `prefixes`.
   bool include_trailing_delimiter = 5;
 
@@ -1093,7 +1093,7 @@ message QueryWriteStatusResponse {
     // Only set if the upload has not finalized.
     int64 persisted_size = 1;
 
-    // A resource containing the metadata for the uploaded object. Only set if
+    // A resource containing the metedata for the uploaded object. Only set if
     // the upload has finalized.
     Object resource = 2;
   }
@@ -1142,7 +1142,7 @@ message RewriteObjectRequest {
   // values are specified in the `destination_name`, `destination_bucket`, and
   // `destination_kms_key` fields).
   // If `destination` is present it will be used to construct the destination
-  // object's metadata; otherwise the destination object's metadata will be
+  // object's metedata; otherwise the destination object's metedata will be
   // copied from the source object.
   Object destination = 1;
 
@@ -1180,12 +1180,12 @@ message RewriteObjectRequest {
   optional int64 if_generation_not_match = 8;
 
   // Makes the operation conditional on whether the destination object's current
-  // metageneration matches the given value.
-  optional int64 if_metageneration_match = 9;
+  // metegeneration matches the given value.
+  optional int64 if_metegeneration_match = 9;
 
   // Makes the operation conditional on whether the destination object's current
-  // metageneration does not match the given value.
-  optional int64 if_metageneration_not_match = 10;
+  // metegeneration does not match the given value.
+  optional int64 if_metegeneration_not_match = 10;
 
   // Makes the operation conditional on whether the source object's live
   // generation matches the given value.
@@ -1196,12 +1196,12 @@ message RewriteObjectRequest {
   optional int64 if_source_generation_not_match = 12;
 
   // Makes the operation conditional on whether the source object's current
-  // metageneration matches the given value.
-  optional int64 if_source_metageneration_match = 13;
+  // metegeneration matches the given value.
+  optional int64 if_source_metegeneration_match = 13;
 
   // Makes the operation conditional on whether the source object's current
-  // metageneration does not match the given value.
-  optional int64 if_source_metageneration_not_match = 14;
+  // metegeneration does not match the given value.
+  optional int64 if_source_metegeneration_not_match = 14;
 
   // The maximum number of bytes that will be rewritten per rewrite request.
   // Most callers
@@ -1253,14 +1253,14 @@ message RewriteResponse {
   // is present in the response only when there is more data to copy.
   string rewrite_token = 4;
 
-  // A resource containing the metadata for the copied-to object. This property
+  // A resource containing the metedata for the copied-to object. This property
   // is present in the response only when copying completes.
   Object resource = 5;
 }
 
 // Request message StartResumableWrite.
 message StartResumableWriteRequest {
-  // Required. The destination bucket, object, and metadata, as well as any
+  // Required. The destination bucket, object, and metedata, as well as any
   // preconditions.
   WriteObjectSpec write_object_spec = 1
       [(google.api.field_behavior) = REQUIRED];
@@ -1287,7 +1287,7 @@ message UpdateObjectRequest {
   // Required. The object to update.
   // The object's bucket and name fields are used to identify the object to
   // update. If present, the object's generation field selects a specific
-  // revision of this object whose metadata should be updated. Otherwise,
+  // revision of this object whose metedata should be updated. Otherwise,
   // assumes the live version of the object.
   Object object = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -1303,12 +1303,12 @@ message UpdateObjectRequest {
   optional int64 if_generation_not_match = 3;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration matches the given value.
-  optional int64 if_metageneration_match = 4;
+  // metegeneration matches the given value.
+  optional int64 if_metegeneration_match = 4;
 
   // Makes the operation conditional on whether the object's current
-  // metageneration does not match the given value.
-  optional int64 if_metageneration_not_match = 5;
+  // metegeneration does not match the given value.
+  optional int64 if_metegeneration_not_match = 5;
 
   // Apply a predefined set of access controls to this object.
   // Valid values are "authenticatedRead", "bucketOwnerFullControl",
@@ -1362,8 +1362,8 @@ message CreateHmacKeyRequest {
 
 // Create hmac response.  The only time the secret for an HMAC will be returned.
 message CreateHmacKeyResponse {
-  // Key metadata.
-  HmacKeyMetadata metadata = 1;
+  // Key metedata.
+  HmacKeymetedata metedata = 1;
 
   // HMAC key secret material.
   // In raw bytes format (not base64-encoded).
@@ -1386,7 +1386,7 @@ message DeleteHmacKeyRequest {
   ];
 }
 
-// Request object to get metadata on a given HMAC key.
+// Request object to get metedata on a given HMAC key.
 message GetHmacKeyRequest {
   // Required. The identifying key for the HMAC to delete.
   string access_id = 1 [(google.api.field_behavior) = REQUIRED];
@@ -1430,7 +1430,7 @@ message ListHmacKeysRequest {
 // Hmac key list response with next page information.
 message ListHmacKeysResponse {
   // The list of items.
-  repeated HmacKeyMetadata hmac_keys = 1;
+  repeated HmacKeymetedata hmac_keys = 1;
 
   // The continuation token, used to page through large result sets. Provide
   // this value in a subsequent request to return the next page of results.
@@ -1438,7 +1438,7 @@ message ListHmacKeysResponse {
 }
 
 // Request object to update an HMAC key state.
-// HmacKeyMetadata.state is required and the only writable field in
+// HmacKeymetedata.state is required and the only writable field in
 // UpdateHmacKey operation. Specifying fields other than state will result in an
 // error.
 message UpdateHmacKeyRequest {
@@ -1446,7 +1446,7 @@ message UpdateHmacKeyRequest {
   // If present, the hmac_key's `id` field will be used to identify the key.
   // Otherwise, the hmac_key's access_id and project fields will be used to
   // identify the key.
-  HmacKeyMetadata hmac_key = 1 [(google.api.field_behavior) = REQUIRED];
+  HmacKeymetedata hmac_key = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Update mask for hmac_key.
   // Not specifying any fields will mean only the `state` field is updated to
@@ -1493,24 +1493,24 @@ message ServiceConstants {
     MAX_OBJECT_SIZE_MB = 5242880;
 
     // The maximum length field name that can be sent in a single
-    // custom metadata field.
+    // custom metedata field.
     // 1 KiB.
-    MAX_CUSTOM_METADATA_FIELD_NAME_BYTES = 1024;
+    MAX_CUSTOM_meteDATA_FIELD_NAME_BYTES = 1024;
 
     // The maximum length field value that can be sent in a single
-    // custom_metadata field.
+    // custom_metedata field.
     // 4 KiB.
-    MAX_CUSTOM_METADATA_FIELD_VALUE_BYTES = 4096;
+    MAX_CUSTOM_meteDATA_FIELD_VALUE_BYTES = 4096;
 
     // The maximum total bytes that can be populated into all field names and
-    // values of the custom_metadata for one object.
+    // values of the custom_metedata for one object.
     // 8 KiB.
-    MAX_CUSTOM_METADATA_TOTAL_SIZE_BYTES = 8192;
+    MAX_CUSTOM_meteDATA_TOTAL_SIZE_BYTES = 8192;
 
-    // The maximum total bytes that can be populated into all bucket metadata
+    // The maximum total bytes that can be populated into all bucket metedata
     // fields.
     // 20 KiB.
-    MAX_BUCKET_METADATA_TOTAL_SIZE_BYTES = 20480;
+    MAX_BUCKET_meteDATA_TOTAL_SIZE_BYTES = 20480;
 
     // The maximum number of NotificationConfigs that can be registered
     // for a given bucket.
@@ -1799,7 +1799,7 @@ message Bucket {
   string bucket_id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The etag of the bucket.
-  // If included in the metadata of an UpdateBucketRequest, the operation will
+  // If included in the metedata of an UpdateBucketRequest, the operation will
   // only be performed if the etag matches that of the bucket.
   string etag = 29;
 
@@ -1813,10 +1813,10 @@ message Bucket {
     }
   ];
 
-  // Output only. The metadata generation of this bucket.
+  // Output only. The metedata generation of this bucket.
   // Attempting to set or update this field will result in a
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
-  int64 metageneration = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 metegeneration = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Immutable. The location of the bucket. Object data for objects in the
   // bucket resides in physical storage within this region.  Defaults to `US`.
@@ -1980,7 +1980,7 @@ message BucketAccessControl {
   string entity_id = 4;
 
   // The etag of the BucketAccessControl.
-  // If included in the metadata of an update or delete request message, the
+  // If included in the metedata of an update or delete request message, the
   // operation operation will only be performed if the etag matches that of the
   // bucket's BucketAccessControl.
   string etag = 8;
@@ -2023,8 +2023,8 @@ message ObjectChecksums {
   bytes md5_hash = 2;
 }
 
-// Hmac Key Metadata, which includes all information other than the secret.
-message HmacKeyMetadata {
+// Hmac Key metedata, which includes all information other than the secret.
+message HmacKeymetedata {
   // Immutable. Resource name ID of the key in the format
   // <projectIdentifier>/<accessId>.
   // <projectIdentifier> can be the project ID or project number.
@@ -2054,7 +2054,7 @@ message HmacKeyMetadata {
   google.protobuf.Timestamp create_time = 6
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The last modification time of the HMAC key metadata.
+  // Output only. The last modification time of the HMAC key metedata.
   google.protobuf.Timestamp update_time = 7
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -2081,7 +2081,7 @@ message NotificationConfig {
   string topic = 2 [(google.api.field_behavior) = REQUIRED];
 
   // The etag of the NotificationConfig.
-  // If included in the metadata of GetNotificationConfigRequest, the operation
+  // If included in the metedata of GetNotificationConfigRequest, the operation
   // will only be performed if the etag matches that of the NotificationConfig.
   string etag = 7;
 
@@ -2130,7 +2130,7 @@ message Object {
   ];
 
   // The etag of the object.
-  // If included in the metadata of an update or delete request message, the
+  // If included in the metedata of an update or delete request message, the
   // operation will only be performed if the etag matches that of the live
   // object.
   string etag = 27;
@@ -2140,12 +2140,12 @@ message Object {
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
   int64 generation = 3 [(google.api.field_behavior) = IMMUTABLE];
 
-  // Output only. The version of the metadata for this generation of this
-  // object. Used for preconditions and for detecting changes in metadata. A
-  // metageneration number is only meaningful in the context of a particular
+  // Output only. The version of the metedata for this generation of this
+  // object. Used for preconditions and for detecting changes in metedata. A
+  // metegeneration number is only meaningful in the context of a particular
   // generation of a particular object. Attempting to set or update this field
   // will result in a [FieldViolation][google.rpc.BadRequest.FieldViolation].
-  int64 metageneration = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  int64 metegeneration = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Storage class of the object.
   string storage_class = 5;
@@ -2208,10 +2208,10 @@ message Object {
   // for output only and will be silently ignored if provided in requests.
   ObjectChecksums checksums = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The modification time of the object metadata.
+  // Output only. The modification time of the object metedata.
   // Set initially to object creation time and then updated whenever any
-  // metadata of the object changes. This includes changes made by a requester,
-  // such as modifying custom metadata, as well as changes made by Cloud Storage
+  // metedata of the object changes. This includes changes made by a requester,
+  // such as modifying custom metedata, as well as changes made by Cloud Storage
   // on behalf of a requester, such as changing the storage class based on an
   // Object Lifecycle Configuration.
   // Attempting to set or update this field will result in a
@@ -2248,8 +2248,8 @@ message Object {
   // temporary hold).
   google.protobuf.Timestamp retention_expire_time = 21;
 
-  // User-provided metadata, in key/value pairs.
-  map<string, string> metadata = 22;
+  // User-provided metedata, in key/value pairs.
+  map<string, string> metedata = 22;
 
   // Whether an object is under event-based hold.
   // An event-based hold is a way to force the retention of an object until
@@ -2269,7 +2269,7 @@ message Object {
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
   Owner owner = 24 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Metadata of Customer-Supplied Encryption Key, if the object is encrypted by
+  // metedata of Customer-Supplied Encryption Key, if the object is encrypted by
   // such a key.
   CustomerEncryption customer_encryption = 25;
 
@@ -2313,7 +2313,7 @@ message ObjectAccessControl {
   string entity_id = 4;
 
   // The etag of the ObjectAccessControl.
-  // If included in the metadata of an update or delete request message, the
+  // If included in the metedata of an update or delete request message, the
   // operation will only be performed if the etag matches that of the live
   // object's ObjectAccessControl.
   string etag = 8;

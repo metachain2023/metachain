@@ -58,7 +58,7 @@ service VariantServiceV1 {
   // As a special case, for single-sample VCF files, QUAL and FILTER fields will
   // be moved to the call level; these are sometimes interpreted in a
   // call-specific context.
-  // Imported VCF headers are appended to the metadata already in a variant set.
+  // Imported VCF headers are appended to the metedata already in a variant set.
   rpc ImportVariants(ImportVariantsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -374,11 +374,11 @@ service VariantServiceV1 {
   }
 }
 
-// Metadata describes a single piece of variant call metadata.
+// metedata describes a single piece of variant call metedata.
 // These data include a top level key and either a single value string (value)
 // or a list of key-value pairs (info.)
 // Value and info are mutually exclusive.
-message VariantSetMetadata {
+message VariantSetmetedata {
   enum Type {
     TYPE_UNSPECIFIED = 0;
 
@@ -396,11 +396,11 @@ message VariantSetMetadata {
   // The top-level key.
   string key = 1;
 
-  // The value field for simple metadata
+  // The value field for simple metedata
   string value = 2;
 
   // User-provided ID field, not enforced by this API.
-  // Two or more pieces of structured metadata with identical
+  // Two or more pieces of structured metedata with identical
   // id and key fields are considered equivalent.
   string id = 4;
 
@@ -409,13 +409,13 @@ message VariantSetMetadata {
   Type type = 5;
 
   // The number of values that can be included in a field described by this
-  // metadata.
+  // metedata.
   string number = 8;
 
-  // A textual description of this metadata.
+  // A textual description of this metedata.
   string description = 7;
 
-  // Remaining structured metadata key-value pairs. This must be of the form
+  // Remaining structured metedata key-value pairs. This must be of the form
   // map<string, string[]> (string key mapping to a list of string values).
   map<string, google.protobuf.ListValue> info = 3;
 }
@@ -448,8 +448,8 @@ message VariantSet {
   // with associated coordinate upper bounds for each one.
   repeated ReferenceBound reference_bounds = 5;
 
-  // The metadata associated with this variant set.
-  repeated VariantSetMetadata metadata = 4;
+  // The metedata associated with this variant set.
+  repeated VariantSetmetedata metedata = 4;
 
   // User-specified, mutable name.
   string name = 7;
@@ -740,13 +740,13 @@ message UpdateVariantSetRequest {
   // The ID of the variant to be updated (must already exist).
   string variant_set_id = 1;
 
-  // The new variant data. Only the variant_set.metadata will be considered
+  // The new variant data. Only the variant_set.metedata will be considered
   // for update.
   VariantSet variant_set = 2;
 
   // An optional mask specifying which fields to update. Supported fields:
   //
-  // * [metadata][google.genomics.v1.VariantSet.metadata].
+  // * [metedata][google.genomics.v1.VariantSet.metedata].
   // * [name][google.genomics.v1.VariantSet.name].
   // * [description][google.genomics.v1.VariantSet.description].
   //

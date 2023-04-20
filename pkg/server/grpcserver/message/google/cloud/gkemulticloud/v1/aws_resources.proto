@@ -467,7 +467,7 @@ message AwsNodeConfig {
   // "mass": "1.3kg", "count": "3" }.
   map<string, string> labels = 4 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Key/value metadata to assign to each underlying AWS resource.
+  // Optional. Key/value metedata to assign to each underlying AWS resource.
   // Specify at most 50 pairs containing alphanumerics, spaces, and symbols
   // (.+-=_:@/). Keys can be up to 127 Unicode characters. Values can be up to
   // 255 Unicode characters.

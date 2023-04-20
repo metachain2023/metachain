@@ -121,7 +121,7 @@ message RecommendRequest {
   //    [RecommendResponse.results.document][RecommendationResult.document].
   // * `returnScore`: Boolean. If set to true, the recommendation 'score'
   //    corresponding to each returned Document will be set in
-  //    [RecommendResponse.results.metadata][RecommendationResult.metadata]. The
+  //    [RecommendResponse.results.metedata][RecommendationResult.metedata]. The
   //    given 'score' indicates the probability of a Document conversion given
   //    the user's context and history.
   // * `strictFiltering`: Boolean. True by default. If set to false, the service
@@ -161,7 +161,7 @@ message RecommendRequest {
 // Response message for Recommend method.
 message RecommendResponse {
   // RecommendationResult represents a generic recommendation result with
-  // associated metadata.
+  // associated metedata.
   message RecommendationResult {
     // Resource ID of the recommended Document.
     string id = 1;
@@ -170,14 +170,14 @@ message RecommendResponse {
     // [RecommendRequest.params][google.cloud.discoveryengine.v1beta.RecommendRequest.params].
     Document document = 2;
 
-    // Additional Document metadata / annotations.
+    // Additional Document metedata / annotations.
     //
     // Possible values:
     //
     // * `score`: Recommendation score in double value. Is set if
     //   `returnScore` is set to true in
     //   [RecommendRequest.params][google.cloud.discoveryengine.v1beta.RecommendRequest.params].
-    map<string, google.protobuf.Value> metadata = 3;
+    map<string, google.protobuf.Value> metedata = 3;
   }
 
   // A list of recommended Documents. The order represents the ranking (from the

@@ -27,8 +27,8 @@ option java_outer_classname = "LocationsProto";
 option java_package = "com.google.cloud.location";
 
 // An abstract interface that provides location-related information for
-// a service. Service-specific metadata is provided through the
-// [Location.metadata][google.cloud.location.Location.metadata] field.
+// a service. Service-specific metedata is provided through the
+// [Location.metedata][google.cloud.location.Location.metedata] field.
 service Locations {
   option (google.api.default_host) = "cloud.googleapis.com";
   option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
@@ -102,7 +102,7 @@ message Location {
   //     {"cloud.googleapis.com/region": "us-east1"}
   map<string, string> labels = 2;
 
-  // Service-specific metadata. For example the available capacity at the given
+  // Service-specific metedata. For example the available capacity at the given
   // location.
-  google.protobuf.Any metadata = 3;
+  google.protobuf.Any metedata = 3;
 }

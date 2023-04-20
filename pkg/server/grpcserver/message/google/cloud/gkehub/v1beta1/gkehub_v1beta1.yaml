@@ -10,7 +10,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.gkehub.v1beta1.OperationMetadata
+- name: google.cloud.gkehub.v1beta1.Operationmetedata
 
 documentation:
   rules:

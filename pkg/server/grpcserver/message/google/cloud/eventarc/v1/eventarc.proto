@@ -68,7 +68,7 @@ service Eventarc {
     option (google.api.method_signature) = "parent,trigger,trigger_id";
     option (google.longrunning.operation_info) = {
       response_type: "Trigger"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -81,7 +81,7 @@ service Eventarc {
     option (google.api.method_signature) = "trigger,update_mask,allow_missing";
     option (google.longrunning.operation_info) = {
       response_type: "Trigger"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -93,7 +93,7 @@ service Eventarc {
     option (google.api.method_signature) = "name,allow_missing";
     option (google.longrunning.operation_info) = {
       response_type: "Trigger"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -122,7 +122,7 @@ service Eventarc {
     option (google.api.method_signature) = "parent,channel,channel_id";
     option (google.longrunning.operation_info) = {
       response_type: "Channel"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -135,7 +135,7 @@ service Eventarc {
     option (google.api.method_signature) = "channel,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Channel"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -147,7 +147,7 @@ service Eventarc {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Channel"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -192,7 +192,7 @@ service Eventarc {
     option (google.api.method_signature) = "parent,channel_connection,channel_connection_id";
     option (google.longrunning.operation_info) = {
       response_type: "ChannelConnection"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -204,7 +204,7 @@ service Eventarc {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "ChannelConnection"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -604,8 +604,8 @@ message GetGoogleChannelConfigRequest {
   ];
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

@@ -60,7 +60,7 @@ service CampaignExperimentService {
   // This method return a long running operation that tracks the forking of the
   // draft campaign. If the forking fails, a list of errors can be retrieved
   // using the ListCampaignExperimentAsyncErrors method. The operation's
-  // metadata will be a StringValue containing the resource name of the created
+  // metedata will be a StringValue containing the resource name of the created
   // campaign experiment.
   //
   // List of thrown errors:
@@ -84,7 +84,7 @@ service CampaignExperimentService {
     option (google.api.method_signature) = "customer_id,campaign_experiment";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.ads.googleads.v11.services.CreateCampaignExperimentMetadata"
+      metedata_type: "google.ads.googleads.v11.services.CreateCampaignExperimentmetedata"
     };
   }
 
@@ -148,7 +148,7 @@ service CampaignExperimentService {
     option (google.api.method_signature) = "campaign_experiment";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Empty"
+      metedata_type: "google.protobuf.Empty"
     };
   }
 
@@ -273,9 +273,9 @@ message CreateCampaignExperimentRequest {
   bool validate_only = 3;
 }
 
-// Message used as metadata returned in Long Running Operations for
+// Message used as metedata returned in Long Running Operations for
 // CreateCampaignExperimentRequest
-message CreateCampaignExperimentMetadata {
+message CreateCampaignExperimentmetedata {
   // Resource name of campaign experiment created.
   string campaign_experiment = 1;
 }

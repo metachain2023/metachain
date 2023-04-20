@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package google.cloud.metastore.v1alpha;
+package google.cloud.metestore.v1alpha;
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
@@ -26,11 +26,11 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 import "google/type/dayofweek.proto";
 
-option go_package = "cloud.google.com/go/metastore/apiv1alpha/metastorepb;metastorepb";
+option go_package = "cloud.google.com/go/metestore/apiv1alpha/metestorepb;metestorepb";
 option java_multiple_files = true;
-option java_outer_classname = "MetastoreProto";
-option java_package = "com.google.cloud.metastore.v1alpha";
-option php_namespace = "Google\\Cloud\\Metastore\\V1alpha";
+option java_outer_classname = "metestoreProto";
+option java_package = "com.google.cloud.metestore.v1alpha";
+option php_namespace = "Google\\Cloud\\metestore\\V1alpha";
 option (google.api.resource_definition) = {
   type: "compute.googleapis.com/Network"
   pattern: "projects/{project}/global/networks/{network}"
@@ -44,25 +44,25 @@ option (google.api.resource_definition) = {
   pattern: "projects/{project}/locations/{location}/lakes/{lake}"
 };
 
-// Configures and manages metastore services.
-// Metastore services are fully managed, highly available, autoscaled,
-// autohealing, OSS-native deployments of technical metadata management
-// software. Each metastore service exposes a network endpoint through which
-// metadata queries are served. Metadata queries can originate from a variety
+// Configures and manages metestore services.
+// metestore services are fully managed, highly available, autoscaled,
+// autohealing, OSS-native deployments of technical metedata management
+// software. Each metestore service exposes a network endpoint through which
+// metedata queries are served. metedata queries can originate from a variety
 // of sources, including Apache Hive, Apache Presto, and Apache Spark.
 //
-// The Dataproc Metastore API defines the following resource model:
+// The Dataproc metestore API defines the following resource model:
 //
 // * The service works with a collection of Google Cloud projects, named:
 // `/projects/*`
 // * Each project has a collection of available locations, named: `/locations/*`
 //   (a location must refer to a Google Cloud `region`)
 // * Each location has a collection of services, named: `/services/*`
-// * Dataproc Metastore services are resources with names of the form:
+// * Dataproc metestore services are resources with names of the form:
 //
 //   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
-service DataprocMetastore {
-  option (google.api.default_host) = "metastore.googleapis.com";
+service Dataprocmetestore {
+  option (google.api.default_host) = "metestore.googleapis.com";
   option (google.api.oauth_scopes) =
       "https://www.googleapis.com/auth/cloud-platform";
 
@@ -82,7 +82,7 @@ service DataprocMetastore {
     option (google.api.method_signature) = "name";
   }
 
-  // Creates a metastore service in a project and location.
+  // Creates a metestore service in a project and location.
   rpc CreateService(CreateServiceRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -92,7 +92,7 @@ service DataprocMetastore {
     option (google.api.method_signature) = "parent,service,service_id";
     option (google.longrunning.operation_info) = {
       response_type: "Service"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
@@ -106,7 +106,7 @@ service DataprocMetastore {
     option (google.api.method_signature) = "service,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Service"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
@@ -119,67 +119,67 @@ service DataprocMetastore {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
   // Lists imports in a service.
-  rpc ListMetadataImports(ListMetadataImportsRequest)
-      returns (ListMetadataImportsResponse) {
+  rpc ListmetedataImports(ListmetedataImportsRequest)
+      returns (ListmetedataImportsResponse) {
     option (google.api.http) = {
-      get: "/v1alpha/{parent=projects/*/locations/*/services/*}/metadataImports"
+      get: "/v1alpha/{parent=projects/*/locations/*/services/*}/metedataImports"
     };
     option (google.api.method_signature) = "parent";
   }
 
   // Gets details of a single import.
-  rpc GetMetadataImport(GetMetadataImportRequest) returns (MetadataImport) {
+  rpc GetmetedataImport(GetmetedataImportRequest) returns (metedataImport) {
     option (google.api.http) = {
-      get: "/v1alpha/{name=projects/*/locations/*/services/*/metadataImports/*}"
+      get: "/v1alpha/{name=projects/*/locations/*/services/*/metedataImports/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Creates a new MetadataImport in a given project and location.
-  rpc CreateMetadataImport(CreateMetadataImportRequest)
+  // Creates a new metedataImport in a given project and location.
+  rpc CreatemetedataImport(CreatemetedataImportRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      post: "/v1alpha/{parent=projects/*/locations/*/services/*}/metadataImports"
-      body: "metadata_import"
+      post: "/v1alpha/{parent=projects/*/locations/*/services/*}/metedataImports"
+      body: "metedata_import"
     };
     option (google.api.method_signature) =
-        "parent,metadata_import,metadata_import_id";
+        "parent,metedata_import,metedata_import_id";
     option (google.longrunning.operation_info) = {
-      response_type: "MetadataImport"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      response_type: "metedataImport"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
   // Updates a single import.
-  // Only the description field of MetadataImport is supported to be updated.
-  rpc UpdateMetadataImport(UpdateMetadataImportRequest)
+  // Only the description field of metedataImport is supported to be updated.
+  rpc UpdatemetedataImport(UpdatemetedataImportRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      patch: "/v1alpha/{metadata_import.name=projects/*/locations/*/services/*/metadataImports/*}"
-      body: "metadata_import"
+      patch: "/v1alpha/{metedata_import.name=projects/*/locations/*/services/*/metedataImports/*}"
+      body: "metedata_import"
     };
-    option (google.api.method_signature) = "metadata_import,update_mask";
+    option (google.api.method_signature) = "metedata_import,update_mask";
     option (google.longrunning.operation_info) = {
-      response_type: "MetadataImport"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      response_type: "metedataImport"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
-  // Exports metadata from a service.
-  rpc ExportMetadata(ExportMetadataRequest)
+  // Exports metedata from a service.
+  rpc Exportmetedata(ExportmetedataRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      post: "/v1alpha/{service=projects/*/locations/*/services/*}:exportMetadata"
+      post: "/v1alpha/{service=projects/*/locations/*/services/*}:exportmetedata"
       body: "*"
     };
     option (google.longrunning.operation_info) = {
-      response_type: "MetadataExport"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      response_type: "metedataExport"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
@@ -193,7 +193,7 @@ service DataprocMetastore {
     option (google.api.method_signature) = "service,backup";
     option (google.longrunning.operation_info) = {
       response_type: "Restore"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
@@ -222,7 +222,7 @@ service DataprocMetastore {
     option (google.api.method_signature) = "parent,backup,backup_id";
     option (google.longrunning.operation_info) = {
       response_type: "Backup"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
@@ -234,7 +234,7 @@ service DataprocMetastore {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
@@ -247,16 +247,16 @@ service DataprocMetastore {
     };
   }
 
-  // Query DPMS metadata.
-  rpc QueryMetadata(QueryMetadataRequest)
+  // Query DPMS metedata.
+  rpc Querymetedata(QuerymetedataRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
-      post: "/v1alpha/{service=projects/*/locations/*/services/*}:queryMetadata"
+      post: "/v1alpha/{service=projects/*/locations/*/services/*}:querymetedata"
       body: "*"
     };
     option (google.longrunning.operation_info) = {
-      response_type: "QueryMetadataResponse"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      response_type: "QuerymetedataResponse"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
@@ -269,61 +269,61 @@ service DataprocMetastore {
     };
     option (google.longrunning.operation_info) = {
       response_type: "MoveTableToDatabaseResponse"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 
-  // Alter metadata resource location. The metadata resource can be a database,
+  // Alter metedata resource location. The metedata resource can be a database,
   // table, or partition. This functionality only updates the parent directory
-  // for the respective metadata resource and does not transfer any existing
+  // for the respective metedata resource and does not transfer any existing
   // data to the new location.
-  rpc AlterMetadataResourceLocation(AlterMetadataResourceLocationRequest)
+  rpc AltermetedataResourceLocation(AltermetedataResourceLocationRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v1alpha/{service=projects/*/locations/*/services/*}:alterLocation"
       body: "*"
     };
     option (google.longrunning.operation_info) = {
-      response_type: "AlterMetadataResourceLocationResponse"
-      metadata_type: "google.cloud.metastore.v1alpha.OperationMetadata"
+      response_type: "AltermetedataResourceLocationResponse"
+      metedata_type: "google.cloud.metestore.v1alpha.Operationmetedata"
     };
   }
 }
 
-// A managed metastore service that serves metadata queries.
+// A managed metestore service that serves metedata queries.
 message Service {
   option (google.api.resource) = {
-    type: "metastore.googleapis.com/Service"
+    type: "metestore.googleapis.com/Service"
     pattern: "projects/{project}/locations/{location}/services/{service}"
   };
 
-  // The current state of the metastore service.
+  // The current state of the metestore service.
   enum State {
-    // The state of the metastore service is unknown.
+    // The state of the metestore service is unknown.
     STATE_UNSPECIFIED = 0;
 
-    // The metastore service is in the process of being created.
+    // The metestore service is in the process of being created.
     CREATING = 1;
 
-    // The metastore service is running and ready to serve queries.
+    // The metestore service is running and ready to serve queries.
     ACTIVE = 2;
 
-    // The metastore service is entering suspension. Its query-serving
+    // The metestore service is entering suspension. Its query-serving
     // availability may cease unexpectedly.
     SUSPENDING = 3;
 
-    // The metastore service is suspended and unable to serve queries.
+    // The metestore service is suspended and unable to serve queries.
     SUSPENDED = 4;
 
-    // The metastore service is being updated. It remains usable but cannot
+    // The metestore service is being updated. It remains usable but cannot
     // accept additional update requests or be deleted at this time.
     UPDATING = 5;
 
-    // The metastore service is undergoing deletion. It cannot be used.
+    // The metestore service is undergoing deletion. It cannot be used.
     DELETING = 6;
 
-    // The metastore service has encountered an error and cannot be used. The
-    // metastore service should be deleted.
+    // The metestore service has encountered an error and cannot be used. The
+    // metestore service should be deleted.
     ERROR = 7;
   }
 
@@ -337,7 +337,7 @@ message Service {
     DEVELOPER = 1;
 
     // The enterprise tier provides multi-zone high availability, and sufficient
-    // scalability for enterprise-level Dataproc Metastore workloads.
+    // scalability for enterprise-level Dataproc metestore workloads.
     ENTERPRISE = 3;
   }
 
@@ -358,41 +358,41 @@ message Service {
     STABLE = 2;
   }
 
-  // The backend database type for the metastore service.
+  // The backend database type for the metestore service.
   enum DatabaseType {
     // The DATABASE_TYPE is not set.
     DATABASE_TYPE_UNSPECIFIED = 0;
 
-    // MySQL is used to persist the metastore data.
+    // MySQL is used to persist the metestore data.
     MYSQL = 1;
 
-    // Spanner is used to persist the metastore data.
+    // Spanner is used to persist the metestore data.
     SPANNER = 2;
   }
 
-  // Configuration properties specific to the underlying metastore service
-  // technology (the software that serves metastore queries).
-  oneof metastore_config {
-    // Configuration information specific to running Hive metastore
-    // software as the metastore service.
-    HiveMetastoreConfig hive_metastore_config = 5;
+  // Configuration properties specific to the underlying metestore service
+  // technology (the software that serves metestore queries).
+  oneof metestore_config {
+    // Configuration information specific to running Hive metestore
+    // software as the metestore service.
+    HivemetestoreConfig hive_metestore_config = 5;
   }
 
-  // Immutable. The relative resource name of the metastore service, in the
+  // Immutable. The relative resource name of the metestore service, in the
   // following format:
   //
   // `projects/{project_number}/locations/{location_id}/services/{service_id}`.
   string name = 1 [(google.api.field_behavior) = IMMUTABLE];
 
-  // Output only. The time when the metastore service was created.
+  // Output only. The time when the metestore service was created.
   google.protobuf.Timestamp create_time = 2
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The time when the metastore service was last updated.
+  // Output only. The time when the metestore service was last updated.
   google.protobuf.Timestamp update_time = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // User-defined labels for the metastore service.
+  // User-defined labels for the metestore service.
   map<string, string> labels = 4;
 
   // Immutable. The relative resource name of the VPC network on which the
@@ -404,67 +404,67 @@ message Service {
     (google.api.resource_reference) = { type: "compute.googleapis.com/Network" }
   ];
 
-  // Output only. The URI of the endpoint used to access the metastore service.
+  // Output only. The URI of the endpoint used to access the metestore service.
   string endpoint_uri = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The TCP port at which the metastore service is reached. Default: 9083.
+  // The TCP port at which the metestore service is reached. Default: 9083.
   int32 port = 9;
 
-  // Output only. The current state of the metastore service.
+  // Output only. The current state of the metestore service.
   State state = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. Additional information about the current state of the
-  // metastore service, if available.
+  // metestore service, if available.
   string state_message = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. A Cloud Storage URI (starting with `gs://`) that specifies
-  // where artifacts related to the metastore service are stored.
+  // where artifacts related to the metestore service are stored.
   string artifact_gcs_uri = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // The tier of the service.
   Tier tier = 13;
 
-  // The setting that defines how metastore metadata should be integrated with
+  // The setting that defines how metestore metedata should be integrated with
   // external services and systems.
-  MetadataIntegration metadata_integration = 14;
+  metedataIntegration metedata_integration = 14;
 
-  // The one hour maintenance window of the metastore service. This specifies
+  // The one hour maintenance window of the metestore service. This specifies
   // when the service can be restarted for maintenance purposes in UTC time.
   // Maintenance window is not needed for services with the SPANNER
   // database type.
   MaintenanceWindow maintenance_window = 15;
 
-  // Output only. The globally unique resource identifier of the metastore
+  // Output only. The globally unique resource identifier of the metestore
   // service.
   string uid = 16 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The metadata management activities of the metastore service.
-  MetadataManagementActivity metadata_management_activity = 17
+  // Output only. The metedata management activities of the metestore service.
+  metedataManagementActivity metedata_management_activity = 17
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Immutable. The release channel of the service.
   // If unspecified, defaults to `STABLE`.
   ReleaseChannel release_channel = 19 [(google.api.field_behavior) = IMMUTABLE];
 
-  // Immutable. Information used to configure the Dataproc Metastore service to
+  // Immutable. Information used to configure the Dataproc metestore service to
   // encrypt customer data at rest. Cannot be updated.
   EncryptionConfig encryption_config = 20
       [(google.api.field_behavior) = IMMUTABLE];
 
   // The configuration specifying the network settings for the
-  // Dataproc Metastore service.
+  // Dataproc metestore service.
   NetworkConfig network_config = 21;
 
-  // Immutable. The database type that the Metastore service stores its data.
+  // Immutable. The database type that the metestore service stores its data.
   DatabaseType database_type = 22 [(google.api.field_behavior) = IMMUTABLE];
 
-  // The configuration specifying telemetry settings for the Dataproc Metastore
+  // The configuration specifying telemetry settings for the Dataproc metestore
   // service. If unspecified defaults to `JSON`.
   TelemetryConfig telemetry_config = 23;
 }
 
-// Specifies how metastore metadata should be integrated with external services.
-message MetadataIntegration {
+// Specifies how metestore metedata should be integrated with external services.
+message metedataIntegration {
   // The integration config for the Data Catalog service.
   DataCatalogConfig data_catalog_config = 1;
 
@@ -472,18 +472,18 @@ message MetadataIntegration {
   DataplexConfig dataplex_config = 2;
 }
 
-// Specifies how metastore metadata should be integrated with the Data Catalog
+// Specifies how metestore metedata should be integrated with the Data Catalog
 // service.
 message DataCatalogConfig {
-  // Defines whether the metastore metadata should be synced to Data Catalog.
-  // The default value is to disable syncing metastore metadata to Data Catalog.
+  // Defines whether the metestore metedata should be synced to Data Catalog.
+  // The default value is to disable syncing metestore metedata to Data Catalog.
   bool enabled = 2;
 }
 
-// Specifies how metastore metadata should be integrated with the Dataplex
+// Specifies how metestore metedata should be integrated with the Dataplex
 // service.
 message DataplexConfig {
-  // A reference to the Lake resources that this metastore service is attached
+  // A reference to the Lake resources that this metestore service is attached
   // to. The key is the lake resource name. Example:
   // `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
   map<string, Lake> lake_resources = 1;
@@ -499,7 +499,7 @@ message Lake {
   ];
 }
 
-// Maintenance window. This specifies when Dataproc Metastore
+// Maintenance window. This specifies when Dataproc metestore
 // may perform system maintenance operation to the service.
 message MaintenanceWindow {
   // The hour of day (0-23) when the window starts.
@@ -509,44 +509,44 @@ message MaintenanceWindow {
   google.type.DayOfWeek day_of_week = 2;
 }
 
-// Specifies configuration information specific to running Hive metastore
-// software as the metastore service.
-message HiveMetastoreConfig {
-  // Protocols available for serving the metastore service endpoint.
+// Specifies configuration information specific to running Hive metestore
+// software as the metestore service.
+message HivemetestoreConfig {
+  // Protocols available for serving the metestore service endpoint.
   enum EndpointProtocol {
     // The protocol is not set.
     ENDPOINT_PROTOCOL_UNSPECIFIED = 0;
 
-    // Use the legacy Apache Thrift protocol for the metastore service endpoint.
+    // Use the legacy Apache Thrift protocol for the metestore service endpoint.
     THRIFT = 1;
 
-    // Use the modernized gRPC protocol for the metastore service endpoint.
+    // Use the modernized gRPC protocol for the metestore service endpoint.
     GRPC = 2;
   }
 
-  // Immutable. The Hive metastore schema version.
+  // Immutable. The Hive metestore schema version.
   string version = 1 [(google.api.field_behavior) = IMMUTABLE];
 
-  // A mapping of Hive metastore configuration key-value pairs to apply to the
-  // Hive metastore (configured in `hive-site.xml`). The mappings
+  // A mapping of Hive metestore configuration key-value pairs to apply to the
+  // Hive metestore (configured in `hive-site.xml`). The mappings
   // override system defaults (some keys cannot be overridden). These
   // overrides are also applied to auxiliary versions and can be further
   // customized in the auxiliary version's `AuxiliaryVersionConfig`.
   map<string, string> config_overrides = 2;
 
-  // Information used to configure the Hive metastore service as a service
+  // Information used to configure the Hive metestore service as a service
   // principal in a Kerberos realm. To disable Kerberos, use the `UpdateService`
   // method and specify this field's path
-  // (`hive_metastore_config.kerberos_config`) in the request's `update_mask`
+  // (`hive_metestore_config.kerberos_config`) in the request's `update_mask`
   // while omitting this field from the request's `service`.
   KerberosConfig kerberos_config = 3;
 
-  // The protocol to use for the metastore service endpoint. If unspecified,
+  // The protocol to use for the metestore service endpoint. If unspecified,
   // defaults to `THRIFT`.
   EndpointProtocol endpoint_protocol = 4;
 
-  // A mapping of Hive metastore version to the auxiliary version
-  // configuration. When specified, a secondary Hive metastore service is
+  // A mapping of Hive metestore version to the auxiliary version
+  // configuration. When specified, a secondary Hive metestore service is
   // created along with the primary service. All auxiliary versions must be less
   // than the service's primary version. The key is the auxiliary service name
   // and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
@@ -595,29 +595,29 @@ message EncryptionConfig {
 
 // Configuration information for the auxiliary service versions.
 message AuxiliaryVersionConfig {
-  // The Hive metastore version of the auxiliary service. It must be less
-  // than the primary Hive metastore service's version.
+  // The Hive metestore version of the auxiliary service. It must be less
+  // than the primary Hive metestore service's version.
   string version = 1;
 
-  // A mapping of Hive metastore configuration key-value pairs to apply to the
-  // auxiliary Hive metastore (configured in `hive-site.xml`) in addition to
+  // A mapping of Hive metestore configuration key-value pairs to apply to the
+  // auxiliary Hive metestore (configured in `hive-site.xml`) in addition to
   // the primary version's overrides. If keys are present in both the auxiliary
   // version's overrides and the primary version's overrides, the value from
   // the auxiliary version's overrides takes precedence.
   map<string, string> config_overrides = 2;
 
   // Output only. The network configuration contains the endpoint URI(s) of the
-  // auxiliary Hive metastore service.
+  // auxiliary Hive metestore service.
   NetworkConfig network_config = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Network configuration for the Dataproc Metastore service.
+// Network configuration for the Dataproc metestore service.
 message NetworkConfig {
   // Contains information of the customer's network configurations.
   message Consumer {
     oneof vpc_resource {
       // Immutable. The subnetwork of the customer project from which an IP
-      // address is reserved and used as the Dataproc Metastore service's
+      // address is reserved and used as the Dataproc metestore service's
       // endpoint. It is accessible to hosts in the subnet and to all
       // hosts in a subnet in the same region and same network. There must
       // be at least one IP address available in the subnet's primary range. The
@@ -632,17 +632,17 @@ message NetworkConfig {
       ];
     }
 
-    // Output only. The URI of the endpoint used to access the metastore
+    // Output only. The URI of the endpoint used to access the metestore
     // service.
     string endpoint_uri = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
   // Immutable. The consumer-side network configuration for the Dataproc
-  // Metastore instance.
+  // metestore instance.
   repeated Consumer consumers = 1 [(google.api.field_behavior) = IMMUTABLE];
 }
 
-// Telemetry Configuration for the Dataproc Metastore service.
+// Telemetry Configuration for the Dataproc metestore service.
 message TelemetryConfig {
   enum LogFormat {
     // The LOG_FORMAT is not set.
@@ -655,28 +655,28 @@ message TelemetryConfig {
     JSON = 2;
   }
 
-  // The output format of the Dataproc Metastore service's logs.
+  // The output format of the Dataproc metestore service's logs.
   LogFormat log_format = 1;
 }
 
-// The metadata management activities of the metastore service.
-message MetadataManagementActivity {
-  // Output only. The latest metadata exports of the metastore service.
-  repeated MetadataExport metadata_exports = 1
+// The metedata management activities of the metestore service.
+message metedataManagementActivity {
+  // Output only. The latest metedata exports of the metestore service.
+  repeated metedataExport metedata_exports = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The latest restores of the metastore service.
+  // Output only. The latest restores of the metestore service.
   repeated Restore restores = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// A metastore resource that imports metadata.
-message MetadataImport {
+// A metestore resource that imports metedata.
+message metedataImport {
   option (google.api.resource) = {
-    type: "metastore.googleapis.com/MetadataImport"
-    pattern: "projects/{project}/locations/{location}/services/{service}/metadataImports/{metadata_import}"
+    type: "metestore.googleapis.com/metedataImport"
+    pattern: "projects/{project}/locations/{location}/services/{service}/metedataImports/{metedata_import}"
   };
 
-  // A specification of the location of and metadata about a database dump from
+  // A specification of the location of and metedata about a database dump from
   // a relational database management system.
   message DatabaseDump {
     // The type of the database.
@@ -692,7 +692,7 @@ message MetadataImport {
     DatabaseType database_type = 1 [deprecated = true];
 
     // A Cloud Storage object or folder URI that specifies the source from which
-    // to import metadata. It must begin with `gs://`.
+    // to import metedata. It must begin with `gs://`.
     string gcs_uri = 2;
 
     // The name of the source database.
@@ -703,77 +703,77 @@ message MetadataImport {
     DatabaseDumpSpec.Type type = 4 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // The current state of the metadata import.
+  // The current state of the metedata import.
   enum State {
-    // The state of the metadata import is unknown.
+    // The state of the metedata import is unknown.
     STATE_UNSPECIFIED = 0;
 
-    // The metadata import is running.
+    // The metedata import is running.
     RUNNING = 1;
 
-    // The metadata import completed successfully.
+    // The metedata import completed successfully.
     SUCCEEDED = 2;
 
-    // The metadata import is being updated.
+    // The metedata import is being updated.
     UPDATING = 3;
 
-    // The metadata import failed, and attempted metadata changes were rolled
+    // The metedata import failed, and attempted metedata changes were rolled
     // back.
     FAILED = 4;
   }
 
-  // The metadata to be imported.
-  oneof metadata {
-    // Immutable. A database dump from a pre-existing metastore's database.
+  // The metedata to be imported.
+  oneof metedata {
+    // Immutable. A database dump from a pre-existing metestore's database.
     DatabaseDump database_dump = 6 [(google.api.field_behavior) = IMMUTABLE];
   }
 
-  // Immutable. The relative resource name of the metadata import, of the form:
+  // Immutable. The relative resource name of the metedata import, of the form:
   //
-  // `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
+  // `projects/{project_number}/locations/{location_id}/services/{service_id}/metedataImports/{metedata_import_id}`.
   string name = 1 [(google.api.field_behavior) = IMMUTABLE];
 
-  // The description of the metadata import.
+  // The description of the metedata import.
   string description = 2;
 
-  // Output only. The time when the metadata import was started.
+  // Output only. The time when the metedata import was started.
   google.protobuf.Timestamp create_time = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The time when the metadata import was last updated.
+  // Output only. The time when the metedata import was last updated.
   google.protobuf.Timestamp update_time = 4
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The time when the metadata import finished.
+  // Output only. The time when the metedata import finished.
   google.protobuf.Timestamp end_time = 7
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The current state of the metadata import.
+  // Output only. The current state of the metedata import.
   State state = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// The details of a metadata export operation.
-message MetadataExport {
-  // The current state of the metadata export.
+// The details of a metedata export operation.
+message metedataExport {
+  // The current state of the metedata export.
   enum State {
-    // The state of the metadata export is unknown.
+    // The state of the metedata export is unknown.
     STATE_UNSPECIFIED = 0;
 
-    // The metadata export is running.
+    // The metedata export is running.
     RUNNING = 1;
 
-    // The metadata export completed successfully.
+    // The metedata export completed successfully.
     SUCCEEDED = 2;
 
-    // The metadata export failed.
+    // The metedata export failed.
     FAILED = 3;
 
-    // The metadata export is cancelled.
+    // The metedata export is cancelled.
     CANCELLED = 4;
   }
 
   oneof destination {
-    // Output only. A Cloud Storage URI of a folder that metadata are exported
+    // Output only. A Cloud Storage URI of a folder that metedata are exported
     // to, in the form of
     // `gs://<bucket_name>/<path_inside_bucket>/<export_folder>`, where
     // `<export_folder>` is automatically generated.
@@ -799,7 +799,7 @@ message MetadataExport {
 // The details of a backup resource.
 message Backup {
   option (google.api.resource) = {
-    type: "metastore.googleapis.com/Backup"
+    type: "metestore.googleapis.com/Backup"
     pattern: "projects/{project}/locations/{location}/services/{service}/backups/{backup}"
   };
 
@@ -851,36 +851,36 @@ message Backup {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// The details of a metadata restore operation.
+// The details of a metedata restore operation.
 message Restore {
   // The current state of the restore.
   enum State {
-    // The state of the metadata restore is unknown.
+    // The state of the metedata restore is unknown.
     STATE_UNSPECIFIED = 0;
 
-    // The metadata restore is running.
+    // The metedata restore is running.
     RUNNING = 1;
 
-    // The metadata restore completed successfully.
+    // The metedata restore completed successfully.
     SUCCEEDED = 2;
 
-    // The metadata restore failed.
+    // The metedata restore failed.
     FAILED = 3;
 
-    // The metadata restore is cancelled.
+    // The metedata restore is cancelled.
     CANCELLED = 4;
   }
 
-  // The type of restore. If unspecified, defaults to `METADATA_ONLY`.
+  // The type of restore. If unspecified, defaults to `meteDATA_ONLY`.
   enum RestoreType {
     // The restore type is unknown.
     RESTORE_TYPE_UNSPECIFIED = 0;
 
-    // The service's metadata and configuration are restored.
+    // The service's metedata and configuration are restored.
     FULL = 1;
 
-    // Only the service's metadata is restored.
-    METADATA_ONLY = 2;
+    // Only the service's metedata is restored.
+    meteDATA_ONLY = 2;
   }
 
   // Output only. The time when the restore started.
@@ -894,14 +894,14 @@ message Restore {
   // Output only. The current state of the restore.
   State state = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The relative resource name of the metastore service backup to
+  // Output only. The relative resource name of the metestore service backup to
   // restore from, in the following form:
   //
   // `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
   string backup = 4 [
     (google.api.field_behavior) = OUTPUT_ONLY,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Backup"
+      type: "metestore.googleapis.com/Backup"
     }
   ];
 
@@ -914,16 +914,16 @@ message Restore {
 }
 
 // Request message for
-// [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices].
+// [Dataprocmetestore.ListServices][google.cloud.metestore.v1alpha.Dataprocmetestore.ListServices].
 message ListServicesRequest {
-  // Required. The relative resource name of the location of metastore services
+  // Required. The relative resource name of the location of metestore services
   // to list, in the following form:
   //
   // `projects/{project_number}/locations/{location_id}`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "metastore.googleapis.com/Service"
+      child_type: "metestore.googleapis.com/Service"
     }
   ];
 
@@ -934,13 +934,13 @@ message ListServicesRequest {
   int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. A page token, received from a previous
-  // [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
+  // [Dataprocmetestore.ListServices][google.cloud.metestore.v1alpha.Dataprocmetestore.ListServices]
   // call. Provide this token to retrieve the subsequent page.
   //
   // To retrieve the first page, supply an empty page token.
   //
   // When paginating, other parameters provided to
-  // [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
+  // [Dataprocmetestore.ListServices][google.cloud.metestore.v1alpha.Dataprocmetestore.ListServices]
   // must match the call that provided the page token.
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
@@ -954,7 +954,7 @@ message ListServicesRequest {
 }
 
 // Response message for
-// [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices].
+// [Dataprocmetestore.ListServices][google.cloud.metestore.v1alpha.Dataprocmetestore.ListServices].
 message ListServicesResponse {
   // The services in the specified location.
   repeated Service services = 1;
@@ -968,44 +968,44 @@ message ListServicesResponse {
 }
 
 // Request message for
-// [DataprocMetastore.GetService][google.cloud.metastore.v1alpha.DataprocMetastore.GetService].
+// [Dataprocmetestore.GetService][google.cloud.metestore.v1alpha.Dataprocmetestore.GetService].
 message GetServiceRequest {
-  // Required. The relative resource name of the metastore service to retrieve,
+  // Required. The relative resource name of the metestore service to retrieve,
   // in the following form:
   //
   // `projects/{project_number}/locations/{location_id}/services/{service_id}`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 }
 
 // Request message for
-// [DataprocMetastore.CreateService][google.cloud.metastore.v1alpha.DataprocMetastore.CreateService].
+// [Dataprocmetestore.CreateService][google.cloud.metestore.v1alpha.Dataprocmetestore.CreateService].
 message CreateServiceRequest {
   // Required. The relative resource name of the location in which to create a
-  // metastore service, in the following form:
+  // metestore service, in the following form:
   //
   // `projects/{project_number}/locations/{location_id}`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "metastore.googleapis.com/Service"
+      child_type: "metestore.googleapis.com/Service"
     }
   ];
 
-  // Required. The ID of the metastore service, which is used as the final
-  // component of the metastore service's name.
+  // Required. The ID of the metestore service, which is used as the final
+  // component of the metestore service's name.
   //
   // This value must be between 2 and 63 characters long inclusive, begin with a
   // letter, end with a letter or number, and consist of alpha-numeric
   // ASCII characters or hyphens.
   string service_id = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The Metastore service to create. The `name` field is
-  // ignored. The ID of the created metastore service must be provided in
+  // Required. The metestore service to create. The `name` field is
+  // ignored. The ID of the created metestore service must be provided in
   // the request's `service_id` field.
   Service service = 3 [(google.api.field_behavior) = REQUIRED];
 
@@ -1025,19 +1025,19 @@ message CreateServiceRequest {
 }
 
 // Request message for
-// [DataprocMetastore.UpdateService][google.cloud.metastore.v1alpha.DataprocMetastore.UpdateService].
+// [Dataprocmetestore.UpdateService][google.cloud.metestore.v1alpha.Dataprocmetestore.UpdateService].
 message UpdateServiceRequest {
   // Required. A field mask used to specify the fields to be overwritten in the
-  // metastore service resource by the update.
+  // metestore service resource by the update.
   // Fields specified in the `update_mask` are relative to the resource (not
   // to the full request). A field is overwritten if it is in the mask.
   google.protobuf.FieldMask update_mask = 1
       [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The metastore service to update. The server only merges fields
+  // Required. The metestore service to update. The server only merges fields
   // in the service if they are specified in `update_mask`.
   //
-  // The metastore service's `name` field is used to identify the metastore
+  // The metestore service's `name` field is used to identify the metestore
   // service to be updated.
   Service service = 2 [(google.api.field_behavior) = REQUIRED];
 
@@ -1057,16 +1057,16 @@ message UpdateServiceRequest {
 }
 
 // Request message for
-// [DataprocMetastore.DeleteService][google.cloud.metastore.v1alpha.DataprocMetastore.DeleteService].
+// [Dataprocmetestore.DeleteService][google.cloud.metestore.v1alpha.Dataprocmetestore.DeleteService].
 message DeleteServiceRequest {
-  // Required. The relative resource name of the metastore service to delete, in
+  // Required. The relative resource name of the metestore service to delete, in
   // the following form:
   //
   // `projects/{project_number}/locations/{location_id}/services/{service_id}`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 
@@ -1086,16 +1086,16 @@ message DeleteServiceRequest {
 }
 
 // Request message for
-// [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1alpha.DataprocMetastore.ListMetadataImports].
-message ListMetadataImportsRequest {
-  // Required. The relative resource name of the service whose metadata imports
+// [Dataprocmetestore.ListmetedataImports][google.cloud.metestore.v1alpha.Dataprocmetestore.ListmetedataImports].
+message ListmetedataImportsRequest {
+  // Required. The relative resource name of the service whose metedata imports
   // to list, in the following form:
   //
-  // `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
+  // `projects/{project_number}/locations/{location_id}/services/{service_id}/metedataImports`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "metastore.googleapis.com/MetadataImport"
+      child_type: "metestore.googleapis.com/metedataImport"
     }
   ];
 
@@ -1105,13 +1105,13 @@ message ListMetadataImportsRequest {
   int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. A page token, received from a previous
-  // [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
+  // [Dataprocmetestore.ListServices][google.cloud.metestore.v1alpha.Dataprocmetestore.ListServices]
   // call. Provide this token to retrieve the subsequent page.
   //
   // To retrieve the first page, supply an empty page token.
   //
   // When paginating, other parameters provided to
-  // [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices]
+  // [Dataprocmetestore.ListServices][google.cloud.metestore.v1alpha.Dataprocmetestore.ListServices]
   // must match the call that provided the page token.
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
@@ -1125,10 +1125,10 @@ message ListMetadataImportsRequest {
 }
 
 // Response message for
-// [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1alpha.DataprocMetastore.ListMetadataImports].
-message ListMetadataImportsResponse {
+// [Dataprocmetestore.ListmetedataImports][google.cloud.metestore.v1alpha.Dataprocmetestore.ListmetedataImports].
+message ListmetedataImportsResponse {
   // The imports in the specified service.
-  repeated MetadataImport metadata_imports = 1;
+  repeated metedataImport metedata_imports = 1;
 
   // A token that can be sent as `page_token` to retrieve the next page. If this
   // field is omitted, there are no subsequent pages.
@@ -1139,46 +1139,46 @@ message ListMetadataImportsResponse {
 }
 
 // Request message for
-// [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.GetMetadataImport].
-message GetMetadataImportRequest {
-  // Required. The relative resource name of the metadata import to retrieve, in
+// [Dataprocmetestore.GetmetedataImport][google.cloud.metestore.v1alpha.Dataprocmetestore.GetmetedataImport].
+message GetmetedataImportRequest {
+  // Required. The relative resource name of the metedata import to retrieve, in
   // the following form:
   //
-  // `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
+  // `projects/{project_number}/locations/{location_id}/services/{service_id}/metedataImports/{import_id}`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/MetadataImport"
+      type: "metestore.googleapis.com/metedataImport"
     }
   ];
 }
 
 // Request message for
-// [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport].
-message CreateMetadataImportRequest {
+// [Dataprocmetestore.CreatemetedataImport][google.cloud.metestore.v1alpha.Dataprocmetestore.CreatemetedataImport].
+message CreatemetedataImportRequest {
   // Required. The relative resource name of the service in which to create a
-  // metastore import, in the following form:
+  // metestore import, in the following form:
   //
   // `projects/{project_number}/locations/{location_id}/services/{service_id}`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "metastore.googleapis.com/MetadataImport"
+      child_type: "metestore.googleapis.com/metedataImport"
     }
   ];
 
-  // Required. The ID of the metadata import, which is used as the final
-  // component of the metadata import's name.
+  // Required. The ID of the metedata import, which is used as the final
+  // component of the metedata import's name.
   //
   // This value must be between 1 and 64 characters long, begin with a letter,
   // end with a letter or number, and consist of alpha-numeric ASCII characters
   // or hyphens.
-  string metadata_import_id = 2 [(google.api.field_behavior) = REQUIRED];
+  string metedata_import_id = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The metadata import to create. The `name` field is ignored. The
-  // ID of the created metadata import must be provided in the request's
-  // `metadata_import_id` field.
-  MetadataImport metadata_import = 3 [(google.api.field_behavior) = REQUIRED];
+  // Required. The metedata import to create. The `name` field is ignored. The
+  // ID of the created metedata import must be provided in the request's
+  // `metedata_import_id` field.
+  metedataImport metedata_import = 3 [(google.api.field_behavior) = REQUIRED];
 
   // Optional. A request ID. Specify a unique request ID to allow the server to
   // ignore the request if it has completed. The server will ignore subsequent
@@ -1196,21 +1196,21 @@ message CreateMetadataImportRequest {
 }
 
 // Request message for
-// [DataprocMetastore.UpdateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.UpdateMetadataImport].
-message UpdateMetadataImportRequest {
+// [Dataprocmetestore.UpdatemetedataImport][google.cloud.metestore.v1alpha.Dataprocmetestore.UpdatemetedataImport].
+message UpdatemetedataImportRequest {
   // Required. A field mask used to specify the fields to be overwritten in the
-  // metadata import resource by the update.
+  // metedata import resource by the update.
   // Fields specified in the `update_mask` are relative to the resource (not
   // to the full request). A field is overwritten if it is in the mask.
   google.protobuf.FieldMask update_mask = 1
       [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The metadata import to update. The server only merges fields
+  // Required. The metedata import to update. The server only merges fields
   // in the import if they are specified in `update_mask`.
   //
-  // The metadata import's `name` field is used to identify the metastore
+  // The metedata import's `name` field is used to identify the metestore
   // import to be updated.
-  MetadataImport metadata_import = 2 [(google.api.field_behavior) = REQUIRED];
+  metedataImport metedata_import = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Optional. A request ID. Specify a unique request ID to allow the server to
   // ignore the request if it has completed. The server will ignore subsequent
@@ -1228,7 +1228,7 @@ message UpdateMetadataImportRequest {
 }
 
 // Request message for
-// [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups].
+// [Dataprocmetestore.ListBackups][google.cloud.metestore.v1alpha.Dataprocmetestore.ListBackups].
 message ListBackupsRequest {
   // Required. The relative resource name of the service whose backups to
   // list, in the following form:
@@ -1237,7 +1237,7 @@ message ListBackupsRequest {
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "metastore.googleapis.com/Backup"
+      child_type: "metestore.googleapis.com/Backup"
     }
   ];
 
@@ -1247,13 +1247,13 @@ message ListBackupsRequest {
   int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. A page token, received from a previous
-  // [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
+  // [Dataprocmetestore.ListBackups][google.cloud.metestore.v1alpha.Dataprocmetestore.ListBackups]
   // call. Provide this token to retrieve the subsequent page.
   //
   // To retrieve the first page, supply an empty page token.
   //
   // When paginating, other parameters provided to
-  // [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups]
+  // [Dataprocmetestore.ListBackups][google.cloud.metestore.v1alpha.Dataprocmetestore.ListBackups]
   // must match the call that provided the page token.
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
@@ -1267,7 +1267,7 @@ message ListBackupsRequest {
 }
 
 // Response message for
-// [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups].
+// [Dataprocmetestore.ListBackups][google.cloud.metestore.v1alpha.Dataprocmetestore.ListBackups].
 message ListBackupsResponse {
   // The backups of the specified service.
   repeated Backup backups = 1;
@@ -1281,7 +1281,7 @@ message ListBackupsResponse {
 }
 
 // Request message for
-// [DataprocMetastore.GetBackup][google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup].
+// [Dataprocmetestore.GetBackup][google.cloud.metestore.v1alpha.Dataprocmetestore.GetBackup].
 message GetBackupRequest {
   // Required. The relative resource name of the backup to retrieve, in the
   // following form:
@@ -1290,13 +1290,13 @@ message GetBackupRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Backup"
+      type: "metestore.googleapis.com/Backup"
     }
   ];
 }
 
 // Request message for
-// [DataprocMetastore.CreateBackup][google.cloud.metastore.v1alpha.DataprocMetastore.CreateBackup].
+// [Dataprocmetestore.CreateBackup][google.cloud.metestore.v1alpha.Dataprocmetestore.CreateBackup].
 message CreateBackupRequest {
   // Required. The relative resource name of the service in which to create a
   // backup of the following form:
@@ -1305,7 +1305,7 @@ message CreateBackupRequest {
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      child_type: "metastore.googleapis.com/Backup"
+      child_type: "metestore.googleapis.com/Backup"
     }
   ];
 
@@ -1337,7 +1337,7 @@ message CreateBackupRequest {
 }
 
 // Request message for
-// [DataprocMetastore.DeleteBackup][google.cloud.metastore.v1alpha.DataprocMetastore.DeleteBackup].
+// [Dataprocmetestore.DeleteBackup][google.cloud.metestore.v1alpha.Dataprocmetestore.DeleteBackup].
 message DeleteBackupRequest {
   // Required. The relative resource name of the backup to delete, in the
   // following form:
@@ -1346,7 +1346,7 @@ message DeleteBackupRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Backup"
+      type: "metestore.googleapis.com/Backup"
     }
   ];
 
@@ -1366,9 +1366,9 @@ message DeleteBackupRequest {
 }
 
 // Request message for
-// [DataprocMetastore.ExportMetadata][google.cloud.metastore.v1alpha.DataprocMetastore.ExportMetadata].
-message ExportMetadataRequest {
-  // Required. Destination that metadata is exported to.
+// [Dataprocmetestore.Exportmetedata][google.cloud.metestore.v1alpha.Dataprocmetestore.Exportmetedata].
+message ExportmetedataRequest {
+  // Required. Destination that metedata is exported to.
   oneof destination {
     // A Cloud Storage URI of a folder, in the format
     // `gs://<bucket_name>/<path_inside_bucket>`. A sub-folder
@@ -1376,14 +1376,14 @@ message ExportMetadataRequest {
     string destination_gcs_folder = 2;
   }
 
-  // Required. The relative resource name of the metastore service to run
+  // Required. The relative resource name of the metestore service to run
   // export, in the following form:
   //
   // `projects/{project_id}/locations/{location_id}/services/{service_id}`.
   string service = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 
@@ -1407,31 +1407,31 @@ message ExportMetadataRequest {
       [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Request message for [DataprocMetastore.Restore][].
+// Request message for [Dataprocmetestore.Restore][].
 message RestoreServiceRequest {
-  // Required. The relative resource name of the metastore service to run
+  // Required. The relative resource name of the metestore service to run
   // restore, in the following form:
   //
   // `projects/{project_id}/locations/{location_id}/services/{service_id}`.
   string service = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 
-  // Required. The relative resource name of the metastore service backup to
+  // Required. The relative resource name of the metestore service backup to
   // restore from, in the following form:
   //
   // `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
   string backup = 2 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Backup"
+      type: "metestore.googleapis.com/Backup"
     }
   ];
 
-  // Optional. The type of restore. If unspecified, defaults to `METADATA_ONLY`.
+  // Optional. The type of restore. If unspecified, defaults to `meteDATA_ONLY`.
   Restore.RestoreType restore_type = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. A request ID. Specify a unique request ID to allow the server to
@@ -1449,8 +1449,8 @@ message RestoreServiceRequest {
   string request_id = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents the metadata of a long-running operation.
-message OperationMetadata {
+// Represents the metedata of a long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -1479,22 +1479,22 @@ message OperationMetadata {
   string api_version = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Metadata about the service in a location.
-message LocationMetadata {
-  // A specification of a supported version of the Hive Metastore software.
-  message HiveMetastoreVersion {
-    // The semantic version of the Hive Metastore software.
+// metedata about the service in a location.
+message Locationmetedata {
+  // A specification of a supported version of the Hive metestore software.
+  message HivemetestoreVersion {
+    // The semantic version of the Hive metestore software.
     string version = 1;
 
-    // Whether `version` will be chosen by the server if a metastore service is
-    // created with a `HiveMetastoreConfig` that omits the `version`.
+    // Whether `version` will be chosen by the server if a metestore service is
+    // created with a `HivemetestoreConfig` that omits the `version`.
     bool is_default = 2;
   }
 
-  // The versions of Hive Metastore that can be used when creating a new
-  // metastore service in this location. The server guarantees that exactly one
-  // `HiveMetastoreVersion` in the list will set `is_default`.
-  repeated HiveMetastoreVersion supported_hive_metastore_versions = 1;
+  // The versions of Hive metestore that can be used when creating a new
+  // metestore service in this location. The server guarantees that exactly one
+  // `HivemetestoreVersion` in the list will set `is_default`.
+  repeated HivemetestoreVersion supported_hive_metestore_versions = 1;
 }
 
 // The specification of database dump to import from or export to.
@@ -1513,7 +1513,7 @@ message DatabaseDumpSpec {
 }
 
 // Request message for
-// [DataprocMetastore.RemoveIamPolicy][google.cloud.metastore.v1alpha.DataprocMetastore.RemoveIamPolicy].
+// [Dataprocmetestore.RemoveIamPolicy][google.cloud.metestore.v1alpha.Dataprocmetestore.RemoveIamPolicy].
 message RemoveIamPolicyRequest {
   // Required. The relative resource name of the dataplane resource to remove
   // IAM policy, in the following form:
@@ -1532,52 +1532,52 @@ message RemoveIamPolicyRequest {
 }
 
 // Response message for
-// [DataprocMetastore.RemoveIamPolicy][google.cloud.metastore.v1alpha.DataprocMetastore.RemoveIamPolicy].
+// [Dataprocmetestore.RemoveIamPolicy][google.cloud.metestore.v1alpha.Dataprocmetestore.RemoveIamPolicy].
 message RemoveIamPolicyResponse {
   // True if the policy is successfully removed.
   bool success = 1;
 }
 
 // Request message for
-// [DataprocMetastore.QueryMetadata][google.cloud.metastore.v1alpha.DataprocMetastore.QueryMetadata].
-message QueryMetadataRequest {
-  // Required. The relative resource name of the metastore service to query
-  // metadata, in the following format:
+// [Dataprocmetestore.Querymetedata][google.cloud.metestore.v1alpha.Dataprocmetestore.Querymetedata].
+message QuerymetedataRequest {
+  // Required. The relative resource name of the metestore service to query
+  // metedata, in the following format:
   //
   // `projects/{project_id}/locations/{location_id}/services/{service_id}`.
   string service = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 
-  // Required. A read-only SQL query to execute against the metadata database.
+  // Required. A read-only SQL query to execute against the metedata database.
   // The query cannot change or mutate the data.
   string query = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Response message for
-// [DataprocMetastore.QueryMetadata][google.cloud.metastore.v1alpha.DataprocMetastore.QueryMetadata].
-message QueryMetadataResponse {
+// [Dataprocmetestore.Querymetedata][google.cloud.metestore.v1alpha.Dataprocmetestore.Querymetedata].
+message QuerymetedataResponse {
   // The manifest URI  is link to a JSON instance in Cloud Storage.
-  // This instance manifests immediately along with QueryMetadataResponse. The
+  // This instance manifests immediately along with QuerymetedataResponse. The
   // content of the URI is not retriable until the long-running operation query
-  // against the metadata finishes.
+  // against the metedata finishes.
   string result_manifest_uri = 1;
 }
 
 // Request message for
-// [DataprocMetastore.MoveTableToDatabase][google.cloud.metastore.v1alpha.DataprocMetastore.MoveTableToDatabase].
+// [Dataprocmetestore.MoveTableToDatabase][google.cloud.metestore.v1alpha.Dataprocmetestore.MoveTableToDatabase].
 message MoveTableToDatabaseRequest {
-  // Required. The relative resource name of the metastore service to mutate
-  // metadata, in the following format:
+  // Required. The relative resource name of the metestore service to mutate
+  // metedata, in the following format:
   //
   // `projects/{project_id}/locations/{location_id}/services/{service_id}`.
   string service = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 
@@ -1592,24 +1592,24 @@ message MoveTableToDatabaseRequest {
 }
 
 // Response message for
-// [DataprocMetastore.MoveTableToDatabase][google.cloud.metastore.v1alpha.DataprocMetastore.MoveTableToDatabase].
+// [Dataprocmetestore.MoveTableToDatabase][google.cloud.metestore.v1alpha.Dataprocmetestore.MoveTableToDatabase].
 message MoveTableToDatabaseResponse {}
 
 // Request message for
-// [DataprocMetastore.AlterMetadataResourceLocation][google.cloud.metastore.v1alpha.DataprocMetastore.AlterMetadataResourceLocation].
-message AlterMetadataResourceLocationRequest {
-  // Required. The relative resource name of the metastore service to mutate
-  // metadata, in the following format:
+// [Dataprocmetestore.AltermetedataResourceLocation][google.cloud.metestore.v1alpha.Dataprocmetestore.AltermetedataResourceLocation].
+message AltermetedataResourceLocationRequest {
+  // Required. The relative resource name of the metestore service to mutate
+  // metedata, in the following format:
   //
   // `projects/{project_id}/locations/{location_id}/services/{service_id}`.
   string service = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "metastore.googleapis.com/Service"
+      type: "metestore.googleapis.com/Service"
     }
   ];
 
-  // Required. The relative metadata resource name in the following format.
+  // Required. The relative metedata resource name in the following format.
   //
   // `databases/{database_id}`
   // or
@@ -1618,10 +1618,10 @@ message AlterMetadataResourceLocationRequest {
   // `databases/{database_id}/tables/{table_id}/partitions/{partition_id}`
   string resource_name = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The new location URI for the metadata resource.
+  // Required. The new location URI for the metedata resource.
   string location_uri = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Response message for
-// [DataprocMetastore.AlterMetadataResourceLocation][google.cloud.metastore.v1alpha.DataprocMetastore.AlterMetadataResourceLocation].
-message AlterMetadataResourceLocationResponse {}
+// [Dataprocmetestore.AltermetedataResourceLocation][google.cloud.metestore.v1alpha.Dataprocmetestore.AltermetedataResourceLocation].
+message AltermetedataResourceLocationResponse {}

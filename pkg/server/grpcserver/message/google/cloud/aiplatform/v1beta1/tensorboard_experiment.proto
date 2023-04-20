@@ -55,7 +55,7 @@ message TensorboardExperiment {
   google.protobuf.Timestamp update_time = 5
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The labels with user-defined metadata to organize your Datasets.
+  // The labels with user-defined metedata to organize your Datasets.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -66,9 +66,9 @@ message TensorboardExperiment {
   // See https://goo.gl/xmQnxf for more information and examples of labels.
   // System reserved label keys are prefixed with "aiplatform.googleapis.com/"
   // and are immutable. Following system labels exist for each Dataset:
-  // * "aiplatform.googleapis.com/dataset_metadata_schema":
+  // * "aiplatform.googleapis.com/dataset_metedata_schema":
   //   - output only, its value is the
-  //   [metadata_schema's][metadata_schema_uri] title.
+  //   [metedata_schema's][metedata_schema_uri] title.
   map<string, string> labels = 6;
 
   // Used to perform consistent read-modify-write updates. If not set, a blind

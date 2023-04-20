@@ -8,7 +8,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata
+- name: google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationmetedata
 - name: google.cloud.assuredworkloads.v1beta1.Workload
 
 backend:

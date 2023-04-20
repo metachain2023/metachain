@@ -205,10 +205,10 @@ enum EncodingType {
 // a person, an organization, or location. The API associates information, such
 // as salience and mentions, with entities.
 message Entity {
-  // The type of the entity. For most entity types, the associated metadata is a
+  // The type of the entity. For most entity types, the associated metedata is a
   // Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`). The table
   // below lists the associated fields for entities that have different
-  // metadata.
+  // metedata.
   enum Type {
     // Unknown
     UNKNOWN = 0;
@@ -236,7 +236,7 @@ message Entity {
 
     // Phone number
     //
-    // The metadata lists the phone number, formatted according to local
+    // The metedata lists the phone number, formatted according to local
     // convention, plus whichever additional elements appear in the text:
     //
     // * `number` - the actual number, broken down into sections as per local
@@ -249,7 +249,7 @@ message Entity {
 
     // Address
     //
-    // The metadata identifies the street number and locality plus whichever
+    // The metedata identifies the street number and locality plus whichever
     // additional elements appear in the text:
     //
     // * `street_number` - street number
@@ -266,7 +266,7 @@ message Entity {
 
     // Date
     //
-    // The metadata identifies the components of the date:
+    // The metedata identifies the components of the date:
     //
     // * `year` - four digit year, if detected
     // * `month` - two digit month number, if detected
@@ -275,12 +275,12 @@ message Entity {
 
     // Number
     //
-    // The metadata is the number itself.
+    // The metedata is the number itself.
     NUMBER = 12;
 
     // Price
     //
-    // The metadata identifies the `value` and `currency`.
+    // The metedata identifies the `value` and `currency`.
     PRICE = 13;
   }
 
@@ -290,12 +290,12 @@ message Entity {
   // The entity type.
   Type type = 2;
 
-  // Metadata associated with the entity.
+  // metedata associated with the entity.
   //
-  // For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-  // and Knowledge Graph MID (`mid`), if they are available. For the metadata
+  // For most entity types, the metedata is a Wikipedia URL (`wikipedia_url`)
+  // and Knowledge Graph MID (`mid`), if they are available. For the metedata
   // associated with other entity types, see the Type table below.
-  map<string, string> metadata = 3;
+  map<string, string> metedata = 3;
 
   // The salience score associated with the entity in the [0, 1.0] range.
   //

@@ -263,7 +263,7 @@ message Table {
   // The name of the table.
   TableName table_name = 1;
 
-  // User-provided metadata for the table.
+  // User-provided metedata for the table.
   TableInfo info = 2;
 
   // A JSON representation of the table's schema.
@@ -291,7 +291,7 @@ message Table {
   EncryptionInfo encryption = 10;
 }
 
-// User-provided metadata for a table.
+// User-provided metedata for a table.
 message TableInfo {
   // A short name for the table, such as`"Analytics Data - Jan 2011"`.
   string friendly_name = 1;
@@ -317,7 +317,7 @@ message Dataset {
   // The name of the dataset.
   DatasetName dataset_name = 1;
 
-  // User-provided metadata for the dataset.
+  // User-provided metedata for the dataset.
   DatasetInfo info = 2;
 
   // The time the dataset was created.
@@ -336,7 +336,7 @@ message Dataset {
   google.protobuf.Duration default_table_expire_duration = 8;
 }
 
-// User-provided metadata for a dataset.
+// User-provided metedata for a dataset.
 message DatasetInfo {
   // A short name for the dataset, such as`"Analytics Data 2011"`.
   string friendly_name = 1;

@@ -38,9 +38,9 @@ option java_package = "com.google.bytestream";
 //   multiple times with the same resource and can check the status of the write
 //   by calling `QueryWriteStatus()`.
 //
-// #### Service parameters and metadata
+// #### Service parameters and metedata
 //
-// The ByteStream API provides no direct way to access/modify any metadata
+// The ByteStream API provides no direct way to access/modify any metedata
 // associated with the resource.
 //
 // #### Errors

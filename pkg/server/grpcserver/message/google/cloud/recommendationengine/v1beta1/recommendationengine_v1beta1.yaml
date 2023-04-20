@@ -12,9 +12,9 @@ apis:
 types:
 - name: google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse
 - name: google.cloud.recommendationengine.v1beta1.ImportErrorsConfig
-- name: google.cloud.recommendationengine.v1beta1.ImportMetadata
+- name: google.cloud.recommendationengine.v1beta1.Importmetedata
 - name: google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse
-- name: google.cloud.recommendationengine.v1beta1.PurgeUserEventsMetadata
+- name: google.cloud.recommendationengine.v1beta1.PurgeUserEventsmetedata
 - name: google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse
 
 documentation:

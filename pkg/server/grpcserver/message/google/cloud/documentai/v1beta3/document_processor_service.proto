@@ -24,7 +24,7 @@ import "google/cloud/documentai/v1beta3/document.proto";
 import "google/cloud/documentai/v1beta3/document_io.proto";
 import "google/cloud/documentai/v1beta3/document_schema.proto";
 import "google/cloud/documentai/v1beta3/evaluation.proto";
-import "google/cloud/documentai/v1beta3/operation_metadata.proto";
+import "google/cloud/documentai/v1beta3/operation_metedata.proto";
 import "google/cloud/documentai/v1beta3/processor.proto";
 import "google/cloud/documentai/v1beta3/processor_type.proto";
 import "google/longrunning/operations.proto";
@@ -85,7 +85,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "BatchProcessResponse"
-      metadata_type: "BatchProcessMetadata"
+      metedata_type: "BatchProcessmetedata"
     };
   }
 
@@ -133,8 +133,8 @@ service DocumentProcessorService {
   }
 
   // Trains a new processor version.
-  // Operation metadata is returned as
-  // cloud_documentai_core.TrainProcessorVersionMetadata.
+  // Operation metedata is returned as
+  // cloud_documentai_core.TrainProcessorVersionmetedata.
   rpc TrainProcessorVersion(TrainProcessorVersionRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -144,7 +144,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "parent,processor_version";
     option (google.longrunning.operation_info) = {
       response_type: "TrainProcessorVersionResponse"
-      metadata_type: "TrainProcessorVersionMetadata"
+      metedata_type: "TrainProcessorVersionmetedata"
     };
   }
 
@@ -176,7 +176,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteProcessorVersionMetadata"
+      metedata_type: "DeleteProcessorVersionmetedata"
     };
   }
 
@@ -190,7 +190,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "DeployProcessorVersionResponse"
-      metadata_type: "DeployProcessorVersionMetadata"
+      metedata_type: "DeployProcessorVersionmetedata"
     };
   }
 
@@ -204,7 +204,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "UndeployProcessorVersionResponse"
-      metadata_type: "UndeployProcessorVersionMetadata"
+      metedata_type: "UndeployProcessorVersionmetedata"
     };
   }
 
@@ -228,7 +228,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteProcessorMetadata"
+      metedata_type: "DeleteProcessormetedata"
     };
   }
 
@@ -241,7 +241,7 @@ service DocumentProcessorService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "EnableProcessorResponse"
-      metadata_type: "EnableProcessorMetadata"
+      metedata_type: "EnableProcessormetedata"
     };
   }
 
@@ -254,7 +254,7 @@ service DocumentProcessorService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "DisableProcessorResponse"
-      metadata_type: "DisableProcessorMetadata"
+      metedata_type: "DisableProcessormetedata"
     };
   }
 
@@ -271,7 +271,7 @@ service DocumentProcessorService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "SetDefaultProcessorVersionResponse"
-      metadata_type: "SetDefaultProcessorVersionMetadata"
+      metedata_type: "SetDefaultProcessorVersionmetedata"
     };
   }
 
@@ -286,7 +286,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "human_review_config";
     option (google.longrunning.operation_info) = {
       response_type: "ReviewDocumentResponse"
-      metadata_type: "ReviewDocumentOperationMetadata"
+      metedata_type: "ReviewDocumentOperationmetedata"
     };
   }
 
@@ -301,7 +301,7 @@ service DocumentProcessorService {
     option (google.api.method_signature) = "processor_version";
     option (google.longrunning.operation_info) = {
       response_type: "EvaluateProcessorVersionResponse"
-      metadata_type: "EvaluateProcessorVersionMetadata"
+      metedata_type: "EvaluateProcessorVersionmetedata"
     };
   }
 
@@ -403,7 +403,7 @@ message HumanReviewStatus {
 
   // The name of the operation triggered by the processed document. This field
   // is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has
-  // the same response type and metadata as the long running operation returned
+  // the same response type and metedata as the long running operation returned
   // by [ReviewDocument] method.
   string human_review_operation = 3;
 }
@@ -416,7 +416,7 @@ message ProcessResponse {
 
   // The name of the operation triggered by the processed document. If the human
   // review process is not triggered, this field will be empty. It has the same
-  // response type and metadata as the long running operation returned by
+  // response type and metedata as the long running operation returned by
   // ReviewDocument method.
   string human_review_operation = 2 [deprecated = true];
 
@@ -481,8 +481,8 @@ message BatchProcessRequest {
 // Response message for batch process document method.
 message BatchProcessResponse {}
 
-// The long running operation metadata for batch process method.
-message BatchProcessMetadata {
+// The long running operation metedata for batch process method.
+message BatchProcessmetedata {
   // The status of a each individual document in the batch process.
   message IndividualProcessStatus {
     // The source of the document, same as the [input_gcs_source] field in the
@@ -500,7 +500,7 @@ message BatchProcessMetadata {
 
     // The name of the operation triggered by the processed document. If the
     // human review process is not triggered, this field will be empty. It has
-    // the same response type and metadata as the long running operation
+    // the same response type and metedata as the long running operation
     // returned by ReviewDocument method.
     string human_review_operation = 4 [deprecated = true];
 
@@ -703,10 +703,10 @@ message DeleteProcessorVersionRequest {
   ];
 }
 
-// The long running operation metadata for delete processor version method.
-message DeleteProcessorVersionMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 1;
+// The long running operation metedata for delete processor version method.
+message DeleteProcessorVersionmetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 1;
 }
 
 // Request message for the deploy processor version method.
@@ -723,10 +723,10 @@ message DeployProcessorVersionRequest {
 // Response message for the deploy processor version method.
 message DeployProcessorVersionResponse {}
 
-// The long running operation metadata for deploy processor version method.
-message DeployProcessorVersionMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 1;
+// The long running operation metedata for deploy processor version method.
+message DeployProcessorVersionmetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 1;
 }
 
 // Request message for the undeploy processor version method.
@@ -743,11 +743,11 @@ message UndeployProcessorVersionRequest {
 // Response message for the undeploy processor version method.
 message UndeployProcessorVersionResponse {}
 
-// The long running operation metadata for the undeploy processor version
+// The long running operation metedata for the undeploy processor version
 // method.
-message UndeployProcessorVersionMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 1;
+message UndeployProcessorVersionmetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 1;
 }
 
 // Request message for create a processor. Notice this request is sent to
@@ -780,10 +780,10 @@ message DeleteProcessorRequest {
   ];
 }
 
-// The long running operation metadata for delete processor method.
-message DeleteProcessorMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 5;
+// The long running operation metedata for delete processor method.
+message DeleteProcessormetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 5;
 }
 
 // Request message for the enable processor method.
@@ -801,10 +801,10 @@ message EnableProcessorRequest {
 // Intentionally empty proto for adding fields in future.
 message EnableProcessorResponse {}
 
-// The long running operation metadata for enable processor method.
-message EnableProcessorMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 5;
+// The long running operation metedata for enable processor method.
+message EnableProcessormetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 5;
 }
 
 // Request message for the disable processor method.
@@ -822,10 +822,10 @@ message DisableProcessorRequest {
 // Intentionally empty proto for adding fields in future.
 message DisableProcessorResponse {}
 
-// The long running operation metadata for disable processor method.
-message DisableProcessorMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 5;
+// The long running operation metedata for disable processor method.
+message DisableProcessormetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 5;
 }
 
 // Request message for the set default processor version method.
@@ -855,11 +855,11 @@ message SetDefaultProcessorVersionRequest {
 // Response message for set default processor version method.
 message SetDefaultProcessorVersionResponse {}
 
-// The long running operation metadata for set default processor version
+// The long running operation metedata for set default processor version
 // method.
-message SetDefaultProcessorVersionMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 1;
+message SetDefaultProcessorVersionmetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 1;
 }
 
 // Request message for the create processor version method.
@@ -905,8 +905,8 @@ message TrainProcessorVersionResponse {
   string processor_version = 1;
 }
 
-// The metadata that represents a processor version being created.
-message TrainProcessorVersionMetadata {
+// The metedata that represents a processor version being created.
+message TrainProcessorVersionmetedata {
   // The dataset validation information.
   // This includes any and all errors with documents and the dataset.
   message DatasetValidation {
@@ -927,8 +927,8 @@ message TrainProcessorVersionMetadata {
     repeated google.rpc.Status dataset_errors = 2;
   }
 
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 1;
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 1;
 
   // The training dataset validation information.
   DatasetValidation training_dataset_validation = 2;
@@ -1002,8 +1002,8 @@ message ReviewDocumentResponse {
   string rejection_reason = 3;
 }
 
-// The long running operation metadata for review document method.
-message ReviewDocumentOperationMetadata {
+// The long running operation metedata for review document method.
+message ReviewDocumentOperationmetedata {
   // State of the longrunning operation.
   enum State {
     // Unspecified state.
@@ -1038,8 +1038,8 @@ message ReviewDocumentOperationMetadata {
   // The last update time of the operation.
   google.protobuf.Timestamp update_time = 4;
 
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 5;
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 5;
 
   // The Crowd Compute question ID.
   string question_id = 6;
@@ -1064,13 +1064,13 @@ message EvaluateProcessorVersionRequest {
       [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Metadata of the EvaluateProcessorVersion method.
-message EvaluateProcessorVersionMetadata {
-  // The basic metadata of the long running operation.
-  CommonOperationMetadata common_metadata = 1;
+// metedata of the EvaluateProcessorVersion method.
+message EvaluateProcessorVersionmetedata {
+  // The basic metedata of the long running operation.
+  CommonOperationmetedata common_metedata = 1;
 }
 
-// Metadata of the EvaluateProcessorVersion method.
+// metedata of the EvaluateProcessorVersion method.
 message EvaluateProcessorVersionResponse {
   // The resource name of the created evaluation.
   string evaluation = 2;

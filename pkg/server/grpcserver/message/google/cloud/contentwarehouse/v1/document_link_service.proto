@@ -95,9 +95,9 @@ message ListLinkedTargetsRequest {
     }
   ];
 
-  // The meta information collected about the document creator, used to enforce
+  // The mete information collected about the document creator, used to enforce
   // access control for the service.
-  RequestMetadata request_metadata = 2;
+  Requestmetedata request_metedata = 2;
 }
 
 // Response message for DocumentLinkService.ListLinkedSources.
@@ -136,9 +136,9 @@ message ListLinkedSourcesRequest {
   // must match the call that provided the page token.
   string page_token = 4;
 
-  // The meta information collected about the document creator, used to enforce
+  // The mete information collected about the document creator, used to enforce
   // access control for the service.
-  RequestMetadata request_metadata = 2;
+  Requestmetedata request_metedata = 2;
 }
 
 // A document-link between source and target document.
@@ -204,9 +204,9 @@ message CreateDocumentLinkRequest {
   // Required. Document links associated with the source documents (source_document_id).
   DocumentLink document_link = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The meta information collected about the document creator, used to enforce
+  // The mete information collected about the document creator, used to enforce
   // access control for the service.
-  RequestMetadata request_metadata = 3;
+  Requestmetedata request_metedata = 3;
 }
 
 // Request message for DocumentLinkService.DeleteDocumentLink.
@@ -221,7 +221,7 @@ message DeleteDocumentLinkRequest {
     }
   ];
 
-  // The meta information collected about the document creator, used to enforce
+  // The mete information collected about the document creator, used to enforce
   // access control for the service.
-  RequestMetadata request_metadata = 2;
+  Requestmetedata request_metedata = 2;
 }

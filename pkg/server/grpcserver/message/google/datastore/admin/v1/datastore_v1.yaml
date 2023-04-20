@@ -8,11 +8,11 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata
-- name: google.datastore.admin.v1.ExportEntitiesMetadata
+- name: google.datastore.admin.v1.DatastoreFirestoreMigrationmetedata
+- name: google.datastore.admin.v1.ExportEntitiesmetedata
 - name: google.datastore.admin.v1.ExportEntitiesResponse
-- name: google.datastore.admin.v1.ImportEntitiesMetadata
-- name: google.datastore.admin.v1.IndexOperationMetadata
+- name: google.datastore.admin.v1.ImportEntitiesmetedata
+- name: google.datastore.admin.v1.IndexOperationmetedata
 - name: google.datastore.admin.v1.MigrationProgressEvent
 - name: google.datastore.admin.v1.MigrationStateEvent
 

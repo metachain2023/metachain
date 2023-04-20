@@ -908,7 +908,7 @@ message PushConfig {
   // The only currently supported attribute is `x-goog-version`, which you can
   // use to change the format of the pushed message. This attribute
   // indicates the version of the data expected by the endpoint. This
-  // controls the shape of the pushed message (i.e., its fields and metadata).
+  // controls the shape of the pushed message (i.e., its fields and metedata).
   //
   // If not present during the `CreateSubscription` call, it will default to
   // the version of the Pub/Sub API used to make such call. If not present in a
@@ -970,7 +970,7 @@ message BigQueryConfig {
   // subscription name, message_id, and publish_time fields are put in their own
   // columns while all other message properties (other than data) are written to
   // a JSON object in the attributes column.
-  bool write_metadata = 3;
+  bool write_metedata = 3;
 
   // When true and use_topic_schema is true, any fields that are a part of the
   // topic schema that are not part of the BigQuery table schema are dropped

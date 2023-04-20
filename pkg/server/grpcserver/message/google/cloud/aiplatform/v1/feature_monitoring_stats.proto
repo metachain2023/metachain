@@ -48,7 +48,7 @@ message FeatureStatsAnomaly {
   // Format: gs://<bucket_name>/<object_name>/stats.
   // Example: gs://monitoring_bucket/feature_name/stats.
   // Stats are stored as binary format with Protobuf message
-  // [tensorflow.metadata.v0.FeatureNameStatistics](https://github.com/tensorflow/metadata/blob/master/tensorflow_metadata/proto/v0/statistics.proto).
+  // [tensorflow.metedata.v0.FeatureNameStatistics](https://github.com/tensorflow/metedata/blob/master/tensorflow_metedata/proto/v0/statistics.proto).
   string stats_uri = 3;
 
   // Path of the anomaly file for current feature values in Cloud Storage
@@ -57,8 +57,8 @@ message FeatureStatsAnomaly {
   // Example: gs://monitoring_bucket/feature_name/anomalies.
   // Stats are stored as binary format with Protobuf message
   // Anoamlies are stored as binary format with Protobuf message
-  // [tensorflow.metadata.v0.AnomalyInfo]
-  // (https://github.com/tensorflow/metadata/blob/master/tensorflow_metadata/proto/v0/anomalies.proto).
+  // [tensorflow.metedata.v0.AnomalyInfo]
+  // (https://github.com/tensorflow/metedata/blob/master/tensorflow_metedata/proto/v0/anomalies.proto).
   string anomaly_uri = 4;
 
   // Deviation from the current stats to baseline stats.

@@ -48,7 +48,7 @@ message Annotation {
   // The schema files that can be used here are found in
   // gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
   // chosen schema must be consistent with the parent Dataset's
-  // [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri].
+  // [metedata][google.cloud.aiplatform.v1.Dataset.metedata_schema_uri].
   string payload_schema_uri = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The schema of the payload can be found in
@@ -71,7 +71,7 @@ message Annotation {
   UserActionReference annotation_source = 5
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. The labels with user-defined metadata to organize your
+  // Optional. The labels with user-defined metedata to organize your
   // Annotations.
   //
   // Label keys and values can be no longer than 64 characters

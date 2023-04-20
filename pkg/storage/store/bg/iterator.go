@@ -1,7 +1,7 @@
 package bg
 
 import (
-	"metachain/pkg/storage/store"
+	"metechain/pkg/storage/store"
 
 	"github.com/dgraph-io/badger"
 )

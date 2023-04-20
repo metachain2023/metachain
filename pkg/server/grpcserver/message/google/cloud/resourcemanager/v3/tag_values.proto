@@ -71,7 +71,7 @@ service TagValues {
     option (google.api.method_signature) = "tag_value";
     option (google.longrunning.operation_info) = {
       response_type: "TagValue"
-      metadata_type: "CreateTagValueMetadata"
+      metedata_type: "CreateTagValuemetedata"
     };
   }
 
@@ -84,7 +84,7 @@ service TagValues {
     option (google.api.method_signature) = "tag_value,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "TagValue"
-      metadata_type: "UpdateTagValueMetadata"
+      metedata_type: "UpdateTagValuemetedata"
     };
   }
 
@@ -97,7 +97,7 @@ service TagValues {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "TagValue"
-      metadata_type: "DeleteTagValueMetadata"
+      metedata_type: "DeleteTagValuemetedata"
     };
   }
 
@@ -246,7 +246,7 @@ message CreateTagValueRequest {
 }
 
 // Runtime operation information for creating a TagValue.
-message CreateTagValueMetadata {
+message CreateTagValuemetedata {
 
 }
 
@@ -267,7 +267,7 @@ message UpdateTagValueRequest {
 }
 
 // Runtime operation information for updating a TagValue.
-message UpdateTagValueMetadata {
+message UpdateTagValuemetedata {
 
 }
 
@@ -291,6 +291,6 @@ message DeleteTagValueRequest {
 }
 
 // Runtime operation information for deleting a TagValue.
-message DeleteTagValueMetadata {
+message DeleteTagValuemetedata {
 
 }

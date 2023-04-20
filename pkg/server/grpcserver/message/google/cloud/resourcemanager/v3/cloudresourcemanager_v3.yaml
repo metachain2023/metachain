@@ -12,30 +12,30 @@ apis:
 - name: google.cloud.resourcemanager.v3.TagValues
 
 types:
-- name: google.cloud.resourcemanager.v3.CreateFolderMetadata
-- name: google.cloud.resourcemanager.v3.CreateProjectMetadata
-- name: google.cloud.resourcemanager.v3.CreateTagBindingMetadata
-- name: google.cloud.resourcemanager.v3.CreateTagKeyMetadata
-- name: google.cloud.resourcemanager.v3.CreateTagValueMetadata
-- name: google.cloud.resourcemanager.v3.DeleteFolderMetadata
-- name: google.cloud.resourcemanager.v3.DeleteOrganizationMetadata
-- name: google.cloud.resourcemanager.v3.DeleteProjectMetadata
-- name: google.cloud.resourcemanager.v3.DeleteTagBindingMetadata
-- name: google.cloud.resourcemanager.v3.DeleteTagKeyMetadata
-- name: google.cloud.resourcemanager.v3.DeleteTagValueMetadata
-- name: google.cloud.resourcemanager.v3.MoveFolderMetadata
-- name: google.cloud.resourcemanager.v3.MoveProjectMetadata
-- name: google.cloud.resourcemanager.v3.UndeleteFolderMetadata
-- name: google.cloud.resourcemanager.v3.UndeleteOrganizationMetadata
-- name: google.cloud.resourcemanager.v3.UndeleteProjectMetadata
-- name: google.cloud.resourcemanager.v3.UpdateFolderMetadata
-- name: google.cloud.resourcemanager.v3.UpdateProjectMetadata
-- name: google.cloud.resourcemanager.v3.UpdateTagKeyMetadata
-- name: google.cloud.resourcemanager.v3.UpdateTagValueMetadata
+- name: google.cloud.resourcemanager.v3.CreateFoldermetedata
+- name: google.cloud.resourcemanager.v3.CreateProjectmetedata
+- name: google.cloud.resourcemanager.v3.CreateTagBindingmetedata
+- name: google.cloud.resourcemanager.v3.CreateTagKeymetedata
+- name: google.cloud.resourcemanager.v3.CreateTagValuemetedata
+- name: google.cloud.resourcemanager.v3.DeleteFoldermetedata
+- name: google.cloud.resourcemanager.v3.DeleteOrganizationmetedata
+- name: google.cloud.resourcemanager.v3.DeleteProjectmetedata
+- name: google.cloud.resourcemanager.v3.DeleteTagBindingmetedata
+- name: google.cloud.resourcemanager.v3.DeleteTagKeymetedata
+- name: google.cloud.resourcemanager.v3.DeleteTagValuemetedata
+- name: google.cloud.resourcemanager.v3.MoveFoldermetedata
+- name: google.cloud.resourcemanager.v3.MoveProjectmetedata
+- name: google.cloud.resourcemanager.v3.UndeleteFoldermetedata
+- name: google.cloud.resourcemanager.v3.UndeleteOrganizationmetedata
+- name: google.cloud.resourcemanager.v3.UndeleteProjectmetedata
+- name: google.cloud.resourcemanager.v3.UpdateFoldermetedata
+- name: google.cloud.resourcemanager.v3.UpdateProjectmetedata
+- name: google.cloud.resourcemanager.v3.UpdateTagKeymetedata
+- name: google.cloud.resourcemanager.v3.UpdateTagValuemetedata
 
 documentation:
   summary: |-
-    Creates, reads, and updates metadata for Google Cloud Platform resource
+    Creates, reads, and updates metedata for Google Cloud Platform resource
     containers.
 
 backend:

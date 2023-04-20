@@ -46,7 +46,7 @@ service Provisioning {
     option (google.api.method_signature) = "parent,instance,instance_id";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -58,7 +58,7 @@ service Provisioning {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -113,8 +113,8 @@ message GetInstanceRequest {
   ];
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"strconv"
 
-	"metachain/pkg/blockchain"
-	"metachain/pkg/config"
-	"metachain/pkg/server/contractServer/client"
-	"metachain/pkg/txpool"
+	"metechain/pkg/blockchain"
+	"metechain/pkg/config"
+	"metechain/pkg/server/contractServer/client"
+	"metechain/pkg/txpool"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"

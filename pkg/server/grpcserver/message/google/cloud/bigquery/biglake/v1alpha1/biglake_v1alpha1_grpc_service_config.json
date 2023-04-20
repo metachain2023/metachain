@@ -3,7 +3,7 @@
     {
       "name": [
         {
-          "service": "google.cloud.bigquery.biglake.v1alpha1.MetastoreService"
+          "service": "google.cloud.bigquery.biglake.v1alpha1.metestoreService"
         }
       ],
       "timeout": "60s",

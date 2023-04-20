@@ -81,7 +81,7 @@ service ClusterManager {
   // on that node to communicate with all other instances in the
   // cluster.
   //
-  // Finally, an entry is added to the project's global metadata indicating
+  // Finally, an entry is added to the project's global metedata indicating
   // which CIDR range the cluster is using.
   rpc CreateCluster(CreateClusterRequest) returns (Operation) {
     option (google.api.http) = {
@@ -641,12 +641,12 @@ message NodeConfig {
   // Account is specified, the "default" service account is used.
   string service_account = 9;
 
-  // The metadata key/value pairs assigned to instances in the cluster.
+  // The metedata key/value pairs assigned to instances in the cluster.
   //
   // Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
-  // in length. These are reflected as part of a URL in the metadata server.
+  // in length. These are reflected as part of a URL in the metedata server.
   // Additionally, to avoid ambiguity, keys must not conflict with any other
-  // metadata keys for the project or be one of the reserved keys:
+  // metedata keys for the project or be one of the reserved keys:
   //
   //  - "cluster-location"
   //  - "cluster-name"
@@ -673,7 +673,7 @@ message NodeConfig {
   // that each value's size must be less than or equal to 32 KB.
   //
   // The total size of all keys and values must be less than 512 KB.
-  map<string, string> metadata = 4;
+  map<string, string> metedata = 4;
 
   // The image type to use for this node. Note that for a given image type,
   // the latest version of it will be used. Please see
@@ -745,8 +745,8 @@ message NodeConfig {
   // platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
   string min_cpu_platform = 13;
 
-  // The workload metadata configuration for this node.
-  WorkloadMetadataConfig workload_metadata_config = 14;
+  // The workload metedata configuration for this node.
+  WorkloadmetedataConfig workload_metedata_config = 14;
 
   // List of kubernetes taints to be applied to each node.
   //
@@ -2102,7 +2102,7 @@ message ClusterUpdate {
 
   // The node pool to be upgraded. This field is mandatory if
   // "desired_node_version", "desired_image_family",
-  // "desired_node_pool_autoscaling", or "desired_workload_metadata_config"
+  // "desired_node_pool_autoscaling", or "desired_workload_metedata_config"
   // is specified and there is more than one node pool on the cluster.
   string desired_node_pool_id = 7;
 
@@ -2572,8 +2572,8 @@ message UpdateNodePoolRequest {
   // depending on whether locations are being added or removed.
   repeated string locations = 13;
 
-  // The desired workload metadata config for the node pool.
-  WorkloadMetadataConfig workload_metadata_config = 14;
+  // The desired workload metedata config for the node pool.
+  WorkloadmetedataConfig workload_metedata_config = 14;
 
   // The name (project, location, cluster, node pool) of the node pool to
   // update. Specified in the format
@@ -4112,58 +4112,58 @@ message ManagedPrometheusConfig {
   bool enabled = 1;
 }
 
-// WorkloadMetadataConfig defines the metadata configuration to expose to
+// WorkloadmetedataConfig defines the metedata configuration to expose to
 // workloads on the node pool.
-message WorkloadMetadataConfig {
-  // NodeMetadata is the configuration for if and how to expose the node
-  // metadata to the workload running on the node.
-  enum NodeMetadata {
+message WorkloadmetedataConfig {
+  // Nodemetedata is the configuration for if and how to expose the node
+  // metedata to the workload running on the node.
+  enum Nodemetedata {
     // Not set.
     UNSPECIFIED = 0;
 
-    // Prevent workloads not in hostNetwork from accessing certain VM metadata,
+    // Prevent workloads not in hostNetwork from accessing certain VM metedata,
     // specifically kube-env, which contains Kubelet credentials, and the
     // instance identity token.
     //
-    // Metadata concealment is a temporary security solution available while the
+    // metedata concealment is a temporary security solution available while the
     // bootstrapping process for cluster nodes is being redesigned with
     // significant security improvements.  This feature is scheduled to be
     // deprecated in the future and later removed.
     SECURE = 1;
 
-    // Expose all VM metadata to pods.
+    // Expose all VM metedata to pods.
     EXPOSE = 2;
 
-    // Run the GKE Metadata Server on this node. The GKE Metadata Server exposes
-    // a metadata API to workloads that is compatible with the V1 Compute
-    // Metadata APIs exposed by the Compute Engine and App Engine Metadata
+    // Run the GKE metedata Server on this node. The GKE metedata Server exposes
+    // a metedata API to workloads that is compatible with the V1 Compute
+    // metedata APIs exposed by the Compute Engine and App Engine metedata
     // Servers. This feature can only be enabled if Workload Identity is enabled
     // at the cluster level.
-    GKE_METADATA_SERVER = 3;
+    GKE_meteDATA_SERVER = 3;
   }
 
-  // Mode is the configuration for how to expose metadata to workloads running
+  // Mode is the configuration for how to expose metedata to workloads running
   // on the node.
   enum Mode {
     // Not set.
     MODE_UNSPECIFIED = 0;
 
-    // Expose all Compute Engine metadata to pods.
-    GCE_METADATA = 1;
+    // Expose all Compute Engine metedata to pods.
+    GCE_meteDATA = 1;
 
-    // Run the GKE Metadata Server on this node. The GKE Metadata Server exposes
-    // a metadata API to workloads that is compatible with the V1 Compute
-    // Metadata APIs exposed by the Compute Engine and App Engine Metadata
+    // Run the GKE metedata Server on this node. The GKE metedata Server exposes
+    // a metedata API to workloads that is compatible with the V1 Compute
+    // metedata APIs exposed by the Compute Engine and App Engine metedata
     // Servers. This feature can only be enabled if Workload Identity is enabled
     // at the cluster level.
-    GKE_METADATA = 2;
+    GKE_meteDATA = 2;
   }
 
-  // NodeMetadata is the configuration for how to expose metadata to the
+  // Nodemetedata is the configuration for how to expose metedata to the
   // workloads running on the node.
-  NodeMetadata node_metadata = 1 [deprecated = true];
+  Nodemetedata node_metedata = 1 [deprecated = true];
 
-  // Mode is the configuration for how to expose metadata to workloads running
+  // Mode is the configuration for how to expose metedata to workloads running
   // on the node pool.
   Mode mode = 2;
 }

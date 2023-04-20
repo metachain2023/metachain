@@ -70,7 +70,7 @@ message Pose {
   double altitude = 2;
 
   // The following pose parameters pertain to the center of the photo. They
-  // match https://developers.google.com/streetview/spherical-metadata.
+  // match https://developers.google.com/streetview/spherical-metedata.
   // Compass heading, measured at the center of the photo in degrees clockwise
   // from North. Value must be >=0 and <360. NaN indicates an unmeasured
   // quantity.
@@ -132,7 +132,7 @@ message Imu {
   repeated Measurement3d mag_ut = 3;
 }
 
-// Place metadata for an entity.
+// Place metedata for an entity.
 message Place {
   // Place identifier, as described in
   // https://developers.google.com/places/place-id.
@@ -153,7 +153,7 @@ message Connection {
   PhotoId target = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Photo is used to store 360 photos along with photo metadata.
+// Photo is used to store 360 photos along with photo metedata.
 message Photo {
   // Status of rights transfer.
   enum TransferStatus {
@@ -230,7 +230,7 @@ message Photo {
 
   // Optional. Absolute time when the photo was captured.
   // When the photo has no exif timestamp, this is used to set a timestamp in
-  // the photo metadata.
+  // the photo metedata.
   google.protobuf.Timestamp capture_time = 6 [(google.api.field_behavior) = OPTIONAL];
 
   // Output only. Time when the image was uploaded.
@@ -249,15 +249,15 @@ message Photo {
   MapsPublishStatus maps_publish_status = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// A sequence of 360 photos along with metadata.
+// A sequence of 360 photos along with metedata.
 message PhotoSequence {
   // Primary source of GPS measurements.
   enum GpsSource {
     // GPS in raw_gps_timeline takes precedence if it exists.
     PHOTO_SEQUENCE = 0;
 
-    // GPS in Camera Motion Metadata Track (CAMM) takes precedence if it exists.
-    CAMERA_MOTION_METADATA_TRACK = 1;
+    // GPS in Camera Motion metedata Track (CAMM) takes precedence if it exists.
+    CAMERA_MOTION_meteDATA_TRACK = 1;
   }
 
   // Output only. Unique identifier for the photo sequence.
@@ -285,14 +285,14 @@ message PhotoSequence {
   // aren't time synced with each photo.
   // These raw measurements will be used to infer the pose of each frame.
   // Required in input when InputType is VIDEO and raw GPS measurements are not
-  // in Camera Motion Metadata Track (CAMM).
+  // in Camera Motion metedata Track (CAMM).
   // User can indicate which takes precedence using gps_source if raw GPS
   // measurements are provided in both raw_gps_timeline and
-  // Camera Motion Metadata Track (CAMM).
+  // Camera Motion metedata Track (CAMM).
   repeated Pose raw_gps_timeline = 7 [(google.api.field_behavior) = INPUT_ONLY];
 
   // Input only. If both raw_gps_timeline and
-  // the Camera Motion Metadata Track (CAMM) contain GPS measurements,
+  // the Camera Motion metedata Track (CAMM) contain GPS measurements,
   // indicate which takes precedence.
   GpsSource gps_source = 8 [(google.api.field_behavior) = INPUT_ONLY];
 

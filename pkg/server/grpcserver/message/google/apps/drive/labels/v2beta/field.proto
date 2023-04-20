@@ -28,7 +28,7 @@ option java_package = "com.google.apps.drive.labels.v2beta";
 option objc_class_prefix = "DLBL";
 
 // Defines a field that has a display name, data type, and other
-// configuration options. This field defines the kind of metadata that may be
+// configuration options. This field defines the kind of metedata that may be
 // set on a Drive item.
 message Field {
   // The basic properties of the field.
@@ -80,9 +80,9 @@ message Field {
     bool can_enable = 4;
   }
 
-  // The capabilities related to this field on applied metadata.
+  // The capabilities related to this field on applied metedata.
   message AppliedCapabilities {
-    // Whether the user can read related applied metadata on items.
+    // Whether the user can read related applied metedata on items.
     bool can_read = 1;
 
     // Whether the user can search for Drive items referencing this field.
@@ -224,9 +224,9 @@ message Field {
         bool can_enable = 4;
       }
 
-      // The capabilities related to this choice on applied metadata.
+      // The capabilities related to this choice on applied metedata.
       message AppliedCapabilities {
-        // Whether the user can read related applied metadata on items.
+        // Whether the user can read related applied metedata on items.
         bool can_read = 1;
 
         // Whether the user can use this choice in search queries.
@@ -256,7 +256,7 @@ message Field {
           [(google.api.field_behavior) = OUTPUT_ONLY];
 
       // Output only. The capabilities related to this choice on applied
-      // metadata.
+      // metedata.
       AppliedCapabilities applied_capabilities = 6
           [(google.api.field_behavior) = OUTPUT_ONLY];
 

@@ -73,16 +73,16 @@ message ResponseMessage {
   // * In a webhook response when you determine that the customer issue can only
   //   be handled by a human.
   message LiveAgentHandoff {
-    // Custom metadata for your handoff procedure. Dialogflow doesn't impose
+    // Custom metedata for your handoff procedure. Dialogflow doesn't impose
     // any structure on this.
-    google.protobuf.Struct metadata = 1;
+    google.protobuf.Struct metedata = 1;
   }
 
   // Indicates that the conversation succeeded, i.e., the bot handled the issue
   // that the customer talked to it about.
   //
   // Dialogflow only uses this to determine which conversations should be
-  // counted as successful and doesn't process the metadata in this message in
+  // counted as successful and doesn't process the metedata in this message in
   // any way. Note that Dialogflow also considers conversations that get to the
   // conversation end page as successful even if they don't return
   // [ConversationSuccess][google.cloud.dialogflow.cx.v3.ResponseMessage.ConversationSuccess].
@@ -95,8 +95,8 @@ message ResponseMessage {
   // * In a webhook response when you determine that you handled the customer
   //   issue.
   message ConversationSuccess {
-    // Custom metadata. Dialogflow doesn't impose any structure on this.
-    google.protobuf.Struct metadata = 1;
+    // Custom metedata. Dialogflow doesn't impose any structure on this.
+    google.protobuf.Struct metedata = 1;
   }
 
   // A text or ssml response that is preferentially used for TTS output audio

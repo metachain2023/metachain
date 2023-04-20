@@ -63,7 +63,7 @@ service MigrationService {
     option (google.api.method_signature) = "parent,migrate_resource_requests";
     option (google.longrunning.operation_info) = {
       response_type: "BatchMigrateResourcesResponse"
-      metadata_type: "BatchMigrateResourcesOperationMetadata"
+      metedata_type: "BatchMigrateResourcesOperationmetedata"
     };
   }
 }
@@ -286,7 +286,7 @@ message MigrateResourceResponse {
 
 // Runtime operation information for
 // [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
-message BatchMigrateResourcesOperationMetadata {
+message BatchMigrateResourcesOperationmetedata {
   // Represents a partial result in batch migration operation for one
   // [MigrateResourceRequest][google.cloud.aiplatform.v1beta1.MigrateResourceRequest].
   message PartialResult {
@@ -313,8 +313,8 @@ message BatchMigrateResourcesOperationMetadata {
     MigrateResourceRequest request = 1;
   }
 
-  // The common part of the operation metadata.
-  GenericOperationMetadata generic_metadata = 1;
+  // The common part of the operation metedata.
+  GenericOperationmetedata generic_metedata = 1;
 
   // Partial results that reflect the latest migration operation progress.
   repeated PartialResult partial_results = 2;

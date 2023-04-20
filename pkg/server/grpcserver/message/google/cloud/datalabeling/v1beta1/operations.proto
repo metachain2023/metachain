@@ -60,8 +60,8 @@ message ExportDataOperationResponse {
   OutputConfig output_config = 5;
 }
 
-// Metadata of an ImportData operation.
-message ImportDataOperationMetadata {
+// metedata of an ImportData operation.
+message ImportDataOperationmetedata {
   // Output only. The name of imported dataset.
   // "projects/*/datasets/*"
   string dataset = 1;
@@ -75,8 +75,8 @@ message ImportDataOperationMetadata {
   google.protobuf.Timestamp create_time = 3;
 }
 
-// Metadata of an ExportData operation.
-message ExportDataOperationMetadata {
+// metedata of an ExportData operation.
+message ExportDataOperationmetedata {
   // Output only. The name of dataset to be exported.
   // "projects/*/datasets/*"
   string dataset = 1;
@@ -90,46 +90,46 @@ message ExportDataOperationMetadata {
   google.protobuf.Timestamp create_time = 3;
 }
 
-// Metadata of a labeling operation, such as LabelImage or LabelVideo.
+// metedata of a labeling operation, such as LabelImage or LabelVideo.
 // Next tag: 20
-message LabelOperationMetadata {
+message LabelOperationmetedata {
   // Ouptut only. Details of specific label operation.
   oneof details {
     // Details of label image classification operation.
-    LabelImageClassificationOperationMetadata image_classification_details = 3;
+    LabelImageClassificationOperationmetedata image_classification_details = 3;
 
     // Details of label image bounding box operation.
-    LabelImageBoundingBoxOperationMetadata image_bounding_box_details = 4;
+    LabelImageBoundingBoxOperationmetedata image_bounding_box_details = 4;
 
     // Details of label image bounding poly operation.
-    LabelImageBoundingPolyOperationMetadata image_bounding_poly_details = 11;
+    LabelImageBoundingPolyOperationmetedata image_bounding_poly_details = 11;
 
     // Details of label image oriented bounding box operation.
-    LabelImageOrientedBoundingBoxOperationMetadata image_oriented_bounding_box_details = 14;
+    LabelImageOrientedBoundingBoxOperationmetedata image_oriented_bounding_box_details = 14;
 
     // Details of label image polyline operation.
-    LabelImagePolylineOperationMetadata image_polyline_details = 12;
+    LabelImagePolylineOperationmetedata image_polyline_details = 12;
 
     // Details of label image segmentation operation.
-    LabelImageSegmentationOperationMetadata image_segmentation_details = 15;
+    LabelImageSegmentationOperationmetedata image_segmentation_details = 15;
 
     // Details of label video classification operation.
-    LabelVideoClassificationOperationMetadata video_classification_details = 5;
+    LabelVideoClassificationOperationmetedata video_classification_details = 5;
 
     // Details of label video object detection operation.
-    LabelVideoObjectDetectionOperationMetadata video_object_detection_details = 6;
+    LabelVideoObjectDetectionOperationmetedata video_object_detection_details = 6;
 
     // Details of label video object tracking operation.
-    LabelVideoObjectTrackingOperationMetadata video_object_tracking_details = 7;
+    LabelVideoObjectTrackingOperationmetedata video_object_tracking_details = 7;
 
     // Details of label video event operation.
-    LabelVideoEventOperationMetadata video_event_details = 8;
+    LabelVideoEventOperationmetedata video_event_details = 8;
 
     // Details of label text classification operation.
-    LabelTextClassificationOperationMetadata text_classification_details = 9;
+    LabelTextClassificationOperationmetedata text_classification_details = 9;
 
     // Details of label text entity extraction operation.
-    LabelTextEntityExtractionOperationMetadata text_entity_extraction_details = 13;
+    LabelTextEntityExtractionOperationmetedata text_entity_extraction_details = 13;
   }
 
   // Output only. Progress of label operation. Range: [0, 100].
@@ -144,80 +144,80 @@ message LabelOperationMetadata {
   google.protobuf.Timestamp create_time = 16;
 }
 
-// Metadata of a LabelImageClassification operation.
-message LabelImageClassificationOperationMetadata {
+// metedata of a LabelImageClassification operation.
+message LabelImageClassificationOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelImageBoundingBox operation metadata.
-message LabelImageBoundingBoxOperationMetadata {
+// Details of a LabelImageBoundingBox operation metedata.
+message LabelImageBoundingBoxOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelImageOrientedBoundingBox operation metadata.
-message LabelImageOrientedBoundingBoxOperationMetadata {
+// Details of a LabelImageOrientedBoundingBox operation metedata.
+message LabelImageOrientedBoundingBoxOperationmetedata {
   // Basic human annotation config.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of LabelImageBoundingPoly operation metadata.
-message LabelImageBoundingPolyOperationMetadata {
+// Details of LabelImageBoundingPoly operation metedata.
+message LabelImageBoundingPolyOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of LabelImagePolyline operation metadata.
-message LabelImagePolylineOperationMetadata {
+// Details of LabelImagePolyline operation metedata.
+message LabelImagePolylineOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelImageSegmentation operation metadata.
-message LabelImageSegmentationOperationMetadata {
+// Details of a LabelImageSegmentation operation metedata.
+message LabelImageSegmentationOperationmetedata {
   // Basic human annotation config.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelVideoClassification operation metadata.
-message LabelVideoClassificationOperationMetadata {
+// Details of a LabelVideoClassification operation metedata.
+message LabelVideoClassificationOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelVideoObjectDetection operation metadata.
-message LabelVideoObjectDetectionOperationMetadata {
+// Details of a LabelVideoObjectDetection operation metedata.
+message LabelVideoObjectDetectionOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelVideoObjectTracking operation metadata.
-message LabelVideoObjectTrackingOperationMetadata {
+// Details of a LabelVideoObjectTracking operation metedata.
+message LabelVideoObjectTrackingOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelVideoEvent operation metadata.
-message LabelVideoEventOperationMetadata {
+// Details of a LabelVideoEvent operation metedata.
+message LabelVideoEventOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelTextClassification operation metadata.
-message LabelTextClassificationOperationMetadata {
+// Details of a LabelTextClassification operation metedata.
+message LabelTextClassificationOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Details of a LabelTextEntityExtraction operation metadata.
-message LabelTextEntityExtractionOperationMetadata {
+// Details of a LabelTextEntityExtraction operation metedata.
+message LabelTextEntityExtractionOperationmetedata {
   // Basic human annotation config used in labeling request.
   HumanAnnotationConfig basic_config = 1;
 }
 
-// Metadata of a CreateInstruction operation.
-message CreateInstructionMetadata {
+// metedata of a CreateInstruction operation.
+message CreateInstructionmetedata {
   // The name of the created Instruction.
   // projects/{project_id}/instructions/{instruction_id}
   string instruction = 1;

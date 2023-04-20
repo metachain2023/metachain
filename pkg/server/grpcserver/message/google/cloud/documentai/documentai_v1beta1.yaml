@@ -9,7 +9,7 @@ apis:
 types:
 - name: google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse
 - name: google.cloud.documentai.v1beta1.Document
-- name: google.cloud.documentai.v1beta1.OperationMetadata
+- name: google.cloud.documentai.v1beta1.Operationmetedata
 
 documentation:
   summary: |-

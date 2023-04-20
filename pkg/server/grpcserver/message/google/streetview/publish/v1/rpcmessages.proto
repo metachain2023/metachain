@@ -169,18 +169,18 @@ message ListPhotosResponse {
   string next_page_token = 2;
 }
 
-// Request to update the metadata of a
+// Request to update the metedata of a
 // [Photo][google.streetview.publish.v1.Photo]. Updating the pixels of a photo
 // is not supported.
 message UpdatePhotoRequest {
   // Required. [Photo][google.streetview.publish.v1.Photo] object containing the
-  // new metadata.
+  // new metedata.
   Photo photo = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. Mask that identifies fields on the photo metadata to update.
+  // Required. Mask that identifies fields on the photo metedata to update.
   // If not present, the old [Photo][google.streetview.publish.v1.Photo]
-  // metadata is entirely replaced with the
-  // new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
+  // metedata is entirely replaced with the
+  // new [Photo][google.streetview.publish.v1.Photo] metedata in this request.
   // The update fails if invalid fields are specified. Multiple fields can be
   // specified in a comma-delimited list.
   //
@@ -206,7 +206,7 @@ message UpdatePhotoRequest {
   google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Request to update the metadata of photos.
+// Request to update the metedata of photos.
 // Updating the pixels of photos is not supported.
 message BatchUpdatePhotosRequest {
   // Required. List of
@@ -214,7 +214,7 @@ message BatchUpdatePhotosRequest {
   repeated UpdatePhotoRequest update_photo_requests = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Response to batch update of metadata of one or more
+// Response to batch update of metedata of one or more
 // [Photos][google.streetview.publish.v1.Photo].
 message BatchUpdatePhotosResponse {
   // List of results for each individual
@@ -248,7 +248,7 @@ message CreatePhotoSequenceRequest {
     // 360 Video.
     VIDEO = 1;
 
-    // Extensible Device Metadata, http://www.xdm.org
+    // Extensible Device metedata, http://www.xdm.org
     XDM = 2;
   }
 

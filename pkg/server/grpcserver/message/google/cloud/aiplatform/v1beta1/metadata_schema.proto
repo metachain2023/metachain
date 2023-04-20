@@ -23,58 +23,58 @@ import "google/protobuf/timestamp.proto";
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformpb";
 option java_multiple_files = true;
-option java_outer_classname = "MetadataSchemaProto";
+option java_outer_classname = "metedataSchemaProto";
 option java_package = "com.google.cloud.aiplatform.v1beta1";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1beta1";
 option ruby_package = "Google::Cloud::AIPlatform::V1beta1";
 
-// Instance of a general MetadataSchema.
-message MetadataSchema {
+// Instance of a general metedataSchema.
+message metedataSchema {
   option (google.api.resource) = {
-    type: "aiplatform.googleapis.com/MetadataSchema"
-    pattern: "projects/{project}/locations/{location}/metadataStores/{metadata_store}/metadataSchemas/{metadata_schema}"
+    type: "aiplatform.googleapis.com/metedataSchema"
+    pattern: "projects/{project}/locations/{location}/metedataStores/{metedata_store}/metedataSchemas/{metedata_schema}"
   };
 
-  // Describes the type of the MetadataSchema.
-  enum MetadataSchemaType {
-    // Unspecified type for the MetadataSchema.
-    METADATA_SCHEMA_TYPE_UNSPECIFIED = 0;
+  // Describes the type of the metedataSchema.
+  enum metedataSchemaType {
+    // Unspecified type for the metedataSchema.
+    meteDATA_SCHEMA_TYPE_UNSPECIFIED = 0;
 
-    // A type indicating that the MetadataSchema will be used by Artifacts.
+    // A type indicating that the metedataSchema will be used by Artifacts.
     ARTIFACT_TYPE = 1;
 
-    // A typee indicating that the MetadataSchema will be used by Executions.
+    // A typee indicating that the metedataSchema will be used by Executions.
     EXECUTION_TYPE = 2;
 
-    // A state indicating that the MetadataSchema will be used by Contexts.
+    // A state indicating that the metedataSchema will be used by Contexts.
     CONTEXT_TYPE = 3;
   }
 
-  // Output only. The resource name of the MetadataSchema.
+  // Output only. The resource name of the metedataSchema.
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The version of the MetadataSchema. The version's format must match
+  // The version of the metedataSchema. The version's format must match
   // the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
   // allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
   string schema_version = 2;
 
-  // Required. The raw YAML string representation of the MetadataSchema. The
-  // combination of [MetadataSchema.version] and the schema name given by
-  // `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
+  // Required. The raw YAML string representation of the metedataSchema. The
+  // combination of [metedataSchema.version] and the schema name given by
+  // `title` in [metedataSchema.schema] must be unique within a metedataStore.
   //
   // The schema is defined as an OpenAPI 3.0.2
-  // [MetadataSchema
+  // [metedataSchema
   // Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
   string schema = 3 [(google.api.field_behavior) = REQUIRED];
 
-  // The type of the MetadataSchema. This is a property that identifies which
-  // metadata types will use the MetadataSchema.
-  MetadataSchemaType schema_type = 4;
+  // The type of the metedataSchema. This is a property that identifies which
+  // metedata types will use the metedataSchema.
+  metedataSchemaType schema_type = 4;
 
-  // Output only. Timestamp when this MetadataSchema was created.
+  // Output only. Timestamp when this metedataSchema was created.
   google.protobuf.Timestamp create_time = 5
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Description of the Metadata Schema
+  // Description of the metedata Schema
   string description = 6;
 }

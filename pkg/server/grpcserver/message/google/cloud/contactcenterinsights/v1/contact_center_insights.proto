@@ -98,7 +98,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "parent,analysis";
     option (google.longrunning.operation_info) = {
       response_type: "Analysis"
-      metadata_type: "CreateAnalysisOperationMetadata"
+      metedata_type: "CreateAnalysisOperationmetedata"
     };
   }
 
@@ -136,7 +136,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "parent,filter,analysis_percentage";
     option (google.longrunning.operation_info) = {
       response_type: "BulkAnalyzeConversationsResponse"
-      metadata_type: "BulkAnalyzeConversationsMetadata"
+      metedata_type: "BulkAnalyzeConversationsmetedata"
     };
   }
 
@@ -151,7 +151,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "IngestConversationsResponse"
-      metadata_type: "IngestConversationsMetadata"
+      metedata_type: "IngestConversationsmetedata"
     };
   }
 
@@ -165,7 +165,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "ExportInsightsDataResponse"
-      metadata_type: "ExportInsightsDataMetadata"
+      metedata_type: "ExportInsightsDatametedata"
     };
   }
 
@@ -179,7 +179,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "parent,issue_model";
     option (google.longrunning.operation_info) = {
       response_type: "IssueModel"
-      metadata_type: "CreateIssueModelMetadata"
+      metedata_type: "CreateIssueModelmetedata"
     };
   }
 
@@ -218,7 +218,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteIssueModelMetadata"
+      metedata_type: "DeleteIssueModelmetedata"
     };
   }
 
@@ -233,7 +233,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "DeployIssueModelResponse"
-      metadata_type: "DeployIssueModelMetadata"
+      metedata_type: "DeployIssueModelmetedata"
     };
   }
 
@@ -248,7 +248,7 @@ service ContactCenterInsights {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "UndeployIssueModelResponse"
-      metadata_type: "UndeployIssueModelMetadata"
+      metedata_type: "UndeployIssueModelmetedata"
     };
   }
 
@@ -492,8 +492,8 @@ message CalculateStatsResponse {
   TimeSeries conversation_count_time_series = 7;
 }
 
-// Metadata for a create analysis operation.
-message CreateAnalysisOperationMetadata {
+// metedata for a create analysis operation.
+message CreateAnalysisOperationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -662,8 +662,8 @@ message IngestConversationsRequest {
   ConversationConfig conversation_config = 4;
 }
 
-// The metadata for an IngestConversations operation.
-message IngestConversationsMetadata {
+// The metedata for an IngestConversations operation.
+message IngestConversationsmetedata {
   // Statistics for IngestConversations operation.
   message IngestConversationsStats {
     // Output only. The number of objects processed during the ingest operation.
@@ -804,8 +804,8 @@ message BulkAnalyzeConversationsRequest {
   AnnotatorSelector annotator_selector = 8;
 }
 
-// The metadata for a bulk analyze conversations operation.
-message BulkAnalyzeConversationsMetadata {
+// The metedata for a bulk analyze conversations operation.
+message BulkAnalyzeConversationsmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 
@@ -895,8 +895,8 @@ message ExportInsightsDataRequest {
   WriteDisposition write_disposition = 5;
 }
 
-// Metadata for an export insights operation.
-message ExportInsightsDataMetadata {
+// metedata for an export insights operation.
+message ExportInsightsDatametedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -930,8 +930,8 @@ message CreateIssueModelRequest {
   IssueModel issue_model = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for creating an issue model.
-message CreateIssueModelMetadata {
+// metedata for creating an issue model.
+message CreateIssueModelmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -992,8 +992,8 @@ message DeleteIssueModelRequest {
   ];
 }
 
-// Metadata for deleting an issue model.
-message DeleteIssueModelMetadata {
+// metedata for deleting an issue model.
+message DeleteIssueModelmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -1020,8 +1020,8 @@ message DeployIssueModelRequest {
 // The response to deploy an issue model.
 message DeployIssueModelResponse {}
 
-// Metadata for deploying an issue model.
-message DeployIssueModelMetadata {
+// metedata for deploying an issue model.
+message DeployIssueModelmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -1048,8 +1048,8 @@ message UndeployIssueModelRequest {
 // The response to undeploy an issue model.
 message UndeployIssueModelResponse {}
 
-// Metadata for undeploying an issue model.
-message UndeployIssueModelMetadata {
+// metedata for undeploying an issue model.
+message UndeployIssueModelmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

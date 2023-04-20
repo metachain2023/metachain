@@ -83,10 +83,10 @@ message Dataset {
 
 // The configuration of input data, including data type, location, etc.
 message InputConfig {
-  // Optional. The metadata associated with each data type.
-  oneof data_type_metadata {
+  // Optional. The metedata associated with each data type.
+  oneof data_type_metedata {
     // Required for text import, as language code must be specified.
-    TextMetadata text_metadata = 6;
+    Textmetedata text_metedata = 6;
   }
 
   // Required. Where the data is from.
@@ -107,22 +107,22 @@ message InputConfig {
   // [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob].
   AnnotationType annotation_type = 3;
 
-  // Optional. Metadata about annotations for the input. You must specify this
+  // Optional. metedata about annotations for the input. You must specify this
   // field if you are using this InputConfig in an [EvaluationJob][google.cloud.datalabeling.v1beta1.EvaluationJob] for a
   // model version that performs classification.
-  ClassificationMetadata classification_metadata = 4;
+  Classificationmetedata classification_metedata = 4;
 }
 
-// Metadata for the text.
-message TextMetadata {
+// metedata for the text.
+message Textmetedata {
   // The language of this text, as a
   // [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
   // Default value is en-US.
   string language_code = 1;
 }
 
-// Metadata for classification annotations.
-message ClassificationMetadata {
+// metedata for classification annotations.
+message Classificationmetedata {
   // Whether the classification task is multi-label or not.
   bool is_multi_label = 1;
 }
@@ -259,7 +259,7 @@ message AnnotatedDataset {
   google.protobuf.Timestamp create_time = 7;
 
   // Output only. Additional information about AnnotatedDataset.
-  AnnotatedDatasetMetadata metadata = 10;
+  AnnotatedDatasetmetedata metedata = 10;
 
   // Output only. The names of any related resources that are blocking changes
   // to the annotated dataset.
@@ -276,8 +276,8 @@ message LabelStats {
   map<string, int64> example_count = 1;
 }
 
-// Metadata on AnnotatedDataset.
-message AnnotatedDatasetMetadata {
+// metedata on AnnotatedDataset.
+message AnnotatedDatasetmetedata {
   // Specific request configuration used when requesting the labeling task.
   oneof annotation_request_config {
     // Configuration for image classification task.

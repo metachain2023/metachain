@@ -56,7 +56,7 @@ message AuditLog {
   // The resource's original state before mutation. Present only for
   // operations which have successfully modified the targeted resource(s).
   // In general, this field should contain all changed fields, except those
-  // that are already been included in `request`, `response`, `metadata` or
+  // that are already been included in `request`, `response`, `metedata` or
   // `service_data` fields.
   // When the JSON object represented here has a proto equivalent,
   // the proto name will be indicated in the `@type` property.
@@ -82,8 +82,8 @@ message AuditLog {
   // here.
   PolicyViolationInfo policy_violation_info = 25;
 
-  // Metadata about the operation.
-  RequestMetadata request_metadata = 4;
+  // metedata about the operation.
+  Requestmetedata request_metedata = 4;
 
   // The operation request. This may not include all request parameters,
   // such as those that are too large, privacy-sensitive, or duplicated
@@ -103,9 +103,9 @@ message AuditLog {
 
   // Other service-specific data about the request, response, and other
   // information associated with the current audited event.
-  google.protobuf.Struct metadata = 18;
+  google.protobuf.Struct metedata = 18;
 
-  // Deprecated. Use the `metadata` field instead.
+  // Deprecated. Use the `metedata` field instead.
   // Other service-specific data about the request, response, and other
   // activities.
   google.protobuf.Any service_data = 15 [deprecated = true];
@@ -172,12 +172,12 @@ message AuthorizationInfo {
   //
   // To get the whole view of the attributes used in IAM
   // condition evaluation, the user must also look into
-  // `AuditLog.request_metadata.request_attributes`.
+  // `AuditLog.request_metedata.request_attributes`.
   google.rpc.context.AttributeContext.Resource resource_attributes = 5;
 }
 
-// Metadata about the request.
-message RequestMetadata {
+// metedata about the request.
+message Requestmetedata {
   // The IP address of the caller.
   // For a caller from the internet, this will be the public IPv4 or IPv6
   // address. For calls made from inside Google's internal production network
@@ -261,13 +261,13 @@ message ServiceAccountDelegationInfo {
     // The email address of a Google account.
     string principal_email = 1;
 
-    // Metadata about the service that uses the service account.
-    google.protobuf.Struct service_metadata = 2;
+    // metedata about the service that uses the service account.
+    google.protobuf.Struct service_metedata = 2;
   }
 
   // Third party identity principal.
   message ThirdPartyPrincipal {
-    // Metadata about third party identity.
+    // metedata about third party identity.
     google.protobuf.Struct third_party_claims = 1;
   }
 

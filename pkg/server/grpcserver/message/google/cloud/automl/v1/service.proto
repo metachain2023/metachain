@@ -65,7 +65,7 @@ service AutoMl {
     option (google.api.method_signature) = "parent,dataset";
     option (google.longrunning.operation_info) = {
       response_type: "Dataset"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -98,7 +98,7 @@ service AutoMl {
   // Returns empty response in the
   // [response][google.longrunning.Operation.response] field when it completes,
   // and `delete_details` in the
-  // [metadata][google.longrunning.Operation.metadata] field.
+  // [metedata][google.longrunning.Operation.metedata] field.
   rpc DeleteDataset(DeleteDatasetRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/datasets/*}"
@@ -106,7 +106,7 @@ service AutoMl {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -127,7 +127,7 @@ service AutoMl {
     option (google.api.method_signature) = "name,input_config";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -142,7 +142,7 @@ service AutoMl {
     option (google.api.method_signature) = "name,output_config";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -167,7 +167,7 @@ service AutoMl {
     option (google.api.method_signature) = "parent,model";
     option (google.longrunning.operation_info) = {
       response_type: "Model"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -191,7 +191,7 @@ service AutoMl {
   // Returns `google.protobuf.Empty` in the
   // [response][google.longrunning.Operation.response] field when it completes,
   // and `delete_details` in the
-  // [metadata][google.longrunning.Operation.metadata] field.
+  // [metedata][google.longrunning.Operation.metedata] field.
   rpc DeleteModel(DeleteModelRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/models/*}"
@@ -199,7 +199,7 @@ service AutoMl {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -215,7 +215,7 @@ service AutoMl {
   // Deploys a model. If a model is already deployed, deploying it with the
   // same parameters has no effect. Deploying with different parametrs
   // (as e.g. changing
-  // [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+  // [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentmetedata.node_number])
   //  will reset the deployment state without pausing the model's availability.
   //
   // Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
@@ -231,7 +231,7 @@ service AutoMl {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -250,7 +250,7 @@ service AutoMl {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -269,7 +269,7 @@ service AutoMl {
     option (google.api.method_signature) = "name,output_config";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -327,11 +327,11 @@ message ListDatasetsRequest {
 
   // An expression for filtering the results of the request.
   //
-  //   * `dataset_metadata` - for existence of the case (e.g.
-  //             `image_classification_dataset_metadata:*`). Some examples of using the filter are:
+  //   * `dataset_metedata` - for existence of the case (e.g.
+  //             `image_classification_dataset_metedata:*`). Some examples of using the filter are:
   //
-  //   * `translation_dataset_metadata:*` --> The dataset has
-  //                                          `translation_dataset_metadata`.
+  //   * `translation_dataset_metedata:*` --> The dataset has
+  //                                          `translation_dataset_metedata`.
   string filter = 3;
 
   // Requested page size. Server may return fewer results than requested.
@@ -453,12 +453,12 @@ message ListModelsRequest {
 
   // An expression for filtering the results of the request.
   //
-  //   * `model_metadata` - for existence of the case (e.g.
-  //             `video_classification_model_metadata:*`).
+  //   * `model_metedata` - for existence of the case (e.g.
+  //             `video_classification_model_metedata:*`).
   //   * `dataset_id` - for = or !=. Some examples of using the filter are:
   //
-  //   * `image_classification_model_metadata:*` --> The model has
-  //                                      `image_classification_model_metadata`.
+  //   * `image_classification_model_metedata:*` --> The model has
+  //                                      `image_classification_model_metedata`.
   //   * `dataset_id=5` --> The model was created from a dataset with ID 5.
   string filter = 3;
 
@@ -505,12 +505,12 @@ message UpdateModelRequest {
 // Request message for [AutoMl.DeployModel][google.cloud.automl.v1.AutoMl.DeployModel].
 message DeployModelRequest {
   // The per-domain specific deployment parameters.
-  oneof model_deployment_metadata {
-    // Model deployment metadata specific to Image Object Detection.
-    ImageObjectDetectionModelDeploymentMetadata image_object_detection_model_deployment_metadata = 2;
+  oneof model_deployment_metedata {
+    // Model deployment metedata specific to Image Object Detection.
+    ImageObjectDetectionModelDeploymentmetedata image_object_detection_model_deployment_metedata = 2;
 
-    // Model deployment metadata specific to Image Classification.
-    ImageClassificationModelDeploymentMetadata image_classification_model_deployment_metadata = 4;
+    // Model deployment metedata specific to Image Classification.
+    ImageClassificationModelDeploymentmetedata image_classification_model_deployment_metedata = 4;
   }
 
   // Required. Resource name of the model to deploy.

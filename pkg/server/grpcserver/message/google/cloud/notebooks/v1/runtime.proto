@@ -568,13 +568,13 @@ message VirtualMachineConfig {
   // Output only. The Compute Engine guest attributes. (see
   // [Project and instance
   // guest
-  // attributes](https://cloud.google.com/compute/docs/storing-retrieving-metadata#guest_attributes)).
+  // attributes](https://cloud.google.com/compute/docs/storing-retrieving-metedata#guest_attributes)).
   map<string, string> guest_attributes = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. The Compute Engine metadata entries to add to virtual machine. (see
+  // Optional. The Compute Engine metedata entries to add to virtual machine. (see
   // [Project and instance
-  // metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
-  map<string, string> metadata = 15 [(google.api.field_behavior) = OPTIONAL];
+  // metedata](https://cloud.google.com/compute/docs/storing-retrieving-metedata#project_and_instance_metedata)).
+  map<string, string> metedata = 15 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The labels to associate with this runtime.
   // Label **keys** must contain 1 to 63 characters, and must conform to
@@ -606,6 +606,6 @@ message VirtualMachineConfig {
   // Field value will be: `managed-notebooks-range-c`
   string reserved_ip_range = 18 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Boot image metadata used for runtime upgradeability.
+  // Optional. Boot image metedata used for runtime upgradeability.
   BootImage boot_image = 19 [(google.api.field_behavior) = OPTIONAL];
 }

@@ -50,7 +50,7 @@ service DataPolicyService {
     option (google.api.method_signature) = "parent,data_policy";
   }
 
-  // Updates the metadata for an existing data policy. The target data policy
+  // Updates the metedata for an existing data policy. The target data policy
   // can be specified by the resource name.
   rpc UpdateDataPolicy(UpdateDataPolicyRequest) returns (DataPolicy) {
     option (google.api.http) = {
@@ -141,7 +141,7 @@ message CreateDataPolicyRequest {
 
 // Response message for the UpdateDataPolicy method.
 message UpdateDataPolicyRequest {
-  // Required. Update the data policy's metadata.
+  // Required. Update the data policy's metedata.
   //
   // The target data policy is determined by the `name` field.
   // Other fields are updated to the specified values based on the field masks.

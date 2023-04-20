@@ -11,7 +11,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.notebooks.v1.OperationMetadata
+- name: google.cloud.notebooks.v1.Operationmetedata
 
 documentation:
   summary: Notebooks API is used to manage notebook resources in Google Cloud.

@@ -47,7 +47,7 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "parent,domain_name,domain";
     option (google.longrunning.operation_info) = {
       response_type: "Domain"
-      metadata_type: "OpMetadata"
+      metedata_type: "Opmetedata"
     };
   }
 
@@ -76,7 +76,7 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "name";
   }
 
-  // Updates the metadata and configuration of a domain.
+  // Updates the metedata and configuration of a domain.
   rpc UpdateDomain(UpdateDomainRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       patch: "/v1beta1/{domain.name=projects/*/locations/global/domains/*}"
@@ -85,7 +85,7 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "domain,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Domain"
-      metadata_type: "OpMetadata"
+      metedata_type: "Opmetedata"
     };
   }
 
@@ -97,7 +97,7 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OpMetadata"
+      metedata_type: "Opmetedata"
     };
   }
 
@@ -110,7 +110,7 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "name,trust";
     option (google.longrunning.operation_info) = {
       response_type: "Domain"
-      metadata_type: "OpMetadata"
+      metedata_type: "Opmetedata"
     };
   }
 
@@ -123,7 +123,7 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "name,target_domain_name,target_dns_ip_addresses";
     option (google.longrunning.operation_info) = {
       response_type: "Domain"
-      metadata_type: "OpMetadata"
+      metedata_type: "Opmetedata"
     };
   }
 
@@ -136,7 +136,7 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "name,trust";
     option (google.longrunning.operation_info) = {
       response_type: "Domain"
-      metadata_type: "OpMetadata"
+      metedata_type: "Opmetedata"
     };
   }
 
@@ -150,13 +150,13 @@ service ManagedIdentitiesService {
     option (google.api.method_signature) = "name,trust";
     option (google.longrunning.operation_info) = {
       response_type: "Domain"
-      metadata_type: "OpMetadata"
+      metedata_type: "Opmetedata"
     };
   }
 }
 
-// Represents the metadata of the long-running operation.
-message OpMetadata {
+// Represents the metedata of the long-running operation.
+message Opmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

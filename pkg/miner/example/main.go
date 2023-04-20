@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"metachain/pkg/miner/hash"
+	"metechain/pkg/miner/hash"
 )
 
 var (

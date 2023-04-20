@@ -99,7 +99,7 @@ service FleetRouting {
     };
     option (google.longrunning.operation_info) = {
       response_type: "BatchOptimizeToursResponse"
-      metadata_type: "AsyncModelMetadata"
+      metedata_type: "AsyncModelmetedata"
     };
   }
 }

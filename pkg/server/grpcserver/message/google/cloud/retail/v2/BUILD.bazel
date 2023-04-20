@@ -172,7 +172,7 @@ go_gapic_library(
     grpc_service_config = "retail_grpc_service_config.json",
     importpath = "cloud.google.com/go/retail/apiv2;retail",
     release_level = "ga",
-    metadata = True,
+    metedata = True,
     rest_numeric_enums = True,
     service_yaml = "retail_v2.yaml",
     deps = [
@@ -198,7 +198,7 @@ go_gapic_assembly_pkg(
     name = "gapi-cloud-retail-v2-go",
     deps = [
         ":retail_go_gapic",
-        ":retail_go_gapic_srcjar-metadata.srcjar",
+        ":retail_go_gapic_srcjar-metedata.srcjar",
         ":retail_go_gapic_srcjar-test.srcjar",
         ":retail_go_proto",
     ],
@@ -298,7 +298,7 @@ nodejs_gapic_library(
     name = "retail_nodejs_gapic",
     package_name = "@google-cloud/retail",
     src = ":retail_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = "retail_grpc_service_config.json",
     mixins = "google.longrunning.Operations;google.cloud.location.Locations",
     package = "google.cloud.retail.v2",

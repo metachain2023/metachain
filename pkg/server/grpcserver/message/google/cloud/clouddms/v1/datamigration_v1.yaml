@@ -10,7 +10,7 @@ types:
 - name: google.cloud.clouddms.v1.ConnectionProfile
 - name: google.cloud.clouddms.v1.MigrationJob
 - name: google.cloud.clouddms.v1.MigrationJobVerificationError
-- name: google.cloud.clouddms.v1.OperationMetadata
+- name: google.cloud.clouddms.v1.Operationmetedata
 
 documentation:
   summary: Manage Cloud Database Migration Service resources on Google Cloud Platform.

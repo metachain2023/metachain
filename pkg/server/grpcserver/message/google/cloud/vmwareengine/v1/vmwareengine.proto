@@ -77,7 +77,7 @@ service VmwareEngine {
         "parent,private_cloud,private_cloud_id";
     option (google.longrunning.operation_info) = {
       response_type: "PrivateCloud"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -98,7 +98,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "private_cloud,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "PrivateCloud"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -125,7 +125,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "PrivateCloud"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -142,7 +142,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "PrivateCloud"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -175,7 +175,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "parent,cluster,cluster_id";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -196,7 +196,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -212,7 +212,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -267,7 +267,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "private_cloud";
     option (google.longrunning.operation_info) = {
       response_type: "PrivateCloud"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -281,7 +281,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "private_cloud";
     option (google.longrunning.operation_info) = {
       response_type: "PrivateCloud"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -296,7 +296,7 @@ service VmwareEngine {
         "parent,hcx_activation_key,hcx_activation_key_id";
     option (google.longrunning.operation_info) = {
       response_type: "HcxActivationKey"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -348,7 +348,7 @@ service VmwareEngine {
         "parent,network_policy,network_policy_id";
     option (google.longrunning.operation_info) = {
       response_type: "NetworkPolicy"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -373,7 +373,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "network_policy,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "NetworkPolicy"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -388,7 +388,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -403,7 +403,7 @@ service VmwareEngine {
         "parent,vmware_engine_network,vmware_engine_network_id";
     option (google.longrunning.operation_info) = {
       response_type: "VmwareEngineNetwork"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -419,7 +419,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "vmware_engine_network,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "VmwareEngineNetwork"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -435,7 +435,7 @@ service VmwareEngine {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -879,8 +879,8 @@ message ListSubnetsResponse {
   string next_page_token = 2;
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

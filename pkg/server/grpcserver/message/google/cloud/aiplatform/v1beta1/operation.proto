@@ -28,8 +28,8 @@ option java_package = "com.google.cloud.aiplatform.v1beta1";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1beta1";
 option ruby_package = "Google::Cloud::AIPlatform::V1beta1";
 
-// Generic Metadata shared by all operations.
-message GenericOperationMetadata {
+// Generic metedata shared by all operations.
+message GenericOperationmetedata {
   // Output only. Partial failures encountered.
   // E.g. single files that couldn't be read.
   // This field should never exceed 20 entries.
@@ -49,7 +49,7 @@ message GenericOperationMetadata {
 }
 
 // Details of operations that perform deletes of any entities.
-message DeleteOperationMetadata {
-  // The common part of the operation metadata.
-  GenericOperationMetadata generic_metadata = 1;
+message DeleteOperationmetedata {
+  // The common part of the operation metedata.
+  GenericOperationmetedata generic_metedata = 1;
 }

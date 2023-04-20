@@ -20,14 +20,14 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "cloud.google.com/go/enterpriseknowledgegraph/apiv1/enterpriseknowledgegraphpb;enterpriseknowledgegraphpb";
 option java_multiple_files = true;
-option java_outer_classname = "OperationMetadataProto";
+option java_outer_classname = "OperationmetedataProto";
 option java_package = "com.google.cloud.enterpriseknowledgegraph.v1";
 option php_namespace = "Google\\Cloud\\EnterpriseKnowledgeGraph\\V1";
 option ruby_package = "Google::Cloud::EnterpriseKnowledgeGraph::V1";
 option csharp_namespace = "Google.Cloud.EnterpriseKnowledgeGraph.V1";
 
-// The common metadata for long running operations.
-message CommonOperationMetadata {
+// The common metedata for long running operations.
+message CommonOperationmetedata {
   // State of the longrunning operation.
   enum State {
     // Unspecified state.

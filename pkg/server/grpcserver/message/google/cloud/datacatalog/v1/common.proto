@@ -26,7 +26,7 @@ option java_package = "com.google.cloud.datacatalog.v1";
 option php_namespace = "Google\\Cloud\\DataCatalog\\V1";
 option ruby_package = "Google::Cloud::DataCatalog::V1";
 
-// Entry metadata relevant only to the user and private to them.
+// Entry metedata relevant only to the user and private to them.
 message PersonalDetails {
   // True if the entry is starred by the user; false otherwise.
   bool starred = 1;
@@ -46,8 +46,8 @@ enum IntegratedSystem {
   // Cloud Pub/Sub.
   CLOUD_PUBSUB = 2;
 
-  // Dataproc Metastore.
-  DATAPROC_METASTORE = 3;
+  // Dataproc metestore.
+  DATAPROC_meteSTORE = 3;
 
   // Dataplex.
   DATAPLEX = 4;

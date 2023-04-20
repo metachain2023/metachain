@@ -49,7 +49,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "EnableServiceResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -67,7 +67,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "DisableServiceResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -107,7 +107,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "BatchEnableServicesResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

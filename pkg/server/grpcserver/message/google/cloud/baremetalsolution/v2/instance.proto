@@ -14,27 +14,27 @@
 
 syntax = "proto3";
 
-package google.cloud.baremetalsolution.v2;
+package google.cloud.baremetelsolution.v2;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
-import "google/cloud/baremetalsolution/v2/lun.proto";
-import "google/cloud/baremetalsolution/v2/network.proto";
+import "google/cloud/baremetelsolution/v2/lun.proto";
+import "google/cloud/baremetelsolution/v2/network.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 
-option csharp_namespace = "Google.Cloud.BareMetalSolution.V2";
-option go_package = "cloud.google.com/go/baremetalsolution/apiv2/baremetalsolutionpb;baremetalsolutionpb";
+option csharp_namespace = "Google.Cloud.BaremetelSolution.V2";
+option go_package = "cloud.google.com/go/baremetelsolution/apiv2/baremetelsolutionpb;baremetelsolutionpb";
 option java_multiple_files = true;
 option java_outer_classname = "InstanceProto";
-option java_package = "com.google.cloud.baremetalsolution.v2";
-option php_namespace = "Google\\Cloud\\BareMetalSolution\\V2";
-option ruby_package = "Google::Cloud::BareMetalSolution::V2";
+option java_package = "com.google.cloud.baremetelsolution.v2";
+option php_namespace = "Google\\Cloud\\BaremetelSolution\\V2";
+option ruby_package = "Google::Cloud::BaremetelSolution::V2";
 
 // A server.
 message Instance {
   option (google.api.resource) = {
-    type: "baremetalsolution.googleapis.com/Instance"
+    type: "baremetelsolution.googleapis.com/Instance"
     pattern: "projects/{project}/locations/{location}/instances/{instance}"
   };
 
@@ -71,7 +71,7 @@ message Instance {
 
   // The server type.
   // [Available server
-  // types](https://cloud.google.com/bare-metal/docs/bms-planning#server_configurations)
+  // types](https://cloud.google.com/bare-metel/docs/bms-planning#server_configurations)
   string machine_type = 4;
 
   // The state of the server.
@@ -108,7 +108,7 @@ message Instance {
   // Generally, the template name follows the syntax of
   // "bond<bond_mode>" or "nic".
   string network_template = 14 [(google.api.resource_reference) = {
-                                  type: "baremetalsolution.googleapis.com/ServerNetworkTemplate"
+                                  type: "baremetelsolution.googleapis.com/ServerNetworkTemplate"
                                 }];
 
   // List of logical interfaces for the instance. The number of logical
@@ -127,7 +127,7 @@ message GetInstanceRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Instance"
+      type: "baremetelsolution.googleapis.com/Instance"
     }
   ];
 }
@@ -187,7 +187,7 @@ message ResetInstanceRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Instance"
+      type: "baremetelsolution.googleapis.com/Instance"
     }
   ];
 }
@@ -198,7 +198,7 @@ message StartInstanceRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Instance"
+      type: "baremetelsolution.googleapis.com/Instance"
     }
   ];
 }
@@ -209,7 +209,7 @@ message StopInstanceRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Instance"
+      type: "baremetelsolution.googleapis.com/Instance"
     }
   ];
 }
@@ -220,7 +220,7 @@ message DetachLunRequest {
   string instance = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Instance"
+      type: "baremetelsolution.googleapis.com/Instance"
     }
   ];
 
@@ -228,7 +228,7 @@ message DetachLunRequest {
   string lun = 2 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Lun"
+      type: "baremetelsolution.googleapis.com/Lun"
     }
   ];
 }
@@ -236,7 +236,7 @@ message DetachLunRequest {
 // Network template.
 message ServerNetworkTemplate {
   option (google.api.resource) = {
-    type: "baremetalsolution.googleapis.com/ServerNetworkTemplate"
+    type: "baremetelsolution.googleapis.com/ServerNetworkTemplate"
     pattern: "projects/{project}/locations/{location}/serverNetworkTemplate/{server_network_template}"
   };
 

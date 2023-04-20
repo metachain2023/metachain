@@ -82,7 +82,7 @@ go_gapic_library(
     name = "resourcemanager_go_gapic",
     srcs = [":resourcemanager_proto_with_info"],
     importpath = "cloud.google.com/go/resourcemanager/apiv2;resourcemanager",
-    metadata = True,
+    metedata = True,
     release_level = "ga",
     rest_numeric_enums = True,
     service_yaml = "cloudresourcemanager_v2.yaml",
@@ -108,7 +108,7 @@ go_gapic_assembly_pkg(
     name = "gapi-cloud-resourcemanager-v2-go",
     deps = [
         ":resourcemanager_go_gapic",
-        ":resourcemanager_go_gapic_srcjar-metadata.srcjar",
+        ":resourcemanager_go_gapic_srcjar-metedata.srcjar",
         ":resourcemanager_go_gapic_srcjar-test.srcjar",
         ":resourcemanager_go_proto",
     ],

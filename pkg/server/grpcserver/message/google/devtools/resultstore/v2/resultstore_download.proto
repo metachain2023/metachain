@@ -23,7 +23,7 @@ import "google/api/resource.proto";
 import "google/devtools/resultstore/v2/action.proto";
 import "google/devtools/resultstore/v2/configuration.proto";
 import "google/devtools/resultstore/v2/configured_target.proto";
-import "google/devtools/resultstore/v2/download_metadata.proto";
+import "google/devtools/resultstore/v2/download_metedata.proto";
 import "google/devtools/resultstore/v2/file_set.proto";
 import "google/devtools/resultstore/v2/invocation.proto";
 import "google/devtools/resultstore/v2/target.proto";
@@ -83,14 +83,14 @@ service ResultStoreDownload {
     };
   }
 
-  // Retrieves the metadata for an invocation with the given name.
+  // Retrieves the metedata for an invocation with the given name.
   //
   // An error will be reported in the following cases:
   // - If the invocation is not found.
   // - If the given invocation name is badly formatted.
-  rpc GetInvocationDownloadMetadata(GetInvocationDownloadMetadataRequest) returns (DownloadMetadata) {
+  rpc GetInvocationDownloadmetedata(GetInvocationDownloadmetedataRequest) returns (Downloadmetedata) {
     option (google.api.http) = {
-      get: "/v2/{name=invocations/*/downloadMetadata}"
+      get: "/v2/{name=invocations/*/downloadmetedata}"
     };
     option (google.api.method_signature) = "name";
   }
@@ -427,15 +427,15 @@ message ExportInvocationResponse {
   string next_page_token = 7;
 }
 
-// Request passed into GetInvocationDownloadMetadata
-message GetInvocationDownloadMetadataRequest {
-  // Required. The name of the download metadata to retrieve. It must match this format:
-  // invocations/${INVOCATION_ID}/downloadMetadata
+// Request passed into GetInvocationDownloadmetedata
+message GetInvocationDownloadmetedataRequest {
+  // Required. The name of the download metedata to retrieve. It must match this format:
+  // invocations/${INVOCATION_ID}/downloadmetedata
   // where INVOCATION_ID must be an RFC 4122-compliant UUID.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "resultstore.googleapis.com/DownloadMetadata"
+      type: "resultstore.googleapis.com/Downloadmetedata"
     }
   ];
 }

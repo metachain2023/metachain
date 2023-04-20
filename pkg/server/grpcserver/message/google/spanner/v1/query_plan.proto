@@ -46,7 +46,7 @@ message PlanNode {
     SCALAR = 2;
   }
 
-  // Metadata associated with a parent-child relationship appearing in a
+  // metedata associated with a parent-child relationship appearing in a
   // [PlanNode][google.spanner.v1.PlanNode].
   message ChildLink {
     // The node to which the link points.
@@ -104,13 +104,13 @@ message PlanNode {
 
   // Attributes relevant to the node contained in a group of key-value pairs.
   // For example, a Parameter Reference node could have the following
-  // information in its metadata:
+  // information in its metedata:
   //
   //     {
   //       "parameter_reference": "param1",
   //       "parameter_type": "array"
   //     }
-  google.protobuf.Struct metadata = 6;
+  google.protobuf.Struct metedata = 6;
 
   // The execution statistics associated with the node, contained in a group of
   // key-value pairs. Only present if the plan was returned as a result of a

@@ -252,7 +252,7 @@ load(
 nodejs_gapic_library(
     name = "asset_nodejs_gapic",
     src = ":asset_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     gapic_yaml = "cloudasset_gapic.yaml",
     package = "google.cloud.asset.v1p5beta1",
     rest_numeric_enums = True,

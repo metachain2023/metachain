@@ -100,7 +100,7 @@ service Recommender {
         body: "*"
       }
     };
-    option (google.api.method_signature) = "name,state_metadata,etag";
+    option (google.api.method_signature) = "name,state_metedata,etag";
   }
 
   // Lists recommendations for the specified Cloud Resource. Requires the
@@ -166,7 +166,7 @@ service Recommender {
         body: "*"
       }
     };
-    option (google.api.method_signature) = "name,state_metadata,etag";
+    option (google.api.method_signature) = "name,state_metedata,etag";
   }
 
   // Marks the Recommendation State as Succeeded. Users can use this method to
@@ -197,7 +197,7 @@ service Recommender {
         body: "*"
       }
     };
-    option (google.api.method_signature) = "name,state_metadata,etag";
+    option (google.api.method_signature) = "name,state_metedata,etag";
   }
 
   // Marks the Recommendation State as Failed. Users can use this method to
@@ -228,7 +228,7 @@ service Recommender {
         body: "*"
       }
     };
-    option (google.api.method_signature) = "name,state_metadata,etag";
+    option (google.api.method_signature) = "name,state_metedata,etag";
   }
 
   // Gets the requested Recommender Config. There is only one instance of the
@@ -377,8 +377,8 @@ message MarkInsightAcceptedRequest {
   ];
 
   // Optional. State properties user wish to include with this state.  Full replace of the
-  // current state_metadata.
-  map<string, string> state_metadata = 2 [(google.api.field_behavior) = OPTIONAL];
+  // current state_metedata.
+  map<string, string> state_metedata = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Required. Fingerprint of the Insight. Provides optimistic locking.
   string etag = 3 [(google.api.field_behavior) = REQUIRED];
@@ -477,10 +477,10 @@ message MarkRecommendationClaimedRequest {
   ];
 
   // State properties to include with this state. Overwrites any existing
-  // `state_metadata`.
+  // `state_metedata`.
   // Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
   // Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
-  map<string, string> state_metadata = 2;
+  map<string, string> state_metedata = 2;
 
   // Required. Fingerprint of the Recommendation. Provides optimistic locking.
   string etag = 3 [(google.api.field_behavior) = REQUIRED];
@@ -497,10 +497,10 @@ message MarkRecommendationSucceededRequest {
   ];
 
   // State properties to include with this state. Overwrites any existing
-  // `state_metadata`.
+  // `state_metedata`.
   // Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
   // Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
-  map<string, string> state_metadata = 2;
+  map<string, string> state_metedata = 2;
 
   // Required. Fingerprint of the Recommendation. Provides optimistic locking.
   string etag = 3 [(google.api.field_behavior) = REQUIRED];
@@ -517,10 +517,10 @@ message MarkRecommendationFailedRequest {
   ];
 
   // State properties to include with this state. Overwrites any existing
-  // `state_metadata`.
+  // `state_metedata`.
   // Keys must match the regex `/^[a-z0-9][a-z0-9_.-]{0,62}$/`.
   // Values must match the regex `/^[a-zA-Z0-9_./-]{0,255}$/`.
-  map<string, string> state_metadata = 2;
+  map<string, string> state_metedata = 2;
 
   // Required. Fingerprint of the Recommendation. Provides optimistic locking.
   string etag = 3 [(google.api.field_behavior) = REQUIRED];

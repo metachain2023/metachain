@@ -6,8 +6,8 @@ import (
 	"io"
 	"math/big"
 
-	"metachain/pkg/storage/miscellaneous"
-	"metachain/pkg/transaction"
+	"metechain/pkg/storage/miscellaneous"
+	"metechain/pkg/transaction"
 
 	"github.com/ethereum/go-ethereum/common"
 	cbg "github.com/whyrusleeping/cbor-gen"

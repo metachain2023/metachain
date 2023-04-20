@@ -1,8 +1,8 @@
 package bg
 
 import (
-	"metachain/pkg/storage/miscellaneous"
-	"metachain/pkg/storage/store"
+	"metechain/pkg/storage/miscellaneous"
+	"metechain/pkg/storage/store"
 
 	"github.com/dgraph-io/badger"
 )
@@ -491,7 +491,7 @@ func mkvs(tx *badger.Txn, m []byte) ([][]byte, [][]byte, error) {
 }
 
 func lnew(tx *badger.Txn, k []byte) error {
-	return set(tx, eListMetaKey(k), eListMetaValue(0, 0))
+	return set(tx, eListmeteKey(k), eListmeteValue(0, 0))
 }
 
 func llen(tx *badger.Txn, k []byte) int64 {
@@ -512,7 +512,7 @@ func llclear(tx *badger.Txn, k []byte) error {
 			return err
 		}
 	}
-	return del(tx, eListMetaKey(k))
+	return del(tx, eListmeteKey(k))
 }
 
 func llpush(tx *badger.Txn, k, v []byte) (int64, error) {
@@ -528,7 +528,7 @@ func llpush(tx *badger.Txn, k, v []byte) (int64, error) {
 	if err := set(tx, eListKey(k, start-1), v); err != nil {
 		return -1, err
 	}
-	if err := set(tx, eListMetaKey(k), eListMetaValue(start-1, end)); err != nil {
+	if err := set(tx, eListmeteKey(k), eListmeteValue(start-1, end)); err != nil {
 		return -1, err
 	}
 	return end - start + 1, nil
@@ -546,7 +546,7 @@ func llpop(tx *badger.Txn, k []byte) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	if err := set(tx, eListMetaKey(k), eListMetaValue(start+1, end)); err != nil {
+	if err := set(tx, eListmeteKey(k), eListmeteValue(start+1, end)); err != nil {
 		return nil, err
 	}
 	return v, nil
@@ -565,7 +565,7 @@ func lrpush(tx *badger.Txn, k, v []byte) (int64, error) {
 	if err := set(tx, eListKey(k, end), v); err != nil {
 		return -1, err
 	}
-	if err := set(tx, eListMetaKey(k), eListMetaValue(start, end+1)); err != nil {
+	if err := set(tx, eListmeteKey(k), eListmeteValue(start, end+1)); err != nil {
 		return -1, err
 	}
 	return end - start + 1, nil
@@ -583,7 +583,7 @@ func lrpop(tx *badger.Txn, k []byte) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	if err := set(tx, eListMetaKey(k), eListMetaValue(start, end-1)); err != nil {
+	if err := set(tx, eListmeteKey(k), eListmeteValue(start, end-1)); err != nil {
 		return nil, err
 	}
 	return v, nil
@@ -786,29 +786,29 @@ func zrange(tx *badger.Txn, k []byte, start, end int32) ([][]byte, error) {
 }
 
 func listStartEnd(tx *badger.Txn, k []byte) (int64, int64, error) {
-	if v, err := get(tx, eListMetaKey(k)); err != nil {
+	if v, err := get(tx, eListmeteKey(k)); err != nil {
 		return 0, 0, err
 	} else {
-		start, end := dListMetaValue(v)
+		start, end := dListmeteValue(v)
 		return start, end, nil
 	}
 }
 
 // 'l' + k
-func eListMetaKey(k []byte) []byte {
+func eListmeteKey(k []byte) []byte {
 	return append([]byte{'l'}, k...)
 }
 
-func dListMetaKey(buf []byte) []byte {
+func dListmeteKey(buf []byte) []byte {
 	return buf[1:]
 }
 
 // start + end
-func eListMetaValue(start, end int64) []byte {
+func eListmeteValue(start, end int64) []byte {
 	return append(miscellaneous.E64func(uint64(start)), miscellaneous.E64func(uint64(end))...)
 }
 
-func dListMetaValue(buf []byte) (int64, int64) {
+func dListmeteValue(buf []byte) (int64, int64) {
 	start, _ := miscellaneous.D64func(buf[:8])
 	end, _ := miscellaneous.D64func(buf[8:16])
 	return int64(start), int64(end)

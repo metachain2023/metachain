@@ -33,13 +33,13 @@ option ruby_package = "Google::Cloud::Spanner::V1";
 // Results from [Read][google.spanner.v1.Spanner.Read] or
 // [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
 message ResultSet {
-  // Metadata about the result set, such as row type information.
-  ResultSetMetadata metadata = 1;
+  // metedata about the result set, such as row type information.
+  ResultSetmetedata metedata = 1;
 
   // Each element in `rows` is a row whose format is defined by
-  // [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
+  // [metedata.row_type][google.spanner.v1.ResultSetmetedata.row_type]. The ith element
   // in each row matches the ith field in
-  // [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. Elements are
+  // [metedata.row_type][google.spanner.v1.ResultSetmetedata.row_type]. Elements are
   // encoded based on type as described
   // [here][google.spanner.v1.TypeCode].
   repeated google.protobuf.ListValue rows = 2;
@@ -59,15 +59,15 @@ message ResultSet {
 // SQL queries better tolerate large result sets, large rows, and large
 // values, but are a little trickier to consume.
 message PartialResultSet {
-  // Metadata about the result set, such as row type information.
+  // metedata about the result set, such as row type information.
   // Only present in the first response.
-  ResultSetMetadata metadata = 1;
+  ResultSetmetedata metedata = 1;
 
   // A streamed result set consists of a stream of values, which might
   // be split into many `PartialResultSet` messages to accommodate
   // large rows and/or large values. Every N complete values defines a
   // row, where N is equal to the number of entries in
-  // [metadata.row_type.fields][google.spanner.v1.StructType.fields].
+  // [metedata.row_type.fields][google.spanner.v1.StructType.fields].
   //
   // Most values are encoded based on type as described
   // [here][google.spanner.v1.TypeCode].
@@ -118,7 +118,7 @@ message PartialResultSet {
   // field. The following `PartialResultSet`s might be yielded:
   //
   //     {
-  //       "metadata": { ... }
+  //       "metedata": { ... }
   //       "values": ["Hello", "W"]
   //       "chunked_value": true
   //       "resume_token": "Af65..."
@@ -159,8 +159,8 @@ message PartialResultSet {
   ResultSetStats stats = 5;
 }
 
-// Metadata about a [ResultSet][google.spanner.v1.ResultSet] or [PartialResultSet][google.spanner.v1.PartialResultSet].
-message ResultSetMetadata {
+// metedata about a [ResultSet][google.spanner.v1.ResultSet] or [PartialResultSet][google.spanner.v1.PartialResultSet].
+message ResultSetmetedata {
   // Indicates the field names and types for the rows in the result
   // set.  For example, a SQL query like `"SELECT UserId, UserName FROM
   // Users"` could return a `row_type` value like:

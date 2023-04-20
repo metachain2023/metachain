@@ -8,10 +8,10 @@ apis:
 
 types:
 - name: google.devtools.cloudbuild.v1.ArtifactResult
-- name: google.devtools.cloudbuild.v1.BuildOperationMetadata
-- name: google.devtools.cloudbuild.v1.CreateWorkerPoolOperationMetadata
-- name: google.devtools.cloudbuild.v1.DeleteWorkerPoolOperationMetadata
-- name: google.devtools.cloudbuild.v1.UpdateWorkerPoolOperationMetadata
+- name: google.devtools.cloudbuild.v1.BuildOperationmetedata
+- name: google.devtools.cloudbuild.v1.CreateWorkerPoolOperationmetedata
+- name: google.devtools.cloudbuild.v1.DeleteWorkerPoolOperationmetedata
+- name: google.devtools.cloudbuild.v1.UpdateWorkerPoolOperationmetedata
 
 documentation:
   summary: Creates and manages builds on Google Cloud Platform.

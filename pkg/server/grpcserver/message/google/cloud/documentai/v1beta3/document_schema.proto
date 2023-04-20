@@ -107,8 +107,8 @@ message DocumentSchema {
     repeated Property properties = 6;
   }
 
-  // Metadata for global schema behavior.
-  message Metadata {
+  // metedata for global schema behavior.
+  message metedata {
     // If true, a `document` entity type can be applied to subdocument (
     // splitting). Otherwise, it can only be applied to the entire document
     // (classification).
@@ -136,6 +136,6 @@ message DocumentSchema {
   // Entity types of the schema.
   repeated EntityType entity_types = 3;
 
-  // Metadata of the schema.
-  Metadata metadata = 4;
+  // metedata of the schema.
+  metedata metedata = 4;
 }

@@ -74,7 +74,7 @@ service SecretManagerService {
     option (google.api.method_signature) = "parent,payload";
   }
 
-  // Gets metadata for a given [Secret][google.cloud.secretmanager.v1.Secret].
+  // Gets metedata for a given [Secret][google.cloud.secretmanager.v1.Secret].
   rpc GetSecret(GetSecretRequest) returns (Secret) {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/secrets/*}"
@@ -82,7 +82,7 @@ service SecretManagerService {
     option (google.api.method_signature) = "name";
   }
 
-  // Updates metadata of an existing [Secret][google.cloud.secretmanager.v1.Secret].
+  // Updates metedata of an existing [Secret][google.cloud.secretmanager.v1.Secret].
   rpc UpdateSecret(UpdateSecretRequest) returns (Secret) {
     option (google.api.http) = {
       patch: "/v1/{secret.name=projects/*/secrets/*}"
@@ -108,7 +108,7 @@ service SecretManagerService {
     option (google.api.method_signature) = "parent";
   }
 
-  // Gets metadata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+  // Gets metedata for a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
   //
   // `projects/*/secrets/*/versions/latest` is an alias to the most recently
   // created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].

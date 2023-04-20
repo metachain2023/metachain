@@ -147,7 +147,7 @@ service SecurityCenter {
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Empty"
+      metedata_type: "google.protobuf.Empty"
     };
   }
 

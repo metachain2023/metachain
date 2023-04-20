@@ -145,7 +145,7 @@ go_gapic_library(
     grpc_service_config = "apigeeregistry_grpc_service_config.json",
     importpath = "cloud.google.com/go/apigeeregistry/apiv1;apigeeregistry",
     release_level = "beta",
-    metadata = True,
+    metedata = True,
     rest_numeric_enums = True,
     service_yaml = "apigeeregistry_v1.yaml",
     deps = [
@@ -171,7 +171,7 @@ go_gapic_assembly_pkg(
     name = "gapi-cloud-apigeeregistry-v1-go",
     deps = [
         ":apigeeregistry_go_gapic",
-        ":apigeeregistry_go_gapic_srcjar-metadata.srcjar",
+        ":apigeeregistry_go_gapic_srcjar-metedata.srcjar",
         ":apigeeregistry_go_gapic_srcjar-test.srcjar",
         ":apigeeregistry_go_proto",
     ],
@@ -280,7 +280,7 @@ nodejs_gapic_library(
     name = "apigeeregistry_nodejs_gapic",
     package_name = "@google-cloud/apigee-registry",
     src = ":apigeeregistry_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = "apigeeregistry_grpc_service_config.json",
     package = "google.cloud.apigeeregistry.v1",
     rest_numeric_enums = True,

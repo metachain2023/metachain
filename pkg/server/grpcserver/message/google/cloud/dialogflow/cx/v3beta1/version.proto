@@ -67,8 +67,8 @@ service Versions {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+  // - `metedata`:
+  // [CreateVersionOperationmetedata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationmetedata]
   // - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
   rpc CreateVersion(CreateVersionRequest)
       returns (google.longrunning.Operation) {
@@ -79,7 +79,7 @@ service Versions {
     option (google.api.method_signature) = "parent,version";
     option (google.longrunning.operation_info) = {
       response_type: "Version"
-      metadata_type: "CreateVersionOperationMetadata"
+      metedata_type: "CreateVersionOperationmetedata"
     };
   }
 
@@ -108,7 +108,7 @@ service Versions {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -120,7 +120,7 @@ service Versions {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -135,9 +135,9 @@ service Versions {
   }
 }
 
-// Metadata associated with the long running operation for
+// metedata associated with the long running operation for
 // [Versions.CreateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.CreateVersion].
-message CreateVersionOperationMetadata {
+message CreateVersionOperationmetedata {
   // Name of the created version.
   // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
   // ID>/flows/<Flow ID>/versions/<Version ID>`.

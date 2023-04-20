@@ -33,7 +33,7 @@ option ruby_package = "Google::Cloud::AIPlatform::V1beta1";
 message Execution {
   option (google.api.resource) = {
     type: "aiplatform.googleapis.com/Execution"
-    pattern: "projects/{project}/locations/{location}/metadataStores/{metadata_store}/executions/{execution}"
+    pattern: "projects/{project}/locations/{location}/metedataStores/{metedata_store}/executions/{execution}"
   };
 
   // Describes the state of the Execution.
@@ -77,7 +77,7 @@ message Execution {
   // blind "overwrite" update happens.
   string etag = 9;
 
-  // The labels with user-defined metadata to organize your Executions.
+  // The labels with user-defined metedata to organize your Executions.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -94,24 +94,24 @@ message Execution {
   google.protobuf.Timestamp update_time = 12
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The title of the schema describing the metadata.
+  // The title of the schema describing the metedata.
   //
   // Schema title and version is expected to be registered in earlier Create
   // Schema calls. And both are used together as unique identifiers to identify
-  // schemas within the local metadata store.
+  // schemas within the local metedata store.
   string schema_title = 13;
 
   // The version of the schema in `schema_title` to use.
   //
   // Schema title and version is expected to be registered in earlier Create
   // Schema calls. And both are used together as unique identifiers to identify
-  // schemas within the local metadata store.
+  // schemas within the local metedata store.
   string schema_version = 14;
 
   // Properties of the Execution.
-  // Top level metadata keys' heading and trailing spaces will be trimmed.
+  // Top level metedata keys' heading and trailing spaces will be trimmed.
   // The size of this field should not exceed 200KB.
-  google.protobuf.Struct metadata = 15;
+  google.protobuf.Struct metedata = 15;
 
   // Description of the Execution
   string description = 16;

@@ -112,8 +112,8 @@ service InstanceAdmin {
   // have a name of the format
   // `<instance_config_name>/operations/<operation_id>` and can be used to track
   // creation of the instance config. The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [CreateInstanceConfigMetadata][google.spanner.admin.instance.v1.CreateInstanceConfigMetadata].
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [CreateInstanceConfigmetedata][google.spanner.admin.instance.v1.CreateInstanceConfigmetedata].
   // The [response][google.longrunning.Operation.response] field type is
   // [InstanceConfig][google.spanner.admin.instance.v1.InstanceConfig], if
   // successful.
@@ -131,7 +131,7 @@ service InstanceAdmin {
         "parent,instance_config,instance_config_id";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.instance.v1.InstanceConfig"
-      metadata_type: "google.spanner.admin.instance.v1.CreateInstanceConfigMetadata"
+      metedata_type: "google.spanner.admin.instance.v1.CreateInstanceConfigmetedata"
     };
   }
 
@@ -150,8 +150,8 @@ service InstanceAdmin {
   //
   // While the operation is pending:
   //
-  //   * Cancelling the operation sets its metadata's
-  //     [cancel_time][google.spanner.admin.instance.v1.UpdateInstanceConfigMetadata.cancel_time].
+  //   * Cancelling the operation sets its metedata's
+  //     [cancel_time][google.spanner.admin.instance.v1.UpdateInstanceConfigmetedata.cancel_time].
   //     The operation is guaranteed to succeed at undoing all changes, after
   //     which point it terminates with a `CANCELLED` status.
   //   * All other attempts to modify the instance config are rejected.
@@ -171,8 +171,8 @@ service InstanceAdmin {
   // have a name of the format
   // `<instance_config_name>/operations/<operation_id>` and can be used to track
   // the instance config modification.  The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [UpdateInstanceConfigMetadata][google.spanner.admin.instance.v1.UpdateInstanceConfigMetadata].
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [UpdateInstanceConfigmetedata][google.spanner.admin.instance.v1.UpdateInstanceConfigmetedata].
   // The [response][google.longrunning.Operation.response] field type is
   // [InstanceConfig][google.spanner.admin.instance.v1.InstanceConfig], if
   // successful.
@@ -188,7 +188,7 @@ service InstanceAdmin {
     option (google.api.method_signature) = "instance_config,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.instance.v1.InstanceConfig"
-      metadata_type: "google.spanner.admin.instance.v1.UpdateInstanceConfigMetadata"
+      metedata_type: "google.spanner.admin.instance.v1.UpdateInstanceConfigmetedata"
     };
   }
 
@@ -213,11 +213,11 @@ service InstanceAdmin {
   // config operation has a name of the form
   // `projects/<project>/instanceConfigs/<instance_config>/operations/<operation>`.
   // The long-running operation
-  // [metadata][google.longrunning.Operation.metadata] field type
-  // `metadata.type_url` describes the type of the metadata. Operations returned
+  // [metedata][google.longrunning.Operation.metedata] field type
+  // `metedata.type_url` describes the type of the metedata. Operations returned
   // include those that have completed/failed/canceled within the last 7 days,
   // and pending operations. Operations returned are ordered by
-  // `operation.metadata.value.start_time` in descending order starting
+  // `operation.metedata.value.start_time` in descending order starting
   // from the most recently started operation.
   rpc ListInstanceConfigOperations(ListInstanceConfigOperationsRequest)
       returns (ListInstanceConfigOperationsResponse) {
@@ -273,8 +273,8 @@ service InstanceAdmin {
   // The returned [long-running operation][google.longrunning.Operation] will
   // have a name of the format `<instance_name>/operations/<operation_id>` and
   // can be used to track creation of the instance.  The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [CreateInstanceMetadata][google.spanner.admin.instance.v1.CreateInstanceMetadata].
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [CreateInstancemetedata][google.spanner.admin.instance.v1.CreateInstancemetedata].
   // The [response][google.longrunning.Operation.response] field type is
   // [Instance][google.spanner.admin.instance.v1.Instance], if successful.
   rpc CreateInstance(CreateInstanceRequest)
@@ -286,7 +286,7 @@ service InstanceAdmin {
     option (google.api.method_signature) = "parent,instance_id,instance";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.instance.v1.Instance"
-      metadata_type: "google.spanner.admin.instance.v1.CreateInstanceMetadata"
+      metedata_type: "google.spanner.admin.instance.v1.CreateInstancemetedata"
     };
   }
 
@@ -303,8 +303,8 @@ service InstanceAdmin {
   //
   // Until completion of the returned operation:
   //
-  //   * Cancelling the operation sets its metadata's
-  //     [cancel_time][google.spanner.admin.instance.v1.UpdateInstanceMetadata.cancel_time],
+  //   * Cancelling the operation sets its metedata's
+  //     [cancel_time][google.spanner.admin.instance.v1.UpdateInstancemetedata.cancel_time],
   //     and begins restoring resources to their pre-request values. The
   //     operation is guaranteed to succeed at undoing all resource changes,
   //     after which point it terminates with a `CANCELLED` status.
@@ -323,8 +323,8 @@ service InstanceAdmin {
   // The returned [long-running operation][google.longrunning.Operation] will
   // have a name of the format `<instance_name>/operations/<operation_id>` and
   // can be used to track the instance modification.  The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [UpdateInstanceMetadata][google.spanner.admin.instance.v1.UpdateInstanceMetadata].
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [UpdateInstancemetedata][google.spanner.admin.instance.v1.UpdateInstancemetedata].
   // The [response][google.longrunning.Operation.response] field type is
   // [Instance][google.spanner.admin.instance.v1.Instance], if successful.
   //
@@ -339,7 +339,7 @@ service InstanceAdmin {
     option (google.api.method_signature) = "instance,field_mask";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.instance.v1.Instance"
-      metadata_type: "google.spanner.admin.instance.v1.UpdateInstanceMetadata"
+      metedata_type: "google.spanner.admin.instance.v1.UpdateInstancemetedata"
     };
   }
 
@@ -822,13 +822,13 @@ message ListInstanceConfigOperationsRequest {
   //
   //   * `name` - The name of the long-running operation
   //   * `done` - False if the operation is in progress, else true.
-  //   * `metadata.@type` - the type of metadata. For example, the type string
+  //   * `metedata.@type` - the type of metedata. For example, the type string
   //      for
-  //      [CreateInstanceConfigMetadata][google.spanner.admin.instance.v1.CreateInstanceConfigMetadata]
+  //      [CreateInstanceConfigmetedata][google.spanner.admin.instance.v1.CreateInstanceConfigmetedata]
   //      is
-  //      `type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceConfigMetadata`.
-  //   * `metadata.<field_name>` - any field in metadata.value.
-  //      `metadata.@type` must be specified first, if filtering on metadata
+  //      `type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceConfigmetedata`.
+  //   * `metedata.<field_name>` - any field in metedata.value.
+  //      `metedata.@type` must be specified first, if filtering on metedata
   //      fields.
   //   * `error` - Error associated with the long-running operation.
   //   * `response.@type` - the type of response.
@@ -841,14 +841,14 @@ message ListInstanceConfigOperationsRequest {
   // Here are a few examples:
   //
   //   * `done:true` - The operation is complete.
-  //   * `(metadata.@type=` \
-  //     `type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceConfigMetadata)
+  //   * `(metedata.@type=` \
+  //     `type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceConfigmetedata)
   //     AND` \
-  //     `(metadata.instance_config.name:custom-config) AND` \
-  //     `(metadata.progress.start_time < \"2021-03-28T14:50:00Z\") AND` \
+  //     `(metedata.instance_config.name:custom-config) AND` \
+  //     `(metedata.progress.start_time < \"2021-03-28T14:50:00Z\") AND` \
   //     `(error:*)` - Return operations where:
-  //     * The operation's metadata type is
-  //     [CreateInstanceConfigMetadata][google.spanner.admin.instance.v1.CreateInstanceConfigMetadata].
+  //     * The operation's metedata type is
+  //     [CreateInstanceConfigmetedata][google.spanner.admin.instance.v1.CreateInstanceConfigmetedata].
   //     * The instance config name contains "custom-config".
   //     * The operation started before 2021-03-28T14:50:00Z.
   //     * The operation resulted in an error.
@@ -872,13 +872,13 @@ message ListInstanceConfigOperationsResponse {
   // The list of matching instance config [long-running
   // operations][google.longrunning.Operation]. Each operation's name will be
   // prefixed by the instance config's name. The operation's
-  // [metadata][google.longrunning.Operation.metadata] field type
-  // `metadata.type_url` describes the type of the metadata.
+  // [metedata][google.longrunning.Operation.metedata] field type
+  // `metedata.type_url` describes the type of the metedata.
   repeated google.longrunning.Operation operations = 1;
 
   // `next_page_token` can be sent in a subsequent
   // [ListInstanceConfigOperations][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigOperations]
-  // call to fetch more of the matching metadata.
+  // call to fetch more of the matching metedata.
   string next_page_token = 2;
 }
 
@@ -1010,9 +1010,9 @@ message DeleteInstanceRequest {
   ];
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
-message CreateInstanceMetadata {
+message CreateInstancemetedata {
   // The instance being created.
   Instance instance = 1;
 
@@ -1030,9 +1030,9 @@ message CreateInstanceMetadata {
   google.protobuf.Timestamp end_time = 4;
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
-message UpdateInstanceMetadata {
+message UpdateInstancemetedata {
   // The desired end state of the update.
   Instance instance = 1;
 
@@ -1050,9 +1050,9 @@ message UpdateInstanceMetadata {
   google.protobuf.Timestamp end_time = 4;
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [CreateInstanceConfig][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstanceConfig].
-message CreateInstanceConfigMetadata {
+message CreateInstanceConfigmetedata {
   // The target instance config end state.
   InstanceConfig instance_config = 1;
 
@@ -1065,9 +1065,9 @@ message CreateInstanceConfigMetadata {
   google.protobuf.Timestamp cancel_time = 3;
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [UpdateInstanceConfig][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstanceConfig].
-message UpdateInstanceConfigMetadata {
+message UpdateInstanceConfigmetedata {
   // The desired instance config after updating.
   InstanceConfig instance_config = 1;
 

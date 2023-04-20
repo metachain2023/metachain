@@ -261,103 +261,103 @@
     {
       "name":[
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "AddContextArtifactsAndExecutions"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "AddContextChildren"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "AddExecutionEvents"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "CreateArtifact"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "CreateContext"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "CreateExecution"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
-          "method": "CreateMetadataSchema"
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
+          "method": "CreatemetedataSchema"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
-          "method": "CreateMetadataStore"
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
+          "method": "CreatemetedataStore"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "DeleteContext"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
-          "method": "DeleteMetadataStore"
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
+          "method": "DeletemetedataStore"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "GetArtifact"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "GetContext"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "GetExecution"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
-          "method": "GetMetadataSchema"
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
+          "method": "GetmetedataSchema"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
-          "method": "GetMetadataStore"
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
+          "method": "GetmetedataStore"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "ListArtifacts"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "ListContexts"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "ListExecutions"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
-          "method": "ListMetadataSchemas"
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
+          "method": "ListmetedataSchemas"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
-          "method": "ListMetadataStores"
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
+          "method": "ListmetedataStores"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "QueryContextLineageSubgraph"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "QueryExecutionInputsAndOutputs"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "UpdateArtifact"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "UpdateContext"
         },
         {
-          "service": "google.cloud.aiplatform.v1beta1.MetadataService",
+          "service": "google.cloud.aiplatform.v1beta1.metedataService",
           "method": "UpdateExecution"
         }
       ],

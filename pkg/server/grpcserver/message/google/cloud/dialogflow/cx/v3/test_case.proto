@@ -100,8 +100,8 @@ service TestCases {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3.RunTestCaseMetadata]
+  // - `metedata`:
+  // [RunTestCasemetedata][google.cloud.dialogflow.cx.v3.RunTestCasemetedata]
   // - `response`:
   // [RunTestCaseResponse][google.cloud.dialogflow.cx.v3.RunTestCaseResponse]
   rpc RunTestCase(RunTestCaseRequest) returns (google.longrunning.Operation) {
@@ -111,7 +111,7 @@ service TestCases {
     };
     option (google.longrunning.operation_info) = {
       response_type: "RunTestCaseResponse"
-      metadata_type: "RunTestCaseMetadata"
+      metedata_type: "RunTestCasemetedata"
     };
   }
 
@@ -121,8 +121,8 @@ service TestCases {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata]
+  // - `metedata`:
+  // [BatchRunTestCasesmetedata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesmetedata]
   // - `response`:
   // [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
   rpc BatchRunTestCases(BatchRunTestCasesRequest)
@@ -133,7 +133,7 @@ service TestCases {
     };
     option (google.longrunning.operation_info) = {
       response_type: "BatchRunTestCasesResponse"
-      metadata_type: "BatchRunTestCasesMetadata"
+      metedata_type: "BatchRunTestCasesmetedata"
     };
   }
 
@@ -153,8 +153,8 @@ service TestCases {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata]
+  // - `metedata`:
+  // [ImportTestCasesmetedata][google.cloud.dialogflow.cx.v3.ImportTestCasesmetedata]
   // - `response`:
   // [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
   rpc ImportTestCases(ImportTestCasesRequest)
@@ -165,7 +165,7 @@ service TestCases {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ImportTestCasesResponse"
-      metadata_type: "ImportTestCasesMetadata"
+      metedata_type: "ImportTestCasesmetedata"
     };
   }
 
@@ -176,8 +176,8 @@ service TestCases {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata]
+  // - `metedata`:
+  // [ExportTestCasesmetedata][google.cloud.dialogflow.cx.v3.ExportTestCasesmetedata]
   // - `response`:
   // [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
   rpc ExportTestCases(ExportTestCasesRequest)
@@ -188,7 +188,7 @@ service TestCases {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ExportTestCasesResponse"
-      metadata_type: "ExportTestCasesMetadata"
+      metedata_type: "ExportTestCasesmetedata"
     };
   }
 
@@ -470,7 +470,7 @@ message TransitionRouteGroupCoverage {
       bool covered = 2;
     }
 
-    // Transition route group metadata. Only name and displayName will be set.
+    // Transition route group metedata. Only name and displayName will be set.
     TransitionRouteGroup route_group = 1;
 
     // The list of transition routes and coverage in the transition route group.
@@ -573,7 +573,7 @@ message ListTestCasesRequest {
     // The API will default to the BASIC view.
     TEST_CASE_VIEW_UNSPECIFIED = 0;
 
-    // Include basic metadata about the test case, but not the conversation
+    // Include basic metedata about the test case, but not the conversation
     // turns. This is the default value.
     BASIC = 1;
 
@@ -598,7 +598,7 @@ message ListTestCasesRequest {
   // The next_page_token value returned from a previous list request.
   string page_token = 3;
 
-  // Specifies whether response should include all fields or just the metadata.
+  // Specifies whether response should include all fields or just the metedata.
   TestCaseView view = 4;
 }
 
@@ -710,10 +710,10 @@ message RunTestCaseResponse {
   TestCaseResult result = 2;
 }
 
-// Metadata returned for the
+// metedata returned for the
 // [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase]
 // long running operation. This message currently has no fields.
-message RunTestCaseMetadata {}
+message RunTestCasemetedata {}
 
 // The request message for
 // [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases].
@@ -757,10 +757,10 @@ message BatchRunTestCasesResponse {
   repeated TestCaseResult results = 1;
 }
 
-// Metadata returned for the
+// metedata returned for the
 // [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases]
 // long running operation.
-message BatchRunTestCasesMetadata {
+message BatchRunTestCasesmetedata {
   // The test errors.
   repeated TestError errors = 1;
 }
@@ -820,10 +820,10 @@ message ImportTestCasesResponse {
   }];
 }
 
-// Metadata returned for the
+// metedata returned for the
 // [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ImportTestCases]
 // long running operation.
-message ImportTestCasesMetadata {
+message ImportTestCasesmetedata {
   // Errors for failed test cases.
   repeated TestCaseError errors = 1;
 }
@@ -908,10 +908,10 @@ message ExportTestCasesResponse {
   }
 }
 
-// Metadata returned for the
+// metedata returned for the
 // [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases]
 // long running operation. This message currently has no fields.
-message ExportTestCasesMetadata {}
+message ExportTestCasesmetedata {}
 
 // The request message for
 // [TestCases.ListTestCaseResults][google.cloud.dialogflow.cx.v3.TestCases.ListTestCaseResults].

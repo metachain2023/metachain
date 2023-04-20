@@ -46,8 +46,8 @@ message MaxPodsConstraint {
   int64 max_pods_per_node = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata about a long-running operation.
-message OperationMetadata {
+// metedata about a long-running operation.
+message Operationmetedata {
   // Output only. The time at which this operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

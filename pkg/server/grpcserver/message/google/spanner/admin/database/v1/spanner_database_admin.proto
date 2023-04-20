@@ -65,8 +65,8 @@ service DatabaseAdmin {
   // The returned [long-running operation][google.longrunning.Operation] will
   // have a name of the format `<database_name>/operations/<operation_id>` and
   // can be used to track preparation of the database. The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata]. The
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [CreateDatabasemetedata][google.spanner.admin.database.v1.CreateDatabasemetedata]. The
   // [response][google.longrunning.Operation.response] field type is
   // [Database][google.spanner.admin.database.v1.Database], if successful.
   rpc CreateDatabase(CreateDatabaseRequest) returns (google.longrunning.Operation) {
@@ -77,7 +77,7 @@ service DatabaseAdmin {
     option (google.api.method_signature) = "parent,create_statement";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.database.v1.Database"
-      metadata_type: "google.spanner.admin.database.v1.CreateDatabaseMetadata"
+      metedata_type: "google.spanner.admin.database.v1.CreateDatabasemetedata"
     };
   }
 
@@ -94,8 +94,8 @@ service DatabaseAdmin {
   // [long-running operation][google.longrunning.Operation] will have a name of
   // the format `<database_name>/operations/<operation_id>` and can be used to
   // track execution of the schema change(s). The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].  The operation has no response.
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [UpdateDatabaseDdlmetedata][google.spanner.admin.database.v1.UpdateDatabaseDdlmetedata].  The operation has no response.
   rpc UpdateDatabaseDdl(UpdateDatabaseDdlRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       patch: "/v1/{database=projects/*/instances/*/databases/*}/ddl"
@@ -104,7 +104,7 @@ service DatabaseAdmin {
     option (google.api.method_signature) = "database,statements";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata"
+      metedata_type: "google.spanner.admin.database.v1.UpdateDatabaseDdlmetedata"
     };
   }
 
@@ -200,8 +200,8 @@ service DatabaseAdmin {
   // will have a name of the format
   // `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation_id>`
   // and can be used to track creation of the backup. The
-  // [metadata][google.longrunning.Operation.metadata] field type is
-  // [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata]. The
+  // [metedata][google.longrunning.Operation.metedata] field type is
+  // [CreateBackupmetedata][google.spanner.admin.database.v1.CreateBackupmetedata]. The
   // [response][google.longrunning.Operation.response] field type is
   // [Backup][google.spanner.admin.database.v1.Backup], if successful. Cancelling the returned operation will stop the
   // creation and delete the backup.
@@ -215,7 +215,7 @@ service DatabaseAdmin {
     option (google.api.method_signature) = "parent,backup,backup_id";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.database.v1.Backup"
-      metadata_type: "google.spanner.admin.database.v1.CreateBackupMetadata"
+      metedata_type: "google.spanner.admin.database.v1.CreateBackupmetedata"
     };
   }
 
@@ -225,8 +225,8 @@ service DatabaseAdmin {
   // `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation_id>`
   // and can be used to track copying of the backup. The operation is associated
   // with the destination backup.
-  // The [metadata][google.longrunning.Operation.metadata] field type is
-  // [CopyBackupMetadata][google.spanner.admin.database.v1.CopyBackupMetadata].
+  // The [metedata][google.longrunning.Operation.metedata] field type is
+  // [CopyBackupmetedata][google.spanner.admin.database.v1.CopyBackupmetedata].
   // The [response][google.longrunning.Operation.response] field type is
   // [Backup][google.spanner.admin.database.v1.Backup], if successful. Cancelling the returned operation will stop the
   // copying and delete the backup.
@@ -239,11 +239,11 @@ service DatabaseAdmin {
     option (google.api.method_signature) = "parent,backup_id,source_backup,expire_time";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.database.v1.Backup"
-      metadata_type: "google.spanner.admin.database.v1.CopyBackupMetadata"
+      metedata_type: "google.spanner.admin.database.v1.CopyBackupmetedata"
     };
   }
 
-  // Gets metadata on a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
+  // Gets metedata on a pending or completed [Backup][google.spanner.admin.database.v1.Backup].
   rpc GetBackup(GetBackupRequest) returns (Backup) {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/instances/*/backups/*}"
@@ -285,8 +285,8 @@ service DatabaseAdmin {
   // operation][google.longrunning.Operation] has a name of the format
   // `projects/<project>/instances/<instance>/databases/<database>/operations/<operation_id>`,
   // and can be used to track the progress of the operation, and to cancel it.
-  // The [metadata][google.longrunning.Operation.metadata] field type is
-  // [RestoreDatabaseMetadata][google.spanner.admin.database.v1.RestoreDatabaseMetadata].
+  // The [metedata][google.longrunning.Operation.metedata] field type is
+  // [RestoreDatabasemetedata][google.spanner.admin.database.v1.RestoreDatabasemetedata].
   // The [response][google.longrunning.Operation.response] type
   // is [Database][google.spanner.admin.database.v1.Database], if
   // successful. Cancelling the returned operation will stop the restore and
@@ -303,7 +303,7 @@ service DatabaseAdmin {
     option (google.api.method_signature) = "parent,database_id,backup";
     option (google.longrunning.operation_info) = {
       response_type: "google.spanner.admin.database.v1.Database"
-      metadata_type: "google.spanner.admin.database.v1.RestoreDatabaseMetadata"
+      metedata_type: "google.spanner.admin.database.v1.RestoreDatabasemetedata"
     };
   }
 
@@ -311,8 +311,8 @@ service DatabaseAdmin {
   // A database operation has a name of the form
   // `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>`.
   // The long-running operation
-  // [metadata][google.longrunning.Operation.metadata] field type
-  // `metadata.type_url` describes the type of the metadata. Operations returned
+  // [metedata][google.longrunning.Operation.metedata] field type
+  // `metedata.type_url` describes the type of the metedata. Operations returned
   // include those that have completed/failed/canceled within the last 7 days,
   // and pending operations.
   rpc ListDatabaseOperations(ListDatabaseOperationsRequest) returns (ListDatabaseOperationsResponse) {
@@ -326,11 +326,11 @@ service DatabaseAdmin {
   // the given instance. A backup operation has a name of the form
   // `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation>`.
   // The long-running operation
-  // [metadata][google.longrunning.Operation.metadata] field type
-  // `metadata.type_url` describes the type of the metadata. Operations returned
+  // [metedata][google.longrunning.Operation.metedata] field type
+  // `metedata.type_url` describes the type of the metedata. Operations returned
   // include those that have completed/failed/canceled within the last 7 days,
   // and pending operations. Operations returned are ordered by
-  // `operation.metadata.value.progress.start_time` in descending order starting
+  // `operation.metedata.value.progress.start_time` in descending order starting
   // from the most recently started operation.
   rpc ListBackupOperations(ListBackupOperationsRequest) returns (ListBackupOperationsResponse) {
     option (google.api.http) = {
@@ -516,9 +516,9 @@ message CreateDatabaseRequest {
   DatabaseDialect database_dialect = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
-message CreateDatabaseMetadata {
+message CreateDatabasemetedata {
   // The database being created.
   string database = 1 [(google.api.resource_reference) = {
                          type: "spanner.googleapis.com/Database"
@@ -587,9 +587,9 @@ message UpdateDatabaseDdlRequest {
   string operation_id = 3;
 }
 
-// Metadata type for the operation returned by
+// metedata type for the operation returned by
 // [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl].
-message UpdateDatabaseDdlMetadata {
+message UpdateDatabaseDdlmetedata {
   // The database being modified.
   string database = 1 [(google.api.resource_reference) = {
                          type: "spanner.googleapis.com/Database"
@@ -676,11 +676,11 @@ message ListDatabaseOperationsRequest {
   //
   //   * `name` - The name of the long-running operation
   //   * `done` - False if the operation is in progress, else true.
-  //   * `metadata.@type` - the type of metadata. For example, the type string
-  //      for [RestoreDatabaseMetadata][google.spanner.admin.database.v1.RestoreDatabaseMetadata] is
-  //      `type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata`.
-  //   * `metadata.<field_name>` - any field in metadata.value.
-  //      `metadata.@type` must be specified first, if filtering on metadata
+  //   * `metedata.@type` - the type of metedata. For example, the type string
+  //      for [RestoreDatabasemetedata][google.spanner.admin.database.v1.RestoreDatabasemetedata] is
+  //      `type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabasemetedata`.
+  //   * `metedata.<field_name>` - any field in metedata.value.
+  //      `metedata.@type` must be specified first, if filtering on metedata
   //      fields.
   //   * `error` - Error associated with the long-running operation.
   //   * `response.@type` - the type of response.
@@ -693,13 +693,13 @@ message ListDatabaseOperationsRequest {
   // Here are a few examples:
   //
   //   * `done:true` - The operation is complete.
-  //   * `(metadata.@type=type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata) AND` \
-  //     `(metadata.source_type:BACKUP) AND` \
-  //     `(metadata.backup_info.backup:backup_howl) AND` \
-  //     `(metadata.name:restored_howl) AND` \
-  //     `(metadata.progress.start_time < \"2018-03-28T14:50:00Z\") AND` \
+  //   * `(metedata.@type=type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabasemetedata) AND` \
+  //     `(metedata.source_type:BACKUP) AND` \
+  //     `(metedata.backup_info.backup:backup_howl) AND` \
+  //     `(metedata.name:restored_howl) AND` \
+  //     `(metedata.progress.start_time < \"2018-03-28T14:50:00Z\") AND` \
   //     `(error:*)` - Return operations where:
-  //     * The operation's metadata type is [RestoreDatabaseMetadata][google.spanner.admin.database.v1.RestoreDatabaseMetadata].
+  //     * The operation's metedata type is [RestoreDatabasemetedata][google.spanner.admin.database.v1.RestoreDatabasemetedata].
   //     * The database is restored from a backup.
   //     * The backup name contains "backup_howl".
   //     * The restored database's name contains "restored_howl".
@@ -724,13 +724,13 @@ message ListDatabaseOperationsResponse {
   // The list of matching database [long-running
   // operations][google.longrunning.Operation]. Each operation's name will be
   // prefixed by the database's name. The operation's
-  // [metadata][google.longrunning.Operation.metadata] field type
-  // `metadata.type_url` describes the type of the metadata.
+  // [metedata][google.longrunning.Operation.metedata] field type
+  // `metedata.type_url` describes the type of the metedata.
   repeated google.longrunning.Operation operations = 1;
 
   // `next_page_token` can be sent in a subsequent
   // [ListDatabaseOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabaseOperations]
-  // call to fetch more of the matching metadata.
+  // call to fetch more of the matching metedata.
   string next_page_token = 2;
 }
 
@@ -808,9 +808,9 @@ message RestoreDatabaseEncryptionConfig {
   ];
 }
 
-// Metadata type for the long-running operation returned by
+// metedata type for the long-running operation returned by
 // [RestoreDatabase][google.spanner.admin.database.v1.DatabaseAdmin.RestoreDatabase].
-message RestoreDatabaseMetadata {
+message RestoreDatabasemetedata {
   // Name of the database being created and restored to.
   string name = 1 [(google.api.resource_reference) = {
                      type: "spanner.googleapis.com/Database"
@@ -850,19 +850,19 @@ message RestoreDatabaseMetadata {
   // The name is of the form
   // `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>`
   // where the <database> is the name of database being created and restored to.
-  // The metadata type of the  long-running operation is
-  // [OptimizeRestoredDatabaseMetadata][google.spanner.admin.database.v1.OptimizeRestoredDatabaseMetadata]. This long-running operation will be
+  // The metedata type of the  long-running operation is
+  // [OptimizeRestoredDatabasemetedata][google.spanner.admin.database.v1.OptimizeRestoredDatabasemetedata]. This long-running operation will be
   // automatically created by the system after the RestoreDatabase long-running
   // operation completes successfully. This operation will not be created if the
   // restore was not successful.
   string optimize_database_operation_name = 6;
 }
 
-// Metadata type for the long-running operation used to track the progress
+// metedata type for the long-running operation used to track the progress
 // of optimizations performed on a newly restored database. This long-running
 // operation is automatically created by the system after the successful
 // completion of a database restore, and cannot be cancelled.
-message OptimizeRestoredDatabaseMetadata {
+message OptimizeRestoredDatabasemetedata {
   // Name of the restored database being optimized.
   string name = 1 [(google.api.resource_reference) = {
                      type: "spanner.googleapis.com/Database"

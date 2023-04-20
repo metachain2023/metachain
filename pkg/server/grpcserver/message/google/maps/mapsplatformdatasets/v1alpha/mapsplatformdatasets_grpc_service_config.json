@@ -12,7 +12,7 @@
         },
         {
           "service": "google.maps.mapsplatformdatasets.v1alpha.MapsPlatformDatasetsV1Alpha",
-          "method": "UpdateDatasetMetadata"
+          "method": "UpdateDatasetmetedata"
         },
         {
           "service": "google.maps.mapsplatformdatasets.v1alpha.MapsPlatformDatasetsV1Alpha",

@@ -256,7 +256,7 @@ message PushConfig {
   // The currently supported attribute is `x-goog-version`, which you can
   // use to change the format of the push message. This attribute
   // indicates the version of the data expected by the endpoint. This
-  // controls the shape of the envelope (i.e. its fields and metadata).
+  // controls the shape of the envelope (i.e. its fields and metedata).
   // The endpoint version is based on the version of the Pub/Sub
   // API.
   //

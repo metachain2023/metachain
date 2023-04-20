@@ -246,8 +246,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata contains an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata contains an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc ProvisionCloudIdentity(ProvisionCloudIdentityRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -256,7 +256,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Customer"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -384,8 +384,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc CreateEntitlement(CreateEntitlementRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -394,7 +394,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Entitlement"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -419,8 +419,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc ChangeParameters(ChangeParametersRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -429,7 +429,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Entitlement"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -454,8 +454,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc ChangeRenewalSettings(ChangeRenewalSettingsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -464,7 +464,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Entitlement"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -487,8 +487,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc ChangeOffer(ChangeOfferRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v1/{name=accounts/*/customers/*/entitlements/*}:changeOffer"
@@ -496,7 +496,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Entitlement"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -522,8 +522,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc StartPaidService(StartPaidServiceRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -532,7 +532,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Entitlement"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -555,8 +555,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc SuspendEntitlement(SuspendEntitlementRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -565,7 +565,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Entitlement"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -593,8 +593,8 @@ service CloudChannelService {
   //
   // To get the results of the operation, call the GetOperation method of
   // CloudChannelOperationsService. The response will contain
-  // google.protobuf.Empty on success. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // google.protobuf.Empty on success. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc CancelEntitlement(CancelEntitlementRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -603,7 +603,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -632,8 +632,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc ActivateEntitlement(ActivateEntitlementRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -642,7 +642,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Entitlement"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -673,8 +673,8 @@ service CloudChannelService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc TransferEntitlements(TransferEntitlementsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -683,7 +683,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "TransferEntitlementsResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -714,8 +714,8 @@ service CloudChannelService {
   //
   // To get the results of the operation, call the GetOperation method of
   // CloudChannelOperationsService. The response will contain
-  // google.protobuf.Empty on success. The Operation metadata will contain an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // google.protobuf.Empty on success. The Operation metedata will contain an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   rpc TransferEntitlementsToGoogle(TransferEntitlementsToGoogleRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -724,7 +724,7 @@ service CloudChannelService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

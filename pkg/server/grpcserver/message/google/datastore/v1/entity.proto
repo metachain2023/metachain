@@ -134,7 +134,7 @@ message ArrayValue {
 }
 
 // A message that can hold any of the supported value types and associated
-// metadata.
+// metedata.
 message Value {
   // Must have a value set.
   oneof value_type {

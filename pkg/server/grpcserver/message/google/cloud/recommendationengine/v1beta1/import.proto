@@ -135,9 +135,9 @@ message InputConfig {
   }
 }
 
-// Metadata related to the progress of the Import operation. This will be
-// returned by the google.longrunning.Operation.metadata field.
-message ImportMetadata {
+// metedata related to the progress of the Import operation. This will be
+// returned by the google.longrunning.Operation.metedata field.
+message Importmetedata {
   // Name of the operation.
   string operation_name = 5;
 

@@ -263,7 +263,7 @@ load(
 nodejs_gapic_library(
     name = "admob_nodejs_gapic",
     src = ":admob_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = None,
     package = "google.ads.admob.v1",
     rest_numeric_enums = True,

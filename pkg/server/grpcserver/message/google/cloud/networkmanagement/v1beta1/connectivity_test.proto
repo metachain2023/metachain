@@ -99,7 +99,7 @@ message ConnectivityTest {
   // Output only. The display name of a Connectivity Test.
   string display_name = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Resource labels to represent user-provided metadata.
+  // Resource labels to represent user-provided metedata.
   map<string, string> labels = 8;
 
   // Output only. The time the test was created.

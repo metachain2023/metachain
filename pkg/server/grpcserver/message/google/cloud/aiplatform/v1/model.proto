@@ -178,17 +178,17 @@ message Model {
   // as an OpenAPI 3.0.2 [Schema
   // Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
   // AutoML Models always have this field populated by Vertex AI, if no
-  // additional metadata is needed, this field is set to an empty string.
+  // additional metedata is needed, this field is set to an empty string.
   // Note: The URI given on output will be immutable and probably different,
   // including the URI scheme, than the one given on input. The output URI will
   // point to a location where the user only has a read access.
-  string metadata_schema_uri = 5 [(google.api.field_behavior) = IMMUTABLE];
+  string metedata_schema_uri = 5 [(google.api.field_behavior) = IMMUTABLE];
 
   // Immutable. An additional information about the Model; the schema of the
-  // metadata can be found in
-  // [metadata_schema][google.cloud.aiplatform.v1.Model.metadata_schema_uri].
+  // metedata can be found in
+  // [metedata_schema][google.cloud.aiplatform.v1.Model.metedata_schema_uri].
   // Unset if the Model does not have any additional information.
-  google.protobuf.Value metadata = 6 [(google.api.field_behavior) = IMMUTABLE];
+  google.protobuf.Value metedata = 6 [(google.api.field_behavior) = IMMUTABLE];
 
   // Output only. The formats in which this Model may be exported. If empty,
   // this Model is not available for export.
@@ -371,7 +371,7 @@ message Model {
   // "overwrite" update happens.
   string etag = 16;
 
-  // The labels with user-defined metadata to organize your Models.
+  // The labels with user-defined metedata to organize your Models.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -395,10 +395,10 @@ message Model {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The resource name of the Artifact that was created in
-  // MetadataStore when creating the Model. The Artifact resource name pattern
+  // metedataStore when creating the Model. The Artifact resource name pattern
   // is
-  // `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
-  string metadata_artifact = 44 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // `projects/{project}/locations/{location}/metedataStores/{metedata_store}/artifacts/{artifact}`.
+  string metedata_artifact = 44 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Contains the schemata used in Model's predictions and explanations via

@@ -660,7 +660,7 @@ message UndeleteServiceAccountRequest {
 }
 
 message UndeleteServiceAccountResponse {
-  // Metadata for the restored service account.
+  // metedata for the restored service account.
   ServiceAccount restored_account = 1;
 }
 

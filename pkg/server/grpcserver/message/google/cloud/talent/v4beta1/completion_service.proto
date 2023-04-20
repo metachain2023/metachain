@@ -168,5 +168,5 @@ message CompleteQueryResponse {
 
   // Additional information for the API invocation, such as the request
   // tracking id.
-  ResponseMetadata metadata = 2;
+  Responsemetedata metedata = 2;
 }

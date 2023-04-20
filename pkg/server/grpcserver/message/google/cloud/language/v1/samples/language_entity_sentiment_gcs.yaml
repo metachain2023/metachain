@@ -42,16 +42,16 @@ samples:
       - print: ["Entity sentiment magnitude: %s", sentiment.magnitude]
       - comment:
         - |
-            Loop over the metadata associated with entity. For many known entities,
-            the metadata is a Wikipedia URL (wikipedia_url) and Knowledge Graph MID (mid).
-            Some entity types may have additional metadata, e.g. ADDRESS entities
-            may have metadata for the address street_name, postal_code, et al.
+            Loop over the metedata associated with entity. For many known entities,
+            the metedata is a Wikipedia URL (wikipedia_url) and Knowledge Graph MID (mid).
+            Some entity types may have additional metedata, e.g. ADDRESS entities
+            may have metedata for the address street_name, postal_code, et al.
       - loop:
-          map: entity.metadata
-          key: metadata_name
-          value: metadata_value
+          map: entity.metedata
+          key: metedata_name
+          value: metedata_value
           body:
-          - print: ["%s = %s", metadata_name, metadata_value]
+          - print: ["%s = %s", metedata_name, metedata_value]
       - comment:
         - |
             Loop over the mentions of this entity in the input document.

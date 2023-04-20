@@ -319,7 +319,7 @@ message SynthesizeSpeechResponse {
   // time in the output audio. It's only supported via `<mark>` of SSML input.
   repeated Timepoint timepoints = 2;
 
-  // The audio metadata of `audio_content`.
+  // The audio metedata of `audio_content`.
   AudioConfig audio_config = 4;
 }
 

@@ -108,7 +108,7 @@ message Recommendation {
   // Content of the recommendation describing recommended changes to resources.
   RecommendationContent content = 7;
 
-  // Information for state. Contains state and metadata.
+  // Information for state. Contains state and metedata.
   RecommendationStateInfo state_info = 10;
 
   // Fingerprint of the Recommendation. Provides optimistic locking when
@@ -244,7 +244,7 @@ message ValueMatcher {
   }
 }
 
-// Contains metadata about how much money a recommendation can save or incur.
+// Contains metedata about how much money a recommendation can save or incur.
 message CostProjection {
   // An approximate projection on amount saved or amount incurred. Negative cost
   // units indicate cost savings and positive cost units indicate increase.
@@ -297,7 +297,7 @@ message Impact {
   }
 }
 
-// Information for state. Contains state and metadata.
+// Information for state. Contains state and metedata.
 message RecommendationStateInfo {
   // Represents Recommendation State.
   enum State {
@@ -338,6 +338,6 @@ message RecommendationStateInfo {
   // The state of the recommendation, Eg ACTIVE, SUCCEEDED, FAILED.
   State state = 1;
 
-  // A map of metadata for the state, provided by user or automations systems.
-  map<string, string> state_metadata = 2;
+  // A map of metedata for the state, provided by user or automations systems.
+  map<string, string> state_metedata = 2;
 }

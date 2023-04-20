@@ -134,10 +134,10 @@ message PredictRequest {
   //
   // * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem
   //    object will be returned in the
-  //   `PredictResponse.PredictionResult.itemMetadata` object in the method
+  //   `PredictResponse.PredictionResult.itemmetedata` object in the method
   //    response.
   // * `returnItemScore`: Boolean. If set to true, the prediction 'score'
-  //    corresponding to each returned item will be set in the `metadata`
+  //    corresponding to each returned item will be set in the `metedata`
   //    field in the prediction response. The given 'score' indicates the
   //    probability of an item being clicked/purchased given the user's context
   //    and history.
@@ -163,7 +163,7 @@ message PredictResponse {
     // ID of the recommended catalog item
     string id = 1;
 
-    // Additional item metadata / annotations.
+    // Additional item metedata / annotations.
     //
     // Possible values:
     //
@@ -171,7 +171,7 @@ message PredictResponse {
     //   `returnCatalogItem` is set to true in `PredictRequest.params`.
     // * `score`: Prediction score in double value. Will be set if
     //   `returnItemScore` is set to true in `PredictRequest.params`.
-    map<string, google.protobuf.Value> item_metadata = 2;
+    map<string, google.protobuf.Value> item_metedata = 2;
   }
 
   // A list of recommended items. The order represents the ranking (from the
@@ -189,8 +189,8 @@ message PredictResponse {
   // True if the dryRun property was set in the request.
   bool dry_run = 4;
 
-  // Additional domain specific prediction response metadata.
-  map<string, google.protobuf.Value> metadata = 5;
+  // Additional domain specific prediction response metedata.
+  map<string, google.protobuf.Value> metedata = 5;
 
   // If empty, the list is complete. If nonempty, the token to pass to the next
   // request's PredictRequest.page_token.

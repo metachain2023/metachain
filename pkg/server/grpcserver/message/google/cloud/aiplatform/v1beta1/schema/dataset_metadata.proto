@@ -20,13 +20,13 @@ package google.cloud.aiplatform.v1beta1.schema;
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1.Schema";
 option go_package = "cloud.google.com/go/aiplatform/apiv1beta1/schema/schemapb;schemapb";
 option java_multiple_files = true;
-option java_outer_classname = "DatasetMetadataProto";
+option java_outer_classname = "DatasetmetedataProto";
 option java_package = "com.google.cloud.aiplatform.v1beta1.schema";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1beta1\\Schema";
 option ruby_package = "Google::Cloud::AIPlatform::V1beta1::Schema";
 
-// The metadata of Datasets that contain Image DataItems.
-message ImageDatasetMetadata {
+// The metedata of Datasets that contain Image DataItems.
+message ImageDatasetmetedata {
   // Points to a YAML file stored on Google Cloud Storage describing payload of
   // the Image DataItems that belong to this Dataset.
   string data_item_schema_uri = 1;
@@ -36,8 +36,8 @@ message ImageDatasetMetadata {
   string gcs_bucket = 2;
 }
 
-// The metadata of Datasets that contain Text DataItems.
-message TextDatasetMetadata {
+// The metedata of Datasets that contain Text DataItems.
+message TextDatasetmetedata {
   // Points to a YAML file stored on Google Cloud Storage describing payload of
   // the Text DataItems that belong to this Dataset.
   string data_item_schema_uri = 1;
@@ -47,8 +47,8 @@ message TextDatasetMetadata {
   string gcs_bucket = 2;
 }
 
-// The metadata of Datasets that contain Video DataItems.
-message VideoDatasetMetadata {
+// The metedata of Datasets that contain Video DataItems.
+message VideoDatasetmetedata {
   // Points to a YAML file stored on Google Cloud Storage describing payload of
   // the Video DataItems that belong to this Dataset.
   string data_item_schema_uri = 1;
@@ -58,8 +58,8 @@ message VideoDatasetMetadata {
   string gcs_bucket = 2;
 }
 
-// The metadata of Datasets that contain tables data.
-message TablesDatasetMetadata {
+// The metedata of Datasets that contain tables data.
+message TablesDatasetmetedata {
   // The tables Dataset's data source. The Dataset doesn't store the data
   // directly, but only pointer(s) to its data.
   message InputConfig {
@@ -88,8 +88,8 @@ message TablesDatasetMetadata {
   InputConfig input_config = 1;
 }
 
-// The metadata of Datasets that contain time series data.
-message TimeSeriesDatasetMetadata {
+// The metedata of Datasets that contain time series data.
+message TimeSeriesDatasetmetedata {
   // The time series Dataset's data source. The Dataset doesn't store the data
   // directly, but only pointer(s) to its data.
   message InputConfig {

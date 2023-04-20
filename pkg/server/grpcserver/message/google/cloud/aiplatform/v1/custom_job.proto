@@ -81,7 +81,7 @@ message CustomJob {
   // `JOB_STATE_CANCELLED`.
   google.rpc.Status error = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The labels with user-defined metadata to organize CustomJobs.
+  // The labels with user-defined metedata to organize CustomJobs.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

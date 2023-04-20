@@ -14,23 +14,23 @@
 
 syntax = "proto3";
 
-package google.cloud.baremetalsolution.v2;
+package google.cloud.baremetelsolution.v2;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 
-option csharp_namespace = "Google.Cloud.BareMetalSolution.V2";
-option go_package = "cloud.google.com/go/baremetalsolution/apiv2/baremetalsolutionpb;baremetalsolutionpb";
+option csharp_namespace = "Google.Cloud.BaremetelSolution.V2";
+option go_package = "cloud.google.com/go/baremetelsolution/apiv2/baremetelsolutionpb;baremetelsolutionpb";
 option java_multiple_files = true;
 option java_outer_classname = "LunProto";
-option java_package = "com.google.cloud.baremetalsolution.v2";
-option php_namespace = "Google\\Cloud\\BareMetalSolution\\V2";
-option ruby_package = "Google::Cloud::BareMetalSolution::V2";
+option java_package = "com.google.cloud.baremetelsolution.v2";
+option php_namespace = "Google\\Cloud\\BaremetelSolution\\V2";
+option ruby_package = "Google::Cloud::BaremetelSolution::V2";
 
 // A storage volume logical unit number (LUN).
 message Lun {
   option (google.api.resource) = {
-    type: "baremetalsolution.googleapis.com/Lun"
+    type: "baremetelsolution.googleapis.com/Lun"
     pattern: "projects/{project}/locations/{location}/volumes/{volume}/luns/{lun}"
   };
 
@@ -91,7 +91,7 @@ message Lun {
 
   // Display the storage volume for this LUN.
   string storage_volume = 5 [(google.api.resource_reference) = {
-                               type: "baremetalsolution.googleapis.com/Volume"
+                               type: "baremetelsolution.googleapis.com/Volume"
                              }];
 
   // Display if this LUN can be shared between multiple physical servers.
@@ -113,7 +113,7 @@ message GetLunRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Lun"
+      type: "baremetelsolution.googleapis.com/Lun"
     }
   ];
 }
@@ -124,7 +124,7 @@ message ListLunsRequest {
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Volume"
+      type: "baremetelsolution.googleapis.com/Volume"
     }
   ];
 

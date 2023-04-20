@@ -100,7 +100,7 @@ service Agents {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -120,7 +120,7 @@ service Agents {
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -130,7 +130,7 @@ service Agents {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`:
   // [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]
@@ -146,7 +146,7 @@ service Agents {
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.dialogflow.v2.ExportAgentResponse"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -166,7 +166,7 @@ service Agents {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -188,7 +188,7 @@ service Agents {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 
@@ -206,7 +206,7 @@ service Agents {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`: An empty [Struct
+  // - `metedata`: An empty [Struct
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
@@ -228,7 +228,7 @@ service Agents {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.protobuf.Struct"
+      metedata_type: "google.protobuf.Struct"
     };
   }
 

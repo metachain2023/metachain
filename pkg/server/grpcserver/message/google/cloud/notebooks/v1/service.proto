@@ -67,7 +67,7 @@ service NotebookService {
     option (google.api.method_signature) = "parent,instance,instance_id";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -82,7 +82,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -94,7 +94,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -106,7 +106,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -130,7 +130,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -142,14 +142,14 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
-  // Add/update metadata items for an instance.
-  rpc UpdateInstanceMetadataItems(UpdateInstanceMetadataItemsRequest) returns (UpdateInstanceMetadataItemsResponse) {
+  // Add/update metedata items for an instance.
+  rpc UpdateInstancemetedataItems(UpdateInstancemetedataItemsRequest) returns (UpdateInstancemetedataItemsResponse) {
     option (google.api.http) = {
-      patch: "/v1/{name=projects/*/locations/*/instances/*}:updateMetadataItems"
+      patch: "/v1/{name=projects/*/locations/*/instances/*}:updatemetedataItems"
       body: "*"
     };
   }
@@ -162,7 +162,7 @@ service NotebookService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -174,7 +174,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -186,7 +186,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -198,14 +198,14 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
   // Allows notebook instances to
   // report their latest instance information to the Notebooks
   // API server. The server will merge the reported information to
-  // the instance metadata store. Do not use this method directly.
+  // the instance metedata store. Do not use this method directly.
   rpc ReportInstanceInfo(ReportInstanceInfoRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/instances/*}:report"
@@ -213,7 +213,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -240,7 +240,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -252,7 +252,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -265,7 +265,7 @@ service NotebookService {
     option (google.api.method_signature) = "name,diagnostic_config";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -278,7 +278,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -307,7 +307,7 @@ service NotebookService {
     option (google.api.method_signature) = "parent,environment,environment_id";
     option (google.longrunning.operation_info) = {
       response_type: "Environment"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -319,7 +319,7 @@ service NotebookService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -347,7 +347,7 @@ service NotebookService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -360,7 +360,7 @@ service NotebookService {
     option (google.api.method_signature) = "parent,schedule,schedule_id";
     option (google.longrunning.operation_info) = {
       response_type: "Schedule"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -372,7 +372,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Schedule"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -400,7 +400,7 @@ service NotebookService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -413,13 +413,13 @@ service NotebookService {
     option (google.api.method_signature) = "parent,execution,execution_id";
     option (google.longrunning.operation_info) = {
       response_type: "Execution"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 
@@ -558,19 +558,19 @@ message SetInstanceLabelsRequest {
   map<string, string> labels = 2;
 }
 
-// Request for adding/changing metadata items  for an instance.
-message UpdateInstanceMetadataItemsRequest {
+// Request for adding/changing metedata items  for an instance.
+message UpdateInstancemetedataItemsRequest {
   // Required. Format:
   // `projects/{project_id}/locations/{location}/instances/{instance_id}`
   string name = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Metadata items to add/update for the instance.
+  // metedata items to add/update for the instance.
   map<string, string> items = 2;
 }
 
-// Response for adding/changing metadata items for an instance.
-message UpdateInstanceMetadataItemsResponse {
-  // Map of items that were added/updated to/in the metadata.
+// Response for adding/changing metedata items for an instance.
+message UpdateInstancemetedataItemsResponse {
+  // Map of items that were added/updated to/in the metedata.
   map<string, string> items = 1;
 }
 
@@ -623,9 +623,9 @@ message ReportInstanceInfoRequest {
   // https://cloud.google.com/compute/docs/instances/verifying-instance-identity
   string vm_id = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The metadata reported to Notebooks API. This will be merged to the instance
-  // metadata store
-  map<string, string> metadata = 3;
+  // The metedata reported to Notebooks API. This will be merged to the instance
+  // metedata store
+  map<string, string> metedata = 3;
 }
 
 // Request for checking if a notebook instance is upgradeable.

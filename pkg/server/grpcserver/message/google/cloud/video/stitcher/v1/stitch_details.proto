@@ -41,7 +41,7 @@ message VodStitchDetail {
   repeated AdStitchDetail ad_stitch_details = 3;
 }
 
-// Metadata for a stitched ad.
+// metedata for a stitched ad.
 message AdStitchDetail {
   // Required. The ad break ID of the processed ad.
   string ad_break_id = 1 [(google.api.field_behavior) = REQUIRED];
@@ -55,6 +55,6 @@ message AdStitchDetail {
   // Optional. Indicates the reason why the ad has been skipped.
   string skip_reason = 4 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The metadata of the chosen media file for the ad.
+  // Optional. The metedata of the chosen media file for the ad.
   map<string, google.protobuf.Value> media = 5 [(google.api.field_behavior) = OPTIONAL];
 }

@@ -22,7 +22,7 @@ proto_library(
     name = "audit_proto",
     srcs = [
         "audit_log.proto",
-        "bigquery_audit_metadata.proto",
+        "bigquery_audit_metedata.proto",
     ],
     deps = [
         "//google/api:field_behavior_proto",

@@ -105,7 +105,7 @@ message Featurestore {
   // a blind "overwrite" update happens.
   string etag = 5 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The labels with user-defined metadata to organize your
+  // Optional. The labels with user-defined metedata to organize your
   // Featurestore.
   //
   // Label keys and values can be no longer than 64 characters

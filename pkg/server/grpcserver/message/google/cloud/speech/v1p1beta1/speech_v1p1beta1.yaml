@@ -9,7 +9,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata
+- name: google.cloud.speech.v1p1beta1.LongRunningRecognizemetedata
 - name: google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse
 
 documentation:

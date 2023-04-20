@@ -311,9 +311,9 @@ message CompletionDataInputConfig {
   }
 }
 
-// Metadata related to the progress of the Import operation. This is
-// returned by the google.longrunning.Operation.metadata field.
-message ImportMetadata {
+// metedata related to the progress of the Import operation. This is
+// returned by the google.longrunning.Operation.metedata field.
+message Importmetedata {
   // Operation create time.
   google.protobuf.Timestamp create_time = 1;
 

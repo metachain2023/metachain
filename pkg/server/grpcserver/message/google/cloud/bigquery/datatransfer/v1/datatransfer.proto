@@ -462,7 +462,7 @@ message ListDataSourcesRequest {
   int32 page_size = 4;
 }
 
-// Returns list of supported data sources and their metadata.
+// Returns list of supported data sources and their metedata.
 message ListDataSourcesResponse {
   // List of supported data sources and their transfer settings.
   repeated DataSource data_sources = 1;

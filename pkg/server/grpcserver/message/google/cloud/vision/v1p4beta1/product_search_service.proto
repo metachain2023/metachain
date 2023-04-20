@@ -192,7 +192,7 @@ service ProductSearch {
 
   // Permanently deletes a product and its reference images.
   //
-  // Metadata of the product and all its images will be deleted right away, but
+  // metedata of the product and all its images will be deleted right away, but
   // search queries against ProductSets containing the product may still work
   // until all related caches are refreshed.
   rpc DeleteProduct(DeleteProductRequest) returns (google.protobuf.Empty) {
@@ -233,7 +233,7 @@ service ProductSearch {
 
   // Permanently deletes a reference image.
   //
-  // The image metadata will be deleted right away, but search queries
+  // The image metedata will be deleted right away, but search queries
   // against ProductSets containing the image may still work until all related
   // caches are refreshed.
   //
@@ -320,7 +320,7 @@ service ProductSearch {
   //
   // The [google.longrunning.Operation][google.longrunning.Operation] API can be
   // used to keep track of the progress and results of the request.
-  // `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+  // `Operation.metedata` contains `BatchOperationmetedata`. (progress)
   // `Operation.response` contains `ImportProductSetsResponse`. (results)
   //
   // The input source of this method is a csv file on Google Cloud Storage.
@@ -335,7 +335,7 @@ service ProductSearch {
     option (google.api.method_signature) = "parent,input_config";
     option (google.longrunning.operation_info) = {
       response_type: "ImportProductSetsResponse"
-      metadata_type: "BatchOperationMetadata"
+      metedata_type: "BatchOperationmetedata"
     };
   }
 
@@ -362,7 +362,7 @@ service ProductSearch {
   //
   // The [google.longrunning.Operation][google.longrunning.Operation] API can be
   // used to keep track of the progress and results of the request.
-  // `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+  // `Operation.metedata` contains `BatchOperationmetedata`. (progress)
   rpc PurgeProducts(PurgeProductsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -372,7 +372,7 @@ service ProductSearch {
     option (google.api.method_signature) = "parent";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "BatchOperationMetadata"
+      metedata_type: "BatchOperationmetedata"
     };
   }
 }
@@ -407,7 +407,7 @@ message Product {
   // 4096 characters long.
   string display_name = 2;
 
-  // User-provided metadata to be stored with this product. Must be at most 4096
+  // User-provided metedata to be stored with this product. Must be at most 4096
   // characters long.
   string description = 3;
 
@@ -470,7 +470,7 @@ message ProductSet {
   google.rpc.Status index_error = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// A `ReferenceImage` represents a product image and its associated metadata,
+// A `ReferenceImage` represents a product image and its associated metedata,
 // such as bounding boxes.
 message ReferenceImage {
   option (google.api.resource) = {
@@ -965,11 +965,11 @@ message ImportProductSetsResponse {
   repeated google.rpc.Status statuses = 2;
 }
 
-// Metadata for the batch operations such as the current state.
+// metedata for the batch operations such as the current state.
 //
-// This is included in the `metadata` field of the `Operation` returned by the
+// This is included in the `metedata` field of the `Operation` returned by the
 // `GetOperation` call of the `google::longrunning::Operations` service.
-message BatchOperationMetadata {
+message BatchOperationmetedata {
   // Enumerates the possible states that the batch request can be in.
   enum State {
     // Invalid.

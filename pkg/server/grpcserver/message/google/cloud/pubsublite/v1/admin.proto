@@ -174,7 +174,7 @@ service AdminService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "SeekSubscriptionResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -498,15 +498,15 @@ message SeekSubscriptionRequest {
     // Seek to the first message whose publish or event time is greater than or
     // equal to the specified query time. If no such message can be located,
     // will seek to the end of the message backlog.
-    TimeTarget time_target = 3;
+    Timeterget time_target = 3;
   }
 }
 
 // Response for SeekSubscription long running operation.
 message SeekSubscriptionResponse {}
 
-// Metadata for long running operations.
-message OperationMetadata {
+// metedata for long running operations.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

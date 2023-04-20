@@ -32,12 +32,12 @@ message SystemTimestamps {
   // Creation timestamp of the resource within the given system.
   google.protobuf.Timestamp create_time = 1;
 
-  // Timestamp of the last modification of the resource or its metadata within
+  // Timestamp of the last modification of the resource or its metedata within
   // a given system.
   //
   // Note: Depending on the source system, not every modification updates this
   // timestamp.
-  // For example, BigQuery timestamps every metadata modification but not data
+  // For example, BigQuery timestamps every metedata modification but not data
   // or permission changes.
   google.protobuf.Timestamp update_time = 2;
 

@@ -245,8 +245,8 @@ message ReleaseLeaseResponse {
 
 }
 
-// RequestMetadata is the metadata message for the request.
-message RequestMetadata {
+// Requestmetedata is the metedata message for the request.
+message Requestmetedata {
   // Stream name.
   string stream = 1;
 
@@ -275,8 +275,8 @@ message SendPacketsRequest {
     // Packets sent over the streaming rpc.
     Packet packet = 1;
 
-    // The first message of the streaming rpc including the request metadata.
-    RequestMetadata metadata = 2;
+    // The first message of the streaming rpc including the request metedata.
+    Requestmetedata metedata = 2;
   }
 }
 
@@ -299,7 +299,7 @@ message ReceivePacketsRequest {
     }
 
     // The configurations that specify where packets are retrieved.
-    RequestMetadata metadata = 1;
+    Requestmetedata metedata = 1;
 
     // A name for the receiver to self-identify.
     //

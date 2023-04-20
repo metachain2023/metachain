@@ -75,11 +75,11 @@ message ImageAsset {
   // MIME type of the image asset.
   google.ads.googleads.v11.enums.MimeTypeEnum.MimeType mime_type = 3;
 
-  // Metadata for this image at its original size.
+  // metedata for this image at its original size.
   ImageDimension full_size = 4;
 }
 
-// Metadata for an image at a certain size, either original or resized.
+// metedata for an image at a certain size, either original or resized.
 message ImageDimension {
   // Height of the image.
   optional int64 height_pixels = 4;

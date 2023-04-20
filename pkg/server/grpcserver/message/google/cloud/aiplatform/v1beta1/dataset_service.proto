@@ -54,7 +54,7 @@ service DatasetService {
     option (google.api.method_signature) = "parent,dataset";
     option (google.longrunning.operation_info) = {
       response_type: "Dataset"
-      metadata_type: "CreateDatasetOperationMetadata"
+      metedata_type: "CreateDatasetOperationmetedata"
     };
   }
 
@@ -92,7 +92,7 @@ service DatasetService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -105,7 +105,7 @@ service DatasetService {
     option (google.api.method_signature) = "name,import_configs";
     option (google.longrunning.operation_info) = {
       response_type: "ImportDataResponse"
-      metadata_type: "ImportDataOperationMetadata"
+      metedata_type: "ImportDataOperationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service DatasetService {
     option (google.api.method_signature) = "name,export_config";
     option (google.longrunning.operation_info) = {
       response_type: "ExportDataResponse"
-      metadata_type: "ExportDataOperationMetadata"
+      metedata_type: "ExportDataOperationmetedata"
     };
   }
 
@@ -183,9 +183,9 @@ message CreateDatasetRequest {
 
 // Runtime operation information for
 // [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
-message CreateDatasetOperationMetadata {
+message CreateDatasetOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
@@ -236,7 +236,7 @@ message ListDatasetsRequest {
   // both snake_case and camelCase are supported.
   //
   //   * `display_name`: supports = and !=
-  //   * `metadata_schema_uri`: supports = and !=
+  //   * `metedata_schema_uri`: supports = and !=
   //   * `labels` supports general map functions that is:
   //     * `labels.key=value` - key:value equality
   //     * `labels.key:* or labels:key - key existence
@@ -316,9 +316,9 @@ message ImportDataResponse {}
 
 // Runtime operation information for
 // [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
-message ImportDataOperationMetadata {
-  // The common part of the operation metadata.
-  GenericOperationMetadata generic_metadata = 1;
+message ImportDataOperationmetedata {
+  // The common part of the operation metedata.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
@@ -347,9 +347,9 @@ message ExportDataResponse {
 
 // Runtime operation information for
 // [DatasetService.ExportData][google.cloud.aiplatform.v1beta1.DatasetService.ExportData].
-message ExportDataOperationMetadata {
-  // The common part of the operation metadata.
-  GenericOperationMetadata generic_metadata = 1;
+message ExportDataOperationmetedata {
+  // The common part of the operation metedata.
+  GenericOperationmetedata generic_metedata = 1;
 
   // A Google Cloud Storage directory which path ends with '/'. The exported
   // data is stored in the directory.

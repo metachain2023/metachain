@@ -164,7 +164,7 @@ message EvaluationJobConfig {
     // `annotationSpecSet` in this configuration must match
     // [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
     // `allowMultiLabel` in this configuration must match
-    // `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+    // `classificationmetedata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
     ImageClassificationConfig image_classification_config = 4;
 
     // Specify this field if your model version performs image object detection
@@ -179,7 +179,7 @@ message EvaluationJobConfig {
     // `annotationSpecSet` in this configuration must match
     // [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
     // `allowMultiLabel` in this configuration must match
-    // `classificationMetadata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+    // `classificationmetedata.isMultiLabel` in [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
     TextClassificationConfig text_classification_config = 8;
   }
 
@@ -191,7 +191,7 @@ message EvaluationJobConfig {
   //   `TEXT_CLASSIFICATION_ANNOTATION`, `GENERAL_CLASSIFICATION_ANNOTATION`,
   //   or `IMAGE_BOUNDING_BOX_ANNOTATION` (image object detection).
   // * If your machine learning model performs classification, you must specify
-  //   `classificationMetadata.isMultiLabel`.
+  //   `classificationmetedata.isMultiLabel`.
   // * You must specify `bigquerySource` (not `gcsSource`).
   InputConfig input_config = 1;
 

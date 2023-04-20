@@ -68,7 +68,7 @@ service Applications {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Application"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -85,7 +85,7 @@ service Applications {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Application"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -106,7 +106,7 @@ service Applications {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Application"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 }
@@ -171,7 +171,7 @@ service Services {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Service"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -182,7 +182,7 @@ service Services {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 }
@@ -279,7 +279,7 @@ service Versions {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Version"
-      metadata_type: "CreateVersionMetadataV1"
+      metedata_type: "CreateVersionmetedataV1"
     };
   }
 
@@ -326,7 +326,7 @@ service Versions {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Version"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -337,7 +337,7 @@ service Versions {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 }
@@ -464,7 +464,7 @@ service Instances {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -483,7 +483,7 @@ service Instances {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 }
@@ -895,7 +895,7 @@ service DomainMappings {
     };
     option (google.longrunning.operation_info) = {
       response_type: "DomainMapping"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -910,7 +910,7 @@ service DomainMappings {
     };
     option (google.longrunning.operation_info) = {
       response_type: "DomainMapping"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -923,7 +923,7 @@ service DomainMappings {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 }

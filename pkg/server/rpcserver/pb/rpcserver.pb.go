@@ -2316,5 +2316,5 @@ var _InsideGreeter_serviceDesc = grpc.ServiceDesc{
 			ClientStreams: true,
 		},
 	},
-	Metadata: "rpcserver.proto",
+	metedata: "rpcserver.proto",
 }

@@ -10,7 +10,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.workstations.v1beta.OperationMetadata
+- name: google.cloud.workstations.v1beta.Operationmetedata
 
 documentation:
   rules:

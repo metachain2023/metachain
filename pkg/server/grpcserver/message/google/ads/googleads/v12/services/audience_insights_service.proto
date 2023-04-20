@@ -202,7 +202,7 @@ message ListAudienceInsightsAttributesRequest {
 // [AudienceInsightsService.ListAudienceInsightsAttributes][google.ads.googleads.v12.services.AudienceInsightsService.ListAudienceInsightsAttributes].
 message ListAudienceInsightsAttributesResponse {
   // The attributes matching the search query.
-  repeated AudienceInsightsAttributeMetadata attributes = 1;
+  repeated AudienceInsightsAttributemetedata attributes = 1;
 }
 
 // Request message for [AudienceInsightsService.ListAudienceInsightsDates][].
@@ -312,9 +312,9 @@ message BasicInsightsAudience {
   repeated AudienceInsightsTopic topics = 6;
 }
 
-// An audience attribute, with metadata about it, returned in response to a
+// An audience attribute, with metedata about it, returned in response to a
 // search.
-message AudienceInsightsAttributeMetadata {
+message AudienceInsightsAttributemetedata {
   // The type of the attribute.
   google.ads.googleads.v12.enums.AudienceInsightsDimensionEnum.AudienceInsightsDimension dimension = 1;
 
@@ -335,27 +335,27 @@ message AudienceInsightsAttributeMetadata {
   // "/Apparel/Clothing/Outerwear".
   string display_info = 5;
 
-  // Metadata specific to the dimension of this attribute.
-  oneof dimension_metadata {
-    // Special metadata for a YouTube channel.
-    YouTubeChannelAttributeMetadata youtube_channel_metadata = 6;
+  // metedata specific to the dimension of this attribute.
+  oneof dimension_metedata {
+    // Special metedata for a YouTube channel.
+    YouTubeChannelAttributemetedata youtube_channel_metedata = 6;
 
-    // Special metadata for a YouTube Dynamic Lineup.
-    DynamicLineupAttributeMetadata dynamic_attribute_metadata = 7;
+    // Special metedata for a YouTube Dynamic Lineup.
+    DynamicLineupAttributemetedata dynamic_attribute_metedata = 7;
 
-    // Special metadata for a Location.
-    LocationAttributeMetadata location_attribute_metadata = 8;
+    // Special metedata for a Location.
+    LocationAttributemetedata location_attribute_metedata = 8;
   }
 }
 
-// Metadata associated with a YouTube channel attribute.
-message YouTubeChannelAttributeMetadata {
+// metedata associated with a YouTube channel attribute.
+message YouTubeChannelAttributemetedata {
   // The approximate number of subscribers to the YouTube channel.
   int64 subscriber_count = 1;
 }
 
-// Metadata associated with a Dynamic Lineup attribute.
-message DynamicLineupAttributeMetadata {
+// metedata associated with a Dynamic Lineup attribute.
+message DynamicLineupAttributemetedata {
   // The national market associated with the lineup.
   google.ads.googleads.v12.common.LocationInfo inventory_country = 1;
 
@@ -369,8 +369,8 @@ message DynamicLineupAttributeMetadata {
   optional int64 channel_count_upper_bound = 4;
 }
 
-// Metadata associated with a Location attribute.
-message LocationAttributeMetadata {
+// metedata associated with a Location attribute.
+message LocationAttributemetedata {
   // The country location of the sub country location.
   google.ads.googleads.v12.common.LocationInfo country_location = 1;
 }
@@ -439,7 +439,7 @@ message AudienceCompositionSection {
   repeated AudienceCompositionAttributeCluster clustered_attributes = 4;
 }
 
-// A collection of related attributes, with metadata and metrics, in an audience
+// A collection of related attributes, with metedata and metrics, in an audience
 // composition insights report.
 message AudienceCompositionAttributeCluster {
   // The name of this cluster of attributes
@@ -450,7 +450,7 @@ message AudienceCompositionAttributeCluster {
   // For other dimensions, this field is unset.
   AudienceCompositionMetrics cluster_metrics = 3;
 
-  // The individual attributes that make up this cluster, with metadata and
+  // The individual attributes that make up this cluster, with metedata and
   // metrics.
   repeated AudienceCompositionAttribute attributes = 4;
 }
@@ -474,10 +474,10 @@ message AudienceCompositionMetrics {
   double score = 4;
 }
 
-// An audience attribute with metadata and metrics.
+// An audience attribute with metedata and metrics.
 message AudienceCompositionAttribute {
-  // The attribute with its metadata.
-  AudienceInsightsAttributeMetadata attribute_metadata = 1;
+  // The attribute with its metedata.
+  AudienceInsightsAttributemetedata attribute_metedata = 1;
 
   // Share and index metrics for the attribute.
   AudienceCompositionMetrics metrics = 2;

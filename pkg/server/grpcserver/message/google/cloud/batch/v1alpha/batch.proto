@@ -67,7 +67,7 @@ service BatchService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.batch.v1alpha.OperationMetadata"
+      metedata_type: "google.cloud.batch.v1alpha.Operationmetedata"
     };
   }
 
@@ -238,8 +238,8 @@ message GetTaskRequest {
   ];
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

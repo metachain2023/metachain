@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"math/big"
 
-	"metachain/pkg/block"
-	"metachain/pkg/contract/evm"
-	"metachain/pkg/logger"
-	"metachain/pkg/storage/store"
+	"metechain/pkg/block"
+	"metechain/pkg/contract/evm"
+	"metechain/pkg/logger"
+	"metechain/pkg/storage/store"
 
-	"metachain/pkg/transaction"
+	"metechain/pkg/transaction"
 
 	"github.com/ethereum/go-ethereum/common"
 	evmtypes "github.com/ethereum/go-ethereum/core/types"
@@ -18,25 +18,25 @@ import (
 )
 
 //binding address and eth address
-func (bc *Blockchain) bindingAddress(DBTransaction store.Transaction, ethaddr, metaaddr []byte) error {
-	return DBTransaction.Mset(BindingKey, ethaddr, metaaddr)
+func (bc *Blockchain) bindingAddress(DBTransaction store.Transaction, ethaddr, meteaddr []byte) error {
+	return DBTransaction.Mset(BindingKey, ethaddr, meteaddr)
 }
 
-//get bingding meta address by eth address
-func (bc *Blockchain) GetBindingMetaAddress(ethAddr string) (*common.Address, error) {
+//get bingding mete address by eth address
+func (bc *Blockchain) GetBindingmeteAddress(ethAddr string) (*common.Address, error) {
 	bc.mu.Lock()
 	defer bc.mu.Unlock()
 
 	DBTransaction := bc.db.NewTransaction()
 	defer DBTransaction.Cancel()
-	return getBindingMetaAddress(DBTransaction, ethAddr)
+	return getBindingmeteAddress(DBTransaction, ethAddr)
 }
 
-func getBindingMetaAddress(DBTransaction store.Transaction, ethAddr string) (*common.Address, error) {
+func getBindingmeteAddress(DBTransaction store.Transaction, ethAddr string) (*common.Address, error) {
 	data, err := DBTransaction.Mget(BindingKey, common.HexToAddress(ethAddr).Bytes())
 	if err != nil {
 		if err.Error() != "NotExist" {
-			logger.Error("GetBindingMetaAddress error", zap.String("ethaddr", ethAddr), zap.Error(err))
+			logger.Error("GetBindingmeteAddress error", zap.String("ethaddr", ethAddr), zap.Error(err))
 		}
 		return nil, err
 	}
@@ -44,15 +44,15 @@ func getBindingMetaAddress(DBTransaction store.Transaction, ethAddr string) (*co
 	return &addr, nil
 }
 
-//get bingding eth address by Meta address
-func (bc *Blockchain) GetBindingEthAddress(MetaAddr *common.Address) (string, error) {
+//get bingding eth address by mete address
+func (bc *Blockchain) GetBindingEthAddress(meteAddr *common.Address) (string, error) {
 	bc.mu.Lock()
 	defer bc.mu.Unlock()
 
 	DBTransaction := bc.db.NewTransaction()
 	defer DBTransaction.Cancel()
 
-	ethAddr, err := DBTransaction.Mget(BindingKey, MetaAddr.Bytes())
+	ethAddr, err := DBTransaction.Mget(BindingKey, meteAddr.Bytes())
 	if err != nil {
 		return "", err
 	}

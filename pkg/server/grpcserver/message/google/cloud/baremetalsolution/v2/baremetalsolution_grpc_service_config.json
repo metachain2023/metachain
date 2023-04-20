@@ -3,7 +3,7 @@
     {
       "name": [
         {
-          "service": "google.cloud.baremetalsolution.v2.BareMetalSolution"
+          "service": "google.cloud.baremetelsolution.v2.BaremetelSolution"
         }
       ],
       "timeout": "60s"

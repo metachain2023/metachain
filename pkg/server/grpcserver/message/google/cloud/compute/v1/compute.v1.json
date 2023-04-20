@@ -99,8 +99,8 @@
       "type": "object",
       "description": "Preserved state for a given instance.",
       "properties": {
-        "metadata": {
-          "description": "Preserved metadata defined for this instance.",
+        "metedata": {
+          "description": "Preserved metedata defined for this instance.",
           "type": "object",
           "additionalProperties": {
             "type": "string"
@@ -187,7 +187,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -309,7 +309,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -636,9 +636,9 @@
           "type": "string",
           "description": "An optional textual description of the resource."
         },
-        "commonInstanceMetadata": {
-          "description": "Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.",
-          "$ref": "Metadata"
+        "commonInstancemetedata": {
+          "description": "metedata key/value pairs available to all instances contained in this project. See Custom metedata for more information.",
+          "$ref": "metedata"
         }
       },
       "id": "Project"
@@ -703,9 +703,9 @@
           "description": "Note that for MachineImage, this is not supported yet.",
           "$ref": "ShieldedInstanceConfig"
         },
-        "metadata": {
-          "$ref": "Metadata",
-          "description": "The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information."
+        "metedata": {
+          "$ref": "metedata",
+          "description": "The metedata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metedata or predefined keys. See Project and instance metedata for more information."
         },
         "advancedMachineFeatures": {
           "$ref": "AdvancedMachineFeatures",
@@ -756,7 +756,7 @@
             "$ref": "ServiceAccount"
           },
           "type": "array",
-          "description": "A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances."
+          "description": "A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metedata queries to obtain the access tokens for these instances."
         },
         "labels": {
           "additionalProperties": {
@@ -833,7 +833,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -1038,7 +1038,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -1107,7 +1107,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -1672,12 +1672,12 @@
           "description": "[Output Only] The unique identifier for the resource. This identifier is defined by the server.",
           "type": "string"
         },
-        "metadataFilters": {
+        "metedataFilters": {
           "type": "array",
           "items": {
-            "$ref": "MetadataFilter"
+            "$ref": "metedataFilter"
           },
-          "description": "Opaque filter criteria used by load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to load balancer, xDS clients present node metadata. When there is a match, the relevant configuration is made available to those proxies. Otherwise, all the resources (e.g. TargetHttpProxy, UrlMap) referenced by the ForwardingRule are not visible to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match. metadataFilters specified here will be applifed before those specified in the UrlMap that this ForwardingRule references. metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED."
+          "description": "Opaque filter criteria used by load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to load balancer, xDS clients present node metedata. When there is a match, the relevant configuration is made available to those proxies. Otherwise, all the resources (e.g. TargetHttpProxy, UrlMap) referenced by the ForwardingRule are not visible to those proxies. For each metedataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metedata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metedata. If multiple metedataFilters are specified, all of them need to be satisfied in order to be considered a match. metedataFilters specified here will be applifed before those specified in the UrlMap that this ForwardingRule references. metedataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED."
         },
         "description": {
           "type": "string",
@@ -1845,7 +1845,7 @@
         "fingerprint": {
           "format": "byte",
           "type": "string",
-          "description": "Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy."
+          "description": "Specifies a fingerprint for this resource, which is essentially a hash of the metedata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metedata. You must always provide an up-to-date fingerprint hash in order to update or change metedata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy."
         },
         "parent": {
           "type": "string",
@@ -1902,7 +1902,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -2067,7 +2067,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -2225,7 +2225,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "message": {
@@ -2343,7 +2343,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -2390,7 +2390,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "code": {
               "enum": [
@@ -2570,7 +2570,7 @@
           "description": "[Output Only] Informational warning message.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -2739,7 +2739,7 @@
                     }
                   }
                 },
-                "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+                "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
                 "type": "array"
               },
               "code": {
@@ -2991,7 +2991,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -3247,7 +3247,7 @@
                 ]
               },
               "data": {
-                "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+                "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
                 "type": "array",
                 "items": {
                   "type": "object",
@@ -3335,7 +3335,7 @@
           "description": "[Output Only] Informational warning which replaces the list of public delegated prefixes when the list is empty.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -3651,7 +3651,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -3867,7 +3867,7 @@
                     }
                   }
                 },
-                "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+                "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
               }
             },
             "type": "object"
@@ -4259,7 +4259,7 @@
           "description": "A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter."
         },
         "imageEncryptionKey": {
-          "description": "Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.",
+          "description": "Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metedata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.",
           "$ref": "CustomerEncryptionKey"
         },
         "sourceDisk": {
@@ -4335,7 +4335,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -4601,7 +4601,7 @@
           "enumDescriptions": [
             "The per-instance configuration is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.",
             "The per-instance configuration deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.",
-            "The per-instance configuration is effective on the instance, meaning that all disks, ips and metadata specified in this configuration are attached or set on the instance.",
+            "The per-instance configuration is effective on the instance, meaning that all disks, ips and metedata specified in this configuration are attached or set on the instance.",
             "*[Default]* The default status, when no per-instance configuration exists.",
             "The per-instance configuration is set on an instance but not been applied yet.",
             "The per-instance configuration has been deleted, but the deletion is not yet applied."
@@ -4722,7 +4722,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "message": {
@@ -4820,7 +4820,7 @@
               "description": "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -4989,7 +4989,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -5108,7 +5108,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -5208,7 +5208,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -5603,7 +5603,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -5743,16 +5743,16 @@
           "description": "This field denotes whether to enable logging for a particular firewall rule.",
           "type": "boolean"
         },
-        "metadata": {
-          "description": "This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.",
+        "metedata": {
+          "description": "This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metedata for firewall logs.",
           "enumDescriptions": [
             "",
             ""
           ],
           "type": "string",
           "enum": [
-            "EXCLUDE_ALL_METADATA",
-            "INCLUDE_ALL_METADATA"
+            "EXCLUDE_ALL_meteDATA",
+            "INCLUDE_ALL_meteDATA"
           ]
         }
       }
@@ -5851,7 +5851,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "message": {
@@ -6035,7 +6035,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -6177,7 +6177,7 @@
         },
         "snapshotEncryptionKey": {
           "$ref": "CustomerEncryptionKey",
-          "description": "Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later."
+          "description": "Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metedata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later."
         },
         "snapshotType": {
           "type": "string",
@@ -6499,7 +6499,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -6696,7 +6696,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -6848,7 +6848,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -6935,18 +6935,18 @@
       "id": "InstanceGroupManagerList",
       "type": "object"
     },
-    "Metadata": {
+    "metedata": {
       "properties": {
         "kind": {
           "type": "string",
-          "default": "compute#metadata",
-          "description": "[Output Only] Type of the resource. Always compute#metadata for metadata."
+          "default": "compute#metedata",
+          "description": "[Output Only] Type of the resource. Always compute#metedata for metedata."
         },
         "items": {
           "type": "array",
           "description": "Array of key/value pairs. The total size of all keys and values must be less than 512 KB.",
           "items": {
-            "description": "Metadata",
+            "description": "metedata",
             "properties": {
               "key": {
                 "pattern": "[a-zA-Z0-9-_]{1,128}",
@@ -6954,20 +6954,20 @@
                 "annotations": {
                   "required": [
                     "compute.instances.insert",
-                    "compute.projects.setCommonInstanceMetadata"
+                    "compute.projects.setCommonInstancemetedata"
                   ]
                 },
-                "description": "Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project."
+                "description": "Key for the metedata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metedata server. Additionally, to avoid ambiguity, keys must not conflict with any other metedata keys for the project."
               },
               "value": {
                 "type": "string",
                 "annotations": {
                   "required": [
                     "compute.instances.insert",
-                    "compute.projects.setCommonInstanceMetadata"
+                    "compute.projects.setCommonInstancemetedata"
                   ]
                 },
-                "description": "Value for the metadata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 262144 bytes (256 KiB)."
+                "description": "Value for the metedata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 262144 bytes (256 KiB)."
               }
             },
             "type": "object"
@@ -6975,13 +6975,13 @@
         },
         "fingerprint": {
           "format": "byte",
-          "description": "Specifies a fingerprint for this request, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the resource.",
+          "description": "Specifies a fingerprint for this request, which is essentially a hash of the metedata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metedata. You must always provide an up-to-date fingerprint hash in order to update or change metedata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the resource.",
           "type": "string"
         }
       },
       "type": "object",
-      "id": "Metadata",
-      "description": "A metadata key/value entry."
+      "id": "metedata",
+      "description": "A metedata key/value entry."
     },
     "BfdStatusPacketCounts": {
       "id": "BfdStatusPacketCounts",
@@ -7122,7 +7122,7 @@
           "description": "[Output Only] Informational warning message.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -7631,7 +7631,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -7889,7 +7889,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -8024,7 +8024,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -8169,7 +8169,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "type": "object"
@@ -8233,7 +8233,7 @@
           "type": "string"
         },
         "fingerprint": {
-          "description": "Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.",
+          "description": "Specifies a fingerprint for this resource, which is essentially a hash of the metedata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metedata. You must always provide an up-to-date fingerprint hash in order to update or change metedata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.",
           "type": "string",
           "format": "byte"
         },
@@ -8728,7 +8728,7 @@
               "description": "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -8828,7 +8828,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -9003,7 +9003,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "code": {
               "description": "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.",
@@ -9167,7 +9167,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -9344,7 +9344,7 @@
             "type": "string"
           },
           "type": "object",
-          "description": "Metadata defined as annotations on the network endpoint group."
+          "description": "metedata defined as annotations on the network endpoint group."
         },
         "healthStatus": {
           "type": "array",
@@ -9523,7 +9523,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             }
           },
@@ -9563,7 +9563,7 @@
           "items": {
             "$ref": "ServiceAccount"
           },
-          "description": "A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.",
+          "description": "A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metedata server and used to authenticate applications on the instance. See Service Accounts for more information.",
           "type": "array"
         },
         "params": {
@@ -9695,9 +9695,9 @@
           "description": "Specifies the reservations that this instance can consume from.",
           "$ref": "ReservationAffinity"
         },
-        "metadata": {
-          "description": "The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.",
-          "$ref": "Metadata"
+        "metedata": {
+          "description": "The metedata key/value pairs assigned to this instance. This includes custom metedata and predefined keys.",
+          "$ref": "metedata"
         },
         "cpuPlatform": {
           "description": "[Output Only] The CPU platform used by this instance.",
@@ -9917,7 +9917,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "description": "[Output Only] Informational warning message."
@@ -10916,7 +10916,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -11027,7 +11027,7 @@
           "description": "[Output Only] An informational warning that appears when the node templates list is empty.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -11135,7 +11135,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -11249,7 +11249,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -11554,7 +11554,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -11715,7 +11715,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -11834,7 +11834,7 @@
             "Old instances will be deleted. New instances will be created from the target template.",
             "Every instance will be restarted."
           ],
-          "description": "Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metadata. But if your application reads instance metadata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metadata changes. ",
+          "description": "Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metedata. But if your application reads instance metedata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metedata changes. ",
           "enum": [
             "NONE",
             "REFRESH",
@@ -12015,7 +12015,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "type": "object"
@@ -12054,7 +12054,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -12225,7 +12225,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -12307,7 +12307,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -12456,7 +12456,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -12634,7 +12634,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -12704,7 +12704,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "code": {
               "enumDescriptions": [
@@ -12830,7 +12830,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -13038,7 +13038,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -13183,7 +13183,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -13384,7 +13384,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -13461,7 +13461,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -13644,7 +13644,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -13794,7 +13794,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             }
           },
@@ -13988,7 +13988,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "message": {
@@ -14098,7 +14098,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -14388,7 +14388,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "code": {
               "type": "string",
@@ -14544,7 +14544,7 @@
               "description": "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -14786,7 +14786,7 @@
               "description": "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -15041,7 +15041,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "message": {
@@ -15154,7 +15154,7 @@
           "description": "[Output Only] Informational warning message.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -15342,7 +15342,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -15743,7 +15743,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -15950,7 +15950,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -16039,7 +16039,7 @@
             "",
             "An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.",
             "This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824",
-            "Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.",
+            "Backend host is selected based on the client connection metedata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.",
             "The load balancer selects a random healthy host.",
             "The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.",
             "This is a simple policy in which each healthy backend is selected in round robin order. This is the default."
@@ -16321,7 +16321,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -16484,7 +16484,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "description": "[Output Only] Informational warning which replaces the list of addresses when the list is empty."
@@ -16593,7 +16593,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "type": "object"
@@ -17125,7 +17125,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             }
           }
@@ -17402,7 +17402,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -17691,13 +17691,13 @@
     "ErrorInfo": {
       "type": "object",
       "id": "ErrorInfo",
-      "description": "Describes the cause of the error with structured details. Example of an error when contacting the \"pubsub.googleapis.com\" API when it is not enabled: { \"reason\": \"API_DISABLED\" \"domain\": \"googleapis.com\" \"metadata\": { \"resource\": \"projects/123\", \"service\": \"pubsub.googleapis.com\" } } This response indicates that the pubsub.googleapis.com API is not enabled. Example of an error that is returned when attempting to create a Spanner instance in a region that is out of stock: { \"reason\": \"STOCKOUT\" \"domain\": \"spanner.googleapis.com\", \"metadata\": { \"availableRegions\": \"us-central1,us-east2\" } }",
+      "description": "Describes the cause of the error with structured details. Example of an error when contacting the \"pubsub.googleapis.com\" API when it is not enabled: { \"reason\": \"API_DISABLED\" \"domain\": \"googleapis.com\" \"metedata\": { \"resource\": \"projects/123\", \"service\": \"pubsub.googleapis.com\" } } This response indicates that the pubsub.googleapis.com API is not enabled. Example of an error that is returned when attempting to create a Spanner instance in a region that is out of stock: { \"reason\": \"STOCKOUT\" \"domain\": \"spanner.googleapis.com\", \"metedata\": { \"availableRegions\": \"us-central1,us-east2\" } }",
       "properties": {
         "reason": {
           "type": "string",
           "description": "The reason of the error. This is a constant value that identifies the proximate cause of the error. Error reasons are unique within a particular domain of errors. This should be at most 63 characters and match a regular expression of `A-Z+[A-Z0-9]`, which represents UPPER_SNAKE_CASE."
         },
-        "metadatas": {
+        "metedatas": {
           "description": "Additional structured details about this error. Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in length. When identifying the current value of an exceeded limit, the units should be contained in the key, not the value. For example, rather than {\"instanceLimit\": \"100/request\"}, should be returned as, {\"instanceLimitPerRequest\": \"100\"}, if the client exceeds the number of instances that can be created in a single (batch) request.",
           "type": "object",
           "additionalProperties": {
@@ -17731,7 +17731,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -17850,7 +17850,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "code": {
@@ -18002,7 +18002,7 @@
           "$ref": "CircuitBreakers"
         },
         "localityLbPolicy": {
-          "description": "The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.",
+          "description": "The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metedata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.",
           "type": "string",
           "enum": [
             "INVALID_LB_POLICY",
@@ -18017,7 +18017,7 @@
             "",
             "An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.",
             "This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824",
-            "Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.",
+            "Backend host is selected based on the client connection metedata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.",
             "The load balancer selects a random healthy host.",
             "The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.",
             "This is a simple policy in which each healthy backend is selected in round robin order. This is the default."
@@ -18372,7 +18372,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "type": "object",
@@ -18644,7 +18644,7 @@
             "type": "string"
           },
           "type": "object",
-          "description": "Metadata defined as annotations on the network endpoint group."
+          "description": "metedata defined as annotations on the network endpoint group."
         },
         "selfLink": {
           "type": "string",
@@ -18761,7 +18761,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -18909,7 +18909,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -19011,7 +19011,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -19199,7 +19199,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -19463,7 +19463,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "description": "Informational warning which replaces the list of resourcePolicies when the list is empty.",
@@ -19494,14 +19494,14 @@
       },
       "type": "object"
     },
-    "MetadataFilter": {
-      "id": "MetadataFilter",
+    "metedataFilter": {
+      "id": "metedataFilter",
       "properties": {
         "filterLabels": {
           "items": {
-            "$ref": "MetadataFilterLabelMatch"
+            "$ref": "metedataFilterLabelMatch"
           },
-          "description": "The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.",
+          "description": "The list of label value pairs that must match labels in the provided metedata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.",
           "type": "array"
         },
         "filterMatchCriteria": {
@@ -19510,16 +19510,16 @@
             "MATCH_ANY",
             "NOT_SET"
           ],
-          "description": "Specifies how individual filter label matches within the list of filterLabels and contributes toward the overall metadataFilter match. Supported values are: - MATCH_ANY: at least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: all filterLabels must have matching labels in the provided metadata. ",
+          "description": "Specifies how individual filter label matches within the list of filterLabels and contributes toward the overall metedataFilter match. Supported values are: - MATCH_ANY: at least one of the filterLabels must have a matching label in the provided metedata. - MATCH_ALL: all filterLabels must have matching labels in the provided metedata. ",
           "enumDescriptions": [
-            "Specifies that all filterLabels must match for the metadataFilter to be considered a match.",
-            "Specifies that any filterLabel must match for the metadataFilter to be considered a match.",
-            "Indicates that the match criteria was not set. A metadataFilter must never be created with this value."
+            "Specifies that all filterLabels must match for the metedataFilter to be considered a match.",
+            "Specifies that any filterLabel must match for the metedataFilter to be considered a match.",
+            "Indicates that the match criteria was not set. A metedataFilter must never be created with this value."
           ],
           "type": "string"
         }
       },
-      "description": "Opaque filter criteria used by load balancers to restrict routing configuration to a limited set of load balancing proxies. Proxies and sidecars involved in load balancing would typically present metadata to the load balancers that need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. An example for using metadataFilters would be: if load balancing involves Envoys, they receive routing configuration when values in metadataFilters match values supplied in of their XDS requests to loadbalancers.",
+      "description": "Opaque filter criteria used by load balancers to restrict routing configuration to a limited set of load balancing proxies. Proxies and sidecars involved in load balancing would typically present metedata to the load balancers that need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies. For each metedataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metedata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metedata. An example for using metedataFilters would be: if load balancing involves Envoys, they receive routing configuration when values in metedataFilters match values supplied in of their XDS requests to loadbalancers.",
       "type": "object"
     },
     "InterconnectDiagnosticsARPEntry": {
@@ -19616,7 +19616,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -19771,7 +19771,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           }
         },
@@ -19978,7 +19978,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -20169,7 +20169,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -20221,7 +20221,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -20482,7 +20482,7 @@
           "type": "string",
           "description": "Can only be specified if VPC flow logs for this subnetwork is enabled. The filter expression is used to define which VPC flow logs should be exported to Cloud Logging."
         },
-        "metadata": {
+        "metedata": {
           "enumDescriptions": [
             "",
             "",
@@ -20490,11 +20490,11 @@
           ],
           "type": "string",
           "enum": [
-            "CUSTOM_METADATA",
-            "EXCLUDE_ALL_METADATA",
-            "INCLUDE_ALL_METADATA"
+            "CUSTOM_meteDATA",
+            "EXCLUDE_ALL_meteDATA",
+            "INCLUDE_ALL_meteDATA"
           ],
-          "description": "Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA."
+          "description": "Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metedata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_meteDATA."
         },
         "flowSampling": {
           "format": "float",
@@ -20525,8 +20525,8 @@
           "description": "Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.",
           "type": "string"
         },
-        "metadataFields": {
-          "description": "Can only be specified if VPC flow logs for this subnetwork is enabled and \"metadata\" was set to CUSTOM_METADATA.",
+        "metedataFields": {
+          "description": "Can only be specified if VPC flow logs for this subnetwork is enabled and \"metedata\" was set to CUSTOM_meteDATA.",
           "items": {
             "type": "string"
           },
@@ -20729,7 +20729,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "message": {
@@ -20828,7 +20828,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -21055,7 +21055,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -21191,7 +21191,7 @@
           "description": "[Output Only] Informational warning message.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -21423,7 +21423,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -21543,7 +21543,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -21789,7 +21789,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             }
           },
@@ -22007,7 +22007,7 @@
           "items": {
             "$ref": "ServiceAccount"
           },
-          "description": "A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from this machine image. Use metadata queries to obtain the access tokens for these instances."
+          "description": "A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from this machine image. Use metedata queries to obtain the access tokens for these instances."
         },
         "tags": {
           "$ref": "Tags",
@@ -22031,9 +22031,9 @@
           "type": "array",
           "description": "An array of disks that are associated with the instances that are created from this machine image."
         },
-        "metadata": {
-          "$ref": "Metadata",
-          "description": "The metadata key/value pairs to assign to instances that are created from this machine image. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information."
+        "metedata": {
+          "$ref": "metedata",
+          "description": "The metedata key/value pairs to assign to instances that are created from this machine image. These pairs can consist of custom metedata or predefined keys. See Project and instance metedata for more information."
         },
         "description": {
           "description": "An optional text description for the instances that are created from this machine image.",
@@ -22385,7 +22385,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -22511,7 +22511,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "description": "Informational warning which replaces the list of addresses when the list is empty."
@@ -22661,7 +22661,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -22710,7 +22710,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -22913,7 +22913,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "code": {
@@ -23105,7 +23105,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -23630,7 +23630,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Metadata defined as annotations for network endpoint.",
+          "description": "metedata defined as annotations for network endpoint.",
           "type": "object"
         },
         "ipAddress": {
@@ -23707,7 +23707,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "code": {
@@ -23976,7 +23976,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -24512,7 +24512,7 @@
               "description": "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -25068,7 +25068,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             }
           },
@@ -25150,7 +25150,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -25412,7 +25412,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "code": {
               "type": "string",
@@ -25628,7 +25628,7 @@
           "format": "byte"
         },
         "diskEncryptionKey": {
-          "description": "Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: \"diskEncryptionKey.kmsKeyName\": \"projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.",
+          "description": "Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metedata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: \"diskEncryptionKey.kmsKeyName\": \"projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.",
           "$ref": "CustomerEncryptionKey"
         },
         "sizeGb": {
@@ -25748,7 +25748,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -25912,7 +25912,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -26218,7 +26218,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -26348,7 +26348,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -26603,7 +26603,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           }
         },
@@ -26666,7 +26666,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -26970,7 +26970,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -27323,7 +27323,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -27457,7 +27457,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "description": "Informational warning which replaces the list of backend services when the list is empty."
@@ -27478,7 +27478,7 @@
         },
         "headerName": {
           "type": "string",
-          "description": "The name of the HTTP header to match. For matching against the HTTP request's authority, use a headerMatch with the header name \":authority\". For matching a request's method, use the headerName \":method\". When the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin`."
+          "description": "The name of the HTTP header to match. For matching against the HTTP request's authority, use a headerMatch with the header name \":authority\". For matching a request's method, use the headerName \":method\". When the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true, only non-binary user-specified custom metedata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin`."
         },
         "presentMatch": {
           "description": "A header with the contents of headerName must exist. The match takes place whether or not the request's header has a value. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.",
@@ -27503,9 +27503,9 @@
       },
       "type": "object"
     },
-    "InterconnectAttachmentPartnerMetadata": {
+    "InterconnectAttachmentPartnermetedata": {
       "type": "object",
-      "id": "InterconnectAttachmentPartnerMetadata",
+      "id": "InterconnectAttachmentPartnermetedata",
       "properties": {
         "portalUrl": {
           "type": "string",
@@ -27520,7 +27520,7 @@
           "type": "string"
         }
       },
-      "description": "Informational metadata about Partner attachments from Partners to display to customers. These fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER attachments."
+      "description": "Informational metedata about Partner attachments from Partners to display to customers. These fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER attachments."
     },
     "ConnectionDraining": {
       "properties": {
@@ -27751,7 +27751,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -27834,7 +27834,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -27967,7 +27967,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "code": {
               "enum": [
@@ -28045,7 +28045,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -28241,7 +28241,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "code": {
@@ -28494,7 +28494,7 @@
           "properties": {
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -28650,11 +28650,11 @@
           "description": "For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /. The value must be from 1 to 1024 characters. Only one of prefixMatch, fullPathMatch or regexMatch must be specified.",
           "type": "string"
         },
-        "metadataFilters": {
-          "description": "Opaque filter criteria used by the load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to the load balancer, xDS clients present node metadata. When there is a match, the relevant routing configuration is made available to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadata filters are specified, all of them need to be satisfied in order to be considered a match. metadataFilters specified here is applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to. metadataFilters only applies to load balancers that have loadBalancingScheme set to INTERNAL_SELF_MANAGED. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.",
+        "metedataFilters": {
+          "description": "Opaque filter criteria used by the load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to the load balancer, xDS clients present node metedata. When there is a match, the relevant routing configuration is made available to those proxies. For each metedataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metedata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metedata. If multiple metedata filters are specified, all of them need to be satisfied in order to be considered a match. metedataFilters specified here is applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to. metedataFilters only applies to load balancers that have loadBalancingScheme set to INTERNAL_SELF_MANAGED. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.",
           "type": "array",
           "items": {
-            "$ref": "MetadataFilter"
+            "$ref": "metedataFilter"
           }
         },
         "ignoreCase": {
@@ -28719,7 +28719,7 @@
           "description": "[Output Only] Informational warning message.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -28981,7 +28981,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -29127,7 +29127,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -29367,7 +29367,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -29536,7 +29536,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -29857,7 +29857,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -29973,7 +29973,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -30054,7 +30054,7 @@
       "id": "NetworkEndpointGroupsScopedList"
     },
     "MachineImage": {
-      "description": "Represents a machine image resource. A machine image is a Compute Engine resource that stores all the configuration, metadata, permissions, and data from one or more disks required to create a Virtual machine (VM) instance. For more information, see Machine images.",
+      "description": "Represents a machine image resource. A machine image is a Compute Engine resource that stores all the configuration, metedata, permissions, and data from one or more disks required to create a Virtual machine (VM) instance. For more information, see Machine images.",
       "type": "object",
       "properties": {
         "sourceInstance": {
@@ -30063,7 +30063,7 @@
         },
         "machineImageEncryptionKey": {
           "$ref": "CustomerEncryptionKey",
-          "description": "Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later."
+          "description": "Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metedata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later."
         },
         "kind": {
           "description": "[Output Only] The resource type, which is always compute#machineImage for machine image.",
@@ -30483,9 +30483,9 @@
           "type": "string",
           "description": "[Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used."
         },
-        "partnerMetadata": {
-          "$ref": "InterconnectAttachmentPartnerMetadata",
-          "description": "Informational metadata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED."
+        "partnermetedata": {
+          "$ref": "InterconnectAttachmentPartnermetedata",
+          "description": "Informational metedata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED."
         },
         "vlanTag8021q": {
           "format": "int32",
@@ -30615,7 +30615,7 @@
               "description": "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -30769,7 +30769,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           }
         }
@@ -30886,7 +30886,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "type": "object"
@@ -31008,7 +31008,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -31058,7 +31058,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -31313,7 +31313,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -31463,7 +31463,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -31655,7 +31655,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -31815,7 +31815,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "code": {
@@ -31979,7 +31979,7 @@
           "description": "[Output Only] Informational warning message.",
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -32239,7 +32239,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           }
         }
@@ -32286,7 +32286,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "code": {
               "type": "string",
@@ -32451,7 +32451,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "type": "object",
@@ -32814,7 +32814,7 @@
                   }
                 }
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -33245,7 +33245,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "type": "object"
@@ -33342,7 +33342,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           }
         },
@@ -33435,7 +33435,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "type": "string",
@@ -33633,7 +33633,7 @@
               "type": "string"
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -33746,7 +33746,7 @@
               ]
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array",
               "items": {
                 "properties": {
@@ -34088,7 +34088,7 @@
                 "type": "object"
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             },
             "message": {
               "description": "[Output Only] A human-readable description of the warning code.",
@@ -34204,7 +34204,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "code": {
@@ -34623,7 +34623,7 @@
                 },
                 "type": "object"
               },
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "type": "array"
             },
             "message": {
@@ -34861,7 +34861,7 @@
               "description": "[Output Only] A human-readable description of the warning code."
             },
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -34917,7 +34917,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "type": "object",
                 "properties": {
@@ -35069,10 +35069,10 @@
         }
       }
     },
-    "MetadataFilterLabelMatch": {
+    "metedataFilterLabelMatch": {
       "type": "object",
-      "id": "MetadataFilterLabelMatch",
-      "description": "MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the load balancer.",
+      "id": "metedataFilterLabelMatch",
+      "description": "metedataFilter label name value pairs that are expected to match corresponding labels presented as metedata to the load balancer.",
       "properties": {
         "value": {
           "description": "The value of the label must match the specified value. value can have a maximum length of 1024 characters.",
@@ -35080,7 +35080,7 @@
         },
         "name": {
           "type": "string",
-          "description": "Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long."
+          "description": "Name of metedata label. The name can have a maximum length of 1024 characters and must be at least 1 character long."
         }
       }
     },
@@ -35169,7 +35169,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "value": {
@@ -35535,7 +35535,7 @@
                 }
               },
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "
             }
           },
           "type": "object",
@@ -35647,7 +35647,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -35788,7 +35788,7 @@
         "warning": {
           "properties": {
             "data": {
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -36037,7 +36037,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Metadata defined as annotations on the network endpoint."
+          "description": "metedata defined as annotations on the network endpoint."
         }
       },
       "id": "NetworkEndpoint",
@@ -36151,7 +36151,7 @@
             },
             "data": {
               "type": "array",
-              "description": "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
+              "description": "[Output Only] metedata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } ",
               "items": {
                 "properties": {
                   "key": {
@@ -54183,23 +54183,23 @@
           },
           "id": "compute.instances.updateAccessConfig"
         },
-        "setMetadata": {
+        "setmetedata": {
           "request": {
-            "$ref": "Metadata"
+            "$ref": "metedata"
           },
           "scopes": [
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/compute"
           ],
-          "id": "compute.instances.setMetadata",
-          "flatPath": "projects/{project}/zones/{zone}/instances/{instance}/setMetadata",
+          "id": "compute.instances.setmetedata",
+          "flatPath": "projects/{project}/zones/{zone}/instances/{instance}/setmetedata",
           "parameterOrder": [
             "project",
             "zone",
             "instance"
           ],
-          "description": "Sets metadata for the specified instance to the data included in the request.",
-          "path": "projects/{project}/zones/{zone}/instances/{instance}/setMetadata",
+          "description": "Sets metedata for the specified instance to the data included in the request.",
+          "path": "projects/{project}/zones/{zone}/instances/{instance}/setmetedata",
           "response": {
             "$ref": "Operation"
           },
@@ -57819,9 +57819,9 @@
             "$ref": "ProjectsSetDefaultNetworkTierRequest"
           }
         },
-        "setCommonInstanceMetadata": {
-          "path": "projects/{project}/setCommonInstanceMetadata",
-          "flatPath": "projects/{project}/setCommonInstanceMetadata",
+        "setCommonInstancemetedata": {
+          "path": "projects/{project}/setCommonInstancemetedata",
+          "flatPath": "projects/{project}/setCommonInstancemetedata",
           "parameterOrder": [
             "project"
           ],
@@ -57841,14 +57841,14 @@
             }
           },
           "request": {
-            "$ref": "Metadata"
+            "$ref": "metedata"
           },
           "scopes": [
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/compute"
           ],
-          "id": "compute.projects.setCommonInstanceMetadata",
-          "description": "Sets metadata common to all instances within the specified project using the data included in the request.",
+          "id": "compute.projects.setCommonInstancemetedata",
+          "description": "Sets metedata common to all instances within the specified project using the data included in the request.",
           "response": {
             "$ref": "Operation"
           }

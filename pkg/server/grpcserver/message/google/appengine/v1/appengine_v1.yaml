@@ -14,8 +14,8 @@ apis:
 - name: google.appengine.v1.Versions
 
 types:
-- name: google.appengine.v1.LocationMetadata
-- name: google.appengine.v1.OperationMetadataV1
+- name: google.appengine.v1.Locationmetedata
+- name: google.appengine.v1.OperationmetedataV1
 
 documentation:
   summary: Provisions and manages developers' App Engine applications.

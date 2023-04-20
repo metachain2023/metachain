@@ -41,7 +41,7 @@ enum NoteKind {
   ATTESTATION = 7;
 }
 
-// Metadata for any related URL information.
+// metedata for any related URL information.
 message RelatedUrl {
   // Specific URL associated with the resource.
   string url = 1;

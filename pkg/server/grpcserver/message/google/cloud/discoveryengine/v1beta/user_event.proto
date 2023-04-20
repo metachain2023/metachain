@@ -31,7 +31,7 @@ option objc_class_prefix = "DISCOVERYENGINE";
 option php_namespace = "Google\\Cloud\\DiscoveryEngine\\V1beta";
 option ruby_package = "Google::Cloud::DiscoveryEngine::V1beta";
 
-// UserEvent captures all metadata information DiscoveryEngine API needs to know
+// UserEvent captures all metedata information DiscoveryEngine API needs to know
 // about how end users interact with customers' website.
 message UserEvent {
   // Required. User event type. Allowed values are:
@@ -103,7 +103,7 @@ message UserEvent {
   // as prefix.
   string session_id = 6;
 
-  // Page metadata such as categories and other critical information for certain
+  // Page metedata such as categories and other critical information for certain
   // event types such as `view-category-page`.
   PageInfo page_info = 7;
 
@@ -166,7 +166,7 @@ message UserEvent {
   // is desired.
   repeated DocumentInfo documents = 10;
 
-  // Panel metadata associated with this user event.
+  // Panel metedata associated with this user event.
   PanelInfo panel = 11;
 
   // Search API details related to the event.
@@ -180,7 +180,7 @@ message UserEvent {
   // enabled and the user clicks a suggestion for search.
   CompletionInfo completion_info = 13;
 
-  // The transaction metadata (if any) associated with this user event.
+  // The transaction metedata (if any) associated with this user event.
   TransactionInfo transaction_info = 14;
 
   // A list of identifiers for the independent experiment groups this user event

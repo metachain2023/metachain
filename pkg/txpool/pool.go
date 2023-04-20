@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	_ "metachain/pkg/crypto/sigs/ed25519"
-	_ "metachain/pkg/crypto/sigs/secp"
-	"metachain/pkg/transaction"
+	_ "metechain/pkg/crypto/sigs/ed25519"
+	_ "metechain/pkg/crypto/sigs/secp"
+	"metechain/pkg/transaction"
 
 	"github.com/ethereum/go-ethereum/common"
 	"go.uber.org/zap"
@@ -24,7 +24,7 @@ type IBlockchain interface {
 	GetNonce(*common.Address) (uint64, error)
 	GetAvailableBalance(*common.Address) (*big.Int, error)
 
-	GetBindingMetaAddress(ethAddr string) (*common.Address, error)
+	GetBindingmeteAddress(ethAddr string) (*common.Address, error)
 }
 
 // Pool is a temporary storage pool for unchained transactions.
@@ -201,7 +201,7 @@ func (p *Pool) transactionPreCalculated(traderBuf map[string]traderInfo, tx tran
 	case transaction.TransferTransaction:
 		return p.transferTransactionPreCalculated(traderBuf, tx)
 
-	case transaction.EvmContractTransaction, transaction.EvmMetaTransaction:
+	case transaction.EvmContractTransaction, transaction.EvmmeteTransaction:
 		return p.pledgeTrasnactionPreCalculated(traderBuf, tx)
 
 	case transaction.WithdrawToEthTransaction:
@@ -456,7 +456,7 @@ func (p *Pool) getwithdrawTraderInfo(traderBuf map[string]traderInfo, trader *co
 		return trdinfo, err
 	}
 
-	kaddr, err := p.bc.GetBindingMetaAddress(cmaddr.String())
+	kaddr, err := p.bc.GetBindingmeteAddress(cmaddr.String())
 	if err != nil {
 		return trdinfo, err
 	}

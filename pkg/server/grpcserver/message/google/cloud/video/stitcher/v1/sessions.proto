@@ -27,7 +27,7 @@ option java_multiple_files = true;
 option java_outer_classname = "SessionsProto";
 option java_package = "com.google.cloud.video.stitcher.v1";
 
-// Metadata for a VOD session.
+// metedata for a VOD session.
 message VodSession {
   option (google.api.resource) = {
     type: "videostitcher.googleapis.com/VodSession"
@@ -38,7 +38,7 @@ message VodSession {
   // `projects/{project_number}/locations/{location}/vodSessions/{id}`.
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Metadata of what was stitched into the content.
+  // Output only. metedata of what was stitched into the content.
   Interstitials interstitials = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The playback URI of the stitched content.
@@ -88,12 +88,12 @@ message Interstitials {
   VodSessionContent session_content = 2;
 }
 
-// Metadata for an inserted ad in a VOD session.
+// metedata for an inserted ad in a VOD session.
 message VodSessionAd {
   // Duration in seconds of the ad.
   google.protobuf.Duration duration = 1;
 
-  // Metadata of companion ads associated with the ad.
+  // metedata of companion ads associated with the ad.
   CompanionAds companion_ads = 2;
 
   // The list of progress tracking events for the ad break. These can be of
@@ -104,14 +104,14 @@ message VodSessionAd {
   repeated Event activity_events = 3;
 }
 
-// Metadata for the entire stitched content in a VOD session.
+// metedata for the entire stitched content in a VOD session.
 message VodSessionContent {
   // The total duration in seconds of the content including the ads stitched
   // in.
   google.protobuf.Duration duration = 1;
 }
 
-// Metadata for an inserted ad break.
+// metedata for an inserted ad break.
 message VodSessionAdBreak {
   // List of events that are expected to be triggered, ordered by time.
   repeated ProgressEvent progress_events = 1;
@@ -126,7 +126,7 @@ message VodSessionAdBreak {
   google.protobuf.Duration start_time_offset = 4;
 }
 
-// Metadata for a live session.
+// metedata for a live session.
 message LiveSession {
   option (google.api.resource) = {
     type: "videostitcher.googleapis.com/LiveSession"
@@ -205,7 +205,7 @@ message LiveSession {
   string stream_id = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Metadata of an ad tag.
+// metedata of an ad tag.
 message AdTag {
   // Ad tag URI template.
   string uri = 1;

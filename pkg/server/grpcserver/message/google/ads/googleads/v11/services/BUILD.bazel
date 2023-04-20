@@ -75,7 +75,7 @@ java_grpc_library(
 ##############################################################################
 
 # PHP targets are in the parent directory's BUILD.bazel file to facilitate
-# aggregating metadata using a single underlying call to protoc.
+# aggregating metedata using a single underlying call to protoc.
 
 ##############################################################################
 # C#

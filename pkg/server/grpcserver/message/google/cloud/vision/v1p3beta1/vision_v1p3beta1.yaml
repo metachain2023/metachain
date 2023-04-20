@@ -10,9 +10,9 @@ apis:
 types:
 - name: google.cloud.vision.v1p3beta1.AnnotateFileResponse
 - name: google.cloud.vision.v1p3beta1.AsyncBatchAnnotateFilesResponse
-- name: google.cloud.vision.v1p3beta1.BatchOperationMetadata
+- name: google.cloud.vision.v1p3beta1.BatchOperationmetedata
 - name: google.cloud.vision.v1p3beta1.ImportProductSetsResponse
-- name: google.cloud.vision.v1p3beta1.OperationMetadata
+- name: google.cloud.vision.v1p3beta1.Operationmetedata
 
 documentation:
   summary: |-

@@ -38,7 +38,7 @@ option (google.api.resource_definition) = {
   pattern: "projects/{project}/locations/{location}/catalogs/{catalog}/branches/{branch}"
 };
 
-// Product captures all metadata information of items to be recommended or
+// Product captures all metedata information of items to be recommended or
 // searched.
 message Product {
   option (google.api.resource) = {

@@ -21,7 +21,7 @@ option java_multiple_files = true;
 option java_package = "io.grafeas.v1beta1.image";
 option objc_class_prefix = "GRA";
 
-// Layer holds metadata specific to a layer of a Docker image.
+// Layer holds metedata specific to a layer of a Docker image.
 message Layer {
   // Instructions from Dockerfile.
   enum Directive {
@@ -134,7 +134,7 @@ message Derived {
   // associated image basis.
   int32 distance = 2;
 
-  // This contains layer-specific metadata, if populated it has length
+  // This contains layer-specific metedata, if populated it has length
   // "distance" and is ordered with [distance] being the layer immediately
   // following the base image and [1] being the final layer.
   repeated Layer layer_info = 3;

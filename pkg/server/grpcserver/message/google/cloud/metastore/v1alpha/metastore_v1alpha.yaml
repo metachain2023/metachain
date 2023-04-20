@@ -1,26 +1,26 @@
 type: google.api.Service
 config_version: 3
-name: metastore.googleapis.com
-title: Dataproc Metastore API
+name: metestore.googleapis.com
+title: Dataproc metestore API
 
 apis:
 - name: google.cloud.location.Locations
-- name: google.cloud.metastore.v1alpha.DataprocMetastore
-- name: google.cloud.metastore.v1alpha.DataprocMetastoreFederation
+- name: google.cloud.metestore.v1alpha.Dataprocmetestore
+- name: google.cloud.metestore.v1alpha.DataprocmetestoreFederation
 - name: google.iam.v1.IAMPolicy
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.metastore.v1alpha.AlterMetadataResourceLocationResponse
-- name: google.cloud.metastore.v1alpha.LocationMetadata
-- name: google.cloud.metastore.v1alpha.MoveTableToDatabaseResponse
-- name: google.cloud.metastore.v1alpha.OperationMetadata
-- name: google.cloud.metastore.v1alpha.QueryMetadataResponse
+- name: google.cloud.metestore.v1alpha.AltermetedataResourceLocationResponse
+- name: google.cloud.metestore.v1alpha.Locationmetedata
+- name: google.cloud.metestore.v1alpha.MoveTableToDatabaseResponse
+- name: google.cloud.metestore.v1alpha.Operationmetedata
+- name: google.cloud.metestore.v1alpha.QuerymetedataResponse
 
 documentation:
   summary: |-
-    The Dataproc Metastore API is used to manage the lifecycle and
-    configuration of metastore services.
+    The Dataproc metestore API is used to manage the lifecycle and
+    configuration of metestore services.
   rules:
   - selector: google.cloud.location.Locations.GetLocation
     description: Gets information about a location.
@@ -57,9 +57,9 @@ backend:
     deadline: 60.0
   - selector: google.cloud.location.Locations.ListLocations
     deadline: 60.0
-  - selector: 'google.cloud.metastore.v1alpha.DataprocMetastore.*'
+  - selector: 'google.cloud.metestore.v1alpha.Dataprocmetestore.*'
     deadline: 60.0
-  - selector: 'google.cloud.metastore.v1alpha.DataprocMetastoreFederation.*'
+  - selector: 'google.cloud.metestore.v1alpha.DataprocmetestoreFederation.*'
     deadline: 60.0
   - selector: 'google.iam.v1.IAMPolicy.*'
     deadline: 60.0
@@ -120,11 +120,11 @@ authentication:
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform
-  - selector: 'google.cloud.metastore.v1alpha.DataprocMetastore.*'
+  - selector: 'google.cloud.metestore.v1alpha.Dataprocmetestore.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform
-  - selector: 'google.cloud.metastore.v1alpha.DataprocMetastoreFederation.*'
+  - selector: 'google.cloud.metestore.v1alpha.DataprocmetestoreFederation.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform

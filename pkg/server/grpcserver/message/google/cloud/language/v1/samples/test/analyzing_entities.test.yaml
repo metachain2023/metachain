@@ -41,9 +41,9 @@ test:
         - {literal: "mid: /m/01n7q"}
         - {literal: "Language of the text: en"}
 
-    - name: language_entities_text - Analyzing the Entities of a text string (*metadata attributes*)
+    - name: language_entities_text - Analyzing the Entities of a text string (*metedata attributes*)
       spec:
-      # Try out some of the metadata attributes which should be available for dates, addresses, etc.
+      # Try out some of the metedata attributes which should be available for dates, addresses, etc.
       # In case fake (555) area code numbers don't work, using United States Naval Observatory number.
       # Custom value: "I called 202-762-1401 on January 31, 2019 from 1600 Amphitheatre Parkway, Mountain View, CA."
       - call:
@@ -56,7 +56,7 @@ test:
         - literal: "Entity type: DATE"
         - literal: "Entity type: ADDRESS"
         - literal: "Entity type: PHONE_NUMBER"
-      # Check that at least some of the supporting metadata for an entity was present in the response
+      # Check that at least some of the supporting metedata for an entity was present in the response
       - assert_contains_any:
         - literal: "month: 1"
         - literal: "day: 31"

@@ -56,7 +56,7 @@ service GameServerDeploymentsService {
     option (google.api.method_signature) = "parent,game_server_deployment";
     option (google.longrunning.operation_info) = {
       response_type: "GameServerDeployment"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -68,7 +68,7 @@ service GameServerDeploymentsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -81,7 +81,7 @@ service GameServerDeploymentsService {
     option (google.api.method_signature) = "game_server_deployment,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "GameServerDeployment"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -107,7 +107,7 @@ service GameServerDeploymentsService {
     option (google.api.method_signature) = "rollout,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "GameServerDeployment"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

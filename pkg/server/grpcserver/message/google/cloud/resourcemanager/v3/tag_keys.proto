@@ -70,7 +70,7 @@ service TagKeys {
     option (google.api.method_signature) = "tag_key";
     option (google.longrunning.operation_info) = {
       response_type: "TagKey"
-      metadata_type: "CreateTagKeyMetadata"
+      metedata_type: "CreateTagKeymetedata"
     };
   }
 
@@ -83,7 +83,7 @@ service TagKeys {
     option (google.api.method_signature) = "tag_key,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "TagKey"
-      metadata_type: "UpdateTagKeyMetadata"
+      metedata_type: "UpdateTagKeymetedata"
     };
   }
 
@@ -96,7 +96,7 @@ service TagKeys {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "TagKey"
-      metadata_type: "DeleteTagKeyMetadata"
+      metedata_type: "DeleteTagKeymetedata"
     };
   }
 
@@ -246,7 +246,7 @@ message CreateTagKeyRequest {
 }
 
 // Runtime operation information for creating a TagKey.
-message CreateTagKeyMetadata {
+message CreateTagKeymetedata {
 
 }
 
@@ -269,7 +269,7 @@ message UpdateTagKeyRequest {
 }
 
 // Runtime operation information for updating a TagKey.
-message UpdateTagKeyMetadata {
+message UpdateTagKeymetedata {
 
 }
 
@@ -295,6 +295,6 @@ message DeleteTagKeyRequest {
 }
 
 // Runtime operation information for deleting a TagKey.
-message DeleteTagKeyMetadata {
+message DeleteTagKeymetedata {
 
 }

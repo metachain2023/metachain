@@ -153,7 +153,7 @@ go_proto_library(
 #     srcs = [":containeranalysis_proto_with_info"],
 #     grpc_service_config = "containeranalysis_grpc_service_config.json",
 #     importpath = "cloud.google.com/go/devtools/containeranalysis/apiv1;containeranalysis",
-#     metadata = True,
+#     metedata = True,
 #     service_yaml = "containeranalysis_v1.yaml",
 #     deps = [
 #         ":containeranalysis_go_proto",
@@ -174,7 +174,7 @@ go_proto_library(
 #     name = "gapi-cloud-devtools-containeranalysis-v1-go",
 #     deps = [
 #         ":containeranalysis_go_gapic",
-#         ":containeranalysis_go_gapic_srcjar-metadata.srcjar",
+#         ":containeranalysis_go_gapic_srcjar-metedata.srcjar",
 #         ":containeranalysis_go_gapic_srcjar-test.srcjar",
 #         ":containeranalysis_go_proto",
 #     ],
@@ -254,7 +254,7 @@ nodejs_gapic_library(
     package_name = "@google-cloud/containeranalysis",
     ## DO NOT CHANGE: src must point to a combined proto target
     src = ":containeranalysis_grafeas_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = "containeranalysis_grpc_service_config.json",
     main_service = "containeranalysis",
     package = "google.devtools.containeranalysis.v1",
@@ -298,7 +298,7 @@ ruby_cloud_gapic_library(
     ],
     grpc_service_config = "containeranalysis_grpc_service_config.json",
     rest_numeric_enums = True,
-    ruby_cloud_description = "The Container Analysis API is an implementation of Grafeas. It stores, and enables querying and retrieval of, critical metadata about all of your software artifacts.",
+    ruby_cloud_description = "The Container Analysis API is an implementation of Grafeas. It stores, and enables querying and retrieval of, critical metedata about all of your software artifacts.",
     ruby_cloud_title = "Container Analysis V1",
     deps = [
         ":containeranalysis_ruby_grpc",

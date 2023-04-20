@@ -228,7 +228,7 @@ message Occurrence {
   // next_id = 15;
 }
 
-// An entity that can have metadata. For example, a Docker image.
+// An entity that can have metedata. For example, a Docker image.
 message Resource {
   // The name of the resource. For example, the name of a Docker image -
   // "Debian".

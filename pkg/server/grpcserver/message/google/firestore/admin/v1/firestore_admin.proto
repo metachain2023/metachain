@@ -79,8 +79,8 @@ service FirestoreAdmin {
       "https://www.googleapis.com/auth/datastore";
 
   // Creates a composite index. This returns a [google.longrunning.Operation][google.longrunning.Operation]
-  // which may be used to track the status of the creation. The metadata for
-  // the operation will be the type [IndexOperationMetadata][google.firestore.admin.v1.IndexOperationMetadata].
+  // which may be used to track the status of the creation. The metedata for
+  // the operation will be the type [IndexOperationmetedata][google.firestore.admin.v1.IndexOperationmetedata].
   rpc CreateIndex(CreateIndexRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/databases/*/collectionGroups/*}/indexes"
@@ -89,7 +89,7 @@ service FirestoreAdmin {
     option (google.api.method_signature) = "parent,index";
     option (google.longrunning.operation_info) = {
       response_type: "Index"
-      metadata_type: "IndexOperationMetadata"
+      metedata_type: "IndexOperationmetedata"
     };
   }
 
@@ -117,7 +117,7 @@ service FirestoreAdmin {
     option (google.api.method_signature) = "name";
   }
 
-  // Gets the metadata and configuration for a Field.
+  // Gets the metedata and configuration for a Field.
   rpc GetField(GetFieldRequest) returns (Field) {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/databases/*/collectionGroups/*/fields/*}"
@@ -132,8 +132,8 @@ service FirestoreAdmin {
   // should be specified as: `{ paths: "index_config" }`.
   //
   // This call returns a [google.longrunning.Operation][google.longrunning.Operation] which may be used to
-  // track the status of the field update. The metadata for
-  // the operation will be the type [FieldOperationMetadata][google.firestore.admin.v1.FieldOperationMetadata].
+  // track the status of the field update. The metedata for
+  // the operation will be the type [FieldOperationmetedata][google.firestore.admin.v1.FieldOperationmetedata].
   //
   // To configure the default field settings for the database, use
   // the special `Field` with resource name:
@@ -146,11 +146,11 @@ service FirestoreAdmin {
     option (google.api.method_signature) = "field";
     option (google.longrunning.operation_info) = {
       response_type: "Field"
-      metadata_type: "FieldOperationMetadata"
+      metedata_type: "FieldOperationmetedata"
     };
   }
 
-  // Lists the field configuration and metadata for this database.
+  // Lists the field configuration and metedata for this database.
   //
   // Currently, [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
   // that have been explicitly overridden. To issue this query, call
@@ -182,7 +182,7 @@ service FirestoreAdmin {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "ExportDocumentsResponse"
-      metadata_type: "ExportDocumentsMetadata"
+      metedata_type: "ExportDocumentsmetedata"
     };
   }
 
@@ -199,7 +199,7 @@ service FirestoreAdmin {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "ImportDocumentsMetadata"
+      metedata_type: "ImportDocumentsmetedata"
     };
   }
 
@@ -228,7 +228,7 @@ service FirestoreAdmin {
     option (google.api.method_signature) = "database,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Database"
-      metadata_type: "UpdateDatabaseMetadata"
+      metedata_type: "UpdateDatabasemetedata"
     };
   }
 }
@@ -272,8 +272,8 @@ message UpdateDatabaseRequest {
   google.protobuf.FieldMask update_mask = 2;
 }
 
-// Metadata related to the update database operation.
-message UpdateDatabaseMetadata {
+// metedata related to the update database operation.
+message UpdateDatabasemetedata {
 
 }
 

@@ -8,7 +8,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.datacatalog.lineage.v1.OperationMetadata
+- name: google.cloud.datacatalog.lineage.v1.Operationmetedata
 
 http:
   rules:

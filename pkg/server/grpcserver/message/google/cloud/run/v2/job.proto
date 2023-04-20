@@ -51,7 +51,7 @@ service Jobs {
     option (google.api.method_signature) = "parent,job,job_id";
     option (google.longrunning.operation_info) = {
       response_type: "Job"
-      metadata_type: "Job"
+      metedata_type: "Job"
     };
   }
 
@@ -80,7 +80,7 @@ service Jobs {
     option (google.api.method_signature) = "job";
     option (google.longrunning.operation_info) = {
       response_type: "Job"
-      metadata_type: "Job"
+      metedata_type: "Job"
     };
   }
 
@@ -92,7 +92,7 @@ service Jobs {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Job"
-      metadata_type: "Job"
+      metedata_type: "Job"
     };
   }
 
@@ -105,7 +105,7 @@ service Jobs {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Execution"
-      metadata_type: "Execution"
+      metedata_type: "Execution"
     };
   }
 
@@ -295,7 +295,7 @@ message Job {
   map<string, string> labels = 4;
 
   // KRM-style annotations for the resource. Unstructured key value map that may
-  // be set by external tools to store and arbitrary metadata.
+  // be set by external tools to store and arbitrary metedata.
   // They are not queryable and should be preserved
   // when modifying objects.
   //

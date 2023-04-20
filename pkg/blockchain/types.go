@@ -5,9 +5,9 @@ import (
 	"math/big"
 	"sync"
 
-	"metachain/pkg/contract/evm"
-	"metachain/pkg/storage/store"
-	"metachain/pkg/transaction"
+	"metechain/pkg/contract/evm"
+	"metechain/pkg/storage/store"
+	"metechain/pkg/transaction"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/state"

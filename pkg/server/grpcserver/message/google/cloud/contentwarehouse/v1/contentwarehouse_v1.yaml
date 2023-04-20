@@ -12,8 +12,8 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.contentwarehouse.v1.CreateDocumentMetadata
-- name: google.cloud.contentwarehouse.v1.UpdateDocumentMetadata
+- name: google.cloud.contentwarehouse.v1.CreateDocumentmetedata
+- name: google.cloud.contentwarehouse.v1.UpdateDocumentmetedata
 
 authentication:
   rules:

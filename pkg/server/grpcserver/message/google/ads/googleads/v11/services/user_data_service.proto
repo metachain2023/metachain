@@ -72,10 +72,10 @@ message UploadUserDataRequest {
   // Required. The list of operations to be done.
   repeated UserDataOperation operations = 3 [(google.api.field_behavior) = REQUIRED];
 
-  // Metadata of the request.
-  oneof metadata {
-    // Metadata for data updates to a Customer Match user list.
-    google.ads.googleads.v11.common.CustomerMatchUserListMetadata customer_match_user_list_metadata = 2;
+  // metedata of the request.
+  oneof metedata {
+    // metedata for data updates to a Customer Match user list.
+    google.ads.googleads.v11.common.CustomerMatchUserListmetedata customer_match_user_list_metedata = 2;
   }
 }
 

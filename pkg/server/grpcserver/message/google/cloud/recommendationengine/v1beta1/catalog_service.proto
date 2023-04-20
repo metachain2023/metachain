@@ -100,7 +100,7 @@ service CatalogService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse"
-      metadata_type: "google.cloud.recommendationengine.v1beta1.ImportMetadata"
+      metedata_type: "google.cloud.recommendationengine.v1beta1.Importmetedata"
     };
     option (google.api.method_signature) =
         "parent,request_id,input_config,errors_config";

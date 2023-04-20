@@ -36,21 +36,21 @@ message CalendarAddOnManifest {
     // Default value when nothing is set for EventAccess.
     UNSPECIFIED = 0;
 
-    // METADATA gives event triggers the permission to access the metadata of
+    // meteDATA gives event triggers the permission to access the metedata of
     // events such as event id and calendar id.
-    METADATA = 1;
+    meteDATA = 1;
 
     // READ gives event triggers access to all provided event fields including
-    // the metadata, attendees, and conference data.
+    // the metedata, attendees, and conference data.
     READ = 3;
 
-    // WRITE gives event triggers access to the metadata of events and the
+    // WRITE gives event triggers access to the metedata of events and the
     // ability to perform all actions, including adding attendees and setting
     // conference data.
     WRITE = 4;
 
     // READ_WRITE gives event triggers access to all provided event fields
-    // including the metadata, attendees, and conference data and the ability to
+    // including the metedata, attendees, and conference data and the ability to
     // perform all actions.
     READ_WRITE = 5;
   }

@@ -60,7 +60,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "parent,backup_plan,backup_plan_id";
     option (google.longrunning.operation_info) = {
       response_type: "BackupPlan"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -89,7 +89,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "backup_plan,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "BackupPlan"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -101,7 +101,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -114,7 +114,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "parent,backup,backup_id";
     option (google.longrunning.operation_info) = {
       response_type: "Backup"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -143,7 +143,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "backup,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Backup"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -155,7 +155,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -184,7 +184,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "parent,restore_plan,restore_plan_id";
     option (google.longrunning.operation_info) = {
       response_type: "RestorePlan"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -213,7 +213,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "restore_plan,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "RestorePlan"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -225,7 +225,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -238,7 +238,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "parent,restore,restore_id";
     option (google.longrunning.operation_info) = {
       response_type: "Restore"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -267,7 +267,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "restore,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Restore"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -279,7 +279,7 @@ service BackupForGKE {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -300,8 +300,8 @@ service BackupForGKE {
   }
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

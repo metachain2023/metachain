@@ -40,8 +40,8 @@ message RequestLog {
   // The status of the overall operation.
   google.rpc.Status status = 2;
 
-  // Metadata about the operation.
-  RequestMetadata request_metadata = 3;
+  // metedata about the operation.
+  Requestmetedata request_metedata = 3;
 
   // The operation request. This may not include all request parameters,
   // such as those that are too large, privacy-sensitive, or duplicated
@@ -65,11 +65,11 @@ message RequestLog {
 
   // Other service-specific data about the request, response, and other
   // information associated with the current event.
-  google.protobuf.Struct metadata = 7;
+  google.protobuf.Struct metedata = 7;
 }
 
-// Metadata about the request.
-message RequestMetadata {
+// metedata about the request.
+message Requestmetedata {
   // The IP address of the caller.
   string caller_ip = 1;
 

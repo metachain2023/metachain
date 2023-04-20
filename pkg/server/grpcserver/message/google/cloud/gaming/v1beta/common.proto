@@ -25,8 +25,8 @@ option go_package = "cloud.google.com/go/gaming/apiv1beta/gamingpb;gamingpb";
 option java_multiple_files = true;
 option java_package = "com.google.cloud.gaming.v1beta";
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

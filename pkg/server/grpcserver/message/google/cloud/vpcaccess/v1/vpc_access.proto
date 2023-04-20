@@ -47,7 +47,7 @@ service VpcAccessService {
     option (google.api.method_signature) = "parent,connector_id,connector";
     option (google.longrunning.operation_info) = {
       response_type: "Connector"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -77,7 +77,7 @@ service VpcAccessService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -225,8 +225,8 @@ message DeleteConnectorRequest {
   ];
 }
 
-// Metadata for google.longrunning.Operation.
-message OperationMetadata {
+// metedata for google.longrunning.Operation.
+message Operationmetedata {
   // Output only. Method that initiated the operation e.g.
   // google.cloud.vpcaccess.v1.Connectors.CreateConnector.
   string method = 1 [(google.api.field_behavior) = OUTPUT_ONLY];

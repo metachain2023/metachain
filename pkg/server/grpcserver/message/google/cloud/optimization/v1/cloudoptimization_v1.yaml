@@ -8,7 +8,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.optimization.v1.AsyncModelMetadata
+- name: google.cloud.optimization.v1.AsyncModelmetedata
 - name: google.cloud.optimization.v1.BatchOptimizeToursResponse
 
 documentation:

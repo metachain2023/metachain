@@ -1,21 +1,21 @@
 type: google.api.Service
 config_version: 3
-name: baremetalsolution.googleapis.com
-title: Bare Metal Solution API
+name: baremetelsolution.googleapis.com
+title: Bare metel Solution API
 
 apis:
-- name: google.cloud.baremetalsolution.v2.BareMetalSolution
+- name: google.cloud.baremetelsolution.v2.BaremetelSolution
 - name: google.cloud.location.Locations
 - name: google.iam.v1.IAMPolicy
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.baremetalsolution.v2.OperationMetadata
-- name: google.cloud.baremetalsolution.v2.ResetInstanceResponse
+- name: google.cloud.baremetelsolution.v2.Operationmetedata
+- name: google.cloud.baremetelsolution.v2.ResetInstanceResponse
 
 documentation:
   summary: |-
-    Provides ways to manage Bare Metal Solution hardware installed in a
+    Provides ways to manage Bare metel Solution hardware installed in a
     regional extension located near a Google Cloud data center.
   rules:
   - selector: google.cloud.location.Locations.GetLocation
@@ -26,7 +26,7 @@ documentation:
 
 backend:
   rules:
-  - selector: 'google.cloud.baremetalsolution.v2.BareMetalSolution.*'
+  - selector: 'google.cloud.baremetelsolution.v2.BaremetelSolution.*'
     deadline: 60.0
   - selector: google.cloud.location.Locations.GetLocation
     deadline: 60.0
@@ -44,7 +44,7 @@ http:
 
 authentication:
   rules:
-  - selector: 'google.cloud.baremetalsolution.v2.BareMetalSolution.*'
+  - selector: 'google.cloud.baremetelsolution.v2.BaremetelSolution.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform

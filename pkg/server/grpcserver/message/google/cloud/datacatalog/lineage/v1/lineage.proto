@@ -87,7 +87,7 @@ service Lineage {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.datacatalog.lineage.v1.OperationMetadata"
+      metedata_type: "google.cloud.datacatalog.lineage.v1.Operationmetedata"
     };
   }
 
@@ -134,7 +134,7 @@ service Lineage {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.datacatalog.lineage.v1.OperationMetadata"
+      metedata_type: "google.cloud.datacatalog.lineage.v1.Operationmetedata"
     };
   }
 
@@ -342,19 +342,19 @@ message EventLink {
 message EntityReference {
   // Required. Fully Qualified Name of the entity. Useful for referencing
   // entities that aren't represented as GCP resources, for example, tables in
-  // Dataproc Metastore API.
+  // Dataproc metestore API.
   //
   // Examples:
   //
   //   * `bigquery:dataset.project_id.dataset_id`
   //   * `bigquery:table.project_id.dataset_id.table_id`
   //   * `pubsub:project_id.topic_id`
-  //   * `dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId`
+  //   * `dataproc_metestore:projectId.locationId.instanceId.databaseId.tableId`
   string fully_qualified_name = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata describing the operation.
-message OperationMetadata {
+// metedata describing the operation.
+message Operationmetedata {
   // An enum with the state of the operation.
   enum State {
     // Unused.

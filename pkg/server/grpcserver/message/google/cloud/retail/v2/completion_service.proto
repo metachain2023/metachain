@@ -69,7 +69,7 @@ service CompletionService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2.ImportCompletionDataResponse"
-      metadata_type: "google.cloud.retail.v2.ImportMetadata"
+      metedata_type: "google.cloud.retail.v2.Importmetedata"
     };
   }
 }

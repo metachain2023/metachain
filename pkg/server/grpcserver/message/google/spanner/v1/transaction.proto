@@ -518,7 +518,7 @@ message TransactionSelector {
 
     // Begin a new transaction and execute this read or SQL query in
     // it. The transaction ID of the new transaction is returned in
-    // [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
+    // [ResultSetmetedata.transaction][google.spanner.v1.ResultSetmetedata.transaction],
     // which is a [Transaction][google.spanner.v1.Transaction].
     TransactionOptions begin = 3;
   }

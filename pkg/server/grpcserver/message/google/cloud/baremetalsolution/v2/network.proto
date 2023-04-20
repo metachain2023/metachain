@@ -14,24 +14,24 @@
 
 syntax = "proto3";
 
-package google.cloud.baremetalsolution.v2;
+package google.cloud.baremetelsolution.v2;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/field_mask.proto";
 
-option csharp_namespace = "Google.Cloud.BareMetalSolution.V2";
-option go_package = "cloud.google.com/go/baremetalsolution/apiv2/baremetalsolutionpb;baremetalsolutionpb";
+option csharp_namespace = "Google.Cloud.BaremetelSolution.V2";
+option go_package = "cloud.google.com/go/baremetelsolution/apiv2/baremetelsolutionpb;baremetelsolutionpb";
 option java_multiple_files = true;
 option java_outer_classname = "NetworkProto";
-option java_package = "com.google.cloud.baremetalsolution.v2";
-option php_namespace = "Google\\Cloud\\BareMetalSolution\\V2";
-option ruby_package = "Google::Cloud::BareMetalSolution::V2";
+option java_package = "com.google.cloud.baremetelsolution.v2";
+option php_namespace = "Google\\Cloud\\BaremetelSolution\\V2";
+option ruby_package = "Google::Cloud::BaremetelSolution::V2";
 
 // A Network.
 message Network {
   option (google.api.resource) = {
-    type: "baremetalsolution.googleapis.com/Network"
+    type: "baremetelsolution.googleapis.com/Network"
     pattern: "projects/{project}/locations/{location}/networks/{network}"
   };
 
@@ -43,7 +43,7 @@ message Network {
     // Client network, a network peered to a Google Cloud VPC.
     CLIENT = 1;
 
-    // Private network, a network local to the Bare Metal Solution environment.
+    // Private network, a network local to the Bare metel Solution environment.
     PRIVATE = 2;
   }
 
@@ -205,7 +205,7 @@ message GetNetworkRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Network"
+      type: "baremetelsolution.googleapis.com/Network"
     }
   ];
 }

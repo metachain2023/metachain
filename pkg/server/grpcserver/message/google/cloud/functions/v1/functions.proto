@@ -72,7 +72,7 @@ service CloudFunctionsService {
     option (google.api.method_signature) = "location,function";
     option (google.longrunning.operation_info) = {
       response_type: "CloudFunction"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -85,7 +85,7 @@ service CloudFunctionsService {
     option (google.api.method_signature) = "function";
     option (google.longrunning.operation_info) = {
       response_type: "CloudFunction"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 
@@ -99,7 +99,7 @@ service CloudFunctionsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadataV1"
+      metedata_type: "OperationmetedataV1"
     };
   }
 

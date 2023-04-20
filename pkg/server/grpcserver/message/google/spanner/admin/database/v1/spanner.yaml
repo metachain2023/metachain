@@ -8,12 +8,12 @@ apis:
 - name: google.spanner.admin.database.v1.DatabaseAdmin
 
 types:
-- name: google.spanner.admin.database.v1.CopyBackupMetadata
-- name: google.spanner.admin.database.v1.CreateBackupMetadata
-- name: google.spanner.admin.database.v1.CreateDatabaseMetadata
-- name: google.spanner.admin.database.v1.OptimizeRestoredDatabaseMetadata
-- name: google.spanner.admin.database.v1.RestoreDatabaseMetadata
-- name: google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata
+- name: google.spanner.admin.database.v1.CopyBackupmetedata
+- name: google.spanner.admin.database.v1.CreateBackupmetedata
+- name: google.spanner.admin.database.v1.CreateDatabasemetedata
+- name: google.spanner.admin.database.v1.OptimizeRestoredDatabasemetedata
+- name: google.spanner.admin.database.v1.RestoreDatabasemetedata
+- name: google.spanner.admin.database.v1.UpdateDatabaseDdlmetedata
 
 documentation:
   summary: |-

@@ -223,14 +223,14 @@ message SearchOrganizationsResponse {
   string next_page_token = 2;
 }
 
-// A status object which is used as the `metadata` field for the operation
+// A status object which is used as the `metedata` field for the operation
 // returned by DeleteOrganization.
-message DeleteOrganizationMetadata {
+message DeleteOrganizationmetedata {
 
 }
 
-// A status object which is used as the `metadata` field for the Operation
+// A status object which is used as the `metedata` field for the Operation
 // returned by UndeleteOrganization.
-message UndeleteOrganizationMetadata {
+message UndeleteOrganizationmetedata {
 
 }

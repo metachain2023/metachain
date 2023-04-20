@@ -7,7 +7,7 @@ apis:
 - name: google.cloud.managedidentities.v1.ManagedIdentitiesService
 
 types:
-- name: google.cloud.managedidentities.v1.OpMetadata
+- name: google.cloud.managedidentities.v1.Opmetedata
 
 documentation:
   summary: |-

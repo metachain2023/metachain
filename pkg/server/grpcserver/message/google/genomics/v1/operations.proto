@@ -26,8 +26,8 @@ option java_multiple_files = true;
 option java_outer_classname = "OperationsProto";
 option java_package = "com.google.genomics.v1";
 
-// Metadata describing an [Operation][google.longrunning.Operation].
-message OperationMetadata {
+// metedata describing an [Operation][google.longrunning.Operation].
+message Operationmetedata {
   // The Google Cloud Project in which the job is scoped.
   string project_id = 1;
 
@@ -54,8 +54,8 @@ message OperationMetadata {
   // caller when submitting the request that creates the operation.
   string client_id = 7;
 
-  // Runtime metadata on this Operation.
-  google.protobuf.Any runtime_metadata = 8;
+  // Runtime metedata on this Operation.
+  google.protobuf.Any runtime_metedata = 8;
 
   // Optionally provided by the caller when submitting the request that creates
   // the operation.

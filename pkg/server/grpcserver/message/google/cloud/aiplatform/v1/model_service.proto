@@ -52,7 +52,7 @@ service ModelService {
     option (google.api.method_signature) = "parent,model";
     option (google.longrunning.operation_info) = {
       response_type: "UploadModelResponse"
-      metadata_type: "UploadModelOperationMetadata"
+      metedata_type: "UploadModelOperationmetedata"
     };
   }
 
@@ -105,7 +105,7 @@ service ModelService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -123,7 +123,7 @@ service ModelService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -148,14 +148,14 @@ service ModelService {
     option (google.api.method_signature) = "name,output_config";
     option (google.longrunning.operation_info) = {
       response_type: "ExportModelResponse"
-      metadata_type: "ExportModelOperationMetadata"
+      metedata_type: "ExportModelOperationmetedata"
     };
   }
 
   // Copies an already existing Vertex AI Model into the specified Location.
   // The source Model must exist in the same Project.
   // When copying custom Models, the users themselves are responsible for
-  // [Model.metadata][google.cloud.aiplatform.v1.Model.metadata] content to be
+  // [Model.metedata][google.cloud.aiplatform.v1.Model.metedata] content to be
   // region-agnostic, as well as making sure that any resources (e.g. files) it
   // depends on remain accessible.
   rpc CopyModel(CopyModelRequest) returns (google.longrunning.Operation) {
@@ -166,7 +166,7 @@ service ModelService {
     option (google.api.method_signature) = "parent,source_model";
     option (google.longrunning.operation_info) = {
       response_type: "CopyModelResponse"
-      metadata_type: "CopyModelOperationMetadata"
+      metedata_type: "CopyModelOperationmetedata"
     };
   }
 
@@ -265,9 +265,9 @@ message UploadModelRequest {
 // Details of
 // [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel]
 // operation.
-message UploadModelOperationMetadata {
-  // The common part of the operation metadata.
-  GenericOperationMetadata generic_metadata = 1;
+message UploadModelOperationmetedata {
+  // The common part of the operation metedata.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Response message of
@@ -572,7 +572,7 @@ message ExportModelRequest {
 // Details of
 // [ModelService.ExportModel][google.cloud.aiplatform.v1.ModelService.ExportModel]
 // operation.
-message ExportModelOperationMetadata {
+message ExportModelOperationmetedata {
   // Further describes the output of the ExportModel. Supplements
   // [ExportModelRequest.OutputConfig][google.cloud.aiplatform.v1.ExportModelRequest.OutputConfig].
   message OutputInfo {
@@ -586,8 +586,8 @@ message ExportModelOperationMetadata {
     string image_output_uri = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
-  // The common part of the operation metadata.
-  GenericOperationMetadata generic_metadata = 1;
+  // The common part of the operation metedata.
+  GenericOperationmetedata generic_metedata = 1;
 
   // Output only. Information further describing the output of this Model
   // export.
@@ -649,9 +649,9 @@ message CopyModelRequest {
 // Details of
 // [ModelService.CopyModel][google.cloud.aiplatform.v1.ModelService.CopyModel]
 // operation.
-message CopyModelOperationMetadata {
-  // The common part of the operation metadata.
-  GenericOperationMetadata generic_metadata = 1;
+message CopyModelOperationmetedata {
+  // The common part of the operation metedata.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Response message of

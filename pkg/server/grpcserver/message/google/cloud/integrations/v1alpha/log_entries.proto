@@ -141,8 +141,8 @@ message EventExecutionDetails {
 
 // Contains the snapshot of the event execution for a given checkpoint.
 message EventExecutionSnapshot {
-  // Metadata for the event/task retry.
-  message EventExecutionSnapshotMetadata {
+  // metedata for the event/task retry.
+  message EventExecutionSnapshotmetedata {
     // The task number associated with this snapshot. Could be empty.
     string task_number = 1;
 
@@ -163,8 +163,8 @@ message EventExecutionSnapshot {
   // Indicates when this snapshot is taken.
   google.protobuf.Timestamp snapshot_time = 2;
 
-  // Snapshot metadata.
-  EventExecutionSnapshotMetadata event_execution_snapshot_metadata = 3;
+  // Snapshot metedata.
+  EventExecutionSnapshotmetedata event_execution_snapshot_metedata = 3;
 
   // All of the task execution details at the given point of time.
   repeated TaskExecutionDetails task_execution_details = 4;

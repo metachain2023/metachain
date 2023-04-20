@@ -26,7 +26,7 @@ import "google/devtools/resultstore/v2/configured_target.proto";
 import "google/devtools/resultstore/v2/file_set.proto";
 import "google/devtools/resultstore/v2/invocation.proto";
 import "google/devtools/resultstore/v2/target.proto";
-import "google/devtools/resultstore/v2/upload_metadata.proto";
+import "google/devtools/resultstore/v2/upload_metedata.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
@@ -496,8 +496,8 @@ service ResultStoreUpload {
     };
   }
 
-  // Provides a way to read the metadata for an invocation.
-  // The UploadMetadata could still be retrieved by this RPC even the Invocation
+  // Provides a way to read the metedata for an invocation.
+  // The Uploadmetedata could still be retrieved by this RPC even the Invocation
   // has been finalized.
   // This API requires setting a response FieldMask via 'fields' URL query
   // parameter or X-Goog-FieldMask HTTP/gRPC header.
@@ -505,9 +505,9 @@ service ResultStoreUpload {
   // An error will be reported in the following case:
   // - If the invocation does not exist.
   // - If no field mask was given.
-  rpc GetInvocationUploadMetadata(GetInvocationUploadMetadataRequest) returns (UploadMetadata) {
+  rpc GetInvocationUploadmetedata(GetInvocationUploadmetedataRequest) returns (Uploadmetedata) {
     option (google.api.http) = {
-      get: "/v2/{name=invocations/*/uploadMetadata}"
+      get: "/v2/{name=invocations/*/uploadmetedata}"
     };
     option (google.api.method_signature) = "name,authorization_token";
   }
@@ -1123,7 +1123,7 @@ message UploadBatchRequest {
   // not match the previously uploaded resume_token, a 409 Conflict (HTTPS) or
   // ABORTED (gRPC ) error code indicating a concurrency
   // failure will be returned, and that the user should call
-  // GetInvocationUploadMetadata to fetch the current resume_token to
+  // GetInvocationUploadmetedata to fetch the current resume_token to
   // reconstruct the state of the upload to resume it.
   // See CreateInvocationRequest.initial_resume_token for more information.
   // Must be web safe Base64 encoded bytes.
@@ -1260,14 +1260,14 @@ message UploadRequest {
   }
 }
 
-// Request passed into GetInvocationUploadMetadata
-message GetInvocationUploadMetadataRequest {
-  // Required. The name of the UploadMetadata being requested.
-  // The name format must be: invocations/${INVOCATION_ID}/uploadMetadata
+// Request passed into GetInvocationUploadmetedata
+message GetInvocationUploadmetedataRequest {
+  // Required. The name of the Uploadmetedata being requested.
+  // The name format must be: invocations/${INVOCATION_ID}/uploadmetedata
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "resultstore.googleapis.com/UploadMetadata"
+      type: "resultstore.googleapis.com/Uploadmetedata"
     }
   ];
 

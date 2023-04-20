@@ -66,7 +66,7 @@ service VmMigration {
     option (google.api.method_signature) = "parent,source,source_id";
     option (google.longrunning.operation_info) = {
       response_type: "Source"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -79,7 +79,7 @@ service VmMigration {
     option (google.api.method_signature) = "source,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Source"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -91,7 +91,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -136,7 +136,7 @@ service VmMigration {
         "parent,utilization_report,utilization_report_id";
     option (google.longrunning.operation_info) = {
       response_type: "UtilizationReport"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -149,7 +149,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -182,7 +182,7 @@ service VmMigration {
         "parent,datacenter_connector,datacenter_connector_id";
     option (google.longrunning.operation_info) = {
       response_type: "DatacenterConnector"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -195,7 +195,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -209,7 +209,7 @@ service VmMigration {
     };
     option (google.longrunning.operation_info) = {
       response_type: "UpgradeApplianceResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -224,7 +224,7 @@ service VmMigration {
         "parent,migrating_vm,migrating_vm_id";
     option (google.longrunning.operation_info) = {
       response_type: "MigratingVm"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -255,7 +255,7 @@ service VmMigration {
     option (google.api.method_signature) = "migrating_vm,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "MigratingVm"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -268,7 +268,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -283,7 +283,7 @@ service VmMigration {
     option (google.api.method_signature) = "migrating_vm";
     option (google.longrunning.operation_info) = {
       response_type: "StartMigrationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -299,7 +299,7 @@ service VmMigration {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ResumeMigrationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -314,7 +314,7 @@ service VmMigration {
     };
     option (google.longrunning.operation_info) = {
       response_type: "PauseMigrationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -329,7 +329,7 @@ service VmMigration {
     option (google.api.method_signature) = "migrating_vm";
     option (google.longrunning.operation_info) = {
       response_type: "FinalizeMigrationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -343,7 +343,7 @@ service VmMigration {
     option (google.api.method_signature) = "parent,clone_job,clone_job_id";
     option (google.longrunning.operation_info) = {
       response_type: "CloneJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -357,7 +357,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CancelCloneJobResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -389,7 +389,7 @@ service VmMigration {
     option (google.api.method_signature) = "parent,cutover_job,cutover_job_id";
     option (google.longrunning.operation_info) = {
       response_type: "CutoverJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -403,7 +403,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CancelCutoverJobResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -449,7 +449,7 @@ service VmMigration {
     option (google.api.method_signature) = "parent,group,group_id";
     option (google.longrunning.operation_info) = {
       response_type: "Group"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -462,7 +462,7 @@ service VmMigration {
     option (google.api.method_signature) = "group,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Group"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -474,7 +474,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -488,7 +488,7 @@ service VmMigration {
     option (google.api.method_signature) = "group";
     option (google.longrunning.operation_info) = {
       response_type: "AddGroupMigrationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -502,7 +502,7 @@ service VmMigration {
     option (google.api.method_signature) = "group";
     option (google.longrunning.operation_info) = {
       response_type: "RemoveGroupMigrationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -543,7 +543,7 @@ service VmMigration {
         "parent,target_project,target_project_id";
     option (google.longrunning.operation_info) = {
       response_type: "TargetProject"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -560,7 +560,7 @@ service VmMigration {
     option (google.api.method_signature) = "target_project,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "TargetProject"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -576,7 +576,7 @@ service VmMigration {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -606,7 +606,7 @@ enum UtilizationReportView {
   // multiple reports request.
   UTILIZATION_REPORT_VIEW_UNSPECIFIED = 0;
 
-  // Get the report metadata, without the list of VMs and their utilization
+  // Get the report metedata, without the list of VMs and their utilization
   // info.
   BASIC = 1;
 
@@ -2340,8 +2340,8 @@ message ComputeEngineTargetDefaults {
   ComputeEngineBootOption boot_option = 15
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The metadata key/value pairs to assign to the VM.
-  map<string, string> metadata = 16;
+  // The metedata key/value pairs to assign to the VM.
+  map<string, string> metedata = 16;
 
   // Additional licenses to assign to the VM.
   repeated string additional_licenses = 17;
@@ -2399,8 +2399,8 @@ message ComputeEngineTargetDetails {
   // The VM Boot Option, as set in the source vm.
   ComputeEngineBootOption boot_option = 15;
 
-  // The metadata key/value pairs to assign to the VM.
-  map<string, string> metadata = 16;
+  // The metedata key/value pairs to assign to the VM.
+  map<string, string> metedata = 16;
 
   // Additional licenses to assign to the VM.
   repeated string additional_licenses = 17;
@@ -3201,8 +3201,8 @@ message GetCutoverJobRequest {
   ];
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

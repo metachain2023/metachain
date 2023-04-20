@@ -300,7 +300,7 @@ enum ExecutionView {
   // The default / unset value.
   EXECUTION_VIEW_UNSPECIFIED = 0;
 
-  // Includes only basic metadata about the execution.
+  // Includes only basic metedata about the execution.
   // Following fields are returned: name, start_time, end_time, state
   // and workflow_revision_id.
   BASIC = 1;

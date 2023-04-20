@@ -30,7 +30,7 @@ option objc_class_prefix = "RETAIL";
 option php_namespace = "Google\\Cloud\\Retail\\V2alpha";
 option ruby_package = "Google::Cloud::Retail::V2alpha";
 
-// Configures dynamic metadata that can be linked to a
+// Configures dynamic metedata that can be linked to a
 // [ServingConfig][google.cloud.retail.v2alpha.ServingConfig] and affect search
 // or recommendation results at serving time.
 message Control {

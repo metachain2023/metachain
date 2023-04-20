@@ -319,7 +319,7 @@ message Execution {
     INITIALIZING = 10;
   }
 
-  // execute metadata including name, hardware spec, region, labels, etc.
+  // execute metedata including name, hardware spec, region, labels, etc.
   ExecutionTemplate execution_template = 1;
 
   // Output only. The resource name of the execute. Format:

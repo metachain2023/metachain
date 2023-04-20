@@ -41,7 +41,7 @@ service VideoIntelligenceService {
 
   // Performs asynchronous video annotation. Progress and results can be
   // retrieved through the `google.longrunning.Operations` interface.
-  // `Operation.metadata` contains `AnnotateVideoProgress` (progress).
+  // `Operation.metedata` contains `AnnotateVideoProgress` (progress).
   // `Operation.response` contains `AnnotateVideoResponse` (results).
   rpc AnnotateVideo(AnnotateVideoRequest)
       returns (google.longrunning.Operation) {
@@ -52,7 +52,7 @@ service VideoIntelligenceService {
     option (google.api.method_signature) = "input_uri,features";
     option (google.longrunning.operation_info) = {
       response_type: "AnnotateVideoResponse"
-      metadata_type: "AnnotateVideoProgress"
+      metedata_type: "AnnotateVideoProgress"
     };
   }
 }
@@ -289,11 +289,11 @@ message VideoAnnotationProgress {
   google.protobuf.Timestamp update_time = 4;
 }
 
-// Video annotation progress. Included in the `metadata`
+// Video annotation progress. Included in the `metedata`
 // field of the `Operation` returned by the `GetOperation`
 // call of the `google::longrunning::Operations` service.
 message AnnotateVideoProgress {
-  // Progress metadata for all videos specified in `AnnotateVideoRequest`.
+  // Progress metedata for all videos specified in `AnnotateVideoRequest`.
   repeated VideoAnnotationProgress annotation_progress = 1;
 }
 

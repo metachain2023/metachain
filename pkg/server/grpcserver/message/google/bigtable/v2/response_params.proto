@@ -24,7 +24,7 @@ option java_package = "com.google.bigtable.v2";
 option php_namespace = "Google\\Cloud\\Bigtable\\V2";
 option ruby_package = "Google::Cloud::Bigtable::V2";
 
-// Response metadata proto
+// Response metedata proto
 // This is an experimental feature that will be used to get zone_id and
 // cluster_id from response trailers to tag the metrics. This should not be
 // used by customers directly

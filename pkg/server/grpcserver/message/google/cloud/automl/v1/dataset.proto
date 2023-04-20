@@ -38,25 +38,25 @@ message Dataset {
   };
 
   // Required.
-  // The dataset metadata that is specific to the problem type.
-  oneof dataset_metadata {
-    // Metadata for a dataset used for translation.
-    TranslationDatasetMetadata translation_dataset_metadata = 23;
+  // The dataset metedata that is specific to the problem type.
+  oneof dataset_metedata {
+    // metedata for a dataset used for translation.
+    TranslationDatasetmetedata translation_dataset_metedata = 23;
 
-    // Metadata for a dataset used for image classification.
-    ImageClassificationDatasetMetadata image_classification_dataset_metadata = 24;
+    // metedata for a dataset used for image classification.
+    ImageClassificationDatasetmetedata image_classification_dataset_metedata = 24;
 
-    // Metadata for a dataset used for text classification.
-    TextClassificationDatasetMetadata text_classification_dataset_metadata = 25;
+    // metedata for a dataset used for text classification.
+    TextClassificationDatasetmetedata text_classification_dataset_metedata = 25;
 
-    // Metadata for a dataset used for image object detection.
-    ImageObjectDetectionDatasetMetadata image_object_detection_dataset_metadata = 26;
+    // metedata for a dataset used for image object detection.
+    ImageObjectDetectionDatasetmetedata image_object_detection_dataset_metedata = 26;
 
-    // Metadata for a dataset used for text extraction.
-    TextExtractionDatasetMetadata text_extraction_dataset_metadata = 28;
+    // metedata for a dataset used for text extraction.
+    TextExtractionDatasetmetedata text_extraction_dataset_metedata = 28;
 
-    // Metadata for a dataset used for text sentiment.
-    TextSentimentDatasetMetadata text_sentiment_dataset_metadata = 30;
+    // metedata for a dataset used for text sentiment.
+    TextSentimentDatasetmetedata text_sentiment_dataset_metedata = 30;
   }
 
   // Output only. The resource name of the dataset.
@@ -83,7 +83,7 @@ message Dataset {
   // "overwrite" update happens.
   string etag = 17;
 
-  // Optional. The labels with user-defined metadata to organize your dataset.
+  // Optional. The labels with user-defined metedata to organize your dataset.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

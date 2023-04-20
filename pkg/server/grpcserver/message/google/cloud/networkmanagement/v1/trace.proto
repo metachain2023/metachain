@@ -150,7 +150,7 @@ message Step {
   // Project ID that contains the configuration this step is validating.
   string project_id = 4;
 
-  // Configuration or metadata associated with each step.
+  // Configuration or metedata associated with each step.
   // The configuration is filtered based on viewer's permission. If a viewer
   // has no permission to view the configuration in this step, for non-final
   // states a special state is populated (VIEWER_PERMISSION_MISSING), and for
@@ -206,7 +206,7 @@ message Step {
   }
 }
 
-// For display only. Metadata associated with a Compute Engine instance.
+// For display only. metedata associated with a Compute Engine instance.
 message InstanceInfo {
   // Name of a Compute Engine instance.
   string display_name = 1;
@@ -233,7 +233,7 @@ message InstanceInfo {
   string service_account = 8 [deprecated = true];
 }
 
-// For display only. Metadata associated with a Compute Engine network.
+// For display only. metedata associated with a Compute Engine network.
 message NetworkInfo {
   // Name of a Compute Engine network.
   string display_name = 1;
@@ -245,7 +245,7 @@ message NetworkInfo {
   string matched_ip_range = 4;
 }
 
-// For display only. Metadata associated with a VPC firewall rule, an implied
+// For display only. metedata associated with a VPC firewall rule, an implied
 // VPC firewall rule, or a hierarchical firewall policy rule.
 message FirewallInfo {
   // The firewall rule's type.
@@ -305,7 +305,7 @@ message FirewallInfo {
   FirewallRuleType firewall_rule_type = 10;
 }
 
-// For display only. Metadata associated with a Compute Engine route.
+// For display only. metedata associated with a Compute Engine route.
 message RouteInfo {
   // Type of route:
   enum RouteType {
@@ -408,7 +408,7 @@ message RouteInfo {
   repeated string instance_tags = 7;
 }
 
-// For display only. Metadata associated with a Compute Engine forwarding rule.
+// For display only. metedata associated with a Compute Engine forwarding rule.
 message ForwardingRuleInfo {
   // Name of a Compute Engine forwarding rule.
   string display_name = 1;
@@ -432,7 +432,7 @@ message ForwardingRuleInfo {
   string network_uri = 7;
 }
 
-// For display only. Metadata associated with a load balancer.
+// For display only. metedata associated with a load balancer.
 message LoadBalancerInfo {
   // The type definition for a load balancer:
   enum LoadBalancerType {
@@ -483,7 +483,7 @@ message LoadBalancerInfo {
   string backend_uri = 5;
 }
 
-// For display only. Metadata associated with a specific load balancer backend.
+// For display only. metedata associated with a specific load balancer backend.
 message LoadBalancerBackend {
   // State of a health check firewall configuration:
   enum HealthCheckFirewallState {
@@ -518,7 +518,7 @@ message LoadBalancerBackend {
   repeated string health_check_blocking_firewall_rules = 5;
 }
 
-// For display only. Metadata associated with a Compute Engine VPN gateway.
+// For display only. metedata associated with a Compute Engine VPN gateway.
 message VpnGatewayInfo {
   // Name of a VPN gateway.
   string display_name = 1;
@@ -541,7 +541,7 @@ message VpnGatewayInfo {
   string region = 6;
 }
 
-// For display only. Metadata associated with a Compute Engine VPN tunnel.
+// For display only. metedata associated with a Compute Engine VPN tunnel.
 message VpnTunnelInfo {
   // Types of VPN routing policy. For details, refer to [Networks and Tunnel
   // routing](https://cloud.google.com/network-connectivity/docs/vpn/concepts/choosing-networks-routing/).
@@ -861,7 +861,7 @@ message DropInfo {
   string resource_uri = 2;
 }
 
-// For display only. Metadata associated with a Google Kubernetes Engine (GKE)
+// For display only. metedata associated with a Google Kubernetes Engine (GKE)
 // cluster master.
 message GKEMasterInfo {
   // URI of a GKE cluster.
@@ -877,7 +877,7 @@ message GKEMasterInfo {
   string external_ip = 6;
 }
 
-// For display only. Metadata associated with a Cloud SQL instance.
+// For display only. metedata associated with a Cloud SQL instance.
 message CloudSQLInstanceInfo {
   // Name of a Cloud SQL instance.
   string display_name = 1;

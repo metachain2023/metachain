@@ -58,7 +58,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "parent,gateway,gateway_id";
     option (google.longrunning.operation_info) = {
       response_type: "Gateway"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -71,7 +71,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "gateway,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Gateway"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -83,7 +83,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -112,7 +112,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "parent,api,api_id";
     option (google.longrunning.operation_info) = {
       response_type: "Api"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -125,7 +125,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "api,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Api"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -137,7 +137,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -166,7 +166,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "parent,api_config,api_config_id";
     option (google.longrunning.operation_info) = {
       response_type: "ApiConfig"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -179,7 +179,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "api_config,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "ApiConfig"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -191,7 +191,7 @@ service ApiGatewayService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }

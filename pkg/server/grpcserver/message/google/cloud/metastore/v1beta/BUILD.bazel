@@ -19,10 +19,10 @@ load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@com_google_googleapis_imports//:imports.bzl", "proto_library_with_info")
 
 proto_library(
-    name = "metastore_proto",
+    name = "metestore_proto",
     srcs = [
-        "metastore.proto",
-        "metastore_federation.proto",
+        "metestore.proto",
+        "metestore_federation.proto",
     ],
     deps = [
         "//google/api:annotations_proto",
@@ -39,9 +39,9 @@ proto_library(
 )
 
 proto_library_with_info(
-    name = "metastore_proto_with_info",
+    name = "metestore_proto_with_info",
     deps = [
-        ":metastore_proto",
+        ":metestore_proto",
         "//google/cloud:common_resources_proto",
     ],
 )
@@ -59,50 +59,50 @@ load(
 )
 
 java_proto_library(
-    name = "metastore_java_proto",
-    deps = [":metastore_proto"],
+    name = "metestore_java_proto",
+    deps = [":metestore_proto"],
 )
 
 java_grpc_library(
-    name = "metastore_java_grpc",
-    srcs = [":metastore_proto"],
-    deps = [":metastore_java_proto"],
+    name = "metestore_java_grpc",
+    srcs = [":metestore_proto"],
+    deps = [":metestore_java_proto"],
 )
 
 java_gapic_library(
-    name = "metastore_java_gapic",
-    srcs = [":metastore_proto_with_info"],
-    gapic_yaml = "metastore_gapic.yaml",
-    grpc_service_config = "metastore_grpc_service_config.json",
+    name = "metestore_java_gapic",
+    srcs = [":metestore_proto_with_info"],
+    gapic_yaml = "metestore_gapic.yaml",
+    grpc_service_config = "metestore_grpc_service_config.json",
     rest_numeric_enums = True,
     test_deps = [
-        ":metastore_java_grpc",
+        ":metestore_java_grpc",
     ],
     transport = "grpc+rest",
     deps = [
-        ":metastore_java_proto",
+        ":metestore_java_proto",
     ],
 )
 
 java_gapic_test(
-    name = "metastore_java_gapic_test_suite",
+    name = "metestore_java_gapic_test_suite",
     test_classes = [
-        "com.google.cloud.metastore.v1beta.DataprocMetastoreClientHttpJsonTest",
-        "com.google.cloud.metastore.v1beta.DataprocMetastoreClientTest",
+        "com.google.cloud.metestore.v1beta.DataprocmetestoreClientHttpJsonTest",
+        "com.google.cloud.metestore.v1beta.DataprocmetestoreClientTest",
     ],
-    runtime_deps = [":metastore_java_gapic_test"],
+    runtime_deps = [":metestore_java_gapic_test"],
 )
 
 # Open Source Packages
 java_gapic_assembly_gradle_pkg(
-    name = "google-cloud-metastore-v1beta-java",
+    name = "google-cloud-metestore-v1beta-java",
     include_samples = True,
     transport = "grpc+rest",
     deps = [
-        ":metastore_java_gapic",
-        ":metastore_java_grpc",
-        ":metastore_java_proto",
-        ":metastore_proto",
+        ":metestore_java_gapic",
+        ":metestore_java_grpc",
+        ":metestore_java_proto",
+        ":metestore_proto",
     ],
 )
 
@@ -118,10 +118,10 @@ load(
 )
 
 go_proto_library(
-    name = "metastore_go_proto",
+    name = "metestore_go_proto",
     compilers = ["@io_bazel_rules_go//proto:go_grpc"],
-    importpath = "cloud.google.com/go/metastore/apiv1beta/metastorepb",
-    protos = [":metastore_proto"],
+    importpath = "cloud.google.com/go/metestore/apiv1beta/metestorepb",
+    protos = [":metestore_proto"],
     deps = [
         "//google/api:annotations_go_proto",
         "//google/longrunning:longrunning_go_proto",
@@ -130,17 +130,17 @@ go_proto_library(
 )
 
 go_gapic_library(
-    name = "metastore_go_gapic",
-    srcs = [":metastore_proto_with_info"],
-    grpc_service_config = "metastore_grpc_service_config.json",
-    importpath = "cloud.google.com/go/metastore/apiv1beta;metastore",
-    metadata = True,
+    name = "metestore_go_gapic",
+    srcs = [":metestore_proto_with_info"],
+    grpc_service_config = "metestore_grpc_service_config.json",
+    importpath = "cloud.google.com/go/metestore/apiv1beta;metestore",
+    metedata = True,
     release_level = "beta",
     rest_numeric_enums = True,
-    service_yaml = "metastore_v1beta.yaml",
+    service_yaml = "metestore_v1beta.yaml",
     transport = "grpc+rest",
     deps = [
-        ":metastore_go_proto",
+        ":metestore_go_proto",
         "//google/cloud/location:location_go_proto",
         "//google/iam/v1:iam_go_proto",
         "//google/longrunning:longrunning_go_proto",
@@ -150,20 +150,20 @@ go_gapic_library(
 )
 
 go_test(
-    name = "metastore_go_gapic_test",
-    srcs = [":metastore_go_gapic_srcjar_test"],
-    embed = [":metastore_go_gapic"],
-    importpath = "cloud.google.com/go/metastore/apiv1beta",
+    name = "metestore_go_gapic_test",
+    srcs = [":metestore_go_gapic_srcjar_test"],
+    embed = [":metestore_go_gapic"],
+    importpath = "cloud.google.com/go/metestore/apiv1beta",
 )
 
 # Open Source Packages
 go_gapic_assembly_pkg(
-    name = "gapi-cloud-metastore-v1beta-go",
+    name = "gapi-cloud-metestore-v1beta-go",
     deps = [
-        ":metastore_go_gapic",
-        ":metastore_go_gapic_srcjar-metadata.srcjar",
-        ":metastore_go_gapic_srcjar-test.srcjar",
-        ":metastore_go_proto",
+        ":metestore_go_gapic",
+        ":metestore_go_gapic_srcjar-metedata.srcjar",
+        ":metestore_go_gapic_srcjar-test.srcjar",
+        ":metestore_go_proto",
     ],
 )
 
@@ -178,31 +178,31 @@ load(
 )
 
 py_gapic_library(
-    name = "metastore_py_gapic",
-    srcs = [":metastore_proto"],
-    grpc_service_config = "metastore_grpc_service_config.json",
+    name = "metestore_py_gapic",
+    srcs = [":metestore_proto"],
+    grpc_service_config = "metestore_grpc_service_config.json",
     opt_args = [
-        "warehouse-package-name=google-cloud-dataproc-metastore",
+        "warehouse-package-name=google-cloud-dataproc-metestore",
     ],
     rest_numeric_enums = True,
     transport = "grpc+rest",
 )
 
 py_test(
-    name = "metastore_py_gapic_test",
+    name = "metestore_py_gapic_test",
     srcs = [
-        "metastore_py_gapic_pytest.py",
-        "metastore_py_gapic_test.py",
+        "metestore_py_gapic_pytest.py",
+        "metestore_py_gapic_test.py",
     ],
     legacy_create_init = False,
-    deps = [":metastore_py_gapic"],
+    deps = [":metestore_py_gapic"],
 )
 
 # Open Source Packages
 py_gapic_assembly_pkg(
-    name = "metastore-v1beta-py",
+    name = "metestore-v1beta-py",
     deps = [
-        ":metastore_py_gapic",
+        ":metestore_py_gapic",
     ],
 )
 
@@ -218,37 +218,37 @@ load(
 )
 
 php_proto_library(
-    name = "metastore_php_proto",
-    deps = [":metastore_proto"],
+    name = "metestore_php_proto",
+    deps = [":metestore_proto"],
 )
 
 php_grpc_library(
-    name = "metastore_php_grpc",
-    srcs = [":metastore_proto"],
-    deps = [":metastore_php_proto"],
+    name = "metestore_php_grpc",
+    srcs = [":metestore_proto"],
+    deps = [":metestore_php_proto"],
 )
 
 php_gapic_library(
-    name = "metastore_php_gapic",
-    srcs = [":metastore_proto_with_info"],
-    gapic_yaml = "metastore_gapic.yaml",
-    grpc_service_config = "metastore_grpc_service_config.json",
+    name = "metestore_php_gapic",
+    srcs = [":metestore_proto_with_info"],
+    gapic_yaml = "metestore_gapic.yaml",
+    grpc_service_config = "metestore_grpc_service_config.json",
     rest_numeric_enums = True,
-    service_yaml = "metastore_v1beta.yaml",
+    service_yaml = "metestore_v1beta.yaml",
     transport = "grpc+rest",
     deps = [
-        ":metastore_php_grpc",
-        ":metastore_php_proto",
+        ":metestore_php_grpc",
+        ":metestore_php_proto",
     ],
 )
 
 # Open Source Packages
 php_gapic_assembly_pkg(
-    name = "google-cloud-metastore-v1beta-php",
+    name = "google-cloud-metestore-v1beta-php",
     deps = [
-        ":metastore_php_gapic",
-        ":metastore_php_grpc",
-        ":metastore_php_proto",
+        ":metestore_php_gapic",
+        ":metestore_php_grpc",
+        ":metestore_php_proto",
     ],
 )
 
@@ -262,23 +262,23 @@ load(
 )
 
 nodejs_gapic_library(
-    name = "metastore_nodejs_gapic",
-    package_name = "@google-cloud/dataproc-metastore",
-    src = ":metastore_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
-    grpc_service_config = "metastore_grpc_service_config.json",
-    package = "google.cloud.metastore.v1beta",
+    name = "metestore_nodejs_gapic",
+    package_name = "@google-cloud/dataproc-metestore",
+    src = ":metestore_proto_with_info",
+    extra_protoc_parameters = ["metedata"],
+    grpc_service_config = "metestore_grpc_service_config.json",
+    package = "google.cloud.metestore.v1beta",
     rest_numeric_enums = True,
-    service_yaml = "metastore_v1beta.yaml",
+    service_yaml = "metestore_v1beta.yaml",
     transport = "grpc+rest",
     deps = [],
 )
 
 nodejs_gapic_assembly_pkg(
-    name = "metastore-v1beta-nodejs",
+    name = "metestore-v1beta-nodejs",
     deps = [
-        ":metastore_nodejs_gapic",
-        ":metastore_proto",
+        ":metestore_nodejs_gapic",
+        ":metestore_proto",
     ],
 )
 
@@ -294,43 +294,43 @@ load(
 )
 
 ruby_proto_library(
-    name = "metastore_ruby_proto",
-    deps = [":metastore_proto"],
+    name = "metestore_ruby_proto",
+    deps = [":metestore_proto"],
 )
 
 ruby_grpc_library(
-    name = "metastore_ruby_grpc",
-    srcs = [":metastore_proto"],
-    deps = [":metastore_ruby_proto"],
+    name = "metestore_ruby_grpc",
+    srcs = [":metestore_proto"],
+    deps = [":metestore_ruby_proto"],
 )
 
 ruby_cloud_gapic_library(
-    name = "metastore_ruby_gapic",
-    srcs = [":metastore_proto_with_info"],
+    name = "metestore_ruby_gapic",
+    srcs = [":metestore_proto_with_info"],
     extra_protoc_parameters = [
-        "ruby-cloud-gem-name=google-cloud-metastore-v1beta",
-        "ruby-cloud-env-prefix=METASTORE",
-        "ruby-cloud-product-url=https://cloud.google.com/dataproc-metastore/",
-        "ruby-cloud-api-id=metastore.googleapis.com",
-        "ruby-cloud-api-shortname=metastore",
+        "ruby-cloud-gem-name=google-cloud-metestore-v1beta",
+        "ruby-cloud-env-prefix=meteSTORE",
+        "ruby-cloud-product-url=https://cloud.google.com/dataproc-metestore/",
+        "ruby-cloud-api-id=metestore.googleapis.com",
+        "ruby-cloud-api-shortname=metestore",
     ],
-    grpc_service_config = "metastore_grpc_service_config.json",
+    grpc_service_config = "metestore_grpc_service_config.json",
     rest_numeric_enums = True,
-    ruby_cloud_description = "Dataproc Metastore is a fully managed, highly available within a region, autohealing serverless Apache Hive metastore (HMS) on Google Cloud for data analytics products. It supports HMS and serves as a critical component for managing the metadata of relational entities and provides interoperability between data processing applications in the open source data ecosystem.",
-    ruby_cloud_title = "Dataproc Metastore V1beta",
+    ruby_cloud_description = "Dataproc metestore is a fully managed, highly available within a region, autohealing serverless Apache Hive metestore (HMS) on Google Cloud for data analytics products. It supports HMS and serves as a critical component for managing the metedata of relational entities and provides interoperability between data processing applications in the open source data ecosystem.",
+    ruby_cloud_title = "Dataproc metestore V1beta",
     deps = [
-        ":metastore_ruby_grpc",
-        ":metastore_ruby_proto",
+        ":metestore_ruby_grpc",
+        ":metestore_ruby_proto",
     ],
 )
 
 # Open Source Packages
 ruby_gapic_assembly_pkg(
-    name = "google-cloud-metastore-v1beta-ruby",
+    name = "google-cloud-metestore-v1beta-ruby",
     deps = [
-        ":metastore_ruby_gapic",
-        ":metastore_ruby_grpc",
-        ":metastore_ruby_proto",
+        ":metestore_ruby_gapic",
+        ":metestore_ruby_grpc",
+        ":metestore_ruby_proto",
     ],
 )
 
@@ -346,37 +346,37 @@ load(
 )
 
 csharp_proto_library(
-    name = "metastore_csharp_proto",
-    deps = [":metastore_proto"],
+    name = "metestore_csharp_proto",
+    deps = [":metestore_proto"],
 )
 
 csharp_grpc_library(
-    name = "metastore_csharp_grpc",
-    srcs = [":metastore_proto"],
-    deps = [":metastore_csharp_proto"],
+    name = "metestore_csharp_grpc",
+    srcs = [":metestore_proto"],
+    deps = [":metestore_csharp_proto"],
 )
 
 csharp_gapic_library(
-    name = "metastore_csharp_gapic",
-    srcs = [":metastore_proto_with_info"],
+    name = "metestore_csharp_gapic",
+    srcs = [":metestore_proto_with_info"],
     common_resources_config = "@gax_dotnet//:Google.Api.Gax/ResourceNames/CommonResourcesConfig.json",
-    grpc_service_config = "metastore_grpc_service_config.json",
+    grpc_service_config = "metestore_grpc_service_config.json",
     rest_numeric_enums = True,
-    service_yaml = "metastore_v1beta.yaml",
+    service_yaml = "metestore_v1beta.yaml",
     transport = "grpc+rest",
     deps = [
-        ":metastore_csharp_grpc",
-        ":metastore_csharp_proto",
+        ":metestore_csharp_grpc",
+        ":metestore_csharp_proto",
     ],
 )
 
 # Open Source Packages
 csharp_gapic_assembly_pkg(
-    name = "google-cloud-metastore-v1beta-csharp",
+    name = "google-cloud-metestore-v1beta-csharp",
     deps = [
-        ":metastore_csharp_gapic",
-        ":metastore_csharp_grpc",
-        ":metastore_csharp_proto",
+        ":metestore_csharp_gapic",
+        ":metestore_csharp_grpc",
+        ":metestore_csharp_proto",
     ],
 )
 

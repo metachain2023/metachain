@@ -221,7 +221,7 @@ php_grpc_library(
 nodejs_gapic_library(
     name = "roads_nodejs_gapic",
     src = ":roads_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = "roads_grpc_service_config.json",
     package = "google.maps.roads.v1op",
     rest_numeric_enums = True,

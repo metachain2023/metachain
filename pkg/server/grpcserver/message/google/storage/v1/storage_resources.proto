@@ -287,10 +287,10 @@ message Bucket {
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
   int64 project_number = 7;
 
-  // The metadata generation of this bucket.
+  // The metedata generation of this bucket.
   // Attempting to set or update this field will result in a
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
-  int64 metageneration = 8;
+  int64 metegeneration = 8;
 
   // The bucket's [https://www.w3.org/TR/cors/][Cross-Origin Resource Sharing]
   // (CORS) configuration.
@@ -615,8 +615,8 @@ message ContentRange {
   int64 complete_length = 3;
 }
 
-// Hmac Key Metadata, which includes all information other than the secret.
-message HmacKeyMetadata {
+// Hmac Key metedata, which includes all information other than the secret.
+message HmacKeymetedata {
   // Resource name ID of the key in the format <projectId>/<accessId>.
   string id = 1;
 
@@ -635,7 +635,7 @@ message HmacKeyMetadata {
   // The creation time of the HMAC key in RFC 3339 format.
   google.protobuf.Timestamp time_created = 6;
 
-  // The last modification time of the HMAC key metadata in RFC 3339 format.
+  // The last modification time of the HMAC key metedata in RFC 3339 format.
   google.protobuf.Timestamp updated = 7;
 
   // Tag updated with each key update.
@@ -709,13 +709,13 @@ message Object {
   // [https://tools.ietf.org/html/rfc7231#section-3.1.3.2][RFC 7231 §3.1.3.2].
   string content_language = 5;
 
-  // The version of the metadata for this object at this generation. Used for
-  // preconditions and for detecting changes in metadata. A metageneration
+  // The version of the metedata for this object at this generation. Used for
+  // preconditions and for detecting changes in metedata. A metegeneration
   // number is only meaningful in the context of a particular generation of a
   // particular object.
   // Attempting to set or update this field will result in a
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
-  int64 metageneration = 6;
+  int64 metegeneration = 6;
 
   // The deletion time of the object. Will be returned if and only if this
   // version of the object has been deleted.
@@ -771,7 +771,7 @@ message Object {
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
   string etag = 14;
 
-  // The modification time of the object metadata.
+  // The modification time of the object metedata.
   // Attempting to set or update this field will result in a
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
   google.protobuf.Timestamp updated = 15;
@@ -806,8 +806,8 @@ message Object {
   // temporary hold).
   google.protobuf.Timestamp retention_expiration_time = 20;
 
-  // User-provided metadata, in key/value pairs.
-  map<string, string> metadata = 21;
+  // User-provided metedata, in key/value pairs.
+  map<string, string> metedata = 21;
 
   // Whether an object is under event-based hold. Event-based hold is a way to
   // retain objects until an event occurs, which is signified by the
@@ -848,7 +848,7 @@ message Object {
   // [FieldViolation][google.rpc.BadRequest.FieldViolation].
   Owner owner = 27;
 
-  // Metadata of customer-supplied encryption key, if the object is encrypted by
+  // metedata of customer-supplied encryption key, if the object is encrypted by
   // such a key.
   CustomerEncryption customer_encryption = 28;
 

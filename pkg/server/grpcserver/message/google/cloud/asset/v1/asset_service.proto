@@ -62,7 +62,7 @@ service AssetService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.asset.v1.ExportAssetsResponse"
-      metadata_type: "google.cloud.asset.v1.ExportAssetsRequest"
+      metedata_type: "google.cloud.asset.v1.ExportAssetsRequest"
     };
   }
 
@@ -174,7 +174,7 @@ service AssetService {
   // [google.longrunning.Operation][google.longrunning.Operation], which allows
   // you to track the operation status. We recommend intervals of at least 2
   // seconds with exponential backoff retry to poll the operation result. The
-  // metadata contains the metadata for the long-running operation.
+  // metedata contains the metedata for the long-running operation.
   rpc AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -183,7 +183,7 @@ service AssetService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse"
-      metadata_type: "google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata"
+      metedata_type: "google.cloud.asset.v1.AnalyzeIamPolicyLongrunningmetedata"
     };
   }
 
@@ -319,9 +319,9 @@ service AssetService {
   }
 }
 
-// Represents the metadata of the longrunning operation for the
+// Represents the metedata of the longrunning operation for the
 // AnalyzeIamPolicyLongrunning RPC.
-message AnalyzeIamPolicyLongrunningMetadata {
+message AnalyzeIamPolicyLongrunningmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -666,7 +666,7 @@ message GcsDestination {
     // The URI of the Cloud Storage object. It's the same URI that is used by
     // gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
     // Editing Object
-    // Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+    // metedata](https://cloud.google.com/storage/docs/viewing-editing-metedata)
     // for more information.
     //
     // If the specified Cloud Storage object already exists and there is no
@@ -1049,7 +1049,7 @@ message SearchAllResourcesRequest {
 // Search all resources response.
 message SearchAllResourcesResponse {
   // A list of Resources that match the search query. It contains the resource
-  // standard metadata information.
+  // standard metedata information.
   repeated ResourceSearchResult results = 1;
 
   // If there are more results than those appearing in this response, then
@@ -1453,7 +1453,7 @@ message IamPolicyAnalysisOutputConfig {
     // Required. The URI of the Cloud Storage object. It's the same URI that is
     // used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
     // Editing Object
-    // Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+    // metedata](https://cloud.google.com/storage/docs/viewing-editing-metedata)
     // for more information.
     //
     // If the specified Cloud Storage object already exists and there is no
@@ -1488,7 +1488,7 @@ message IamPolicyAnalysisOutputConfig {
     // Required. The prefix of the BigQuery tables to which the analysis results
     // will be written. Tables will be created based on this table_prefix if not
     // exist:
-    // * <table_prefix>_analysis table will contain export operation's metadata.
+    // * <table_prefix>_analysis table will contain export operation's metedata.
     // * <table_prefix>_analysis_result will contain all the
     //   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
     // When [partition_key] is specified, both tables will be partitioned based
@@ -1899,11 +1899,11 @@ message QueryAssetsRequest {
   // The field will be ignored when [output_config] is specified.
   google.protobuf.Duration timeout = 6 [(google.api.field_behavior) = OPTIONAL];
 
-  // Specifies what time period or point in time to query asset metadata at.
-  // * unset - query asset metadata as it is right now
-  // * [read_time_window] - query asset metadata as it was at any point in time
+  // Specifies what time period or point in time to query asset metedata at.
+  // * unset - query asset metedata as it is right now
+  // * [read_time_window] - query asset metedata as it was at any point in time
   // between [start_time] and [end_time].
-  // * [read_time] - query asset metadata as it was at that point in time.
+  // * [read_time] - query asset metedata as it was at that point in time.
   // If data for the timestamp/date range selected does not exist,
   // it will simply return a valid response with no rows.
   oneof time {
@@ -2617,7 +2617,7 @@ enum ContentType {
   // Unspecified content type.
   CONTENT_TYPE_UNSPECIFIED = 0;
 
-  // Resource metadata.
+  // Resource metedata.
   RESOURCE = 1;
 
   // The actual IAM policy set on a resource.

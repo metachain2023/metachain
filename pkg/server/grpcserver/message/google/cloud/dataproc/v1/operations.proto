@@ -24,8 +24,8 @@ option java_multiple_files = true;
 option java_outer_classname = "OperationsProto";
 option java_package = "com.google.cloud.dataproc.v1";
 
-// Metadata describing the Batch operation.
-message BatchOperationMetadata {
+// metedata describing the Batch operation.
+message BatchOperationmetedata {
   // Operation type for Batch resources
   enum BatchOperationType {
     // Batch operation type is unknown.
@@ -83,7 +83,7 @@ message ClusterOperationStatus {
   // Output only. A message containing the detailed operation state.
   string inner_state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. A message containing any operation metadata details.
+  // Output only. A message containing any operation metedata details.
   string details = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The time this state was entered.
@@ -91,8 +91,8 @@ message ClusterOperationStatus {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Metadata describing the operation.
-message ClusterOperationMetadata {
+// metedata describing the operation.
+message ClusterOperationmetedata {
   // Output only. Name of the cluster for the operation.
   string cluster_name = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -119,8 +119,8 @@ message ClusterOperationMetadata {
   repeated string warnings = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Metadata describing the node group operation.
-message NodeGroupOperationMetadata {
+// metedata describing the node group operation.
+message NodeGroupOperationmetedata {
   // Operation type for node group resources.
   enum NodeGroupOperationType {
     // Node group operation type is unknown.

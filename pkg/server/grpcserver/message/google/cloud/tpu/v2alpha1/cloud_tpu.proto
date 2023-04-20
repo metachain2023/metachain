@@ -66,7 +66,7 @@ service Tpu {
     option (google.api.method_signature) = "parent,node,node_id";
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -78,7 +78,7 @@ service Tpu {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -90,7 +90,7 @@ service Tpu {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -102,7 +102,7 @@ service Tpu {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -115,7 +115,7 @@ service Tpu {
     option (google.api.method_signature) = "node,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -147,7 +147,7 @@ service Tpu {
         "parent,queued_resource,queued_resource_id";
     option (google.longrunning.operation_info) = {
       response_type: "QueuedResource"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -160,7 +160,7 @@ service Tpu {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "QueuedResource"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -225,7 +225,7 @@ service Tpu {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -493,12 +493,12 @@ message Node {
   // The health status of the TPU node.
   Health health = 22;
 
-  // Resource labels to represent user-provided metadata.
+  // Resource labels to represent user-provided metedata.
   map<string, string> labels = 24;
 
-  // Custom metadata to apply to the TPU Node.
+  // Custom metedata to apply to the TPU Node.
   // Can set startup-script and shutdown-script
-  map<string, string> metadata = 34;
+  map<string, string> metedata = 34;
 
   // Tags to apply to the TPU Node. Tags are used to identify valid sources or
   // targets for network firewalls.
@@ -821,7 +821,7 @@ message StartNodeRequest {
 // Request for [UpdateNode][google.cloud.tpu.v2alpha1.Tpu.UpdateNode].
 message UpdateNodeRequest {
   // Required. Mask of fields from [Node][Tpu.Node] to update.
-  // Supported fields: [description, tags, labels, metadata,
+  // Supported fields: [description, tags, labels, metedata,
   // network_config.enable_external_ips].
   google.protobuf.FieldMask update_mask = 1
       [(google.api.field_behavior) = REQUIRED];
@@ -1064,8 +1064,8 @@ message ListRuntimeVersionsResponse {
   repeated string unreachable = 3;
 }
 
-// Metadata describing an [Operation][google.longrunning.Operation]
-message OperationMetadata {
+// metedata describing an [Operation][google.longrunning.Operation]
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

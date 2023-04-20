@@ -44,7 +44,7 @@ service AssuredWorkloadsService {
     option (google.api.method_signature) = "parent,workload";
     option (google.longrunning.operation_info) = {
       response_type: "Workload"
-      metadata_type: "CreateWorkloadOperationMetadata"
+      metedata_type: "CreateWorkloadOperationmetedata"
     };
   }
 

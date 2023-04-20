@@ -55,9 +55,9 @@ message PipelineJob {
       oneof kind {
         // Artifact resource id from MLMD. Which is the last portion of an
         // artifact resource name:
-        // `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
+        // `projects/{project}/locations/{location}/metedataStores/default/artifacts/{artifact_id}`.
         // The artifact must stay within the same project, location and default
-        // metadatastore as the pipeline.
+        // metedatastore as the pipeline.
         string artifact_id = 1;
       }
     }
@@ -140,7 +140,7 @@ message PipelineJob {
   // Only populated when the pipeline's state is FAILED or CANCELLED.
   google.rpc.Status error = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The labels with user-defined metadata to organize PipelineJob.
+  // The labels with user-defined metedata to organize PipelineJob.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -189,18 +189,18 @@ message PipelineJob {
   // if empty, will be downloaded.
   string template_uri = 19;
 
-  // Output only. Pipeline template metadata. Will fill up fields if
+  // Output only. Pipeline template metedata. Will fill up fields if
   // [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
   // is from supported template registry.
-  PipelineTemplateMetadata template_metadata = 20
+  PipelineTemplatemetedata template_metedata = 20
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Pipeline template metadata if
+// Pipeline template metedata if
 // [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
 // is from supported template registry. Currently, the only supported registry
 // is Artifact Registry.
-message PipelineTemplateMetadata {
+message PipelineTemplatemetedata {
   // The version_name in artifact registry.
   //
   // Will always be presented in output if the
@@ -243,9 +243,9 @@ message PipelineTaskDetail {
     google.rpc.Status error = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
-  // A list of artifact metadata.
+  // A list of artifact metedata.
   message ArtifactList {
-    // Output only. A list of artifact metadata.
+    // Output only. A list of artifact metedata.
     repeated Artifact artifacts = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
@@ -315,7 +315,7 @@ message PipelineTaskDetail {
   // Output only. State of the task.
   State state = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The execution metadata of the task.
+  // Output only. The execution metedata of the task.
   Execution execution = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The error that occurred during task execution.

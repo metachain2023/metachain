@@ -9,7 +9,7 @@ apis:
 
 types:
 - name: google.cloud.automl.v1beta1.BatchPredictResult
-- name: google.cloud.automl.v1beta1.OperationMetadata
+- name: google.cloud.automl.v1beta1.Operationmetedata
 
 documentation:
   summary: |-

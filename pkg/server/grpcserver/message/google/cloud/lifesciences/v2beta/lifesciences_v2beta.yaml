@@ -15,7 +15,7 @@ types:
 - name: google.cloud.lifesciences.v2beta.DelayedEvent
 - name: google.cloud.lifesciences.v2beta.Event
 - name: google.cloud.lifesciences.v2beta.FailedEvent
-- name: google.cloud.lifesciences.v2beta.Metadata
+- name: google.cloud.lifesciences.v2beta.metedata
 - name: google.cloud.lifesciences.v2beta.PullStartedEvent
 - name: google.cloud.lifesciences.v2beta.PullStoppedEvent
 - name: google.cloud.lifesciences.v2beta.RunPipelineResponse

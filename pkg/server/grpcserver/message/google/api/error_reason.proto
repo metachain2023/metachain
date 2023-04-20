@@ -25,11 +25,11 @@ option objc_class_prefix = "GAPI";
 // Defines the supported values for `google.rpc.ErrorInfo.reason` for the
 // `googleapis.com` error domain. This error domain is reserved for [Service
 // Infrastructure](https://cloud.google.com/service-infrastructure/docs/overview).
-// For each error info of this domain, the metadata key "service" refers to the
+// For each error info of this domain, the metedata key "service" refers to the
 // logical identifier of an API service, such as "pubsub.googleapis.com". The
 // "consumer" refers to the entity that consumes an API Service. It typically is
 // a Google project that owns the client application or the server resource,
-// such as "projects/123". Other metadata keys are specific to each error
+// such as "projects/123". Other metedata keys are specific to each error
 // reason. For more information, see the definition of the specific error
 // reason.
 enum ErrorReason {
@@ -43,7 +43,7 @@ enum ErrorReason {
   //
   //     { "reason": "SERVICE_DISABLED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "pubsub.googleapis.com"
   //       }
@@ -61,7 +61,7 @@ enum ErrorReason {
   //
   //     { "reason": "BILLING_DISABLED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "pubsub.googleapis.com"
   //       }
@@ -79,7 +79,7 @@ enum ErrorReason {
   //
   //     { "reason": "API_KEY_INVALID",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //       }
   //     }
@@ -94,7 +94,7 @@ enum ErrorReason {
   //
   //     { "reason": "API_KEY_SERVICE_BLOCKED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com"
   //       }
@@ -110,7 +110,7 @@ enum ErrorReason {
   //
   //     { "reason": "API_KEY_HTTP_REFERRER_BLOCKED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com",
   //       }
@@ -126,7 +126,7 @@ enum ErrorReason {
   //
   //     { "reason": "API_KEY_IP_ADDRESS_BLOCKED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com",
   //       }
@@ -142,7 +142,7 @@ enum ErrorReason {
   //
   //     { "reason": "API_KEY_ANDROID_APP_BLOCKED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com"
   //       }
@@ -158,7 +158,7 @@ enum ErrorReason {
   //
   //     { "reason": "API_KEY_IOS_APP_BLOCKED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com"
   //       }
@@ -176,7 +176,7 @@ enum ErrorReason {
   //
   //     { "reason": "RATE_LIMIT_EXCEEDED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "pubsub.googleapis.com",
   //         "quota_metric": "pubsub.googleapis.com/read_requests",
@@ -191,7 +191,7 @@ enum ErrorReason {
   //
   //     { "reason": "RATE_LIMIT_EXCEEDED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "dataflow.googleapis.com",
   //         "quota_metric": "dataflow.googleapis.com/default_requests",
@@ -210,7 +210,7 @@ enum ErrorReason {
   //
   //     { "reason": "RESOURCE_QUOTA_EXCEEDED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "compute.googleapis.com",
   //         "quota_metric": "compute.googleapis.com/vms",
@@ -225,7 +225,7 @@ enum ErrorReason {
   //
   //     { "reason": "RESOURCE_QUOTA_EXCEEDED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "dataflow.googleapis.com",
   //         "quota_metric": "dataflow.googleapis.com/job_count",
@@ -244,7 +244,7 @@ enum ErrorReason {
   //
   //     { "reason": "LOCATION_TAX_POLICY_VIOLATED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com",
   //         "location": "locations/asia-northeast3"
@@ -265,7 +265,7 @@ enum ErrorReason {
   //
   //     { "reason": "USER_PROJECT_DENIED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com"
   //       }
@@ -282,7 +282,7 @@ enum ErrorReason {
   //
   //     { "reason": "CONSUMER_SUSPENDED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com"
   //       }
@@ -297,7 +297,7 @@ enum ErrorReason {
   //
   //     { "reason": "CONSUMER_INVALID",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com"
   //       }
@@ -317,7 +317,7 @@ enum ErrorReason {
   //
   //     { "reason": "SECURITY_POLICY_VIOLATED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "uid": "123456789abcde",
   //         "consumer": "projects/123",
   //         "service": "storage.googleapis.com"
@@ -332,7 +332,7 @@ enum ErrorReason {
   //
   //     { "reason": "ACCESS_TOKEN_EXPIRED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //         "method": "google.storage.v1.Storage.GetObject"
   //       }
@@ -351,7 +351,7 @@ enum ErrorReason {
   //
   //     { "reason": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //         "method": "google.storage.v1.Storage.GetObject"
   //       }
@@ -372,7 +372,7 @@ enum ErrorReason {
   //
   //     { "reason": "ACCOUNT_STATE_INVALID",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //         "method": "google.storage.v1.Storage.GetObject",
   //         "email": "user@123.iam.gserviceaccount.com"
@@ -388,7 +388,7 @@ enum ErrorReason {
   //
   //     { "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //         "method": "google.storage.v1.Storage.GetObject"
   //       }
@@ -405,7 +405,7 @@ enum ErrorReason {
   //
   //     { "reason": "CREDENTIALS_MISSING",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //         "method": "google.storage.v1.Storage.GetObject"
   //       }
@@ -423,7 +423,7 @@ enum ErrorReason {
   //
   //     { "reason": "RESOURCE_PROJECT_INVALID",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "cloudfunctions.googleapis.com",
   //         "method":
   //         "google.cloud.functions.v1.CloudFunctionsService.ListFunctions"
@@ -439,7 +439,7 @@ enum ErrorReason {
   //
   //     { "reason": "SESSION_COOKIE_INVALID",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //         "method": "google.storage.v1.Storage.GetObject",
   //         "cookie": "SID"
@@ -457,7 +457,7 @@ enum ErrorReason {
   //
   //     { "reason": "USER_BLOCKED_BY_ADMIN",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "storage.googleapis.com",
   //         "method": "google.storage.v1.Storage.GetObject",
   //       }
@@ -474,7 +474,7 @@ enum ErrorReason {
   //
   //     { "reason": "RESOURCE_USAGE_RESTRICTION_VIOLATED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "consumer": "projects/project-123",
   //         "service": "storage.googleapis.com"
   //       }
@@ -492,7 +492,7 @@ enum ErrorReason {
   //
   //     { "reason": "SYSTEM_PARAMETER_UNSUPPORTED",
   //       "domain": "googleapis.com",
-  //       "metadata": {
+  //       "metedata": {
   //         "service": "pubsub.googleapis.com"
   //         "parameter": "x-goog-user-ip"
   //       }
@@ -509,7 +509,7 @@ enum ErrorReason {
   // {
   //   reason: "ORG_RESTRICTION_VIOLATION"
   //   domain: "googleapis.com"
-  //   metadata {
+  //   metedata {
   //     "consumer":"projects/123456"
   //     "service": "pubsub.googleapis.com"
   //   }
@@ -526,7 +526,7 @@ enum ErrorReason {
   // {
   //   reason: "ORG_RESTRICTION_HEADER_INVALID"
   //   domain: "googleapis.com"
-  //   metadata {
+  //   metedata {
   //     "consumer":"projects/123456"
   //     "service": "pubsub.googleapis.com"
   //   }

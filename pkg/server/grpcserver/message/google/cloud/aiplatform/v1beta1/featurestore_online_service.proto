@@ -143,13 +143,13 @@ message ReadFeatureValuesRequest {
 // Response message for
 // [FeaturestoreOnlineServingService.ReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.ReadFeatureValues].
 message ReadFeatureValuesResponse {
-  // Metadata for requested Features.
+  // metedata for requested Features.
   message FeatureDescriptor {
     // Feature ID.
     string id = 1;
   }
 
-  // Response header with metadata for the requested
+  // Response header with metedata for the requested
   // [ReadFeatureValuesRequest.entity_type][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest.entity_type]
   // and Features.
   message Header {
@@ -161,7 +161,7 @@ message ReadFeatureValuesResponse {
       type: "aiplatform.googleapis.com/EntityType"
     }];
 
-    // List of Feature metadata corresponding to each piece of
+    // List of Feature metedata corresponding to each piece of
     // [ReadFeatureValuesResponse.data][].
     repeated FeatureDescriptor feature_descriptors = 2;
   }
@@ -233,8 +233,8 @@ message StreamingReadFeatureValuesRequest {
 
 // Value for a feature.
 message FeatureValue {
-  // Metadata of feature value.
-  message Metadata {
+  // metedata of feature value.
+  message metedata {
     // Feature generation timestamp. Typically, it is provided by user at
     // feature ingestion time. If not, feature store
     // will use the system timestamp when the data is ingested into feature
@@ -274,8 +274,8 @@ message FeatureValue {
     bytes bytes_value = 13;
   }
 
-  // Metadata of feature value.
-  Metadata metadata = 14;
+  // metedata of feature value.
+  metedata metedata = 14;
 }
 
 // Container for list of values.

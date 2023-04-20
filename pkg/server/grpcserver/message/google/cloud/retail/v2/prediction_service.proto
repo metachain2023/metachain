@@ -143,11 +143,11 @@ message PredictRequest {
   // Allowed values:
   //
   // * `returnProduct`: Boolean. If set to true, the associated product
-  //    object will be returned in the `results.metadata` field in the
+  //    object will be returned in the `results.metedata` field in the
   //    prediction response.
   // * `returnScore`: Boolean. If set to true, the prediction 'score'
   //    corresponding to each returned product will be set in the
-  //    `results.metadata` field in the prediction response. The given
+  //    `results.metedata` field in the prediction response. The given
   //    'score' indicates the probability of a product being clicked/purchased
   //    given the user's context and history.
   // * `strictFiltering`: Boolean. True by default. If set to false, the service
@@ -194,7 +194,7 @@ message PredictResponse {
     // ID of the recommended product
     string id = 1;
 
-    // Additional product metadata / annotations.
+    // Additional product metedata / annotations.
     //
     // Possible values:
     //
@@ -202,7 +202,7 @@ message PredictResponse {
     //   `returnProduct` is set to true in `PredictRequest.params`.
     // * `score`: Prediction score in double value. Is set if
     //   `returnScore` is set to true in `PredictRequest.params`.
-    map<string, google.protobuf.Value> metadata = 2;
+    map<string, google.protobuf.Value> metedata = 2;
   }
 
   // A list of recommended products. The order represents the ranking (from the

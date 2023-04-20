@@ -10,7 +10,7 @@ type delegate struct {
 
 var _ memberlist.Delegate = &delegate{}
 
-func (d *delegate) NodeMeta(limit int) []byte {
+func (d *delegate) Nodemete(limit int) []byte {
 	return []byte{}
 }
 

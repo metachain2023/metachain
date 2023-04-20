@@ -52,7 +52,7 @@ service DataplexService {
     option (google.api.method_signature) = "parent,lake,lake_id";
     option (google.longrunning.operation_info) = {
       response_type: "Lake"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -65,7 +65,7 @@ service DataplexService {
     option (google.api.method_signature) = "lake,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Lake"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -78,7 +78,7 @@ service DataplexService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -115,7 +115,7 @@ service DataplexService {
     option (google.api.method_signature) = "parent,zone,zone_id";
     option (google.longrunning.operation_info) = {
       response_type: "Zone"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -128,7 +128,7 @@ service DataplexService {
     option (google.api.method_signature) = "zone,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Zone"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -141,7 +141,7 @@ service DataplexService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -178,7 +178,7 @@ service DataplexService {
     option (google.api.method_signature) = "parent,asset,asset_id";
     option (google.longrunning.operation_info) = {
       response_type: "Asset"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -191,7 +191,7 @@ service DataplexService {
     option (google.api.method_signature) = "asset,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Asset"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -204,7 +204,7 @@ service DataplexService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -241,7 +241,7 @@ service DataplexService {
     option (google.api.method_signature) = "parent,task,task_id";
     option (google.longrunning.operation_info) = {
       response_type: "Task"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -254,7 +254,7 @@ service DataplexService {
     option (google.api.method_signature) = "task,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Task"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -266,7 +266,7 @@ service DataplexService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -321,7 +321,7 @@ service DataplexService {
     option (google.api.method_signature) = "parent,environment,environment_id";
     option (google.longrunning.operation_info) = {
       response_type: "Environment"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -335,7 +335,7 @@ service DataplexService {
     option (google.api.method_signature) = "environment,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Environment"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -349,7 +349,7 @@ service DataplexService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -393,7 +393,7 @@ message CreateLakeRequest {
 
   // Required. Lake identifier.
   // This ID will be used to generate names such as database and dataset names
-  // when publishing metadata to Hive Metastore and BigQuery.
+  // when publishing metedata to Hive metestore and BigQuery.
   // * Must contain only lowercase letters, numbers and hyphens.
   // * Must start with a letter.
   // * Must end with a number or a letter.
@@ -528,7 +528,7 @@ message CreateZoneRequest {
 
   // Required. Zone identifier.
   // This ID will be used to generate names such as database and dataset names
-  // when publishing metadata to Hive Metastore and BigQuery.
+  // when publishing metedata to Hive metestore and BigQuery.
   // * Must contain only lowercase letters, numbers and hyphens.
   // * Must start with a letter.
   // * Must end with a number or a letter.
@@ -648,7 +648,7 @@ message CreateAssetRequest {
 
   // Required. Asset identifier.
   // This ID will be used to generate names such as table names when publishing
-  // metadata to Hive Metastore and BigQuery.
+  // metedata to Hive metestore and BigQuery.
   // * Must contain only lowercase letters, numbers and hyphens.
   // * Must start with a letter.
   // * Must end with a number or a letter.
@@ -757,8 +757,8 @@ message GetAssetRequest {
   ];
 }
 
-// Represents the metadata of a long-running operation.
-message OperationMetadata {
+// Represents the metedata of a long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

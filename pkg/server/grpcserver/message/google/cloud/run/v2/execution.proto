@@ -62,7 +62,7 @@ service Executions {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Execution"
-      metadata_type: "Execution"
+      metedata_type: "Execution"
     };
   }
 }

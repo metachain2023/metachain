@@ -3,7 +3,7 @@ package merkle
 import (
 	"bytes"
 	"hash"
-	"metachain/pkg/storage/typeclass"
+	"metechain/pkg/storage/typeclass"
 )
 
 type MKRoot interface {

@@ -9,7 +9,7 @@ apis:
 types:
 - name: google.cloud.datastream.v1alpha1.Error
 - name: google.cloud.datastream.v1alpha1.FetchErrorsResponse
-- name: google.cloud.datastream.v1alpha1.OperationMetadata
+- name: google.cloud.datastream.v1alpha1.Operationmetedata
 - name: google.cloud.datastream.v1alpha1.ValidationResult
 
 documentation:

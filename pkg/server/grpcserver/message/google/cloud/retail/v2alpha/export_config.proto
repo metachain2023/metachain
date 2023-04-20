@@ -42,9 +42,9 @@ message ExportErrorsConfig {
   }
 }
 
-// Metadata related to the progress of the Export operation. This is
-// returned by the google.longrunning.Operation.metadata field.
-message ExportMetadata {
+// metedata related to the progress of the Export operation. This is
+// returned by the google.longrunning.Operation.metedata field.
+message Exportmetedata {
   // Operation create time.
   google.protobuf.Timestamp create_time = 1;
 

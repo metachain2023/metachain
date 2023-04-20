@@ -60,7 +60,7 @@ service TagBindings {
     option (google.api.method_signature) = "tag_binding";
     option (google.longrunning.operation_info) = {
       response_type: "TagBinding"
-      metadata_type: "CreateTagBindingMetadata"
+      metedata_type: "CreateTagBindingmetedata"
     };
   }
 
@@ -72,7 +72,7 @@ service TagBindings {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteTagBindingMetadata"
+      metedata_type: "DeleteTagBindingmetedata"
     };
   }
 }
@@ -102,7 +102,7 @@ message TagBinding {
 }
 
 // Runtime operation information for creating a TagValue.
-message CreateTagBindingMetadata {
+message CreateTagBindingmetedata {
 
 }
 
@@ -117,7 +117,7 @@ message CreateTagBindingRequest {
 }
 
 // Runtime operation information for deleting a TagBinding.
-message DeleteTagBindingMetadata {
+message DeleteTagBindingmetedata {
 
 }
 

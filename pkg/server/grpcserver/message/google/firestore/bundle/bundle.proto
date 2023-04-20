@@ -69,8 +69,8 @@ message NamedQuery {
   google.protobuf.Timestamp read_time = 3;
 }
 
-// Metadata describing a Firestore document saved in the bundle.
-message BundledDocumentMetadata {
+// metedata describing a Firestore document saved in the bundle.
+message BundledDocumentmetedata {
   // The document key of a bundled document.
   string name = 1;
 
@@ -84,8 +84,8 @@ message BundledDocumentMetadata {
   repeated string queries = 4;
 }
 
-// Metadata describing the bundle file/stream.
-message BundleMetadata {
+// metedata describing the bundle file/stream.
+message Bundlemetedata {
   // The ID of the bundle.
   string id = 1;
 
@@ -98,22 +98,22 @@ message BundleMetadata {
   // The number of documents in the bundle.
   uint32 total_documents = 4;
 
-  // The size of the bundle in bytes, excluding this `BundleMetadata`.
+  // The size of the bundle in bytes, excluding this `Bundlemetedata`.
   uint64 total_bytes = 5;
 }
 
 // A Firestore bundle is a length-prefixed stream of JSON representations of
 // `BundleElement`.
-// Only one `BundleMetadata` is expected, and it should be the first element.
-// The named queries follow after `metadata`. Every `document_metadata` is
+// Only one `Bundlemetedata` is expected, and it should be the first element.
+// The named queries follow after `metedata`. Every `document_metedata` is
 // immediately followed by a `document`.
 message BundleElement {
   oneof element_type {
-    BundleMetadata metadata = 1;
+    Bundlemetedata metedata = 1;
 
     NamedQuery named_query = 2;
 
-    BundledDocumentMetadata document_metadata = 3;
+    BundledDocumentmetedata document_metedata = 3;
 
     google.firestore.v1.Document document = 4;
   }

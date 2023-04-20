@@ -1,6 +1,6 @@
 {
   "methodConfig": [{
-    "name": [{ "service": "google.cloud.metastore.v1alpha.DataprocMetastore" }],
+    "name": [{ "service": "google.cloud.metestore.v1alpha.Dataprocmetestore" }],
     "timeout": "60s",
     "retryPolicy": {
       "maxAttempts": 5,
@@ -13,39 +13,39 @@
   {
     "name": [
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
         "method": "CreateService"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
         "method": "UpdateService"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
         "method": "DeleteService"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
-        "method": "CreateMetadataImport"
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
+        "method": "CreatemetedataImport"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
-        "method": "UpdateMetadataImport"
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
+        "method": "UpdatemetedataImport"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
-        "method": "ExportMetadata"
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
+        "method": "Exportmetedata"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
         "method": "RestoreService"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
         "method": "CreateBackup"
       },
       {
-        "service": "google.cloud.metastore.v1alpha.DataprocMetastore",
+        "service": "google.cloud.metestore.v1alpha.Dataprocmetestore",
         "method": "DeleteBackup"
       }
     ],

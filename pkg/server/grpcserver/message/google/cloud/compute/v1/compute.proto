@@ -3004,7 +3004,7 @@ message BackendService {
 
   }
 
-  // The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+  // The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metedata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   enum LocalityLbPolicy {
     // A value indicating that the enum field is not set.
     UNDEFINED_LOCALITY_LB_POLICY = 0;
@@ -3017,7 +3017,7 @@ message BackendService {
     // This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
     MAGLEV = 119180266;
 
-    // Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+    // Backend host is selected based on the client connection metedata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
     ORIGINAL_DESTINATION = 166297216;
 
     // The load balancer selects a random healthy host.
@@ -3157,7 +3157,7 @@ message BackendService {
   // A list of locality load balancing policies to be used in order of preference. Either the policy or the customPolicy field should be set. Overrides any value set in the localityLbPolicy field. localityLbPolicies is only supported when the BackendService is referenced by a URL Map that is referenced by a target gRPC proxy that has the validateForProxyless field set to true.
   repeated BackendServiceLocalityLoadBalancingPolicyConfig locality_lb_policies = 140982557;
 
-  // The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+  // The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metedata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   // Check the LocalityLbPolicy enum for the list of possible values.
   optional string locality_lb_policy = 131431487;
 
@@ -3372,7 +3372,7 @@ message BackendServiceFailoverPolicy {
 
 //
 message BackendServiceGroupHealth {
-  // Metadata defined as annotations on the network endpoint group.
+  // metedata defined as annotations on the network endpoint group.
   map<string, string> annotations = 112032548;
 
   // Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
@@ -3454,7 +3454,7 @@ message BackendServiceLocalityLoadBalancingPolicyConfigPolicy {
     // This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824
     MAGLEV = 119180266;
 
-    // Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+    // Backend host is selected based on the client connection metedata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
     ORIGINAL_DESTINATION = 166297216;
 
     // The load balancer selects a random healthy host.
@@ -6234,7 +6234,7 @@ message Disk {
   // An optional description of this resource. Provide this property when you create the resource.
   optional string description = 422937596;
 
-  // Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
+  // Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metedata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
   optional CustomerEncryptionKey disk_encryption_key = 271660677;
 
   // A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
@@ -6675,13 +6675,13 @@ message ErrorDetails {
 
 }
 
-// Describes the cause of the error with structured details. Example of an error when contacting the "pubsub.googleapis.com" API when it is not enabled: { "reason": "API_DISABLED" "domain": "googleapis.com" "metadata": { "resource": "projects/123", "service": "pubsub.googleapis.com" } } This response indicates that the pubsub.googleapis.com API is not enabled. Example of an error that is returned when attempting to create a Spanner instance in a region that is out of stock: { "reason": "STOCKOUT" "domain": "spanner.googleapis.com", "metadata": { "availableRegions": "us-central1,us-east2" } }
+// Describes the cause of the error with structured details. Example of an error when contacting the "pubsub.googleapis.com" API when it is not enabled: { "reason": "API_DISABLED" "domain": "googleapis.com" "metedata": { "resource": "projects/123", "service": "pubsub.googleapis.com" } } This response indicates that the pubsub.googleapis.com API is not enabled. Example of an error that is returned when attempting to create a Spanner instance in a region that is out of stock: { "reason": "STOCKOUT" "domain": "spanner.googleapis.com", "metedata": { "availableRegions": "us-central1,us-east2" } }
 message ErrorInfo {
   // The logical grouping to which the "reason" belongs. The error domain is typically the registered service name of the tool or product that generates the error. Example: "pubsub.googleapis.com". If the error is generated by some common infrastructure, the error domain must be a globally unique value that identifies the infrastructure. For Google API infrastructure, the error domain is "googleapis.com".
   optional string domain = 284415172;
 
   // Additional structured details about this error. Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in length. When identifying the current value of an exceeded limit, the units should be contained in the key, not the value. For example, rather than {"instanceLimit": "100/request"}, should be returned as, {"instanceLimitPerRequest": "100"}, if the client exceeds the number of instances that can be created in a single (batch) request.
-  map<string, string> metadatas = 8514340;
+  map<string, string> metedatas = 8514340;
 
   // The reason of the error. This is a constant value that identifies the proximate cause of the error. Error reasons are unique within a particular domain of errors. This should be at most 63 characters and match a regular expression of `A-Z+[A-Z0-9]`, which represents UPPER_SNAKE_CASE.
   optional string reason = 138777156;
@@ -7011,23 +7011,23 @@ message FirewallList {
 
 // The available logging options for a firewall rule.
 message FirewallLogConfig {
-  // This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
-  enum Metadata {
+  // This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metedata for firewall logs.
+  enum metedata {
     // A value indicating that the enum field is not set.
-    UNDEFINED_METADATA = 0;
+    UNDEFINED_meteDATA = 0;
 
-    EXCLUDE_ALL_METADATA = 334519954;
+    EXCLUDE_ALL_meteDATA = 334519954;
 
-    INCLUDE_ALL_METADATA = 164619908;
+    INCLUDE_ALL_meteDATA = 164619908;
 
   }
 
   // This field denotes whether to enable logging for a particular firewall rule.
   optional bool enable = 311764355;
 
-  // This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
-  // Check the Metadata enum for the list of possible values.
-  optional string metadata = 86866735;
+  // This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metedata for firewall logs.
+  // Check the metedata enum for the list of possible values.
+  optional string metedata = 86866735;
 
 }
 
@@ -7055,7 +7055,7 @@ message FirewallPolicy {
   // Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   optional string display_name = 4473832;
 
-  // Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+  // Specifies a fingerprint for this resource, which is essentially a hash of the metedata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metedata. You must always provide an up-to-date fingerprint hash in order to update or change metedata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -7390,8 +7390,8 @@ message ForwardingRule {
   // Check the LoadBalancingScheme enum for the list of possible values.
   optional string load_balancing_scheme = 363890244;
 
-  // Opaque filter criteria used by load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to load balancer, xDS clients present node metadata. When there is a match, the relevant configuration is made available to those proxies. Otherwise, all the resources (e.g. TargetHttpProxy, UrlMap) referenced by the ForwardingRule are not visible to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match. metadataFilters specified here will be applifed before those specified in the UrlMap that this ForwardingRule references. metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
-  repeated MetadataFilter metadata_filters = 464725739;
+  // Opaque filter criteria used by load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to load balancer, xDS clients present node metedata. When there is a match, the relevant configuration is made available to those proxies. Otherwise, all the resources (e.g. TargetHttpProxy, UrlMap) referenced by the ForwardingRule are not visible to those proxies. For each metedataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metedata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metedata. If multiple metedataFilters are specified, all of them need to be satisfied in order to be considered a match. metedataFilters specified here will be applifed before those specified in the UrlMap that this ForwardingRule references. metedataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+  repeated metedataFilter metedata_filters = 464725739;
 
   // Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. For Private Service Connect forwarding rules that forward traffic to Google APIs, the forwarding rule name must be a 1-20 characters string with lowercase letters and numbers and must start with a letter.
   optional string name = 3373707;
@@ -9760,7 +9760,7 @@ message HealthStatus {
 
   }
 
-  // Metadata defined as annotations for network endpoint.
+  // metedata defined as annotations for network endpoint.
   map<string, string> annotations = 112032548;
 
   // URL of the forwarding rule associated with the health status of the instance.
@@ -9906,7 +9906,7 @@ message HttpHeaderMatch {
   // The value should exactly match contents of exactMatch. Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
   optional string exact_match = 457641093;
 
-  // The name of the HTTP header to match. For matching against the HTTP request's authority, use a headerMatch with the header name ":authority". For matching a request's method, use the headerName ":method". When the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true, only non-binary user-specified custom metadata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin`.
+  // The name of the HTTP header to match. For matching against the HTTP request's authority, use a headerMatch with the header name ":authority". For matching a request's method, use the headerName ":method". When the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true, only non-binary user-specified custom metedata and the `content-type` header are supported. The following transport-level headers cannot be used in header matching rules: `:authority`, `:method`, `:path`, `:scheme`, `user-agent`, `accept-encoding`, `content-encoding`, `grpc-accept-encoding`, `grpc-encoding`, `grpc-previous-rpc-attempts`, `grpc-tags-bin`, `grpc-timeout` and `grpc-trace-bin`.
   optional string header_name = 110223613;
 
   // If set to false, the headerMatch is considered a match if the preceding match criteria are met. If set to true, the headerMatch is considered a match if the preceding match criteria are NOT met. The default setting is false. 
@@ -10080,8 +10080,8 @@ message HttpRouteRuleMatch {
   // Specifies that prefixMatch and fullPathMatch matches are case sensitive. The default value is false. ignoreCase must not be used with regexMatch. Not supported when the URL map is bound to a target gRPC proxy.
   optional bool ignore_case = 464324989;
 
-  // Opaque filter criteria used by the load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to the load balancer, xDS clients present node metadata. When there is a match, the relevant routing configuration is made available to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadata filters are specified, all of them need to be satisfied in order to be considered a match. metadataFilters specified here is applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to. metadataFilters only applies to load balancers that have loadBalancingScheme set to INTERNAL_SELF_MANAGED. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
-  repeated MetadataFilter metadata_filters = 464725739;
+  // Opaque filter criteria used by the load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to the load balancer, xDS clients present node metedata. When there is a match, the relevant routing configuration is made available to those proxies. For each metedataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metedata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metedata. If multiple metedata filters are specified, all of them need to be satisfied in order to be considered a match. metedataFilters specified here is applied after those specified in ForwardingRule that refers to the UrlMap this HttpRouteRuleMatch belongs to. metedataFilters only applies to load balancers that have loadBalancingScheme set to INTERNAL_SELF_MANAGED. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
+  repeated metedataFilter metedata_filters = 464725739;
 
   // For satisfying the matchRule condition, the request's path must begin with the specified prefixMatch. prefixMatch must begin with a /. The value must be from 1 to 1024 characters. Only one of prefixMatch, fullPathMatch or regexMatch must be specified.
   optional string prefix_match = 257898968;
@@ -10168,7 +10168,7 @@ message Image {
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   optional uint64 id = 3355;
 
-  // Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+  // Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metedata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
   optional CustomerEncryptionKey image_encryption_key = 379512583;
 
   // [Output Only] Type of the resource. Always compute#image for images.
@@ -11841,8 +11841,8 @@ message Instance {
   // Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
   optional string machine_type = 227711026;
 
-  // The metadata key/value pairs assigned to this instance. This includes custom metadata and predefined keys.
-  optional Metadata metadata = 86866735;
+  // The metedata key/value pairs assigned to this instance. This includes custom metedata and predefined keys.
+  optional metedata metedata = 86866735;
 
   // Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
   optional string min_cpu_platform = 242912759;
@@ -11880,7 +11880,7 @@ message Instance {
   // [Output Only] Server-defined URL for this resource.
   optional string self_link = 456214797;
 
-  // A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+  // A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metedata server and used to authenticate applications on the instance. See Service Accounts for more information.
   repeated ServiceAccount service_accounts = 277537328;
 
   optional ShieldedInstanceConfig shielded_instance_config = 12862901;
@@ -12291,7 +12291,7 @@ message InstanceGroupManagerUpdatePolicy {
 
   }
 
-  // Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metadata. But if your application reads instance metadata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metadata changes.
+  // Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metedata. But if your application reads instance metedata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metedata changes.
   // Additional supported values which may be not listed in the enum directly due to technical reasons:
   // NONE
   // REFRESH
@@ -12350,7 +12350,7 @@ message InstanceGroupManagerUpdatePolicy {
   // The maximum number of instances that can be unavailable during the update process. An instance is considered available if all of the following conditions are satisfied: - The instance's status is RUNNING. - If there is a health check on the instance group, the instance's health check status must be HEALTHY at least once. If there is no health check on the group, then the instance only needs to have a status of RUNNING to be considered available. This value can be either a fixed number or, if the group has 10 or more instances, a percentage. If you set a percentage, the number of instances is rounded if necessary. The default value for maxUnavailable is a fixed value equal to the number of zones in which the managed instance group operates. At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
   optional FixedOrPercent max_unavailable = 404940277;
 
-  // Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metadata. But if your application reads instance metadata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metadata changes.
+  // Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metedata. But if your application reads instance metedata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metedata changes.
   // Check the MinimalAction enum for the list of possible values.
   optional string minimal_action = 270567060;
 
@@ -12818,8 +12818,8 @@ message InstanceProperties {
   // The machine type to use for instances that are created from these properties.
   optional string machine_type = 227711026;
 
-  // The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
-  optional Metadata metadata = 86866735;
+  // The metedata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metedata or predefined keys. See Project and instance metedata for more information.
+  optional metedata metedata = 86866735;
 
   // Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
   optional string min_cpu_platform = 242912759;
@@ -12846,7 +12846,7 @@ message InstanceProperties {
   // Specifies the scheduling options for the instances that are created from these properties.
   optional Scheduling scheduling = 386688404;
 
-  // A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+  // A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metedata queries to obtain the access tokens for these instances.
   repeated ServiceAccount service_accounts = 277537328;
 
   // Note that for MachineImage, this is not supported yet.
@@ -13445,8 +13445,8 @@ message InterconnectAttachment {
   // Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
   optional int64 partner_asn = 438166149;
 
-  // Informational metadata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
-  optional InterconnectAttachmentPartnerMetadata partner_metadata = 65908934;
+  // Informational metedata about Partner attachments from Partners to display to customers. Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
+  optional InterconnectAttachmentPartnermetedata partner_metedata = 65908934;
 
   // [Output Only] Information specific to an InterconnectAttachment. This property is populated if the interconnect that this is attached to is of type DEDICATED.
   optional InterconnectAttachmentPrivateInfo private_interconnect_info = 237270531;
@@ -13527,8 +13527,8 @@ message InterconnectAttachmentList {
 
 }
 
-// Informational metadata about Partner attachments from Partners to display to customers. These fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER attachments.
-message InterconnectAttachmentPartnerMetadata {
+// Informational metedata about Partner attachments from Partners to display to customers. These fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER attachments.
+message InterconnectAttachmentPartnermetedata {
   // Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
   optional string interconnect_name = 514963356;
 
@@ -14006,12 +14006,12 @@ message InvalidateCacheUrlMapRequest {
 
 }
 
-// Metadata
+// metedata
 message Items {
-  // Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project.
+  // Key for the metedata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metedata server. Additionally, to avoid ambiguity, keys must not conflict with any other metedata keys for the project.
   optional string key = 106079;
 
-  // Value for the metadata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 262144 bytes (256 KiB).
+  // Value for the metedata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 262144 bytes (256 KiB).
   optional string value = 111972721;
 
 }
@@ -16808,7 +16808,7 @@ message LogConfigDataAccessOptions {
 
 }
 
-// Represents a machine image resource. A machine image is a Compute Engine resource that stores all the configuration, metadata, permissions, and data from one or more disks required to create a Virtual machine (VM) instance. For more information, see Machine images.
+// Represents a machine image resource. A machine image is a Compute Engine resource that stores all the configuration, metedata, permissions, and data from one or more disks required to create a Virtual machine (VM) instance. For more information, see Machine images.
 message MachineImage {
   // [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
   enum Status {
@@ -16845,7 +16845,7 @@ message MachineImage {
   // [Output Only] The resource type, which is always compute#machineImage for machine image.
   optional string kind = 3292052;
 
-  // Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+  // Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metedata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
   optional CustomerEncryptionKey machine_image_encryption_key = 528089087;
 
   // Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -17176,49 +17176,49 @@ message ManagedInstanceVersion {
 
 }
 
-// A metadata key/value entry.
-message Metadata {
-  // Specifies a fingerprint for this request, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the resource.
+// A metedata key/value entry.
+message metedata {
+  // Specifies a fingerprint for this request, which is essentially a hash of the metedata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metedata. You must always provide an up-to-date fingerprint hash in order to update or change metedata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the resource.
   optional string fingerprint = 234678500;
 
   // Array of key/value pairs. The total size of all keys and values must be less than 512 KB.
   repeated Items items = 100526016;
 
-  // [Output Only] Type of the resource. Always compute#metadata for metadata.
+  // [Output Only] Type of the resource. Always compute#metedata for metedata.
   optional string kind = 3292052;
 
 }
 
-// Opaque filter criteria used by load balancers to restrict routing configuration to a limited set of load balancing proxies. Proxies and sidecars involved in load balancing would typically present metadata to the load balancers that need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. An example for using metadataFilters would be: if load balancing involves Envoys, they receive routing configuration when values in metadataFilters match values supplied in of their XDS requests to loadbalancers.
-message MetadataFilter {
-  // Specifies how individual filter label matches within the list of filterLabels and contributes toward the overall metadataFilter match. Supported values are: - MATCH_ANY: at least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: all filterLabels must have matching labels in the provided metadata. 
+// Opaque filter criteria used by load balancers to restrict routing configuration to a limited set of load balancing proxies. Proxies and sidecars involved in load balancing would typically present metedata to the load balancers that need to match criteria specified here. If a match takes place, the relevant configuration is made available to those proxies. For each metedataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metedata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metedata. An example for using metedataFilters would be: if load balancing involves Envoys, they receive routing configuration when values in metedataFilters match values supplied in of their XDS requests to loadbalancers.
+message metedataFilter {
+  // Specifies how individual filter label matches within the list of filterLabels and contributes toward the overall metedataFilter match. Supported values are: - MATCH_ANY: at least one of the filterLabels must have a matching label in the provided metedata. - MATCH_ALL: all filterLabels must have matching labels in the provided metedata. 
   enum FilterMatchCriteria {
     // A value indicating that the enum field is not set.
     UNDEFINED_FILTER_MATCH_CRITERIA = 0;
 
-    // Specifies that all filterLabels must match for the metadataFilter to be considered a match.
+    // Specifies that all filterLabels must match for the metedataFilter to be considered a match.
     MATCH_ALL = 180663271;
 
-    // Specifies that any filterLabel must match for the metadataFilter to be considered a match.
+    // Specifies that any filterLabel must match for the metedataFilter to be considered a match.
     MATCH_ANY = 180663346;
 
-    // Indicates that the match criteria was not set. A metadataFilter must never be created with this value.
+    // Indicates that the match criteria was not set. A metedataFilter must never be created with this value.
     NOT_SET = 163646646;
 
   }
 
-  // The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
-  repeated MetadataFilterLabelMatch filter_labels = 307903142;
+  // The list of label value pairs that must match labels in the provided metedata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
+  repeated metedataFilterLabelMatch filter_labels = 307903142;
 
-  // Specifies how individual filter label matches within the list of filterLabels and contributes toward the overall metadataFilter match. Supported values are: - MATCH_ANY: at least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: all filterLabels must have matching labels in the provided metadata.
+  // Specifies how individual filter label matches within the list of filterLabels and contributes toward the overall metedataFilter match. Supported values are: - MATCH_ANY: at least one of the filterLabels must have a matching label in the provided metedata. - MATCH_ALL: all filterLabels must have matching labels in the provided metedata.
   // Check the FilterMatchCriteria enum for the list of possible values.
   optional string filter_match_criteria = 239970368;
 
 }
 
-// MetadataFilter label name value pairs that are expected to match corresponding labels presented as metadata to the load balancer.
-message MetadataFilterLabelMatch {
-  // Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
+// metedataFilter label name value pairs that are expected to match corresponding labels presented as metedata to the load balancer.
+message metedataFilterLabelMatch {
+  // Name of metedata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
   optional string name = 3373707;
 
   // The value of the label must match the specified value. value can have a maximum length of 1024 characters.
@@ -17586,7 +17586,7 @@ message NetworkEdgeSecurityServicesScopedList {
 
 // The network endpoint.
 message NetworkEndpoint {
-  // Metadata defined as annotations on the network endpoint.
+  // metedata defined as annotations on the network endpoint.
   map<string, string> annotations = 112032548;
 
   // Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
@@ -17633,7 +17633,7 @@ message NetworkEndpointGroup {
 
   }
 
-  // Metadata defined as annotations on the network endpoint group.
+  // metedata defined as annotations on the network endpoint group.
   map<string, string> annotations = 112032548;
 
   // Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
@@ -20307,7 +20307,7 @@ message PerInstanceConfig {
     // The per-instance configuration deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
     DELETING = 528602024;
 
-    // The per-instance configuration is effective on the instance, meaning that all disks, ips and metadata specified in this configuration are attached or set on the instance.
+    // The per-instance configuration is effective on the instance, meaning that all disks, ips and metedata specified in this configuration are attached or set on the instance.
     EFFECTIVE = 244201863;
 
     // *[Default]* The default status, when no per-instance configuration exists.
@@ -20369,8 +20369,8 @@ message PreservedState {
   // Preserved disks defined for this instance. This map is keyed with the device names of the disks.
   map<string, PreservedStatePreservedDisk> disks = 95594102;
 
-  // Preserved metadata defined for this instance.
-  map<string, string> metadata = 86866735;
+  // Preserved metedata defined for this instance.
+  map<string, string> metedata = 86866735;
 
 }
 
@@ -20476,8 +20476,8 @@ message Project {
 
   }
 
-  // Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
-  optional Metadata common_instance_metadata = 185794117;
+  // metedata key/value pairs available to all instances contained in this project. See Custom metedata for more information.
+  optional metedata common_instance_metedata = 185794117;
 
   // [Output Only] Creation timestamp in RFC3339 text format.
   optional string creation_timestamp = 30525366;
@@ -24052,7 +24052,7 @@ message SecurityPolicy {
   // An optional description of this resource. Provide this property when you create the resource.
   optional string description = 422937596;
 
-  // Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+  // Specifies a fingerprint for this resource, which is essentially a hash of the metedata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metedata. You must always provide an up-to-date fingerprint hash in order to update or change metedata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
   optional string fingerprint = 234678500;
 
   // [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -24731,10 +24731,10 @@ message SetCertificateMapTargetSslProxyRequest {
 
 }
 
-// A request message for Projects.SetCommonInstanceMetadata. See the method description for details.
-message SetCommonInstanceMetadataProjectRequest {
+// A request message for Projects.SetCommonInstancemetedata. See the method description for details.
+message SetCommonInstancemetedataProjectRequest {
   // The body resource for this request
-  Metadata metadata_resource = 291086110 [(google.api.field_behavior) = REQUIRED];
+  metedata metedata_resource = 291086110 [(google.api.field_behavior) = REQUIRED];
 
   // Project ID for this request.
   string project = 227560217 [
@@ -25584,13 +25584,13 @@ message SetMachineTypeInstanceRequest {
 
 }
 
-// A request message for Instances.SetMetadata. See the method description for details.
-message SetMetadataInstanceRequest {
+// A request message for Instances.Setmetedata. See the method description for details.
+message SetmetedataInstanceRequest {
   // Name of the instance scoping this request.
   string instance = 18257045 [(google.api.field_behavior) = REQUIRED];
 
   // The body resource for this request
-  Metadata metadata_resource = 291086110 [(google.api.field_behavior) = REQUIRED];
+  metedata metedata_resource = 291086110 [(google.api.field_behavior) = REQUIRED];
 
   // Project ID for this request.
   string project = 227560217 [
@@ -26435,7 +26435,7 @@ message Snapshot {
   // [Output Only] Server-defined URL for the resource.
   optional string self_link = 456214797;
 
-  // Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metadata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
+  // Encrypts the snapshot using a customer-supplied encryption key. After you encrypt a snapshot using a customer-supplied key, you must provide the same key if you use the snapshot later. For example, you must provide the encryption key when you create a disk from the encrypted snapshot in a future request. Customer-supplied encryption keys do not protect access to metedata of the snapshot. If you do not provide an encryption key when creating the snapshot, then the snapshot will be encrypted using an automatically generated key and you do not need to provide a key to use the snapshot later.
   optional CustomerEncryptionKey snapshot_encryption_key = 43334526;
 
   // Indicates the type of the snapshot.
@@ -26555,8 +26555,8 @@ message SourceInstanceProperties {
   // The machine type to use for instances that are created from this machine image.
   optional string machine_type = 227711026;
 
-  // The metadata key/value pairs to assign to instances that are created from this machine image. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
-  optional Metadata metadata = 86866735;
+  // The metedata key/value pairs to assign to instances that are created from this machine image. These pairs can consist of custom metedata or predefined keys. See Project and instance metedata for more information.
+  optional metedata metedata = 86866735;
 
   // Minimum cpu/platform to be used by instances created from this machine image. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
   optional string min_cpu_platform = 242912759;
@@ -26567,7 +26567,7 @@ message SourceInstanceProperties {
   // Specifies the scheduling options for the instances that are created from this machine image.
   optional Scheduling scheduling = 386688404;
 
-  // A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from this machine image. Use metadata queries to obtain the access tokens for these instances.
+  // A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from this machine image. Use metedata queries to obtain the access tokens for these instances.
   repeated ServiceAccount service_accounts = 277537328;
 
   // A list of tags to apply to the instances that are created from this machine image. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
@@ -27242,16 +27242,16 @@ message SubnetworkLogConfig {
 
   }
 
-  // Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
-  enum Metadata {
+  // Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metedata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_meteDATA.
+  enum metedata {
     // A value indicating that the enum field is not set.
-    UNDEFINED_METADATA = 0;
+    UNDEFINED_meteDATA = 0;
 
-    CUSTOM_METADATA = 62450749;
+    CUSTOM_meteDATA = 62450749;
 
-    EXCLUDE_ALL_METADATA = 334519954;
+    EXCLUDE_ALL_meteDATA = 334519954;
 
-    INCLUDE_ALL_METADATA = 164619908;
+    INCLUDE_ALL_meteDATA = 164619908;
 
   }
 
@@ -27268,12 +27268,12 @@ message SubnetworkLogConfig {
   // Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5 unless otherwise specified by the org policy, which means half of all collected logs are reported.
   optional float flow_sampling = 530150360;
 
-  // Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
-  // Check the Metadata enum for the list of possible values.
-  optional string metadata = 86866735;
+  // Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metedata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_meteDATA.
+  // Check the metedata enum for the list of possible values.
+  optional string metedata = 86866735;
 
-  // Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
-  repeated string metadata_fields = 378461641;
+  // Can only be specified if VPC flow logs for this subnetwork is enabled and "metedata" was set to CUSTOM_meteDATA.
+  repeated string metedata_fields = 378461641;
 
 }
 
@@ -30266,7 +30266,7 @@ message Warning {
   // Check the Code enum for the list of possible values.
   optional string code = 3059181;
 
-  // [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" } 
+  // [Output Only] metedata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" } 
   repeated Data data = 3076010;
 
   // [Output Only] A human-readable description of the warning code.
@@ -30368,7 +30368,7 @@ message Warnings {
   // Check the Code enum for the list of possible values.
   optional string code = 3059181;
 
-  // [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" } 
+  // [Output Only] metedata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" } 
   repeated Data data = 3076010;
 
   // [Output Only] A human-readable description of the warning code.
@@ -32666,13 +32666,13 @@ service Instances {
     option (google.cloud.operation_service) = "ZoneOperations";
   }
 
-  // Sets metadata for the specified instance to the data included in the request.
-  rpc SetMetadata(SetMetadataInstanceRequest) returns (Operation) {
+  // Sets metedata for the specified instance to the data included in the request.
+  rpc Setmetedata(SetmetedataInstanceRequest) returns (Operation) {
     option (google.api.http) = {
-      body: "metadata_resource"
-      post: "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setMetadata"
+      body: "metedata_resource"
+      post: "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setmetedata"
     };
-    option (google.api.method_signature) = "project,zone,instance,metadata_resource";
+    option (google.api.method_signature) = "project,zone,instance,metedata_resource";
     option (google.cloud.operation_service) = "ZoneOperations";
   }
 
@@ -34129,13 +34129,13 @@ service Projects {
     option (google.cloud.operation_service) = "GlobalOperations";
   }
 
-  // Sets metadata common to all instances within the specified project using the data included in the request.
-  rpc SetCommonInstanceMetadata(SetCommonInstanceMetadataProjectRequest) returns (Operation) {
+  // Sets metedata common to all instances within the specified project using the data included in the request.
+  rpc SetCommonInstancemetedata(SetCommonInstancemetedataProjectRequest) returns (Operation) {
     option (google.api.http) = {
-      body: "metadata_resource"
-      post: "/compute/v1/projects/{project}/setCommonInstanceMetadata"
+      body: "metedata_resource"
+      post: "/compute/v1/projects/{project}/setCommonInstancemetedata"
     };
-    option (google.api.method_signature) = "project,metadata_resource";
+    option (google.api.method_signature) = "project,metedata_resource";
     option (google.cloud.operation_service) = "GlobalOperations";
   }
 

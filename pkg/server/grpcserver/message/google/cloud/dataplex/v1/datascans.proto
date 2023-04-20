@@ -34,7 +34,7 @@ option java_outer_classname = "DataScansProto";
 option java_package = "com.google.cloud.dataplex.v1";
 
 // DataScanService manages DataScan resources which can be configured to run
-// various types of data scanning workload and generate enriched metadata (e.g.
+// various types of data scanning workload and generate enriched metedata (e.g.
 // Data Profile, Data Quality) for the data source.
 service DataScanService {
   option (google.api.default_host) = "dataplex.googleapis.com";
@@ -51,7 +51,7 @@ service DataScanService {
     option (google.api.method_signature) = "parent,data_scan,data_scan_id";
     option (google.longrunning.operation_info) = {
       response_type: "DataScan"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -65,7 +65,7 @@ service DataScanService {
     option (google.api.method_signature) = "data_scan,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "DataScan"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -78,7 +78,7 @@ service DataScanService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

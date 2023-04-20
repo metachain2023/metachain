@@ -35,7 +35,7 @@ option php_namespace = "Google\\Cloud\\Retail\\V2beta";
 option ruby_package = "Google::Cloud::Retail::V2beta";
 
 // Service for performing CRUD operations on models.
-// Recommendation models contain all the metadata necessary to generate a set of
+// Recommendation models contain all the metedata necessary to generate a set of
 // models for the `Predict()` API. A model is queried
 // indirectly via a ServingConfig, which associates a model with a
 // given Placement (e.g. Frequently Bought Together on Home Page).
@@ -44,7 +44,7 @@ option ruby_package = "Google::Cloud::Retail::V2beta";
 //
 // * Initiate training of a model.
 // * Pause training of an existing model.
-// * List all the available models along with their metadata.
+// * List all the available models along with their metedata.
 // * Control their tuning schedule.
 service ModelService {
   option (google.api.default_host) = "retail.googleapis.com";
@@ -60,7 +60,7 @@ service ModelService {
     option (google.api.method_signature) = "parent,model";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.Model"
-      metadata_type: "google.cloud.retail.v2beta.CreateModelMetadata"
+      metedata_type: "google.cloud.retail.v2beta.CreateModelmetedata"
     };
   }
 
@@ -98,7 +98,7 @@ service ModelService {
     option (google.api.method_signature) = "parent";
   }
 
-  // Update of model metadata. Only fields that
+  // Update of model metedata. Only fields that
   // currently can be updated are: `filtering_option` and
   // `periodic_tuning_state`.
   // If other values are provided, this API method ignores them.
@@ -119,7 +119,7 @@ service ModelService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.TuneModelResponse"
-      metadata_type: "google.cloud.retail.v2beta.TuneModelMetadata"
+      metedata_type: "google.cloud.retail.v2beta.TuneModelmetedata"
     };
   }
 }
@@ -224,16 +224,16 @@ message TuneModelRequest {
   ];
 }
 
-// Metadata associated with a create operation.
-message CreateModelMetadata {
+// metedata associated with a create operation.
+message CreateModelmetedata {
   // The resource name of the model that this create applies to.
   // Format:
   // `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
   string model = 1;
 }
 
-// Metadata associated with a tune operation.
-message TuneModelMetadata {
+// metedata associated with a tune operation.
+message TuneModelmetedata {
   // The resource name of the model that this tune applies to.
   // Format:
   // `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`

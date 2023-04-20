@@ -27,8 +27,8 @@ option java_outer_classname = "LabelServiceProto";
 option java_package = "com.google.apps.drive.labels.v2";
 option objc_class_prefix = "DLBL";
 
-// Manage metadata taxonomies based on Labels and Fields that may be used within
-// Google Drive to organize and find files using custom metadata.
+// Manage metedata taxonomies based on Labels and Fields that may be used within
+// Google Drive to organize and find files using custom metedata.
 service LabelService {
   option (google.api.default_host) = "drivelabels.googleapis.com";
 

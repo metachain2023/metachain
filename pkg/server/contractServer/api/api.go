@@ -9,12 +9,12 @@ import (
 	"math/big"
 	"net/http"
 
-	"metachain/pkg/block"
-	"metachain/pkg/blockchain"
-	"metachain/pkg/config"
-	"metachain/pkg/server/contractServer/client"
-	"metachain/pkg/transaction"
-	"metachain/pkg/txpool"
+	"metechain/pkg/block"
+	"metechain/pkg/blockchain"
+	"metechain/pkg/config"
+	"metechain/pkg/server/contractServer/client"
+	"metechain/pkg/transaction"
+	"metechain/pkg/txpool"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
@@ -22,7 +22,7 @@ import (
 )
 
 //New Server
-func NewMetamaskServer(bc blockchain.Blockchains, tp *txpool.Pool, cfg *config.CfgInfo) *Server {
+func NewmetemaskServer(bc blockchain.Blockchains, tp *txpool.Pool, cfg *config.CfgInfo) *Server {
 	clit := client.New(bc, tp, cfg)
 	return &Server{Cfg: cfg, cli: clit}
 }
@@ -445,12 +445,12 @@ func (s *Server) HandRequest(w http.ResponseWriter, req *http.Request) {
 
 //Returns the current chain id.
 func (s *Server) eth_chainId() string {
-	return s.Cfg.MetamaskCfg.ChainId
+	return s.Cfg.metemaskCfg.ChainId
 }
 
 //Returns the current network id.
 func (s *Server) net_version() string {
-	return s.Cfg.MetamaskCfg.NetworkId
+	return s.Cfg.metemaskCfg.NetworkId
 }
 
 //Returns a list of addresses owned by client.
@@ -698,7 +698,7 @@ func (s *Server) eth_getLogs(mp map[string]interface{}) ([]*types.Log, error) {
 
 //Returns the current client version.
 func (s *Server) web3_clientVersion() string {
-	return s.Cfg.MetamaskCfg.ClinetVersion
+	return s.Cfg.metemaskCfg.ClinetVersion
 }
 
 //Returns the value from a storage position at a given address.

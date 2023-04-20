@@ -89,7 +89,7 @@ service ImageAnnotator {
   //
   // Progress and results can be retrieved through the
   // `google.longrunning.Operations` interface.
-  // `Operation.metadata` contains `OperationMetadata` (metadata).
+  // `Operation.metedata` contains `Operationmetedata` (metedata).
   // `Operation.response` contains `AsyncBatchAnnotateImagesResponse` (results).
   //
   // This service will write image annotation outputs to json files in customer
@@ -110,7 +110,7 @@ service ImageAnnotator {
     option (google.api.method_signature) = "requests,output_config";
     option (google.longrunning.operation_info) = {
       response_type: "AsyncBatchAnnotateImagesResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service ImageAnnotator {
   // files, such as PDF files, which may contain multiple pages and multiple
   // images per page. Progress and results can be retrieved through the
   // `google.longrunning.Operations` interface.
-  // `Operation.metadata` contains `OperationMetadata` (metadata).
+  // `Operation.metedata` contains `Operationmetedata` (metedata).
   // `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).
   rpc AsyncBatchAnnotateFiles(AsyncBatchAnnotateFilesRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -136,7 +136,7 @@ service ImageAnnotator {
     option (google.api.method_signature) = "requests";
     option (google.longrunning.operation_info) = {
       response_type: "AsyncBatchAnnotateFilesResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -875,13 +875,13 @@ message AsyncAnnotateFileRequest {
   // Additional context that may accompany the image(s) in the file.
   ImageContext image_context = 3;
 
-  // Required. The desired output location and metadata (e.g. format).
+  // Required. The desired output location and metedata (e.g. format).
   OutputConfig output_config = 4;
 }
 
 // The response for a single offline file annotation request.
 message AsyncAnnotateFileResponse {
-  // The output location and metadata from AsyncAnnotateFileRequest.
+  // The output location and metedata from AsyncAnnotateFileRequest.
   OutputConfig output_config = 1;
 }
 
@@ -890,7 +890,7 @@ message AsyncBatchAnnotateImagesRequest {
   // Required. Individual image annotation requests for this batch.
   repeated AnnotateImageRequest requests = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The desired output location and metadata (e.g. format).
+  // Required. The desired output location and metedata (e.g. format).
   OutputConfig output_config = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Optional. Target project and location to make a call.
@@ -910,7 +910,7 @@ message AsyncBatchAnnotateImagesRequest {
 
 // Response to an async batch image annotation request.
 message AsyncBatchAnnotateImagesResponse {
-  // The output location and metadata from AsyncBatchAnnotateImagesRequest.
+  // The output location and metedata from AsyncBatchAnnotateImagesRequest.
   OutputConfig output_config = 1;
 }
 
@@ -942,7 +942,7 @@ message AsyncBatchAnnotateFilesResponse {
   repeated AsyncAnnotateFileResponse responses = 1;
 }
 
-// The desired input location and metadata.
+// The desired input location and metedata.
 message InputConfig {
   // The Google Cloud Storage location to read the input from.
   GcsSource gcs_source = 1;
@@ -960,7 +960,7 @@ message InputConfig {
   string mime_type = 2;
 }
 
-// The desired output location and metadata.
+// The desired output location and metedata.
 message OutputConfig {
   // The Google Cloud Storage location to write the output(s) to.
   GcsDestination gcs_destination = 1;
@@ -1013,8 +1013,8 @@ message GcsDestination {
   string uri = 1;
 }
 
-// Contains metadata for the BatchAnnotateImages operation.
-message OperationMetadata {
+// Contains metedata for the BatchAnnotateImages operation.
+message Operationmetedata {
   // Batch operation states.
   enum State {
     // Invalid.

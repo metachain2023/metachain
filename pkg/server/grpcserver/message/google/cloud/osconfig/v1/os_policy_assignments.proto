@@ -208,9 +208,9 @@ message OSPolicyAssignment {
   string uid = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// OS policy assignment operation metadata provided by OS policy assignment API
+// OS policy assignment operation metedata provided by OS policy assignment API
 // methods that return long running operations.
-message OSPolicyAssignmentOperationMetadata {
+message OSPolicyAssignmentOperationmetedata {
   // The OS policy assignment API method.
   enum APIMethod {
     // Invalid value

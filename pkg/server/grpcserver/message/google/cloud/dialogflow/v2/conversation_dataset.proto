@@ -36,7 +36,7 @@ option objc_class_prefix = "DF";
 // Conversation datasets.
 //
 // Conversation datasets contain raw conversation files and their
-// customizable metadata that can be used for model training.
+// customizable metedata that can be used for model training.
 service ConversationDatasets {
   option (google.api.default_host) = "dialogflow.googleapis.com";
   option (google.api.oauth_scopes) =
@@ -49,8 +49,8 @@ service ConversationDatasets {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [CreateConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationMetadata]
+  // - `metedata`:
+  // [CreateConversationDatasetOperationmetedata][google.cloud.dialogflow.v2.CreateConversationDatasetOperationmetedata]
   // - `response`:
   // [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
   rpc CreateConversationDataset(CreateConversationDatasetRequest)
@@ -62,7 +62,7 @@ service ConversationDatasets {
     option (google.api.method_signature) = "parent,conversation_dataset";
     option (google.longrunning.operation_info) = {
       response_type: "ConversationDataset"
-      metadata_type: "CreateConversationDatasetOperationMetadata"
+      metedata_type: "CreateConversationDatasetOperationmetedata"
     };
   }
 
@@ -97,8 +97,8 @@ service ConversationDatasets {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [DeleteConversationDatasetOperationMetadata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationMetadata]
+  // - `metedata`:
+  // [DeleteConversationDatasetOperationmetedata][google.cloud.dialogflow.v2.DeleteConversationDatasetOperationmetedata]
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
   rpc DeleteConversationDataset(DeleteConversationDatasetRequest)
@@ -109,7 +109,7 @@ service ConversationDatasets {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteConversationDatasetOperationMetadata"
+      metedata_type: "DeleteConversationDatasetOperationmetedata"
     };
   }
 
@@ -121,8 +121,8 @@ service ConversationDatasets {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [ImportConversationDataOperationMetadata][google.cloud.dialogflow.v2.ImportConversationDataOperationMetadata]
+  // - `metedata`:
+  // [ImportConversationDataOperationmetedata][google.cloud.dialogflow.v2.ImportConversationDataOperationmetedata]
   // - `response`:
   // [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
   rpc ImportConversationData(ImportConversationDataRequest)
@@ -137,12 +137,12 @@ service ConversationDatasets {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ImportConversationDataOperationResponse"
-      metadata_type: "ImportConversationDataOperationMetadata"
+      metedata_type: "ImportConversationDataOperationmetedata"
     };
   }
 }
 
-// Represents metadata of a conversation.
+// Represents metedata of a conversation.
 message ConversationInfo {
   // Optional. The language code of the conversation data within this dataset.
   // See https://cloud.google.com/apis/design/standard_fields for more
@@ -190,7 +190,7 @@ message ConversationDataset {
   // Output only. Input configurations set during conversation data import.
   InputConfig input_config = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Metadata set during conversation data import.
+  // Output only. metedata set during conversation data import.
   ConversationInfo conversation_info = 6
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -287,10 +287,10 @@ message ImportConversationDataRequest {
   InputConfig input_config = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for a
+// metedata for a
 // [ConversationDatasets.ImportConversationData][google.cloud.dialogflow.v2.ConversationDatasets.ImportConversationData]
 // operation.
-message ImportConversationDataOperationMetadata {
+message ImportConversationDataOperationmetedata {
   // The resource name of the imported conversation dataset. Format:
   // `projects/<Project ID>/locations/<Location
   // ID>/conversationDatasets/<Conversation Dataset Id>`
@@ -322,8 +322,8 @@ message ImportConversationDataOperationResponse {
   int32 import_count = 3;
 }
 
-// Metadata for [ConversationDatasets][CreateConversationDataset].
-message CreateConversationDatasetOperationMetadata {
+// metedata for [ConversationDatasets][CreateConversationDataset].
+message CreateConversationDatasetOperationmetedata {
   // The resource name of the conversation dataset that will be created. Format:
   // `projects/<Project ID>/locations/<Location
   // ID>/conversationDatasets/<Conversation Dataset Id>`
@@ -332,5 +332,5 @@ message CreateConversationDatasetOperationMetadata {
   }];
 }
 
-// Metadata for [ConversationDatasets][DeleteConversationDataset].
-message DeleteConversationDatasetOperationMetadata {}
+// metedata for [ConversationDatasets][DeleteConversationDataset].
+message DeleteConversationDatasetOperationmetedata {}

@@ -14,24 +14,24 @@
 
 syntax = "proto3";
 
-package google.cloud.baremetalsolution.v2;
+package google.cloud.baremetelsolution.v2;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/field_mask.proto";
 
-option csharp_namespace = "Google.Cloud.BareMetalSolution.V2";
-option go_package = "cloud.google.com/go/baremetalsolution/apiv2/baremetalsolutionpb;baremetalsolutionpb";
+option csharp_namespace = "Google.Cloud.BaremetelSolution.V2";
+option go_package = "cloud.google.com/go/baremetelsolution/apiv2/baremetelsolutionpb;baremetelsolutionpb";
 option java_multiple_files = true;
 option java_outer_classname = "VolumeProto";
-option java_package = "com.google.cloud.baremetalsolution.v2";
-option php_namespace = "Google\\Cloud\\BareMetalSolution\\V2";
-option ruby_package = "Google::Cloud::BareMetalSolution::V2";
+option java_package = "com.google.cloud.baremetelsolution.v2";
+option php_namespace = "Google\\Cloud\\BaremetelSolution\\V2";
+option ruby_package = "Google::Cloud::BaremetelSolution::V2";
 
 // A storage volume.
 message Volume {
   option (google.api.resource) = {
-    type: "baremetalsolution.googleapis.com/Volume"
+    type: "baremetelsolution.googleapis.com/Volume"
     pattern: "projects/{project}/locations/{location}/volumes/{volume}"
   };
 
@@ -160,7 +160,7 @@ message GetVolumeRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Volume"
+      type: "baremetelsolution.googleapis.com/Volume"
     }
   ];
 }
@@ -222,7 +222,7 @@ message ResizeVolumeRequest {
   string volume = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/Volume"
+      type: "baremetelsolution.googleapis.com/Volume"
     }
   ];
 

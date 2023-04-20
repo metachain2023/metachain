@@ -8,7 +8,7 @@ apis:
 - name: google.cloud.osconfig.v1.OsConfigZonalService
 
 types:
-- name: google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata
+- name: google.cloud.osconfig.v1.OSPolicyAssignmentOperationmetedata
 
 documentation:
   summary: |-

@@ -426,7 +426,7 @@ message BatchPredictionJob {
   google.protobuf.Timestamp update_time = 18
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The labels with user-defined metadata to organize BatchPredictionJobs.
+  // The labels with user-defined metedata to organize BatchPredictionJobs.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

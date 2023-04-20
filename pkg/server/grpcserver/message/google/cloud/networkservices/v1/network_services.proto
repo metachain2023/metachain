@@ -64,7 +64,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,endpoint_policy,endpoint_policy_id";
     option (google.longrunning.operation_info) = {
       response_type: "EndpointPolicy"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -77,7 +77,7 @@ service NetworkServices {
     option (google.api.method_signature) = "endpoint_policy,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "EndpointPolicy"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -89,7 +89,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,gateway,gateway_id";
     option (google.longrunning.operation_info) = {
       response_type: "Gateway"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -131,7 +131,7 @@ service NetworkServices {
     option (google.api.method_signature) = "gateway,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Gateway"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -143,7 +143,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -172,7 +172,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,grpc_route,grpc_route_id";
     option (google.longrunning.operation_info) = {
       response_type: "GrpcRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -185,7 +185,7 @@ service NetworkServices {
     option (google.api.method_signature) = "grpc_route,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "GrpcRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -197,7 +197,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -226,7 +226,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,http_route,http_route_id";
     option (google.longrunning.operation_info) = {
       response_type: "HttpRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -239,7 +239,7 @@ service NetworkServices {
     option (google.api.method_signature) = "http_route,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "HttpRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -251,7 +251,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -280,7 +280,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,tcp_route,tcp_route_id";
     option (google.longrunning.operation_info) = {
       response_type: "TcpRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -293,7 +293,7 @@ service NetworkServices {
     option (google.api.method_signature) = "tcp_route,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "TcpRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -305,7 +305,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -334,7 +334,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,tls_route,tls_route_id";
     option (google.longrunning.operation_info) = {
       response_type: "TlsRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -347,7 +347,7 @@ service NetworkServices {
     option (google.api.method_signature) = "tls_route,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "TlsRoute"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -359,7 +359,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -388,7 +388,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,service_binding,service_binding_id";
     option (google.longrunning.operation_info) = {
       response_type: "ServiceBinding"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -400,7 +400,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -429,7 +429,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,mesh,mesh_id";
     option (google.longrunning.operation_info) = {
       response_type: "Mesh"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -442,7 +442,7 @@ service NetworkServices {
     option (google.api.method_signature) = "mesh,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Mesh"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 
@@ -454,7 +454,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1.Operationmetedata"
     };
   }
 }

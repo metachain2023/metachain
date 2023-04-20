@@ -68,7 +68,7 @@ message ResolveServiceRequest {
   // General `filter` string syntax:
   // `<field> <operator> <value> (<logical connector>)`
   //
-  // *   `<field>` can be `name`, `address`, `port`, or `metadata.<key>` for
+  // *   `<field>` can be `name`, `address`, `port`, or `metedata.<key>` for
   //     map field
   // *   `<operator>` can be `<`, `>`, `<=`, `>=`, `!=`, `=`, `:`. Of which `:`
   //     means `HAS`, and is roughly the same as `=`
@@ -77,9 +77,9 @@ message ResolveServiceRequest {
   //
   // Examples of valid filters:
   //
-  // *   `metadata.owner` returns endpoints that have a annotation with the key
-  //     `owner`, this is the same as `metadata:owner`
-  // *   `metadata.protocol=gRPC` returns endpoints that have key/value
+  // *   `metedata.owner` returns endpoints that have a annotation with the key
+  //     `owner`, this is the same as `metedata:owner`
+  // *   `metedata.protocol=gRPC` returns endpoints that have key/value
   //     `protocol=gRPC`
   // *   `address=192.108.1.105` returns endpoints that have this address
   // *   `port>8080` returns endpoints that have port number larger than 8080
@@ -87,7 +87,7 @@ message ResolveServiceRequest {
   // `name>projects/my-project/locations/us-east1/namespaces/my-namespace/services/my-service/endpoints/endpoint-c`
   //     returns endpoints that have name that is alphabetically later than the
   //     string, so "endpoint-e" is returned but "endpoint-a" is not
-  // *   `metadata.owner!=sd AND metadata.foo=bar` returns endpoints that have
+  // *   `metedata.owner!=sd AND metedata.foo=bar` returns endpoints that have
   //     `owner` in annotation key but value is not `sd` AND have key/value
   //      `foo=bar`
   // *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint

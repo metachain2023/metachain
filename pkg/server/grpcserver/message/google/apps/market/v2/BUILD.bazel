@@ -133,7 +133,7 @@ go_gapic_library(
     srcs = [":marketplace_proto_with_info"],
     grpc_service_config = "service_grpc_service_config.json",
     importpath = "google.golang.org/ccc/hosted/marketplace/v2;marketplace",
-    metadata = True,
+    metedata = True,
     rest_numeric_enums = True,
     service_yaml = "appsmarket_v2.yaml",
     deps = [
@@ -153,7 +153,7 @@ go_gapic_assembly_pkg(
     name = "gapi-cloud-hosted-marketplace-v2-go",
     deps = [
         ":marketplace_go_gapic",
-        ":marketplace_go_gapic_srcjar-metadata.srcjar",
+        ":marketplace_go_gapic_srcjar-metedata.srcjar",
         ":marketplace_go_gapic_srcjar-test.srcjar",
         ":marketplace_go_proto",
     ],
@@ -222,7 +222,7 @@ nodejs_gapic_library(
     name = "marketplace_nodejs_gapic",
     package_name = "@google-cloud/marketplace",
     src = ":marketplace_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = "service_grpc_service_config.json",
     package = "ccc.hosted.marketplace.v2",
     rest_numeric_enums = True,

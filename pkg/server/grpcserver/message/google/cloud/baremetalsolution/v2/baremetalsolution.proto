@@ -14,37 +14,37 @@
 
 syntax = "proto3";
 
-package google.cloud.baremetalsolution.v2;
+package google.cloud.baremetelsolution.v2;
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
-import "google/cloud/baremetalsolution/v2/instance.proto";
-import "google/cloud/baremetalsolution/v2/lun.proto";
-import "google/cloud/baremetalsolution/v2/network.proto";
-import "google/cloud/baremetalsolution/v2/nfs_share.proto";
-import "google/cloud/baremetalsolution/v2/volume.proto";
+import "google/cloud/baremetelsolution/v2/instance.proto";
+import "google/cloud/baremetelsolution/v2/lun.proto";
+import "google/cloud/baremetelsolution/v2/network.proto";
+import "google/cloud/baremetelsolution/v2/nfs_share.proto";
+import "google/cloud/baremetelsolution/v2/volume.proto";
 import "google/longrunning/operations.proto";
 import "google/protobuf/timestamp.proto";
 
-option csharp_namespace = "Google.Cloud.BareMetalSolution.V2";
-option go_package = "cloud.google.com/go/baremetalsolution/apiv2/baremetalsolutionpb;baremetalsolutionpb";
+option csharp_namespace = "Google.Cloud.BaremetelSolution.V2";
+option go_package = "cloud.google.com/go/baremetelsolution/apiv2/baremetelsolutionpb;baremetelsolutionpb";
 option java_multiple_files = true;
-option java_outer_classname = "BareMetalSolutionProto";
-option java_package = "com.google.cloud.baremetalsolution.v2";
-option php_namespace = "Google\\Cloud\\BareMetalSolution\\V2";
-option ruby_package = "Google::Cloud::BareMetalSolution::V2";
+option java_outer_classname = "BaremetelSolutionProto";
+option java_package = "com.google.cloud.baremetelsolution.v2";
+option php_namespace = "Google\\Cloud\\BaremetelSolution\\V2";
+option ruby_package = "Google::Cloud::BaremetelSolution::V2";
 
-// Performs management operations on Bare Metal Solution servers.
+// Performs management operations on Bare metel Solution servers.
 //
-// The `baremetalsolution.googleapis.com` service provides management
-// capabilities for Bare Metal Solution servers. To access the API methods, you
-// must assign Bare Metal Solution IAM roles containing the desired permissions
+// The `baremetelsolution.googleapis.com` service provides management
+// capabilities for Bare metel Solution servers. To access the API methods, you
+// must assign Bare metel Solution IAM roles containing the desired permissions
 // to your staff in your Google Cloud project. You must also enable the Bare
-// Metal Solution API. Once enabled, the methods act
-// upon specific servers in your Bare Metal Solution environment.
-service BareMetalSolution {
-  option (google.api.default_host) = "baremetalsolution.googleapis.com";
+// metel Solution API. Once enabled, the methods act
+// upon specific servers in your Bare metel Solution environment.
+service BaremetelSolution {
+  option (google.api.default_host) = "baremetelsolution.googleapis.com";
   option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
 
   // List servers in a given project and location.
@@ -72,7 +72,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "instance,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -86,7 +86,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "ResetInstanceResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -99,7 +99,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "StartInstanceResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -112,7 +112,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "StopInstanceResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -125,7 +125,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "instance,lun";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -154,7 +154,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "volume,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Volume"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -167,7 +167,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "volume,size_gib";
     option (google.longrunning.operation_info) = {
       response_type: "Volume"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -205,7 +205,7 @@ service BareMetalSolution {
     option (google.api.method_signature) = "network,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Network"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -250,13 +250,13 @@ service BareMetalSolution {
     option (google.api.method_signature) = "nfs_share,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "NfsShare"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
 
-// Represents the metadata from a long-running operation.
-message OperationMetadata {
+// Represents the metedata from a long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

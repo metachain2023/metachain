@@ -1187,7 +1187,7 @@
       "method" : "SetMachineType"
     }, {
       "service" : "google.cloud.compute.v1.Instances",
-      "method" : "SetMetadata"
+      "method" : "Setmetedata"
     }, {
       "service" : "google.cloud.compute.v1.Instances",
       "method" : "SetMinCpuPlatform"
@@ -1454,7 +1454,7 @@
       "method" : "MoveInstance"
     }, {
       "service" : "google.cloud.compute.v1.Projects",
-      "method" : "SetCommonInstanceMetadata"
+      "method" : "SetCommonInstancemetedata"
     }, {
       "service" : "google.cloud.compute.v1.Projects",
       "method" : "SetDefaultNetworkTier"

@@ -60,7 +60,7 @@ service Connectors {
     option (google.api.method_signature) = "parent,connection,connection_id";
     option (google.longrunning.operation_info) = {
       response_type: "Connection"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -73,7 +73,7 @@ service Connectors {
     option (google.api.method_signature) = "connection,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Connection"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -85,7 +85,7 @@ service Connectors {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -137,11 +137,11 @@ service Connectors {
     option (google.api.method_signature) = "name";
   }
 
-  // Gets schema metadata of a connection.
-  // SchemaMetadata is a singleton resource for each connection.
-  rpc GetConnectionSchemaMetadata(GetConnectionSchemaMetadataRequest) returns (ConnectionSchemaMetadata) {
+  // Gets schema metedata of a connection.
+  // Schemametedata is a singleton resource for each connection.
+  rpc GetConnectionSchemametedata(GetConnectionSchemametedataRequest) returns (ConnectionSchemametedata) {
     option (google.api.http) = {
-      get: "/v1/{name=projects/*/locations/*/connections/*/connectionSchemaMetadata}"
+      get: "/v1/{name=projects/*/locations/*/connections/*/connectionSchemametedata}"
     };
     option (google.api.method_signature) = "name";
   }

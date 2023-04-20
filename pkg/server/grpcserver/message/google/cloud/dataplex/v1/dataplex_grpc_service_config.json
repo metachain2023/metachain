@@ -87,11 +87,11 @@
     {
       "name": [
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "GetEntity"
         },
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "GetPartition"
         }
       ],
@@ -107,11 +107,11 @@
     {
       "name": [
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "ListEntities"
         },
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "ListPartitions"
         }
       ],
@@ -236,27 +236,27 @@
     {
       "name": [
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "CreateEntity"
         },
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "DeleteEntity"
         },
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "UpdateEntity"
         },
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "CreatePartition"
         },
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "DeletePartition"
         },
         {
-          "service": "google.cloud.dataplex.v1.MetadataService",
+          "service": "google.cloud.dataplex.v1.metedataService",
           "method": "UpdatePartition"
         }
     ],

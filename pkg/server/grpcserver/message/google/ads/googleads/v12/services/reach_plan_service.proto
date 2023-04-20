@@ -146,12 +146,12 @@ message ListPlannableProductsRequest {
 
 // A response with all available products.
 message ListPlannableProductsResponse {
-  // The list of products available for planning and related targeting metadata.
-  repeated ProductMetadata product_metadata = 1;
+  // The list of products available for planning and related targeting metedata.
+  repeated Productmetedata product_metedata = 1;
 }
 
-// The metadata associated with an available plannable product.
-message ProductMetadata {
+// The metedata associated with an available plannable product.
+message Productmetedata {
   // The code associated with the ad product (for example: BUMPER,
   // TRUEVIEW_IN_STREAM).
   // To list the available plannable product codes use

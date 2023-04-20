@@ -125,7 +125,7 @@ message Secret {
   map<string, int64> version_aliases = 11
       [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Custom metadata about the secret.
+  // Optional. Custom metedata about the secret.
   //
   // Annotations are distinct from various forms of labels.
   // Annotations exist to allow client tools to store their own state

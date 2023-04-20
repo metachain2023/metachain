@@ -7,7 +7,7 @@ apis:
 - name: google.partner.aistreams.v1alpha1.AIStreams
 
 types:
-- name: google.partner.aistreams.v1alpha1.OperationMetadata
+- name: google.partner.aistreams.v1alpha1.Operationmetedata
 
 documentation:
   rules:

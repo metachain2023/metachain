@@ -50,7 +50,7 @@ message ExtendedSourceContext {
   // Any source context.
   SourceContext context = 1;
 
-  // Labels with user defined metadata.
+  // Labels with user defined metedata.
   map<string, string> labels = 2;
 }
 

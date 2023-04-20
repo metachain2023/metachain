@@ -79,7 +79,7 @@ message MetricDescriptor {
   }
 
   // Additional annotations that can be used to guide the usage of a metric.
-  message MetricDescriptorMetadata {
+  message MetricDescriptormetedata {
     // Deprecated. Must use the [MetricDescriptor.launch_stage][google.api.MetricDescriptor.launch_stage] instead.
     LaunchStage launch_stage = 1 [deprecated = true];
 
@@ -237,8 +237,8 @@ message MetricDescriptor {
   // associated with user-visible concepts, such as Quota.
   string display_name = 7;
 
-  // Optional. Metadata which can be used to guide usage of the metric.
-  MetricDescriptorMetadata metadata = 10;
+  // Optional. metedata which can be used to guide usage of the metric.
+  MetricDescriptormetedata metedata = 10;
 
   // Optional. The launch stage of the metric definition.
   LaunchStage launch_stage = 12;

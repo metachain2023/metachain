@@ -1,5 +1,5 @@
 # This build file includes a target for the Ruby wrapper library for
-# google-cloud-bare_metal_solution.
+# google-cloud-bare_metel_solution.
 
 # This is an API workspace, having public visibility by default makes perfect sense.
 package(default_visibility = ["//visibility:public"])
@@ -13,27 +13,27 @@ load(
     "ruby_gapic_assembly_pkg",
 )
 
-# Generates a Ruby wrapper client for baremetalsolution.
+# Generates a Ruby wrapper client for baremetelsolution.
 # Ruby wrapper clients are versionless, but are generated from source protos
 # for a particular service version, v2 in this case.
 ruby_cloud_gapic_library(
-    name = "baremetalsolution_ruby_wrapper",
-    srcs = ["//google/cloud/baremetalsolution/v2:baremetalsolution_proto_with_info"],
+    name = "baremetelsolution_ruby_wrapper",
+    srcs = ["//google/cloud/baremetelsolution/v2:baremetelsolution_proto_with_info"],
     extra_protoc_parameters = [
-        "ruby-cloud-api-id=baremetalsolution.googleapis.com",
-        "ruby-cloud-api-shortname=baremetalsolution",
-        "ruby-cloud-gem-name=google-cloud-bare_metal_solution",
-        "ruby-cloud-product-url=https://cloud.google.com/bare-metal/",
+        "ruby-cloud-api-id=baremetelsolution.googleapis.com",
+        "ruby-cloud-api-shortname=baremetelsolution",
+        "ruby-cloud-gem-name=google-cloud-bare_metel_solution",
+        "ruby-cloud-product-url=https://cloud.google.com/bare-metel/",
         "ruby-cloud-wrapper-of=v2:0.0",
     ],
-    ruby_cloud_description = "Bare Metal Solution is a managed solution that provides purpose-built HPE or Atos bare-metal servers in regional extensions that are connected to Google Cloud by a managed, high-performance connection with a low-latency network fabric.",
-    ruby_cloud_title = "Bare Metal Solution",
+    ruby_cloud_description = "Bare metel Solution is a managed solution that provides purpose-built HPE or Atos bare-metel servers in regional extensions that are connected to Google Cloud by a managed, high-performance connection with a low-latency network fabric.",
+    ruby_cloud_title = "Bare metel Solution",
 )
 
 # Open Source package.
 ruby_gapic_assembly_pkg(
-    name = "google-cloud-baremetalsolution-ruby",
+    name = "google-cloud-baremetelsolution-ruby",
     deps = [
-        ":baremetalsolution_ruby_wrapper",
+        ":baremetelsolution_ruby_wrapper",
     ],
 )

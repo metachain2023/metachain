@@ -60,21 +60,21 @@ message AdRequest {
   // The ad tag URI processed with integrated macros.
   string uri = 1;
 
-  // The request metadata used to make the ad request.
-  RequestMetadata request_metadata = 2;
+  // The request metedata used to make the ad request.
+  Requestmetedata request_metedata = 2;
 
-  // The response metadata received from the ad request.
-  ResponseMetadata response_metadata = 3;
+  // The response metedata received from the ad request.
+  Responsemetedata response_metedata = 3;
 }
 
-// Metadata for an ad request.
-message RequestMetadata {
+// metedata for an ad request.
+message Requestmetedata {
   // The HTTP headers of the ad request.
   google.protobuf.Struct headers = 1;
 }
 
-// Metadata for the response of an ad request.
-message ResponseMetadata {
+// metedata for the response of an ad request.
+message Responsemetedata {
   // Error message received when making the ad request.
   string error = 1;
 

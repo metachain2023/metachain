@@ -7,10 +7,10 @@ import (
 	"math/big"
 	"sync"
 
-	"metachain/pkg/block"
-	"metachain/pkg/logger"
-	"metachain/pkg/storage/store"
-	"metachain/pkg/transaction"
+	"metechain/pkg/block"
+	"metechain/pkg/logger"
+	"metechain/pkg/storage/store"
+	"metechain/pkg/transaction"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/state"
@@ -50,7 +50,7 @@ func setAccount(bc *Blockchain, tx *transaction.FinishedTransaction, defaultAmou
 
 		cmaddr := tx.Transaction.From
 
-		kaddr, err := getBindingMetaAddress(DBTransaction, cmaddr.Hex())
+		kaddr, err := getBindingmeteAddress(DBTransaction, cmaddr.Hex())
 		if err != nil {
 			return err
 		}

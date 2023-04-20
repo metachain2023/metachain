@@ -14,24 +14,24 @@
 
 syntax = "proto3";
 
-package google.cloud.baremetalsolution.v2;
+package google.cloud.baremetelsolution.v2;
 
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/field_mask.proto";
 
-option csharp_namespace = "Google.Cloud.BareMetalSolution.V2";
-option go_package = "cloud.google.com/go/baremetalsolution/apiv2/baremetalsolutionpb;baremetalsolutionpb";
+option csharp_namespace = "Google.Cloud.BaremetelSolution.V2";
+option go_package = "cloud.google.com/go/baremetelsolution/apiv2/baremetelsolutionpb;baremetelsolutionpb";
 option java_multiple_files = true;
 option java_outer_classname = "NfsShareProto";
-option java_package = "com.google.cloud.baremetalsolution.v2";
-option php_namespace = "Google\\Cloud\\BareMetalSolution\\V2";
-option ruby_package = "Google::Cloud::BareMetalSolution::V2";
+option java_package = "com.google.cloud.baremetelsolution.v2";
+option php_namespace = "Google\\Cloud\\BaremetelSolution\\V2";
+option ruby_package = "Google::Cloud::BaremetelSolution::V2";
 
 // An NFS share.
 message NfsShare {
   option (google.api.resource) = {
-    type: "baremetalsolution.googleapis.com/NFSShare"
+    type: "baremetelsolution.googleapis.com/NFSShare"
     pattern: "projects/{project}/locations/{location}/nfsShares/{nfs_share}"
   };
 
@@ -60,7 +60,7 @@ message NfsShare {
   message AllowedClient {
     // The network the access point sits on.
     string network = 1 [(google.api.resource_reference) = {
-                          type: "baremetalsolution.googleapis.com/Network"
+                          type: "baremetelsolution.googleapis.com/Network"
                         }];
 
     // The IP address of the share on this network.
@@ -95,7 +95,7 @@ message NfsShare {
 
   // The volume containing the share.
   string volume = 4 [(google.api.resource_reference) = {
-                       type: "baremetalsolution.googleapis.com/Volume"
+                       type: "baremetelsolution.googleapis.com/Volume"
                      }];
 
   // List of allowed access points.
@@ -111,7 +111,7 @@ message GetNfsShareRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "baremetalsolution.googleapis.com/NFSShare"
+      type: "baremetelsolution.googleapis.com/NFSShare"
     }
   ];
 }

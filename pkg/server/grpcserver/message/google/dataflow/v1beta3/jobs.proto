@@ -270,9 +270,9 @@ message Job {
   repeated ExecutionStageState stage_states = 20;
 
   // This field is populated by the Dataflow service to support filtering jobs
-  // by the metadata values provided here. Populated for ListJobs and all GetJob
+  // by the metedata values provided here. Populated for ListJobs and all GetJob
   // views SUMMARY and higher.
-  JobMetadata job_metadata = 21;
+  Jobmetedata job_metedata = 21;
 
   // The timestamp when the job was started (transitioned to JOB_STATE_PENDING).
   // Flexible resource scheduling jobs are started with some delay after job
@@ -291,7 +291,7 @@ message Job {
   bool satisfies_pzs = 25;
 }
 
-// Metadata for a Datastore connector used by the job.
+// metedata for a Datastore connector used by the job.
 message DatastoreIODetails {
   // Namespace used in the connection.
   string namespace = 1;
@@ -300,7 +300,7 @@ message DatastoreIODetails {
   string project_id = 2;
 }
 
-// Metadata for a Pub/Sub connector used by the job.
+// metedata for a Pub/Sub connector used by the job.
 message PubSubIODetails {
   // Topic accessed in the connection.
   string topic = 1;
@@ -309,13 +309,13 @@ message PubSubIODetails {
   string subscription = 2;
 }
 
-// Metadata for a File connector used by the job.
+// metedata for a File connector used by the job.
 message FileIODetails {
   // File Pattern used to access files by the connector.
   string file_pattern = 1;
 }
 
-// Metadata for a Cloud Bigtable connector used by the job.
+// metedata for a Cloud Bigtable connector used by the job.
 message BigTableIODetails {
   // ProjectId accessed in the connection.
   string project_id = 1;
@@ -327,7 +327,7 @@ message BigTableIODetails {
   string table_id = 3;
 }
 
-// Metadata for a BigQuery connector used by the job.
+// metedata for a BigQuery connector used by the job.
 message BigQueryIODetails {
   // Table accessed in the connection.
   string table = 1;
@@ -342,7 +342,7 @@ message BigQueryIODetails {
   string query = 4;
 }
 
-// Metadata for a Spanner connector used by the job.
+// metedata for a Spanner connector used by the job.
 message SpannerIODetails {
   // ProjectId accessed in the connection.
   string project_id = 1;
@@ -385,9 +385,9 @@ message SdkVersion {
   SdkSupportStatus sdk_support_status = 3;
 }
 
-// Metadata available primarily for filtering jobs. Will be included in the
+// metedata available primarily for filtering jobs. Will be included in the
 // ListJob response and Job SUMMARY view.
-message JobMetadata {
+message Jobmetedata {
   // The SDK version used to run the job.
   SdkVersion sdk_version = 1;
 

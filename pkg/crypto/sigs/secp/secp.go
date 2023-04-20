@@ -5,8 +5,8 @@ import (
 	"crypto/ecdsa"
 	"fmt"
 
-	localcyrpto "metachain/pkg/crypto"
-	"metachain/pkg/crypto/sigs"
+	localcyrpto "metechain/pkg/crypto"
+	"metechain/pkg/crypto/sigs"
 
 	"github.com/ethereum/go-ethereum/crypto"
 )

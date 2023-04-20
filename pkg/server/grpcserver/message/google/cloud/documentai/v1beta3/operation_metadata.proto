@@ -21,13 +21,13 @@ import "google/protobuf/timestamp.proto";
 option csharp_namespace = "Google.Cloud.DocumentAI.V1Beta3";
 option go_package = "cloud.google.com/go/documentai/apiv1beta3/documentaipb;documentaipb";
 option java_multiple_files = true;
-option java_outer_classname = "OperationMetadataProto";
+option java_outer_classname = "OperationmetedataProto";
 option java_package = "com.google.cloud.documentai.v1beta3";
 option php_namespace = "Google\\Cloud\\DocumentAI\\V1beta3";
 option ruby_package = "Google::Cloud::DocumentAI::V1beta3";
 
-// The common metadata for long running operations.
-message CommonOperationMetadata {
+// The common metedata for long running operations.
+message CommonOperationmetedata {
   // State of the longrunning operation.
   enum State {
     // Unspecified state.

@@ -101,7 +101,7 @@ service ProductService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.ImportProductsResponse"
-      metadata_type: "google.cloud.retail.v2beta.ImportMetadata"
+      metedata_type: "google.cloud.retail.v2beta.Importmetedata"
     };
   }
 
@@ -165,7 +165,7 @@ service ProductService {
     option (google.api.method_signature) = "inventory,set_mask";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.SetInventoryResponse"
-      metadata_type: "google.cloud.retail.v2beta.SetInventoryMetadata"
+      metedata_type: "google.cloud.retail.v2beta.SetInventorymetedata"
     };
   }
 
@@ -202,7 +202,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.AddFulfillmentPlacesResponse"
-      metadata_type: "google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata"
+      metedata_type: "google.cloud.retail.v2beta.AddFulfillmentPlacesmetedata"
     };
   }
 
@@ -239,7 +239,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse"
-      metadata_type: "google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata"
+      metedata_type: "google.cloud.retail.v2beta.RemoveFulfillmentPlacesmetedata"
     };
   }
 
@@ -283,7 +283,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.AddLocalInventoriesResponse"
-      metadata_type: "google.cloud.retail.v2beta.AddLocalInventoriesMetadata"
+      metedata_type: "google.cloud.retail.v2beta.AddLocalInventoriesmetedata"
     };
   }
 
@@ -325,7 +325,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2beta.RemoveLocalInventoriesResponse"
-      metadata_type: "google.cloud.retail.v2beta.RemoveLocalInventoriesMetadata"
+      metedata_type: "google.cloud.retail.v2beta.RemoveLocalInventoriesmetedata"
     };
   }
 }
@@ -639,11 +639,11 @@ message SetInventoryRequest {
   bool allow_missing = 4;
 }
 
-// Metadata related to the progress of the SetInventory operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the SetInventory operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.SetInventory][google.cloud.retail.v2beta.ProductService.SetInventory]
 // method.
-message SetInventoryMetadata {}
+message SetInventorymetedata {}
 
 // Response of the SetInventoryRequest.  Currently empty because
 // there is no meaningful response populated from the
@@ -720,11 +720,11 @@ message AddFulfillmentPlacesRequest {
   bool allow_missing = 5;
 }
 
-// Metadata related to the progress of the AddFulfillmentPlaces operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the AddFulfillmentPlaces operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces]
 // method.
-message AddFulfillmentPlacesMetadata {}
+message AddFulfillmentPlacesmetedata {}
 
 // Response of the AddFulfillmentPlacesRequest.  Currently empty because
 // there is no meaningful response populated from the
@@ -785,11 +785,11 @@ message AddLocalInventoriesRequest {
   bool allow_missing = 6;
 }
 
-// Metadata related to the progress of the AddLocalInventories operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the AddLocalInventories operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
 // method.
-message AddLocalInventoriesMetadata {}
+message AddLocalInventoriesmetedata {}
 
 // Response of the
 // [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
@@ -833,11 +833,11 @@ message RemoveLocalInventoriesRequest {
   bool allow_missing = 3;
 }
 
-// Metadata related to the progress of the RemoveLocalInventories operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the RemoveLocalInventories operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
 // method.
-message RemoveLocalInventoriesMetadata {}
+message RemoveLocalInventoriesmetedata {}
 
 // Response of the
 // [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
@@ -911,11 +911,11 @@ message RemoveFulfillmentPlacesRequest {
   bool allow_missing = 5;
 }
 
-// Metadata related to the progress of the RemoveFulfillmentPlaces operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the RemoveFulfillmentPlaces operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
 // method.
-message RemoveFulfillmentPlacesMetadata {}
+message RemoveFulfillmentPlacesmetedata {}
 
 // Response of the RemoveFulfillmentPlacesRequest. Currently empty because there
 // is no meaningful response populated from the

@@ -116,7 +116,7 @@ message Device {
   // DeviceRegistry.log_level will be used.
   LogLevel log_level = 21;
 
-  // The metadata key-value pairs assigned to the device. This metadata is not
+  // The metedata key-value pairs assigned to the device. This metedata is not
   // interpreted or indexed by Cloud IoT Core. It can be used to add contextual
   // information for the device.
   //
@@ -128,7 +128,7 @@ message Device {
   //
   // The total size of all keys and values must be less than 256 KB, and the
   // maximum number of key-value pairs is 500.
-  map<string, string> metadata = 17;
+  map<string, string> metedata = 17;
 
   // Gateway-related configuration and state.
   GatewayConfig gateway_config = 24;

@@ -10,7 +10,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.beyondcorp.appgateways.v1.AppGatewayOperationMetadata
+- name: google.cloud.beyondcorp.appgateways.v1.AppGatewayOperationmetedata
 
 documentation:
   summary: |-

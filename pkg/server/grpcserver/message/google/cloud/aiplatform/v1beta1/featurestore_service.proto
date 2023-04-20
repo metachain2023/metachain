@@ -57,7 +57,7 @@ service FeaturestoreService {
         "parent,featurestore,featurestore_id";
     option (google.longrunning.operation_info) = {
       response_type: "Featurestore"
-      metadata_type: "CreateFeaturestoreOperationMetadata"
+      metedata_type: "CreateFeaturestoreOperationmetedata"
     };
   }
 
@@ -88,7 +88,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "featurestore,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Featurestore"
-      metadata_type: "UpdateFeaturestoreOperationMetadata"
+      metedata_type: "UpdateFeaturestoreOperationmetedata"
     };
   }
 
@@ -103,7 +103,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "name,force";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "parent,entity_type,entity_type_id";
     option (google.longrunning.operation_info) = {
       response_type: "EntityType"
-      metadata_type: "CreateEntityTypeOperationMetadata"
+      metedata_type: "CreateEntityTypeOperationmetedata"
     };
   }
 
@@ -159,7 +159,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "name,force";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -174,7 +174,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "parent,feature,feature_id";
     option (google.longrunning.operation_info) = {
       response_type: "Feature"
-      metadata_type: "CreateFeatureOperationMetadata"
+      metedata_type: "CreateFeatureOperationmetedata"
     };
   }
 
@@ -188,7 +188,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "parent,requests";
     option (google.longrunning.operation_info) = {
       response_type: "BatchCreateFeaturesResponse"
-      metadata_type: "BatchCreateFeaturesOperationMetadata"
+      metedata_type: "BatchCreateFeaturesOperationmetedata"
     };
   }
 
@@ -226,7 +226,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -246,7 +246,7 @@ service FeaturestoreService {
   //  - Source data for import contains multiple distinct Feature values for
   //    the same entity ID and timestamp.
   //  - Source is modified during an import. This includes adding, updating, or
-  //  removing source data and/or metadata. Examples of updating metadata
+  //  removing source data and/or metedata. Examples of updating metedata
   //  include but are not limited to changing storage location, storage class,
   //  or retention policy.
   //  - Online serving cluster is under-provisioned.
@@ -259,7 +259,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "entity_type";
     option (google.longrunning.operation_info) = {
       response_type: "ImportFeatureValuesResponse"
-      metadata_type: "ImportFeatureValuesOperationMetadata"
+      metedata_type: "ImportFeatureValuesOperationmetedata"
     };
   }
 
@@ -278,7 +278,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "featurestore";
     option (google.longrunning.operation_info) = {
       response_type: "BatchReadFeatureValuesResponse"
-      metadata_type: "BatchReadFeatureValuesOperationMetadata"
+      metedata_type: "BatchReadFeatureValuesOperationmetedata"
     };
   }
 
@@ -292,7 +292,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "entity_type";
     option (google.longrunning.operation_info) = {
       response_type: "ExportFeatureValuesResponse"
-      metadata_type: "ExportFeatureValuesOperationMetadata"
+      metedata_type: "ExportFeatureValuesOperationmetedata"
     };
   }
 
@@ -315,7 +315,7 @@ service FeaturestoreService {
     option (google.api.method_signature) = "entity_type";
     option (google.longrunning.operation_info) = {
       response_type: "DeleteFeatureValuesResponse"
-      metadata_type: "DeleteFeatureValuesOperationMetadata"
+      metedata_type: "DeleteFeatureValuesOperationmetedata"
     };
   }
 
@@ -1255,21 +1255,21 @@ message DeleteFeatureRequest {
 }
 
 // Details of operations that perform create Featurestore.
-message CreateFeaturestoreOperationMetadata {
-  // Operation metadata for Featurestore.
-  GenericOperationMetadata generic_metadata = 1;
+message CreateFeaturestoreOperationmetedata {
+  // Operation metedata for Featurestore.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that perform update Featurestore.
-message UpdateFeaturestoreOperationMetadata {
-  // Operation metadata for Featurestore.
-  GenericOperationMetadata generic_metadata = 1;
+message UpdateFeaturestoreOperationmetedata {
+  // Operation metedata for Featurestore.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that perform import Feature values.
-message ImportFeatureValuesOperationMetadata {
-  // Operation metadata for Featurestore import Feature values.
-  GenericOperationMetadata generic_metadata = 1;
+message ImportFeatureValuesOperationmetedata {
+  // Operation metedata for Featurestore import Feature values.
+  GenericOperationmetedata generic_metedata = 1;
 
   // Number of entities that have been imported by the operation.
   int64 imported_entity_count = 2;
@@ -1293,39 +1293,39 @@ message ImportFeatureValuesOperationMetadata {
 }
 
 // Details of operations that exports Features values.
-message ExportFeatureValuesOperationMetadata {
-  // Operation metadata for Featurestore export Feature values.
-  GenericOperationMetadata generic_metadata = 1;
+message ExportFeatureValuesOperationmetedata {
+  // Operation metedata for Featurestore export Feature values.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that batch reads Feature values.
-message BatchReadFeatureValuesOperationMetadata {
-  // Operation metadata for Featurestore batch read Features values.
-  GenericOperationMetadata generic_metadata = 1;
+message BatchReadFeatureValuesOperationmetedata {
+  // Operation metedata for Featurestore batch read Features values.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that delete Feature values.
-message DeleteFeatureValuesOperationMetadata {
-  // Operation metadata for Featurestore delete Features values.
-  GenericOperationMetadata generic_metadata = 1;
+message DeleteFeatureValuesOperationmetedata {
+  // Operation metedata for Featurestore delete Features values.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that perform create EntityType.
-message CreateEntityTypeOperationMetadata {
-  // Operation metadata for EntityType.
-  GenericOperationMetadata generic_metadata = 1;
+message CreateEntityTypeOperationmetedata {
+  // Operation metedata for EntityType.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that perform create Feature.
-message CreateFeatureOperationMetadata {
-  // Operation metadata for Feature.
-  GenericOperationMetadata generic_metadata = 1;
+message CreateFeatureOperationmetedata {
+  // Operation metedata for Feature.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Details of operations that perform batch create Features.
-message BatchCreateFeaturesOperationMetadata {
-  // Operation metadata for Feature.
-  GenericOperationMetadata generic_metadata = 1;
+message BatchCreateFeaturesOperationmetedata {
+  // Operation metedata for Feature.
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for

@@ -30,7 +30,7 @@ option objc_class_prefix = "RETAIL";
 option php_namespace = "Google\\Cloud\\Retail\\V2beta";
 option ruby_package = "Google::Cloud::Retail::V2beta";
 
-// Configures metadata that is used to generate serving time results (e.g.
+// Configures metedata that is used to generate serving time results (e.g.
 // search results or recommendation predictions).
 message ServingConfig {
   option (google.api.resource) = {

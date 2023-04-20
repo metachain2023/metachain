@@ -97,7 +97,7 @@ service GkeHub {
     option (google.api.method_signature) = "parent,resource,membership_id";
     option (google.longrunning.operation_info) = {
       response_type: "Membership"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -110,7 +110,7 @@ service GkeHub {
     option (google.api.method_signature) = "parent,resource,feature_id";
     option (google.longrunning.operation_info) = {
       response_type: "Feature"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -126,7 +126,7 @@ service GkeHub {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -138,7 +138,7 @@ service GkeHub {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -151,7 +151,7 @@ service GkeHub {
     option (google.api.method_signature) = "name,resource,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Membership"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -164,7 +164,7 @@ service GkeHub {
     option (google.api.method_signature) = "name,resource,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Feature"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -415,15 +415,15 @@ message GenerateConnectManifestResponse {
 // Agent deployment.
 message ConnectAgentResource {
   // Kubernetes type of the resource.
-  TypeMeta type = 1;
+  Typemete type = 1;
 
   // YAML manifest of the resource.
   string manifest = 2;
 }
 
-// TypeMeta is the type information needed for content unmarshalling of
+// Typemete is the type information needed for content unmarshalling of
 // Kubernetes resources in the manifest.
-message TypeMeta {
+message Typemete {
   // Kind of the resource (e.g. Deployment).
   string kind = 1;
 
@@ -598,8 +598,8 @@ message UpdateFeatureRequest {
   string request_id = 4;
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

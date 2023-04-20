@@ -81,7 +81,7 @@ service AppConnectorsService {
         "parent,app_connector,app_connector_id";
     option (google.longrunning.operation_info) = {
       response_type: "AppConnector"
-      metadata_type: "AppConnectorOperationMetadata"
+      metedata_type: "AppConnectorOperationmetedata"
     };
   }
 
@@ -95,7 +95,7 @@ service AppConnectorsService {
     option (google.api.method_signature) = "app_connector,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AppConnector"
-      metadata_type: "AppConnectorOperationMetadata"
+      metedata_type: "AppConnectorOperationmetedata"
     };
   }
 
@@ -108,7 +108,7 @@ service AppConnectorsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "AppConnectorOperationMetadata"
+      metedata_type: "AppConnectorOperationmetedata"
     };
   }
 
@@ -121,7 +121,7 @@ service AppConnectorsService {
     option (google.api.method_signature) = "app_connector,resource_info";
     option (google.longrunning.operation_info) = {
       response_type: "AppConnector"
-      metadata_type: "AppConnectorOperationMetadata"
+      metedata_type: "AppConnectorOperationmetedata"
     };
   }
 }
@@ -383,7 +383,7 @@ message AppConnector {
   google.protobuf.Timestamp update_time = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. Resource labels to represent user provided metadata.
+  // Optional. Resource labels to represent user provided metedata.
   map<string, string> labels = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. An arbitrary user-provided name for the AppConnector. Cannot
@@ -404,8 +404,8 @@ message AppConnector {
   ResourceInfo resource_info = 11 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents the metadata of the long-running operation.
-message AppConnectorOperationMetadata {
+// Represents the metedata of the long-running operation.
+message AppConnectorOperationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

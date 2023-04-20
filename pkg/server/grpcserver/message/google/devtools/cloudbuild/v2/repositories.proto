@@ -55,7 +55,7 @@ service RepositoryManager {
     option (google.api.method_signature) = "parent,connection,connection_id";
     option (google.longrunning.operation_info) = {
       response_type: "Connection"
-      metadata_type: "google.devtools.cloudbuild.v2.OperationMetadata"
+      metedata_type: "google.devtools.cloudbuild.v2.Operationmetedata"
     };
   }
 
@@ -86,7 +86,7 @@ service RepositoryManager {
     option (google.api.method_signature) = "connection,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Connection"
-      metadata_type: "google.devtools.cloudbuild.v2.OperationMetadata"
+      metedata_type: "google.devtools.cloudbuild.v2.Operationmetedata"
     };
   }
 
@@ -99,7 +99,7 @@ service RepositoryManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.devtools.cloudbuild.v2.OperationMetadata"
+      metedata_type: "google.devtools.cloudbuild.v2.Operationmetedata"
     };
   }
 
@@ -113,7 +113,7 @@ service RepositoryManager {
     option (google.api.method_signature) = "parent,repository,repository_id";
     option (google.longrunning.operation_info) = {
       response_type: "Repository"
-      metadata_type: "google.devtools.cloudbuild.v2.OperationMetadata"
+      metedata_type: "google.devtools.cloudbuild.v2.Operationmetedata"
     };
   }
 
@@ -127,7 +127,7 @@ service RepositoryManager {
     option (google.api.method_signature) = "parent,requests";
     option (google.longrunning.operation_info) = {
       response_type: "BatchCreateRepositoriesResponse"
-      metadata_type: "google.devtools.cloudbuild.v2.OperationMetadata"
+      metedata_type: "google.devtools.cloudbuild.v2.Operationmetedata"
     };
   }
 
@@ -157,7 +157,7 @@ service RepositoryManager {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.devtools.cloudbuild.v2.OperationMetadata"
+      metedata_type: "google.devtools.cloudbuild.v2.Operationmetedata"
     };
   }
 
@@ -409,7 +409,7 @@ message Repository {
 }
 
 // Represents an OAuth token of the account that authorized the Connection,
-// and associated metadata.
+// and associated metedata.
 message OAuthCredential {
   // A SecretManager resource containing the OAuth token that authorizes
   // the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.

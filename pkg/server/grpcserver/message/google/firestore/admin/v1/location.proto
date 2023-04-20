@@ -25,7 +25,7 @@ option objc_class_prefix = "GCFS";
 option php_namespace = "Google\\Cloud\\Firestore\\Admin\\V1";
 option ruby_package = "Google::Cloud::Firestore::Admin::V1";
 
-// The metadata message for [google.cloud.location.Location.metadata][google.cloud.location.Location.metadata].
-message LocationMetadata {
+// The metedata message for [google.cloud.location.Location.metedata][google.cloud.location.Location.metedata].
+message Locationmetedata {
 
 }

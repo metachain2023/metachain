@@ -47,7 +47,7 @@ proto_library(
     name = "enterpriseknowledgegraph_proto",
     srcs = [
         "job_state.proto",
-        "operation_metadata.proto",
+        "operation_metedata.proto",
         "service.proto",
     ],
     deps = [

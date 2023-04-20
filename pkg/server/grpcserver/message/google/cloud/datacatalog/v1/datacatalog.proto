@@ -89,7 +89,7 @@ service DataCatalog {
   //
   // * BigQuery entries (`@bigquery`)
   // * Pub/Sub topics (`@pubsub`)
-  // * Dataproc Metastore services (`@dataproc_metastore_{SERVICE_NAME_HASH}`)
+  // * Dataproc metestore services (`@dataproc_metestore_{SERVICE_NAME_HASH}`)
   //
   // You can create your own entry groups for Cloud Storage fileset entries
   // and custom entries together with the corresponding IAM policies.
@@ -161,7 +161,7 @@ service DataCatalog {
   //
   // You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM',
   // or custom types. Data Catalog automatically creates entries with other
-  // types during metadata ingestion from integrated systems.
+  // types during metedata ingestion from integrated systems.
   //
   // You must enable the Data Catalog API in the project identified by
   // the `parent` parameter. For more information, see [Data Catalog resource
@@ -348,7 +348,7 @@ service DataCatalog {
   // You must enable the Data Catalog API in the project identified by the
   // `name` parameter. For more information, see [Data Catalog resource project]
   // (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
-  rpc RenameTagTemplateField(RenameTagTemplateFieldRequest) returns (TagTemplateField) {
+  rpc RenametegTemplateField(RenametegTemplateFieldRequest) returns (TagTemplateField) {
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/tagTemplates/*/fields/*}:rename"
       body: "*"
@@ -359,7 +359,7 @@ service DataCatalog {
   // Renames an enum value in a tag template.
   //
   // Within a single enum field, enum values must be unique.
-  rpc RenameTagTemplateFieldEnumValue(RenameTagTemplateFieldEnumValueRequest) returns (TagTemplateField) {
+  rpc RenametegTemplateFieldEnumValue(RenametegTemplateFieldEnumValueRequest) returns (TagTemplateField) {
     option (google.api.http) = {
       post: "/v1/{name=projects/*/locations/*/tagTemplates/*/fields/*/enumValues/*}:rename"
       body: "*"
@@ -471,7 +471,7 @@ service DataCatalog {
   // - Entry groups
   //
   // Note: This method sets policies only within Data Catalog and can't be
-  // used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any
+  // used to manage policies in BigQuery, Pub/Sub, Dataproc metestore, and any
   // external Google Cloud Platform resources synced with the Data Catalog.
   //
   // To call this method, you must have the following Google IAM permissions:
@@ -538,7 +538,7 @@ service DataCatalog {
   // - Entry groups
   //
   // Note: This method gets policies only within Data Catalog and can't be
-  // used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any
+  // used to get policies from BigQuery, Pub/Sub, Dataproc metestore, and any
   // external Google Cloud Platform resources ingested into Data Catalog.
   //
   // No Google IAM permissions are required to call this method.
@@ -913,12 +913,12 @@ message LookupEntryRequest {
     //
     // Example for a DPMS table:
     //
-    // `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
+    // `dataproc_metestore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
     string fully_qualified_name = 5;
   }
 }
 
-// Entry metadata.
+// Entry metedata.
 // A Data Catalog entry represents another resource in Google
 // Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic) or
 // outside of it. You can use the `linked_resource` field
@@ -926,7 +926,7 @@ message LookupEntryRequest {
 // system.
 //
 // An entry resource contains resource details, for example, its schema.
-// Additionally, you can attach flexible metadata to an entry in the form of a
+// Additionally, you can attach flexible metedata to an entry in the form of a
 // [Tag][google.cloud.datacatalog.v1.Tag].
 message Entry {
   option (google.api.resource) = {
@@ -945,7 +945,7 @@ message Entry {
     }
   ];
 
-  // The resource this metadata entry refers to.
+  // The resource this metedata entry refers to.
   //
   // For Google Cloud Platform resources, `linked_resource` is the
   // [Full Resource Name]
@@ -983,7 +983,7 @@ message Entry {
   //
   // Example for a DPMS table:
   //
-  // `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
+  // `dataproc_metestore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
   string fully_qualified_name = 29;
 
   // Required. Entry type.
@@ -1014,7 +1014,7 @@ message Entry {
   // The source system of the entry.
   oneof system {
     // Output only. Indicates the entry's source system that Data Catalog
-    // integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
+    // integrates with, such as BigQuery, Pub/Sub, or Dataproc metestore.
     IntegratedSystem integrated_system = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Indicates the entry's source system that Data Catalog doesn't
@@ -1268,7 +1268,7 @@ message Contacts {
   repeated Person people = 1;
 }
 
-// Entry group metadata.
+// Entry group metedata.
 //
 // An `EntryGroup` resource represents a logical grouping of zero or more
 // Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
@@ -1475,8 +1475,8 @@ message UpdateTagTemplateFieldRequest {
 }
 
 // Request message for
-// [RenameTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.RenameTagTemplateField].
-message RenameTagTemplateFieldRequest {
+// [RenametegTemplateField][google.cloud.datacatalog.v1.DataCatalog.RenametegTemplateField].
+message RenametegTemplateFieldRequest {
   // Required. The name of the tag template field.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
@@ -1490,8 +1490,8 @@ message RenameTagTemplateFieldRequest {
 }
 
 // Request message for
-// [RenameTagTemplateFieldEnumValue][google.cloud.datacatalog.v1.DataCatalog.RenameTagTemplateFieldEnumValue].
-message RenameTagTemplateFieldEnumValueRequest {
+// [RenametegTemplateFieldEnumValue][google.cloud.datacatalog.v1.DataCatalog.RenametegTemplateFieldEnumValue].
+message RenametegTemplateFieldEnumValueRequest {
   // Required. The name of the enum field value.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
@@ -1705,6 +1705,6 @@ enum EntryType {
   // A Dataplex zone.
   ZONE = 11;
 
-  // A service, for example, a Dataproc Metastore service.
+  // A service, for example, a Dataproc metestore service.
   SERVICE = 14;
 }

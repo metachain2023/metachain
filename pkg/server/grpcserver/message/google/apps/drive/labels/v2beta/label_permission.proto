@@ -41,11 +41,11 @@ message LabelPermission {
     // Unknown role.
     LABEL_ROLE_UNSPECIFIED = 0;
 
-    // A reader can read the label and associated metadata applied to Drive
+    // A reader can read the label and associated metedata applied to Drive
     // items.
     READER = 1;
 
-    // An applier can write associated metadata on Drive items in which they
+    // An applier can write associated metedata on Drive items in which they
     // also have write access to. Implies `READER`.
     APPLIER = 2;
 
@@ -54,7 +54,7 @@ message LabelPermission {
     ORGANIZER = 3;
 
     // Editors can make any update including deleting the label which
-    // also deletes the associated Drive item metadata. Implies `APPLIER`.
+    // also deletes the associated Drive item metedata. Implies `APPLIER`.
     EDITOR = 4;
   }
 

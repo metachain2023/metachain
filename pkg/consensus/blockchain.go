@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"metachain/pkg/block"
-	"metachain/pkg/blockchain"
+	"metechain/pkg/block"
+	"metechain/pkg/blockchain"
 )
 
 type Hash [HashSize]byte
@@ -19,8 +19,6 @@ const HashSize int = 32
 type BlockChain struct {
 	BlockHeader *block.Block
 	Bc          blockchain.Blockchains
-	//blockchain  db
-	//accounts db
 
 	Oranphs      map[Hash]*OrphanBlock
 	PrevOrphans  map[Hash][]*OrphanBlock

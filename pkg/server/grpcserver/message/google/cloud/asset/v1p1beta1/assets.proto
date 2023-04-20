@@ -26,8 +26,8 @@ option java_outer_classname = "AssetProto";
 option java_package = "com.google.cloud.asset.v1p1beta1";
 option php_namespace = "Google\\Cloud\\Asset\\V1p1beta1";
 
-// The standard metadata of a cloud resource.
-message StandardResourceMetadata {
+// The standard metedata of a cloud resource.
+message StandardResourcemetedata {
   // The full resource name. For example:
   // `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
   // See [Resource

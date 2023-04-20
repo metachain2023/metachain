@@ -9,13 +9,13 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.firestore.admin.v1.ExportDocumentsMetadata
+- name: google.firestore.admin.v1.ExportDocumentsmetedata
 - name: google.firestore.admin.v1.ExportDocumentsResponse
-- name: google.firestore.admin.v1.FieldOperationMetadata
-- name: google.firestore.admin.v1.ImportDocumentsMetadata
-- name: google.firestore.admin.v1.IndexOperationMetadata
-- name: google.firestore.admin.v1.LocationMetadata
-- name: google.firestore.admin.v1.UpdateDatabaseMetadata
+- name: google.firestore.admin.v1.FieldOperationmetedata
+- name: google.firestore.admin.v1.ImportDocumentsmetedata
+- name: google.firestore.admin.v1.IndexOperationmetedata
+- name: google.firestore.admin.v1.Locationmetedata
+- name: google.firestore.admin.v1.UpdateDatabasemetedata
 
 documentation:
   summary: |-

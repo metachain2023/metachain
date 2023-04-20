@@ -31,7 +31,7 @@ option objc_class_prefix = "RPC";
 //
 //     { "reason": "API_DISABLED"
 //       "domain": "googleapis.com"
-//       "metadata": {
+//       "metedata": {
 //         "resource": "projects/123",
 //         "service": "pubsub.googleapis.com"
 //       }
@@ -44,7 +44,7 @@ option objc_class_prefix = "RPC";
 //
 //     { "reason": "STOCKOUT"
 //       "domain": "spanner.googleapis.com",
-//       "metadata": {
+//       "metedata": {
 //         "availableRegions": "us-central1,us-east2"
 //       }
 //     }
@@ -72,7 +72,7 @@ message ErrorInfo {
   // {"instanceLimit": "100/request"}, should be returned as,
   // {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
   // instances that can be created in a single (batch) request.
-  map<string, string> metadata = 3;
+  map<string, string> metedata = 3;
 }
 
 // Describes when the clients can retry a failed request. Clients could ignore
@@ -217,7 +217,7 @@ message BadRequest {
   repeated FieldViolation field_violations = 1;
 }
 
-// Contains metadata about the request that clients can attach when filing a bug
+// Contains metedata about the request that clients can attach when filing a bug
 // or providing other forms of feedback.
 message RequestInfo {
   // An opaque string that should only be interpreted by the service generating

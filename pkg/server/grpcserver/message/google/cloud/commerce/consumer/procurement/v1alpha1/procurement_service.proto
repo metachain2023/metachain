@@ -53,7 +53,7 @@ service ConsumerProcurementService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Order"
-      metadata_type: "PlaceOrderMetadata"
+      metedata_type: "PlaceOrdermetedata"
     };
   }
 
@@ -100,9 +100,9 @@ message PlaceOrderRequest {
   string request_id = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Message stored in the metadata field of the Operation returned by
+// Message stored in the metedata field of the Operation returned by
 // [ConsumerProcurementService.PlaceOrder][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService.PlaceOrder].
-message PlaceOrderMetadata {
+message PlaceOrdermetedata {
 
 }
 

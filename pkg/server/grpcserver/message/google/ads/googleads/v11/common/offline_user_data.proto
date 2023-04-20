@@ -266,15 +266,15 @@ message ShoppingLoyalty {
   optional string loyalty_tier = 1;
 }
 
-// Metadata for customer match user list.
-message CustomerMatchUserListMetadata {
+// metedata for customer match user list.
+message CustomerMatchUserListmetedata {
   // The resource name of remarketing list to update data.
   // Required for job of CUSTOMER_MATCH_USER_LIST type.
   optional string user_list = 2;
 }
 
-// Metadata for Store Sales Direct.
-message StoreSalesMetadata {
+// metedata for Store Sales Direct.
+message StoreSalesmetedata {
   // This is the fraction of all transactions that are identifiable (for
   // example, associated with any form of customer information). Required. The
   // fraction needs to be between 0 and 1 (excluding 0).
@@ -293,15 +293,15 @@ message StoreSalesMetadata {
   // Accessible only to customers on the allow-list.
   optional string custom_key = 7;
 
-  // Metadata for a third party Store Sales upload.
-  StoreSalesThirdPartyMetadata third_party_metadata = 3;
+  // metedata for a third party Store Sales upload.
+  StoreSalesThirdPartymetedata third_party_metedata = 3;
 }
 
-// Metadata for a third party Store Sales.
+// metedata for a third party Store Sales.
 // This product is only for customers on the allow-list. Contact your
 // Google business development representative for details on the upload
 // configuration.
-message StoreSalesThirdPartyMetadata {
+message StoreSalesThirdPartymetedata {
   // Time the advertiser uploaded the data to the partner. Required.
   // The format is "YYYY-MM-DD HH:MM:SS".
   // Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30"

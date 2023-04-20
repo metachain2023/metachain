@@ -46,7 +46,7 @@ message NamespacedNames {
 }
 
 // Encryption key.
-// This only contains the key metadata, and no key material.
+// This only contains the key metedata, and no key material.
 message EncryptionKey {
   // Google KMS encryption key in the format:
   // projects/<project>/locations/<location>/keyRings/<key-ring>/cryptoKeys/<key>

@@ -7,7 +7,7 @@ apis:
 - name: google.cloud.osconfig.v1alpha.OsConfigZonalService
 
 types:
-- name: google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata
+- name: google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationmetedata
 
 documentation:
   summary: |-

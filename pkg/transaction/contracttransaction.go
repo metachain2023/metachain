@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"math/big"
 
-	"metachain/pkg/logger"
+	"metechain/pkg/logger"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -27,8 +27,8 @@ func (tx *Transaction) IsEvmContractTransaction() bool {
 }
 
 // Evm Transaction
-func (tx *Transaction) IsMetaTransaction() bool {
-	return tx.Type == EvmMetaTransaction
+func (tx *Transaction) IsmeteTransaction() bool {
+	return tx.Type == EvmmeteTransaction
 }
 
 // Pledge Trasnaction
@@ -50,7 +50,7 @@ func StringToHash(hash string) ([]byte, error) {
 //evm info
 type EvmContract struct {
 	EthData   string `json:"evm signed data"`
-	MsgHash   []byte `json:"meta sign hash"`
+	MsgHash   []byte `json:"mete sign hash"`
 	Operation string `json:"contract operation"`
 
 	CreateCode []byte         `json:"create code"`
@@ -94,8 +94,8 @@ func ParseEthSignature(ethtx *coreTps.Transaction) []byte {
 	return sign
 }
 
-//It's a eth transaction struct signed by Meta priv
-func VerifyMetaSign(kFrom *common.Address, msgHash []byte, ethdata string) bool {
+//It's a eth transaction struct signed by mete priv
+func VerifymeteSign(kFrom *common.Address, msgHash []byte, ethdata string) bool {
 	ethtx, err := DecodeEthData(ethdata)
 	if err != nil {
 		logger.Info("SendEthSignedTransaction decodeData error", zap.Error(err))

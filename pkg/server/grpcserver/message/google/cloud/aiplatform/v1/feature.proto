@@ -29,7 +29,7 @@ option java_package = "com.google.cloud.aiplatform.v1";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1";
 option ruby_package = "Google::Cloud::AIPlatform::V1";
 
-// Feature Metadata information that describes an attribute of an entity type.
+// Feature metedata information that describes an attribute of an entity type.
 // For example, apple is an entity type, and color is a feature that describes
 // apple.
 message Feature {
@@ -128,7 +128,7 @@ message Feature {
   google.protobuf.Timestamp update_time = 5
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. The labels with user-defined metadata to organize your Features.
+  // Optional. The labels with user-defined metedata to organize your Features.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

@@ -65,7 +65,7 @@ service UserEventService {
   //
   // Operation.response is of type ImportResponse. Note that it is
   // possible for a subset of the items to be successfully inserted.
-  // Operation.metadata is of type ImportMetadata.
+  // Operation.metedata is of type Importmetedata.
   rpc ImportUserEvents(ImportUserEventsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -74,7 +74,7 @@ service UserEventService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.discoveryengine.v1beta.ImportUserEventsResponse"
-      metadata_type: "google.cloud.discoveryengine.v1beta.ImportUserEventsMetadata"
+      metedata_type: "google.cloud.discoveryengine.v1beta.ImportUserEventsmetedata"
     };
   }
 }

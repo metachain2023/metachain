@@ -28,7 +28,7 @@ option java_package = "com.google.cloud.datacatalog.v1";
 option php_namespace = "Google\\Cloud\\DataCatalog\\V1";
 option ruby_package = "Google::Cloud::DataCatalog::V1";
 
-// Tags contain custom metadata and are attached to Data Catalog resources. Tags
+// Tags contain custom metedata and are attached to Data Catalog resources. Tags
 // conform with the specification of their tag template.
 //
 // See [Data Catalog
@@ -264,7 +264,7 @@ message FieldType {
     //
     // The order of items in this set is preserved. This field can be used to
     // create, remove, and reorder enum values. To rename enum values, use the
-    // `RenameTagTemplateFieldEnumValue` method.
+    // `RenametegTemplateFieldEnumValue` method.
     repeated EnumValue allowed_values = 1;
   }
 

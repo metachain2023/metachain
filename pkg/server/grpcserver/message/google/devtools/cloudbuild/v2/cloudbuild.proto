@@ -56,8 +56,8 @@ service CloudBuild {
   option (google.api.default_host) = "cloudbuild.googleapis.com";
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -86,8 +86,8 @@ message OperationMetadata {
   string api_version = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Represents the custom metadata of the RunWorkflow long-running operation.
-message RunWorkflowCustomOperationMetadata {
+// Represents the custom metedata of the RunWorkflow long-running operation.
+message RunWorkflowCustomOperationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

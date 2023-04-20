@@ -65,7 +65,7 @@ service AppPlatform {
     option (google.api.method_signature) = "parent,application";
     option (google.longrunning.operation_info) = {
       response_type: "Application"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -78,7 +78,7 @@ service AppPlatform {
     option (google.api.method_signature) = "application,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Application"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -90,7 +90,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -103,7 +103,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "DeployApplicationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -116,7 +116,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "UndeployApplicationResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -132,7 +132,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "AddApplicationStreamInputResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -147,7 +147,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "RemoveApplicationStreamInputResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -162,7 +162,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "UpdateApplicationStreamInputResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -194,7 +194,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "CreateApplicationInstancesResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -209,7 +209,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -225,7 +225,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name, application_instances";
     option (google.longrunning.operation_info) = {
       response_type: "UpdateApplicationInstancesResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -254,7 +254,7 @@ service AppPlatform {
     option (google.api.method_signature) = "parent,draft,draft_id";
     option (google.longrunning.operation_info) = {
       response_type: "Draft"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -267,7 +267,7 @@ service AppPlatform {
     option (google.api.method_signature) = "draft,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Draft"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -279,7 +279,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -318,7 +318,7 @@ service AppPlatform {
     option (google.api.method_signature) = "parent,processor,processor_id";
     option (google.longrunning.operation_info) = {
       response_type: "Processor"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -331,7 +331,7 @@ service AppPlatform {
     option (google.api.method_signature) = "processor,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Processor"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -343,7 +343,7 @@ service AppPlatform {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -1333,7 +1333,7 @@ message ApplicationConfigs {
     // The expected delivery interval for the same event. The same event won't
     // be notified multiple times during this internal event that it is
     // happening multiple times during the period of time.The same event is
-    // identified by <event_id, app_platform_metadata>.
+    // identified by <event_id, app_platform_metedata>.
     google.protobuf.Duration minimal_delivery_interval = 2;
   }
 
@@ -1936,7 +1936,7 @@ message MediaWarehouseConfig {
   // Deprecated.
   string region = 2 [deprecated = true];
 
-  // The duration for which all media assets, associated metadata, and search
+  // The duration for which all media assets, associated metedata, and search
   // documents can exist.
   google.protobuf.Duration ttl = 3;
 }
@@ -2110,15 +2110,15 @@ message VertexCustomConfig {
   string post_processing_cloud_function = 3;
 
   // If true, the prediction request received by custom model will also contain
-  // metadata with the following schema:
-  // 'appPlatformMetadata': {
+  // metedata with the following schema:
+  // 'appPlatformmetedata': {
   //       'ingestionTime': DOUBLE; (UNIX timestamp)
   //       'application': STRING;
   //       'instanceId': STRING;
   //       'node': STRING;
   //       'processor': STRING;
   //  }
-  bool attach_application_metadata = 4;
+  bool attach_application_metedata = 4;
 }
 
 // Specification of a single machine.

@@ -36,7 +36,7 @@ message SourceContext {
     GitSourceContext git = 3;
   }
 
-  // Labels with user defined metadata.
+  // Labels with user defined metedata.
   map<string, string> labels = 4;
 }
 

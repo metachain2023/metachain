@@ -382,15 +382,15 @@ message VpnConnection {
   Details details = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// Metadata for a given [google.cloud.location.Location][google.cloud.location.Location].
-message LocationMetadata {
+// metedata for a given [google.cloud.location.Location][google.cloud.location.Location].
+message Locationmetedata {
   // The set of available Google Distributed Cloud Edge zones in the location.
   // The map is keyed by the lowercase ID of each zone.
-  map<string, ZoneMetadata> available_zones = 1;
+  map<string, Zonemetedata> available_zones = 1;
 }
 
 // A Google Distributed Cloud Edge zone where edge machines are located.
-message ZoneMetadata {
+message Zonemetedata {
   // Quota for resources in this zone.
   repeated Quota quota = 1;
 }

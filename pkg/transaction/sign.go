@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	_ "metachain/pkg/crypto/sigs/ed25519"
-	_ "metachain/pkg/crypto/sigs/secp"
+	_ "metechain/pkg/crypto/sigs/ed25519"
+	_ "metechain/pkg/crypto/sigs/secp"
 
 	"github.com/ethereum/go-ethereum/crypto"
 )
@@ -24,7 +24,7 @@ func (st *SignedTransaction) VerifySign() error {
 		if !bytes.Equal(sigAdde.Bytes(), st.From.Bytes()) {
 			return fmt.Errorf("signature verification failed")
 		}
-	case EvmContractTransaction, EvmMetaTransaction:
+	case EvmContractTransaction, EvmmeteTransaction:
 		evm, err := DecodeEvmData(st.Input)
 		if err != nil {
 			return err

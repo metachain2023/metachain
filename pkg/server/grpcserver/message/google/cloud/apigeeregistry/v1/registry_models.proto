@@ -68,7 +68,7 @@ message Api {
                                        type: "apigeeregistry.googleapis.com/ApiDeployment"
                                      }];
 
-  // Labels attach identifying metadata to resources. Identifying metadata can
+  // Labels attach identifying metedata to resources. Identifying metedata can
   // be used to filter list operations.
   //
   // Label keys and values can be no longer than 64 characters
@@ -82,11 +82,11 @@ message Api {
   // `apigeeregistry.googleapis.com/` and cannot be changed.
   map<string, string> labels = 9;
 
-  // Annotations attach non-identifying metadata to resources.
+  // Annotations attach non-identifying metedata to resources.
   //
   // Annotation keys and values are less restricted than those of labels, but
   // should be generally used for small values of broad interest. Larger, topic-
-  // specific metadata should be stored in Artifacts.
+  // specific metedata should be stored in Artifacts.
   map<string, string> annotations = 10;
 }
 
@@ -119,7 +119,7 @@ message ApiVersion {
   // "DEPRECATED", "RETIRED".
   string state = 6;
 
-  // Labels attach identifying metadata to resources. Identifying metadata can
+  // Labels attach identifying metedata to resources. Identifying metedata can
   // be used to filter list operations.
   //
   // Label keys and values can be no longer than 64 characters
@@ -133,11 +133,11 @@ message ApiVersion {
   // `apigeeregistry.googleapis.com/` and cannot be changed.
   map<string, string> labels = 7;
 
-  // Annotations attach non-identifying metadata to resources.
+  // Annotations attach non-identifying metedata to resources.
   //
   // Annotation keys and values are less restricted than those of labels, but
   // should be generally used for small values of broad interest. Larger, topic-
-  // specific metadata should be stored in Artifacts.
+  // specific metedata should be stored in Artifacts.
   map<string, string> annotations = 8;
 }
 
@@ -210,7 +210,7 @@ message ApiSpec {
   // To access the contents of a spec, use GetApiSpecContents.
   bytes contents = 12 [(google.api.field_behavior) = INPUT_ONLY];
 
-  // Labels attach identifying metadata to resources. Identifying metadata can
+  // Labels attach identifying metedata to resources. Identifying metedata can
   // be used to filter list operations.
   //
   // Label keys and values can be no longer than 64 characters
@@ -224,11 +224,11 @@ message ApiSpec {
   // `apigeeregistry.googleapis.com/` and cannot be changed.
   map<string, string> labels = 14;
 
-  // Annotations attach non-identifying metadata to resources.
+  // Annotations attach non-identifying metedata to resources.
   //
   // Annotation keys and values are less restricted than those of labels, but
   // should be generally used for small values of broad interest. Larger, topic-
-  // specific metadata should be stored in Artifacts.
+  // specific metedata should be stored in Artifacts.
   map<string, string> annotations = 15;
 }
 
@@ -292,7 +292,7 @@ message ApiDeployment {
   // will not affect the revision.
   string access_guidance = 12;
 
-  // Labels attach identifying metadata to resources. Identifying metadata can
+  // Labels attach identifying metedata to resources. Identifying metedata can
   // be used to filter list operations.
   //
   // Label keys and values can be no longer than 64 characters
@@ -306,18 +306,18 @@ message ApiDeployment {
   // `apigeeregistry.googleapis.com/` and cannot be changed.
   map<string, string> labels = 14;
 
-  // Annotations attach non-identifying metadata to resources.
+  // Annotations attach non-identifying metedata to resources.
   //
   // Annotation keys and values are less restricted than those of labels, but
   // should be generally used for small values of broad interest. Larger, topic-
-  // specific metadata should be stored in Artifacts.
+  // specific metedata should be stored in Artifacts.
   map<string, string> annotations = 15;
 }
 
 // Artifacts of resources. Artifacts are unique (single-value) per resource
-// and are used to store metadata that is too large or numerous to be stored
+// and are used to store metedata that is too large or numerous to be stored
 // directly on the resource. Since artifacts are stored separately from parent
-// resources, they should generally be used for metadata that is needed
+// resources, they should generally be used for metedata that is needed
 // infrequently, i.e., not for display in primary views of the resource but
 // perhaps displayed or downloaded upon request. The `ListArtifacts` method
 // allows artifacts to be quickly enumerated and checked for presence without

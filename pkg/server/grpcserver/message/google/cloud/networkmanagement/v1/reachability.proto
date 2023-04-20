@@ -83,7 +83,7 @@ service ReachabilityService {
     option (google.api.method_signature) = "parent,test_id,resource";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.networkmanagement.v1.ConnectivityTest"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -109,7 +109,7 @@ service ReachabilityService {
     option (google.api.method_signature) = "update_mask,resource";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.networkmanagement.v1.ConnectivityTest"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -132,7 +132,7 @@ service ReachabilityService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.networkmanagement.v1.ConnectivityTest"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -144,7 +144,7 @@ service ReachabilityService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -248,8 +248,8 @@ message RerunConnectivityTestRequest {
   string name = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata describing an [Operation][google.longrunning.Operation]
-message OperationMetadata {
+// metedata describing an [Operation][google.longrunning.Operation]
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

@@ -38,7 +38,7 @@ service Policies {
   // Retrieves the policies of the specified kind that are attached to a
   // resource.
   //
-  // The response lists only policy metadata. In particular, policy rules are
+  // The response lists only policy metedata. In particular, policy rules are
   // omitted.
   rpc ListPolicies(ListPoliciesRequest) returns (ListPoliciesResponse) {
     option (google.api.http) = {
@@ -64,7 +64,7 @@ service Policies {
     option (google.api.method_signature) = "parent,policy,policy_id";
     option (google.longrunning.operation_info) = {
       response_type: "Policy"
-      metadata_type: "PolicyOperationMetadata"
+      metedata_type: "PolicyOperationmetedata"
     };
   }
 
@@ -86,7 +86,7 @@ service Policies {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Policy"
-      metadata_type: "PolicyOperationMetadata"
+      metedata_type: "PolicyOperationmetedata"
     };
   }
 
@@ -98,7 +98,7 @@ service Policies {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Policy"
-      metadata_type: "PolicyOperationMetadata"
+      metedata_type: "PolicyOperationmetedata"
     };
   }
 }
@@ -130,7 +130,7 @@ message Policy {
   // characters.
   string display_name = 4;
 
-  // A key-value map to store arbitrary metadata for the `Policy`. Keys
+  // A key-value map to store arbitrary metedata for the `Policy`. Keys
   // can be up to 63 characters. Values can be up to 255 characters.
   map<string, string> annotations = 5;
 
@@ -195,7 +195,7 @@ message ListPoliciesRequest {
 
 // Response message for `ListPolicies`.
 message ListPoliciesResponse {
-  // Metadata for the policies that are attached to the resource.
+  // metedata for the policies that are attached to the resource.
   repeated Policy policies = 1;
 
   // A page token that you can use in a [ListPoliciesRequest][google.iam.v2beta.ListPoliciesRequest] to retrieve the
@@ -276,8 +276,8 @@ message DeletePolicyRequest {
   string etag = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Metadata for long-running `Policy` operations.
-message PolicyOperationMetadata {
+// metedata for long-running `Policy` operations.
+message PolicyOperationmetedata {
   // Timestamp when the `google.longrunning.Operation` was created.
   google.protobuf.Timestamp create_time = 1;
 }

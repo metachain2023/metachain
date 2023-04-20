@@ -5,8 +5,8 @@ import (
 	"crypto/rand"
 	"errors"
 
-	"metachain/pkg/crypto"
-	"metachain/pkg/crypto/sigs"
+	"metechain/pkg/crypto"
+	"metechain/pkg/crypto/sigs"
 )
 
 type ED25519Signer struct{}

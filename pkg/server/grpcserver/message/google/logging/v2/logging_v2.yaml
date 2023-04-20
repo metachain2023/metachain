@@ -9,7 +9,7 @@ apis:
 - name: google.logging.v2.MetricsServiceV2
 
 types:
-- name: google.logging.v2.CopyLogEntriesMetadata
+- name: google.logging.v2.CopyLogEntriesmetedata
 - name: google.logging.v2.CopyLogEntriesResponse
 
 documentation:

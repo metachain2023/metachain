@@ -59,7 +59,7 @@ option php_namespace = "Google\\Cloud\\Iam\\V1";
 // are created and deleted implicitly with the resources to which they are
 // attached.
 service IAMPolicy {
-  option (google.api.default_host) = "iam-meta-api.googleapis.com";
+  option (google.api.default_host) = "iam-mete-api.googleapis.com";
 
   // Sets the access control policy on the specified resource. Replaces any
   // existing policy.

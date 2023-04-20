@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"metachain/pkg/miner"
+	"metechain/pkg/miner"
 )
 
 func main() {

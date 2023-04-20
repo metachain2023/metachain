@@ -61,7 +61,7 @@ service EdgeContainer {
     option (google.api.method_signature) = "parent,cluster,cluster_id";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -74,7 +74,7 @@ service EdgeContainer {
     option (google.api.method_signature) = "cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -86,7 +86,7 @@ service EdgeContainer {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -123,7 +123,7 @@ service EdgeContainer {
     option (google.api.method_signature) = "parent,node_pool,node_pool_id";
     option (google.longrunning.operation_info) = {
       response_type: "NodePool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -136,7 +136,7 @@ service EdgeContainer {
     option (google.api.method_signature) = "node_pool,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "NodePool"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -148,7 +148,7 @@ service EdgeContainer {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -193,7 +193,7 @@ service EdgeContainer {
     option (google.api.method_signature) = "parent,vpn_connection,vpn_connection_id";
     option (google.longrunning.operation_info) = {
       response_type: "VpnConnection"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -205,13 +205,13 @@ service EdgeContainer {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
 
-// Long-running operation metadata for Edge Container API methods.
-message OperationMetadata {
+// Long-running operation metedata for Edge Container API methods.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

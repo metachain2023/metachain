@@ -63,8 +63,8 @@ message GcsDestination {
   string uri = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
-// The long running operation metadata for async model related methods.
-message AsyncModelMetadata {
+// The long running operation metedata for async model related methods.
+message AsyncModelmetedata {
   // Possible states of the operation.
   enum State {
     // The default value. This value is used if the state is omitted.

@@ -104,7 +104,7 @@ load(
 
 php_proto_library(
     name = "googleads_php_proto",
-    plugin_args = ["aggregate_metadata=google.ads.googleads"],
+    plugin_args = ["aggregate_metedata=google.ads.googleads"],
     deps = [":googleads_proto"],
 )
 
@@ -249,7 +249,7 @@ nodejs_gapic_library(
     name = "googleads_nodejs_gapic",
     package_name = "google-ads",
     src = ":googleads_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     grpc_service_config = "googleads_grpc_service_config.json",
     main_service = "GoogleAdsService",
     package = "google.ads.googleads.v11",

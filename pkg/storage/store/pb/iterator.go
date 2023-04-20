@@ -1,7 +1,7 @@
 package pb
 
 import (
-	"metachain/pkg/storage/store"
+	"metechain/pkg/storage/store"
 
 	"github.com/cockroachdb/pebble"
 )

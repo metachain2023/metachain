@@ -67,8 +67,8 @@ message ModelDeploymentMonitoringJob {
     pattern: "projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}"
   };
 
-  // All metadata of most recent monitoring pipelines.
-  message LatestMonitoringPipelineMetadata {
+  // All metedata of most recent monitoring pipelines.
+  message LatestMonitoringPipelinemetedata {
     // The time that most recent monitoring pipelines that is related to this
     // run.
     google.protobuf.Timestamp run_time = 1;
@@ -121,8 +121,8 @@ message ModelDeploymentMonitoringJob {
   MonitoringScheduleState schedule_state = 5
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Latest triggered monitoring pipeline metadata.
-  LatestMonitoringPipelineMetadata latest_monitoring_pipeline_metadata = 25
+  // Output only. Latest triggered monitoring pipeline metedata.
+  LatestMonitoringPipelinemetedata latest_monitoring_pipeline_metedata = 25
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Required. The config for monitoring objectives. This is a per DeployedModel
@@ -183,7 +183,7 @@ message ModelDeploymentMonitoringJob {
   // day). e.g. { second: 3600} indicates ttl = 1 day.
   google.protobuf.Duration log_ttl = 17;
 
-  // The labels with user-defined metadata to organize your
+  // The labels with user-defined metedata to organize your
   // ModelDeploymentMonitoringJob.
   //
   // Label keys and values can be no longer than 64 characters

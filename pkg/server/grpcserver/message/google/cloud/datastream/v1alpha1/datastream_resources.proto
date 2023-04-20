@@ -675,8 +675,8 @@ message ValidationMessage {
   // Message severity level (warning or error).
   Level level = 2;
 
-  // Additional metadata related to the result.
-  map<string, string> metadata = 3;
+  // Additional metedata related to the result.
+  map<string, string> metedata = 3;
 
   // A custom code identifying this specific message.
   string code = 4;

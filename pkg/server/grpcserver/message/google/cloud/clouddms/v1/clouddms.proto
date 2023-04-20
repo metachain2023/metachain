@@ -63,7 +63,7 @@ service DataMigrationService {
     option (google.api.method_signature) = "parent,migration_job,migration_job_id";
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -76,7 +76,7 @@ service DataMigrationService {
     option (google.api.method_signature) = "migration_job,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -88,7 +88,7 @@ service DataMigrationService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -100,7 +100,7 @@ service DataMigrationService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -112,7 +112,7 @@ service DataMigrationService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -125,7 +125,7 @@ service DataMigrationService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -138,7 +138,7 @@ service DataMigrationService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -151,7 +151,7 @@ service DataMigrationService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -165,7 +165,7 @@ service DataMigrationService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "MigrationJob"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -203,7 +203,7 @@ service DataMigrationService {
     option (google.api.method_signature) = "parent,connection_profile,connection_profile_id";
     option (google.longrunning.operation_info) = {
       response_type: "ConnectionProfile"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -216,7 +216,7 @@ service DataMigrationService {
     option (google.api.method_signature) = "connection_profile,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "ConnectionProfile"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -230,7 +230,7 @@ service DataMigrationService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -597,8 +597,8 @@ message DeleteConnectionProfileRequest {
   bool force = 3;
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

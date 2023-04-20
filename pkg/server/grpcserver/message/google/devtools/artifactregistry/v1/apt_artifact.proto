@@ -64,7 +64,7 @@ message AptArtifact {
   // Output only. Repository component of the artifact.
   string component = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Contents of the artifact's control metadata file.
+  // Output only. Contents of the artifact's control metedata file.
   bytes control_file = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
@@ -110,5 +110,5 @@ message ImportAptArtifactsResponse {
   repeated ImportAptArtifactsErrorInfo errors = 2;
 }
 
-// The operation metadata for importing artifacts.
-message ImportAptArtifactsMetadata {}
+// The operation metedata for importing artifacts.
+message ImportAptArtifactsmetedata {}

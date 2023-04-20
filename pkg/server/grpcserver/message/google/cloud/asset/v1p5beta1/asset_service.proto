@@ -119,7 +119,7 @@ enum ContentType {
   // Unspecified content type.
   CONTENT_TYPE_UNSPECIFIED = 0;
 
-  // Resource metadata.
+  // Resource metedata.
   RESOURCE = 1;
 
   // The actual IAM policy set on a resource.

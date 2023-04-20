@@ -8,7 +8,7 @@ import (
 	"math/big"
 	"sync"
 
-	"metachain/pkg/storage/miscellaneous"
+	"metechain/pkg/storage/miscellaneous"
 
 	"github.com/ethereum/go-ethereum/common"
 	cbg "github.com/whyrusleeping/cbor-gen"
@@ -28,7 +28,7 @@ const (
 	BindingAddressTransaction
 	EvmContractTransaction
 	// PledgeTrasnaction
-	EvmMetaTransaction
+	EvmmeteTransaction
 
 	IsTokenTransaction
 	// PledgeBreakTransaction

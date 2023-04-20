@@ -351,7 +351,7 @@ message AudioStream {
   int32 channel_count = 3;
 
   // A list of channel names specifying layout of the audio channels.
-  // This only affects the metadata embedded in the container headers, if
+  // This only affects the metedata embedded in the container headers, if
   // supported by the specified format. The default is `[fl, fr]`.
   //
   // Supported channel names:

@@ -8,12 +8,12 @@ import (
 	"log"
 	"time"
 
-	"metachain/pkg/block"
-	"metachain/pkg/blockchain"
-	"metachain/pkg/logger"
-	"metachain/pkg/server/rpcserver/pb"
-	"metachain/pkg/transaction"
-	"metachain/pkg/txpool"
+	"metechain/pkg/block"
+	"metechain/pkg/blockchain"
+	"metechain/pkg/logger"
+	"metechain/pkg/server/rpcserver/pb"
+	"metechain/pkg/transaction"
+	"metechain/pkg/txpool"
 
 	"go.uber.org/zap"
 	"google.golang.org/grpc"

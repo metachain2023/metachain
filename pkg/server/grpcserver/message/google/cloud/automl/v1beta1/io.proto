@@ -25,7 +25,7 @@ option ruby_package = "Google::Cloud::AutoML::V1beta1";
 
 // Input configuration for ImportData Action.
 //
-// The format of input depends on dataset_metadata the Dataset into which
+// The format of input depends on dataset_metedata the Dataset into which
 // the import is happening has. As input source the
 // [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
 // is expected, unless specified otherwise. Additionally any input .CSV file
@@ -299,7 +299,7 @@ option ruby_package = "Google::Cloud::AutoML::V1beta1";
 // [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source]
 //         can be used. All inputs is concatenated into a single
 //
-// [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_name]
+// [primary_table][google.cloud.automl.v1beta1.TablesDatasetmetedata.primary_table_name]
 //         For gcs_source:
 //           CSV file(s), where the first row of the first file is the header,
 //           containing unique column names. If the first row of a subsequent
@@ -358,7 +358,7 @@ option ruby_package = "Google::Cloud::AutoML::V1beta1";
 //  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded, enclosed within
 //                 double quotes ("").
 //  SENTIMENT = An integer between 0 and
-//              Dataset.text_sentiment_dataset_metadata.sentiment_max
+//              Dataset.text_sentiment_dataset_metedata.sentiment_max
 //              (inclusive). Describes the ordinal of the sentiment - higher
 //              value means a more positive sentiment. All the values are
 //              completely relative, i.e. neither 0 needs to mean a negative or
@@ -379,7 +379,7 @@ option ruby_package = "Google::Cloud::AutoML::V1beta1";
 //  percent of CSV rows cannot be processed then the operation fails and
 //  nothing is imported. Regardless of overall success or failure the per-row
 //  failures, up to a certain count cap, is listed in
-//  Operation.metadata.partial_failures.
+//  Operation.metedata.partial_failures.
 //
 message InputConfig {
   // The source of the input.
@@ -557,7 +557,7 @@ message InputConfig {
 //           contain values for the corresponding columns.
 //           The column names must contain the model's
 //
-// [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+// [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelmetedata.input_feature_column_specs]
 //
 // [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
 //           (order doesn't matter). The columns corresponding to the model's
@@ -565,10 +565,10 @@ message InputConfig {
 //           column spec's data types. Prediction on all the rows, i.e. the CSV
 //           lines, will be attempted. For FORECASTING
 //
-// [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+// [prediction_type][google.cloud.automl.v1beta1.TablesModelmetedata.prediction_type]:
 //           all columns having
 //
-// [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
+// [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.Forecastingmetedata.ColumnType]
 //           type will be ignored.
 //           First three sample rows of a CSV file:
 //             "First Name","Last Name","Dob","Addresses"
@@ -581,7 +581,7 @@ message InputConfig {
 //           table must be 100GB or smaller.
 //           The column names must contain the model's
 //
-// [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+// [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelmetedata.input_feature_column_specs]
 //
 // [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
 //           (order doesn't matter). The columns corresponding to the model's
@@ -589,10 +589,10 @@ message InputConfig {
 //           column spec's data types. Prediction on all the rows of the table
 //           will be attempted. For FORECASTING
 //
-// [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+// [prediction_type][google.cloud.automl.v1beta1.TablesModelmetedata.prediction_type]:
 //           all columns having
 //
-// [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
+// [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.Forecastingmetedata.ColumnType]
 //           type will be ignored.
 //
 //  Definitions:
@@ -616,7 +616,7 @@ message InputConfig {
 //  percent of CSV rows cannot be processed then the operation fails and
 //  prediction does not happen. Regardless of overall success or failure the
 //  per-row failures, up to a certain count cap, will be listed in
-//  Operation.metadata.partial_failures.
+//  Operation.metedata.partial_failures.
 message BatchPredictInputConfig {
   // Required. The source of the input.
   oneof source {
@@ -889,13 +889,13 @@ message OutputConfig {
 //           the total number of the successfully predicted rows.
 //           For all CLASSIFICATION
 //
-// [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+// [prediction_type-s][google.cloud.automl.v1beta1.TablesModelmetedata.prediction_type]:
 //             Each .csv file will contain a header, listing all columns'
 //
 // [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
 //             given on input followed by M target column names in the format of
 //
-// "<[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+// "<[target_column_specs][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec]
 //
 // [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]>_<target
 //             value>_score" where M is the number of distinct target values,
@@ -906,13 +906,13 @@ message OutputConfig {
 //             [scores][google.cloud.automl.v1beta1.TablesAnnotation.score].
 //           For REGRESSION and FORECASTING
 //
-// [prediction_type-s][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
+// [prediction_type-s][google.cloud.automl.v1beta1.TablesModelmetedata.prediction_type]:
 //             Each .csv file will contain a header, listing all columns'
 //             [display_name-s][google.cloud.automl.v1beta1.display_name] given
 //             on input followed by the predicted target column with name in the
 //             format of
 //
-// "predicted_<[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+// "predicted_<[target_column_specs][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec]
 //
 // [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]>"
 //             Subsequent lines will contain the respective values of
@@ -944,7 +944,7 @@ message OutputConfig {
 // [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
 //           followed by the target column with name in the format of
 //
-// "predicted_<[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+// "predicted_<[target_column_specs][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec]
 //
 // [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]>"
 //           The input feature columns will contain the respective values of
@@ -958,7 +958,7 @@ message OutputConfig {
 //           failed, it has analogous input columns while the target column name
 //           is in the format of
 //
-// "errors_<[target_column_specs][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
+// "errors_<[target_column_specs][google.cloud.automl.v1beta1.TablesModelmetedata.target_column_spec]
 //
 // [display_name][google.cloud.automl.v1beta1.ColumnSpec.display_name]>",
 //           and as a value has
@@ -1086,7 +1086,7 @@ message ModelExportOutputConfig {
 //       format. In the dataset an `evaluated_examples` table will be
 //       created. It will have all the same columns as the
 //
-// [primary_table][google.cloud.automl.v1beta1.TablesDatasetMetadata.primary_table_spec_id]
+// [primary_table][google.cloud.automl.v1beta1.TablesDatasetmetedata.primary_table_spec_id]
 //       of the
 //       [dataset][google.cloud.automl.v1beta1.Model.dataset_id] from which
 //       the model was created, as they were at the moment of model's

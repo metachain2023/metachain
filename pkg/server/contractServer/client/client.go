@@ -6,12 +6,12 @@ import (
 	"math/big"
 	"strings"
 
-	"metachain/pkg/block"
-	"metachain/pkg/blockchain"
-	"metachain/pkg/config"
-	"metachain/pkg/logger"
-	"metachain/pkg/transaction"
-	"metachain/pkg/txpool"
+	"metechain/pkg/block"
+	"metechain/pkg/blockchain"
+	"metechain/pkg/config"
+	"metechain/pkg/logger"
+	"metechain/pkg/transaction"
+	"metechain/pkg/txpool"
 
 	"go.uber.org/zap"
 
@@ -98,14 +98,14 @@ func (c *Client) GetNonce(from string) (uint64, error) {
 func (c *Client) SendRawTransaction(rawTx string) (string, error) {
 	arr := strings.Split(rawTx, "0x0x0x")
 	var msgHash []byte
-	var metaFrom string
+	var meteFrom string
 	if len(arr) > 1 {
 		arrmk := strings.Split(arr[1], "0x0x")
 		if len(arrmk) > 1 {
 			msgHash, _ = hex.DecodeString(arrmk[0])
 
 			kaddr, _ := hex.DecodeString(arrmk[1])
-			metaFrom = base58.Encode(kaddr)
+			meteFrom = base58.Encode(kaddr)
 		}
 		rawTx = arr[0]
 	}
@@ -129,11 +129,11 @@ func (c *Client) SendRawTransaction(rawTx string) (string, error) {
 
 	logger.InfoLogger.Printf("chainserver sendRawTransaction:{mas.From:%v,to:%v,amount:%v,nounce:%v,hash:%v,gas:%v,gasPrice:%v,txType:%v,chainId:%v,tx lenght:%v}\n", mas.From(), tx.To(), tx.Value(), tx.Nonce(), tx.Hash(), tx.Gas(), tx.GasPrice(), tx.Type(), tx.ChainId(), len(tx.Data()))
 
-	return c.sendRawTransaction(mas.From().Hex(), rawTx, metaFrom, msgHash)
+	return c.sendRawTransaction(mas.From().Hex(), rawTx, meteFrom, msgHash)
 }
 
 //send eth signed transaction
-func (g *Client) sendRawTransaction(EthFrom, EthData, metaFrom string, MsgHash []byte) (string, error) {
+func (g *Client) sendRawTransaction(EthFrom, EthData, meteFrom string, MsgHash []byte) (string, error) {
 	ethFrom := common.HexToAddress(EthFrom)
 	ethData := EthData
 
@@ -147,12 +147,12 @@ func (g *Client) sendRawTransaction(EthFrom, EthData, metaFrom string, MsgHash [
 	var tag transaction.TransactionType
 	//	var signType crypto.SigType
 
-	if len(metaFrom) > 0 && len(MsgHash) > 0 {
-		// f, err := address.NewAddrFromString(metaFrom)
+	if len(meteFrom) > 0 && len(MsgHash) > 0 {
+		// f, err := address.NewAddrFromString(meteFrom)
 		// if err != nil {
 		// 	return "", err
 		// }
-		from = common.HexToAddress(metaFrom)
+		from = common.HexToAddress(meteFrom)
 		//signType = crypto.TypeED25519
 		evm.MsgHash = MsgHash
 	} else {
@@ -190,7 +190,7 @@ func (g *Client) sendRawTransaction(EthFrom, EthData, metaFrom string, MsgHash [
 		value := ethTx.Value().Div(ethTx.Value(), deci)
 		// amount = value.Uint64()
 		amount.Set(value)
-		tag = transaction.EvmMetaTransaction
+		tag = transaction.EvmmeteTransaction
 		evm.Status = true
 	}
 

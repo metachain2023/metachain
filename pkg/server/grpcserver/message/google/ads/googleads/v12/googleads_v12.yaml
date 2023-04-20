@@ -111,9 +111,9 @@ apis:
 
 types:
 - name: google.ads.googleads.v12.errors.GoogleAdsFailure
-- name: google.ads.googleads.v12.resources.BatchJob.BatchJobMetadata
-- name: google.ads.googleads.v12.services.PromoteExperimentMetadata
-- name: google.ads.googleads.v12.services.ScheduleExperimentMetadata
+- name: google.ads.googleads.v12.resources.BatchJob.BatchJobmetedata
+- name: google.ads.googleads.v12.services.PromoteExperimentmetedata
+- name: google.ads.googleads.v12.services.ScheduleExperimentmetedata
 
 documentation:
   summary: 'Manage your Google Ads accounts, campaigns, and reports with this API.'

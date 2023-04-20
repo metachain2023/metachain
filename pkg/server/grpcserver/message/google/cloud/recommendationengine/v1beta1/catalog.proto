@@ -27,7 +27,7 @@ option objc_class_prefix = "RECAI";
 option php_namespace = "Google\\Cloud\\RecommendationEngine\\V1beta1";
 option ruby_package = "Google::Cloud::RecommendationEngine::V1beta1";
 
-// CatalogItem captures all metadata information of items to be recommended.
+// CatalogItem captures all metedata information of items to be recommended.
 message CatalogItem {
   // Category represents catalog item category hierarchy.
   message CategoryHierarchy {
@@ -97,14 +97,14 @@ message CatalogItem {
   // more](/recommendations-ai/docs/catalog#item-group-id).
   string item_group_id = 9 [(google.api.field_behavior) = OPTIONAL];
 
-  // Extra catalog item metadata for different recommendation types.
+  // Extra catalog item metedata for different recommendation types.
   oneof recommendation_type {
-    // Optional. Metadata specific to retail products.
-    ProductCatalogItem product_metadata = 10 [(google.api.field_behavior) = OPTIONAL];
+    // Optional. metedata specific to retail products.
+    ProductCatalogItem product_metedata = 10 [(google.api.field_behavior) = OPTIONAL];
   }
 }
 
-// ProductCatalogItem captures item metadata specific to retail products.
+// ProductCatalogItem captures item metedata specific to retail products.
 message ProductCatalogItem {
   // Exact product price.
   message ExactPrice {

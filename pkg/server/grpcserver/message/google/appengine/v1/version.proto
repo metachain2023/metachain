@@ -106,7 +106,7 @@ message Version {
   // services.
   bool app_engine_apis = 128;
 
-  // Metadata settings that are supplied to this version to enable
+  // metedata settings that are supplied to this version to enable
   // beta runtime features.
   map<string, string> beta_settings = 13;
 

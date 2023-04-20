@@ -46,7 +46,7 @@ service Environments {
     option (google.api.method_signature) = "parent,environment";
     option (google.longrunning.operation_info) = {
       response_type: "Environment"
-      metadata_type: "google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.orchestration.airflow.service.v1beta1.Operationmetedata"
     };
   }
 
@@ -77,7 +77,7 @@ service Environments {
     option (google.api.method_signature) = "name,environment,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Environment"
-      metadata_type: "google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.orchestration.airflow.service.v1beta1.Operationmetedata"
     };
   }
 
@@ -90,7 +90,7 @@ service Environments {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.orchestration.airflow.service.v1beta1.Operationmetedata"
     };
   }
 
@@ -103,7 +103,7 @@ service Environments {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Environment"
-      metadata_type: "google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.orchestration.airflow.service.v1beta1.Operationmetedata"
     };
   }
 
@@ -117,7 +117,7 @@ service Environments {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse"
-      metadata_type: "google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.orchestration.airflow.service.v1beta1.Operationmetedata"
     };
   }
 
@@ -132,7 +132,7 @@ service Environments {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotResponse"
-      metadata_type: "google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.orchestration.airflow.service.v1beta1.Operationmetedata"
     };
   }
 
@@ -147,7 +147,7 @@ service Environments {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotResponse"
-      metadata_type: "google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.orchestration.airflow.service.v1beta1.Operationmetedata"
     };
   }
 }

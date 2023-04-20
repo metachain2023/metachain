@@ -21,7 +21,7 @@ import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/enterpriseknowledgegraph/v1/job_state.proto";
-import "google/cloud/enterpriseknowledgegraph/v1/operation_metadata.proto";
+import "google/cloud/enterpriseknowledgegraph/v1/operation_metedata.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
@@ -142,7 +142,7 @@ service EnterpriseKnowledgeGraphService {
   }
 }
 
-// The desired input location and metadata.
+// The desired input location and metedata.
 message InputConfig {
   // The type of entities we will support. Currently, we only support people,
   // establishment, property, and product types. If the type is
@@ -200,7 +200,7 @@ message BigQueryInputConfig {
   string gcs_uri = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// The desired output location and metadata.
+// The desired output location and metedata.
 message OutputConfig {
   // Format is “projects/*/datasets/*”.
   string bigquery_dataset = 1 [(google.api.resource_reference) = {
@@ -262,9 +262,9 @@ message AffinityClusteringConfig {
 }
 
 // Details of operations that perform deletes of any entities.
-message DeleteOperationMetadata {
-  // The common part of the operation metadata.
-  CommonOperationMetadata common_metadata = 1;
+message DeleteOperationmetedata {
+  // The common part of the operation metedata.
+  CommonOperationmetedata common_metedata = 1;
 }
 
 // Request message for CreateEntityReconciliationJob.

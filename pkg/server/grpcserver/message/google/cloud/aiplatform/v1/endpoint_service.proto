@@ -50,7 +50,7 @@ service EndpointService {
     option (google.api.method_signature) = "parent,endpoint,endpoint_id";
     option (google.longrunning.operation_info) = {
       response_type: "Endpoint"
-      metadata_type: "CreateEndpointOperationMetadata"
+      metedata_type: "CreateEndpointOperationmetedata"
     };
   }
 
@@ -88,7 +88,7 @@ service EndpointService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteOperationMetadata"
+      metedata_type: "DeleteOperationmetedata"
     };
   }
 
@@ -102,7 +102,7 @@ service EndpointService {
         "endpoint,deployed_model,traffic_split";
     option (google.longrunning.operation_info) = {
       response_type: "DeployModelResponse"
-      metadata_type: "DeployModelOperationMetadata"
+      metedata_type: "DeployModelOperationmetedata"
     };
   }
 
@@ -118,7 +118,7 @@ service EndpointService {
         "endpoint,deployed_model_id,traffic_split";
     option (google.longrunning.operation_info) = {
       response_type: "UndeployModelResponse"
-      metadata_type: "UndeployModelOperationMetadata"
+      metedata_type: "UndeployModelOperationmetedata"
     };
   }
 }
@@ -151,9 +151,9 @@ message CreateEndpointRequest {
 
 // Runtime operation information for
 // [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1.EndpointService.CreateEndpoint].
-message CreateEndpointOperationMetadata {
+message CreateEndpointOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
@@ -310,9 +310,9 @@ message DeployModelResponse {
 
 // Runtime operation information for
 // [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel].
-message DeployModelOperationMetadata {
+message DeployModelOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }
 
 // Request message for
@@ -347,7 +347,7 @@ message UndeployModelResponse {}
 
 // Runtime operation information for
 // [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel].
-message UndeployModelOperationMetadata {
+message UndeployModelOperationmetedata {
   // The operation generic information.
-  GenericOperationMetadata generic_metadata = 1;
+  GenericOperationmetedata generic_metedata = 1;
 }

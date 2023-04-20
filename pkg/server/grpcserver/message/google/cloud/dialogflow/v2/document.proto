@@ -76,8 +76,8 @@ service Documents {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+  // - `metedata`:
+  // [KnowledgeOperationmetedata][google.cloud.dialogflow.v2.KnowledgeOperationmetedata]
   // - `response`: [Document][google.cloud.dialogflow.v2.Document]
   rpc CreateDocument(CreateDocumentRequest)
       returns (google.longrunning.Operation) {
@@ -96,7 +96,7 @@ service Documents {
     option (google.api.method_signature) = "parent,document";
     option (google.longrunning.operation_info) = {
       response_type: "Document"
-      metadata_type: "KnowledgeOperationMetadata"
+      metedata_type: "KnowledgeOperationmetedata"
     };
   }
 
@@ -108,8 +108,8 @@ service Documents {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+  // - `metedata`:
+  // [KnowledgeOperationmetedata][google.cloud.dialogflow.v2.KnowledgeOperationmetedata]
   // - `response`:
   // [ImportDocumentsResponse][google.cloud.dialogflow.v2.ImportDocumentsResponse]
   rpc ImportDocuments(ImportDocumentsRequest)
@@ -124,7 +124,7 @@ service Documents {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ImportDocumentsResponse"
-      metadata_type: "KnowledgeOperationMetadata"
+      metedata_type: "KnowledgeOperationmetedata"
     };
   }
 
@@ -134,8 +134,8 @@ service Documents {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+  // - `metedata`:
+  // [KnowledgeOperationmetedata][google.cloud.dialogflow.v2.KnowledgeOperationmetedata]
   // - `response`: An [Empty
   //   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
   rpc DeleteDocument(DeleteDocumentRequest)
@@ -152,7 +152,7 @@ service Documents {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "KnowledgeOperationMetadata"
+      metedata_type: "KnowledgeOperationmetedata"
     };
   }
 
@@ -162,8 +162,8 @@ service Documents {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+  // - `metedata`:
+  // [KnowledgeOperationmetedata][google.cloud.dialogflow.v2.KnowledgeOperationmetedata]
   // - `response`: [Document][google.cloud.dialogflow.v2.Document]
   rpc UpdateDocument(UpdateDocumentRequest)
       returns (google.longrunning.Operation) {
@@ -182,7 +182,7 @@ service Documents {
     option (google.api.method_signature) = "document,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Document"
-      metadata_type: "KnowledgeOperationMetadata"
+      metedata_type: "KnowledgeOperationmetedata"
     };
   }
 
@@ -195,8 +195,8 @@ service Documents {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+  // - `metedata`:
+  // [KnowledgeOperationmetedata][google.cloud.dialogflow.v2.KnowledgeOperationmetedata]
   // - `response`: [Document][google.cloud.dialogflow.v2.Document]
   //
   // Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
@@ -218,7 +218,7 @@ service Documents {
     option (google.api.method_signature) = "name,content_uri";
     option (google.longrunning.operation_info) = {
       response_type: "Document"
-      metadata_type: "KnowledgeOperationMetadata"
+      metedata_type: "KnowledgeOperationmetedata"
     };
   }
 
@@ -229,8 +229,8 @@ service Documents {
   // operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [KnowledgeOperationMetadata][google.cloud.dialogflow.v2.KnowledgeOperationMetadata]
+  // - `metedata`:
+  // [KnowledgeOperationmetedata][google.cloud.dialogflow.v2.KnowledgeOperationmetedata]
   // - `response`: [Document][google.cloud.dialogflow.v2.Document]
   rpc ExportDocument(ExportDocumentRequest)
       returns (google.longrunning.Operation) {
@@ -244,7 +244,7 @@ service Documents {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Document"
-      metadata_type: "KnowledgeOperationMetadata"
+      metedata_type: "KnowledgeOperationmetedata"
     };
   }
 }
@@ -381,11 +381,11 @@ message Document {
   ReloadStatus latest_reload_status = 12
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. Metadata for the document. The metadata supports arbitrary
+  // Optional. metedata for the document. The metedata supports arbitrary
   // key-value pairs. Suggested use cases include storing a document's title,
   // an external URL distinct from the document's content_uri, etc.
-  // The max size of a `key` or a `value` of the metadata is 1024 bytes.
-  map<string, string> metadata = 7 [(google.api.field_behavior) = OPTIONAL];
+  // The max size of a `key` or a `value` of the metedata is 1024 bytes.
+  map<string, string> metedata = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Output only. The current state of the document.
   State state = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -512,9 +512,9 @@ message ImportDocumentsRequest {
   ImportDocumentTemplate document_template = 3
       [(google.api.field_behavior) = REQUIRED];
 
-  // Whether to import custom metadata from Google Cloud Storage.
+  // Whether to import custom metedata from Google Cloud Storage.
   // Only valid when the document source is Google Cloud Storage URI.
-  bool import_gcs_custom_metadata = 4;
+  bool import_gcs_custom_metedata = 4;
 }
 
 // The template used for importing documents.
@@ -526,11 +526,11 @@ message ImportDocumentTemplate {
   repeated Document.KnowledgeType knowledge_types = 2
       [(google.api.field_behavior) = REQUIRED];
 
-  // Metadata for the document. The metadata supports arbitrary
+  // metedata for the document. The metedata supports arbitrary
   // key-value pairs. Suggested use cases include storing a document's title,
   // an external URL distinct from the document's content_uri, etc.
-  // The max size of a `key` or a `value` of the metadata is 1024 bytes.
-  map<string, string> metadata = 3;
+  // The max size of a `key` or a `value` of the metedata is 1024 bytes.
+  map<string, string> metedata = 3;
 }
 
 // Response message for
@@ -592,9 +592,9 @@ message ReloadDocumentRequest {
     string content_uri = 3 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // Optional. Whether to import custom metadata from Google Cloud Storage.
+  // Optional. Whether to import custom metedata from Google Cloud Storage.
   // Only valid when the document source is Google Cloud Storage URI.
-  bool import_gcs_custom_metadata = 4 [(google.api.field_behavior) = OPTIONAL];
+  bool import_gcs_custom_metedata = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. When enabled, the reload request is to apply partial update to
   // the smart messaging allowlist.
@@ -630,14 +630,14 @@ message ExportDocumentRequest {
   bool smart_messaging_partial_update = 5;
 }
 
-// Metadata related to the Export Data Operations (e.g. ExportDocument).
-message ExportOperationMetadata {
+// metedata related to the Export Data Operations (e.g. ExportDocument).
+message ExportOperationmetedata {
   // Cloud Storage file path of the exported data.
   GcsDestination exported_gcs_destination = 1;
 }
 
-// Metadata in google::longrunning::Operation for Knowledge operations.
-message KnowledgeOperationMetadata {
+// metedata in google::longrunning::Operation for Knowledge operations.
+message KnowledgeOperationmetedata {
   // States of the operation.
   enum State {
     // State unspecified.
@@ -659,9 +659,9 @@ message KnowledgeOperationMetadata {
   // The name of the knowledge base interacted with during the operation.
   string knowledge_base = 3;
 
-  // Additional metadata for the Knowledge operation.
-  oneof operation_metadata {
-    // Metadata for the Export Data Operation such as the destination of export.
-    ExportOperationMetadata export_operation_metadata = 4;
+  // Additional metedata for the Knowledge operation.
+  oneof operation_metedata {
+    // metedata for the Export Data Operation such as the destination of export.
+    ExportOperationmetedata export_operation_metedata = 4;
   }
 }

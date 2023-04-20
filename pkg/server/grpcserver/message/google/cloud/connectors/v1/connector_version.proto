@@ -46,7 +46,7 @@ message ConnectorVersion {
   // Output only. Updated time.
   google.protobuf.Timestamp update_time = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Resource labels to represent user-provided metadata.
+  // Output only. Resource labels to represent user-provided metedata.
   // Refer to cloud documentation on labels for more details.
   // https://cloud.google.com/compute/docs/labeling-resources
   map<string, string> labels = 4 [(google.api.field_behavior) = OUTPUT_ONLY];

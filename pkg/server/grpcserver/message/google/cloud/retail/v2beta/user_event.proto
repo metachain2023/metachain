@@ -31,7 +31,7 @@ option objc_class_prefix = "RETAIL";
 option php_namespace = "Google\\Cloud\\Retail\\V2beta";
 option ruby_package = "Google::Cloud::Retail::V2beta";
 
-// UserEvent captures all metadata information Retail API needs to know about
+// UserEvent captures all metedata information Retail API needs to know about
 // how end users interact with customers' website.
 message UserEvent {
   // Required. User event type. Allowed values are:

@@ -80,7 +80,7 @@ service BatchJobService {
 
   // Runs the batch job.
   //
-  // The Operation.metadata field type is BatchJobMetadata. When finished, the
+  // The Operation.metedata field type is BatchJobmetedata. When finished, the
   // long running operation will not contain errors or a response. Instead, use
   // ListBatchJobResults to get the results of the job.
   //
@@ -100,7 +100,7 @@ service BatchJobService {
     option (google.api.method_signature) = "resource_name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.ads.googleads.v11.resources.BatchJob.BatchJobMetadata"
+      metedata_type: "google.ads.googleads.v11.resources.BatchJob.BatchJobmetedata"
     };
   }
 

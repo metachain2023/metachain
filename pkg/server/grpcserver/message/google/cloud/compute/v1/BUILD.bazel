@@ -307,7 +307,7 @@ nodejs_gapic_library(
     name = "compute_nodejs_gapic",
     package_name = "@google-cloud/compute",
     src = ":compute_proto_with_info",
-    extra_protoc_parameters = ["metadata"],
+    extra_protoc_parameters = ["metedata"],
     diregapic = True,
     deps = [],
 )
@@ -342,7 +342,7 @@ ruby_cloud_gapic_library(
         "ruby-cloud-api-id=compute.googleapis.com",
         "ruby-cloud-api-shortname=compute",
         "ruby-cloud-gem-name=google-cloud-compute-v1",
-        "ruby-cloud-generate-metadata=false",
+        "ruby-cloud-generate-metedata=false",
         "ruby-cloud-generate-transports=rest",
         "ruby-cloud-env-prefix=COMPUTE",
         "ruby-cloud-product-url=https://cloud.google.com/compute/",

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"metachain/pkg/logger"
-	"metachain/pkg/transaction"
+	"metechain/pkg/logger"
+	"metechain/pkg/transaction"
 
 	"go.uber.org/zap"
 )

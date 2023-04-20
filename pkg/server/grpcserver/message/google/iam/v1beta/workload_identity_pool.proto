@@ -65,7 +65,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "parent,workload_identity_pool,workload_identity_pool_id";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPool"
-      metadata_type: "WorkloadIdentityPoolOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolOperationmetedata"
     };
   }
 
@@ -79,7 +79,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "workload_identity_pool,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPool"
-      metadata_type: "WorkloadIdentityPoolOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolOperationmetedata"
     };
   }
 
@@ -102,7 +102,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPool"
-      metadata_type: "WorkloadIdentityPoolOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolOperationmetedata"
     };
   }
 
@@ -116,7 +116,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPool"
-      metadata_type: "WorkloadIdentityPoolOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolOperationmetedata"
     };
   }
 
@@ -154,7 +154,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "parent,workload_identity_pool_provider,workload_identity_pool_provider_id";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPoolProvider"
-      metadata_type: "WorkloadIdentityPoolProviderOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolProviderOperationmetedata"
     };
   }
 
@@ -168,7 +168,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "workload_identity_pool_provider,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPoolProvider"
-      metadata_type: "WorkloadIdentityPoolProviderOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolProviderOperationmetedata"
     };
   }
 
@@ -186,7 +186,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPoolProvider"
-      metadata_type: "WorkloadIdentityPoolProviderOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolProviderOperationmetedata"
     };
   }
 
@@ -201,7 +201,7 @@ service WorkloadIdentityPools {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "WorkloadIdentityPoolProvider"
-      metadata_type: "WorkloadIdentityPoolProviderOperationMetadata"
+      metedata_type: "WorkloadIdentityPoolProviderOperationmetedata"
     };
   }
 }
@@ -633,8 +633,8 @@ message UndeleteWorkloadIdentityPoolProviderRequest {
   ];
 }
 
-// Metadata for long-running WorkloadIdentityPool operations.
-message WorkloadIdentityPoolOperationMetadata {}
+// metedata for long-running WorkloadIdentityPool operations.
+message WorkloadIdentityPoolOperationmetedata {}
 
-// Metadata for long-running WorkloadIdentityPoolProvider operations.
-message WorkloadIdentityPoolProviderOperationMetadata {}
+// metedata for long-running WorkloadIdentityPoolProvider operations.
+message WorkloadIdentityPoolProviderOperationmetedata {}

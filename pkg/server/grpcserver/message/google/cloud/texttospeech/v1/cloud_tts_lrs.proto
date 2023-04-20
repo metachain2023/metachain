@@ -47,7 +47,7 @@ service TextToSpeechLongAudioSynthesize {
     };
     option (google.longrunning.operation_info) = {
       response_type: "SynthesizeLongAudioResponse"
-      metadata_type: "SynthesizeLongAudioMetadata"
+      metedata_type: "SynthesizeLongAudiometedata"
     };
   }
 }
@@ -77,8 +77,8 @@ message SynthesizeLongAudioRequest {
 // The message returned to the client by the `SynthesizeLongAudio` method.
 message SynthesizeLongAudioResponse {}
 
-// Metadata for response returned by the `SynthesizeLongAudio` method.
-message SynthesizeLongAudioMetadata {
+// metedata for response returned by the `SynthesizeLongAudio` method.
+message SynthesizeLongAudiometedata {
   // Time when the request was received.
   google.protobuf.Timestamp start_time = 1;
 

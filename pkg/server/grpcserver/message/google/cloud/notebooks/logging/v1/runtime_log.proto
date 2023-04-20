@@ -39,6 +39,6 @@ message RuntimeEvent {
   // Required. Type of event.
   EventType type = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Optional. Additional metadata for the event.
+  // Optional. Additional metedata for the event.
   map<string, string> details = 2 [(google.api.field_behavior) = OPTIONAL];
 }

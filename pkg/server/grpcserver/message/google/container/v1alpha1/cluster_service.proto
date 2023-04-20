@@ -51,7 +51,7 @@ service ClusterManager {
   // on that node to communicate with all other instances in the
   // cluster.
   //
-  // Finally, an entry is added to the project's global metadata indicating
+  // Finally, an entry is added to the project's global metedata indicating
   // which CIDR range is being used by the cluster.
   rpc CreateCluster(CreateClusterRequest) returns (Operation) {
     option (google.api.http) = { post: "/v1alpha1/{parent=projects/*/locations/*}/clusters" body: "*" };
@@ -241,12 +241,12 @@ message NodeConfig {
   // no Service Account is specified, the "default" service account is used.
   string service_account = 9;
 
-  // The metadata key/value pairs assigned to instances in the cluster.
+  // The metedata key/value pairs assigned to instances in the cluster.
   //
   // Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
-  // in length. These are reflected as part of a URL in the metadata server.
+  // in length. These are reflected as part of a URL in the metedata server.
   // Additionally, to avoid ambiguity, keys must not conflict with any other
-  // metadata keys for the project or be one of the four reserved keys:
+  // metedata keys for the project or be one of the four reserved keys:
   // "instance-template", "kube-env", "startup-script", and "user-data"
   //
   // Values are free-form strings, and only have meaning as interpreted by
@@ -254,7 +254,7 @@ message NodeConfig {
   // that each value's size must be less than or equal to 32 KB.
   //
   // The total size of all keys and values must be less than 512 KB.
-  map<string, string> metadata = 4;
+  map<string, string> metedata = 4;
 
   // The image type to use for this node. Note that for a given image type,
   // the latest version of it will be used.

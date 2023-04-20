@@ -30,7 +30,7 @@ option objc_class_prefix = "RETAIL";
 option php_namespace = "Google\\Cloud\\Retail\\V2beta";
 option ruby_package = "Google::Cloud::Retail::V2beta";
 
-// Metadata that describes the training and serving parameters of a
+// metedata that describes the training and serving parameters of a
 // [Model][google.cloud.retail.v2beta.Model]. A
 // [Model][google.cloud.retail.v2beta.Model] can be associated with a
 // [ServingConfig][google.cloud.retail.v2beta.ServingConfig] and then queried
@@ -165,9 +165,9 @@ message Model {
   //
   // This field together with
   // [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
-  // describe model metadata to use to control model training and serving.
+  // describe model metedata to use to control model training and serving.
   // See https://cloud.google.com/retail/docs/models
-  // for more details on what the model metadata control and which combination
+  // for more details on what the model metedata control and which combination
   // of parameters are valid. For invalid combinations of parameters (e.g. type
   // = `frequently-bought-together` and optimization_objective = `ctr`), you
   // receive an error 400 if you try to create/update a recommendation with
@@ -190,9 +190,9 @@ message Model {
   //
   // This field together with
   // [optimization_objective][google.cloud.retail.v2beta.Model.type]
-  // describe model metadata to use to control model training and serving.
+  // describe model metedata to use to control model training and serving.
   // See https://cloud.google.com/retail/docs/models
-  // for more details on what the model metadata control and which combination
+  // for more details on what the model metedata control and which combination
   // of parameters are valid. For invalid combinations of parameters (e.g. type
   // = `frequently-bought-together` and optimization_objective = `ctr`), you
   // receive an error 400 if you try to create/update a recommendation with

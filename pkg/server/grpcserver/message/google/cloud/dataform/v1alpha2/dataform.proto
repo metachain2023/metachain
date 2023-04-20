@@ -1310,7 +1310,7 @@ message CompilationResultAction {
   // referenced by Dataform actions.
   message Declaration {
     // Descriptor for the relation and its columns. Used as documentation only,
-    // i.e. values here will result in no changes to the relation's metadata.
+    // i.e. values here will result in no changes to the relation's metedata.
     RelationDescriptor relation_descriptor = 1;
   }
 

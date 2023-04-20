@@ -71,7 +71,7 @@ message SearchCatalogResult {
   // `search_result_type` is `ENTRY`.
   oneof system {
     // Output only. The source system that Data Catalog automatically integrates  with, such
-    // as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
+    // as BigQuery, Cloud Pub/Sub, or Dataproc metestore.
     IntegratedSystem integrated_system = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Custom source system that you can manually integrate Data Catalog with.
@@ -92,7 +92,7 @@ message SearchCatalogResult {
   //
   // Example for a DPMS table:
   //
-  // `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
+  // `dataproc_metestore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
   string fully_qualified_name = 10;
 
   // The display name of the result.

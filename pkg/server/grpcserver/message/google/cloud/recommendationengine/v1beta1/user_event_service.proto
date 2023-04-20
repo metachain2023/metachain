@@ -81,7 +81,7 @@ service UserEventService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse"
-      metadata_type: "google.cloud.recommendationengine.v1beta1.PurgeUserEventsMetadata"
+      metedata_type: "google.cloud.recommendationengine.v1beta1.PurgeUserEventsmetedata"
     };
     option (google.api.method_signature) = "parent,filter,force";
   }
@@ -92,7 +92,7 @@ service UserEventService {
   //
   // Operation.response is of type ImportResponse. Note that it is
   // possible for a subset of the items to be successfully inserted.
-  // Operation.metadata is of type ImportMetadata.
+  // Operation.metedata is of type Importmetedata.
   rpc ImportUserEvents(ImportUserEventsRequest)
       returns (google.longrunning.Operation) {
     option (google.api.http) = {
@@ -101,7 +101,7 @@ service UserEventService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse"
-      metadata_type: "google.cloud.recommendationengine.v1beta1.ImportMetadata"
+      metedata_type: "google.cloud.recommendationengine.v1beta1.Importmetedata"
     };
     option (google.api.method_signature) =
         "parent,request_id,input_config,errors_config";
@@ -146,9 +146,9 @@ message PurgeUserEventsRequest {
   bool force = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Metadata related to the progress of the PurgeUserEvents operation.
-// This will be returned by the google.longrunning.Operation.metadata field.
-message PurgeUserEventsMetadata {
+// metedata related to the progress of the PurgeUserEvents operation.
+// This will be returned by the google.longrunning.Operation.metedata field.
+message PurgeUserEventsmetedata {
   // The ID of the request / operation.
   string operation_name = 1;
 

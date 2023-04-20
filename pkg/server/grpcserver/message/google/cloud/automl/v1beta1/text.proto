@@ -25,25 +25,25 @@ option java_package = "com.google.cloud.automl.v1beta1";
 option php_namespace = "Google\\Cloud\\AutoMl\\V1beta1";
 option ruby_package = "Google::Cloud::AutoML::V1beta1";
 
-// Dataset metadata for classification.
-message TextClassificationDatasetMetadata {
+// Dataset metedata for classification.
+message TextClassificationDatasetmetedata {
   // Required. Type of the classification problem.
   ClassificationType classification_type = 1;
 }
 
-// Model metadata that is specific to text classification.
-message TextClassificationModelMetadata {
+// Model metedata that is specific to text classification.
+message TextClassificationModelmetedata {
   // Output only. Classification type of the dataset used to train this model.
   ClassificationType classification_type = 3;
 }
 
-// Dataset metadata that is specific to text extraction
-message TextExtractionDatasetMetadata {
+// Dataset metedata that is specific to text extraction
+message TextExtractionDatasetmetedata {
 
 }
 
-// Model metadata that is specific to text extraction.
-message TextExtractionModelMetadata {
+// Model metedata that is specific to text extraction.
+message TextExtractionModelmetedata {
   // Indicates the scope of model use case.
   //
   // * `default`: Use to train a general text extraction model. Default value.
@@ -53,8 +53,8 @@ message TextExtractionModelMetadata {
   string model_hint = 3;
 }
 
-// Dataset metadata for text sentiment.
-message TextSentimentDatasetMetadata {
+// Dataset metedata for text sentiment.
+message TextSentimentDatasetmetedata {
   // Required. A sentiment is expressed as an integer ordinal, where higher value
   // means a more positive sentiment. The range of sentiments that will be used
   // is between 0 and sentiment_max (inclusive on both ends), and all the values
@@ -64,7 +64,7 @@ message TextSentimentDatasetMetadata {
   int32 sentiment_max = 1;
 }
 
-// Model metadata that is specific to text sentiment.
-message TextSentimentModelMetadata {
+// Model metedata that is specific to text sentiment.
+message TextSentimentModelmetedata {
 
 }

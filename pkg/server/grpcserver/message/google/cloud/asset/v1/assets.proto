@@ -36,7 +36,7 @@ option java_outer_classname = "AssetProto";
 option java_package = "com.google.cloud.asset.v1";
 option php_namespace = "Google\\Cloud\\Asset\\V1";
 
-// An asset in Google Cloud and its temporal metadata, including the time window
+// An asset in Google Cloud and its temporal metedata, including the time window
 // when it was observed and its status during that window.
 message TemporalAsset {
   // State of prior asset.
@@ -502,7 +502,7 @@ message ResourceSearchResult {
   // The additional searchable attributes of this resource. The attributes may
   // vary from one resource type to another. Examples: `projectId` for Project,
   // `dnsName` for DNS ManagedZone. This field contains a subset of the resource
-  // metadata fields that are returned by the List or Get APIs provided by the
+  // metedata fields that are returned by the List or Get APIs provided by the
   // corresponding Google Cloud service (e.g., Compute Engine). see [API
   // references and supported searchable
   // attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)

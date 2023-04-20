@@ -53,11 +53,11 @@ message Dataset {
   // Required. Points to a YAML file stored on Google Cloud Storage describing
   // additional information about the Dataset. The schema is defined as an
   // OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
-  // found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
-  string metadata_schema_uri = 3 [(google.api.field_behavior) = REQUIRED];
+  // found in gs://google-cloud-aiplatform/schema/dataset/metedata/.
+  string metedata_schema_uri = 3 [(google.api.field_behavior) = REQUIRED];
 
   // Required. Additional information about the Dataset.
-  google.protobuf.Value metadata = 8 [(google.api.field_behavior) = REQUIRED];
+  google.protobuf.Value metedata = 8 [(google.api.field_behavior) = REQUIRED];
 
   // Output only. Timestamp when this Dataset was created.
   google.protobuf.Timestamp create_time = 4
@@ -71,7 +71,7 @@ message Dataset {
   // "overwrite" update happens.
   string etag = 6;
 
-  // The labels with user-defined metadata to organize your Datasets.
+  // The labels with user-defined metedata to organize your Datasets.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -83,9 +83,9 @@ message Dataset {
   // System reserved label keys are prefixed with "aiplatform.googleapis.com/"
   // and are immutable. Following system labels exist for each Dataset:
   //
-  // * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
+  // * "aiplatform.googleapis.com/dataset_metedata_schema": output only, its
   //   value is the
-  //   [metadata_schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri]
+  //   [metedata_schema's][google.cloud.aiplatform.v1beta1.Dataset.metedata_schema_uri]
   //   title.
   map<string, string> labels = 7;
 
@@ -103,10 +103,10 @@ message Dataset {
   EncryptionSpec encryption_spec = 11;
 
   // Output only. The resource name of the Artifact that was created in
-  // MetadataStore when creating the Dataset. The Artifact resource name pattern
+  // metedataStore when creating the Dataset. The Artifact resource name pattern
   // is
-  // `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
-  string metadata_artifact = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // `projects/{project}/locations/{location}/metedataStores/{metedata_store}/artifacts/{artifact}`.
+  string metedata_artifact = 17 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Describes the location from where we import data into a Dataset, together

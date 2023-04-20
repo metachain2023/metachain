@@ -31,8 +31,8 @@ message AutoMlTables {
   // The input parameters of this TrainingJob.
   AutoMlTablesInputs inputs = 1;
 
-  // The metadata information.
-  AutoMlTablesMetadata metadata = 2;
+  // The metedata information.
+  AutoMlTablesmetedata metedata = 2;
 }
 
 message AutoMlTablesInputs {
@@ -274,8 +274,8 @@ message AutoMlTablesInputs {
   repeated string additional_experiments = 11;
 }
 
-// Model metadata specific to AutoML Tables.
-message AutoMlTablesMetadata {
+// Model metedata specific to AutoML Tables.
+message AutoMlTablesmetedata {
   // Output only. The actual training cost of the model, expressed in milli
   // node hours, i.e. 1,000 value in this field means 1 node hour. Guaranteed
   // to not exceed the train budget.

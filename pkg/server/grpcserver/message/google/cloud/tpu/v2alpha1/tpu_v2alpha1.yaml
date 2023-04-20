@@ -9,7 +9,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.tpu.v2alpha1.OperationMetadata
+- name: google.cloud.tpu.v2alpha1.Operationmetedata
 
 documentation:
   summary: TPU API provides customers with access to Google TPU technology.

@@ -59,8 +59,8 @@ service CloudChannelReportsService {
   // The ID of a long-running operation.
   //
   // To get the results of the operation, call the GetOperation method of
-  // CloudChannelOperationsService. The Operation metadata contains an
-  // instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+  // CloudChannelOperationsService. The Operation metedata contains an
+  // instance of [Operationmetedata][google.cloud.channel.v1.Operationmetedata].
   //
   // To get the results of report generation, call
   // [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults]
@@ -73,7 +73,7 @@ service CloudChannelReportsService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "RunReportJobResponse"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -143,10 +143,10 @@ message RunReportJobResponse {
   // to retrieve the report's results.
   ReportJob report_job = 1;
 
-  // The metadata for the report's results (display name, columns, row count,
+  // The metedata for the report's results (display name, columns, row count,
   // and date range). If you view this before the operation finishes,
   // you may see incomplete data.
-  ReportResultsMetadata report_metadata = 2;
+  ReportResultsmetedata report_metedata = 2;
 }
 
 // Request message for
@@ -184,12 +184,12 @@ message FetchReportResultsRequest {
 // [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
 // Contains a tabular representation of the report results.
 message FetchReportResultsResponse {
-  // The metadata for the report results (display name, columns, row count, and
+  // The metedata for the report results (display name, columns, row count, and
   // date ranges).
-  ReportResultsMetadata report_metadata = 1;
+  ReportResultsmetedata report_metedata = 1;
 
   // The report's lists of values. Each row follows the settings and ordering
-  // of the columns from `report_metadata`.
+  // of the columns from `report_metedata`.
   repeated Row rows = 2;
 
   // Pass this token to
@@ -259,7 +259,7 @@ message ReportJob {
 // [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob]
 // and
 // [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
-message ReportResultsMetadata {
+message ReportResultsmetedata {
   // Details of the completed report.
   Report report = 1;
 

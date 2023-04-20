@@ -181,12 +181,12 @@ message ReadSession {
 
   // Output only. An estimate on the number of bytes this session will scan when
   // all streams are completely consumed. This estimate is based on
-  // metadata from the table which might be incomplete or stale.
+  // metedata from the table which might be incomplete or stale.
   int64 estimated_total_bytes_scanned = 12
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. An estimate on the number of rows present in this session's
-  // streams. This estimate is based on metadata from the table which might be
+  // streams. This estimate is based on metedata from the table which might be
   // incomplete or stale.
   int64 estimated_row_count = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -219,14 +219,14 @@ enum WriteStreamView {
   // The default / unset value.
   WRITE_STREAM_VIEW_UNSPECIFIED = 0;
 
-  // The BASIC projection returns basic metadata about a write stream.  The
+  // The BASIC projection returns basic metedata about a write stream.  The
   // basic view does not include schema information.  This is the default view
   // returned by GetWriteStream.
   BASIC = 1;
 
-  // The FULL projection returns all available write stream metadata, including
+  // The FULL projection returns all available write stream metedata, including
   // the schema.  CreateWriteStream returns the full projection of write stream
-  // metadata.
+  // metedata.
   FULL = 2;
 }
 

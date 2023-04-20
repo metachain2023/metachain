@@ -349,7 +349,7 @@ message ErrorResource {
   // Path in the git repo of the erroneous config
   string source_path = 1;
 
-  // Metadata name of the resource that is causing an error
+  // metedata name of the resource that is causing an error
   string resource_name = 2;
 
   // Namespace of the resource that is causing an error

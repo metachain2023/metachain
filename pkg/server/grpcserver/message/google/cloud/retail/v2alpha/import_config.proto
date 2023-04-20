@@ -320,9 +320,9 @@ message CompletionDataInputConfig {
   }
 }
 
-// Metadata related to the progress of the Import operation. This is
-// returned by the google.longrunning.Operation.metadata field.
-message ImportMetadata {
+// metedata related to the progress of the Import operation. This is
+// returned by the google.longrunning.Operation.metedata field.
+message Importmetedata {
   // Operation create time.
   google.protobuf.Timestamp create_time = 1;
 
@@ -346,12 +346,12 @@ message ImportMetadata {
   // Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
   string notification_pubsub_topic = 6;
 
-  // Metadata related to transform user events.
-  TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+  // metedata related to transform user events.
+  TransformedUserEventsmetedata transformed_user_events_metedata = 7;
 }
 
-// Metadata related to transform user events operation.
-message TransformedUserEventsMetadata {
+// metedata related to transform user events operation.
+message TransformedUserEventsmetedata {
   // Count of entries in the source user events BigQuery table.
   int64 source_events_count = 1;
 

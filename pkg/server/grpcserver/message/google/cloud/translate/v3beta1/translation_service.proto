@@ -102,7 +102,7 @@ service TranslationService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "BatchTranslateResponse"
-      metadata_type: "BatchTranslateMetadata"
+      metedata_type: "BatchTranslatemetedata"
     };
   }
 
@@ -123,7 +123,7 @@ service TranslationService {
         "parent,source_language_code,target_language_codes,input_configs,output_config";
     option (google.longrunning.operation_info) = {
       response_type: "BatchTranslateDocumentResponse"
-      metadata_type: "BatchTranslateDocumentMetadata"
+      metedata_type: "BatchTranslateDocumentmetedata"
     };
   }
 
@@ -138,7 +138,7 @@ service TranslationService {
     option (google.api.method_signature) = "parent,glossary";
     option (google.longrunning.operation_info) = {
       response_type: "Glossary"
-      metadata_type: "CreateGlossaryMetadata"
+      metedata_type: "CreateGlossarymetedata"
     };
   }
 
@@ -171,7 +171,7 @@ service TranslationService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "DeleteGlossaryResponse"
-      metadata_type: "DeleteGlossaryMetadata"
+      metedata_type: "DeleteGlossarymetedata"
     };
   }
 }
@@ -256,7 +256,7 @@ message TranslateTextRequest {
   TranslateTextGlossaryConfig glossary_config = 7
       [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The labels with user-defined metadata for the request.
+  // Optional. The labels with user-defined metedata for the request.
   //
   // Label keys and values can be no longer than 63 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -349,7 +349,7 @@ message DetectLanguageRequest {
   // "text/plain". If left blank, the MIME type defaults to "text/html".
   string mime_type = 3 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The labels with user-defined metadata for the request.
+  // Optional. The labels with user-defined metedata for the request.
   //
   // Label keys and values can be no longer than 63 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -730,7 +730,7 @@ message TranslateDocumentRequest {
   TranslateTextGlossaryConfig glossary_config = 7
       [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The labels with user-defined metadata for the request.
+  // Optional. The labels with user-defined metedata for the request.
   //
   // Label keys and values can be no longer than 63 characters (Unicode
   // codepoints), can only contain lowercase letters, numeric characters,
@@ -843,7 +843,7 @@ message BatchTranslateTextRequest {
   map<string, TranslateTextGlossaryConfig> glossaries = 7
       [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The labels with user-defined metadata for the request.
+  // Optional. The labels with user-defined metedata for the request.
   //
   // Label keys and values can be no longer than 63 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric
@@ -854,8 +854,8 @@ message BatchTranslateTextRequest {
   map<string, string> labels = 9 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// State metadata for the batch translation operation.
-message BatchTranslateMetadata {
+// State metedata for the batch translation operation.
+message BatchTranslatemetedata {
   // State of the job.
   enum State {
     // Invalid.
@@ -1095,9 +1095,9 @@ message ListGlossariesResponse {
 }
 
 // Stored in the
-// [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata]
+// [google.longrunning.Operation.metedata][google.longrunning.Operation.metedata]
 // field returned by CreateGlossary.
-message CreateGlossaryMetadata {
+message CreateGlossarymetedata {
   // Enumerates the possible states that the creation request can be in.
   enum State {
     // Invalid.
@@ -1131,9 +1131,9 @@ message CreateGlossaryMetadata {
 }
 
 // Stored in the
-// [google.longrunning.Operation.metadata][google.longrunning.Operation.metadata]
+// [google.longrunning.Operation.metedata][google.longrunning.Operation.metedata]
 // field returned by DeleteGlossary.
-message DeleteGlossaryMetadata {
+message DeleteGlossarymetedata {
   // Enumerates the possible states that the creation request can be in.
   enum State {
     // Invalid.
@@ -1384,8 +1384,8 @@ message BatchTranslateDocumentResponse {
   google.protobuf.Timestamp end_time = 10;
 }
 
-// State metadata for the batch translation operation.
-message BatchTranslateDocumentMetadata {
+// State metedata for the batch translation operation.
+message BatchTranslateDocumentmetedata {
   // State of the job.
   enum State {
     // Invalid.

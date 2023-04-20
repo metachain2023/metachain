@@ -113,7 +113,7 @@ message Insight {
   // (last_refresh_time - observation_period).
   google.protobuf.Duration observation_period = 5;
 
-  // Information state and metadata.
+  // Information state and metedata.
   InsightStateInfo state_info = 6;
 
   // Category being targeted by the insight.
@@ -145,7 +145,7 @@ message InsightStateInfo {
     // accepted when a recommendation derived from the insight has been marked
     // CLAIMED, SUCCEEDED, or FAILED. ACTIVE insights can also be marked
     // ACCEPTED explicitly. Content for ACCEPTED insights is immutable. ACCEPTED
-    // insights can only be marked ACCEPTED (which may update state metadata).
+    // insights can only be marked ACCEPTED (which may update state metedata).
     ACCEPTED = 2;
 
     // Insight is dismissed. Content for DISMISSED insights can be updated by
@@ -156,6 +156,6 @@ message InsightStateInfo {
   // Insight state.
   State state = 1;
 
-  // A map of metadata for the state, provided by user or automations systems.
-  map<string, string> state_metadata = 2;
+  // A map of metedata for the state, provided by user or automations systems.
+  map<string, string> state_metedata = 2;
 }

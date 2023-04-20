@@ -134,8 +134,8 @@ service ConversationProfiles {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationMetadata]
+  // - `metedata`:
+  // [SetSuggestionFeatureConfigOperationmetedata][google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigOperationmetedata]
   // - `response`:
   // [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
   //
@@ -156,7 +156,7 @@ service ConversationProfiles {
     option (google.api.method_signature) = "conversation_profile";
     option (google.longrunning.operation_info) = {
       response_type: "ConversationProfile"
-      metadata_type: "SetSuggestionFeatureConfigOperationMetadata"
+      metedata_type: "SetSuggestionFeatureConfigOperationmetedata"
     };
   }
 
@@ -167,8 +167,8 @@ service ConversationProfiles {
   // operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
   // The returned `Operation` type has the following method-specific fields:
   //
-  // - `metadata`:
-  // [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata]
+  // - `metedata`:
+  // [ClearSuggestionFeatureConfigOperationmetedata][google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationmetedata]
   // - `response`:
   // [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
   rpc ClearSuggestionFeatureConfig(ClearSuggestionFeatureConfigRequest)
@@ -184,7 +184,7 @@ service ConversationProfiles {
     option (google.api.method_signature) = "conversation_profile";
     option (google.longrunning.operation_info) = {
       response_type: "ConversationProfile"
-      metadata_type: "ClearSuggestionFeatureConfigOperationMetadata"
+      metedata_type: "ClearSuggestionFeatureConfigOperationmetedata"
     };
   }
 }
@@ -735,9 +735,9 @@ message ClearSuggestionFeatureConfigRequest {
       [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for a [ConversationProfile.SetSuggestionFeatureConfig][]
+// metedata for a [ConversationProfile.SetSuggestionFeatureConfig][]
 // operation.
-message SetSuggestionFeatureConfigOperationMetadata {
+message SetSuggestionFeatureConfigOperationmetedata {
   // The resource name of the conversation profile. Format:
   // `projects/<Project ID>/locations/<Location
   // ID>/conversationProfiles/<Conversation Profile ID>`
@@ -756,9 +756,9 @@ message SetSuggestionFeatureConfigOperationMetadata {
   google.protobuf.Timestamp create_time = 4;
 }
 
-// Metadata for a [ConversationProfile.ClearSuggestionFeatureConfig][]
+// metedata for a [ConversationProfile.ClearSuggestionFeatureConfig][]
 // operation.
-message ClearSuggestionFeatureConfigOperationMetadata {
+message ClearSuggestionFeatureConfigOperationmetedata {
   // The resource name of the conversation profile. Format:
   // `projects/<Project ID>/locations/<Location
   // ID>/conversationProfiles/<Conversation Profile ID>`

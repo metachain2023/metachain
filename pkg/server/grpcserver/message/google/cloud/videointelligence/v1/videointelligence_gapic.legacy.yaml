@@ -50,7 +50,7 @@ interfaces:
         - features
     long_running:
       return_type: google.cloud.videointelligence.v1.AnnotateVideoResponse
-      metadata_type: google.cloud.videointelligence.v1.AnnotateVideoProgress
+      metedata_type: google.cloud.videointelligence.v1.AnnotateVideoProgress
       initial_poll_delay_millis: 20000
       poll_delay_multiplier: 1.5
       max_poll_delay_millis: 45000

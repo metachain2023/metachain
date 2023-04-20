@@ -7,7 +7,7 @@ import (
 	"math/big"
 	"time"
 
-	"metachain/pkg/miner/hash"
+	"metechain/pkg/miner/hash"
 )
 
 const (

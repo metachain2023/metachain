@@ -54,7 +54,7 @@ service AssetService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.asset.v1p7beta1.ExportAssetsResponse"
-      metadata_type: "google.cloud.asset.v1p7beta1.ExportAssetsRequest"
+      metedata_type: "google.cloud.asset.v1p7beta1.ExportAssetsRequest"
     };
   }
 }
@@ -176,7 +176,7 @@ message GcsDestination {
     // The URI of the Cloud Storage object. It's the same URI that is used by
     // gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
     // Editing Object
-    // Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+    // metedata](https://cloud.google.com/storage/docs/viewing-editing-metedata)
     // for more information.
     string uri = 1;
 
@@ -295,7 +295,7 @@ enum ContentType {
   // Unspecified content type.
   CONTENT_TYPE_UNSPECIFIED = 0;
 
-  // Resource metadata.
+  // Resource metedata.
   RESOURCE = 1;
 
   // The actual IAM policy set on a resource.

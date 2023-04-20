@@ -5,9 +5,9 @@ import (
 	"encoding/hex"
 	"time"
 
-	"metachain/pkg/block"
-	"metachain/pkg/blockchain"
-	"metachain/pkg/logger"
+	"metechain/pkg/block"
+	"metechain/pkg/blockchain"
+	"metechain/pkg/logger"
 
 	"github.com/ethereum/go-ethereum/common"
 	"go.uber.org/zap"

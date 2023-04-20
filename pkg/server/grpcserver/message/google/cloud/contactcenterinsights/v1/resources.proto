@@ -41,8 +41,8 @@ message Conversation {
     pattern: "projects/{project}/locations/{location}/conversations/{conversation}"
   };
 
-  // Call-specific metadata.
-  message CallMetadata {
+  // Call-specific metedata.
+  message Callmetedata {
     // The audio channel that contains the customer.
     int32 customer_channel = 1;
 
@@ -72,8 +72,8 @@ message Conversation {
         float confidence = 4;
       }
 
-      // Metadata from Dialogflow relating to the current transcript segment.
-      message DialogflowSegmentMetadata {
+      // metedata from Dialogflow relating to the current transcript segment.
+      message DialogflowSegmentmetedata {
         // Whether the transcript segment was covered under the configured smart
         // reply allowlist in Agent Assist.
         bool smart_reply_allowlist_covered = 1;
@@ -106,8 +106,8 @@ message Conversation {
       // The participant of this segment.
       ConversationParticipant segment_participant = 9;
 
-      // CCAI metadata relating to the current transcript segment.
-      DialogflowSegmentMetadata dialogflow_segment_metadata = 10;
+      // CCAI metedata relating to the current transcript segment.
+      DialogflowSegmentmetedata dialogflow_segment_metedata = 10;
 
       // The sentiment for this transcript segment.
       SentimentData sentiment = 11;
@@ -129,10 +129,10 @@ message Conversation {
     CHAT = 2;
   }
 
-  // Metadata that applies to the conversation.
-  oneof metadata {
-    // Call-specific metadata.
-    CallMetadata call_metadata = 7;
+  // metedata that applies to the conversation.
+  oneof metedata {
+    // Call-specific metedata.
+    Callmetedata call_metedata = 7;
   }
 
   // A time to live expiration setting, can be either a specified timestamp or a
@@ -281,8 +281,8 @@ message DialogflowSource {
 
 // The result of an analysis.
 message AnalysisResult {
-  // Call-specific metadata created during analysis.
-  message CallAnalysisMetadata {
+  // Call-specific metedata created during analysis.
+  message CallAnalysismetedata {
     // A list of call annotations that apply to this call.
     repeated CallAnnotation annotations = 2;
 
@@ -302,10 +302,10 @@ message AnalysisResult {
     IssueModelResult issue_model_result = 8;
   }
 
-  // Metadata discovered during analysis.
-  oneof metadata {
-    // Call-specific metadata created by the analysis.
-    CallAnalysisMetadata call_analysis_metadata = 2;
+  // metedata discovered during analysis.
+  oneof metedata {
+    // Call-specific metedata created by the analysis.
+    CallAnalysismetedata call_analysis_metedata = 2;
   }
 
   // The time at which the analysis ended.
@@ -347,7 +347,7 @@ message IssueAssignment {
   string display_name = 3 [(google.api.field_behavior) = IMMUTABLE];
 }
 
-// A piece of metadata that applies to a window of a call.
+// A piece of metedata that applies to a window of a call.
 message CallAnnotation {
   // The data in the annotation.
   oneof data {
@@ -405,10 +405,10 @@ message AnnotationBoundary {
 // Represents a phrase in the conversation that is a known entity, such
 // as a person, an organization, or location.
 message Entity {
-  // The type of the entity. For most entity types, the associated metadata is a
+  // The type of the entity. For most entity types, the associated metedata is a
   // Wikipedia URL (`wikipedia_url`) and Knowledge Graph MID (`mid`). The table
   // below lists the associated fields for entities that have different
-  // metadata.
+  // metedata.
   enum Type {
     // Unspecified.
     TYPE_UNSPECIFIED = 0;
@@ -436,7 +436,7 @@ message Entity {
 
     // Phone number.
     //
-    // The metadata lists the phone number (formatted according to local
+    // The metedata lists the phone number (formatted according to local
     // convention), plus whichever additional elements appear in the text:
     //
     // * `number` - The actual number, broken down into sections according to
@@ -449,7 +449,7 @@ message Entity {
 
     // Address.
     //
-    // The metadata identifies the street number and locality plus whichever
+    // The metedata identifies the street number and locality plus whichever
     // additional elements appear in the text:
     //
     // * `street_number` - Street number.
@@ -466,7 +466,7 @@ message Entity {
 
     // Date.
     //
-    // The metadata identifies the components of the date:
+    // The metedata identifies the components of the date:
     //
     // * `year` - Four digit year, if detected.
     // * `month` - Two digit month number, if detected.
@@ -475,12 +475,12 @@ message Entity {
 
     // Number.
     //
-    // The metadata is the number itself.
+    // The metedata is the number itself.
     NUMBER = 12;
 
     // Price.
     //
-    // The metadata identifies the `value` and `currency`.
+    // The metedata identifies the `value` and `currency`.
     PRICE = 13;
   }
 
@@ -490,12 +490,12 @@ message Entity {
   // The entity type.
   Type type = 2;
 
-  // Metadata associated with the entity.
+  // metedata associated with the entity.
   //
-  // For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
-  // and Knowledge Graph MID (`mid`), if they are available. For the metadata
+  // For most entity types, the metedata is a Wikipedia URL (`wikipedia_url`)
+  // and Knowledge Graph MID (`mid`), if they are available. For the metedata
   // associated with other entity types, see the Type table below.
-  map<string, string> metadata = 3;
+  map<string, string> metedata = 3;
 
   // The salience score associated with the entity in the [0, 1.0] range.
   //
@@ -995,9 +995,9 @@ message ArticleSuggestionData {
   // certain).
   float confidence_score = 3;
 
-  // Map that contains metadata about the Article Suggestion and the document
+  // Map that contains metedata about the Article Suggestion and the document
   // that it originates from.
-  map<string, string> metadata = 4;
+  map<string, string> metedata = 4;
 
   // The name of the answer record.
   // Format:
@@ -1023,9 +1023,9 @@ message FaqAnswerData {
   // The corresponding FAQ question.
   string question = 3;
 
-  // Map that contains metadata about the FAQ answer and the document that
+  // Map that contains metedata about the FAQ answer and the document that
   // it originates from.
-  map<string, string> metadata = 4;
+  map<string, string> metedata = 4;
 
   // The name of the answer record.
   // Format:
@@ -1048,9 +1048,9 @@ message SmartReplyData {
   // certain).
   double confidence_score = 2;
 
-  // Map that contains metadata about the Smart Reply and the document from
+  // Map that contains metedata about the Smart Reply and the document from
   // which it originates.
-  map<string, string> metadata = 3;
+  map<string, string> metedata = 3;
 
   // The name of the answer record.
   // Format:
@@ -1068,9 +1068,9 @@ message SmartComposeSuggestionData {
   // certain).
   double confidence_score = 2;
 
-  // Map that contains metadata about the Smart Compose suggestion and the
+  // Map that contains metedata about the Smart Compose suggestion and the
   // document from which it originates.
-  map<string, string> metadata = 3;
+  map<string, string> metedata = 3;
 
   // The name of the answer record.
   // Format:

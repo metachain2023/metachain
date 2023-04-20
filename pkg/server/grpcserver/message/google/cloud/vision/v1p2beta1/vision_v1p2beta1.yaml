@@ -9,7 +9,7 @@ apis:
 types:
 - name: google.cloud.vision.v1p2beta1.AnnotateFileResponse
 - name: google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesResponse
-- name: google.cloud.vision.v1p2beta1.OperationMetadata
+- name: google.cloud.vision.v1p2beta1.Operationmetedata
 
 documentation:
   summary: |-

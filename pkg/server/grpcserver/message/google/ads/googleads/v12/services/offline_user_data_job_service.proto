@@ -105,7 +105,7 @@ service OfflineUserDataJobService {
     option (google.api.method_signature) = "resource_name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.ads.googleads.v12.resources.OfflineUserDataJobMetadata"
+      metedata_type: "google.ads.googleads.v12.resources.OfflineUserDataJobmetedata"
     };
   }
 }

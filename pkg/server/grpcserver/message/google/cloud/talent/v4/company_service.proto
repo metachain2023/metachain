@@ -180,5 +180,5 @@ message ListCompaniesResponse {
 
   // Additional information for the API invocation, such as the request
   // tracking id.
-  ResponseMetadata metadata = 3;
+  Responsemetedata metedata = 3;
 }

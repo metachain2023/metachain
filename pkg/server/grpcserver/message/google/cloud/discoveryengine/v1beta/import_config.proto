@@ -163,9 +163,9 @@ message ImportUserEventsResponse {
   int64 unjoined_events_count = 4;
 }
 
-// Metadata related to the progress of the Import operation. This will be
-// returned by the google.longrunning.Operation.metadata field.
-message ImportUserEventsMetadata {
+// metedata related to the progress of the Import operation. This will be
+// returned by the google.longrunning.Operation.metedata field.
+message ImportUserEventsmetedata {
   // Operation create time.
   google.protobuf.Timestamp create_time = 1;
 
@@ -180,9 +180,9 @@ message ImportUserEventsMetadata {
   int64 failure_count = 4;
 }
 
-// Metadata related to the progress of the ImportDocuments operation. This will
-// be returned by the google.longrunning.Operation.metadata field.
-message ImportDocumentsMetadata {
+// metedata related to the progress of the ImportDocuments operation. This will
+// be returned by the google.longrunning.Operation.metedata field.
+message ImportDocumentsmetedata {
   // Operation create time.
   google.protobuf.Timestamp create_time = 1;
 

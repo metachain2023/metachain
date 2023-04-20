@@ -54,9 +54,9 @@ option objc_class_prefix = "GCFS";
 // The state of the operation (including any errors encountered)
 // may be queried via the Operation resource.
 //
-// ## Metadata
+// ## metedata
 //
-// Provides metadata and statistical information about data in Cloud Firestore.
+// Provides metedata and statistical information about data in Cloud Firestore.
 // The data provided as part of this API may be stale.
 //
 // ## Operation
@@ -149,9 +149,9 @@ service FirestoreAdmin {
   }
 }
 
-// Metadata for index operations. This metadata populates
-// the metadata field of [google.longrunning.Operation][google.longrunning.Operation].
-message IndexOperationMetadata {
+// metedata for index operations. This metedata populates
+// the metedata field of [google.longrunning.Operation][google.longrunning.Operation].
+message IndexOperationmetedata {
   // The type of index operation.
   enum OperationType {
     // Unspecified. Never set by server.
@@ -290,8 +290,8 @@ message ExportDocumentsResponse {
   string output_uri_prefix = 1;
 }
 
-// Metadata for ExportDocuments operations.
-message ExportDocumentsMetadata {
+// metedata for ExportDocuments operations.
+message ExportDocumentsmetedata {
   // The time that work began on the operation.
   google.protobuf.Timestamp start_time = 1;
 
@@ -315,8 +315,8 @@ message ExportDocumentsMetadata {
   string output_uri_prefix = 7;
 }
 
-// Metadata for ImportDocuments operations.
-message ImportDocumentsMetadata {
+// metedata for ImportDocuments operations.
+message ImportDocumentsmetedata {
   // The time that work began on the operation.
   google.protobuf.Timestamp start_time = 1;
 

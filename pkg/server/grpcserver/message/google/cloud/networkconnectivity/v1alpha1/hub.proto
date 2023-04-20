@@ -77,7 +77,7 @@ service HubService {
     option (google.api.method_signature) = "parent,hub,hub_id";
     option (google.longrunning.operation_info) = {
       response_type: "Hub"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -90,7 +90,7 @@ service HubService {
     option (google.api.method_signature) = "hub,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Hub"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -102,7 +102,7 @@ service HubService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -131,7 +131,7 @@ service HubService {
     option (google.api.method_signature) = "parent,spoke,spoke_id";
     option (google.longrunning.operation_info) = {
       response_type: "Spoke"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -144,7 +144,7 @@ service HubService {
     option (google.api.method_signature) = "spoke,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Spoke"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -156,7 +156,7 @@ service HubService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }

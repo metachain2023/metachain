@@ -59,7 +59,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -74,7 +74,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -86,7 +86,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -98,7 +98,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -110,7 +110,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -121,7 +121,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -133,7 +133,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -145,7 +145,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -157,14 +157,14 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
   // Allows notebook instances to
   // report their latest instance information to the Notebooks
   // API server. The server will merge the reported information to
-  // the instance metadata store. Do not use this method directly.
+  // the instance metedata store. Do not use this method directly.
   rpc ReportInstanceInfo(ReportInstanceInfoRequest) returns (google.longrunning.Operation) {
     option (google.api.http) = {
       post: "/v1beta1/{name=projects/*/locations/*/instances/*}:report"
@@ -172,7 +172,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -195,7 +195,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -210,7 +210,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -236,7 +236,7 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Environment"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -247,13 +247,13 @@ service NotebookService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 
@@ -420,9 +420,9 @@ message ReportInstanceInfoRequest {
   // https://cloud.google.com/compute/docs/instances/verifying-instance-identity
   string vm_id = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // The metadata reported to Notebooks API. This will be merged to the instance
-  // metadata store
-  map<string, string> metadata = 3;
+  // The metedata reported to Notebooks API. This will be merged to the instance
+  // metedata store
+  map<string, string> metedata = 3;
 }
 
 // Request for checking if a notebook instance is upgradeable.

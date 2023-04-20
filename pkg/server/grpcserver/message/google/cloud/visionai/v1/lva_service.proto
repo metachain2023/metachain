@@ -63,7 +63,7 @@ service LiveVideoAnalytics {
     option (google.api.method_signature) = "parent,analysis,analysis_id";
     option (google.longrunning.operation_info) = {
       response_type: "Analysis"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -76,7 +76,7 @@ service LiveVideoAnalytics {
     option (google.api.method_signature) = "analysis,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Analysis"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -88,7 +88,7 @@ service LiveVideoAnalytics {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }

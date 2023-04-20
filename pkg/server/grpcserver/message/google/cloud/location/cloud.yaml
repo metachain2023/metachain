@@ -1,14 +1,14 @@
 type: google.api.Service
 config_version: 3
 name: cloud.googleapis.com
-title: Cloud Metadata API
+title: Cloud metedata API
 
 apis:
 - name: google.cloud.location.Locations
 
 documentation:
   summary: |-
-    This API provides static metadata about Google Cloud Platform. Currently,
+    This API provides static metedata about Google Cloud Platform. Currently,
     it only provides basic information about Google Cloud locations, such as
     zones, regions, and countries.
 

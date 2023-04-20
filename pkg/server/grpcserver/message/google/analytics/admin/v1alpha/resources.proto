@@ -718,7 +718,7 @@ message AccountSummary {
   repeated PropertySummary property_summaries = 4;
 }
 
-// A virtual resource representing metadata for a GA4 property.
+// A virtual resource representing metedata for a GA4 property.
 message PropertySummary {
   // Resource name of property referred to by this property summary
   // Format: properties/{property_id}

@@ -100,7 +100,7 @@ message HyperparameterTuningJob {
   // JOB_STATE_CANCELLED.
   google.rpc.Status error = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The labels with user-defined metadata to organize HyperparameterTuningJobs.
+  // The labels with user-defined metedata to organize HyperparameterTuningJobs.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

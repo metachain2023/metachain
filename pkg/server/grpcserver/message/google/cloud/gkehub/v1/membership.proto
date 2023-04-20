@@ -102,13 +102,13 @@ message Membership {
 }
 
 // MembershipEndpoint contains information needed to contact a Kubernetes API,
-// endpoint and any additional Kubernetes metadata.
+// endpoint and any additional Kubernetes metedata.
 message MembershipEndpoint {
   // Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
   GkeCluster gke_cluster = 1 [(google.api.field_behavior) = OPTIONAL];
 
-  // Output only. Useful Kubernetes-specific metadata.
-  KubernetesMetadata kubernetes_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. Useful Kubernetes-specific metedata.
+  Kubernetesmetedata kubernetes_metedata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
   // registered cluster, in the steady state. These resources:
@@ -200,9 +200,9 @@ message GkeCluster {
   string resource_link = 1 [(google.api.field_behavior) = IMMUTABLE];
 }
 
-// KubernetesMetadata provides informational metadata for Memberships
+// Kubernetesmetedata provides informational metedata for Memberships
 // representing Kubernetes clusters.
-message KubernetesMetadata {
+message Kubernetesmetedata {
   // Output only. Kubernetes API server version string as reported by `/version`.
   string kubernetes_api_server_version = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

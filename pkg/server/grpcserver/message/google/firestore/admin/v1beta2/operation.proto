@@ -28,9 +28,9 @@ option java_outer_classname = "OperationProto";
 option java_package = "com.google.firestore.admin.v1beta2";
 option objc_class_prefix = "GCFS";
 
-// Metadata for [google.longrunning.Operation][google.longrunning.Operation] results from
+// metedata for [google.longrunning.Operation][google.longrunning.Operation] results from
 // [FirestoreAdmin.CreateIndex][google.firestore.admin.v1beta2.FirestoreAdmin.CreateIndex].
-message IndexOperationMetadata {
+message IndexOperationmetedata {
   // The time this operation started.
   google.protobuf.Timestamp start_time = 1;
 
@@ -52,9 +52,9 @@ message IndexOperationMetadata {
   Progress progress_bytes = 6;
 }
 
-// Metadata for [google.longrunning.Operation][google.longrunning.Operation] results from
+// metedata for [google.longrunning.Operation][google.longrunning.Operation] results from
 // [FirestoreAdmin.UpdateField][google.firestore.admin.v1beta2.FirestoreAdmin.UpdateField].
-message FieldOperationMetadata {
+message FieldOperationmetedata {
   // Information about an index configuration change.
   message IndexConfigDelta {
     // Specifies how the index is changing.
@@ -87,7 +87,7 @@ message FieldOperationMetadata {
   // `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
   string field = 3;
 
-  // A list of [IndexConfigDelta][google.firestore.admin.v1beta2.FieldOperationMetadata.IndexConfigDelta], which describe the intent of this
+  // A list of [IndexConfigDelta][google.firestore.admin.v1beta2.FieldOperationmetedata.IndexConfigDelta], which describe the intent of this
   // operation.
   repeated IndexConfigDelta index_config_deltas = 4;
 
@@ -101,9 +101,9 @@ message FieldOperationMetadata {
   Progress bytes_progress = 7;
 }
 
-// Metadata for [google.longrunning.Operation][google.longrunning.Operation] results from
+// metedata for [google.longrunning.Operation][google.longrunning.Operation] results from
 // [FirestoreAdmin.ExportDocuments][google.firestore.admin.v1beta2.FirestoreAdmin.ExportDocuments].
-message ExportDocumentsMetadata {
+message ExportDocumentsmetedata {
   // The time this operation started.
   google.protobuf.Timestamp start_time = 1;
 
@@ -127,9 +127,9 @@ message ExportDocumentsMetadata {
   string output_uri_prefix = 7;
 }
 
-// Metadata for [google.longrunning.Operation][google.longrunning.Operation] results from
+// metedata for [google.longrunning.Operation][google.longrunning.Operation] results from
 // [FirestoreAdmin.ImportDocuments][google.firestore.admin.v1beta2.FirestoreAdmin.ImportDocuments].
-message ImportDocumentsMetadata {
+message ImportDocumentsmetedata {
   // The time this operation started.
   google.protobuf.Timestamp start_time = 1;
 

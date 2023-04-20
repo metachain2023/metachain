@@ -28,7 +28,7 @@ option java_package = "com.google.cloud.datacatalog.v1beta1";
 option php_namespace = "Google\\Cloud\\DataCatalog\\V1beta1";
 option ruby_package = "Google::Cloud::DataCatalog::V1beta1";
 
-// Tags are used to attach custom metadata to Data Catalog resources. Tags
+// Tags are used to attach custom metedata to Data Catalog resources. Tags
 // conform to the specifications within their tag template.
 //
 // See [Data Catalog

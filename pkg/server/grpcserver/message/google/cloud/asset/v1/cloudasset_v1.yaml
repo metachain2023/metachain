@@ -8,7 +8,7 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata
+- name: google.cloud.asset.v1.AnalyzeIamPolicyLongrunningmetedata
 - name: google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse
 
 documentation:
@@ -18,8 +18,8 @@ documentation:
   overview: |-
     # Cloud Asset API
 
-    The Cloud Asset API keeps a history of Google Cloud asset metadata, and
-    allows Google Cloud users to download a dump of all asset metadata for the
+    The Cloud Asset API keeps a history of Google Cloud asset metedata, and
+    allows Google Cloud users to download a dump of all asset metedata for the
     resource types listed below within an organization or a project at a given
     timestamp.
 

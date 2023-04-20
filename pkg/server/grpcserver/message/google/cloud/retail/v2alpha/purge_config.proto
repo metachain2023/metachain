@@ -29,13 +29,13 @@ option objc_class_prefix = "RETAIL";
 option php_namespace = "Google\\Cloud\\Retail\\V2alpha";
 option ruby_package = "Google::Cloud::Retail::V2alpha";
 
-// Metadata related to the progress of the Purge operation.
-// This will be returned by the google.longrunning.Operation.metadata field.
-message PurgeMetadata {}
+// metedata related to the progress of the Purge operation.
+// This will be returned by the google.longrunning.Operation.metedata field.
+message Purgemetedata {}
 
-// Metadata related to the progress of the PurgeProducts operation.
-// This will be returned by the google.longrunning.Operation.metadata field.
-message PurgeProductsMetadata {
+// metedata related to the progress of the PurgeProducts operation.
+// This will be returned by the google.longrunning.Operation.metedata field.
+message PurgeProductsmetedata {
   // Operation create time.
   google.protobuf.Timestamp create_time = 1;
 

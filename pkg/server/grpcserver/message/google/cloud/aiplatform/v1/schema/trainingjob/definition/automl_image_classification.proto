@@ -30,8 +30,8 @@ message AutoMlImageClassification {
   // The input parameters of this TrainingJob.
   AutoMlImageClassificationInputs inputs = 1;
 
-  // The metadata information.
-  AutoMlImageClassificationMetadata metadata = 2;
+  // The metedata information.
+  AutoMlImageClassificationmetedata metedata = 2;
 }
 
 message AutoMlImageClassificationInputs {
@@ -75,9 +75,9 @@ message AutoMlImageClassificationInputs {
 
   // The training budget of creating this model, expressed in milli node
   // hours i.e. 1,000 value in this field means 1 node hour. The actual
-  // metadata.costMilliNodeHours will be equal or less than this value.
+  // metedata.costMilliNodeHours will be equal or less than this value.
   // If further model training ceases to provide any improvements, it will
-  // stop without using the full budget and the metadata.successfulStopReason
+  // stop without using the full budget and the metedata.successfulStopReason
   // will be `model-converged`.
   // Note, node_hour  = actual_hour * number_of_nodes_involved.
   // For modelType `cloud`(default), the budget must be between 8,000
@@ -103,7 +103,7 @@ message AutoMlImageClassificationInputs {
   bool multi_label = 5;
 }
 
-message AutoMlImageClassificationMetadata {
+message AutoMlImageClassificationmetedata {
   enum SuccessfulStopReason {
     // Should not be set.
     SUCCESSFUL_STOP_REASON_UNSPECIFIED = 0;

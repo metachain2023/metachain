@@ -22,20 +22,20 @@ import "google/protobuf/struct.proto";
 option csharp_namespace = "Google.Cloud.AIPlatform.V1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1/aiplatformpb;aiplatformpb";
 option java_multiple_files = true;
-option java_outer_classname = "ExplanationMetadataProto";
+option java_outer_classname = "ExplanationmetedataProto";
 option java_package = "com.google.cloud.aiplatform.v1";
 option php_namespace = "Google\\Cloud\\AIPlatform\\V1";
 option ruby_package = "Google::Cloud::AIPlatform::V1";
 
-// Metadata describing the Model's input and output for explanation.
-message ExplanationMetadata {
-  // Metadata of the input of a feature.
+// metedata describing the Model's input and output for explanation.
+message Explanationmetedata {
+  // metedata of the input of a feature.
   //
   // Fields other than
-  // [InputMetadata.input_baselines][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.input_baselines]
+  // [Inputmetedata.input_baselines][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata.input_baselines]
   // are applicable only for Models that are using Vertex AI-provided images for
   // Tensorflow.
-  message InputMetadata {
+  message Inputmetedata {
     // Domain details of the input feature value. Provides numeric information
     // about the feature, such as its range (min, max). If the feature has been
     // pre-processed, for example with z-scoring, then it provides information
@@ -195,7 +195,7 @@ message ExplanationMetadata {
 
       // The tensor represents a bag of features where each index maps to
       // a feature.
-      // [InputMetadata.index_feature_mapping][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.index_feature_mapping]
+      // [Inputmetedata.index_feature_mapping][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata.index_feature_mapping]
       // must be provided for this encoding. For example:
       // ```
       // input = [27, 6.0, 150]
@@ -206,7 +206,7 @@ message ExplanationMetadata {
       // The tensor represents a bag of features where each index maps to a
       // feature. Zero values in the tensor indicates feature being
       // non-existent.
-      // [InputMetadata.index_feature_mapping][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.index_feature_mapping]
+      // [Inputmetedata.index_feature_mapping][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata.index_feature_mapping]
       // must be provided for this encoding. For example:
       // ```
       // input = [2, 0, 5, 0, 1]
@@ -216,7 +216,7 @@ message ExplanationMetadata {
 
       // The tensor is a list of binaries representing whether a feature exists
       // or not (1 indicates existence).
-      // [InputMetadata.index_feature_mapping][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.index_feature_mapping]
+      // [Inputmetedata.index_feature_mapping][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata.index_feature_mapping]
       // must be provided for this encoding. For example:
       // ```
       // input = [1, 0, 1, 0, 1]
@@ -226,7 +226,7 @@ message ExplanationMetadata {
 
       // The tensor is encoded into a 1-dimensional array represented by an
       // encoded tensor.
-      // [InputMetadata.encoded_tensor_name][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.encoded_tensor_name]
+      // [Inputmetedata.encoded_tensor_name][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata.encoded_tensor_name]
       // must be provided for this encoding. For example:
       // ```
       // input = ["This", "is", "a", "test", "."]
@@ -236,7 +236,7 @@ message ExplanationMetadata {
 
       // Select this encoding when the input tensor is encoded into a
       // 2-dimensional array represented by an encoded tensor.
-      // [InputMetadata.encoded_tensor_name][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.encoded_tensor_name]
+      // [Inputmetedata.encoded_tensor_name][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata.encoded_tensor_name]
       // must be provided for this encoding. The first dimension of the encoded
       // tensor's shape is the same as the input tensor's shape. For example:
       // ```
@@ -299,7 +299,7 @@ message ExplanationMetadata {
 
     // A list of feature names for each index in the input tensor.
     // Required when the input
-    // [InputMetadata.encoding][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.encoding]
+    // [Inputmetedata.encoding][google.cloud.aiplatform.v1.Explanationmetedata.Inputmetedata.encoding]
     // is BAG_OF_FEATURES, BAG_OF_FEATURES_SPARSE, INDICATOR.
     repeated string index_feature_mapping = 8;
 
@@ -334,8 +334,8 @@ message ExplanationMetadata {
     string group_name = 12;
   }
 
-  // Metadata of the prediction output to be explained.
-  message OutputMetadata {
+  // metedata of the prediction output to be explained.
+  message Outputmetedata {
     // Defines how to map
     // [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
     // to
@@ -377,12 +377,12 @@ message ExplanationMetadata {
     string output_tensor_name = 3;
   }
 
-  // Required. Map from feature names to feature input metadata. Keys are the
+  // Required. Map from feature names to feature input metedata. Keys are the
   // name of the features. Values are the specification of the feature.
   //
-  // An empty InputMetadata is valid. It describes a text feature which has the
+  // An empty Inputmetedata is valid. It describes a text feature which has the
   // name specified as the key in
-  // [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+  // [Explanationmetedata.inputs][google.cloud.aiplatform.v1.Explanationmetedata.inputs].
   // The baseline of the empty feature is chosen by Vertex AI.
   //
   // For Vertex AI-provided Tensorflow images, the key can be any friendly
@@ -392,10 +392,10 @@ message ExplanationMetadata {
   //
   // For custom images, the key must match with the key in
   // [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
-  map<string, InputMetadata> inputs = 1
+  map<string, Inputmetedata> inputs = 1
       [(google.api.field_behavior) = REQUIRED];
 
-  // Required. Map from output names to output metadata.
+  // Required. Map from output names to output metedata.
   //
   // For Vertex AI-provided Tensorflow images, keys can be any user defined
   // string that consists of any UTF-8 characters.
@@ -404,7 +404,7 @@ message ExplanationMetadata {
   // to be explained.
   //
   // Currently only one key is allowed.
-  map<string, OutputMetadata> outputs = 2
+  map<string, Outputmetedata> outputs = 2
       [(google.api.field_behavior) = REQUIRED];
 
   // Points to a YAML file stored on Google Cloud Storage describing the format

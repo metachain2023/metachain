@@ -55,7 +55,7 @@ service EkmService {
     option (google.api.method_signature) = "parent";
   }
 
-  // Returns metadata for a given
+  // Returns metedata for a given
   // [EkmConnection][google.cloud.kms.v1.EkmConnection].
   rpc GetEkmConnection(GetEkmConnectionRequest) returns (EkmConnection) {
     option (google.api.http) = {
@@ -75,7 +75,7 @@ service EkmService {
         "parent,ekm_connection_id,ekm_connection";
   }
 
-  // Updates an [EkmConnection][google.cloud.kms.v1.EkmConnection]'s metadata.
+  // Updates an [EkmConnection][google.cloud.kms.v1.EkmConnection]'s metedata.
   rpc UpdateEkmConnection(UpdateEkmConnectionRequest) returns (EkmConnection) {
     option (google.api.http) = {
       patch: "/v1/{ekm_connection.name=projects/*/locations/*/ekmConnections/*}"

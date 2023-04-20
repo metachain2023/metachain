@@ -44,7 +44,7 @@ service BatchController {
     option (google.api.method_signature) = "parent,batch,batch_id";
     option (google.longrunning.operation_info) = {
       response_type: "Batch"
-      metadata_type: "google.cloud.dataproc.v1.BatchOperationMetadata"
+      metedata_type: "google.cloud.dataproc.v1.BatchOperationmetedata"
     };
   }
 

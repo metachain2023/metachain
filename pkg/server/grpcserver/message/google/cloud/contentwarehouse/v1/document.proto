@@ -87,7 +87,7 @@ message Document {
     bytes inline_raw_document = 6;
   }
 
-  // List of values that are user supplied metadata.
+  // List of values that are user supplied metedata.
   repeated Property properties = 7;
 
   // Output only. The time when the document is last updated.

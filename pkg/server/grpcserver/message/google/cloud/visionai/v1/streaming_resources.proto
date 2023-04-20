@@ -97,8 +97,8 @@ message PacketType {
   TypeDescriptor type_descriptor = 2;
 }
 
-// The message that represents server metadata.
-message ServerMetadata {
+// The message that represents server metedata.
+message Servermetedata {
   // The offset position for the packet in its stream.
   int64 offset = 1;
 
@@ -111,8 +111,8 @@ message ServerMetadata {
   google.protobuf.Timestamp ingest_time = 2;
 }
 
-// The message that represents series metadata.
-message SeriesMetadata {
+// The message that represents series metedata.
+message Seriesmetedata {
   // Series name. It's in the format of
   // "projects/{project}/locations/{location}/clusters/{cluster}/series/{stream}".
   string series = 1 [(google.api.resource_reference) = {
@@ -131,17 +131,17 @@ message PacketHeader {
     (google.api.field_behavior) = IMMUTABLE
   ];
 
-  // Input only. This field is for users to attach user managed metadata.
-  google.protobuf.Struct metadata = 3 [(google.api.field_behavior) = INPUT_ONLY];
+  // Input only. This field is for users to attach user managed metedata.
+  google.protobuf.Struct metedata = 3 [(google.api.field_behavior) = INPUT_ONLY];
 
-  // Output only. Metadata that the server appends to each packet before sending
+  // Output only. metedata that the server appends to each packet before sending
   // it to receivers. You don't need to set a value for this field when sending
   // packets.
-  ServerMetadata server_metadata = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+  Servermetedata server_metedata = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Input only. Immutable. Metadata that the server needs to know where to
+  // Input only. Immutable. metedata that the server needs to know where to
   // write the packets to. It's only required for the first packet.
-  SeriesMetadata series_metadata = 5 [
+  Seriesmetedata series_metedata = 5 [
     (google.api.field_behavior) = INPUT_ONLY,
     (google.api.field_behavior) = IMMUTABLE
   ];

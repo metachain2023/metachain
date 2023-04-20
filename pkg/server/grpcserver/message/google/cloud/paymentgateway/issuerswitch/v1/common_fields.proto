@@ -268,47 +268,47 @@ enum ApiType {
   // Unspecified API type.
   API_TYPE_UNSPECIFIED = 0;
 
-  // Balance API. Maps to UPI's `BalEnq` API. This is a metadata
+  // Balance API. Maps to UPI's `BalEnq` API. This is a metedata
   // transaction API.
   BALANCE = 1;
 
   // Check transaction status API. Maps to UPI's `ChkTxn` API. This is a
-  // metadata transaction API.
+  // metedata transaction API.
   CHECK_STATUS = 2;
 
   // Complaint API. Maps to UPI's `Complaint` API. This is a dispute and issue
   // resolution API.
   COMPLAINT = 3;
 
-  // Heart beat API. Maps to UPI's `Hbt` API. This is a metadata transaction
+  // Heart beat API. Maps to UPI's `Hbt` API. This is a metedata transaction
   // API.
   HEART_BEAT = 4;
 
-  // Initiate registration API. Maps to UPI's `Otp` API. This is a metadata
+  // Initiate registration API. Maps to UPI's `Otp` API. This is a metedata
   // transaction API.
   INITIATE_REGISTRATION = 5;
 
-  // List accounts API. Maps to UPI's `ListAccount` API. This is a metadata
+  // List accounts API. Maps to UPI's `ListAccount` API. This is a metedata
   // transaction API.
   LIST_ACCOUNTS = 6;
 
-  // Mandate API. Maps to UPI's `Mandate` API. This is a metadata transaction
+  // Mandate API. Maps to UPI's `Mandate` API. This is a metedata transaction
   // API.
   MANDATE = 7;
 
   // Mandate confirmation API. Maps to UPI's `MandateConfirmation` API. This is
-  // a metadata transaction API.
+  // a metedata transaction API.
   MANDATE_CONFIRMATION = 8;
 
   // Payment settlement API. Maps to UPI's `Pay` API. This is a financial
   // transaction API.
   SETTLE_PAYMENT = 9;
 
-  // Update credentials API. Maps to UPI's `SetCre` API. This is a metadata
+  // Update credentials API. Maps to UPI's `SetCre` API. This is a metedata
   // transaction API.
   UPDATE_CREDENTIALS = 10;
 
-  // Validate registration API. Maps to UPI's `RegMob` API. This is a metadata
+  // Validate registration API. Maps to UPI's `RegMob` API. This is a metedata
   // transaction API.
   VALIDATE_REGISTRATION = 11;
 

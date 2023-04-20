@@ -59,7 +59,7 @@ service RealmsService {
     option (google.api.method_signature) = "parent,realm,realm_id";
     option (google.longrunning.operation_info) = {
       response_type: "Realm"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -71,7 +71,7 @@ service RealmsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -84,7 +84,7 @@ service RealmsService {
     option (google.api.method_signature) = "realm,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Realm"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 

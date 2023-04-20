@@ -391,7 +391,7 @@ message ListServicesRequest {
   // General `filter` string syntax:
   // `<field> <operator> <value> (<logical connector>)`
   //
-  // *   `<field>` can be `name` or `metadata.<key>` for map field
+  // *   `<field>` can be `name` or `metedata.<key>` for map field
   // *   `<operator>` can be `<`, `>`, `<=`, `>=`, `!=`, `=`, `:`. Of which `:`
   //     means `HAS`, and is roughly the same as `=`
   // *   `<value>` must be the same data type as field
@@ -399,16 +399,16 @@ message ListServicesRequest {
   //
   // Examples of valid filters:
   //
-  // *   `metadata.owner` returns services that have a metadata with the key
-  //     `owner`, this is the same as `metadata:owner`
-  // *   `metadata.protocol=gRPC` returns services that have key/value
+  // *   `metedata.owner` returns services that have a metedata with the key
+  //     `owner`, this is the same as `metedata:owner`
+  // *   `metedata.protocol=gRPC` returns services that have key/value
   //     `protocol=gRPC`
   // *
   // `name>projects/my-project/locations/us-east1/namespaces/my-namespace/services/service-c`
   //     returns services that have name that is alphabetically later than the
   //     string, so "service-e" is returned but "service-a" is not
-  // *   `metadata.owner!=sd AND metadata.foo=bar` returns services that have
-  //     `owner` in metadata key but value is not `sd` AND have key/value
+  // *   `metedata.owner!=sd AND metedata.foo=bar` returns services that have
+  //     `owner` in metedata key but value is not `sd` AND have key/value
   //     `foo=bar`
   // *   `doesnotexist.foo=bar` returns an empty list. Note that service
   //     doesn't have a field called "doesnotexist". Since the filter does not
@@ -443,7 +443,7 @@ message ListServicesResponse {
 
 // The request message for [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
 // This should not be used for looking up a service. Insead, use the `resolve`
-// method as it contains all endpoints and associated metadata.
+// method as it contains all endpoints and associated metedata.
 message GetServiceRequest {
   // Required. The name of the service to get.
   string name = 1 [
@@ -520,7 +520,7 @@ message ListEndpointsRequest {
   // General `filter` string syntax:
   // `<field> <operator> <value> (<logical connector>)`
   //
-  // *   `<field>` can be `name`, `address`, `port`, or `metadata.<key>` for map
+  // *   `<field>` can be `name`, `address`, `port`, or `metedata.<key>` for map
   //     field
   // *   `<operator>` can be `<`, `>`, `<=`, `>=`, `!=`, `=`, `:`. Of which `:`
   //     means `HAS`, and is roughly the same as `=`
@@ -529,9 +529,9 @@ message ListEndpointsRequest {
   //
   // Examples of valid filters:
   //
-  // *   `metadata.owner` returns endpoints that have a metadata with the key
-  //     `owner`, this is the same as `metadata:owner`
-  // *   `metadata.protocol=gRPC` returns endpoints that have key/value
+  // *   `metedata.owner` returns endpoints that have a metedata with the key
+  //     `owner`, this is the same as `metedata:owner`
+  // *   `metedata.protocol=gRPC` returns endpoints that have key/value
   //     `protocol=gRPC`
   // *   `address=192.108.1.105` returns endpoints that have this address
   // *   `port>8080` returns endpoints that have port number larger than 8080
@@ -539,8 +539,8 @@ message ListEndpointsRequest {
   // `name>projects/my-project/locations/us-east1/namespaces/my-namespace/services/my-service/endpoints/endpoint-c`
   //     returns endpoints that have name that is alphabetically later than the
   //     string, so "endpoint-e" is returned but "endpoint-a" is not
-  // *   `metadata.owner!=sd AND metadata.foo=bar` returns endpoints that have
-  //     `owner` in metadata key but value is not `sd` AND have key/value
+  // *   `metedata.owner!=sd AND metedata.foo=bar` returns endpoints that have
+  //     `owner` in metedata key but value is not `sd` AND have key/value
   //      `foo=bar`
   // *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
   //     doesn't have a field called "doesnotexist". Since the filter does not

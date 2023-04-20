@@ -73,7 +73,7 @@ service GkeHub {
     option (google.api.method_signature) = "parent,resource,membership_id";
     option (google.longrunning.operation_info) = {
       response_type: "Membership"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -89,7 +89,7 @@ service GkeHub {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -102,7 +102,7 @@ service GkeHub {
     option (google.api.method_signature) = "name,resource,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Membership"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -151,7 +151,7 @@ message Membership {
     INFRASTRUCTURE_TYPE_UNSPECIFIED = 0;
 
     // Private infrastructure that is owned or operated by customer. This
-    // includes GKE distributions such as GKE-OnPrem and GKE-OnBareMetal.
+    // includes GKE distributions such as GKE-OnPrem and GKE-OnBaremetel.
     ON_PREM = 1;
 
     // Public cloud infrastructure.
@@ -229,7 +229,7 @@ message Membership {
 }
 
 // MembershipEndpoint contains information needed to contact a Kubernetes API,
-// endpoint and any additional Kubernetes metadata.
+// endpoint and any additional Kubernetes metedata.
 message MembershipEndpoint {
   // Cluster information of the registered cluster.
   oneof type {
@@ -243,8 +243,8 @@ message MembershipEndpoint {
     MultiCloudCluster multi_cloud_cluster = 5 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // Output only. Useful Kubernetes-specific metadata.
-  KubernetesMetadata kubernetes_metadata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. Useful Kubernetes-specific metedata.
+  Kubernetesmetedata kubernetes_metedata = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
   // registered cluster, in the steady state. These resources:
@@ -331,7 +331,7 @@ message OnPremCluster {
   // Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
   //
   //  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
-  //  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
+  //  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/baremetelClusters/my-cluster
   string resource_link = 1 [(google.api.field_behavior) = IMMUTABLE];
 
   // Output only. If cluster_missing is set then it denotes that
@@ -358,10 +358,10 @@ message MultiCloudCluster {
   bool cluster_missing = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// KubernetesMetadata provides informational metadata for Memberships
+// Kubernetesmetedata provides informational metedata for Memberships
 // that are created from Kubernetes Endpoints (currently, these are equivalent
 // to Kubernetes clusters).
-message KubernetesMetadata {
+message Kubernetesmetedata {
   // Output only. Kubernetes API server version string as reported by '/version'.
   string kubernetes_api_server_version = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -634,7 +634,7 @@ message GenerateConnectManifestResponse {
 // Agent deployment.
 message ConnectAgentResource {
   // Kubernetes type of the resource.
-  TypeMeta type = 1;
+  Typemete type = 1;
 
   // YAML manifest of the resource.
   string manifest = 2;
@@ -654,9 +654,9 @@ message ResourceManifest {
   bool cluster_scoped = 2;
 }
 
-// TypeMeta is the type information needed for content unmarshalling of
+// Typemete is the type information needed for content unmarshalling of
 // Kubernetes resources in the manifest.
-message TypeMeta {
+message Typemete {
   // Kind of the resource (e.g. Deployment).
   string kind = 1;
 
@@ -685,8 +685,8 @@ message InitializeHubResponse {
   string workload_identity_pool = 2;
 }
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

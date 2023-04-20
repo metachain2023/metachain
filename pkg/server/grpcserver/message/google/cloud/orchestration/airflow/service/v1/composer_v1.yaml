@@ -11,7 +11,7 @@ apis:
 types:
 - name: google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse
 - name: google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse
-- name: google.cloud.orchestration.airflow.service.v1.OperationMetadata
+- name: google.cloud.orchestration.airflow.service.v1.Operationmetedata
 - name: google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse
 
 documentation:

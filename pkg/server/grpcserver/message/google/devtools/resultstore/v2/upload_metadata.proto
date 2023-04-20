@@ -20,18 +20,18 @@ import "google/api/resource.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/resultstore/v2;resultstore";
 option java_multiple_files = true;
-option java_outer_classname = "UploadMetadataProto";
+option java_outer_classname = "UploadmetedataProto";
 option java_package = "com.google.devtools.resultstore.v2";
 
-// The upload metadata for an invocation
-message UploadMetadata {
+// The upload metedata for an invocation
+message Uploadmetedata {
   option (google.api.resource) = {
-    type: "resultstore.googleapis.com/UploadMetadata"
-    pattern: "invocations/{invocation}/uploadMetadata"
+    type: "resultstore.googleapis.com/Uploadmetedata"
+    pattern: "invocations/{invocation}/uploadmetedata"
   };
 
-  // The name of the upload metadata.  Its format will be:
-  // invocations/${INVOCATION_ID}/uploadMetadata
+  // The name of the upload metedata.  Its format will be:
+  // invocations/${INVOCATION_ID}/uploadmetedata
   string name = 1;
 
   // The resume token of the last batch that was committed in the most recent

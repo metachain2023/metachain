@@ -21,18 +21,18 @@ import "google/devtools/resultstore/v2/common.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/resultstore/v2;resultstore";
 option java_multiple_files = true;
-option java_outer_classname = "DownloadMetadataProto";
+option java_outer_classname = "DownloadmetedataProto";
 option java_package = "com.google.devtools.resultstore.v2";
 
-// The download metadata for an invocation
-message DownloadMetadata {
+// The download metedata for an invocation
+message Downloadmetedata {
   option (google.api.resource) = {
-    type: "resultstore.googleapis.com/DownloadMetadata"
-    pattern: "invocations/{invocation}/downloadMetadata"
+    type: "resultstore.googleapis.com/Downloadmetedata"
+    pattern: "invocations/{invocation}/downloadmetedata"
   };
 
-  // The name of the download metadata.  Its format will be:
-  // invocations/${INVOCATION_ID}/downloadMetadata
+  // The name of the download metedata.  Its format will be:
+  // invocations/${INVOCATION_ID}/downloadmetedata
   string name = 1;
 
   // Indicates the upload status of the invocation, whether it is

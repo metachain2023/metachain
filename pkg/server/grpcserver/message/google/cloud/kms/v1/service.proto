@@ -83,7 +83,7 @@ service KeyManagementService {
     option (google.api.method_signature) = "parent";
   }
 
-  // Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
+  // Returns metedata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
   rpc GetKeyRing(GetKeyRingRequest) returns (KeyRing) {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/locations/*/keyRings/*}"
@@ -91,7 +91,7 @@ service KeyManagementService {
     option (google.api.method_signature) = "name";
   }
 
-  // Returns metadata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as
+  // Returns metedata for a given [CryptoKey][google.cloud.kms.v1.CryptoKey], as
   // well as its [primary][google.cloud.kms.v1.CryptoKey.primary]
   // [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
   rpc GetCryptoKey(GetCryptoKeyRequest) returns (CryptoKey) {
@@ -101,7 +101,7 @@ service KeyManagementService {
     option (google.api.method_signature) = "name";
   }
 
-  // Returns metadata for a given
+  // Returns metedata for a given
   // [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
   rpc GetCryptoKeyVersion(GetCryptoKeyVersionRequest)
       returns (CryptoKeyVersion) {
@@ -124,7 +124,7 @@ service KeyManagementService {
     option (google.api.method_signature) = "name";
   }
 
-  // Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
+  // Returns metedata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
   rpc GetImportJob(GetImportJobRequest) returns (ImportJob) {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/locations/*/keyRings/*/importJobs/*}"
@@ -210,7 +210,7 @@ service KeyManagementService {
   }
 
   // Update a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s
-  // metadata.
+  // metedata.
   //
   // [state][google.cloud.kms.v1.CryptoKeyVersion.state] may be changed between
   // [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
@@ -1676,9 +1676,9 @@ message Digest {
   }
 }
 
-// Cloud KMS metadata for the given
+// Cloud KMS metedata for the given
 // [google.cloud.location.Location][google.cloud.location.Location].
-message LocationMetadata {
+message Locationmetedata {
   // Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
   // [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
   // [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] can be created in this

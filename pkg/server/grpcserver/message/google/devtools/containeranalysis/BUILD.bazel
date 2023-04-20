@@ -28,7 +28,7 @@ ruby_cloud_gapic_library(
         "ruby-cloud-api-shortname=containeranalysis",
         "ruby-cloud-migration-version=1.0",
     ],
-    ruby_cloud_description = "The Container Analysis API is an implementation of Grafeas. It stores, and enables querying and retrieval of, critical metadata about all of your software artifacts.",
+    ruby_cloud_description = "The Container Analysis API is an implementation of Grafeas. It stores, and enables querying and retrieval of, critical metedata about all of your software artifacts.",
     ruby_cloud_title = "Container Analysis",
 )
 

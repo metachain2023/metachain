@@ -8,7 +8,7 @@ apis:
 
 types:
 - name: google.cloud.video.livestream.v1.ChannelOperationResponse
-- name: google.cloud.video.livestream.v1.OperationMetadata
+- name: google.cloud.video.livestream.v1.Operationmetedata
 
 documentation:
   rules:

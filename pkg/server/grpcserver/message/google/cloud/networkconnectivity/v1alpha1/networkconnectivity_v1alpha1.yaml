@@ -7,7 +7,7 @@ apis:
 - name: google.cloud.networkconnectivity.v1alpha1.HubService
 
 types:
-- name: google.cloud.networkconnectivity.v1alpha1.OperationMetadata
+- name: google.cloud.networkconnectivity.v1alpha1.Operationmetedata
 
 documentation:
   summary: |-

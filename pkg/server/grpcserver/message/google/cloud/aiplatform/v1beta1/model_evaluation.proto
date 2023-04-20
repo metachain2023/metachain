@@ -88,9 +88,9 @@ message ModelEvaluation {
   // used for explaining the predicted values on the evaluated data.
   repeated ModelEvaluationExplanationSpec explanation_specs = 9;
 
-  // The metadata of the ModelEvaluation.
-  // For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+  // The metedata of the ModelEvaluation.
+  // For the ModelEvaluation uploaded from Managed Pipeline, metedata contains a
   // structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
   // "evaluation_dataset_path".
-  google.protobuf.Value metadata = 11;
+  google.protobuf.Value metedata = 11;
 }

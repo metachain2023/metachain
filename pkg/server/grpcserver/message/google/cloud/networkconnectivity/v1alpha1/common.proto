@@ -27,8 +27,8 @@ option java_package = "com.google.cloud.networkconnectivity.v1alpha1";
 option php_namespace = "Google\\Cloud\\NetworkConnectivity\\V1alpha1";
 option ruby_package = "Google::Cloud::NetworkConnectivity::V1alpha1";
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

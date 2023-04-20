@@ -56,12 +56,12 @@ message CommandTask {
     repeated string arguments = 1;
 
     // The input filesystem to be set up prior to the task beginning. The
-    // contents should be a repeated set of FileMetadata messages though other
+    // contents should be a repeated set of Filemetedata messages though other
     // formats are allowed if better for the implementation (eg, a LUCI-style
     // .isolated file).
     //
     // This field is repeated since implementations might want to cache the
-    // metadata, in which case it may be useful to break up portions of the
+    // metedata, in which case it may be useful to break up portions of the
     // filesystem that change frequently (eg, specific input files) from those
     // that don't (eg, standard header files).
     repeated Digest files = 2;
@@ -152,13 +152,13 @@ message CommandOutputs {
 
   // The output files. The blob referenced by the digest should contain
   // one of the following (implementation-dependent):
-  //    * A marshalled DirectoryMetadata of the returned filesystem
+  //    * A marshalled Directorymetedata of the returned filesystem
   //    * A LUCI-style .isolated file
   Digest outputs = 2;
 }
 
 // DEPRECATED - use CommandResult instead.
-// Can be used as part of CompleteRequest.metadata, or are part of a more
+// Can be used as part of CompleteRequest.metedata, or are part of a more
 // sophisticated message.
 message CommandOverhead {
   // The elapsed time between calling Accept and Complete. The server will also
@@ -185,7 +185,7 @@ message CommandResult {
 
   // The output files. The blob referenced by the digest should contain
   // one of the following (implementation-dependent):
-  //    * A marshalled DirectoryMetadata of the returned filesystem
+  //    * A marshalled Directorymetedata of the returned filesystem
   //    * A LUCI-style .isolated file
   Digest outputs = 3;
 
@@ -198,18 +198,18 @@ message CommandResult {
   // uploading/downloading files).
   google.protobuf.Duration overhead = 5 [deprecated = true];
 
-  // Implementation-dependent metadata about the task. Both servers and bots
+  // Implementation-dependent metedata about the task. Both servers and bots
   // may define messages which can be encoded here; bots are free to provide
-  // metadata in multiple formats, and servers are free to choose one or more
+  // metedata in multiple formats, and servers are free to choose one or more
   // of the values to process and ignore others. In particular, it is *not*
   // considered an error for the bot to provide the server with a field that it
   // doesn't know about.
-  repeated google.protobuf.Any metadata = 6;
+  repeated google.protobuf.Any metedata = 6;
 }
 
-// The metadata for a file. Similar to the equivalent message in the Remote
+// The metedata for a file. Similar to the equivalent message in the Remote
 // Execution API.
-message FileMetadata {
+message Filemetedata {
   // The path of this file. If this message is part of the
   // CommandOutputs.outputs fields, the path is relative to the execution root
   // and must correspond to an entry in CommandTask.outputs.files. If this
@@ -229,11 +229,11 @@ message FileMetadata {
   bool is_executable = 4;
 }
 
-// The metadata for a directory. Similar to the equivalent message in the Remote
+// The metedata for a directory. Similar to the equivalent message in the Remote
 // Execution API.
-message DirectoryMetadata {
+message Directorymetedata {
   // The path of the directory, as in
-  // [FileMetadata.path][google.devtools.remoteworkers.v1test2.FileMetadata.path].
+  // [Filemetedata.path][google.devtools.remoteworkers.v1test2.Filemetedata.path].
   string path = 1;
 
   // A pointer to the contents of the directory, in the form of a marshalled
@@ -275,8 +275,8 @@ message Blob {
 // Execution API.
 message Directory {
   // The files in this directory
-  repeated FileMetadata files = 1;
+  repeated Filemetedata files = 1;
 
   // Any subdirectories
-  repeated DirectoryMetadata directories = 2;
+  repeated Directorymetedata directories = 2;
 }

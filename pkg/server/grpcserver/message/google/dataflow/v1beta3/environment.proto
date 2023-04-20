@@ -493,8 +493,8 @@ message WorkerPool {
   // Data disks that are used by a VM in this workflow.
   repeated Disk data_disks = 12;
 
-  // Metadata to set on the Google Compute Engine VMs.
-  map<string, string> metadata = 13;
+  // metedata to set on the Google Compute Engine VMs.
+  map<string, string> metedata = 13;
 
   // Settings for autoscaling of this WorkerPool.
   AutoscalingSettings autoscaling_settings = 14;

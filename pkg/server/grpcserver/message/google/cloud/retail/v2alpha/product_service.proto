@@ -112,7 +112,7 @@ service ProductService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.PurgeProductsResponse"
-      metadata_type: "google.cloud.retail.v2alpha.PurgeProductsMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.PurgeProductsmetedata"
     };
   }
 
@@ -131,7 +131,7 @@ service ProductService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.ImportProductsResponse"
-      metadata_type: "google.cloud.retail.v2alpha.ImportMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.Importmetedata"
     };
   }
 
@@ -195,7 +195,7 @@ service ProductService {
     option (google.api.method_signature) = "inventory,set_mask";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.SetInventoryResponse"
-      metadata_type: "google.cloud.retail.v2alpha.SetInventoryMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.SetInventorymetedata"
     };
   }
 
@@ -232,7 +232,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse"
-      metadata_type: "google.cloud.retail.v2alpha.AddFulfillmentPlacesMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.AddFulfillmentPlacesmetedata"
     };
   }
 
@@ -269,7 +269,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse"
-      metadata_type: "google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.RemoveFulfillmentPlacesmetedata"
     };
   }
 
@@ -313,7 +313,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.AddLocalInventoriesResponse"
-      metadata_type: "google.cloud.retail.v2alpha.AddLocalInventoriesMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.AddLocalInventoriesmetedata"
     };
   }
 
@@ -355,7 +355,7 @@ service ProductService {
     option (google.api.method_signature) = "product";
     option (google.longrunning.operation_info) = {
       response_type: "google.cloud.retail.v2alpha.RemoveLocalInventoriesResponse"
-      metadata_type: "google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadata"
+      metedata_type: "google.cloud.retail.v2alpha.RemoveLocalInventoriesmetedata"
     };
   }
 }
@@ -692,11 +692,11 @@ message SetInventoryRequest {
   bool allow_missing = 4;
 }
 
-// Metadata related to the progress of the SetInventory operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the SetInventory operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory]
 // method.
-message SetInventoryMetadata {}
+message SetInventorymetedata {}
 
 // Response of the SetInventoryRequest.  Currently empty because
 // there is no meaningful response populated from the
@@ -773,11 +773,11 @@ message AddFulfillmentPlacesRequest {
   bool allow_missing = 5;
 }
 
-// Metadata related to the progress of the AddFulfillmentPlaces operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the AddFulfillmentPlaces operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
 // method.
-message AddFulfillmentPlacesMetadata {}
+message AddFulfillmentPlacesmetedata {}
 
 // Response of the AddFulfillmentPlacesRequest.  Currently empty because
 // there is no meaningful response populated from the
@@ -838,11 +838,11 @@ message AddLocalInventoriesRequest {
   bool allow_missing = 6;
 }
 
-// Metadata related to the progress of the AddLocalInventories operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the AddLocalInventories operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
 // method.
-message AddLocalInventoriesMetadata {}
+message AddLocalInventoriesmetedata {}
 
 // Response of the
 // [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
@@ -886,11 +886,11 @@ message RemoveLocalInventoriesRequest {
   bool allow_missing = 3;
 }
 
-// Metadata related to the progress of the RemoveLocalInventories operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the RemoveLocalInventories operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
 // method.
-message RemoveLocalInventoriesMetadata {}
+message RemoveLocalInventoriesmetedata {}
 
 // Response of the
 // [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
@@ -964,11 +964,11 @@ message RemoveFulfillmentPlacesRequest {
   bool allow_missing = 5;
 }
 
-// Metadata related to the progress of the RemoveFulfillmentPlaces operation.
-// Currently empty because there is no meaningful metadata populated from the
+// metedata related to the progress of the RemoveFulfillmentPlaces operation.
+// Currently empty because there is no meaningful metedata populated from the
 // [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
 // method.
-message RemoveFulfillmentPlacesMetadata {}
+message RemoveFulfillmentPlacesmetedata {}
 
 // Response of the RemoveFulfillmentPlacesRequest. Currently empty because there
 // is no meaningful response populated from the

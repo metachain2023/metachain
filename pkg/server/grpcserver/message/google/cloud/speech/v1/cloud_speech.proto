@@ -62,7 +62,7 @@ service Speech {
     option (google.api.method_signature) = "config,audio";
     option (google.longrunning.operation_info) = {
       response_type: "LongRunningRecognizeResponse"
-      metadata_type: "LongRunningRecognizeMetadata"
+      metedata_type: "LongRunningRecognizemetedata"
     };
   }
 
@@ -369,8 +369,8 @@ message RecognitionConfig {
   // in the top alternative of the FINAL SpeechRecognitionResult.
   SpeakerDiarizationConfig diarization_config = 19;
 
-  // Metadata regarding this request.
-  RecognitionMetadata metadata = 9;
+  // metedata regarding this request.
+  Recognitionmetedata metedata = 9;
 
   // Which model to select for the given request. Select the model
   // best suited to your domain to get best results. If a model is not
@@ -461,7 +461,7 @@ message SpeakerDiarizationConfig {
 }
 
 // Description of audio data to be recognized.
-message RecognitionMetadata {
+message Recognitionmetedata {
   option deprecated = true;
 
   // Use case categories that the audio recognition request can be described
@@ -688,9 +688,9 @@ message LongRunningRecognizeResponse {
 }
 
 // Describes the progress of a long-running `LongRunningRecognize` call. It is
-// included in the `metadata` field of the `Operation` returned by the
+// included in the `metedata` field of the `Operation` returned by the
 // `GetOperation` call of the `google::longrunning::Operations` service.
-message LongRunningRecognizeMetadata {
+message LongRunningRecognizemetedata {
   // Approximate percentage of audio processed thus far. Guaranteed to be 100
   // when the audio is fully processed and the results are available.
   int32 progress_percent = 1;

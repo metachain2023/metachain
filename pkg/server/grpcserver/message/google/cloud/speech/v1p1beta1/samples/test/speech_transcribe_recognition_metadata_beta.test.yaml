@@ -2,22 +2,22 @@ type: test/samples
 schema_version: 1
 test:
   suites:
-  - name: Adding recognition metadata (Local File) (Beta)
+  - name: Adding recognition metedata (Local File) (Beta)
     cases:
 
     # This sample should default to using commercial_mono.wav
-    - name: speech_transcribe_recognition_metadata_beta (no arguments)
+    - name: speech_transcribe_recognition_metedata_beta (no arguments)
       spec:
       - call:
-          sample: speech_transcribe_recognition_metadata_beta
+          sample: speech_transcribe_recognition_metedata_beta
       - assert_contains:
         - literal: "Chrome"
 
     # Confirm that another file can be transcribed (use another file)
-    - name: speech_transcribe_recognition_metadata_beta (--local_file_path)
+    - name: speech_transcribe_recognition_metedata_beta (--local_file_path)
       spec:
       - call:
-          sample: speech_transcribe_recognition_metadata_beta
+          sample: speech_transcribe_recognition_metedata_beta
           params:
             local_file_path:
               literal: "resources/brooklyn_bridge.flac"

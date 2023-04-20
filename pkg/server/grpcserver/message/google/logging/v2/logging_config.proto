@@ -685,7 +685,7 @@ service ConfigServiceV2 {
     };
     option (google.longrunning.operation_info) = {
       response_type: "CopyLogEntriesResponse"
-      metadata_type: "CopyLogEntriesMetadata"
+      metedata_type: "CopyLogEntriesmetedata"
     };
   }
 }
@@ -1878,8 +1878,8 @@ message CopyLogEntriesRequest {
   string destination = 4 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for CopyLogEntries long running operations.
-message CopyLogEntriesMetadata {
+// metedata for CopyLogEntries long running operations.
+message CopyLogEntriesmetedata {
   // The create time of an operation.
   google.protobuf.Timestamp start_time = 1;
 

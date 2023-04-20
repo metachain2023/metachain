@@ -61,7 +61,7 @@ service Tpu {
     option (google.api.method_signature) = "parent,node,node_id";
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -73,7 +73,7 @@ service Tpu {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -85,7 +85,7 @@ service Tpu {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -97,7 +97,7 @@ service Tpu {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -109,7 +109,7 @@ service Tpu {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Node"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -330,7 +330,7 @@ message Node {
   // The health status of the TPU node.
   Health health = 22;
 
-  // Resource labels to represent user-provided metadata.
+  // Resource labels to represent user-provided metedata.
   map<string, string> labels = 24;
 
   // Whether the VPC peering for the node is set up through Service Networking
@@ -553,8 +553,8 @@ message ListAcceleratorTypesResponse {
   repeated string unreachable = 3;
 }
 
-// Metadata describing an [Operation][google.longrunning.Operation]
-message OperationMetadata {
+// metedata describing an [Operation][google.longrunning.Operation]
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

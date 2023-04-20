@@ -28,7 +28,7 @@ option java_outer_classname = "Vehicles";
 option java_package = "google.maps.fleetengine.v1";
 option objc_class_prefix = "CFE";
 
-// Vehicle metadata.
+// Vehicle metedata.
 message Vehicle {
   option (google.api.resource) = {
     type: "fleetengine.googleapis.com/Vehicle"

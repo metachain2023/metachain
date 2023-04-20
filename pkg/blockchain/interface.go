@@ -4,8 +4,8 @@ package blockchain
 import (
 	"math/big"
 
-	"metachain/pkg/block"
-	"metachain/pkg/transaction"
+	"metechain/pkg/block"
+	"metechain/pkg/transaction"
 
 	"github.com/ethereum/go-ethereum/common"
 	evmtypes "github.com/ethereum/go-ethereum/core/types"
@@ -41,10 +41,10 @@ type Blockchains interface {
 	ReorganizeChain([][]byte, uint64) error
 	Tip() (*block.Block, error)
 
-	//get binding Meta address by eth address
-	GetBindingMetaAddress(ethAddr string) (*common.Address, error)
-	//get binding eth address by Meta address
-	GetBindingEthAddress(MetaAddr *common.Address) (string, error)
+	//get binding mete address by eth address
+	GetBindingmeteAddress(ethAddr string) (*common.Address, error)
+	//get binding eth address by mete address
+	GetBindingEthAddress(meteAddr *common.Address) (string, error)
 	//call contract
 	CallSmartContract(contractAddr, origin, callInput, value string) (string, string, error)
 	//get code

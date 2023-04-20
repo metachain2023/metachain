@@ -42,8 +42,8 @@ service IssuerSwitchResolutions {
   // Create a complaint. The returned `Operation` type has
   // the following method-specific fields:
   //
-  // - `metadata`:
-  // [CreateComplaintMetadata][google.cloud.paymentgateway.issuerswitch.v1.CreateComplaintMetadata]
+  // - `metedata`:
+  // [CreateComplaintmetedata][google.cloud.paymentgateway.issuerswitch.v1.CreateComplaintmetedata]
   // - `response`:
   // [Complaint][google.cloud.paymentgateway.issuerswitch.v1.Complaint]
   rpc CreateComplaint(CreateComplaintRequest)
@@ -55,15 +55,15 @@ service IssuerSwitchResolutions {
     option (google.api.method_signature) = "parent,complaint";
     option (google.longrunning.operation_info) = {
       response_type: "Complaint"
-      metadata_type: "CreateComplaintMetadata"
+      metedata_type: "CreateComplaintmetedata"
     };
   }
 
   // Resolve a complaint. The returned `Operation` type has
   // the following method-specific fields:
   //
-  // - `metadata`:
-  // [ResolveComplaintMetadata][google.cloud.paymentgateway.issuerswitch.v1.ResolveComplaintMetadata]
+  // - `metedata`:
+  // [ResolveComplaintmetedata][google.cloud.paymentgateway.issuerswitch.v1.ResolveComplaintmetedata]
   // - `response`:
   // [Complaint][google.cloud.paymentgateway.issuerswitch.v1.Complaint]
   rpc ResolveComplaint(ResolveComplaintRequest)
@@ -75,15 +75,15 @@ service IssuerSwitchResolutions {
     option (google.api.method_signature) = "complaint";
     option (google.longrunning.operation_info) = {
       response_type: "Complaint"
-      metadata_type: "ResolveComplaintMetadata"
+      metedata_type: "ResolveComplaintmetedata"
     };
   }
 
   // Create a dispute. The returned `Operation` type has
   // the following method-specific fields:
   //
-  // - `metadata`:
-  // [CreateDisputeMetadata][google.cloud.paymentgateway.issuerswitch.v1.CreateDisputeMetadata]
+  // - `metedata`:
+  // [CreateDisputemetedata][google.cloud.paymentgateway.issuerswitch.v1.CreateDisputemetedata]
   // - `response`:
   // [Dispute][google.cloud.paymentgateway.issuerswitch.v1.Dispute]
   rpc CreateDispute(CreateDisputeRequest)
@@ -95,15 +95,15 @@ service IssuerSwitchResolutions {
     option (google.api.method_signature) = "parent,dispute";
     option (google.longrunning.operation_info) = {
       response_type: "Dispute"
-      metadata_type: "CreateDisputeMetadata"
+      metedata_type: "CreateDisputemetedata"
     };
   }
 
   // Resolve a dispute. The returned `Operation` type has
   // the following method-specific fields:
   //
-  // - `metadata`:
-  // [ResolveDisputeMetadata][google.cloud.paymentgateway.issuerswitch.v1.ResolveDisputeMetadata]
+  // - `metedata`:
+  // [ResolveDisputemetedata][google.cloud.paymentgateway.issuerswitch.v1.ResolveDisputemetedata]
   // - `response`:
   // [Dispute][google.cloud.paymentgateway.issuerswitch.v1.Dispute]
   rpc ResolveDispute(ResolveDisputeRequest)
@@ -115,7 +115,7 @@ service IssuerSwitchResolutions {
     option (google.api.method_signature) = "dispute";
     option (google.longrunning.operation_info) = {
       response_type: "Dispute"
-      metadata_type: "ResolveDisputeMetadata"
+      metedata_type: "ResolveDisputemetedata"
     };
   }
 }
@@ -899,17 +899,17 @@ message ResolveDisputeAdjustment {
   ReasonCode adjustment_code = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for CreateComplaint.
-message CreateComplaintMetadata {}
+// metedata for CreateComplaint.
+message CreateComplaintmetedata {}
 
-// Metadata for ResolveComplaint.
-message ResolveComplaintMetadata {}
+// metedata for ResolveComplaint.
+message ResolveComplaintmetedata {}
 
-// Metadata for CreateDispute.
-message CreateDisputeMetadata {}
+// metedata for CreateDispute.
+message CreateDisputemetedata {}
 
-// Metadata for ResolveDispute.
-message ResolveDisputeMetadata {}
+// metedata for ResolveDispute.
+message ResolveDisputemetedata {}
 
 // The subtype of the complaint or dispute.
 enum TransactionSubType {

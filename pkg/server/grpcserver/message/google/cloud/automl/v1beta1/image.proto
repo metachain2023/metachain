@@ -26,19 +26,19 @@ option java_package = "com.google.cloud.automl.v1beta1";
 option php_namespace = "Google\\Cloud\\AutoMl\\V1beta1";
 option ruby_package = "Google::Cloud::AutoML::V1beta1";
 
-// Dataset metadata that is specific to image classification.
-message ImageClassificationDatasetMetadata {
+// Dataset metedata that is specific to image classification.
+message ImageClassificationDatasetmetedata {
   // Required. Type of the classification problem.
   ClassificationType classification_type = 1;
 }
 
-// Dataset metadata specific to image object detection.
-message ImageObjectDetectionDatasetMetadata {
+// Dataset metedata specific to image object detection.
+message ImageObjectDetectionDatasetmetedata {
 
 }
 
-// Model metadata for image classification.
-message ImageClassificationModelMetadata {
+// Model metedata for image classification.
+message ImageClassificationModelmetedata {
   // Optional. The ID of the `base` model. If it is specified, the new model
   // will be created based on the `base` model. Otherwise, the new model will be
   // created from scratch. The `base` model must be in the same
@@ -104,8 +104,8 @@ message ImageClassificationModelMetadata {
   int64 node_count = 14;
 }
 
-// Model metadata specific to image object detection.
-message ImageObjectDetectionModelMetadata {
+// Model metedata specific to image object detection.
+message ImageObjectDetectionModelmetedata {
   // Optional. Type of the model. The available values are:
   // *   `cloud-high-accuracy-1` - (default) A model to be used via prediction
   //               calls to AutoML API. Expected to have a higher latency, but
@@ -167,24 +167,24 @@ message ImageObjectDetectionModelMetadata {
   int64 train_cost_milli_node_hours = 7;
 }
 
-// Model deployment metadata specific to Image Classification.
-message ImageClassificationModelDeploymentMetadata {
+// Model deployment metedata specific to Image Classification.
+message ImageClassificationModelDeploymentmetedata {
   // Input only. The number of nodes to deploy the model on. A node is an
   // abstraction of a machine resource, which can handle online prediction QPS
   // as given in the model's
   //
-  // [node_qps][google.cloud.automl.v1beta1.ImageClassificationModelMetadata.node_qps].
+  // [node_qps][google.cloud.automl.v1beta1.ImageClassificationModelmetedata.node_qps].
   // Must be between 1 and 100, inclusive on both ends.
   int64 node_count = 1;
 }
 
-// Model deployment metadata specific to Image Object Detection.
-message ImageObjectDetectionModelDeploymentMetadata {
+// Model deployment metedata specific to Image Object Detection.
+message ImageObjectDetectionModelDeploymentmetedata {
   // Input only. The number of nodes to deploy the model on. A node is an
   // abstraction of a machine resource, which can handle online prediction QPS
   // as given in the model's
   //
-  // [qps_per_node][google.cloud.automl.v1beta1.ImageObjectDetectionModelMetadata.qps_per_node].
+  // [qps_per_node][google.cloud.automl.v1beta1.ImageObjectDetectionModelmetedata.qps_per_node].
   // Must be between 1 and 100, inclusive on both ends.
   int64 node_count = 1;
 }

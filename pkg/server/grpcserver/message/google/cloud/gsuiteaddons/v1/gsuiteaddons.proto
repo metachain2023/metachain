@@ -47,7 +47,7 @@ option ruby_package = "Google::Cloud::GSuiteAddOns::V1";
 // and perform actions in the host application (See:
 // https://developers.google.com/gsuite/add-ons/overview for more information).
 //
-// A Google Workspace Add-on deployment resource specifies metadata about the
+// A Google Workspace Add-on deployment resource specifies metedata about the
 // add-on, including a specification of the entry points in the host application
 // that trigger add-on executions (see:
 // https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).

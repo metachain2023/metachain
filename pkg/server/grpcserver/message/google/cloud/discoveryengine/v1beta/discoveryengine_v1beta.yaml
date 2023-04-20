@@ -10,9 +10,9 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.discoveryengine.v1beta.ImportDocumentsMetadata
+- name: google.cloud.discoveryengine.v1beta.ImportDocumentsmetedata
 - name: google.cloud.discoveryengine.v1beta.ImportDocumentsResponse
-- name: google.cloud.discoveryengine.v1beta.ImportUserEventsMetadata
+- name: google.cloud.discoveryengine.v1beta.ImportUserEventsmetedata
 - name: google.cloud.discoveryengine.v1beta.ImportUserEventsResponse
 
 documentation:

@@ -75,7 +75,7 @@ service ClientGatewaysService {
         "parent,client_gateway,client_gateway_id";
     option (google.longrunning.operation_info) = {
       response_type: "ClientGateway"
-      metadata_type: "ClientGatewayOperationMetadata"
+      metedata_type: "ClientGatewayOperationmetedata"
     };
   }
 
@@ -88,7 +88,7 @@ service ClientGatewaysService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "ClientGatewayOperationMetadata"
+      metedata_type: "ClientGatewayOperationmetedata"
     };
   }
 }
@@ -265,8 +265,8 @@ message DeleteClientGatewayRequest {
   bool validate_only = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents the metadata of the long-running operation.
-message ClientGatewayOperationMetadata {
+// Represents the metedata of the long-running operation.
+message ClientGatewayOperationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

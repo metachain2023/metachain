@@ -23,7 +23,7 @@ option java_multiple_files = true;
 option java_outer_classname = "WebhookProto";
 option java_package = "com.google.actions.sdk.v2";
 
-// Metadata for different types of webhooks. If you're using
+// metedata for different types of webhooks. If you're using
 // `inlineCloudFunction`, your source code must be in a directory with the same
 // name as the value for the `executeFunction` key.
 // For example, a value of `my_webhook` for the`executeFunction` key would have
@@ -60,7 +60,7 @@ message Webhook {
     int32 endpoint_api_version = 3;
   }
 
-  // Holds the metadata of an inline Cloud Function deployed from the
+  // Holds the metedata of an inline Cloud Function deployed from the
   // webhooks folder.
   message InlineCloudFunction {
     // The name of the Cloud Function entry point. The value of this field
@@ -76,7 +76,7 @@ message Webhook {
     // Custom webhook HTTPS endpoint.
     HttpsEndpoint https_endpoint = 2;
 
-    // Metadata for cloud function deployed from code in the webhooks folder.
+    // metedata for cloud function deployed from code in the webhooks folder.
     InlineCloudFunction inline_cloud_function = 3;
   }
 }

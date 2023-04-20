@@ -149,7 +149,7 @@ message ComputeTimeCursorRequest {
 
   // Required. The target publish or event time. Specifying a future time will
   // return an unset cursor.
-  TimeTarget target = 3 [(google.api.field_behavior) = REQUIRED];
+  Timeterget target = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Response containing the cursor corresponding to a publish or event time in a

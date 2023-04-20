@@ -87,7 +87,7 @@ service AppConnectionsService {
         "parent,app_connection,app_connection_id";
     option (google.longrunning.operation_info) = {
       response_type: "AppConnection"
-      metadata_type: "AppConnectionOperationMetadata"
+      metedata_type: "AppConnectionOperationmetedata"
     };
   }
 
@@ -101,7 +101,7 @@ service AppConnectionsService {
     option (google.api.method_signature) = "app_connection,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AppConnection"
-      metadata_type: "AppConnectionOperationMetadata"
+      metedata_type: "AppConnectionOperationmetedata"
     };
   }
 
@@ -114,7 +114,7 @@ service AppConnectionsService {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "AppConnectionOperationMetadata"
+      metedata_type: "AppConnectionOperationmetedata"
     };
   }
 
@@ -451,7 +451,7 @@ message AppConnection {
   google.protobuf.Timestamp update_time = 3
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Optional. Resource labels to represent user provided metadata.
+  // Optional. Resource labels to represent user provided metedata.
   map<string, string> labels = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. An arbitrary user-provided name for the AppConnection. Cannot
@@ -481,8 +481,8 @@ message AppConnection {
   Gateway gateway = 11 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Represents the metadata of the long-running operation.
-message AppConnectionOperationMetadata {
+// Represents the metedata of the long-running operation.
+message AppConnectionOperationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

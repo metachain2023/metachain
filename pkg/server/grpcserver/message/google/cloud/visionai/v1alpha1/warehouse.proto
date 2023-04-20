@@ -38,7 +38,7 @@ option java_package = "com.google.cloud.visionai.v1alpha1";
 option php_namespace = "Google\\Cloud\\VisionAI\\V1alpha1";
 option ruby_package = "Google::Cloud::VisionAI::V1alpha1";
 
-// Service that manages media content + metadata for streaming.
+// Service that manages media content + metedata for streaming.
 service Warehouse {
   option (google.api.default_host) = "visionai.googleapis.com";
   option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
@@ -85,7 +85,7 @@ service Warehouse {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "DeleteAssetMetadata"
+      metedata_type: "DeleteAssetmetedata"
     };
   }
 
@@ -98,7 +98,7 @@ service Warehouse {
     option (google.api.method_signature) = "parent,corpus";
     option (google.longrunning.operation_info) = {
       response_type: "Corpus"
-      metadata_type: "CreateCorpusMetadata"
+      metedata_type: "CreateCorpusmetedata"
     };
   }
 
@@ -448,7 +448,7 @@ message DeleteAssetRequest {
 }
 
 // An asset is a resource in corpus. It represents a media object inside corpus,
-// contains metadata and another resource annotation. Different feature could be
+// contains metedata and another resource annotation. Different feature could be
 // applied to the asset to generate annotations. User could specified annotation
 // related to the target asset.
 message Asset {
@@ -462,7 +462,7 @@ message Asset {
   // `projects/{project_number}/locations/{location_id}/corpora/{corpus_id}/assets/{asset_id}`
   string name = 1;
 
-  // The duration for which all media assets, associated metadata, and search
+  // The duration for which all media assets, associated metedata, and search
   // documents can exist. If not set, then it will using the default ttl in the
   // parent corpus resource.
   google.protobuf.Duration ttl = 2;
@@ -477,8 +477,8 @@ message CreateCorpusRequest {
   Corpus corpus = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Metadata for CreateCorpus API.
-message CreateCorpusMetadata {
+// metedata for CreateCorpus API.
+message CreateCorpusmetedata {
 
 }
 
@@ -1242,7 +1242,7 @@ message FacetValue {
   }
 }
 
-// Holds the facet value, selections state, and metadata.
+// Holds the facet value, selections state, and metedata.
 message FacetBucket {
   // The range of values [start, end) for which faceting is applied.
   message Range {
@@ -1452,9 +1452,9 @@ message SearchAssetsRequest {
   repeated string result_annotation_keys = 8;
 }
 
-// The metadata for DeleteAsset API that embeds in
-// [metadata][google.longrunning.Operation.metadata] field.
-message DeleteAssetMetadata {
+// The metedata for DeleteAsset API that embeds in
+// [metedata][google.longrunning.Operation.metedata] field.
+message DeleteAssetmetedata {
 
 }
 

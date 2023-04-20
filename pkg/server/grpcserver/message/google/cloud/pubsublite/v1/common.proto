@@ -46,7 +46,7 @@ message PubSubMessage {
   // The payload of the message.
   bytes data = 2;
 
-  // Optional attributes that can be used for message metadata/headers.
+  // Optional attributes that can be used for message metedata/headers.
   map<string, AttributeValues> attributes = 3;
 
   // An optional, user-specified event time.
@@ -76,7 +76,7 @@ message SequencedMessage {
   int64 size_bytes = 4;
 }
 
-// Metadata about a reservation resource.
+// metedata about a reservation resource.
 message Reservation {
   option (google.api.resource) = {
     type: "pubsublite.googleapis.com/Reservation"
@@ -98,7 +98,7 @@ message Reservation {
   int64 throughput_capacity = 2;
 }
 
-// Metadata about a topic resource.
+// metedata about a topic resource.
 message Topic {
   option (google.api.resource) = {
     type: "pubsublite.googleapis.com/Topic"
@@ -182,7 +182,7 @@ message Topic {
   ReservationConfig reservation_config = 4;
 }
 
-// Metadata about a subscription resource.
+// metedata about a subscription resource.
 message Subscription {
   option (google.api.resource) = {
     type: "pubsublite.googleapis.com/Subscription"
@@ -295,7 +295,7 @@ message ExportConfig {
 
 // A target publish or event time. Can be used for seeking to or retrieving the
 // corresponding cursor.
-message TimeTarget {
+message Timeterget {
   // The type of message time to query.
   oneof time {
     // Request the cursor of the first message with publish time greater than or

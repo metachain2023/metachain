@@ -21,7 +21,7 @@ import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/maps/addressvalidation/v1/address.proto";
 import "google/maps/addressvalidation/v1/geocode.proto";
-import "google/maps/addressvalidation/v1/metadata.proto";
+import "google/maps/addressvalidation/v1/metedata.proto";
 import "google/maps/addressvalidation/v1/usps_data.proto";
 import "google/type/postal_address.proto";
 
@@ -176,7 +176,7 @@ message ValidationResult {
   Geocode geocode = 3;
 
   // Other information relevant to deliverability.
-  AddressMetadata metadata = 4;
+  Addressmetedata metedata = 4;
 
   // Extra deliverability flags provided by USPS. Only provided in region `US`
   // and `PR`.

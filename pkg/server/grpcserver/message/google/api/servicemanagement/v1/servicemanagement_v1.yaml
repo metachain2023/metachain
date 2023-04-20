@@ -9,7 +9,7 @@ apis:
 types:
 - name: google.api.servicemanagement.v1.ConfigRef
 - name: google.api.servicemanagement.v1.ConfigSource
-- name: google.api.servicemanagement.v1.OperationMetadata
+- name: google.api.servicemanagement.v1.Operationmetedata
 - name: google.api.servicemanagement.v1.Rollout
 - name: google.api.servicemanagement.v1.SubmitConfigSourceResponse
 - name: google.api.servicemanagement.v1.UndeleteServiceResponse

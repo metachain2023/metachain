@@ -25,23 +25,23 @@ option java_package = "com.google.cloud.automl.v1beta1";
 option php_namespace = "Google\\Cloud\\AutoMl\\V1beta1";
 option ruby_package = "Google::Cloud::AutoML::V1beta1";
 
-// Dataset metadata specific to video classification.
+// Dataset metedata specific to video classification.
 // All Video Classification datasets are treated as multi label.
-message VideoClassificationDatasetMetadata {
+message VideoClassificationDatasetmetedata {
 
 }
 
-// Dataset metadata specific to video object tracking.
-message VideoObjectTrackingDatasetMetadata {
+// Dataset metedata specific to video object tracking.
+message VideoObjectTrackingDatasetmetedata {
 
 }
 
-// Model metadata specific to video classification.
-message VideoClassificationModelMetadata {
+// Model metedata specific to video classification.
+message VideoClassificationModelmetedata {
 
 }
 
-// Model metadata specific to video object tracking.
-message VideoObjectTrackingModelMetadata {
+// Model metedata specific to video object tracking.
+message VideoObjectTrackingModelmetedata {
 
 }

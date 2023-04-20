@@ -74,7 +74,7 @@ service DataFusion {
     option (google.api.method_signature) = "parent,instance,instance_id";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -86,7 +86,7 @@ service DataFusion {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -99,7 +99,7 @@ service DataFusion {
     option (google.api.method_signature) = "instance,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -112,7 +112,7 @@ service DataFusion {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 }
@@ -550,8 +550,8 @@ message RestartInstanceRequest {
   ];
 }
 
-// Represents the metadata of a long-running operation.
-message OperationMetadata {
+// Represents the metedata of a long-running operation.
+message Operationmetedata {
   // The time the operation was created.
   google.protobuf.Timestamp create_time = 1;
 

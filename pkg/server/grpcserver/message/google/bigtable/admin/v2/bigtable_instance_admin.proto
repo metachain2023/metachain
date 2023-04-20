@@ -38,7 +38,7 @@ option ruby_package = "Google::Cloud::Bigtable::Admin::V2";
 
 // Service for creating, configuring, and deleting Cloud Bigtable Instances and
 // Clusters. Provides access to the Instance and Cluster schemas only, not the
-// tables' metadata or data stored in those tables.
+// tables' metedata or data stored in those tables.
 service BigtableInstanceAdmin {
   option (google.api.default_host) = "bigtableadmin.googleapis.com";
   option (google.api.oauth_scopes) =
@@ -65,7 +65,7 @@ service BigtableInstanceAdmin {
     option (google.api.method_signature) = "parent,instance_id,instance,clusters";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "CreateInstanceMetadata"
+      metedata_type: "CreateInstancemetedata"
     };
   }
 
@@ -105,7 +105,7 @@ service BigtableInstanceAdmin {
     option (google.api.method_signature) = "instance,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Instance"
-      metadata_type: "UpdateInstanceMetadata"
+      metedata_type: "UpdateInstancemetedata"
     };
   }
 
@@ -132,7 +132,7 @@ service BigtableInstanceAdmin {
     option (google.api.method_signature) = "parent,cluster_id,cluster";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "CreateClusterMetadata"
+      metedata_type: "CreateClustermetedata"
     };
   }
 
@@ -164,7 +164,7 @@ service BigtableInstanceAdmin {
     };
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "UpdateClusterMetadata"
+      metedata_type: "UpdateClustermetedata"
     };
   }
 
@@ -188,7 +188,7 @@ service BigtableInstanceAdmin {
     option (google.api.method_signature) = "cluster,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "Cluster"
-      metadata_type: "PartialUpdateClusterMetadata"
+      metedata_type: "PartialUpdateClustermetedata"
     };
   }
 
@@ -234,7 +234,7 @@ service BigtableInstanceAdmin {
     option (google.api.method_signature) = "app_profile,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AppProfile"
-      metadata_type: "UpdateAppProfileMetadata"
+      metedata_type: "UpdateAppProfilemetedata"
     };
   }
 
@@ -458,8 +458,8 @@ message DeleteClusterRequest {
   ];
 }
 
-// The metadata for the Operation returned by CreateInstance.
-message CreateInstanceMetadata {
+// The metedata for the Operation returned by CreateInstance.
+message CreateInstancemetedata {
   // The request that prompted the initiation of this CreateInstance operation.
   CreateInstanceRequest original_request = 1;
 
@@ -470,8 +470,8 @@ message CreateInstanceMetadata {
   google.protobuf.Timestamp finish_time = 3;
 }
 
-// The metadata for the Operation returned by UpdateInstance.
-message UpdateInstanceMetadata {
+// The metedata for the Operation returned by UpdateInstance.
+message UpdateInstancemetedata {
   // The request that prompted the initiation of this UpdateInstance operation.
   PartialUpdateInstanceRequest original_request = 1;
 
@@ -482,8 +482,8 @@ message UpdateInstanceMetadata {
   google.protobuf.Timestamp finish_time = 3;
 }
 
-// The metadata for the Operation returned by CreateCluster.
-message CreateClusterMetadata {
+// The metedata for the Operation returned by CreateCluster.
+message CreateClustermetedata {
   // Progress info for copying a table's data to the new cluster.
   message TableProgress {
     enum State {
@@ -535,8 +535,8 @@ message CreateClusterMetadata {
   map<string, TableProgress> tables = 4;
 }
 
-// The metadata for the Operation returned by UpdateCluster.
-message UpdateClusterMetadata {
+// The metedata for the Operation returned by UpdateCluster.
+message UpdateClustermetedata {
   // The request that prompted the initiation of this UpdateCluster operation.
   Cluster original_request = 1;
 
@@ -547,8 +547,8 @@ message UpdateClusterMetadata {
   google.protobuf.Timestamp finish_time = 3;
 }
 
-// The metadata for the Operation returned by PartialUpdateCluster.
-message PartialUpdateClusterMetadata {
+// The metedata for the Operation returned by PartialUpdateCluster.
+message PartialUpdateClustermetedata {
   // The time at which the original request was received.
   google.protobuf.Timestamp request_time = 1;
 
@@ -680,8 +680,8 @@ message DeleteAppProfileRequest {
   bool ignore_warnings = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// The metadata for the Operation returned by UpdateAppProfile.
-message UpdateAppProfileMetadata {
+// The metedata for the Operation returned by UpdateAppProfile.
+message UpdateAppProfilemetedata {
 
 }
 

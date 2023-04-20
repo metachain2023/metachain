@@ -53,7 +53,7 @@ service ProfilerService {
   // client should take before attempting creating a profile again. The backoff
   // duration is returned in google.rpc.RetryInfo extension on the response
   // status. To a gRPC client, the extension will be return as a
-  // binary-serialized proto in the trailing metadata item named
+  // binary-serialized proto in the trailing metedata item named
   // "google.rpc.retryinfo-bin".
   rpc CreateProfile(CreateProfileRequest) returns (Profile) {
     option (google.api.http) = {

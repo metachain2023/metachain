@@ -9,25 +9,25 @@ apis:
 - name: google.longrunning.Operations
 
 types:
-- name: google.cloud.documentai.v1beta3.BatchProcessMetadata
+- name: google.cloud.documentai.v1beta3.BatchProcessmetedata
 - name: google.cloud.documentai.v1beta3.BatchProcessResponse
-- name: google.cloud.documentai.v1beta3.DeleteProcessorMetadata
-- name: google.cloud.documentai.v1beta3.DeleteProcessorVersionMetadata
-- name: google.cloud.documentai.v1beta3.DeployProcessorVersionMetadata
+- name: google.cloud.documentai.v1beta3.DeleteProcessormetedata
+- name: google.cloud.documentai.v1beta3.DeleteProcessorVersionmetedata
+- name: google.cloud.documentai.v1beta3.DeployProcessorVersionmetedata
 - name: google.cloud.documentai.v1beta3.DeployProcessorVersionResponse
-- name: google.cloud.documentai.v1beta3.DisableProcessorMetadata
+- name: google.cloud.documentai.v1beta3.DisableProcessormetedata
 - name: google.cloud.documentai.v1beta3.DisableProcessorResponse
-- name: google.cloud.documentai.v1beta3.EnableProcessorMetadata
+- name: google.cloud.documentai.v1beta3.EnableProcessormetedata
 - name: google.cloud.documentai.v1beta3.EnableProcessorResponse
-- name: google.cloud.documentai.v1beta3.EvaluateProcessorVersionMetadata
+- name: google.cloud.documentai.v1beta3.EvaluateProcessorVersionmetedata
 - name: google.cloud.documentai.v1beta3.EvaluateProcessorVersionResponse
-- name: google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
+- name: google.cloud.documentai.v1beta3.ReviewDocumentOperationmetedata
 - name: google.cloud.documentai.v1beta3.ReviewDocumentResponse
-- name: google.cloud.documentai.v1beta3.SetDefaultProcessorVersionMetadata
+- name: google.cloud.documentai.v1beta3.SetDefaultProcessorVersionmetedata
 - name: google.cloud.documentai.v1beta3.SetDefaultProcessorVersionResponse
-- name: google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata
+- name: google.cloud.documentai.v1beta3.TrainProcessorVersionmetedata
 - name: google.cloud.documentai.v1beta3.TrainProcessorVersionResponse
-- name: google.cloud.documentai.v1beta3.UndeployProcessorVersionMetadata
+- name: google.cloud.documentai.v1beta3.UndeployProcessorVersionmetedata
 - name: google.cloud.documentai.v1beta3.UndeployProcessorVersionResponse
 
 documentation:

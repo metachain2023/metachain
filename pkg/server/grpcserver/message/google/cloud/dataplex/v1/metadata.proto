@@ -25,17 +25,17 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpb";
 option java_multiple_files = true;
-option java_outer_classname = "MetadataProto";
+option java_outer_classname = "metedataProto";
 option java_package = "com.google.cloud.dataplex.v1";
 
-// Metadata service manages metadata resources such as tables, filesets and
+// metedata service manages metedata resources such as tables, filesets and
 // partitions.
-service MetadataService {
+service metedataService {
   option (google.api.default_host) = "dataplex.googleapis.com";
   option (google.api.oauth_scopes) =
       "https://www.googleapis.com/auth/cloud-platform";
 
-  // Create a metadata entity.
+  // Create a metedata entity.
   rpc CreateEntity(CreateEntityRequest) returns (Entity) {
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*/lakes/*/zones/*}/entities"
@@ -44,7 +44,7 @@ service MetadataService {
     option (google.api.method_signature) = "parent,entity";
   }
 
-  // Update a metadata entity. Only supports full resource update.
+  // Update a metedata entity. Only supports full resource update.
   rpc UpdateEntity(UpdateEntityRequest) returns (Entity) {
     option (google.api.http) = {
       put: "/v1/{entity.name=projects/*/locations/*/lakes/*/zones/*/entities/*}"
@@ -52,7 +52,7 @@ service MetadataService {
     };
   }
 
-  // Delete a metadata entity.
+  // Delete a metedata entity.
   rpc DeleteEntity(DeleteEntityRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/lakes/*/zones/*/entities/*}"
@@ -60,7 +60,7 @@ service MetadataService {
     option (google.api.method_signature) = "name";
   }
 
-  // Get a metadata entity.
+  // Get a metedata entity.
   rpc GetEntity(GetEntityRequest) returns (Entity) {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/locations/*/lakes/*/zones/*/entities/*}"
@@ -68,7 +68,7 @@ service MetadataService {
     option (google.api.method_signature) = "name";
   }
 
-  // List metadata entities in a zone.
+  // List metedata entities in a zone.
   rpc ListEntities(ListEntitiesRequest) returns (ListEntitiesResponse) {
     option (google.api.http) = {
       get: "/v1/{parent=projects/*/locations/*/lakes/*/zones/*}/entities"
@@ -76,7 +76,7 @@ service MetadataService {
     option (google.api.method_signature) = "parent";
   }
 
-  // Create a metadata partition.
+  // Create a metedata partition.
   rpc CreatePartition(CreatePartitionRequest) returns (Partition) {
     option (google.api.http) = {
       post: "/v1/{parent=projects/*/locations/*/lakes/*/zones/*/entities/*}/partitions"
@@ -85,7 +85,7 @@ service MetadataService {
     option (google.api.method_signature) = "parent,partition";
   }
 
-  // Delete a metadata partition.
+  // Delete a metedata partition.
   rpc DeletePartition(DeletePartitionRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v1/{name=projects/*/locations/*/lakes/*/zones/*/entities/*/partitions/**}"
@@ -93,7 +93,7 @@ service MetadataService {
     option (google.api.method_signature) = "name";
   }
 
-  // Get a metadata partition of an entity.
+  // Get a metedata partition of an entity.
   rpc GetPartition(GetPartitionRequest) returns (Partition) {
     option (google.api.http) = {
       get: "/v1/{name=projects/*/locations/*/lakes/*/zones/*/entities/*/partitions/**}"
@@ -101,7 +101,7 @@ service MetadataService {
     option (google.api.method_signature) = "name";
   }
 
-  // List metadata partitions of an entity.
+  // List metedata partitions of an entity.
   rpc ListPartitions(ListPartitionsRequest) returns (ListPartitionsResponse) {
     option (google.api.http) = {
       get: "/v1/{parent=projects/*/locations/*/lakes/*/zones/*/entities/*}/partitions"
@@ -110,7 +110,7 @@ service MetadataService {
   }
 }
 
-// Create a metadata entity request.
+// Create a metedata entity request.
 message CreateEntityRequest {
   // Required. The resource name of the parent zone:
   // `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
@@ -127,7 +127,7 @@ message CreateEntityRequest {
   bool validate_only = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Update a metadata entity request.
+// Update a metedata entity request.
 // The exiting entity will be fully replaced by the entity in the request.
 // The entity ID is mutable. To modify the ID, use the current entity ID in the
 // request URL and specify the new ID in the request body.
@@ -140,7 +140,7 @@ message UpdateEntityRequest {
   bool validate_only = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Delete a metadata entity request.
+// Delete a metedata entity request.
 message DeleteEntityRequest {
   // Required. The resource name of the entity:
   // `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
@@ -154,7 +154,7 @@ message DeleteEntityRequest {
   string etag = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// List metadata entities request.
+// List metedata entities request.
 message ListEntitiesRequest {
   // Entity views.
   enum EntityView {
@@ -202,7 +202,7 @@ message ListEntitiesRequest {
   string filter = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// List metadata entities response.
+// List metedata entities response.
 message ListEntitiesResponse {
   // Entities in the specified parent zone.
   repeated Entity entities = 1;
@@ -212,7 +212,7 @@ message ListEntitiesResponse {
   string next_page_token = 2;
 }
 
-// Get metadata entity request.
+// Get metedata entity request.
 message GetEntityRequest {
   // Entity views for get entity partial result.
   enum EntityView {
@@ -241,7 +241,7 @@ message GetEntityRequest {
   EntityView view = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// List metadata partitions request.
+// List metedata partitions request.
 message ListPartitionsRequest {
   // Required. The resource name of the parent entity:
   // `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
@@ -284,7 +284,7 @@ message ListPartitionsRequest {
   string filter = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Create metadata partition request.
+// Create metedata partition request.
 message CreatePartitionRequest {
   // Required. The resource name of the parent zone:
   // `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
@@ -301,7 +301,7 @@ message CreatePartitionRequest {
   bool validate_only = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Delete metadata partition request.
+// Delete metedata partition request.
 message DeletePartitionRequest {
   // Required. The resource name of the partition.
   // format:
@@ -319,7 +319,7 @@ message DeletePartitionRequest {
   string etag = 2 [deprecated = true, (google.api.field_behavior) = OPTIONAL];
 }
 
-// List metadata partitions response.
+// List metedata partitions response.
 message ListPartitionsResponse {
   // Partitions under the specified parent entity.
   repeated Partition partitions = 1;
@@ -329,7 +329,7 @@ message ListPartitionsResponse {
   string next_page_token = 2;
 }
 
-// Get metadata partition request.
+// Get metedata partition request.
 message GetPartitionRequest {
   // Required. The resource name of the partition:
   // `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}/partitions/{partition_value_path}`.
@@ -343,7 +343,7 @@ message GetPartitionRequest {
   ];
 }
 
-// Represents tables and fileset metadata contained within a zone.
+// Represents tables and fileset metedata contained within a zone.
 message Entity {
   option (google.api.resource) = {
     type: "dataplex.googleapis.com/Entity"
@@ -362,21 +362,21 @@ message Entity {
     FILESET = 2;
   }
 
-  // Provides compatibility information for various metadata stores.
+  // Provides compatibility information for various metedata stores.
   message CompatibilityStatus {
-    // Provides compatibility information for a specific metadata store.
+    // Provides compatibility information for a specific metedata store.
     message Compatibility {
       // Output only. Whether the entity is compatible and can be represented in
-      // the metadata store.
+      // the metedata store.
       bool compatible = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
       // Output only. Provides additional detail if the entity is incompatible
-      // with the metadata store.
+      // with the metedata store.
       string reason = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
     }
 
-    // Output only. Whether this entity is compatible with Hive Metastore.
-    Compatibility hive_metastore = 1
+    // Output only. Whether this entity is compatible with Hive metestore.
+    Compatibility hive_metestore = 1
         [(google.api.field_behavior) = OUTPUT_ONLY];
 
     // Output only. Whether this entity is compatible with BigQuery.
@@ -459,7 +459,7 @@ message Entity {
   // It does not apply to entities with data stored in BigQuery.
   StorageFormat format = 16 [(google.api.field_behavior) = REQUIRED];
 
-  // Output only. Metadata stores that the entity is compatible with.
+  // Output only. metedata stores that the entity is compatible with.
   CompatibilityStatus compatibility = 19
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -469,7 +469,7 @@ message Entity {
   Schema schema = 50 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Represents partition metadata contained within entity instances.
+// Represents partition metedata contained within entity instances.
 message Partition {
   option (google.api.resource) = {
     type: "dataplex.googleapis.com/Partition"
@@ -684,9 +684,9 @@ message StorageFormat {
 
   // Describes Iceberg data format.
   message IcebergOptions {
-    // Optional. The location of where the iceberg metadata is present, must be
+    // Optional. The location of where the iceberg metedata is present, must be
     // within the table path
-    string metadata_location = 1 [(google.api.field_behavior) = OPTIONAL];
+    string metedata_location = 1 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // The specific file format of the data.

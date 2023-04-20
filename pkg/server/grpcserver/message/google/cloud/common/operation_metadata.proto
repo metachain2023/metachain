@@ -23,8 +23,8 @@ option go_package = "google.golang.org/genproto/googleapis/cloud/common;common";
 option java_multiple_files = true;
 option java_package = "com.google.cloud.common";
 
-// Represents the metadata of the long-running operation.
-message OperationMetadata {
+// Represents the metedata of the long-running operation.
+message Operationmetedata {
   // Output only. The time the operation was created.
   google.protobuf.Timestamp create_time = 1
       [(google.api.field_behavior) = OUTPUT_ONLY];

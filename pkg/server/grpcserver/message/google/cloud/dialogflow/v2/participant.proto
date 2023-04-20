@@ -208,7 +208,7 @@ message Participant {
   Role role = 2 [(google.api.field_behavior) = IMMUTABLE];
 
   // Optional. Label applied to streams representing this participant in SIPREC
-  // XML metadata and SDP. This is used to assign transcriptions from that
+  // XML metedata and SDP. This is used to assign transcriptions from that
   // media stream to this participant. This field can be updated.
   string sip_recording_media_label = 6 [(google.api.field_behavior) = OPTIONAL];
 
@@ -248,24 +248,24 @@ message Participant {
   string obfuscated_external_user_id = 7
       [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. Key-value filters on the metadata of documents returned by
+  // Optional. Key-value filters on the metedata of documents returned by
   // article suggestion. If specified, article suggestion only returns suggested
   // documents that match all filters in their
-  // [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
-  // values for a metadata key should be concatenated by comma. For example,
+  // [Document.metedata][google.cloud.dialogflow.v2.Document.metedata]. Multiple
+  // values for a metedata key should be concatenated by comma. For example,
   // filters to match all documents that have 'US' or 'CA' in their market
-  // metadata values and 'agent' in their user metadata values will be
+  // metedata values and 'agent' in their user metedata values will be
   // ```
-  // documents_metadata_filters {
+  // documents_metedata_filters {
   //   key: "market"
   //   value: "US,CA"
   // }
-  // documents_metadata_filters {
+  // documents_metedata_filters {
   //   key: "user"
   //   value: "agent"
   // }
   // ```
-  map<string, string> documents_metadata_filters = 8
+  map<string, string> documents_metedata_filters = 8
       [(google.api.field_behavior) = OPTIONAL];
 }
 
@@ -914,9 +914,9 @@ message ArticleAnswer {
   // (completely certain).
   float confidence = 4;
 
-  // A map that contains metadata about the answer and the
+  // A map that contains metedata about the answer and the
   // document from which it originates.
-  map<string, string> metadata = 5;
+  map<string, string> metedata = 5;
 
   // The name of answer record, in the format of
   // "projects/<Project ID>/locations/<Location ID>/answerRecords/<Answer Record
@@ -943,9 +943,9 @@ message FaqAnswer {
   // ID>/agent/knowledgeBases/<Knowledge Base ID>/documents/<Document ID>`.
   string source = 4;
 
-  // A map that contains metadata about the answer and the
+  // A map that contains metedata about the answer and the
   // document from which it originates.
-  map<string, string> metadata = 5;
+  map<string, string> metedata = 5;
 
   // The name of answer record, in the format of
   // "projects/<Project ID>/locations/<Location ID>/answerRecords/<Answer Record
@@ -1043,22 +1043,22 @@ message MessageAnnotation {
 
 // Represents the parameters of human assist query.
 message AssistQueryParameters {
-  // Key-value filters on the metadata of documents returned by article
+  // Key-value filters on the metedata of documents returned by article
   // suggestion. If specified, article suggestion only returns suggested
   // documents that match all filters in their
-  // [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
-  // values for a metadata key should be concatenated by comma. For example,
+  // [Document.metedata][google.cloud.dialogflow.v2.Document.metedata]. Multiple
+  // values for a metedata key should be concatenated by comma. For example,
   // filters to match all documents that have 'US' or 'CA' in their market
-  // metadata values and 'agent' in their user metadata values will be
+  // metedata values and 'agent' in their user metedata values will be
   // ```
-  // documents_metadata_filters {
+  // documents_metedata_filters {
   //   key: "market"
   //   value: "US,CA"
   // }
-  // documents_metadata_filters {
+  // documents_metedata_filters {
   //   key: "user"
   //   value: "agent"
   // }
   // ```
-  map<string, string> documents_metadata_filters = 1;
+  map<string, string> documents_metedata_filters = 1;
 }

@@ -40,9 +40,9 @@ service WorkflowsServiceV2Beta {
   option (google.api.oauth_scopes) =
       "https://www.googleapis.com/auth/cloud-platform";
 
-  // Runs a pipeline.  The returned Operation's [metadata]
-  // [google.longrunning.Operation.metadata] field will contain a
-  // [google.cloud.lifesciences.v2beta.Metadata][google.cloud.lifesciences.v2beta.Metadata]
+  // Runs a pipeline.  The returned Operation's [metedata]
+  // [google.longrunning.Operation.metedata] field will contain a
+  // [google.cloud.lifesciences.v2beta.metedata][google.cloud.lifesciences.v2beta.metedata]
   // object describing the status of the pipeline execution. The
   // [response][google.longrunning.Operation.response] field will contain a
   // [google.cloud.lifesciences.v2beta.RunPipelineResponse][google.cloud.lifesciences.v2beta.RunPipelineResponse]
@@ -64,7 +64,7 @@ service WorkflowsServiceV2Beta {
     };
     option (google.longrunning.operation_info) = {
       response_type: "RunPipelineResponse"
-      metadata_type: "Metadata"
+      metedata_type: "metedata"
     };
   }
 }
@@ -204,7 +204,7 @@ message Action {
   //
   // The host port number must be less than 65536. If it is zero, an unused
   // random port is assigned. To determine the resulting port number, consult
-  // the `ContainerStartedEvent` in the operation metadata.
+  // the `ContainerStartedEvent` in the operation metedata.
   map<int32, int32> port_mappings = 8;
 
   // A list of mounts to make available to the action.
@@ -229,7 +229,7 @@ message Action {
   // Labels to associate with the action. This field is provided to assist
   // workflow engine authors in identifying actions (for example, to indicate
   // what sort of action they perform, such as localization or debugging).
-  // They are returned in the operation metadata, but are otherwise ignored.
+  // They are returned in the operation metedata, but are otherwise ignored.
   map<string, string> labels = 10;
 
   // If the specified image is hosted on a private registry other than Google
@@ -273,7 +273,7 @@ message Action {
 
   // Exposes all ports specified by `EXPOSE` statements in the container. To
   // discover the host side port numbers, consult the `ACTION_STARTED` event
-  // in the operation metadata.
+  // in the operation metedata.
   bool publish_exposed_ports = 17;
 
   // All container images are typically downloaded before any actions are
@@ -586,8 +586,8 @@ message NFSMount {
 }
 
 // Carries information about the pipeline execution that is returned
-// in the long running operation's metadata field.
-message Metadata {
+// in the long running operation's metedata field.
+message metedata {
   // The pipeline this operation represents.
   Pipeline pipeline = 1;
 

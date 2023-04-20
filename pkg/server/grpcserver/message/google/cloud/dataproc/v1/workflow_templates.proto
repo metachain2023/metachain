@@ -77,10 +77,10 @@ service WorkflowTemplateService {
   // This will cause any inflight jobs to be cancelled and workflow-owned
   // clusters to be deleted.
   //
-  // The [Operation.metadata][google.longrunning.Operation.metadata] will be
-  // [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+  // The [Operation.metedata][google.longrunning.Operation.metedata] will be
+  // [Workflowmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetedata).
   // Also see [Using
-  // WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+  // Workflowmetedata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetedata).
   //
   // On successful completion,
   // [Operation.response][google.longrunning.Operation.response] will be
@@ -98,7 +98,7 @@ service WorkflowTemplateService {
     option (google.api.method_signature) = "name,parameters";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "WorkflowMetadata"
+      metedata_type: "Workflowmetedata"
     };
   }
 
@@ -118,10 +118,10 @@ service WorkflowTemplateService {
   // This will cause any inflight jobs to be cancelled and workflow-owned
   // clusters to be deleted.
   //
-  // The [Operation.metadata][google.longrunning.Operation.metadata] will be
-  // [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+  // The [Operation.metedata][google.longrunning.Operation.metedata] will be
+  // [Workflowmetedata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetedata).
   // Also see [Using
-  // WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+  // Workflowmetedata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetedata).
   //
   // On successful completion,
   // [Operation.response][google.longrunning.Operation.response] will be
@@ -138,7 +138,7 @@ service WorkflowTemplateService {
     option (google.api.method_signature) = "parent,template";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "WorkflowMetadata"
+      metedata_type: "Workflowmetedata"
     };
   }
 
@@ -268,7 +268,7 @@ message WorkflowTemplatePlacement {
     ManagedCluster managed_cluster = 1;
 
     // Optional. A selector that chooses target cluster for jobs based
-    // on metadata.
+    // on metedata.
     //
     // The selector is evaluated at the time each job is submitted.
     ClusterSelector cluster_selector = 2;
@@ -301,7 +301,7 @@ message ManagedCluster {
   map<string, string> labels = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// A selector that chooses target cluster for jobs based on metadata.
+// A selector that chooses target cluster for jobs based on metedata.
 message ClusterSelector {
   // Optional. The zone where workflow process executes. This parameter does not
   // affect the selection of the cluster.
@@ -477,7 +477,7 @@ message ValueValidation {
 }
 
 // A Dataproc workflow template resource.
-message WorkflowMetadata {
+message Workflowmetedata {
   // The operation state.
   enum State {
     // Unused.
@@ -509,13 +509,13 @@ message WorkflowMetadata {
   // workflow instantiation.
   int32 version = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The create cluster operation metadata.
+  // Output only. The create cluster operation metedata.
   ClusterOperation create_cluster = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The workflow graph.
   WorkflowGraph graph = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. The delete cluster operation metadata.
+  // Output only. The delete cluster operation metedata.
   ClusterOperation delete_cluster = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The workflow state.
@@ -541,11 +541,11 @@ message WorkflowMetadata {
   // duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
   google.protobuf.Duration dag_timeout = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+  // Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.Workflowmetedata.dag_timeout] when DAG
   // begins.
   google.protobuf.Timestamp dag_start_time = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
+  // Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.Workflowmetedata.dag_timeout] when DAG ends.
   google.protobuf.Timestamp dag_end_time = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 

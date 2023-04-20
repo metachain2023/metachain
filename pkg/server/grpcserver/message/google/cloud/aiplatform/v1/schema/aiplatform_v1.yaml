@@ -30,16 +30,16 @@ types:
 - name: google.cloud.aiplatform.v1.schema.predict.prediction.VideoObjectTrackingPredictionResult
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassification
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs
-- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationMetadata
+- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationmetedata
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetection
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs
-- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionMetadata
+- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionmetedata
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentation
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationInputs
-- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationMetadata
+- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageSegmentationmetedata
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTables
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesMetadata
+- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesmetedata
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTextClassification
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTextClassificationInputs
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTextExtraction
@@ -52,10 +52,10 @@ types:
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTracking
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs
-- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.CustomJobMetadata
+- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.CustomJobmetedata
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.CustomTask
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig
-- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.HyperparameterTuningJobMetadata
+- name: google.cloud.aiplatform.v1.schema.trainingjob.definition.HyperparameterTuningJobmetedata
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.HyperparameterTuningJobSpec
 - name: google.cloud.aiplatform.v1.schema.trainingjob.definition.HyperparameterTuningTask
 

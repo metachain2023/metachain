@@ -4,22 +4,22 @@ name: biglake.googleapis.com
 title: BigLake API
 
 apis:
-- name: google.cloud.bigquery.biglake.v1alpha1.MetastoreService
+- name: google.cloud.bigquery.biglake.v1alpha1.metestoreService
 
 documentation:
   summary: |-
-    The BigLake API provides access to BigLake Metastore, a serverless, fully
-    managed, and highly available metastore for open-source data that can be
+    The BigLake API provides access to BigLake metestore, a serverless, fully
+    managed, and highly available metestore for open-source data that can be
     used for querying Apache Iceberg tables in BigQuery.
 
 backend:
   rules:
-  - selector: 'google.cloud.bigquery.biglake.v1alpha1.MetastoreService.*'
+  - selector: 'google.cloud.bigquery.biglake.v1alpha1.metestoreService.*'
     deadline: 60.0
 
 authentication:
   rules:
-  - selector: 'google.cloud.bigquery.biglake.v1alpha1.MetastoreService.*'
+  - selector: 'google.cloud.bigquery.biglake.v1alpha1.metestoreService.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/bigquery,

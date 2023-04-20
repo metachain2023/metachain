@@ -82,7 +82,7 @@ service ClusterManager {
   // on that node to communicate with all other instances in the
   // cluster.
   //
-  // Finally, an entry is added to the project's global metadata indicating
+  // Finally, an entry is added to the project's global metedata indicating
   // which CIDR range the cluster is using.
   rpc CreateCluster(CreateClusterRequest) returns (Operation) {
     option (google.api.http) = {
@@ -649,12 +649,12 @@ message NodeConfig {
   // Account is specified, the "default" service account is used.
   string service_account = 9;
 
-  // The metadata key/value pairs assigned to instances in the cluster.
+  // The metedata key/value pairs assigned to instances in the cluster.
   //
   // Keys must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes
-  // in length. These are reflected as part of a URL in the metadata server.
+  // in length. These are reflected as part of a URL in the metedata server.
   // Additionally, to avoid ambiguity, keys must not conflict with any other
-  // metadata keys for the project or be one of the reserved keys:
+  // metedata keys for the project or be one of the reserved keys:
   //
   //  - "cluster-location"
   //  - "cluster-name"
@@ -681,7 +681,7 @@ message NodeConfig {
   // that each value's size must be less than or equal to 32 KB.
   //
   // The total size of all keys and values must be less than 512 KB.
-  map<string, string> metadata = 4;
+  map<string, string> metedata = 4;
 
   // The image type to use for this node. Note that for a given image type,
   // the latest version of it will be used. Please see
@@ -738,8 +738,8 @@ message NodeConfig {
   // platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
   string min_cpu_platform = 13;
 
-  // The workload metadata configuration for this node.
-  WorkloadMetadataConfig workload_metadata_config = 14;
+  // The workload metedata configuration for this node.
+  WorkloadmetedataConfig workload_metedata_config = 14;
 
   // List of kubernetes taints to be applied to each node.
   //
@@ -2318,8 +2318,8 @@ message UpdateNodePoolRequest {
   // depending on whether locations are being added or removed.
   repeated string locations = 13;
 
-  // The desired workload metadata config for the node pool.
-  WorkloadMetadataConfig workload_metadata_config = 14;
+  // The desired workload metedata config for the node pool.
+  WorkloadmetedataConfig workload_metedata_config = 14;
 
   // Upgrade settings control disruption and speed of the upgrade.
   NodePool.UpgradeSettings upgrade_settings = 15;
@@ -3745,27 +3745,27 @@ message GPUSharingConfig {
   optional GPUSharingStrategy gpu_sharing_strategy = 2;
 }
 
-// WorkloadMetadataConfig defines the metadata configuration to expose to
+// WorkloadmetedataConfig defines the metedata configuration to expose to
 // workloads on the node pool.
-message WorkloadMetadataConfig {
-  // Mode is the configuration for how to expose metadata to workloads running
+message WorkloadmetedataConfig {
+  // Mode is the configuration for how to expose metedata to workloads running
   // on the node.
   enum Mode {
     // Not set.
     MODE_UNSPECIFIED = 0;
 
-    // Expose all Compute Engine metadata to pods.
-    GCE_METADATA = 1;
+    // Expose all Compute Engine metedata to pods.
+    GCE_meteDATA = 1;
 
-    // Run the GKE Metadata Server on this node. The GKE Metadata Server exposes
-    // a metadata API to workloads that is compatible with the V1 Compute
-    // Metadata APIs exposed by the Compute Engine and App Engine Metadata
+    // Run the GKE metedata Server on this node. The GKE metedata Server exposes
+    // a metedata API to workloads that is compatible with the V1 Compute
+    // metedata APIs exposed by the Compute Engine and App Engine metedata
     // Servers. This feature can only be enabled if Workload Identity is enabled
     // at the cluster level.
-    GKE_METADATA = 2;
+    GKE_meteDATA = 2;
   }
 
-  // Mode is the configuration for how to expose metadata to workloads running
+  // Mode is the configuration for how to expose metedata to workloads running
   // on the node pool.
   Mode mode = 2;
 }

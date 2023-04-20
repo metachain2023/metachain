@@ -57,7 +57,7 @@ service NetworkServices {
     option (google.api.method_signature) = "parent,endpoint_policy,endpoint_policy_id";
     option (google.longrunning.operation_info) = {
       response_type: "EndpointPolicy"
-      metadata_type: "google.cloud.networkservices.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1beta1.Operationmetedata"
     };
   }
 
@@ -70,7 +70,7 @@ service NetworkServices {
     option (google.api.method_signature) = "endpoint_policy,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "EndpointPolicy"
-      metadata_type: "google.cloud.networkservices.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1beta1.Operationmetedata"
     };
   }
 
@@ -82,7 +82,7 @@ service NetworkServices {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networkservices.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networkservices.v1beta1.Operationmetedata"
     };
   }
 }

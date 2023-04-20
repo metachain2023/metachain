@@ -48,8 +48,8 @@ service CloudShellService {
   }
 
   // Starts an existing environment, allowing clients to connect to it. The
-  // returned operation will contain an instance of StartEnvironmentMetadata in
-  // its metadata field. Users can wait for the environment to start by polling
+  // returned operation will contain an instance of StartEnvironmentmetedata in
+  // its metedata field. Users can wait for the environment to start by polling
   // this operation via GetOperation. Once the environment has finished starting
   // and is ready to accept connections, the operation will contain a
   // StartEnvironmentResponse in its response field.
@@ -60,7 +60,7 @@ service CloudShellService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "StartEnvironmentResponse"
-      metadata_type: "StartEnvironmentMetadata"
+      metedata_type: "StartEnvironmentmetedata"
     };
   }
 
@@ -75,7 +75,7 @@ service CloudShellService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "AuthorizeEnvironmentResponse"
-      metadata_type: "AuthorizeEnvironmentMetadata"
+      metedata_type: "AuthorizeEnvironmentmetedata"
     };
   }
 
@@ -89,7 +89,7 @@ service CloudShellService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "AddPublicKeyResponse"
-      metadata_type: "AddPublicKeyMetadata"
+      metedata_type: "AddPublicKeymetedata"
     };
   }
 
@@ -104,7 +104,7 @@ service CloudShellService {
     };
     option (google.longrunning.operation_info) = {
       response_type: "RemovePublicKeyResponse"
-      metadata_type: "RemovePublicKeyMetadata"
+      metedata_type: "RemovePublicKeymetedata"
     };
   }
 }
@@ -199,15 +199,15 @@ message GetEnvironmentRequest {
   ];
 }
 
-// Message included in the metadata field of operations returned from
+// Message included in the metedata field of operations returned from
 // [CreateEnvironment][google.cloud.shell.v1.CloudShellService.CreateEnvironment].
-message CreateEnvironmentMetadata {
+message CreateEnvironmentmetedata {
 
 }
 
-// Message included in the metadata field of operations returned from
+// Message included in the metedata field of operations returned from
 // [DeleteEnvironment][google.cloud.shell.v1.CloudShellService.DeleteEnvironment].
-message DeleteEnvironmentMetadata {
+message DeleteEnvironmentmetedata {
 
 }
 
@@ -254,15 +254,15 @@ message AuthorizeEnvironmentResponse {
 
 }
 
-// Message included in the metadata field of operations returned from
+// Message included in the metedata field of operations returned from
 // [AuthorizeEnvironment][google.cloud.shell.v1.CloudShellService.AuthorizeEnvironment].
-message AuthorizeEnvironmentMetadata {
+message AuthorizeEnvironmentmetedata {
 
 }
 
-// Message included in the metadata field of operations returned from
+// Message included in the metedata field of operations returned from
 // [StartEnvironment][google.cloud.shell.v1.CloudShellService.StartEnvironment].
-message StartEnvironmentMetadata {
+message StartEnvironmentmetedata {
   // Possible states an environment might transition between during startup.
   // These states are not normally actionable by clients, but may be used to
   // show a progress message to the user. An environment won't necessarily go
@@ -328,9 +328,9 @@ message AddPublicKeyResponse {
   string key = 1;
 }
 
-// Message included in the metadata field of operations returned from
+// Message included in the metedata field of operations returned from
 // [AddPublicKey][google.cloud.shell.v1.CloudShellService.AddPublicKey].
-message AddPublicKeyMetadata {
+message AddPublicKeymetedata {
 
 }
 
@@ -351,9 +351,9 @@ message RemovePublicKeyResponse {
 
 }
 
-// Message included in the metadata field of operations returned from
+// Message included in the metedata field of operations returned from
 // [RemovePublicKey][google.cloud.shell.v1.CloudShellService.RemovePublicKey].
-message RemovePublicKeyMetadata {
+message RemovePublicKeymetedata {
 
 }
 

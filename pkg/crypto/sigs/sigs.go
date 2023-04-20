@@ -3,7 +3,7 @@ package sigs
 import (
 	"fmt"
 
-	"metachain/pkg/crypto"
+	"metechain/pkg/crypto"
 )
 
 func Generate(sigType crypto.SigType) ([]byte, error) {

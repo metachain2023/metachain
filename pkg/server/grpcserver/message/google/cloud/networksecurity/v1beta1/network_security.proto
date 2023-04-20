@@ -62,7 +62,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "parent,authorization_policy,authorization_policy_id";
     option (google.longrunning.operation_info) = {
       response_type: "AuthorizationPolicy"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -75,7 +75,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "authorization_policy,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "AuthorizationPolicy"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -87,7 +87,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -116,7 +116,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "parent,server_tls_policy,server_tls_policy_id";
     option (google.longrunning.operation_info) = {
       response_type: "ServerTlsPolicy"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -129,7 +129,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "server_tls_policy,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "ServerTlsPolicy"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -141,7 +141,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -170,7 +170,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "parent,client_tls_policy,client_tls_policy_id";
     option (google.longrunning.operation_info) = {
       response_type: "ClientTlsPolicy"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -183,7 +183,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "client_tls_policy,update_mask";
     option (google.longrunning.operation_info) = {
       response_type: "ClientTlsPolicy"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 
@@ -195,7 +195,7 @@ service NetworkSecurity {
     option (google.api.method_signature) = "name";
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "google.cloud.networksecurity.v1beta1.OperationMetadata"
+      metedata_type: "google.cloud.networksecurity.v1beta1.Operationmetedata"
     };
   }
 }

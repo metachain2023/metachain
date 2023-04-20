@@ -54,7 +54,7 @@ service JobController {
     option (google.api.method_signature) = "project_id, region, job";
     option (google.longrunning.operation_info) = {
       response_type: "Job"
-      metadata_type: "JobMetadata"
+      metedata_type: "Jobmetedata"
     };
   }
 
@@ -802,8 +802,8 @@ message SubmitJobRequest {
   string request_id = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// Job Operation metadata.
-message JobMetadata {
+// Job Operation metedata.
+message Jobmetedata {
   // Output only. The job id.
   string job_id = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 

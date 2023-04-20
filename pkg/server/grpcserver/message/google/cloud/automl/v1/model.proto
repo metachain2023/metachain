@@ -49,26 +49,26 @@ message Model {
   }
 
   // Required.
-  // The model metadata that is specific to the problem type.
-  // Must match the metadata type of the dataset used to train the model.
-  oneof model_metadata {
-    // Metadata for translation models.
-    TranslationModelMetadata translation_model_metadata = 15;
+  // The model metedata that is specific to the problem type.
+  // Must match the metedata type of the dataset used to train the model.
+  oneof model_metedata {
+    // metedata for translation models.
+    TranslationModelmetedata translation_model_metedata = 15;
 
-    // Metadata for image classification models.
-    ImageClassificationModelMetadata image_classification_model_metadata = 13;
+    // metedata for image classification models.
+    ImageClassificationModelmetedata image_classification_model_metedata = 13;
 
-    // Metadata for text classification models.
-    TextClassificationModelMetadata text_classification_model_metadata = 14;
+    // metedata for text classification models.
+    TextClassificationModelmetedata text_classification_model_metedata = 14;
 
-    // Metadata for image object detection models.
-    ImageObjectDetectionModelMetadata image_object_detection_model_metadata = 20;
+    // metedata for image object detection models.
+    ImageObjectDetectionModelmetedata image_object_detection_model_metedata = 20;
 
-    // Metadata for text extraction models.
-    TextExtractionModelMetadata text_extraction_model_metadata = 19;
+    // metedata for text extraction models.
+    TextExtractionModelmetedata text_extraction_model_metedata = 19;
 
-    // Metadata for text sentiment models.
-    TextSentimentModelMetadata text_sentiment_model_metadata = 22;
+    // metedata for text sentiment models.
+    TextSentimentModelmetedata text_sentiment_model_metedata = 22;
   }
 
   // Output only. Resource name of the model.
@@ -99,7 +99,7 @@ message Model {
   // "overwrite" update happens.
   string etag = 10;
 
-  // Optional. The labels with user-defined metadata to organize your model.
+  // Optional. The labels with user-defined metedata to organize your model.
   //
   // Label keys and values can be no longer than 64 characters
   // (Unicode codepoints), can only contain lowercase letters, numeric

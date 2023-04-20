@@ -1023,7 +1023,7 @@ message Location {
   Container container = 8;
 }
 
-// Precise location of the finding within a document, record, image, or metadata
+// Precise location of the finding within a document, record, image, or metedata
 // container.
 message ContentLocation {
   // Name of the container where the finding is located.
@@ -1049,8 +1049,8 @@ message ContentLocation {
     // Location data for document files.
     DocumentLocation document_location = 5;
 
-    // Location within the metadata for inspected content.
-    MetadataLocation metadata_location = 8;
+    // Location within the metedata for inspected content.
+    metedataLocation metedata_location = 8;
   }
 
   // Finding container modification timestamp, if applicable. For Cloud Storage,
@@ -1064,21 +1064,21 @@ message ContentLocation {
   string container_version = 7;
 }
 
-// Metadata Location
-message MetadataLocation {
-  // Type of metadata containing the finding.
-  MetadataType type = 1;
+// metedata Location
+message metedataLocation {
+  // Type of metedata containing the finding.
+  metedataType type = 1;
 
-  // Label of the piece of metadata containing the finding, for example -
+  // Label of the piece of metedata containing the finding, for example -
   // latitude, author, caption.
   oneof label {
-    // Storage metadata.
-    StorageMetadataLabel storage_label = 3;
+    // Storage metedata.
+    StoragemetedataLabel storage_label = 3;
   }
 }
 
-// Storage metadata label to indicate which metadata entry contains findings.
-message StorageMetadataLabel {
+// Storage metedata label to indicate which metedata entry contains findings.
+message StoragemetedataLabel {
   string key = 1;
 }
 
@@ -3268,7 +3268,7 @@ message TransformationDetails {
   // element if there were multiple matching transformations and which one to
   // apply was ambiguous. Not set for states that contain no transformation,
   // currently only state that contains no transformation is
-  // TransformationResultStateType.METADATA_UNRETRIEVABLE.
+  // TransformationResultStateType.meteDATA_UNRETRIEVABLE.
   repeated TransformationDescription transformation = 3;
 
   // Status of the transformation, if transformation was not successful, this
@@ -3339,10 +3339,10 @@ enum TransformationResultStatusType {
   // BigQuery's max row size.
   BIGQUERY_MAX_ROW_SIZE_EXCEEDED = 2;
 
-  // This will be set when there is a finding in the custom metadata of a file,
+  // This will be set when there is a finding in the custom metedata of a file,
   // but at the write time of the transformed file, this key / value pair is
   // unretrievable.
-  METADATA_UNRETRIEVABLE = 3;
+  meteDATA_UNRETRIEVABLE = 3;
 
   // This will be set when the transformation and storing of it is successful.
   SUCCESS = 4;
@@ -3354,7 +3354,7 @@ enum TransformationContainerType {
 
   TRANSFORM_BODY = 1;
 
-  TRANSFORM_METADATA = 2;
+  TRANSFORM_meteDATA = 2;
 
   TRANSFORM_TABLE = 3;
 }
@@ -3684,7 +3684,7 @@ message Action {
     TransformationConfig transformation_config = 7;
 
     // Config for storing transformation details. This is separate from the
-    // de-identified content, and contains metadata about the successful
+    // de-identified content, and contains metedata about the successful
     // transformations and/or failures that occurred while de-identifying. This
     // needs to be set in order for users to access information about the status
     // of each transformation (see
@@ -5001,7 +5001,7 @@ message HybridFindingDetails {
   // BigQuery, and only if the BigQuery action has been included.
   TableOptions table_options = 4;
 
-  // Labels to represent user provided metadata about the data being inspected.
+  // Labels to represent user provided metedata about the data being inspected.
   // If configured by the job, some key values may be required.
   // The labels associated with `Finding`'s produced by hybrid
   // inspection.
@@ -5086,20 +5086,20 @@ enum ContentOption {
   // Includes entire content of a file or a data stream.
   CONTENT_UNSPECIFIED = 0;
 
-  // Text content within the data, excluding any metadata.
+  // Text content within the data, excluding any metedata.
   CONTENT_TEXT = 1;
 
   // Images found in the data.
   CONTENT_IMAGE = 2;
 }
 
-// Type of metadata containing the finding.
-enum MetadataType {
+// Type of metedata containing the finding.
+enum metedataType {
   // Unused
-  METADATATYPE_UNSPECIFIED = 0;
+  meteDATATYPE_UNSPECIFIED = 0;
 
-  // General file metadata provided by Cloud Storage.
-  STORAGE_METADATA = 2;
+  // General file metedata provided by Cloud Storage.
+  STORAGE_meteDATA = 2;
 }
 
 // Parts of the APIs which use certain infoTypes.

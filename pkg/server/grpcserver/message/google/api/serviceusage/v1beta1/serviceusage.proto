@@ -49,7 +49,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -70,7 +70,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -109,7 +109,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -151,7 +151,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "QuotaOverride"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -163,7 +163,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "QuotaOverride"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -174,7 +174,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -195,7 +195,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ImportAdminOverridesResponse"
-      metadata_type: "ImportAdminOverridesMetadata"
+      metedata_type: "ImportAdminOverridesmetedata"
     };
   }
 
@@ -211,7 +211,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "QuotaOverride"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -223,7 +223,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "QuotaOverride"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -234,7 +234,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "google.protobuf.Empty"
-      metadata_type: "OperationMetadata"
+      metedata_type: "Operationmetedata"
     };
   }
 
@@ -255,7 +255,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ImportConsumerOverridesResponse"
-      metadata_type: "ImportConsumerOverridesMetadata"
+      metedata_type: "ImportConsumerOverridesmetedata"
     };
   }
 
@@ -266,7 +266,7 @@ service ServiceUsage {
     };
     option (google.longrunning.operation_info) = {
       response_type: "ServiceIdentity"
-      metadata_type: "google.protobuf.Empty"
+      metedata_type: "google.protobuf.Empty"
     };
   }
 }
@@ -562,10 +562,10 @@ message ImportAdminOverridesResponse {
   repeated QuotaOverride overrides = 1;
 }
 
-// Metadata message that provides information such as progress,
+// metedata message that provides information such as progress,
 // partial failures, and similar information on each GetOperation call
 // of LRO returned by ImportAdminOverrides.
-message ImportAdminOverridesMetadata {
+message ImportAdminOverridesmetedata {
 
 }
 
@@ -706,10 +706,10 @@ message ImportConsumerOverridesResponse {
   repeated QuotaOverride overrides = 1;
 }
 
-// Metadata message that provides information such as progress,
+// metedata message that provides information such as progress,
 // partial failures, and similar information on each GetOperation call
 // of LRO returned by ImportConsumerOverrides.
-message ImportConsumerOverridesMetadata {
+message ImportConsumerOverridesmetedata {
 
 }
 
@@ -719,31 +719,31 @@ message ImportAdminQuotaPoliciesResponse {
   repeated AdminQuotaPolicy policies = 1;
 }
 
-// Metadata message that provides information such as progress,
+// metedata message that provides information such as progress,
 // partial failures, and similar information on each GetOperation call
 // of LRO returned by ImportAdminQuotaPolicies.
-message ImportAdminQuotaPoliciesMetadata {
+message ImportAdminQuotaPoliciesmetedata {
 
 }
 
-// Metadata message that provides information such as progress,
+// metedata message that provides information such as progress,
 // partial failures, and similar information on each GetOperation call
 // of LRO returned by CreateAdminQuotaPolicy.
-message CreateAdminQuotaPolicyMetadata {
+message CreateAdminQuotaPolicymetedata {
 
 }
 
-// Metadata message that provides information such as progress,
+// metedata message that provides information such as progress,
 // partial failures, and similar information on each GetOperation call
 // of LRO returned by UpdateAdminQuotaPolicy.
-message UpdateAdminQuotaPolicyMetadata {
+message UpdateAdminQuotaPolicymetedata {
 
 }
 
-// Metadata message that provides information such as progress,
+// metedata message that provides information such as progress,
 // partial failures, and similar information on each GetOperation call
 // of LRO returned by DeleteAdminQuotaPolicy.
-message DeleteAdminQuotaPolicyMetadata {
+message DeleteAdminQuotaPolicymetedata {
 
 }
 
@@ -780,7 +780,7 @@ message GetServiceIdentityResponse {
   IdentityState state = 2;
 }
 
-// Metadata for the `GetServiceIdentity` method.
-message GetServiceIdentityMetadata {
+// metedata for the `GetServiceIdentity` method.
+message GetServiceIdentitymetedata {
 
 }

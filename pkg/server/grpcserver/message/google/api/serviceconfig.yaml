@@ -12,7 +12,7 @@ types:
 - name: google.api.Metric
 - name: google.api.MonitoredResource
 - name: google.api.MonitoredResourceDescriptor
-- name: google.api.MonitoredResourceMetadata
+- name: google.api.MonitoredResourcemetedata
 - name: google.api.ResourceDescriptor
 - name: google.api.ResourceReference
 - name: google.api.RoutingRule
